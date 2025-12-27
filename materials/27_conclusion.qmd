@@ -1,0 +1,33 @@
+---
+title: "Conclusion: What is Development?"
+---
+
+
+## Required Readings
+
+- [Opalo blog post](https://web.archive.org/web/20240426213933/https://www.africanistperspective.com/p/energy-poverty-is-very-bad-for-humans)
+- [Blattman on Cash Transfers](https://www.vox.com/the-big-idea/2017/3/14/14914996/bill-gates-chickens-cash-africa-poor-development#new_tab)
+- [GiveDirectly on Cash Transfers](https://www.givedirectly.org/research-on-cash-transfers/)
+- [Small vs Large Cash Transfers](https://blogs.worldbank.org/en/developmenttalk/do-larger-cash-transfers-improve-longer-run-outcomes-more-cost-effectively-smaller)
+  + [Full-length version](https://documents1.worldbank.org/curated/en/404501631120877904/pdf/Intervention-Size-and-Persistence.pdf)
+- [Blattman et al. (2017)](https://www.nytimes.com/2017/04/27/opinion/do-sweatshops-lift-workers-out-of-poverty.html#new_tab)
+  + You can access this with a free Penn NYT subscription
+  + Checkout the [follow-up study](https://www.sciencedirect.com/science/article/abs/pii/S0304387821001619) of longer-run effects
+- [Sandefur et al. (2024)](https://www.cgdev.org/blog/renewing-agoa-wont-do-much-africas-exports-heres-what-could)
+  + There's a longer version linked at the top if you're interested
+- [Mathiasen & Martinez (2025)](https://www.cgdev.org/blog/us-administrations-tariff-regime-case-moving-reprieve-relief)
+
+
+## Slides
+
+- [Slides](/slides/27-conclusion1.html)
+
+
+
+
+
+
+
+
+
+

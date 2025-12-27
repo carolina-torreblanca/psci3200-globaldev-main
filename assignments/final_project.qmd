@@ -1,0 +1,86 @@
+---
+title: "Final Project Assignment"
+
+author: "Jeremy Springman"
+
+institute: "University of Pennsylvania"
+date: 2024-04-30
+toc: true
+
+format: 
+  html:
+    self-contained: true
+
+editor: source
+
+---
+
+## Overview 
+
+The final project is the culmination of this course. It should reflect the substantive knowledge and technical skills that you developed and the work from the three touch-point assignments that you submitted and received feedback on. The objective of this assignment is to give you experience generating a viable research question based on a topic that you are interested in, refining that broad research question into a testable hypothesis, identifying data that can be used to provide evidence for or against your hypothesis, and communicating the results of your analysis to others.
+
+Understanding this process can not only help you answer research questions in the future, but can also help you assess the strength of evidence presented by others. As data becomes an increasingly important part of our lives, these skills will be useful in your career, especially if you conduct your own research or incorporate research by others into your decision-making.
+
+This project should be submitted via Slack by **11:59pm EST on Friday, May 10**. The grade on your submission will constitute 44% of your final grade for this course. Your submission must include:
+
+- A `url` linking me to a clean, professional webpage on your personal website that presents your research to potential employers
+- The `.qmd` file that you used to generate the html file
+- All code should be thoroughly commented to explain the choices you are making and the techniques you are using.
+
+::: {.callout-note}
+Importantly, the grade for this assignment *will not* be affected by whether your analysis uncovers a statistically significant relationship. If you provide a clear, plausible argument for why you expect to find a relationship between your dependent and independent variables, a null finding provides interesting information about the world! All good (and honest) researchers find that their theoretical expectations were wrong just as often as they find that they were right.
+:::
+
+## Structure
+
+Your final project submission should be organized into the following sections. This format roughly follows the organization of an academic research paper or a policy report. 
+
+1. **Introduction to the Research Question** (~600 words)
+
+In the introduction, you should introduce your research question to readers. Explain why you find it interesting or important. Describe existing research that is related to this topic and include references to relevant studies. This could be articles published in academic journals, policy reports and white papers, articles published by think tanks and other credible organizations (ex. Brookings, the United Nations High Commissioner for Refugees, etc.), or pieces of data journalism. For most topics, you should be able to identify and cite at least 3-4 relevant studies. 
+
+Briefly discuss what has already been discovered about the relationship you are investigating and how these findings shaped your research question. The best introductions will concisely explain the state of scholarly knowledge on the topic and the gap in this knowledge that your analysis aims to fill. 
+
+
+2. **Theory and Hypotheses** (~600 words)
+
+In the theory and hypothesis section, you should refine your broad research question into a specific, testable hypothesis. State at least one testable hypothesis. Distill your research question into a statement about a specific relationship you expect to see in the world. In most cases, this hypothesis will describe a causal relationship between two variables (i.e. changes in x cause changes in y). Make an argument for why you expect to see this relationship. This should be based on related findings from existing research (cited in the introduction) and your own theoretical/logical reasoning. Readers should have a clear understanding of why you expect to see this relationship in the world. They might not agree, but they should understand your reasoning.
+
+::: {.callout-note}
+A hypothesis should look like a prediction. Often, a hypothesis states that you expect a decrease or increase in one variable to cause a decrease or increase in another variable. A hypothesis must also be falsifiable. In other words, it must be possible to prove that the hypothesis is false by showing that the relationship you are predicting to see in your data is not actually present. 
+:::
+
+3. **Research Design**  (~600 words; 1 table)
+
+Describe the dataset(s) you are using to conduct your analysis. Be sure to mention the source of the data (the organization or individuals that produced it), the unit of analysis, and the sample. Are there any limitations that readers should be aware of? 
+
+Discuss the specific variables you will use to test your hypothesis. Explain how these variables map onto the theoretical concepts that underpin your hypothesis. Create a table that communicates the mean, range, and standard deviation of these variables. You can use packages like `gt()` or `flextable`.
+
+Specify the main regression model you will use to test your hypothesis. Include any covariates that you will use to control for potential confounders, and justify your decision to include these covariates. If your hypothesis states a causal relationship, discuss the threats to interpreting the coefficient on your primary independent variable as an estimate of a causal effect on the outcome. Describe potential unobserved confounders.
+
+Every empirical test has shortcomings that prevent us from being fully confident in the interpretation. What are the limitations of your test? Identify one empirical extension that you will conduct that will add credibility to the inference you are trying to make with your hypothesis test. Think back to the examples I provided regarding the effect of moving to a new city for college on student civic engagement. For example, students that already lived in Addis Ababa are likely to be different from students that moved to Addis in many ways that may affect their engagement. One extension I proposed was to restrict my analysis to only compare students that moved from an urban area with students already living in Addis. If I were still to see a negative relationship between moving and engagement among these students, this would allow me to rule-out differences between students from urban vs rural homes as a confounder. 
+
+Your empirical extension should allow you to rule out at least one potential confounder.Make sure to clarify What purpose will it serve. Be specific about how it makes us more confident in the ability of your test to answer the research question.
+
+
+4. **Findings** (~300 words; 1 figure; at least 1 regression table)
+
+Create at least one `ggplot` to visualize the relationship between the variables being used to test your hypothesis. The best method of visualizing this relationship will depend on the scale of your variables. Good methods to consider are scatter plots (for continuous variables), grouped bar charts (for ordinal or binary variables), and line graphs (for continuous variables with time-series). Your figure should have an informative caption that allows readers to understand what is being shown. For guidance, see the captions in the academic papers we have been reading this semester. Interpret the plot; does it tell us anything about the veracity your hypothesis? 
+
+Use the `modelsummary` package to present the results of the regression model testing your hypothesis. Be sure to interpret the magnitudes of the main variables in your regression model. Substantively, is this a big effect or a small effect? Once you have discussed the magnitude of the key independent variable(s), tell us whether the results are statistically significant. If you have a large substantive magnitude on your independent variable's coefficient but no statistical significance, discuss why this might be the case. Do you think it is related to the amount of statistical power of your hypothesis test?
+
+5. **Empirical Extension** (~300 words; at least 1 regression table)
+
+Repeat the steps above for your empirical extension. 
+
+6. **Discussion and Policy Implications** (~300 words)
+
+Discuss what we learned from your final project. How conclusive are your results? Is this strong evidence for/against your hypothesis? If so, are there any implications for policy? If your analysis does not provide strong evidence for/against the hypothesis, what future research could provide stronger evidence? 
+
+
+## Formatting Requirements
+
+- Create clear sections for each stage of the analysis described above
+- Remove the printed warnings and code from your document
+- Incorporate a Bibliography using a `references.bib` file and [Quarto citations](https://quarto.org/docs/authoring/footnotes-and-citations.html)
+- Post the resulting `.html` document to your webpage

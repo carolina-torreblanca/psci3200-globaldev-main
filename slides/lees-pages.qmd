@@ -1,0 +1,112 @@
+---
+title: "Github Pages"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  pptx:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+    code-line-numbers: false
+
+
+highlight-style: github
+
+bibliography: img/references.bib
+---
+
+# Bonus Content: Quarto and Github Pages
+
+## Installing Quarto
+
+With newer versions of RStudio, Quarto comes pre-packaged in the installation files. To check whether you have Quarto on your computer, open RStudio, click on the "Terminal" tab in the bottom left window, type quarto check into the terminal, and hit ENTER. If you have a new enough version of RStudio, the terminal should return something like what you see in the first screenshot below.
+
+**Check Installation Terminal**
+
+![](img/terminal.png){fig-align="center"}
+
+## Installing Quarto
+
+If you DON'T have a new enough version of RStudio, you'll receive some error message. To fix this, all you should need to do is install the newest version of RStudio by going to the posit website and [installing RStudio](https://posit.co/download/rstudio-desktop/).
+
+![Create a Quarto](create_file.png){fig-align="center"}
+
+
+## Publishing a free website with Github pages
+
+- Keep a repository of your website
+- Push changes to your website via Github
+- See changes almost instantly
+
+
+## Create a website
+
+**Moving to RStudio**
+
+- File $\rightarrow$ New Project $\rightarrow$ New Directory $\rightarrow$ Quarto Website
+
+
+![](img/website_initiate.png){height=4.5in fig-align="center"}
+
+## Create a website
+
+![](img/website_files.png){height=6in fig-align="center"}
+
+
+## Create a website
+
+**Change output director to `docs`**
+
+![](img/website_docs.png){height=5.5in fig-align="center"}
+
+
+## Publish to Github pages
+
+![](img/pages_add.png){height=5.5in fig-align="center"}
+
+## Publish to Github pages
+
+![](img/pages_add2.png){height=5.5in fig-align="center"}
+
+
+## Publish to Github pages
+
+![](img/pages_add3.png){height=5.5in fig-align="center"}
+
+
+
+## Publish to Github pages
+
+![](img/pages_add4.png){height=5.5in fig-align="center"}
+
+
+
+## Publish to Github pages
+
+![](img/pages_publish.png){height=5.5in fig-align="center"}
+
+
+## Publish to Github pages
+
+![](img/pages_publish2.png){height=5.5in fig-align="center"}
+
+## Host Your Final Project 
+
+- Delete `_site` folder (now its using `docs`)
+- Create `data` folder to store your dataset
+- Add final project `.qmd` file to your repo (or drop it into `index.qmd`)
+- Use `_quarto.yml` to add new pages to navigation bar 
+- Render `index.qmd`; confirm that other pages have been rendered
+- Push commit and check that the website updated
+
+
+

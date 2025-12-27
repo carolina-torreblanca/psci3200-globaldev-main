@@ -1,0 +1,29 @@
+---
+title: "Migration"
+date: 2025-03-19
+---
+
+
+## Required Readings
+
+
+
+- [Rozo and Grossman (2025)](https://voxdev.org/voxdevlit/refugees-and-other-forcibly-displaced-populations) (download the pdf and/or watch the YouTube video)
+- [Gazeaud, Jules, Eric Mvukiyehe, and Olivier Sterck (2020)](https://voxdev.org/topic/migration-urbanisation/constraints-migration-evidence-comoros) 
+- [Sviatschi (2022)](https://voxdev.org/topic/migration-urbanisation/impact-us-deportation-policy-gang-activity-el-salvador)
+
+
+## Slides
+
+- [Slides](/slides/08-migration.html)
+
+## Interesting Stuff (non-required)
+
+- 3ie [Addressing Root Causes and Drivers of Irregular Migration](https://www.3ieimpact.org/sites/default/files/2023-12/EGM30-Irregular-Migration-IOM-EGM-Report.pdf)
+- 3ie [Evidence Gap Map](https://developmentevidence.3ieimpact.org/egm/addressing-root-causes-and-drivers-of-irregular-migration-an-evidence-gap-map)
+- TCD [Ch 3](/files/M23_deMesquita&Fowler_2021_Chapter13.pdf)
+- [Rose et al. 2021](https://www.cgdev.org/sites/default/files/addressing-root-causes-irregular-migration-central-america-evidence-agenda-usaid.pdf)
+- [UN World Immigration Report](https://worldmigrationreport.iom.int/wmr-2022-interactive/)
+- Evidence Action [We’re Shutting Down No Lean Season, Our Seasonal Migration Program: Here’s Why](https://www.evidenceaction.org/newsroom/were-shutting-down-no-lean-season-our-seasonal-migration-program-heres-why)
+- [Gamso and Yuldashev (2018)](https://watermark.silverchair.com/sqy029.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAA0swggNHBgkqhkiG9w0BBwagggM4MIIDNAIBADCCAy0GCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQM6dFs_u22Fl66U-ZCAgEQgIIC_lfbw4tm6cpam26prAQ6TF3Ga1gzcsEPTsp4Rer6Z6TR0mkv26G1INqHn4cNluTNGsQ76qcbvIYMbMlK30wVbWDn_omXyQ3ommChffzpJKRBObAEWvzXsErlCuUDKAmO1fZE-KgfYpM77S9n7iXeazi6_XlvX4BXst4qGP6QJ5dFA0uB-eKESfX5H-CVVU0aIEMbMmqtVGYvzHI_RmSk8JH9r2LMx7lWBgcJY2TAstSREz870VEaOvfAgDDK9oenDbOSNv_n6KKx6xPGEHBy2uNOf1cEaOoTOgHh9S-modXz_JoKnFnz1E3Xlm3_BnyeRYZzdXUcq-ylMLhpKyqq4JAoxah0-u-2u5Q-nzx6o1ZIqR0ATZrnlIP-2s0572XHv3KYzD66_x5FssFwVY_ZN9qAts7asIqVdHYWLPqr-ejM54UYsNFORP96G5vBgxpPY68jmrg4qgGDiBczZUowyLLSQohB10In2dgaVwqRbQ3a1ZG9StbT3A_8JSd80Yc5Ob7pnXVUmOlkRJ-U801BjKswMVKD5-n3aD_EHwzURANeTq7UC-UB1GdyXxRKNTmM0ukHsoBqqHCSJOyPrOo5CBv3CwYLdh1rEPSfVoKMh0609kENtBAWXu7KmXUpjgiplvcedJ-HwhEaW2wGI1sn40F6hH7jzP34-5T5awFnhM_N1u7N7f64WVnsgkhUj6gdQ3orHCKKycH2J-6ZrUwbAOStUyj6jeZDqwmUozdmn7g4Fw-CdvOjwUOBd0q_u_VeLWfJa7zN4i_sV-EK5Yvt5F7Z1f8DJV-34ite4TDdf2deYkSjPc7992rWR-Fcd6JahZggVmBJwcBGsRL4K9YZGVN4pePUdw9qICwKSq54FStyYafMUB-BTCsjfIR2r1EFdL9JlQPEYsdsj5o5wcfGNmtqfjJxVByvbRmDlarTkER_JnRxaPmKQkooAuhC-BLhXv7IZNNNjArftqsLVDxnDQjI-YgALEe0R8L63UM64742YR3rL7PmCXr5_APM3U0)
+

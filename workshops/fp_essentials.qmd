@@ -1,0 +1,718 @@
+---
+title: "Final Report Essentials"
+author: "Jeremy Springman"
+
+institute: "University of Pennsylvania"
+date: last-modified
+toc: true
+
+bibliography: references.bib
+
+format: 
+  html:
+    self-contained: true
+
+editor: source
+---
+
+
+
+```{r }
+#| include: false
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(readr)
+library(ggdag)
+library(tidyverse)
+library(gt)
+library(modelsummary)
+
+# read-in data
+dat = read_csv("https://raw.githubusercontent.com/jrspringman/psci3200-globaldev/main/workshops/aau_survey/clean_endline_did.csv" )
+
+```
+
+# Index Variables
+
+## Simple Additive Index
+
+- Measured on the same scale
+- Share direction
+
+### Adding numberical measures
+
+**Count of times a respondent...**
+
+- `q13_4_1`: Contacted gov't official
+- `q13_6_1`: Contacted a student representative
+- `q13_7_1`: Contacted an NGO
+
+```{r}
+#| echo: false
+#| warning: false
+
+## Simplest approach
+dat$add_participation_end = dat$q13_4_1 + dat$q13_6_1 + dat$q13_7_1
+
+## More complex method for larger lists
+
+# Find participation measures that are based on a count
+add_ecols = grep("q13_(4|6|7)_1$", 
+                 names(dat), 
+                 value = T)
+
+# use dplyr and `rowSums`
+dat = dat %>%
+  mutate(add_participation_end = rowSums(across(add_ecols), na.rm = T) )
+
+dat$add_participation_end
+```
+
+### Do they 'hang together'?
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+cronbach_alpha <- function(items) {
+    k <- ncol(items)                           # number of items
+    item_var <- apply(items, 2, var, na.rm = TRUE)  # variance of each item
+    total_score <- rowSums(items, na.rm = TRUE)
+    total_var <- var(total_score, na.rm = TRUE)
+    
+    alpha <- (k / (k - 1)) * (1 - sum(item_var) / total_var)
+    return(alpha)
+}
+
+cronbach_alpha(dat[, add_ecols])
+# psych::alpha(dat[, add_ecols])
+
+```
+
+
+### Visualizing the result
+
+
+```{r}
+#| echo: false
+#| warning: false
+
+# participation
+participate = dat %>% 
+  select(c(add_ecols, add_participation_end)) %>% 
+  drop_na() %>% 
+  pivot_longer(everything()) %>% 
+  group_by(name, value) %>% 
+  tally() 
+
+# create color palette for plotting
+palette = MetBrewer::met.brewer(name = "Cross")
+
+ggplot(participate, aes(x = value, y = n)) + 
+  geom_col(fill = palette[9]) + 
+  facet_wrap(vars(name), scales = "free") + 
+  labs(y = "Number of times", x = NULL, 
+       title = "How often do youth participate?") 
+
+```
+
+
+### Thinking about weights
+
+```{r}
+#| echo: false
+#| warning: false
+
+## Weighted sum
+weights <- c(q13_4_1 = 2, q13_6_1 = 1, q13_7_1 = 1)
+
+dat <- dat %>%
+  mutate(add_participation_end = rowSums(across(all_of(names(weights))) * weights, na.rm = TRUE)
+  )
+
+
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+
+# participation
+participate = dat %>% 
+  select(c(add_ecols, add_participation_end)) %>% 
+  drop_na() %>% 
+  pivot_longer(everything()) %>% 
+  group_by(name, value) %>% 
+  tally() 
+
+
+ggplot(participate, aes(x = value, y = n)) + 
+  geom_col(fill = palette[9]) + 
+  facet_wrap(vars(name), scales = "free") + 
+  labs(y = "Number of times", x = NULL, 
+       title = "How often do youth participate?") 
+
+```
+
+
+### Stretching the concept...
+
+**What if we wanted to add the count of times a respondent...**
+
+- `q13_5_1`: Signed a petition
+
+
+```{r}
+#| echo: false
+#| warning: false
+
+cronbach_alpha(dat[, c(add_ecols, "q13_5_1")])
+
+cor_matrix <- cor(dat[, c(add_ecols, "q13_5_1")], use = "pairwise.complete.obs")
+cor_df <- as.data.frame(as.table(cor_matrix))
+
+ggplot(cor_df, aes(Var1, Var2, fill = Freq)) +
+  geom_tile(color = "white") +
+  geom_text(aes(label = round(Freq, 2)), color = "black", size = 4) +
+  scale_fill_gradient2(low = "red", high = "blue", mid = "white",
+                       midpoint = 0, limit = c(-1, 1), name = "Correlation") +
+  theme_minimal()
+
+```
+
+
+### Adding likert measures
+
+- `q16_1`: Intention to join religious group
+- `q16_2`: Intention to join ethnic interest group
+- `q16_3`: Intention to join political party
+- `q16_4`: Intention to join voluntary org
+
+```{r}
+#| echo: false
+#| warning: false
+
+# Find participation measures that are based on a count
+add_ecols = grep("q16_[0-9]$", 
+                 names(dat), 
+                 value = T)
+
+# clean q13_
+levels = c("Not at all", "Not likely", "More than twice", "Somewhat likely", "Very likely", "Already a member")
+
+dat = dat %>% 
+  mutate(across(all_of(add_ecols),
+                ~ factor(.x, levels = levels))) %>%
+  mutate(across(all_of(add_ecols),
+                ~ as.numeric(.x))) %>%
+  mutate(add_intention_end = rowSums(across(add_ecols), na.rm = T) )
+
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+
+participate = dat %>% 
+  select(c(add_ecols, add_intention_end)) %>% 
+  drop_na() %>% 
+  pivot_longer(everything()) %>% 
+  group_by(name, value) %>% 
+  tally() 
+
+
+ggplot(participate, aes(x = value, y = n)) + 
+  geom_col(fill = palette[9]) + 
+  facet_wrap(vars(name), scales = "free") + 
+  labs(y = "Number of times", x = NULL, 
+       title = "How often do youth participate?") 
+
+
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+
+dat = dat %>% 
+  mutate(add_intention_end = add_intention_end / 4)
+
+participate = dat %>% 
+  select(c(add_ecols, add_intention_end)) %>% 
+  drop_na() %>% 
+  pivot_longer(everything()) %>% 
+  group_by(name, value) %>% 
+  tally() 
+
+
+ggplot(participate, aes(x = value, y = n)) + 
+  geom_col(fill = palette[9]) + 
+  facet_wrap(vars(name), scales = "free") + 
+  labs(y = "Number of times", x = NULL, 
+       title = "How often do youth participate?") 
+
+
+```
+
+## Averaged Z-Scores
+
+- $Z = (X - \mu) / \sigma$
+- $z_i = \frac{X_i - \bar{X}}{s}$
+- Standardized: Mean of 0 and standard deviation of 1
+
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+## Find participation measures that are based on likert
+# baseline
+bcols = grep("^q13_.*_baseline$", names(dat), value = T)
+dat[, paste0(bcols, "_st")] = dat[, bcols]
+bcols = paste0(bcols,"_st")
+
+# endline
+ecols = grep("^q13_[1-7]_\\d$", names(dat), value = T)
+dat[, paste0(ecols, "_st")] = dat[, ecols]
+ecols = paste0(ecols,"_st")
+
+
+# Create treatment variable
+dat = dat %>% mutate(moved = case_when(q8_baseline == "Addis Ababa" ~ 0, TRUE ~ 1) )
+
+# clean q13_
+levels = c("Never", "Once or Twice", "More than twice", "More than 5 times", 
+           "More than 10 times")
+dat = dat %>% 
+  mutate(across(c(bcols), 
+                .fns = ~ factor(.x, levels = levels)))
+
+# Create z-score function from Kling, Liberman, and Katz (2007)
+z_score = function(x, y){
+  # calculate column mean and sd
+  c_mean = mean( as.numeric( unlist(x[, y])) , na.rm = T)
+  c_sd = sd( as.numeric( unlist(x[, y])) , na.rm = T)
+  # subtract column mean and divide by column SD
+  ( as.numeric(x[, y, drop = TRUE]) - c_mean) / c_sd
+}
+
+# calculate z-scores
+for (i in c(bcols, ecols)) {
+  dat[,i] = z_score(dat, i)
+}
+
+dat = dat %>% 
+  rowwise() %>% 
+  mutate( z_participation_end = mean(c_across(all_of(bcols)), na.rm = TRUE)) %>% 
+  mutate( z_participation_base = mean(c_across(all_of(ecols)), na.rm = TRUE)) %>%
+  ungroup()
+
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# raw
+participate = dat %>% 
+  select(`Attend meeting` = q13_1_baseline, 
+         `Protest` = q13_2_baseline, 
+         `NGO event` = q13_3_baseline, 
+         `Signed petition` = q13_4_baseline, 
+         `Contact official` = q13_5_baseline, 
+         `Contact student representative` = q13_6_baseline, 
+         `Contact an NGO` = q13_7_baseline) %>% 
+  drop_na() %>% 
+  pivot_longer(everything()) %>% 
+  group_by(name, value) %>% 
+  tally() %>% 
+  mutate(pct = n/sum(n)) %>% 
+  mutate(value = fct_relevel(value, "Never", after = Inf), 
+         value = fct_rev(value))
+
+ggplot(participate , aes(x = value, y = pct)) + 
+  geom_col(fill = palette[9]) + 
+  facet_wrap(vars(name), scales = "free", ncol = 2) + 
+  scale_y_continuous(labels = scales::percent) +
+  labs(y = "Percent of respondents", x = NULL, 
+       title = "How do youth participate?", 
+       subtitle = glue::glue("Number of respondents = {scales::comma(sum(participate$n)/7)}")) + 
+  scale_x_discrete(labels = scales::label_wrap(10))
+
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+
+# standardized
+participate = dat %>% 
+  select(`Z-Score Index` = z_participation_base,
+         `Attend meeting` = q13_1_baseline_st, 
+         `Protest` = q13_2_baseline_st, 
+         `NGO event` = q13_3_baseline_st, 
+         `Signed petition` = q13_4_baseline_st, 
+         `Contact official` = q13_5_baseline_st, 
+         `Contact student representative` = q13_6_baseline_st, 
+         `Contact an NGO` = q13_7_baseline_st) %>% 
+  drop_na() %>% 
+  pivot_longer(everything()) 
+
+
+ggplot(participate , aes(x = value )) + 
+  geom_histogram(aes(y = after_stat(count / sum(count))), 
+                 binwidth=.5, fill = palette[9]) +
+  #geom_col(fill = palette[9]) + 
+  facet_wrap(vars(name),  ncol = 2) + 
+  scale_y_continuous(labels = scales::percent) +
+  labs(y = "Percent of respondents", x = NULL, 
+       title = "How do youth participate?")
+
+
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+dat[, paste0(add_ecols, "_st")] = dat[, add_ecols]
+ncols = paste0(add_ecols,"_st")
+
+# calculate z-scores
+for (i in c(ncols)) {
+  dat[,i] = z_score(dat, i)
+}
+
+dat = dat %>% 
+  rowwise() %>% 
+  mutate( z_participation_end = mean(c_across(all_of(c(ecols, ncols))), na.rm = TRUE)) %>% 
+  ungroup()
+
+
+# standardized
+participate = dat %>% 
+  select(c(ecols, ncols, z_participation_end)) %>% 
+  drop_na() %>% 
+  pivot_longer(everything()) 
+
+
+ggplot(participate , aes(x = value )) + 
+  geom_histogram(aes(y = after_stat(count / sum(count))), 
+                 binwidth=.5, fill = palette[9]) +
+  #geom_col(fill = palette[9]) + 
+  facet_wrap(vars(name),  ncol = 2) + 
+  scale_y_continuous(labels = scales::percent) +
+  labs(y = "Percent of respondents", x = NULL, 
+       title = "How do youth participate?")
+
+```
+
+
+# Interaction Terms
+
+## Differences across groups
+
+### Binary
+
+```{r}
+#| echo: false
+#| warning: false
+
+table(dat$class_year)
+
+dat = dat %>% mutate(year = as.numeric(case_when(class_year == "Year I" ~ 0,
+                                                 class_year == "Year II" ~ NA,
+                                                 class_year == "Year III" ~ 1 )) )
+table(dat$year)
+
+models <- list()
+# models[['Bivariate']] = lm(z_participation_base ~ moved, dat)
+models[['Multivariate']] = lm(z_participation_base ~ moved + year, dat)
+models[['Interaction']] = lm(z_participation_base ~ moved + year + moved*year, dat)
+
+modelsummary(
+  models,
+  fmt = 2,
+  estimate  = "{estimate}{stars} ({std.error})",
+             statistic = NULL,
+  gof_omit = 'IC|RMSE|Log|F|R2$|Std.')
+
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| 
+
+# Predict values based on the model
+predictions <- predict(lm(z_participation_base ~ moved + year + moved*year, dat), newdata = dat)
+
+# Create a dataframe with predictions
+prediction_df <- data.frame(year = dat$year, moved = dat$moved, prediction = predictions)
+
+ggplot(prediction_df %>% filter(!is.na(year)), 
+       aes(x = factor(moved), y = prediction, group = factor(year), color = factor(year))) +
+  geom_point(size = 4, position = position_dodge(width = 0.3)) + 
+  geom_text(aes(label = round(prediction, 2)), 
+            vjust = -1.2, size = 4, 
+            position = position_dodge(width = 0.3)) +
+  geom_line(aes(group = factor(year)), 
+            position = position_dodge(width = 0.3), linewidth = 1) +  
+  scale_x_discrete(labels = c("0" = "Did not move (0)", "1" = "Moved (1)")) +
+  scale_color_discrete(labels = c("Freshman (0)", "Junior (1)")) +
+  labs(x = "Moved (X1)", y = "Predicted z_participation_base", color = "Year (X2)") +
+  ggtitle("Interaction Plot of z_participation_base by Moved and Year") +
+  coord_cartesian(clip = "off") +
+  theme(plot.margin = margin(t = 20, r = 10, b = 10, l = 10))
+
+
+```
+
+
+
+
+
+### Continuous-ish
+
+```{r}
+#| echo: false
+#| warning: false
+
+dat = dat %>% mutate(year = as.numeric(case_when(class_year == "Year I" ~ 0,
+                                                 class_year == "Year II" ~ 1,
+                                                 class_year == "Year III" ~ 2 )) )
+table(dat$year)
+
+models <- list()
+models[['Bivariate']] = lm(z_participation_base ~ moved, dat)
+models[['Multivariate']] = lm(z_participation_base ~ moved + year, dat)
+models[['Interaction']] = lm(z_participation_base ~ moved + year + moved*year, dat)
+
+modelsummary(
+  models,
+  estimate  = "{estimate}{stars} ({std.error})",
+             statistic = NULL,
+  gof_omit = 'IC|RMSE|Log|F|R2$|Std.')
+
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+
+# Predict values based on the model
+predictions <- predict(lm(z_participation_base ~ moved * year, dat), newdata = dat)
+
+# Create a dataframe with predictions
+prediction_df <- data.frame(year = dat$year, moved = dat$moved, prediction = predictions)
+
+# Plot the interaction
+ggplot(prediction_df, aes(x = year, y = prediction, color = factor(moved))) +
+  geom_line() +
+  geom_point() +
+  scale_x_continuous(breaks = c(0, 1, 2), labels=c("Y1", "Y2", "Y3")) +
+  labs(x = "Year", y = "Predicted z_participation_base", color = "Moved") +
+  ggtitle("Interaction Plot of z_participation_base by Year and Moved")
+
+
+ggplot(prediction_df %>% filter(!is.na(year)), 
+       aes(x = factor(moved), y = prediction, group = factor(year), color = factor(year), shape = factor(year))) +
+  geom_point(size = 4, position = position_dodge(width = 0.3)) + 
+  geom_text(aes(label = round(prediction, 2)), 
+            vjust = -1.2, size = 4, 
+            position = position_dodge(width = 0.3)) +
+  geom_line(aes(group = factor(year)), 
+            position = position_dodge(width = 0.3), linewidth = 1) +  
+  scale_x_discrete(labels = c("0" = "Did not move", "1" = "Moved")) +
+  labs(x = "Moved", y = "Predicted z_participation_base", color = "Year", shape = "Year") +
+  ggtitle("Interaction Plot of z_participation_base by Moved and Year") +
+  coord_cartesian(clip = "off") +
+  theme(plot.margin = margin(t = 20, r = 10, b = 10, l = 10))
+
+```
+
+### More complex
+
+
+```{r}
+#| echo: false
+#| warning: false
+
+dat = dat %>% mutate(year1 = as.numeric(case_when(class_year == "Year I" ~ 1,
+                                                 class_year == "Year II" ~ 0,
+                                                 class_year == "Year III" ~ 0 )),
+                     year2 = as.numeric(case_when(class_year == "Year I" ~ 0,
+                                                 class_year == "Year II" ~ 1,
+                                                 class_year == "Year III" ~ 0 )),
+                     year3 = as.numeric(case_when(class_year == "Year I" ~ 0,
+                                                 class_year == "Year II" ~ 0,
+                                                 class_year == "Year III" ~ 1 )),)
+table(dat$year)
+
+models <- list()
+models[['Bivariate']] = lm(z_participation_base ~ moved, dat)
+models[['Multivariate']] = lm(z_participation_base ~ moved + year2 + year3, dat)
+models[['Interaction']] = lm(z_participation_base ~ moved + year2 + year2*moved + year3 + year3*moved , dat)
+
+modelsummary(
+  models,
+  estimate  = "{estimate}{stars} ({std.error})",
+             statistic = NULL,
+  gof_omit = 'IC|RMSE|Log|F|R2$|Std.')
+
+```
+
+
+```{r}
+#| echo: false
+#| warning: false
+
+# Assuming dat already has year2 and year3 as binary indicators
+# If not, create them based on your criteria for what constitutes year2 and year3
+
+# Model including interactions
+model <- lm(z_participation_base ~ moved + year2 + year2*moved + year3 + year3*moved, dat)
+
+# Generate new data for predictions
+# This data should cover all combinations of moved, year2, and year3
+newdata <- expand.grid(moved = c(0, 1), year2 = c(0, 1), year3 = c(0, 1))
+
+# Exclude impossible combinations (e.g., year2 and year3 both being 1)
+newdata <- newdata[!with(newdata, year2 == 1 & year3 == 1),]
+
+# Predict values
+predictions <- predict(model, newdata = newdata)
+
+# Add predictions to the newdata dataframe
+newdata$prediction <- predictions
+
+# Convert year2 and year3 back to a single year variable for plotting
+newdata$year <- with(newdata, ifelse(year2 == 1, "1", ifelse(year3 == 1, "2", "0")))
+
+# Plot
+library(ggplot2)
+ggplot(newdata, aes(x = as.numeric(year), y = prediction, color = factor(moved))) +
+  geom_point() +
+  geom_line() +
+  scale_x_continuous(breaks = c(0, 1, 2), labels=c("Y1", "Y2", "Y3")) +
+  labs(x = "Year", y = "Predicted z_participation_base", color = "Moved") +
+  ggtitle("Interaction Plot of z_participation_base by Year and Moved")
+
+
+```
+
+
+## Differences over time
+
+### Cross-Sectional
+
+```{r}
+#| echo: false
+#| warning: false
+
+regd = dat %>% select(z_participation_end, z_participation_base, moved, response_id ) %>%
+  pivot_longer(cols = c(z_participation_end, z_participation_base),
+               names_to = "time",
+               values_to = "z_participation") %>%
+  mutate(time = case_when(time == "z_participation_end" ~ 1, 
+                          TRUE ~ 0))
+
+models <- list()
+models[['Bivariate']] = lm(z_participation ~ moved, regd)
+models[['Multivariate']] = lm(z_participation ~ moved + time, regd)
+models[['Interaction']] = lm(z_participation ~ moved + time + moved*time, regd)
+
+modelsummary(
+  models,
+  estimate  = "{estimate}{stars} ({std.error})",
+             statistic = NULL,
+  gof_omit = 'IC|RMSE|Log|F|R2$|Std.')
+
+```
+
+
+
+```{r}
+#| echo: false
+#| warning: false
+# Predict values based on the model
+predictions <- predict(lm(z_participation ~ moved*time, regd), newdata = regd)
+
+# Create a dataframe with predictions
+prediction_df <- data.frame(time = regd$time, moved = regd$moved, prediction = predictions)
+
+# Plot the interaction
+ggplot(prediction_df, aes(x = time, y = prediction, color = factor(moved))) +
+  geom_line() +
+  geom_point() +
+  scale_x_continuous(breaks = c(0, 1)) +
+  labs(x = "Year", y = "Predicted z_participation", color = "Moved") +
+  ggtitle("Interaction Plot of z_participation_base by Year and Moved")
+
+```
+
+
+### Fixed Effects
+
+
+```{r}
+#| echo: false
+#| warning: false
+
+models <- list()
+models[['Simple']] = lm(z_participation ~ time , regd)
+models[['Fixed Effects']] = lm(z_participation ~ time + factor(response_id), regd)
+models[['Interaction']] = lm(z_participation ~ moved + time + moved*time + factor(response_id), regd)
+
+modelsummary(
+  models,
+  coef_omit = "factor\\(.*",
+  estimate  = "{estimate}{stars} ({std.error})",
+             statistic = NULL,
+  gof_omit = 'IC|RMSE|Log|F|R2$|Std.')
+
+
+```
+
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| eval: false
+
+# Predict values based on the model
+predictions <- predict(lm(z_participation ~ moved + time + moved*time + factor(response_id), regd), newdata = regd)
+
+# Create a dataframe with predictions
+prediction_df <- data.frame(time = regd$time, moved = regd$moved, prediction = predictions) %>%
+  group_by(time, moved) %>%
+  summarise(prediction = mean(prediction))
+
+# Plot the interaction
+ggplot(prediction_df, aes(x = time, y = prediction, color = factor(moved))) +
+  geom_line() +
+  geom_point() +
+  scale_x_continuous(breaks = c(0, 1)) +
+  labs(x = "Year", y = "Predicted z_participation", color = "Moved") +
+  ggtitle("Interaction Plot of z_participation_base by Year and Moved")
+
+```
+
+
+
+
+
+

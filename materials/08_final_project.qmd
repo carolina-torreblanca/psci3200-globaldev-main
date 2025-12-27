@@ -1,0 +1,30 @@
+---
+title: "Final Project Overview"
+date: 2025-02-10
+---
+
+## Required Readings
+
+- None
+
+## Slides
+
+- [Slides](/slides/08_final_project.html)
+
+
+## Final Project Touchpoints
+
+
+| Milestone                    | Due Date|
+|:-----------------------------|:--------|
+| [Create a GitHub repository](https://jrspringman.github.io/psci3200-globaldev/assignments/02_gitrepo.html)| Feb 17 |
+| [Research Question and Data](https://jrspringman.github.io/psci3200-globaldev/assignments/03_fprqd.html)  | Feb 19 |
+| [Research Design](https://jrspringman.github.io/psci3200-globaldev/assignments/04_fpdesign.html)          | Mar 5  |
+| [Submit proposal](https://jrspringman.github.io/psci3200-globaldev/assignments/05_fptest.html)            | Apr 2  |
+| [Submit final project](https://jrspringman.github.io/psci3200-globaldev/assignments/final_project.html)   | May 10 |
+
+
+
+
+
+

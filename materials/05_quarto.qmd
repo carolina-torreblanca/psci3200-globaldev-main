@@ -1,0 +1,32 @@
+---
+title: "R, RStudio, and Quarto"
+date: 2025-01-29
+---
+
+
+## Assignment
+
+- Install RStudio
+  + [Instructions](/assignments/install-R.html)
+- Install [Quarto](https://quarto.org/docs/get-started/hello/rstudio.html)
+  + [Instructions](/assignments/01_quarto.html)
+
+
+## Materials
+
+Please download the *R Tutorial Source* script using the link below. I will be using the *R Tutorial Source* file (.qmd) to lead the session. The *R Tutorial Visual* contains a link to a rendered version of the *R Tutorial Source* that you can open as an .html document in your web browser. If you prefer, you can copy and paste code from the html file into RStudio.
+
+- [R + Quarto Slides](/slides/05_quarto.html)
+- [R Tutorial Source (.qmd)](https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/w1_quarto.qmd)
+- [R Tutorial Visual (.html)](/workshops/w1_quarto.html)
+- [Data](https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/aau_survey/clean_endline_did.csv)
+- [Github Slides](/slides/lees-git.html)
+
+::: {.callout-note}
+All materials for this course are available on the [git repo](https://github.com/jrspringman/psci3200-globaldev). Rendered materials (usually `.html`) are available in the `psci3200-globaldev/docs` folder. Source code (usually `.qmd`) for slides, workshops, assignments, and all other materials are available in their respective subfolders.
+:::
+
+
+
+
+

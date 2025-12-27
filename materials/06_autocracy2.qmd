@@ -1,0 +1,52 @@
+---
+title: "Democracy and Autocracy II"
+date: 2025-02-01
+---
+
+## Required Readings
+
+-   [Acemoglu et. al. (2008)](/files/incomeanddemocracy.pdf)
+
+<!-- - [10 Things to Know About Survey Experiments](https://egap.org/resource/10-things-to-know-about-survey-experiments/) by Christopher Grady -->
+
+<!-- - [Albertus and Grossman (2021)](/files/albertus.pdf) -->
+
+<!-- - [Hollerbauer et al. (2024)](/files/CSU_Conjoint_Paper.pdf) -->
+
+<!-- ## Assignment -->
+
+<!-- -   Create Github repo for the course -->
+<!--     -   [Instructions](/assignments/01_github.html) -->
+<!--     -   [Git with R](https://happygitwithr.com/install-git#install-git) -->
+<!--     -   [Blackwell tutorial](https://github.com/gov50-f23/gov50-f23.github.io/blob/main/assignments/00-problem-set.qmd) -->
+
+## Slides
+
+-   [Slides](/slides/06-demaut2.html)
+
+## Interesting Stuff (non-required)
+
+- A simple explanation of why we use Fixed Effects [here](https://theeffectbook.net/ch-FixedEffects.html)
+
+
+
+
+<!-- -   [Pew's Question Wording Experiments](https://www.pewresearch.org/short-reads/2019/01/29/good-jobs-vs-jobs-survey-experiments-can-measure-the-effects-of-question-wording-and-more/) -->
+<!-- -   [Sniderman (2018)](https://www.annualreviews.org/doi/10.1146/annurev-polisci-042716-115726): Review of advances in survey experiment design -->
+<!-- -   Leeper's [survey experiments mini-course](https://thomasleeper.com/surveyexpcourse/): Leeper was an academic political scientists and is now a Research Scientist at Meta -->
+
+<!-- https://www.3ieimpact.org/evidence-hub/publications/evidence-gap-maps/strengthening-civil-society-evidence-gap-map -->
+
+<!-- https://www.3ieimpact.org/evidence-hub/publications/evidence-gap-maps/human-rights-evidence-gap-map -->
+
+<!-- https://www.3ieimpact.org/sites/default/files/2023-03/USAID-EGM-Analysis-report-Chapeau-summary.pdf -->
+
+<!-- https://www.3ieimpact.org/sites/default/files/2023-03/USAID-EGM-DRG-Comparative-Analysis-Report.pdf -->
+
+<!-- https://www.v-dem.net/documents/29/V-dem_democracyreport2023_lowres.pdf -->
+
+<!-- https://www.amazon.com/How-Democracies-Die-Steven-Levitsky/dp/1524762938 -->
+
+<!-- https://protectdemocracy.org/wp-content/uploads/2022/06/the-authoritarian-playbook-how-reporters-can-contextualize-and-cover-authoritarian-threats-as-distinct-from-politics-as-usual-1.pdf -->
+
+<!-- https://onlinelibrary.wiley.com/doi/10.1111/ajps.12798 -->

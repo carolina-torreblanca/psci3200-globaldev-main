@@ -1,0 +1,73 @@
+---
+title: "Final Project Research Question and Dataset"
+date: 2024-02-19
+---
+
+## Assignment 
+
+Your first assignment for the final project is sketching a research question that you'd like to investigate and identifying data that could be used to answer that question. 
+
+**Send me a quarto html file that:**
+
+- Briefly describes your idea for a research question
+  + This should be at least 3-4 sentences describing some relationship in the world that you want to investigate. This should involve at least two things in the world that can be measured with existing quantitative data.
+  + You are welcome to submit more than 1 idea. 
+- Proposes a dataset and measures that will help you answer it
+  + This should include a specific, existing dataset that you can access
+  + This should also include mention of the specific variables within that dataset that will be used to answer the research question
+
+This project should be submitted via Slack by **11:59pm EST on Monday, February 19**. Your submission must include:
+
+After you submit this assignment, I will provide feedback on the viability of the questions, the suitability of the data, and the extent to which your general idea will meet my expectations for the final project.
+
+
+## Types of data
+
+There are many types of data in the world. Below is a brief discussion of the most common sources of data in the social sciences. 
+
+- Election returns
+  + There are various compilations of election data from around the world, such as the [Constituency-Level Elections Archive (CLEA)](https://electiondataarchive.org/)
+  + Returns for specific elections are often available from a country's electoral commission website
+- Replication data
+  + Any published research from the last 5-10 years should make the data and analysis files publicly available. You can almost always find where these replication materials are hosted on the article's webpage at whichever journal puslished the article. Oftentimes, these data are hosted on Harvard's Dataverse.
+- Survey data
+  + Survey data is used extremely heavily on the social sciences. Most prominently in political science are the various 'barometer' surveys (Afrobarometer, Latinobarometer, etc.).
+- Administrative data
+  + Data on government (or organization) programs or 
+- Expert-coded data
+  + Data where experts code the characteristics of countries or political entities (such as parties) 
+
+
+## Popular Public Datasets
+
+There are many publicly available datasets. This [Dataset of datasets](https://github.com/erikgahner/PolData/blob/master/PolData.csv) may be useful in identifying datasets that are relevant for your research question. Below, I list several of the most widely used, high-quality datasets used by development scholars:
+
+- [Varieties of Democracy](https://github.com/vdeminstitute/vdemdata)
+- [World Bank Development/Governance Indicators](https://cran.r-project.org/web/packages/WDI/WDI.pdf)
+- Armed Conflict Location & Event Data Project (ACLED)
+- AidData
+- Demographic and Health Survey
+- [Inernational Organization for Migration](https://www.iom.int/data-and-research)
+
+
+## DevLab datasets
+
+There are also many datasets collected by DevLab researchers. Below, I list several of the datasets that I was directly involved in. If you have a specific interest in a topic, I can also ask around DevLab to see if anyone has data available. In particular, I know there are several datasets on both migration and land-use that might be avaiable.
+
+- [Machine Learning for Peace](https://www.mlpeace.org)
+  + This data captures the volume of reporting from high-quality, local news sources on 42 distinct political events from 2012-2023 for 60 aid-receiving countries. 
+  + Focuses on events that constitute changes in civic space, such as censorship, legal changes, and other forms of repression
+- Cambodian NGOs (n $\approx$ 100)
+  + Convenience sample
+  + Panel survey, financial data, networks, open-ended responses
+  + Measures organization activities, spending, revenues, and management practices
+- Ethiopian University Students (n $\approx$ 900)
+  + Representative sample
+  + Panel survey, networks, open-ended responses
+  + Measures political attitudes and behavior, with a focus on conflict and national/regional/ethnic identification
+- Ghanaian Radio Stations (n $\approx$ 400)
+  + Convenience sample
+  + Questions on organization activities, spending, revenues, and management practices, with a focus on conflict and misinformation
+
+
+

@@ -1,0 +1,249 @@
+---
+title: "Development Priorities: Mostly unpleasant choices?"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+    code-line-numbers: false
+editor: source
+
+highlight-style: github
+
+bibliography: img/references.bib
+---
+
+# Logistics
+
+## Assignments and Upcoming
+
+- Today
+  + Assorted blog posts
+  + Flag course material rendering issues
+- Wednesday
+  + Concluding discussion
+- May 10 
+  + Final Project
+
+
+## Global Development: How to?
+
+\
+
+**How much weight should we give to:**
+
+:::{.incremental}
+- Alleviating suffering (consumption, health, relief)
+- Improving institutions (accountability, security, capacity)
+- Increasing macroeconomic growth (energy, trade)
+:::
+
+# Opalo: Energy and Growth
+
+## Energy Poverty
+
+\
+
+**Why do we care about 'saving the planet?'**
+
+\
+
+:::{.fragment}
+> The whole point of trying to save the planet is to make it safe for human habitation.
+
+:::
+
+## Energy Poverty
+
+\
+
+**What is the best way to mitigate the risks of climate change?**
+
+\
+
+:::{.fragment}
+> ...growth and broad-based development are the best safeguards against climate disasters, environmental degradation, and future greenhouse emissions
+
+:::
+
+## Energy Poverty
+
+![](img/opalo_fridge.jpg){fig-align="center"}
+
+
+## Energy Poverty
+
+\
+
+**Why is energy so important?**
+
+:::{.incremental}
+- "Energy poverty... continues to fuel material want"
+- Higher temperatures lower productivity... [people need air conditioning!]{.fragment}
+- Electrification is essential for transitioning to clean energy
+
+:::
+
+
+## Climate Finance Schemes
+
+**Example of UAE and Blue Carbon**
+
+:::{.incremental}
+- UAE company Blue Carbon buys 10% of Liberia's land from Liberian government
+- Blue Carbon preserves this land by preventing deforestation 
+  + Concerns: access, displacement
+- Blue Carbon sells carbon offset credits to companies and governments that need to comply with domestic regulations, international agreements, CSR goals
+
+:::
+
+## Energy Poverty
+
+\
+
+**Is there a trade-off between growth and emissions reductions?**
+
+:::{.incremental}
+- Moving up the energy ladder
+  + Charcoal $\rightarrow$ natural gas and electricity
+  + New sectors, more efficiency, investment
+  + Decoupling growth and emissions
+:::
+
+
+# Cash Transfers
+
+## Cash Transfers (Blattman)
+
+**What are the main points?**
+
+:::{.incremental}
+- Aid programs are *expensive*
+  + Chickens, cattle, skills training, etc.
+- Must account for costs when estimating impact
+  + Same impact but lower cost $\rightarrow$ more help
+- How might cash help?
+  + Increase consumption
+  + Enable investments 
+
+:::
+
+## Cash Transfers 
+
+:::{.incremental}
+- Increases consumption and investment
+- More effective than food, vouchers, etc
+- Reduces temptation goods but not labor
+- Newer [evidence](https://haushofer.ne.su.se/publications/Egger_et_al_Econometrica_2022.pdf) 
+  + Big transfers - 15% of local GDP (\$1k, 10.5k recipients, 653 villages)
+  + Large spillovers; minimal inflation (\$2.5x)
+
+:::
+
+## Cash Transfers (GiveDirectly)
+
+![](img/Cash-transfer-effects-by-outcome-type-of-studies.svg){fig-align="center"}
+
+
+## Cash Transfers
+
+![](img/uct.jpeg){fig-align="center"}
+
+
+## Cash Transfers
+
+**What is displaced by focusing on cash?**
+
+:::{.incremental}
+- Democracy promotion
+- State capacity
+- Anything else?
+:::
+
+
+# Trade not Aid
+
+## Trade Access and AGOA
+
+\
+
+> Exporting light manufactured goods like t-shirts, shoes, and toys has been the first rung on a ladder of rapid economic growth and development for most of the newly industrializing countries in the twentieth century.
+
+## Trade Access and AGOA
+
+![](img/agoa1.png){fig-align="center"}
+
+## Trade Access and AGOA
+
+- Redirecting US investment subsidies from extraction toward industrialization 
+- Promote Africa’s structural transformation through export-led manufacturing
+  + China is rapidly vacating this space
+  + Decoupling and friend-shoring
+
+
+# Industrialization & Employment
+
+## Industrialization and Development
+
+\
+
+> For poor countries to develop, we simply do not know of any alternative to industrialization.
+
+
+## Industrial vs Entrepreneurial Jobs
+
+:::{.incremental}
+- Treatment arms: [Factory job OR Cash grant]{.fragment}
+  + Assignment: [More applicants than jobs]{.fragment}
+- 947 applicants across 5 companies
+- Impact of factory jobs:
+  + No increase in wages or employment
+  + 70% left factory work within 1 year
+  + Serious injury and death: 4% $\rightarrow$ 7%
+- Impact of cash grants:
+  + 30% increase in earnings
+
+:::
+
+## Industrial vs Entrepreneurial Jobs
+
+**Effects after 5 years**
+
+- Cash grants helped at first but then dissipated (consistent with other findings)
+- Factory jobs didn't increase employment or earnings
+  + Negative effects on health dissipated
+- Basically, we see convergence...
+
+
+## Industrial vs Entrepreneurial Jobs
+
+![](img/blattman1.jpg){fig-align="center"}
+
+## Industrial vs Entrepreneurial Jobs
+
+![](img/blattman2.jpg){fig-align="center" }
+
+## Factory Jobs
+
+\
+
+> We do not want to see workers exposed to hazardous risks, but we also worry that regulating or improving the jobs too much too quickly will keep that industrial boom from happening.
+
+## Cash Transfer
+
+\
+
+> Powerful forces may push individuals back towards equilibrium outcomes irrespective of interventions. This is largely speculative, but if more interventions in more places fail to find long run effects of initially-successful poverty or employment interventions, it may challenge the widespread marginalist view of poverty alleviation.
+
+# Final Project Questions?

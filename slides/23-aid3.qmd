@@ -1,0 +1,44 @@
+---
+title: "Foreign Aid 3"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+editor: source
+---
+
+# Logistics
+
+## Assignments and Upcoming
+
+- Today
+  + 
+- Wednesday (4/4)
+  + 
+  
+## Agenda
+
+\
+
+1. Overview of Foreign Aid
+2. Briggs (2016)
+3. Briggs (2021)
+4. Final Project Assignment 2
+
+
+
+
+
+

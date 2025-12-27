@@ -1,0 +1,97 @@
+---
+title: "Final Project Essentials"
+subtitle: "Index Measures and Interaction Terms"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+editor: source
+---
+
+# Logistics
+
+
+## Notes
+
+- Added Maria's slides to last week's page
+- Assignments
+  + Expanded Research Design due Friday (4/4)
+  + Data Assignment 1 due Wednesday (4/9)
+
+## Today's Agenda
+
+\
+
+1. Final project essential tools
+2. Final project essentials Workshop
+  i) Open [workshop `fp_essentials.qmd`](https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/fp_essentials.qmd)
+
+
+# Final Project Essentials
+
+## Building Confidence
+
+**Without a fancy identification strategy, how can we build confidence in the results of our hypothesis test?**
+
+\
+
+:::{.fragment}
+::: {.incremental}
+
+- Conditioning on baseline characteristics
+- Mechanisms and observable implications (dv)
+- Placebo tests (iv)
+:::
+:::
+
+::: {.notes}
+- Some types of participation are more likely to be affected by moving
+- Self-efficacy but not group efficacy
+- The effect of moving should decrease over time
+- The effect of moving should be weaker for 
+:::
+
+## Regression Model
+
+$$
+Y_i = \alpha + \beta_1 X_{i1} + \beta_2 X_{i2} + \epsilon_i
+$$
+
+**Example:** Continuous outcome with two binary predictors
+
+::: {.incremental}
+- $\alpha$: [Intercept when $X_{i1}$ and $X_{i2}$ are 0]{.fragment}
+- $\beta_1$: [Slope when holding $X_{i2}$ *constant*]{.fragment}
+- $\beta_2$: [Slope when holding $X_{i1}$ *constant*]{.fragment}
+:::
+
+
+## Interaction Terms
+
+$$
+Y_i = \alpha + \beta_1 X_{i1} + \beta_2 X_{i2} + \beta_3 X_{i1}*X_{i2} + \epsilon_i
+$$
+
+**Example:** Continuous outcome with two binary predictors
+
+::: {.incremental}
+- $\alpha$: [Intercept when $X_{i1}$ and $X_{i2}$ are 0]{.fragment}
+- $\beta_1$: [Slope when $X_{i2} = 0$]{.fragment}
+- $\beta_2$: [Difference in $\alpha$ between $X_{i2}=0$ and $X_{i2}=1$]{.fragment}
+- $\beta_3$: [Difference in $\beta_1$ between $X_{i2}=0$ and $X_{i2}=1$]{.fragment}
+:::
+
+
+

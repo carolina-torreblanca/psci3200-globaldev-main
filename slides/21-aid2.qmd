@@ -1,0 +1,560 @@
+---
+title: "Foreign Aid 2"
+subtitle: "Credit, Service Delivery, and Accountability"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+editor: source
+
+bibliography: img/references.bib
+---
+
+# Logistics
+
+## Assignments
+
+- Today
+  + [Cruz (2016)](/files/Cruz_2016_AJPS.pdf)
+  + Brief History of Non-State Service Provision
+  + [Bold et al. (2018)](/files/bold_2018.pdf)
+- Friday
+  + Data Assignment 1 due
+  + Submit to Caro and I by Slack
+- Monday (4/14)
+  + Foreign Aid Obituary
+  + I'll figure out the readings tomorrow...
+
+  
+## Agenda
+
+\
+
+1. Cruz (2016)
+2. Bold et al. (2018)
+3. Final Questions: Data Assignment 1
+
+
+# Cruz (2016)
+
+## Foreign Aid and Accountability
+
+\
+
+**Standard channels for political manipulation**
+
+:::{.fragment}
+- Distribution of aid: Divert resources from needy to strategically valuable communities (clientelism)
+- Reallocation of budgets: Divert resources from development (fungibility)
+:::
+
+## Foreign Aid and Accountability
+
+\
+
+**Donor strategies to avoid manipulation:**
+
+:::{.fragment}
+- Project aid
+- Channel through NGOs or direct transfers
+- Generally cut government actors out of the process
+:::
+
+## Three Questions
+
+**Three questions**
+
+1. Do citizens perceive foreign aid projects?
+2. How do politicians claim credit?
+3. Under what conditions are they successful?
+
+**Sources of updating**
+
+- Credit for welfare improvement
+- More likely to secure future projects
+
+## Research Design
+
+\
+
+:::{.incremental}
+- Research question: Can local politicians claim undue credit for the aid projects to boost their re-election prospects
+- Allocation of projects: Eligibility determined by poverty threshold 
+- Least likely design for credit misattribution:
+  + Low chance for political influence on distribution 
+  + Minimal ability to reallocate budget in response
+:::
+
+## Undeserved Credit Claiming
+
+:::{.incremental}
+- What is undeserved credit claiming?
+  + Politicians claiming credit for projects they had no role in securing
+- Mechanism: 
+  + Exploiting the lack of transparency and information among voters
+- Implications:
+  + Undermines incentives to improve welfare
+:::
+
+## Findings
+
+- Election impact: 12% increase in re-election chances
+- Increased visits: Politicians visited project sites more frequently to appear involved
+- Political credit: Mayors are credited for funding or initiating projects even when respondents knew of other funding sources
+
+## Policy Implications    
+
+\
+
+- Designing Aid Projects: Importance of transparency and community involvement to minimize undeserved credit claiming
+- Voter Education: Enhancing voters' understanding of aid processes to better hold politicians accountable
+- Involvement: Giving opportunities to contribute makes credit deserved
+
+   
+# Brief History of Non-State Service Provision
+
+
+## Service Delivery & The State
+
+**What do states do?** (Hoffman, 2015)
+
+- Monopolize violence
+- Levy taxes
+- Obtain the assent of the population
+
+**Why is public service delivery (PSD) important?**
+
+- Promotes economic growth
+- Improves welfare of citizens
+
+## The Social Contract
+
+**Mutual reliance between states and citizens**
+
+- States need tax revenue
+- Citizens need public services
+  - Provision of clean water accounts for 60% of the increase in life expectancy in the United States between 1850 and 1950 [@troesken2001].
+
+## The Social Contract
+
+**Virtuous cycle between taxation, PSD, and state capacity**
+
+- Taxation $\Rightarrow$ citizen demand for PSD
+- Government PSD $\Rightarrow$ citizen compliance with taxation
+- Citizen compliance with taxation $\Rightarrow$ increased state capacity
+- Citizen reliance on PSD $\Rightarrow$ political accountability [@hoffman2005]
+
+
+## The Fiscal Exchange
+
+**How does this work in social contexts without direct taxation?**
+
+- Compliance obtains when people expect that services will be delivered
+- Compliance is *conditional*
+
+**Norm-driven social contract emergence**
+
+- Tax morale and civic duty
+- Compliance is *internalized*
+
+
+## Historical Service Delivery in Africa
+
+**Service delivery in the pre-colonial period**
+
+- Pre-colonial African states did not engage in extensive service delivery [@herbst2000]
+  - States weren't geographically bounded
+- Christian missions were (kinda) the first service providers
+  - Emphasis on literacy and formalizing indigenous languages
+  - Competing with traditional healers [@chirwa2016]
+
+## Historical Service Delivery in Africa
+
+**Colonial approaches to service delivery**
+
+- Traditional medicine was outlawed [@chirwa2016]
+- The church is "cemented" as the primary service provider [@jennings2014]
+  - **Tanzania at the end of the colonial period**
+  - Church operated 81% of primary health facilities
+  - Church-operated schools outnumbered government schools 4-to-1
+
+
+## Historical Service Delivery in Africa
+
+![](img/cage2.png){fig-align="center"}
+
+
+## Historical Service Delivery in Africa
+
+![](img/cage4.png){fig-align="center"}
+
+## Historical Service Delivery in Africa
+
+**Post-colonial period**
+
+- Post-colonial African states nationalized service delivery infrastructure and increased spending [@bates2014]
+  - **Kenya's Civil Services** [@young1994]
+  - 1945: 14,000; 1955: 45,000; 1978: 170,000
+- Commodity boom $\Rightarrow$ commodity bust
+- Structural adjustment: **Kenya's Health Spending** [@brass2014]
+  - 1980: $9.8 million; 1993: 6.2 million; 1996: 3.6 million
+
+## The Re-Entry of Non-State Providers
+
+\
+
+*In 2007, 9% and 16% of US economic engagement with developing countries has been Official Development Assistance and private philanthropy respectively* [@kapur2010].
+
+## The Re-Entry of Non-State Providers
+
+![](img/ingo.png){fig-align="center"}
+
+## The Re-Entry of Non-State Providers
+
+**Faith Based Organizations (FBOs)** [@green2002]
+
+- Church "umbrella" organizations (ex. Uganda Protestant Medical Bureau)
+  - Less aid [@reinikka2010], more user-fees [@munthali2015]
+  - Cost-sharing with government
+  - Uganda: 45% of the hospital beds; ⅓ of the country's health workers [@tumwesigye2013]
+- International religious FBOs (ex. World Vision)
+  - Operate more like secular NGOs
+
+## The Re-Entry of Non-State Providers
+
+**Malawi: Number of health facilities**
+
+| Year | Gov  | FBO  | NGO |
+|------|------|------|-----|
+| 2005 | 426  | 160  | 32  |
+| 2008 | 545  | 167  | 70  |
+| 2013 | 478  | 167  | 57  |
+
+## The Re-Entry of Non-State Providers
+
+**Kenya: Number of health facilities**
+
+| Year | Gov   | FBO   | NGO |
+|------|-------|-------|-----|
+| 2007 | 2,445 | 1,060 | 83  |
+| 2012 | 4,043 | 998   | 218 |
+| 2014 | 4,637 | 1,071 | 346 |
+
+
+## Regions
+
+![](img/regions.png){fig-align="center"}
+
+
+## Non-governmental Organizations
+
+**What are NGOs?**
+
+- Private, non-profit organizations that aim to improve societal well-being through service delivery
+- Provide free services, strengthen existing social infrastructure
+- Receive most of their funding from foreign aid contracts [@fafchamps2009; @brass2012]
+- Marie Stopes Uganda: Provided 75% of the Intrauterine Devices distributed in Uganda between 2006 and 2011
+
+## Non-governmental Organizations
+
+**Who do NGOs serve?**
+
+- Target needy communities
+- Target convenient communities
+- "Pragmatic saints" [@brass2012]
+
+## Citizen Attitudes on NGOs
+
+- Kenya: 70% of respondents said NGOs "have the interests of the people in mind" (34% for government) [@brass2016].
+- Tanzanian: 81% report that NGOs have "benefited" their community [@jivani2010].
+- Malawi: 60% agree that "Development NGOs provide services than cannot be provided by any other agency"; 68% consider NGOs to be effective [@jamali2014].
+- Liberia: 23% of respondents trust government but 72% trust NGOs; 72% describe government as corrupt, but 19% describe NGOs as corrupt (Tsai, 2017).
+
+## NGOs & Politics
+
+**NGO service delivery may weaken the 'Fiscal Link'**
+
+- Reduce reliance of government on taxation
+- Reduce reliance on citizens on PSD
+- Weaken the link between government performance and citizen welfare
+
+**NGO service delivery may undermine accountability**
+
+- Politicians get credit for NGO PSD
+- NGOs make people more apolitical about government PSD
+
+## NGOs & Politics
+
+**NGOs as complements to the state** [@brass2014]
+
+- Joint implementation / co-production
+  - Learning
+  - Resource sharing
+- Participation in government decision making
+  - Lobbying for policy-changes
+  - Transmitting information on citizen preferences
+- Integration of NGOs into government plans
+
+
+## The Limitations of NGOs {.smaller}
+
+| Sector                      | Govt | NGO | Count |
+|-----------------------------|------|-----|-------|
+| Health                      | 13%  | 87% | 479   |
+| Education                   | 42%  | 58% | 242   |
+| Agriculture/Extension       | 32%  | 68% | 182   |
+| Social Infrastructure       | 32%  | 68% | 291   |
+| Transportation              | 100% | 0%  | 96    |
+| Energy                      | 100% | 0%  | 49    |
+| Water and Sanitation        | 70%  | 30% | 259   |
+| Business/Trade Development  | 87%  | 13% | 15    |
+| **Total**                   | 45%  | 55% | 1900  |
+
+
+# Bold et al. (2018)
+
+## Scaling Up Education Reforms
+
+**Treatment: [Hiring contract teachers to improve text scores]{.fragment}**
+
+:::{.fragment}
+1. Smaller class sizes
+2. Higher motivation
+:::
+
+:::{.fragment}
+**Complicating Factors:**
+:::
+
+:::{.incremental}
+1. Scale: [the size of the program]{.fragment}
+2. Implementation: [who is administering]{.fragment}
+:::
+
+
+## Context
+
+**What's different about contract teachers?**
+
+:::{.incremental}
+- Lower cost
+- Similar qualifications
+- Different profile
+  + Selection (firing)
+  + Incentives (pay and retention)
+
+:::
+
+
+## Scaling Up Education Reforms
+
+**Random assignment of:**
+
+:::{.fragment}
+- Government vs NGO implementation
+- SMC Training
+- Structure of contract
+  + Local vs central control of hiring/firing
+  + Low vs High Salary
+
+:::
+
+
+## Research Design
+
+\
+
+![](img/bold_design.png){fig-align="center"}
+
+
+
+## Research Design
+
+![](img/bold_map.png){fig-align="center"}
+
+## Findings
+
+- NGO implementation increased test scores
+- Government implementation had no effect
+  + Teacher quality: No
+  + Monitoring: No
+  + Bureaucratic delays in payment: Yes (⅓ of effect)
+  + Political economy factors: Yes (credible enforcement of contracts)
+
+:::{.fragment}
+**What does this tell us about the limitations of NGOs?**
+:::
+
+
+# U.S. Foreign Aid: An Obituary
+
+## Arenas 
+
+1. Health
+2. Democracy and governance
+3. Soft Power
+
+## Health
+
+- HIV: 20.6 million people (600k children) no longer receiving treatment
+- Tuberculosis: 10.6 million cases and 2.2 million deaths will not be prevented 
+- Nutrition: HKI has stopped a program that provides nutrition for 5.6 million children
+- Nutrition: In Sudan, ~80% of emergency food kitchens are closed
+- Nutrition: In Ethiopia, foods to treat ~1 million severely malnourished children will run out by May
+<!-- severe acute malnutrition: cut off treatment for 2.3 million children in low- and middle-income countries (LMICs). This would lead to 369,000 extra child deaths a year that would otherwise have been prevented. -->
+<!-- The World Bank estimates that every $1 invested in tackling undernutrition returns $23 in value in terms of child survival, human capital development and economic prosperity -->
+ 
+## Health
+
+
+![](img/vox_hiv.png){fig-align="center"}
+
+## Health  (Gibson et al., 2025)
+
+[The impact of aid sanctions on maternal and child mortality, 1990–2019](https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00058-0/fulltext)
+
+![](img/gibson_sanction1.jpg){fig-align="center"}
+
+## Health  (Gibson et al., 2025)
+
+**Sample**
+
+- 67 LMICs targeted by 88 unique aid sanction events (median duration: 5 years)
+- 66 LMICs never sanctioned
+- Infant, under-5, and maternal mortality declined 2.6%, 3.2%, 2%
+
+## Health  (Gibson et al., 2025)
+
+**Research Design**
+
+- Difference-in-differences
+- Country and year fixed effects, country-specific time trends, and multiple control variables
+- Sensitivity analyses, entropy balancing
+
+## Health  (Gibson et al., 2025)
+
+![](img/gibson_sanction2.jpg){fig-align="center"}
+
+## Health  (Gibson et al., 2025)
+
+![](img/gibson_sanction3.jpg){fig-align="center"}
+
+## Health  (Gibson et al., 2025)
+
+**Findings**
+
+- Aid sanctions reduced ODA by \$213m per year; DAH by \$16.42m
+- Sanctions negate 30% of overall improvements in infant and under-5 mortality
+- Increased infant, under-5, and maternal mortality by 3.1%, 3.6%, 6.4%
+- 129.3 infant deaths, 47.1 under-5 deaths, 10.9 maternal deaths per 100k births
+
+## Democracy and governance
+
+**Does Democracy promotion work?**
+
+- Non-trivial amount of democracy aid sounds stupid (workshops, capacity building, cultural programs)
+- Recipient country behavior suggests that enough of it does work... 
+
+## Democracy and governance
+
+![](img/fig_2_democracy aid.jpeg){fig-align="center"}
+
+## Democracy and governance
+
+![](img/law_map.png){fig-align="center"}
+
+## Democracy and governance
+
+**Does Democracy promotion work?**
+
+- U.S. aid withdrawal is already having a massive chilling effect on domestic civil society
+- U.S. has provided an umbrella of protection for NGOs (esp partners) in repressive countries
+
+## Democracy and governance
+
+**Serbia: U.S. has restrained Vucic from attacking NGOs**
+
+- 2020: [Probe of NGO finances](https://apnews.com/general-news-7733ba98001cc18cd26cc78fc83615a8)
+  + Investigation into anti-corruption and advocacy NGOs
+  + Accusations of money laundering and terrorist financing
+  + Public and private criticism by U.S. embassy and diplomats
+- 2025: [Decimation of NGOs](https://apnews.com/article/serbia-usaid-prosecutors-civil-society-probe-02af3400071175e0c4b717fb6b273493)
+  + Feb 2: Musk calls USAID a criminal organization
+  + Feb 25: Raids, corruption charges, and exile
+
+
+## Democracy and governance
+
+- [Carnegie and Marinov (2017)](https://onlinelibrary.wiley.com/doi/full/10.1111/ajps.12289) use random variation in aid to show positive effect on democracy
+- [Wright (2009)](https://onlinelibrary.wiley.com/doi/full/10.1111/ajps.12289) uses panel data to show conditionality increases democracy
+- [Finn and Tarp (2016)](https://www.sciencedirect.com/science/article/pii/S030438781500111X) us dynamic panel estimators to show that governance aid increases democracy
+- Democracy aid works, but we don't necessarily know how/why; effect is small and ephemeral 
+    
+
+## Soft Power
+
+**Does aid win hearts and minds (soft power)?
+
+- Aid improves health and education outcomes
+- Recipients seem to know who gives aid
+- Aid often comes with conditionality and corruption
+- [Andrabi and Das (2017)](https://direct.mit.edu/rest/article/99/3/371/58451/In-Aid-We-Trust-Hearts-and-Minds-and-the-Pakistan) use spatial data to show that disaster relief in Pakistan improved trust in US and Europe
+
+## Soft Power
+
+![](img/andrabi.png){fig-align="center"}
+
+## Soft Power
+
+![](img/andrabi2.png){fig-align="center"}
+
+
+## Soft Power
+
+![](img/andrabi3.png){fig-align="center"}
+
+
+## Soft Power
+
+![](img/freeze_awareness.png){fig-align="center"}
+
+## Soft Power
+
+![](img/freeze_perceptions.png){fig-align="center"}
+
+
+
+# Appendix
+
+## Research Design
+
+![](img/bold_timeline.png){fig-align="center"}
+
+## Research Design
+
+- Compliance
+  + NGO implementation (+)
+  + Local hiring (+)
+  + Higher salaries (+)
+  + Small class size reduction
+- Attrition
+
+## Findings
+
+![](img/bold_density.png){fig-align="center"}
+
+## Findings
+
+![](img/bold_effects.png){fig-align="center"}

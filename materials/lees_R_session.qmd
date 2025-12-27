@@ -1,0 +1,54 @@
+---
+title: "Live R Coding Session"
+author: "Jeremy Springman"
+date: 2024-12-03
+---
+
+## Overview
+
+This LEES Live Session will focus on using R and RStudio for data analysis. During this session, we will cover the following topics:
+
+| Activity | Description | Duration |
+|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| Introductions and Sign-in | Fill out this [form](https://docs.google.com/forms/d/e/1FAIpQLSfLr3Rs3Y7LIEl9e_iyRFxh_EK7Lm8L9uA0mVOinZsuyMG18w/viewform) to sign into the session. | 5 min | 
+| R Coding Review | Review of basic R concepts covered in [Module 2 Week 2.2](https://classroom.google.com/c/NzE0MDA4MjAxMDkw/m/NzI4ODMyNzA4NTAy/details) | 10 min | 
+| Cleaning Data | Read-in real data, create new variables, calculate quantities| 30 min   |
+| Data Visualization | Create tables and figures| 10 min   |
+| Regressions | Run regressions and store output in a presentable format | 10 min |
+| Q&A | Ask questions and writing code or conducting analysis | 25 min |
+<!-- - open R, read-in data - draw sample from AAU survey -->
+
+
+Please consult [this document](https://docs.google.com/document/d/1nM8RvRO6y0kvaM9t-IwV9orAvUn3bPiMhpjpaPafhys/edit?usp=sharing) for a more detailed overview of what will be covered.
+
+
+## Required Preparation
+
+Before attending the live session, participants should have R and RStudio installed and have RStudio opened on their personal computer. [Module 2 Week 2.2](https://classroom.google.com/c/NzE0MDA4MjAxMDkw/m/NzI4ODMyNzA4NTAy/details) included instructions on [installing R and RStudio](https://docs.google.com/presentation/d/1kLVVitZ7T_h-csVscnFPYiCbOOvU8D9cPSvBmcBKITk/edit?usp=sharing) and provided a basic introduction to these tools. 
+
+
+
+## Materials
+
+Before attending the live session, please download the *R Tutorial Source* script using the link below. I will be using the *R Tutorial Source* file (.qmd) to lead the session. The *R Tutorial Visual* contains a link to a rendered version of the *R Tutorial Source* that you can open as an .html document in your web browser. If you prefer, you can copy and paste code from the html file into RStudio.
+
+- [Slides](/slides/lees-R-session.html)
+- [Data](https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/aau_survey/clean_endline_did.csv)
+- [R Tutorial Source (.qmd)](https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/lees_R_doc.qmd)
+- [R Tutorial Visual (.html)](https://jrspringman.github.io/psci3200-globaldev/workshops/lees_R_doc.html)
+
+
+## Optional Preparation
+
+I will be using a Quarto file (.qmd) to lead the session. Quarto is a specific type of file in RStudio that integrates code into document production. Quarto can be useful for producing .pdf or .html files that to share the results of data analysis with donors and policymakers. If you would like to install Quarto, please consult the materials below:
+
+- [Instructions](/assignments/01_quarto.html)
+- [Intro to Quarto](https://quarto.org/docs/get-started/hello/rstudio.html)
+
+
+
+
+
+
+
+

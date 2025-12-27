@@ -1,0 +1,10 @@
+---
+title: "Github Pages"
+---
+
+
+## Slides
+
+- [Slides](/slides/24-git2.html)
+
+

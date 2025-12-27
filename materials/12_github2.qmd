@@ -1,0 +1,18 @@
+---
+title: "Github Pages"
+---
+
+## Required Readings
+
+- None
+
+## Slides
+
+- [Slides](/slides/24-git2.html)
+
+
+## Resources
+
+- Here's a helpful [YouTube video](https://www.youtube.com/watch?v=wZ9pZOFSCko). Be careful: some parts of this process are slightly different than what I will show you.
+
+

@@ -1,0 +1,294 @@
+---
+title: "Finishing Foreign Aid & Climate Change 1"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+editor: source
+
+bibliography: img/references.bib
+---
+
+# Logistics
+
+
+## Agenda
+
+\
+
+1. Finishing Foreign Aid (Soft Power)
+2. Climate change overview
+
+# Soft Power
+
+## Soft Power
+
+**Does aid win hearts and minds (soft power)?**
+
+- Aid improves health and education outcomes
+- Recipients seem to know who gives aid
+- Aid often comes with conditionality and corruption
+- [Andrabi and Das (2017)](https://direct.mit.edu/rest/article/99/3/371/58451/In-Aid-We-Trust-Hearts-and-Minds-and-the-Pakistan) use spatial data to show that disaster relief in Pakistan improved trust in US and Europe
+
+## Soft Power
+
+![](img/andrabi.png){fig-align="center"}
+
+## Soft Power
+
+![](img/andrabi2.png){fig-align="center"}
+
+
+## Soft Power
+
+![](img/andrabi3.png){fig-align="center"}
+
+## Kenya: Soft Power
+
+![](img/favorability_economic_partner.png){fig-align="center"}
+
+## Kenya: Soft Power
+
+![](img/freeze_awareness.png){fig-align="center"}
+
+## Kenya: Soft Power
+
+![](img/freeze_perceptions.png){fig-align="center"}
+
+
+## Geopolitics and Foreign Aid
+
+- US Foreign Aid in 2023: \$60b
+  + USAID \$44b; DoS \$14b; DoT and DoA \$2.5b
+- Annual aid 2013-2018
+  + China: \$7b
+  + USA: \$44.7b
+- Most Chinese aid is [loans (BRI)](https://www.brookings.edu/articles/can-china-fill-the-void-in-foreign-aid/)
+
+
+## Geopolitics and Foreign Aid
+
+![](img/china-s-foreign-aid-budget.png){fig-align="center"}
+
+
+## Geopolitics and Foreign Aid
+
+**March earthquake in Myanmar**
+
+- US pledged \$9m
+  + Not clear that there's [anyone left to do this work](https://www.nytimes.com/2025/03/30/world/asia/myanmar-earthquake-usaid-cuts.html)
+  + US 3-person team was fired while in-country
+  + DART teams are layed-off; transportation contracts were killed
+- [China pledged \$137m](https://councilonstrategicrisks.org/2025/04/11/china-seizes-an-opportunity-from-the-united-states-in-humanitarian-aid-and-disaster-response/)
+  + They had teams working within 48 hours
+- [17 other countries](https://edition.cnn.com/2025/04/10/asia/myanmar-quake-usaid-trump-intl-hnk/index.html) involved in response
+
+
+## Filling the Gap
+
+- De-funded human rights NGOs have been [approached by Chines donors](https://www.npr.org/2025/02/18/nx-s1-5300108/aid-cuts-and-china-muscles-in)
+- China has replaced USAID programs [in Cambodia](https://www.bloomberg.com/news/articles/2025-03-26/as-trump-cuts-aid-china-flows-funds-to-strategic-corner-of-asia?mkt_tok=Njg1LUtCTC03NjUAAAGZcRkNfr46R5GC9SKCMEGpipU4wlw8QbRtkWvSqnNhucfidjk8r9pvNlK_rVGLd9JfgxlUePm2wf9ULBErKX833wpITSOYYWMCUcx7IaCKn8B6Exs&leadSource=uverify%20wall), [Nepal](https://theannapurnaexpress.com/story/52229/), and [Mongolia](https://councilonstrategicrisks.org/2025/04/11/china-seizes-an-opportunity-from-the-united-states-in-humanitarian-aid-and-disaster-response/)
+- China and Russia have been buying-up and establishing [foreign media outlets](https://www.reuters.com/investigates/special-report/china-radio/)
+- US is shutting down Voice of America (est. 1942)
+
+
+## Kenya: Soft Power
+
+> This investment is seen by policy analysts as a direct response by the [Chinese/United States] government to the [United States/Chinese] government’s announcement of similar projects in Kenya. Observers say this is part of a broader rivalry between the two great powers to gain international influence, with [China/the United States] aiming to outpace the [United States/Chinese] and develop strategic footholds across Africa. Kenya’s position as a regional hub makes it a key battleground in this global competition, as the United States and China race to secure political and economic influence in the region.
+
+## Kenya: Soft Power
+
+![](img/kenya_results.png){fig-align="center"}
+
+# Intro to Climate Change
+
+## Climate Change
+
+\
+
+**Are we doomed?**
+
+:::{.fragment}
+:::{.incremental}
+- I don't think so (2024)
+- Wait hold-up... (2025)
+:::
+:::
+
+
+
+## Where We Stand
+
+![](img/climate_tweet.png){fig-align="center"}
+
+## Targets and Trajectories
+
+![](img/climate1.png){fig-align="center"}
+
+
+## Wind and Solar
+
+
+![](img/climate_renewables.jpg){fig-align="center"}
+
+
+## Solar Panels
+
+
+![](img/climate_solar.jpg){fig-align="center"}
+
+## Electricity
+
+
+![](img/climate_energy.jpg){fig-align="center"}
+
+
+## Batteries
+
+
+![](img/climate_batteries.jpg){fig-align="center"}
+
+
+
+## Batteries
+
+
+![](img/climate_batteries2.png){fig-align="center"}
+
+## Electric Vehicles
+
+
+![](img/climate_vehicles.jpg){fig-align="center"}
+
+
+## Cross-National Variation
+
+![](img/climate_emissions.jpg){fig-align="center"}
+
+## China's Growth
+
+![](img/climate_china.jpg){fig-align="center"}
+
+
+## Decoupling
+
+\
+
+![](img/climate_growth.jpg){fig-align="center"}
+
+
+## Divergence
+
+\
+
+![](img/climate_growth2.jpg){fig-align="center"}
+
+
+# Namrata (2023)
+
+## Climate Adaptation
+
+\
+
+**Disproportionate vulnerability for developing countries**
+
+:::{.fragment}
+- Higher mean temperatures
+- Greater impact of temperature on output
+- Long coastlines 
+- Lower incomes, smaller safety nets
+:::
+
+## Three literatures
+
+\
+
+- Quantifying vulnerabilities
+- Measuring adaptation
+- Spatial linkages
+
+
+## Climate Adaptation
+
+![](img/climate_map.png){fig-align="center"}
+
+## Research Methods 
+
+:::{.fragment}
+- Panel data to find relationship between observed changes and output
+- Project to future changes, assuming everything stays constant
+- Problems:
+  + Long-run adaptations
+  + Short-run adaptations
+  + Mechanisms?
+
+:::
+
+## Research Methods 
+
+\
+
+**Recent developments**
+
+:::{.fragment}
+- Long-run changes (climate vs weather)
+- Focus on expectations
+- Experiments with adaptation
+:::
+
+## Climate Adaptation
+
+**Climate change mitigation strategies**
+
+:::{.fragment}
+- Weather insurance
+- Migration
+- Cash transfers
+- Credit
+- New technology
+- Infrastructure
+- Safety nets
+:::
+
+# Albert at al. (2022)
+
+## Measurement
+
+:::{.fragment}
+- Reported natural disasters
+- Moisture deficit relative to long-run average
+- Agriculture yields
+- Bank loans
+- Migration and labor
+:::
+
+## Findings
+
+![](img/albert1.png){fig-align="center"}
+
+## Findings
+
+![](img/albert2.png){fig-align="center"}
+
+## Findings
+
+![](img/albert3.png){fig-align="center"}
+
+## Findings
+
+- Dryness causes reallocation of capital and labor
+- Dryness lowers productivity and reallocates remaining labor away from agriculture and to manufacturing
+- Capital connected areas see reduced 
+- Labor connected areas see inflows

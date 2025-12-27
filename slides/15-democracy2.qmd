@@ -1,0 +1,351 @@
+---
+title: "Democracy and Autocratization 2"
+subtitle: "Final Project Essentials: Interaction Terms"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+editor: source
+---
+
+# Logistics
+
+## Assignments
+
+- Today
+  + [VDem (2024); pages 9-45](https://v-dem.net/documents/43/v-dem_dr2024_lowres.pdf) ([Interactive visualization](https://episodes.shinyapps.io/validation/))
+  + [Garcia-Ponce and Wantchekon (2023)](/files/American J Political Sci - 2023 - García‐Ponce - Critical Junctures Independence Movements and Democracy in Africa.pdf)
+- Thursday (3/14)
+  + [Hassan et al. (2022)](/files/politicalcontrol_printedition.pdf)
+  + [Lebas and Young (2023)](/files/repression-and-dissent-in-moments-of-uncertainty-panel-data-evidence-from-zimbabwe.pdf)
+
+  
+## Agenda
+
+\
+
+1. V-Dem
+2. Garcia-Ponce and Wantchekon
+2. Final Project Essentials: Interaction terms
+
+# Varieties of Democracy
+
+## Polyarchy (Dahl, 1972)
+
+\
+
+**Polyarchy is about the degree of political competition**
+
+- Democracy is an ideal too tough to define
+- Instead, he describes procedures that make countries more/less democratic
+- Contestation and inclusiveness allow for competition over power
+- Competition makes governments accountable to citizens
+
+## Polyarchy (Dahl, 1972)
+
+![](img/polyarchy.png){fig-align="center"}
+
+
+## Polyarchy (Dahl, 1972)
+
+![](img/Dahls-polyarchy-dimensions.png){fig-align="center"}
+
+
+## Benefits of Democracy
+
+\
+
+**Causal effects of regime-type are difficult, but...**
+
+- Higher economic growth
+- Lower poverty (famines)
+- Fewer international conflicts 
+
+
+## Waves of Democracy
+
+![](img/pic_vdem_grafik_autokrat-kopie.jpg){fig-align="center"}
+
+## Varieties of Democracy
+
+- Governance characteristics scored based on expert opinion
+- 25 country experts (2/3 local and 1/3 foreign)
+- 500+ indicators
+- Sophisticated methods of aggregating into indices and estimating uncertainty across coders
+- Liberal Democracy, Electoral Democracy, Electoral Autocracy, Autocracy
+
+
+## Varieties of Democracy
+
+![](img/vdem1.png){fig-align="center"}
+
+
+
+## How is governance changing?
+
+**Ongoing transitions across regions**
+
+![](img/vdem_region.png){fig-align="center"}\
+
+## How is governance changing?
+
+![](img/vdem_aspects.png){fig-align="center"}
+
+
+## How is governance changing?
+
+\
+**Most deterioration seen on:**
+
+::: {.fragment}
+1. Freedom of expression
+2. Clean elections
+3. Freedom of association
+
+:::
+
+## How is governance changing?
+
+\
+
+**Broad trends**
+
+::: {.fragment}
+
+- Number of people living under autocracy back to 1985 levels
+- Concentration of global power is shifting (BRICS+ vs G7)
+- 60 countries are holding national elections this year
+  + 31 worsening; 3 improving
+
+:::
+
+::: {.fragment}
+
+**What did you find interesting?**
+
+:::
+
+## Critiques of VDem: Little & Meng
+
+**Incumbents are losing elections**
+
+![](img/meng_1.png){fig-align="center"}
+
+
+## Critiques of VDem: Little & Meng
+
+**Incumbents are losing elections**
+
+![](img/meng_2.png){fig-align="center"}
+
+
+## Critiques of VDem: Little & Meng
+
+**Mixed evidence on attacks on journalists**
+
+![](img/meng_3.png){fig-align="center"}
+
+## Defense of VDem
+
+![](img/deed_turkey.png){fig-align="center"}
+
+## Defense of VDem
+
+![](img/deed_brazil.png){fig-align="center"}
+
+## Defense of VDem
+
+**Lots of new anti-NGO laws**
+
+![](img/law_map.png){fig-align="center"}
+
+
+# Garcia-Ponce and Wantchekon
+
+
+## Why countries Democratize
+
+- Correlation between income and democracy
+  + Modernization theory: wealth, education, and urbanization are associated with democratization
+- Why might this be true?
+
+
+::: {.fragment}
+*In Africa, democratization after the Cold War was shaped by the level of development (urbanization) at the start of countries' anti-colonial movements*
+:::
+
+## Context
+
+\
+
+- Anti-colonial movements chose between two strategies:
+  + Rural insurgency
+  + Urban protest
+- Democratization was delayed by the Cold War
+
+::: {.fragment}
+1. *What shaped opposition movements' choice between strategies?*
+2. *What delayed democratization during the Cold War?*
+:::
+
+## Theory
+
+
+**Why does opposition strategy affect democratization decades later?**
+
+::: {.fragment}
+
+- Inclusion
+- Organization
+
+:::
+
+::: {.fragment}
+
+**Mechanisms:**
+
+- Institutions
+- Behaviors
+
+:::
+
+## Findings
+
+![](img/want_1.png){fig-align="center"}
+
+
+## Threats to inference
+
+- Things that affect whether or not opposition uses insurgency vs protest might also affect current levels of democracy
+
+```{r edu-ex-simple, echo=FALSE, fig.width=9, fig.height=4.5, out.width="100%"}
+library(ggplot2)
+library(ggdag)
+
+edu_ex_coords <- list(x = c(Strategy = 2, Democracy = 4, U1 = 3, Terrain = 2),
+                        y = c(Strategy = 2, Democracy = 2, U1 = 4, Terrain = 4))
+
+dagify(
+  Democracy ~ Strategy  + U1,
+  Strategy ~ U1,
+  exposure = "Strategy",
+  outcome = "Democracy",
+  latent = "U1",
+  labels = c("Strategy" = "Post-WWII\nStrategy", "Democracy" = "Post-1990\nDemocracy",
+             "U1" = "Unobserved stuff", "Terrain" = "Terrain"),
+  coords = edu_ex_coords) |> 
+  tidy_dagitty() |> 
+  node_status() |> 
+  ggplot(aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_edges() +
+  geom_dag_point(aes(color = status), size = 14) +
+  geom_dag_text(aes(label = label), color = "black", size = 5) +
+  scale_color_manual(values = c("#FF4136", "grey60", "#0074D9"),
+                     na.value = "#7FDBFF") +
+  guides(color = "none") +
+  theme_dag()
+
+```
+
+
+## Identification
+
+- Covariates
+- Sensitivity analysis
+- Difference-in-Differences
+  + Leverages changes within countries over time
+  + Before the end of the cold war, groups look similar
+  + After the end of the cold war, groups trend away from each other
+- Instrumental Variables
+  + Leverages 'plausibly exogeneous' variation in terrain 
+  + Terrain predicts strategy choice
+
+## Instrumental Variable
+
+```{r edu-terrain-simple, echo=FALSE, fig.width=9, fig.height=4.5, out.width="100%"}
+library(ggplot2)
+library(ggdag)
+
+dagify(
+  Democracy ~ Strategy  + U1,
+  Strategy ~ U1,
+  Strategy ~ Terrain,
+  exposure = "Strategy",
+  outcome = "Democracy",
+  latent = "U1",
+  labels = c("Strategy" = "Post-WWII\nStrategy", "Democracy" = "Post-1990\nDemocracy",
+             "U1" = "Unobserved stuff", "Terrain" = "Terrain"),
+  coords = edu_ex_coords) |> 
+  tidy_dagitty() |> 
+  node_status() |> 
+  ggplot(aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_edges() +
+  geom_dag_point(aes(color = status), size = 14) +
+  geom_dag_text(aes(label = label), color = "black", size = 5) +
+  scale_color_manual(values = c("#FF4136", "grey60", "#0074D9"),
+                     na.value = "#7FDBFF") +
+  guides(color = "none") +
+  theme_dag()
+
+```
+
+
+## Mechanisms: Institutions
+
+**We do not seen an impact of Post-WWII Opposition Strategy on Post-1990 Institutions**
+
+![](img/want_institutions.png){fig-align="center"}
+
+## Mechanisms: Behavior
+
+![](img/want_behavior1.png){fig-align="center"}
+
+![](img/want_behavior2.png){fig-align="center"}
+
+
+## Policy Implications
+
+\
+
+- Historical social movements help understand the link between structural conditions and democratic development
+- Non-violent collective action appears critical for the establishment of lasting democracy
+- 
+
+# Final Project Essentials
+
+## Interaction Terms
+
+**What is an interaction term?**
+
+- Simple linear models assume that the effect of predictors is independent of other factors 
+- Interaction terms allow us to estimate the difference in the slope of a predictor across unit characteristics
+
+$$
+Y_i = \alpha + \beta_1 X_{i1} + \beta_2 X_{i2} + \beta_3 X_{i1}*X_{i2} + \epsilon_i
+$$
+
+## Interaction Terms
+
+**What are interaction terms used for?**
+
+- Heterogeneous effects
+- Difference-in-differences
+
+**Example:** Continuous outcome with two binary predictors
+
+- $\alpha$: Intercept when $X_{i1}$ and $X_{i2}$ are 0
+- $\beta_1$ Slope when $X_{i2} = 0$
+- $\beta_2$ Difference in $\alpha$ between $X_{i2}=0$ and $X_{i2}=1$
+- $\beta_3$ Difference in $\beta_1$ between $X_{i2}=0$ and $X_{i2}=1$

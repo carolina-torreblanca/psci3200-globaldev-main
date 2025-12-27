@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jeremy Springman">
+
+<title>Migration 1 – PSCI 3200</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../html/custom.scss">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">PSCI 3200</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#logistics" id="toc-logistics" class="nav-link active" data-scroll-target="#logistics">Logistics</a>
+  <ul class="collapse">
+  <li><a href="#assignments" id="toc-assignments" class="nav-link" data-scroll-target="#assignments">Assignments</a></li>
+  <li><a href="#agenda" id="toc-agenda" class="nav-link" data-scroll-target="#agenda">Agenda</a></li>
+  </ul></li>
+  <li><a href="#research-design-debrief" id="toc-research-design-debrief" class="nav-link" data-scroll-target="#research-design-debrief">Research Design Debrief</a>
+  <ul class="collapse">
+  <li><a href="#debrief" id="toc-debrief" class="nav-link" data-scroll-target="#debrief">Debrief</a></li>
+  </ul></li>
+  <li><a href="#migration-overview" id="toc-migration-overview" class="nav-link" data-scroll-target="#migration-overview">Migration Overview</a>
+  <ul class="collapse">
+  <li><a href="#overview-of-international-migration" id="toc-overview-of-international-migration" class="nav-link" data-scroll-target="#overview-of-international-migration">Overview of International Migration</a></li>
+  <li><a href="#economic-equilibrium" id="toc-economic-equilibrium" class="nav-link" data-scroll-target="#economic-equilibrium">Economic Equilibrium</a></li>
+  <li><a href="#economic-equilibrium-push" id="toc-economic-equilibrium-push" class="nav-link" data-scroll-target="#economic-equilibrium-push">Economic Equilibrium: Push</a></li>
+  <li><a href="#economic-equilibrium-pull" id="toc-economic-equilibrium-pull" class="nav-link" data-scroll-target="#economic-equilibrium-pull">Economic Equilibrium: Pull</a></li>
+  <li><a href="#economic-equilibrium-costs" id="toc-economic-equilibrium-costs" class="nav-link" data-scroll-target="#economic-equilibrium-costs">Economic Equilibrium: Costs</a></li>
+  <li><a href="#economic-equilibrium-perspective" id="toc-economic-equilibrium-perspective" class="nav-link" data-scroll-target="#economic-equilibrium-perspective">Economic Equilibrium Perspective</a></li>
+  <li><a href="#migration-systems" id="toc-migration-systems" class="nav-link" data-scroll-target="#migration-systems">Migration Systems</a></li>
+  </ul></li>
+  <li><a href="#rozo-grossman" id="toc-rozo-grossman" class="nav-link" data-scroll-target="#rozo-grossman">Rozo &amp; Grossman</a>
+  <ul class="collapse">
+  <li><a href="#quiz" id="toc-quiz" class="nav-link" data-scroll-target="#quiz">Quiz</a></li>
+  <li><a href="#trends-displacement" id="toc-trends-displacement" class="nav-link" data-scroll-target="#trends-displacement">Trends: Displacement</a></li>
+  <li><a href="#trends-displacement-1" id="toc-trends-displacement-1" class="nav-link" data-scroll-target="#trends-displacement-1">Trends: Displacement</a></li>
+  <li><a href="#trends-conflict" id="toc-trends-conflict" class="nav-link" data-scroll-target="#trends-conflict">Trends: Conflict</a></li>
+  <li><a href="#trends-conflict-1" id="toc-trends-conflict-1" class="nav-link" data-scroll-target="#trends-conflict-1">Trends: Conflict</a></li>
+  <li><a href="#trends-climate" id="toc-trends-climate" class="nav-link" data-scroll-target="#trends-climate">Trends: Climate</a></li>
+  <li><a href="#trends-research" id="toc-trends-research" class="nav-link" data-scroll-target="#trends-research">Trends: Research</a></li>
+  <li><a href="#trends-research-1" id="toc-trends-research-1" class="nav-link" data-scroll-target="#trends-research-1">Trends: Research</a></li>
+  <li><a href="#impact-on-host-labor-markets" id="toc-impact-on-host-labor-markets" class="nav-link" data-scroll-target="#impact-on-host-labor-markets">Impact on Host: Labor markets</a></li>
+  <li><a href="#impact-on-host-other" id="toc-impact-on-host-other" class="nav-link" data-scroll-target="#impact-on-host-other">Impact on Host: Other</a></li>
+  <li><a href="#supporting-migrants" id="toc-supporting-migrants" class="nav-link" data-scroll-target="#supporting-migrants">Supporting Migrants</a></li>
+  <li><a href="#supporting-migrants-1" id="toc-supporting-migrants-1" class="nav-link" data-scroll-target="#supporting-migrants-1">Supporting Migrants</a></li>
+  <li><a href="#supporting-migrants-2" id="toc-supporting-migrants-2" class="nav-link" data-scroll-target="#supporting-migrants-2">Supporting Migrants</a></li>
+  <li><a href="#policy-implications" id="toc-policy-implications" class="nav-link" data-scroll-target="#policy-implications">Policy Implications</a></li>
+  </ul></li>
+  <li><a href="#gazeaud-et-al.-2023" id="toc-gazeaud-et-al.-2023" class="nav-link" data-scroll-target="#gazeaud-et-al.-2023">Gazeaud et al.&nbsp;(2023)</a>
+  <ul class="collapse">
+  <li><a href="#constraints-to-migration" id="toc-constraints-to-migration" class="nav-link" data-scroll-target="#constraints-to-migration">Constraints to migration</a></li>
+  <li><a href="#intervention" id="toc-intervention" class="nav-link" data-scroll-target="#intervention">Intervention</a></li>
+  <li><a href="#findings" id="toc-findings" class="nav-link" data-scroll-target="#findings">Findings</a></li>
+  <li><a href="#findings-1" id="toc-findings-1" class="nav-link" data-scroll-target="#findings-1">Findings</a></li>
+  <li><a href="#policy-implications-1" id="toc-policy-implications-1" class="nav-link" data-scroll-target="#policy-implications-1">Policy Implications</a></li>
+  </ul></li>
+  <li><a href="#difference-in-differences" id="toc-difference-in-differences" class="nav-link" data-scroll-target="#difference-in-differences">Difference-in Differences</a>
+  <ul class="collapse">
+  <li><a href="#review" id="toc-review" class="nav-link" data-scroll-target="#review">Review</a></li>
+  <li><a href="#identification-strategy" id="toc-identification-strategy" class="nav-link" data-scroll-target="#identification-strategy">Identification strategy</a></li>
+  <li><a href="#holy-trinity-of-causal-inference" id="toc-holy-trinity-of-causal-inference" class="nav-link" data-scroll-target="#holy-trinity-of-causal-inference">Holy Trinity of Causal Inference</a></li>
+  <li><a href="#difference-in-differences-1" id="toc-difference-in-differences-1" class="nav-link" data-scroll-target="#difference-in-differences-1">Difference-in-Differences</a></li>
+  <li><a href="#simulation-example" id="toc-simulation-example" class="nav-link" data-scroll-target="#simulation-example">Simulation Example</a></li>
+  <li><a href="#simulation-example-1" id="toc-simulation-example-1" class="nav-link" data-scroll-target="#simulation-example-1">Simulation Example</a></li>
+  <li><a href="#did-assumptions" id="toc-did-assumptions" class="nav-link" data-scroll-target="#did-assumptions">DiD: Assumptions</a></li>
+  <li><a href="#why-cant-we-just-observe-how-units-change-over-time" id="toc-why-cant-we-just-observe-how-units-change-over-time" class="nav-link" data-scroll-target="#why-cant-we-just-observe-how-units-change-over-time">Why can’t we just observe how units change over time?</a></li>
+  <li><a href="#why-cant-we-just-observe-how-units-change-over-time-1" id="toc-why-cant-we-just-observe-how-units-change-over-time-1" class="nav-link" data-scroll-target="#why-cant-we-just-observe-how-units-change-over-time-1">Why can’t we just observe how units change over time?</a></li>
+  <li><a href="#why-cant-we-just-compare-units-without-randomization" id="toc-why-cant-we-just-compare-units-without-randomization" class="nav-link" data-scroll-target="#why-cant-we-just-compare-units-without-randomization">Why can’t we just compare units without randomization?</a></li>
+  <li><a href="#why-cant-we-just-compare-units-without-randomization-1" id="toc-why-cant-we-just-compare-units-without-randomization-1" class="nav-link" data-scroll-target="#why-cant-we-just-compare-units-without-randomization-1">Why can’t we just compare units without randomization?</a></li>
+  <li><a href="#why-cant-we-just-compare-units-without-randomization-2" id="toc-why-cant-we-just-compare-units-without-randomization-2" class="nav-link" data-scroll-target="#why-cant-we-just-compare-units-without-randomization-2">Why can’t we just compare units without randomization?</a></li>
+  <li><a href="#why-cant-we-just-compare-units-without-randomization-3" id="toc-why-cant-we-just-compare-units-without-randomization-3" class="nav-link" data-scroll-target="#why-cant-we-just-compare-units-without-randomization-3">Why can’t we just compare units without randomization?</a></li>
+  </ul></li>
+  <li><a href="#sviatschi-2022" id="toc-sviatschi-2022" class="nav-link" data-scroll-target="#sviatschi-2022">Sviatschi (2022)</a>
+  <ul class="collapse">
+  <li><a href="#sviatschi-2022-1" id="toc-sviatschi-2022-1" class="nav-link" data-scroll-target="#sviatschi-2022-1">Sviatschi (2022)</a></li>
+  <li><a href="#three-sources-of-variation" id="toc-three-sources-of-variation" class="nav-link" data-scroll-target="#three-sources-of-variation">Three sources of variation</a></li>
+  <li><a href="#identifying-assumption" id="toc-identifying-assumption" class="nav-link" data-scroll-target="#identifying-assumption">Identifying assumption</a></li>
+  <li><a href="#findings-2" id="toc-findings-2" class="nav-link" data-scroll-target="#findings-2">Findings</a></li>
+  <li><a href="#policy-implications-2" id="toc-policy-implications-2" class="nav-link" data-scroll-target="#policy-implications-2">Policy Implications</a></li>
+  <li><a href="#threats-to-inference" id="toc-threats-to-inference" class="nav-link" data-scroll-target="#threats-to-inference">Threats to Inference</a></li>
+  <li><a href="#adjusting-on-observables" id="toc-adjusting-on-observables" class="nav-link" data-scroll-target="#adjusting-on-observables">Adjusting on Observables</a></li>
+  <li><a href="#validity" id="toc-validity" class="nav-link" data-scroll-target="#validity">Validity</a></li>
+  </ul></li>
+  <li><a href="#ie-evidence-review" id="toc-ie-evidence-review" class="nav-link" data-scroll-target="#ie-evidence-review">3ie Evidence Review</a>
+  <ul class="collapse">
+  <li><a href="#irregular-migration-evidence-review" id="toc-irregular-migration-evidence-review" class="nav-link" data-scroll-target="#irregular-migration-evidence-review">Irregular Migration Evidence Review</a></li>
+  <li><a href="#irregular-migration-evidence-review-1" id="toc-irregular-migration-evidence-review-1" class="nav-link" data-scroll-target="#irregular-migration-evidence-review-1">Irregular Migration Evidence Review</a></li>
+  <li><a href="#findings-3" id="toc-findings-3" class="nav-link" data-scroll-target="#findings-3">Findings</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="08-migration.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Migration 1</h1>
+<p class="subtitle lead">Plus Difference-in-Differences</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Jeremy Springman </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            University of Pennsylvania
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="logistics" class="level1">
+<h1>Logistics</h1>
+<section id="assignments" class="level2">
+<h2 class="anchored" data-anchor-id="assignments">Assignments</h2>
+<ul>
+<li>Today
+<ul>
+<li><a href="https://voxdev.org/voxdevlit/refugees-and-other-forcibly-displaced-populations">Rozo and Grossman (2025)</a> (download the pdf and/or watch the YouTube video)</li>
+<li><a href="https://voxdev.org/topic/migration-urbanisation/constraints-migration-evidence-comoros">Gazeaud, Jules, Eric Mvukiyehe, and Olivier Sterck (2020)</a></li>
+<li><a href="https://voxdev.org/topic/migration-urbanisation/impact-us-deportation-policy-gang-activity-el-salvador">Sviatschi (2022)</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="agenda" class="level2">
+<h2 class="anchored" data-anchor-id="agenda">Agenda</h2>
+<p><br>
+</p>
+<ol type="1">
+<li>Research Design Debrief</li>
+<li>Migration</li>
+<li>Causal Inference with Observational Data: Difference-in-Differences</li>
+</ol>
+</section>
+</section>
+<section id="research-design-debrief" class="level1">
+<h1>Research Design Debrief</h1>
+<section id="debrief" class="level2">
+<h2 class="anchored" data-anchor-id="debrief">Debrief</h2>
+<p><strong>Submissions</strong></p>
+<ul>
+<li>You need to <em>check</em> what you send me…</li>
+<li>Read the basic instructions (quarto + html file)</li>
+<li>I didn’t penalize anyone, but next time I will</li>
+</ul>
+<p><strong>Research Designs</strong></p>
+<ul>
+<li>Justify your sample</li>
+<li>Just “controlling for observables” will not get you full credit</li>
+<li>Next week, we’ll cover essentials… bring your questions!</li>
+</ul>
+</section>
+</section>
+<section id="migration-overview" class="level1">
+<h1>Migration Overview</h1>
+<section id="overview-of-international-migration" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-international-migration">Overview of International Migration</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/un_migration.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="economic-equilibrium" class="level2">
+<h2 class="anchored" data-anchor-id="economic-equilibrium">Economic Equilibrium</h2>
+<p><br>
+</p>
+<ul>
+<li>Push factors</li>
+<li>Pull factors</li>
+<li>Costs</li>
+</ul>
+</section>
+<section id="economic-equilibrium-push" class="level2">
+<h2 class="anchored" data-anchor-id="economic-equilibrium-push">Economic Equilibrium: Push</h2>
+<p><br>
+</p>
+<p><strong>Push factors: origin country factors that affect the well-being</strong></p>
+<div class="fragment">
+<div class="incremental">
+<ul class="incremental">
+<li>Demographics: youth bulge</li>
+<li>Living standards: poor infrastructure, crime</li>
+<li>Economic opportunities: unemployment</li>
+<li>Politics: exclusion</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="economic-equilibrium-pull" class="level2">
+<h2 class="anchored" data-anchor-id="economic-equilibrium-pull">Economic Equilibrium: Pull</h2>
+<p><br>
+</p>
+<p><strong>Pull factors: destination country factors that affect expected well-being</strong></p>
+<div class="incremental">
+<ul class="incremental">
+<li>Demographics: aging population</li>
+<li>Living standards: good infrastructure, security</li>
+<li>Economic opportunities: labor demand, credit</li>
+<li>Politics: inclusion</li>
+</ul>
+</div>
+</section>
+<section id="economic-equilibrium-costs" class="level2">
+<h2 class="anchored" data-anchor-id="economic-equilibrium-costs">Economic Equilibrium: Costs</h2>
+<p><br>
+</p>
+<p><strong>Costs: factors that shape the costs of migrating</strong></p>
+<div class="fragment">
+<div class="incremental">
+<ul class="incremental">
+<li>Legal restrictions</li>
+<li>Transportation</li>
+<li>Asset mobility</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="economic-equilibrium-perspective" class="level2">
+<h2 class="anchored" data-anchor-id="economic-equilibrium-perspective">Economic Equilibrium Perspective</h2>
+<p><br>
+</p>
+<ul>
+<li>Migration decisions are based on expected return</li>
+<li>Movements from poorer to richer regions will equalize wages</li>
+</ul>
+</section>
+<section id="migration-systems" class="level2">
+<h2 class="anchored" data-anchor-id="migration-systems">Migration Systems</h2>
+<p><strong>Macro linkages between sending and receiving countries</strong></p>
+<ul>
+<li>Migration is driven by prior links between sending and receiving countries
+<ul>
+<li>Colonization, political or cultural influence, trade, language</li>
+</ul></li>
+</ul>
+<p><strong>Micro linkages between households</strong></p>
+<ul>
+<li>Migration is driven by prior links between individuals and households
+<ul>
+<li>Social ties to households in the destination country</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="rozo-grossman" class="level1">
+<h1>Rozo &amp; Grossman</h1>
+<section id="quiz" class="level2">
+<h2 class="anchored" data-anchor-id="quiz">Quiz</h2>
+<p><strong>5 minutes: send me a Slack DM with something you learned from this article</strong></p>
+</section>
+<section id="trends-displacement" class="level2">
+<h2 class="anchored" data-anchor-id="trends-displacement">Trends: Displacement</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/unhcr.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="trends-displacement-1" class="level2">
+<h2 class="anchored" data-anchor-id="trends-displacement-1">Trends: Displacement</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/unhcr2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="trends-conflict" class="level2">
+<h2 class="anchored" data-anchor-id="trends-conflict">Trends: Conflict</h2>
+<p><br>
+</p>
+<div class="incremental">
+<ul class="incremental">
+<li>War deaths continue to decline</li>
+<li>Interstate wars are rare by historical standards</li>
+<li>Geopolitical tensions are increasing</li>
+<li>Number, intensity, complexity, and duration of civil wars are increasing</li>
+</ul>
+</div>
+</section>
+<section id="trends-conflict-1" class="level2">
+<h2 class="anchored" data-anchor-id="trends-conflict-1">Trends: Conflict</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/ucpd.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="trends-climate" class="level2">
+<h2 class="anchored" data-anchor-id="trends-climate">Trends: Climate</h2>
+<p><br>
+</p>
+<ul>
+<li>78% of global land area has become drier over the past 30 years</li>
+<li>Warmer temperatures are causing extreme weather events</li>
+</ul>
+</section>
+<section id="trends-research" class="level2">
+<h2 class="anchored" data-anchor-id="trends-research">Trends: Research</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rozo_methods.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="trends-research-1" class="level2">
+<h2 class="anchored" data-anchor-id="trends-research-1">Trends: Research</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rozo_topics.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="impact-on-host-labor-markets" class="level2">
+<h2 class="anchored" data-anchor-id="impact-on-host-labor-markets">Impact on Host: Labor markets</h2>
+<p><br>
+</p>
+<div class="incremental">
+<ul class="incremental">
+<li>Who gets hurt?</li>
+<li>Who benefits?</li>
+<li>Net effects effects?
+<ul class="incremental">
+<li>Short-term challenges</li>
+<li>Long-term growth</li>
+</ul></li>
+</ul>
+</div>
+<div class="notes">
+<p>Benefit: skilled laborers, formal businesses Hurt: unskilled (women, youth), informal businesses</p>
+</div>
+</section>
+<section id="impact-on-host-other" class="level2">
+<h2 class="anchored" data-anchor-id="impact-on-host-other">Impact on Host: Other</h2>
+<p><br>
+</p>
+<div class="incremental">
+<ul class="incremental">
+<li>Service provision
+<ul class="incremental">
+<li>Displacement effects (public to private)</li>
+<li>Disease burden</li>
+</ul></li>
+<li>Politics
+<ul class="incremental">
+<li>Wealth</li>
+<li>Prior exposure</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="supporting-migrants" class="level2">
+<h2 class="anchored" data-anchor-id="supporting-migrants">Supporting Migrants</h2>
+<p><br>
+</p>
+<p><strong>Unique challenges for forced migrants?</strong></p>
+<div class="fragment">
+<ul>
+<li>Loss of assets</li>
+<li>Trauma and mental health</li>
+<li>Legal uncertainty</li>
+<li>Language and cultural barriers</li>
+</ul>
+</div>
+</section>
+<section id="supporting-migrants-1" class="level2">
+<h2 class="anchored" data-anchor-id="supporting-migrants-1">Supporting Migrants</h2>
+<p><strong>Cash transfers</strong></p>
+<ul>
+<li>Short-term increases in consumption, well-being</li>
+</ul>
+<p><strong>Labor market integration</strong></p>
+<ul>
+<li>Increased consumption, well-being</li>
+<li>Reduced crime, fertility</li>
+<li>Kakuma vs Kalobeyei; Uganda business mentors</li>
+</ul>
+</section>
+<section id="supporting-migrants-2" class="level2">
+<h2 class="anchored" data-anchor-id="supporting-migrants-2">Supporting Migrants</h2>
+<p><br>
+</p>
+<ul>
+<li>Mental health</li>
+<li>Social cohesion
+<ul>
+<li>Teacher bias</li>
+<li>Shared aid + integration policies</li>
+<li>Perspective-taking, contact</li>
+</ul></li>
+</ul>
+</section>
+<section id="policy-implications" class="level2">
+<h2 class="anchored" data-anchor-id="policy-implications">Policy Implications</h2>
+<p><br>
+</p>
+<div class="fragment">
+<ul>
+<li>Shift from humanitarian response to self-reliance</li>
+<li>Allow hosts to benefit from aid</li>
+<li>Increase labor market integration</li>
+<li>Address discrimination and mental health</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="gazeaud-et-al.-2023" class="level1">
+<h1>Gazeaud et al.&nbsp;(2023)</h1>
+<section id="constraints-to-migration" class="level2">
+<h2 class="anchored" data-anchor-id="constraints-to-migration">Constraints to migration</h2>
+<p><br>
+</p>
+<ul>
+<li>Migration causes huge income gains</li>
+<li>Desire for migration is extremely high</li>
+<li>Actual migration flows are relatively small</li>
+<li>Why?</li>
+</ul>
+</section>
+<section id="intervention" class="level2">
+<h2 class="anchored" data-anchor-id="intervention">Intervention</h2>
+<p><strong>Conditional cash transfer</strong></p>
+<div class="fragment">
+<ul>
+<li>Cash payment for labor on public works</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Mechanisms:</p>
+</div>
+<div class="fragment">
+<ol type="1">
+<li>Liquidity</li>
+<li>Opportunity cost</li>
+<li>Collateral and access to credit</li>
+<li>Risk-aversion</li>
+</ol>
+</div>
+</section>
+<section id="findings" class="level2">
+<h2 class="anchored" data-anchor-id="findings">Findings</h2>
+<ul>
+<li>Treatment households 38% more likely to migrate</li>
+<li>How did they measure spillovers?</li>
+<li>Mechanisms:
+<ul>
+<li>What were the mechanisms at play?</li>
+<li>How did they reach these conclusions?</li>
+</ul></li>
+</ul>
+</section>
+<section id="findings-1" class="level2">
+<h2 class="anchored" data-anchor-id="findings-1">Findings</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/gazeud_mechanism.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="policy-implications-1" class="level2">
+<h2 class="anchored" data-anchor-id="policy-implications-1">Policy Implications</h2>
+<p><strong>How does this relate to the equilibrium model?</strong></p>
+<p><br>
+</p>
+<p><strong>Policy implications</strong></p>
+<div class="fragment">
+<ul>
+<li>The poorest individuals in sending countries are not the most likely to migrate (<a href="https://www.cgdev.org/publication/migration-developing-countries-selection-income-elasticity-and-simpsons-paradox">Clements and Mendola, 2020</a>)</li>
+<li>Improving welfare in sending countries will not necessarily reduce desire to migrate</li>
+<li>Networks may be less influential (over short time periods and with large pre-treatment migration)</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="difference-in-differences" class="level1">
+<h1>Difference-in Differences</h1>
+<section id="review" class="level2">
+<h2 class="anchored" data-anchor-id="review">Review</h2>
+<p><br>
+</p>
+<ul>
+<li>What is an interaction term?</li>
+<li>What are fixed effects?</li>
+<li>Why do we like randomization?</li>
+</ul>
+</section>
+<section id="identification-strategy" class="level2">
+<h2 class="anchored" data-anchor-id="identification-strategy">Identification strategy</h2>
+<p><strong>In the real world, there are always confounders that we can’t observe (measure) or adjust for</strong></p>
+<ul>
+<li>A <em>research design</em> that allows us to isolate a causal effect from observational data</li>
+<li>Approximates an experiment by ensuring that the treatment and untreated (control) group are similar</li>
+<li>These strategies rely on assumptions that we can <em>attempt</em> to validate</li>
+</ul>
+</section>
+<section id="holy-trinity-of-causal-inference" class="level2">
+<h2 class="anchored" data-anchor-id="holy-trinity-of-causal-inference">Holy Trinity of Causal Inference</h2>
+<p><br>
+</p>
+<ol type="1">
+<li><strong>Difference-in-Differences</strong></li>
+<li>Regression Discontinuity</li>
+<li>Instrumental Variables</li>
+</ol>
+</section>
+<section id="difference-in-differences-1" class="level2">
+<h2 class="anchored" data-anchor-id="difference-in-differences-1">Difference-in-Differences</h2>
+<p><br>
+</p>
+<p><span class="math display">\[
+Y_{it} = \alpha + \beta_1 \text{Treatment}_i + \beta_2 \text{Post}_t + \gamma (\text{Treatment}_i \times \text{Post}_t) + \epsilon_{it}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\gamma (\text{Treatment}_i \times \text{Post}_t)\)</span></li>
+<li>Assumes measurement at two points in time</li>
+</ul>
+</section>
+<section id="simulation-example" class="level2">
+<h2 class="anchored" data-anchor-id="simulation-example">Simulation Example</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load required libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(modelsummary)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate example data</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">treatment =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>), <span class="at">each =</span> <span class="dv">100</span>),</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">post =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>), <span class="at">each =</span> <span class="dv">50</span>, <span class="at">times =</span> <span class="dv">2</span>),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">outcome =</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">4</span>), <span class="co"># control: pre-treatment</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>              <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">4</span>), <span class="co"># control: post-treatment</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>              <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">4</span>), <span class="co"># treatment: pre-treatment</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>              <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">12</span>, <span class="at">sd =</span> <span class="dv">4</span>)) <span class="co"># treatment: post-treatment</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  treatment post   outcome
+1         1    1  7.758097
+2         1    1  9.079290
+3         1    1 16.234833
+4         1    1 10.282034
+5         1    1 10.517151
+6         1    1 16.860260</code></pre>
+</div>
+</div>
+</section>
+<section id="simulation-example-1" class="level2">
+<h2 class="anchored" data-anchor-id="simulation-example-1">Simulation Example</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize the output</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">modelsummary</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="fu">lm</span>(outcome <span class="sc">~</span> treatment <span class="sc">+</span> post, <span class="at">data =</span> data),<span class="co"># standard model</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">lm</span>(outcome <span class="sc">~</span> treatment <span class="sc">*</span> post, <span class="at">data =</span> data)), <span class="co"># difference-in-differences model</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">estimate  =</span> <span class="st">"{estimate}{stars} ({std.error})"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">statistic =</span> <span class="cn">NULL</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">gof_omit =</span> <span class="st">'IC|RMSE|Log|F|R2$|Std.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Model 1</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Model 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: center;">11.475*** (0.466)</td>
+<td style="text-align: center;">12.155*** (0.531)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">treatment</td>
+<td style="text-align: center;">−0.208 (0.538)</td>
+<td style="text-align: center;">−1.570* (0.751)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">post</td>
+<td style="text-align: center;">−1.809*** (0.538)</td>
+<td style="text-align: center;">−3.171*** (0.751)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; box-shadow: 0px 1px;">treatment × post</td>
+<td style="text-align: center; box-shadow: 0px 1px;"></td>
+<td style="text-align: center; box-shadow: 0px 1px;">2.723* (1.062)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Num.Obs.</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">200</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">R2 Adj.</td>
+<td style="text-align: center;">0.045</td>
+<td style="text-align: center;">0.072</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="did-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="did-assumptions">DiD: Assumptions</h2>
+<ul>
+<li>Treatment and control units would have changed in similar ways
+<ul>
+<li>Parallel trends</li>
+</ul></li>
+<li>Requires <em>at least</em> 3 observation periods</li>
+</ul>
+</section>
+<section id="why-cant-we-just-observe-how-units-change-over-time" class="level2">
+<h2 class="anchored" data-anchor-id="why-cant-we-just-observe-how-units-change-over-time">Why can’t we just observe how units change over time?</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>Year <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>Outcome <span class="ot">=</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="fl">1.3</span>, <span class="fl">1.7</span>, <span class="cn">NA</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>Treatment <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Treatment"</span>, <span class="st">"Treatment"</span>,<span class="st">"Treatment"</span>,<span class="st">"Treatment"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">data.frame</span>(Year, Outcome, Treatment)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dat, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Outcome, <span class="at">group =</span> Treatment, <span class="at">color =</span> Treatment)) <span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">linetype=</span>Treatment),<span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">3</span>) <span class="sc">+</span> </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fl">0.8</span>, <span class="fl">2.2</span>) <span class="sc">+</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"solid"</span>, <span class="st">"solid"</span>)) <span class="sc">+</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>) ) <span class="sc">+</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.2</span>), <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">20</span>),</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title=</span><span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="08-migration_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="why-cant-we-just-observe-how-units-change-over-time-1" class="level2">
+<h2 class="anchored" data-anchor-id="why-cant-we-just-observe-how-units-change-over-time-1">Why can’t we just observe how units change over time?</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Year <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Outcome <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">0.9</span>, <span class="fl">1.3</span>, <span class="fl">1.7</span>, <span class="fl">2.1</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>Treatment <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Treatment"</span>, <span class="st">"Treatment"</span>,<span class="st">"Treatment"</span>,<span class="st">"Treatment"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">data.frame</span>(Year, Outcome, Treatment)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dat, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Outcome, <span class="at">group =</span> Treatment, <span class="at">color =</span> Treatment)) <span class="sc">+</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">linetype=</span>Treatment),<span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">3</span>) <span class="sc">+</span> </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fl">0.8</span>, <span class="fl">2.2</span>) <span class="sc">+</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"solid"</span>, <span class="st">"solid"</span>)) <span class="sc">+</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>) ) <span class="sc">+</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.2</span>), <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">20</span>),</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title=</span><span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="08-migration_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="why-cant-we-just-compare-units-without-randomization" class="level2">
+<h2 class="anchored" data-anchor-id="why-cant-we-just-compare-units-without-randomization">Why can’t we just compare units without randomization?</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Year <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>Outcome <span class="ot">=</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="fl">1.2</span>, <span class="fl">1.4</span>, <span class="cn">NA</span>, </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>            <span class="cn">NA</span>, <span class="fl">1.3</span>, <span class="fl">1.7</span>, <span class="cn">NA</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>Treatment <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Control"</span>, <span class="st">"Control"</span>,<span class="st">"Control"</span>,<span class="st">"Control"</span>, </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Treatment"</span>, <span class="st">"Treatment"</span>, <span class="st">"Treatment"</span>, <span class="st">"Treatment"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">data.frame</span>(Year, Outcome, Treatment)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>Treatment <span class="ot">=</span> <span class="fu">factor</span>(dat<span class="sc">$</span>Treatment, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Treatment"</span>, <span class="st">"Control"</span>))</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dat, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Outcome, <span class="at">group =</span> Treatment, <span class="at">color =</span> Treatment)) <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">linetype=</span>Treatment),<span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">3</span>) <span class="sc">+</span> </span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fl">0.8</span>, <span class="fl">2.2</span>) <span class="sc">+</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"solid"</span>, <span class="st">"solid"</span>)) <span class="sc">+</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>) ) <span class="sc">+</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.2</span>), <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">20</span>),</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title=</span><span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="08-migration_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="why-cant-we-just-compare-units-without-randomization-1" class="level2">
+<h2 class="anchored" data-anchor-id="why-cant-we-just-compare-units-without-randomization-1">Why can’t we just compare units without randomization?</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Year <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>Outcome <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="fl">1.2</span>, <span class="fl">1.4</span>, <span class="fl">1.6</span>, </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>            <span class="fl">0.9</span>, <span class="fl">1.3</span>, <span class="fl">1.7</span>, <span class="fl">2.1</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>Treatment <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Control"</span>, <span class="st">"Control"</span>,<span class="st">"Control"</span>,<span class="st">"Control"</span>, </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Treatment"</span>, <span class="st">"Treatment"</span>, <span class="st">"Treatment"</span>, <span class="st">"Treatment"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">data.frame</span>(Year, Outcome, Treatment)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>Treatment <span class="ot">=</span> <span class="fu">factor</span>(dat<span class="sc">$</span>Treatment, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Treatment"</span>, <span class="st">"Control"</span>))</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dat, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Outcome, <span class="at">group =</span> Treatment, <span class="at">color =</span> Treatment)) <span class="sc">+</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">linetype=</span>Treatment),<span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">3</span>) <span class="sc">+</span> </span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fl">0.8</span>, <span class="fl">2.2</span>) <span class="sc">+</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"solid"</span>, <span class="st">"solid"</span>)) <span class="sc">+</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>) ) <span class="sc">+</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.2</span>), <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">20</span>),</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title=</span><span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="08-migration_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="why-cant-we-just-compare-units-without-randomization-2" class="level2">
+<h2 class="anchored" data-anchor-id="why-cant-we-just-compare-units-without-randomization-2">Why can’t we just compare units without randomization?</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>Year <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>Outcome <span class="ot">=</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="fl">1.3</span>, <span class="fl">1.5</span>, <span class="cn">NA</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>            <span class="dv">1</span>, <span class="fl">1.2</span>, <span class="fl">1.4</span>, <span class="cn">NA</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>            <span class="fl">1.1</span>, <span class="fl">1.3</span>, <span class="fl">1.7</span>, <span class="cn">NA</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>Treatment <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Comparison"</span>,<span class="st">"Comparison"</span>,<span class="st">"Comparison"</span>,<span class="st">"Comparison"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Control"</span>, <span class="st">"Control"</span>,<span class="st">"Control"</span>,<span class="st">"Control"</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Treatment"</span>, <span class="st">"Treatment"</span>, <span class="st">"Treatment"</span>, <span class="st">"Treatment"</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">data.frame</span>(Year, Outcome, Treatment)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>Treatment <span class="ot">=</span> <span class="fu">factor</span>(dat<span class="sc">$</span>Treatment, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Treatment"</span>, <span class="st">"Comparison"</span>, <span class="st">"Control"</span>))</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dat, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Outcome,  <span class="at">color =</span> Treatment)) <span class="sc">+</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">linetype=</span>Treatment),<span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fl">0.8</span>, <span class="fl">2.2</span>) <span class="sc">+</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"solid"</span>, <span class="st">"dotted"</span>, <span class="st">"solid"</span>)) <span class="sc">+</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"black"</span>, <span class="st">"red"</span>  ) ) <span class="sc">+</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.2</span>), <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">20</span>),</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title=</span><span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="08-migration_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="why-cant-we-just-compare-units-without-randomization-3" class="level2">
+<h2 class="anchored" data-anchor-id="why-cant-we-just-compare-units-without-randomization-3">Why can’t we just compare units without randomization?</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>Year <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>Outcome <span class="ot">=</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="fl">1.3</span>, <span class="fl">1.5</span>, <span class="fl">1.7</span>,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>            <span class="dv">1</span>, <span class="fl">1.2</span>, <span class="fl">1.4</span>,<span class="fl">1.6</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>            <span class="fl">1.1</span>, <span class="fl">1.3</span>, <span class="fl">1.7</span>, <span class="fl">1.9</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>Treatment <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Comparison"</span>,<span class="st">"Comparison"</span>,<span class="st">"Comparison"</span>,<span class="st">"Comparison"</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Control"</span>, <span class="st">"Control"</span>,<span class="st">"Control"</span>,<span class="st">"Control"</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Treatment"</span>, <span class="st">"Treatment"</span>, <span class="st">"Treatment"</span>, <span class="st">"Treatment"</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">data.frame</span>(Year, Outcome, Treatment)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>Treatment <span class="ot">=</span> <span class="fu">factor</span>(dat<span class="sc">$</span>Treatment, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Treatment"</span>, <span class="st">"Comparison"</span>, <span class="st">"Control"</span>))</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dat, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Outcome,  <span class="at">color =</span> Treatment)) <span class="sc">+</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">linetype=</span>Treatment),<span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fl">0.8</span>, <span class="fl">2.2</span>) <span class="sc">+</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"solid"</span>, <span class="st">"dotted"</span>, <span class="st">"solid"</span>)) <span class="sc">+</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"black"</span>, <span class="st">"red"</span>  ) ) <span class="sc">+</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.2</span>), <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">20</span>),</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title=</span><span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="08-migration_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="sviatschi-2022" class="level1">
+<h1>Sviatschi (2022)</h1>
+<section id="sviatschi-2022-1" class="level2">
+<h2 class="anchored" data-anchor-id="sviatschi-2022-1">Sviatschi (2022)</h2>
+<p><br>
+</p>
+<ul>
+<li>What is the effect of mass deportations on the root causes of migration?</li>
+</ul>
+</section>
+<section id="three-sources-of-variation" class="level2">
+<h2 class="anchored" data-anchor-id="three-sources-of-variation">Three sources of variation</h2>
+<p><br>
+</p>
+<ol type="1">
+<li>Geography (birth municipality)</li>
+<li>Time (policy change)</li>
+<li>Age (recruitment age)</li>
+</ol>
+</section>
+<section id="identifying-assumption" class="level2">
+<h2 class="anchored" data-anchor-id="identifying-assumption">Identifying assumption</h2>
+<p><br>
+</p>
+<ul>
+<li>Municipalities where gang-deportees were born would have changed in similar ways to other municipalities <em>in the absence of a policy change</em></li>
+</ul>
+</section>
+<section id="findings-2" class="level2">
+<h2 class="anchored" data-anchor-id="findings-2">Findings</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/sviatschi_did.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="policy-implications-2" class="level2">
+<h2 class="anchored" data-anchor-id="policy-implications-2">Policy Implications</h2>
+<p><br>
+</p>
+<ul>
+<li>Addressing pull factors can have unintended affects on push factors in complex ways</li>
+</ul>
+</section>
+<section id="threats-to-inference" class="level2">
+<h2 class="anchored" data-anchor-id="threats-to-inference">Threats to Inference</h2>
+<p><br>
+</p>
+<ul>
+<li>Confounders</li>
+<li>Colliders</li>
+<li>Mechanisms</li>
+<li>Reverse Causality</li>
+</ul>
+</section>
+<section id="adjusting-on-observables" class="level2">
+<h2 class="anchored" data-anchor-id="adjusting-on-observables">Adjusting on Observables</h2>
+<p><br>
+</p>
+<ul>
+<li>Matching</li>
+<li>Weighting</li>
+<li>Synthetic Control (very fancy weighting)</li>
+</ul>
+</section>
+<section id="validity" class="level2">
+<h2 class="anchored" data-anchor-id="validity">Validity</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Internal validity</li>
+<li>External validity</li>
+<li>What are the trade-offs between experiments and observational studies?
+<ul class="incremental">
+<li>Experiments have more internal validity</li>
+<li>But… they often have synthetic treatments, convenience samples</li>
+</ul></li>
+<li>Where are these studies used in the real-world?</li>
+</ul>
+</div>
+<!-- ## Inference -->
+<!-- Estimate = Estimand + Bias + Noise -->
+<!-- Estimand: the true quantity of interest (e.g., the proportion of people who engage in bribery; the correlation between wealth and bribery) -->
+<!-- Estimate: the number we get from our analysis. Our approximation to the true value.  -->
+<!-- Estimator: the procedure we use to generate the estimate.  -->
+<!-- Bias: errors that occur systematically -->
+<!-- Noise: idiosyncratic (unsystematic) errors -->
+</section>
+</section>
+<section id="ie-evidence-review" class="level1">
+<h1>3ie Evidence Review</h1>
+<section id="irregular-migration-evidence-review" class="level2">
+<h2 class="anchored" data-anchor-id="irregular-migration-evidence-review">Irregular Migration Evidence Review</h2>
+<p><strong>Objective:</strong></p>
+<ul>
+<li>Review evidence efficacy of interventions designed to target the root causes of irregular migration</li>
+</ul>
+<p><strong>Root causes: social and political conditions that induce departures</strong></p>
+<ol type="1">
+<li>Lack of economic opportunity</li>
+<li>Lack of capacity to adopt to shocks</li>
+<li>High levels of violence</li>
+<li>Lack of regular migration channels</li>
+</ol>
+</section>
+<section id="irregular-migration-evidence-review-1" class="level2">
+<h2 class="anchored" data-anchor-id="irregular-migration-evidence-review-1">Irregular Migration Evidence Review</h2>
+<p><br>
+</p>
+<p><strong>What is irregular migration?</strong></p>
+<div class="fragment">
+<ul>
+<li>Migration outside legal channels</li>
+</ul>
+</div>
+<p><strong>Why is it different from regular migration?</strong></p>
+<div class="fragment">
+<ul>
+<li>Additional risks relative to legal migration (violence, exploitation, access to legal system)</li>
+</ul>
+</div>
+<!-- ## Whats the process -->
+<!-- 1. Identify root causes of migration -->
+<!-- 2. Look for papers assessing interventions on these root causes and with some reference to migration -->
+<!-- 3. Find the subset of studies that specifically look at outcomes related to migration -->
+</section>
+<section id="findings-3" class="level2">
+<h2 class="anchored" data-anchor-id="findings-3">Findings</h2>
+<p>Studies reporting migration outcomes are concentrated on 3 intervention categories:</p>
+<ol type="1">
+<li>Human capital strengthening</li>
+<li>Active labor market policies</li>
+<li>Information campaigns <!-- legal rights, risks of irregular migration, legal alternatives, and/or working conditions --></li>
+</ol>
+<!-- ## Evidence base -->
+<!-- evidence base is concentrated in two domains: -->
+<!-- 1. economic opportunities and decent work (n = 64)  -->
+<!-- -- human capital strengthening (cash transfers) -->
+<!-- -- active labor market policies (vocational training) -->
+<!-- 2. orderly and safe migration managemen -->
+<!-- -- information campaigns -->
+<!-- we also see eivdnece on -->
+<!-- 1. strengthening resilience against shocks -->
+<!-- -- disaster risk financing (resistance seeds, crop management) -->
+<!-- No evidence on: -->
+<!-- - building safer communities through violence prevention -->
+<!-- -- likely due to long time lags -->
+<!-- ## Evidence base -->
+<!-- RCTs: -->
+<!-- - Cash transfers within the human-capital strengthening intervention category (e.g., -->
+<!-- Angelucci 2004, 2013; Barham, Macours, and Maluccio 2018; Gazeaud et al. -->
+<!-- 2022a); -->
+<!-- - Vocational trainings and other active labor market policies (e.g., Ahn et al. 2020; -->
+<!-- Hardy et al. 2019; Das 2017); and -->
+<!-- - Information campaigns on the risks of migrating irregularly and other risks (e.g., -->
+<!-- Beam, McKenzie, and Yang 2016; Tjaden and Dunsch 2021; Bah et al. 2023). -->
+</section>
+<section id="conclusions" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
+<p><br>
+</p>
+<ul>
+<li>Some evidence on interventions that address the root causes of irregular migration</li>
+<li>Almost no evidence looking at irregular migration as a primary outcome</li>
+<li>A number of studies are ongoing</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Content <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> 2025 by <a href="https://jrspringman.github.io/">Jeremy Springman</a> <br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc" aria-label="creative-commons-nc"></i> <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/jrspringman/psci3200-globaldev">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

@@ -1,0 +1,23 @@
+---
+title: "Causal Inference 3"
+date: 2024-02-08
+---
+
+
+## Required Readings
+
+- DSS Ch 5
+  + [interactive visualization: linear model](https://ellaudet.iq.harvard.edu/linear_model)
+  + [interactive visualization: OLS](https://ellaudet.iq.harvard.edu/least_squares)
+
+## Assignment
+
+- None
+
+## Slides
+
+- [Slides](/slides/07-causal.html)
+
+## Interesting Stuff (non-required)
+
+- The [Peisakhin and Rozenas (2018)](https://onlinelibrary.wiley.com/doi/full/10.1111/ajps.12355)  article that Llaudet discusses in the chapter

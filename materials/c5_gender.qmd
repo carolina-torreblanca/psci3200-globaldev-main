@@ -1,0 +1,19 @@
+---
+title: "Gender and Development"
+date: 2025-02-26
+---
+  
+## Required Readings
+  
+- [Chattopadhyay and Duflo, 2004](/files/Chattopadhyay-WomenPolicyMakers-2004.pdf)
+
+## Suggested Readings
+
+- [Brambor, Roberts and Golder, 2017](/files/understanding-interaction-models-improving-empirical-analyses.pdf)
+
+## Slides
+
+- [Slides](/slides/c5-gender.html)
+
+
+

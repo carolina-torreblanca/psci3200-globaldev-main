@@ -1,0 +1,572 @@
+---
+title: "Correlation and Causation"
+subtitle: "What are they good for?"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+      - title-slide.html
+    gfm:
+    mermaid-format: png
+    highlight-style: atom-one-dark
+    code-overflow: wrap
+editor: source
+---
+
+
+# Logistics
+
+## Assignments
+
+- Did everyone find the readings and slides for today?
+- For next week:
+  + I'll scan the chapter and upload tonight
+  + Remember you have a quasi-assignment
+
+## Agenda
+
+- Correlation
+  + What is it?
+  + What is it composed of?
+  + What is it good for?
+- Causation
+  + What is it good for?
+  + Why is it hard?
+  + Potential outcomes and counterfactuals
+
+# Correlation
+
+## Which of the following statements describe a correlation?
+
+1. Most professional data analysis took a statistics course in college.
+
+::: {.fragment .highlight-red}
+2. The longer a person runs the more calories they burn.
+:::
+3. People who live to be 100 years old typically take vitamins.
+
+::: {.fragment .highlight-red}
+4. Older people vote more than younger people.
+:::
+
+
+## Correlations: Quantitative Comparison
+
+- Lots of bad analysis *implies* comparisons
+  + Ex. 10 things that extremely successful people do to be productive
+  + Ex. 60% of Americans now live paycheck-to-paycheck
+  + Ex. 70% of participants reported an improvement
+- Avoid 'selecting on the dependent variable'
+  + Applies to qualitative comparisons as well
+
+
+## Correlations: Necessary Components
+
+\
+
+**What do we need to calculate correlations?**
+
+- Measures of central tendency
+  + Mean 
+- Measures of spread
+  + Variance
+  + Standard deviation
+
+
+## Central Tendency: Mean
+
+
+$$
+\mu_X = \frac{1}{n} \sum_{i}^{n} X_i
+$$
+
+```{r}
+#| echo: true
+
+my_vector = rnorm(10, mean = 10, sd = 5)
+# Step 1: Sum the values
+sum_values <- sum(my_vector)
+# Step 2: Count the number of elements
+count_elements <- length(my_vector)
+# Step 3: Calculate the mean
+mean_value <- sum_values / count_elements
+
+print(mean_value)
+mean(my_vector)
+```
+
+
+## Spread: Variance
+
+$$
+\sigma^2_X = \frac{1}{N} \sum_{i}^{N} (X_i - \mu_X)^2
+$$
+
+::: {.incremental}
+- What does the square in $\sigma^2$ accomplish?
+- What are the implications for interpretation?
+  + Units
+  + Distribution
+- Even with these basic measures, we're already thinking about the distribution!
+
+:::
+
+## Spread: Variance
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Create a vector"
+
+## Create vector, sort by size, and store var
+set.seed(123)
+dat = rnorm(10, mean = 10, sd = 5)
+dat = sort(dat)
+o_var = var(dat)
+print(dat)
+
+```
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Add a constant to a big number"
+
+## Create new dataframe for big addition and store vector length
+b_dat = dat
+ind = length(b_dat)
+
+## Add four to the largest number in the vector and calculate size of var increase
+b_dat[ind] = b_dat[ind] + 4
+b_var = var(b_dat)
+val = b_var - o_var
+cat("Variance increases by", val )
+```
+
+
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Add a constant to a smaller number"
+
+## Create new dataframe for small addition
+s_dat = dat
+
+## Add four to the smallest number in the vector and calculate size of var increase
+s_dat[ind-2] = s_dat[ind-2] + 4
+s_var = var(s_dat)
+val = s_var - o_var
+cat("Variance increases by", val )
+
+```
+
+## Spread: Standard Deviation
+
+$$
+\sigma_X = \sqrt{\frac{1}{N} \sum_{i}^{N} (X_i - \mu_X)^2}
+$$
+
+::: {.incremental}
+- What does the $\sqrt{}$ accomplish?
+- What are the implications for interpretation?
+  + Expressed in the same units as the observations
+  + How far we expect each observation to be from the mean, on average
+- This means we can report effect sizes as SDs
+:::
+
+
+## Measures of Correlation
+
+::: {.incremental}
+- <span style="color:red;">Covariance</span> $\text{Cov}(X, Y) = \frac{1}{n} \sum_{i}^{N} (X_i - \bar{X})(Y_i - \bar{Y})$
+  + Product of the deviations
+  + Range: unbounded
+- <span style="color:red;">Correlation coefficient</span> $\text{Cor}(X, Y) = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y}$
+  + Covariance normalized by product of SDs
+  + Range: -1 to 1
+- <span style="color:red;">Slope</span> $\beta_X = \frac{\text{Cov}(X, Y)}{\sigma^2_X}$
+  + Covariance normalized by variance
+  + Expected change in $Y$ with 1-unit change in $X$
+:::
+
+
+## Measures of Correlation
+
+::: {.incremental}
+- What does the correlation coefficient tell you that slope doesn't?
+  + Consistency of the relationship on bounded scale (-1 to 1)
+- What does slope tell you that the correlation coefficient doesn't?
+  + Substantive importance (magnitude)
+- Give an example of when you'd prefer each
+  + Correlation: When comparing relationships on different scales
+  + Slope: When thinking about ROI
+:::
+
+
+## Correlation
+
+::: columns
+::: {.column width="70%"}
+
+\
+**What can with do with them?**
+
+- <span style="color:red;">Description</span>: quantitative comparisons 
+:::
+
+::: {.column width="30%"}
+
+::: {.fragment}
+
+::: {.callout-note appearance="simple" icon=false} 
+-   <span style="color:red;">*sample matters alot*</span>
+-   <span style="color:blue;">*sample matters less*</span>
+:::
+
+:::
+
+:::
+:::
+- <span style="color:red;">Forecasting</span>: sample population $\rightarrow$ out-of-sample 
+- <span style="color:blue;">Causal inference</span>: correlation + research design
+
+::: {.fragment}
+
+**Simple, but powerful**
+
+- Non-linearities, interactions, machine learning
+
+:::
+
+
+# Causation
+
+## Schools of Thought
+
+- Potential outcomes and counterfactuals (Econ)
+- DAGs and do-calculus (CS)
+- Manipulability (Philosophy)
+
+
+“We think of a cause as something that makes a difference, and the difference it makes must be a difference from what would have happened without it.” (Lewis, 1973)
+
+
+## Causality: Why bother?
+
+- Understanding cause and effect is how we change things in the real world
+- Causal inference separates good evaluations from bad
+  + Policy change
+  + Development intervention
+- Causal identification is not binary
+  + It's harder for some policies and interventions than others
+  + Variety of tools that can help us rule out different threats to inference
+
+## Causality: Why bother?
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+library(ggplot2)
+
+Year = c(0,1,2,3)
+Outcome = c(NA, 1.2, 1.4,NA)
+Treatment = c("Control", "Control","Control","Control")
+
+dat = data.frame(Year, Outcome, Treatment)
+
+ggplot(data = dat, aes(x = Year, y = Outcome, group = Treatment)) +
+  geom_line(aes(linetype=Treatment),size=2) +
+  geom_point(size = 6) +
+  scale_linetype_manual(values=c("solid")) +
+  xlim(0,3) + 
+  scale_y_continuous(limits = c(1,1.85), breaks = seq(1, 1.85, by = .1)) + 
+  theme(legend.position = "none", text = element_text(size=20)) 
+ 
+```
+
+
+## Causality: Why bother?
+
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+Year = c(0,1,2,3)
+Outcome = c(1, 1.2, 1.4, 1.6, 
+            0.9, 1.3, 1.7, 2.1)
+Treatment = c("Control", "Control","Control","Control", 
+              "Treatment", "Treatment", "Treatment", "Treatment")
+
+dat = data.frame(Year, Outcome, Treatment)
+
+
+ggplot(data = dat, aes(x = Year, y = Outcome, group = Treatment)) +
+  geom_line(aes(linetype=Treatment),size=2) +
+  geom_point(size = 6) +
+  xlim(0,3) + 
+  scale_y_continuous(breaks = seq(1, 1.85, by = .1)) + 
+  scale_linetype_manual(values=c("solid", "solid")) +
+  coord_cartesian(ylim = c(1, 1.85), clip = "on") +
+  theme(legend.position = "none", text = element_text(size=20)) 
+
+```
+
+## Causality: Why bother?
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+Year = c(0,1,2,3)
+Outcome = c(1, 1.2, 1.4,1.6)
+Treatment = c("Control", "Control","Control","Control")
+
+dat = data.frame(Year, Outcome, Treatment)
+
+ggplot(data = dat, aes(x = Year, y = Outcome, group = Treatment)) +
+  geom_line(aes(linetype=Treatment),size=2) +
+  geom_point(size = 6) +
+  scale_linetype_manual(values=c("solid")) +
+  xlim(0,3) + 
+  scale_y_continuous(limits = c(1,1.85), breaks = seq(1, 1.85, by = .1)) + 
+  theme(legend.position = "none", text = element_text(size=20))
+
+```
+
+## Causality: Why bother?
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+Year = c(0,1,2,3)
+Outcome = c(NA, 1.2, 1.4, NA, 
+            NA, 1.3, 1.7, NA, 
+            NA, 1.3, 1.5, NA)
+Treatment = c("Control", "Control","Control","Control", 
+              "Treatment", "Treatment", "Treatment", "Treatment",
+              "Comparison","Comparison","Comparison","Comparison")
+
+dat = data.frame(Year, Outcome, Treatment)
+
+
+ggplot(data = dat, aes(x = Year, y = Outcome, group = Treatment)) +
+  geom_line(aes(linetype=Treatment),size=2) +
+  geom_point(size = 6) +
+  xlim(0,3) + 
+  scale_y_continuous(limits = c(1,1.85), breaks = seq(1, 1.85, by = .1)) + 
+  scale_linetype_manual(values=c("dotted", "solid", "solid")) +
+  theme(legend.position = "none", text = element_text(size=20)) 
+
+```
+
+
+
+## Causality: Why bother?
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+Year = c(0,1,2,3)
+Outcome = c(NA, 1.2, 1.4, NA, 
+            NA, 1.3, 1.7, NA)
+Treatment = c("Control", "Control","Control","Control", 
+              "Treatment", "Treatment", "Treatment", "Treatment")
+
+dat = data.frame(Year, Outcome, Treatment)
+
+
+ggplot(data = dat, aes(x = Year, y = Outcome, group = Treatment)) +
+  geom_line(aes(linetype=Treatment),size=2) +
+  geom_point(size = 6) +
+  xlim(0,3) + 
+  scale_y_continuous(limits = c(1,1.85), breaks = seq(1, 1.85, by = .1)) + 
+  scale_linetype_manual(values=c("solid", "solid")) +
+  theme(legend.position = "none", text = element_text(size=20))
+
+```
+
+
+
+## Causality: Why bother?
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+Year = c(0,1,2,3)
+Outcome = c(1, 1.2, 1.4,1.6, 
+            1.1, 1.3, 1.7, 1.9, 
+            1.1, 1.3, 1.5, 1.7)
+Treatment = c("Control", "Control","Control","Control", 
+              "Treatment", "Treatment", "Treatment", "Treatment",
+              "Comparison","Comparison","Comparison","Comparison")
+
+dat = data.frame(Year, Outcome, Treatment)
+
+
+ggplot(data = dat, aes(x = Year, y = Outcome, group = Treatment)) +
+  geom_line(aes(linetype=Treatment),size=2) +
+  geom_point(size = 6) +
+  scale_y_continuous(breaks = seq(1, 1.9, by = .1)) + 
+  scale_linetype_manual(values=c("dotted", "solid", "solid")) +
+  coord_cartesian(ylim = c(1, 1.85), clip = "on") +
+  theme(legend.position = "none", text = element_text(size=20))
+
+```
+
+
+
+## Causality: Why bother?
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+Year = c(0,1,2,3)
+Outcome = c(1, 1.2, 1.4,1.6, 
+            1.1, 1.3, 1.7, 1.9)
+Treatment = c("Control", "Control","Control","Control", 
+              "Treatment", "Treatment", "Treatment", "Treatment")
+
+dat = data.frame(Year, Outcome, Treatment)
+
+
+ggplot(data = dat, aes(x = Year, y = Outcome, group = Treatment)) +
+  geom_line(aes(linetype=Treatment),size=2) +
+  geom_point(size = 6) +
+  scale_y_continuous(breaks = seq(1, 1.9, by = .1)) + 
+  scale_linetype_manual(values=c("solid", "solid")) +
+  coord_cartesian(ylim = c(1, 1.85), clip = "on") +
+  theme(legend.position = "none", text = element_text(size=20))
+
+```
+
+
+
+## Causality: What makes it hard?
+
+::: {.fragment}
+
+**Fundamental Problem of Causal Inference**
+
+$$
+Y_i = 
+\begin{cases} 
+Y_i(1) & \text{if } D_i = 1 \text{ (treatment group)} \\
+Y_i(0) & \text{if } D_i = 0 \text{ (control group)}
+\end{cases}
+$$
+
+:::
+
+::: {.fragment}
+
+- We only observe any given unit in one treatment status at any one time so we can never directly observe the causal effect of a treatment on a unit. 
+
+:::
+
+## Potential Outcomes and Counterfactuals
+
+::: {.fragment}
+
+**Treatment Effect for individual $i$**
+
+- $TE_i = Y_i(1) - Y_i(0)$
+
+:::
+
+::: {.fragment}
+
+**Average Treatment Effect (ATE)**
+
+- $ATE = \frac{1}{N} \sum_{i=1}^{N} TE_i$
+
+:::
+
+## Many Different Tools
+
+- Randomized experiments
+  + Gold-standard
+  + Field and survey
+- Observational data
+  + Natural experiments
+  + Difference-in-Differences
+  + Matching, Synthetic Control
+<!-- - You always need to think about the outcomes and measurement -->
+<!--   + Behavioral vs attitudinal -->
+<!--   + Observed vs self-reported -->
+
+## DAGs and Confounding
+
+```{r}
+library(ggdag)
+
+dagify(
+  x ~ a,
+  y ~ x,
+  y ~ a
+
+) %>% ggdag()
+
+```
+
+
+## Next Meeting
+
+- Randomized experiments
+  + Review of FPCI
+  + How randomization addresses confounding
+- The role of social science researchers?
+  + What should people with social science training be doing with their skills?
+- Final Project
+  + What are your options?
+  + Possible data sources
+
+<!-- **The correlation between two variables is “the extent to which they tend to occur together” (p. 14). -->
+<!-- A relation between two variables (or “features of the world”). -->
+<!-- Two variables/features are: -->
+<!-- Positively correlated if the two tend to occur together -->
+<!-- Negatively correlated if one feature occurs when the other does not -->
+<!-- Uncorrelated if the occurrence of one does not affect the occurrence of the other. -->
+
+<!-- ## Politicians facing scandals tend to win re-election -->
+
+<!-- - what data does this rely on? -->
+<!-- - why is this not a correlation: we don't learn if these things tend to happen together -->
+<!-- - what would make it a correlation  -->
+<!-- - what data would we need to assess: rate of re-election for both scandal and non-scandal politicians -->
+
+<!-- ::: columns -->
+<!-- ::: {.column width="50%"} -->
+<!-- ::: -->
+
+<!-- ::: {.column width="50%"} -->
+<!-- ::: -->
+<!-- ::: -->

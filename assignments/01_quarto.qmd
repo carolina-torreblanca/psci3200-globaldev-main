@@ -1,0 +1,30 @@
+---
+title: "Getting Started with Quarto"
+date: 2024-01-30
+---
+
+## Introduction
+
+Your mini assignment for next week is to get Quarto functioning on the laptop you will be using for class. This will allow me to circulate `.qmd` files so that we can work on them together during class. 
+
+## Instructions
+With newer versions of RStudio, Quarto comes pre-packaged in the installation files. To check whether you have Quarto on your computer, open RStudio, click on the "Terminal" tab in the bottom left window, type quarto check into the terminal, and hit ENTER. If you have a new enough version of RStudio, the terminal should return something like what you see in the first screenshot below.
+
+![Check Installation Terminal](terminal.png){fig-align="center"}
+
+If you DON'T have a new enough version of RStudio, you'll receive some error message. To fix this, all you should need to do is install the newest version of RStudio by going to the posit website and [installing RStudio](https://posit.co/download/rstudio-desktop/).
+
+For next class, please be sure to have quarto functioning on your laptop because we'll be doing some work creating quarto documents in class. To be absolutely sure, go to the "New File" icon in RStudio and click "Quarto Document."
+
+![Create a Quarto](create_file.png){fig-align="center"}
+
+You should see something like the screenshot below. Give the document a Title and then click "Create."
+
+![Name the Document](name_doc.png){fig-align="center"}
+
+A very basic `.qmd` file should open. Click "Render" (screenshot below) and RStudio will ask you to name the file. After you provide name, an html file should open for you in your internet browser or in the Viewer panel of RStudio (depending on your settings). Now you're working in Quarto!
+
+![Render the Document](render.png){fig-align="center"}
+
+
+If you have any trouble, post a message to the course Slack channel and I (or one of your classmates) can lend a hand.

@@ -1,0 +1,25 @@
+---
+title: "Text as Data Basics"
+---
+
+## Required Readings
+
+- None
+
+## Notes
+
+- [Notes](/workshops/TaD_workshop.html)
+
+## Quarto File
+
+- [Quarto](/workshops/TaD_workshop.qmd)
+
+## R Script
+
+- [R Script](/workshops/TaD.R)
+
+## Resources
+
+- Info on Quanteda [https://quanteda.io/](https://quanteda.io/)
+
+- A nice book on text mining with R [https://www.tidytextmining.com/](https://www.tidytextmining.com/)

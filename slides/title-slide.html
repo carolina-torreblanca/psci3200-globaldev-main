@@ -1,0 +1,32 @@
+<section id="$idprefix$title-slide"$for(title-slide-attributes/pairs)$ $it.key$="$it.value$"$endfor$>
+<div style="background-color:#bbb;" >
+  <h1 class="title">$title$</h1>
+  $if(subtitle)$
+  <p class="subtitle">$subtitle$</p>
+  $endif$
+  </div>
+
+ <div class="row" >
+  <div class="column left" >
+
+  $for(author)$
+  <p class="author">$author$</p>
+  $endfor$
+
+  $for(institute)$
+  <p class="institute">$institute$</p>
+  $endfor$
+  $if(date)$
+  <p class="date">$date$</p>
+  $endif$
+  </div>
+
+  <div class="column right">
+  <p style="font-size:80%; text-align:left"> <b>Global Development</b>: Intermediate Topics in Politics, Policy, and Data</p>
+  <p style="font-size:50%; text-align:left"> PSCI 3200 - Spring 2025</p>
+
+  </div>
+
+</div>
+
+</section>

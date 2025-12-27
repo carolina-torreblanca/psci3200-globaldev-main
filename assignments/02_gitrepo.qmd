@@ -1,0 +1,11 @@
+---
+title: "Creating a Final Project Git Repo"
+date: 2024-02-24
+---
+
+## Assignment 
+
+Create a github profile and start a git repo for the final project:
+
+- The git repo should follow the naming convention: `psci3200_yourname`
+- Send me the url to your repo on Slack by **11:59pm EST on Monday, February 17**

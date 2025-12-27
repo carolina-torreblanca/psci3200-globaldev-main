@@ -1,0 +1,221 @@
+---
+title: "Causality 2"
+subtitle: "Twice the causality"
+author: "Carolina Torreblanca"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+      - title-slide.html
+    gfm:
+    mermaid-format: png
+editor: source
+---
+
+# Logistics
+
+## Assignments
+
+-   Did you send me a quarto file? If not, please do
+
+## Announcements
+
+-   This Wed: RStudio and Quarto workshop with Jeremy
+
+## Agenda for today
+
+-   What is confounding?
+-   Causality with observational data
+
+## Causality as Explanation
+
+::: incremental
+-   Last week, we discussed the fundamental problem of causal inference:
+
+    -   We can never observe what *could have happened* - or the counterfactual outcome
+
+-   This prevents us from ever observing *individual* treatment effects ... but when treatment assignment is independent of our outcomes....
+
+-   We can *estimate* average causal effects
+:::
+
+## DAGs
+
+One useful way to think about causality is using Directed Acyclical Graphs (DAGs)
+
+::: incremental
+-   Causal inference requires assumptions and DAGS are ways for us to visualize those assumptions
+
+<!-- -->
+
+-   In a DAG, each node is a variable and the edge represents a causal relationship. For example "X causes Y":
+
+![](img/DAG1.png){fig-align="center" width="241"}
+
+:::
+
+## DAGS
+
+Multicausality in DAGs
+
+![](img/DAG2.png){fig-align="center" width="241"}
+
+X and Y are independent if X is "separated" from other variables that go to Y.
+
+## DAGS
+
+What if X *and* Y are both caused by some other variable, U? Are X and Y independent? Can we plug-in $\bar{Y_c}$ and $\bar{Y_t}$ and subtract?
+
+![](img/DAG3.png){fig-align="center" width="230"}
+
+* U s a confounder
+
+## Confounders in the wild
+
+![](img/confound1.png){fig-align="center" width="463"}
+
+## Which is it?
+
+![](img/DAGoff.png){fig-align="center" width="241"}
+
+## Selection as a confounder 
+
+![](img/confound2.png){fig-align="center"}
+
+## Randomization as a way to get independence
+
+-   Independence between treatment and outcome is a hard assumption! 
+
+-   One way to make it more convincing is to randomize treatment assignment: if treatment assignment depends on luck, not X, then we have a good theoretical reason to assume X and Y are independent.
+
+## Example from a RCT: Project STAR
+
+-   Q: What is the causal effect of class size on educational outcomes?
+
+-   What are some potential pitfalls?
+
+::: incremental
+-   Class size and educational outcomes are probably confounded:
+    -   Parent's wealth
+    -   Where people live
+    -   What else?
+:::
+
+## Example from a RCT: Project STAR
+
+-   Q: What is the causal effect of class size on educational outcomes?
+
+-   Hypothesis: Kids learn better in smaller classrooms
+
+-   Research Design: Randomize the size of classrooms!
+
+## Data & Code
+
+```{r star, echo = T, results=T}
+
+star <- read.csv("./code/STAR.csv")
+dim(star)
+head(star)
+table(star$classtype)
+summary(star$math)
+```
+
+## Data & Code
+
+```{r, echo = T, results=T}
+
+## Two-way frequency tables
+table(star$classtype, star$graduated)
+## Two-way tables of proportions
+prop.table(table(star$classtype, star$graduated), 1) 
+# summary
+summary(star$math)
+```
+
+## Difference-in-Means
+
+What is the average causal effect of class size on education outcomes?
+
+How would you answer this question?
+
+-   Remember, we have kids randomly assigned to small classrooms and SAT scores.
+
+## Difference-in-Means
+
+```{r echo = T, results=T}
+# 1. Mean Math score for people assinged to small classroom
+math_treat <- mean(star$math[star$classtype=="small"]) 
+# 2. Meam math score for people in regular classroms
+math_control <-  mean(star$math[star$classtype=="regular"])
+# 3. Mean reading for treatment
+reading_treat <- mean(star$reading[star$classtype=="small"]) 
+# 4. Reading control
+reading_control <- mean(star$reading[star$classtype=="regular"])
+
+### difference-in-means estimators ####
+math_treat - math_control
+reading_treat - reading_control
+```
+
+## Can we do observational causal research?
+
+-   Causality hinges on independence between treatment and outcome
+-   By randomizing treatment assignment, RCTs *fabricate* independence
+-   But not everything can or ought to be randomized!
+
+-   Observational causal work relies on finding and leveraging *accidentally or conditionally occurring random variation in treatment assignment*
+
+## Natural- and Quasi-Experiments
+
+-   Example: [Electoral Effects of Biased Media: Russian Television in Ukraine (Peisakhin and Rozenas, 2018)](https://www.jstor.org/stable/26598765)
+
+-   RQ: Does exposure to state-funded pro-Russia news make Ukrainians more pro-Russia?
+
+    -   Problem: People tend to not watch TV randomly!
+    -   Solution: Due to geography and topography, TV reception is as-if-random
+
+-   Idea: Compare people who could watch Russian TV with their neighbors that could not watch it.
+
+-   Assumptions: ????
+
+## Dealing with confounders using controls
+
+::: incremental
+
+-   If we feel theoretically confident that we can observe all variables that confound the relationship between X and Y, we can **control** for them and estimate causal effects
+
+-   BIG BIG BIG assumption (called Conditional Independence Assumption)
+
+-   We cannot do anything with confounders **we cannot observe!**
+
+:::
+
+## Does drinking wine make you live longer?
+
+From [Time magazine](https://time.com/5552041/does-red-wine-help-you-live-longer/)
+
+![](img/CIA.png){fig-align="center"}
+
+## Does drinking wine make you live longer?
+
+::: incremental
+-   The researchers compared only Italian men who were the same age, and ate about the same.
+-   I.e., they "controlled" for age, diet, origin.
+-   If nothing else confounds the relationship between drinking wine and life expectancy, then they identified a causal effect!
+-   .... Do we believe them?
+:::
+
+## Wrapping up
+-   Causality ALWAYS requires assumptions!
+    -   DAGs are good ways to clarify our assumptions
+-   Whether our conclusions are causal or not depend on whether our assumptions hold
+-   To a large degree, these assumptions refer to what we cannot see, and are un-testable!
+-   Good research argues why a setting is well-suited to answer causal questions.

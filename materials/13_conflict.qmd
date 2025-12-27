@@ -1,0 +1,20 @@
+---
+title: "Conflict and Cohesion"
+date: 2024-02-29
+---
+
+
+## Required Readings
+
+- None
+
+
+## Slides
+
+- [Slides](/slides/13-conflict.html)
+
+## Workshop
+
+- [Workshop](/workshops/survey_data.html)
+- [Data](https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/aau_survey/clean_endline_did.csv)
+- [Code](https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/survey_data.qmd)

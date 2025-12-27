@@ -1,0 +1,234 @@
+---
+title: "Climate Change 1"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+editor: source
+
+bibliography: img/references.bib
+---
+
+# Logistics
+
+
+## Agenda
+
+**Upcoming**
+
+- Wed: Irina
+- Next week: 4/28 class
+
+**Today**
+
+1. Climate change overview
+2. Namrata (2023)
+3. O'Brien-Udry (2023)
+
+
+# Intro to Climate Change
+
+## Climate Change
+
+\
+
+**Are we doomed?**
+
+:::{.fragment}
+:::{.incremental}
+- I don't think so (2024)
+- Wait hold-up... (2025)
+:::
+:::
+
+
+
+## Where We Stand
+
+![](img/climate_tweet.png){fig-align="center"}
+
+## Targets and Trajectories
+
+![](img/climate1.png){fig-align="center"}
+
+## Biodiversity at 1.5 vs 2 degrees 
+
+**Losing 50% of geographic range**
+
+- 1.5 degrees: 6% of insects, 8% of plants and 4% of vertebrates lo
+- 2 degrees: 18% of insects, 16% of plants and 8% of vertebrates
+
+## Wind and Solar
+
+
+![](img/climate_renewables.jpg){fig-align="center"}
+
+
+## Solar Panels
+
+
+![](img/climate_solar.jpg){fig-align="center"}
+
+## Electricity
+
+
+![](img/climate_energy.jpg){fig-align="center"}
+
+
+## Batteries
+
+
+![](img/climate_batteries.jpg){fig-align="center"}
+
+
+
+## Batteries
+
+
+![](img/climate_batteries2.png){fig-align="center"}
+
+## Electric Vehicles
+
+
+![](img/climate_vehicles.jpg){fig-align="center"}
+
+
+## Cross-National Variation
+
+![](img/climate_emissions.jpg){fig-align="center"}
+
+## China's Growth
+
+![](img/climate_china.jpg){fig-align="center"}
+
+
+## Decoupling
+
+\
+
+![](img/climate_growth.jpg){fig-align="center"}
+
+
+## Divergence
+
+\
+
+![](img/climate_growth2.jpg){fig-align="center"}
+
+
+# Namrata (2023)
+
+## Climate Adaptation
+
+\
+
+**Disproportionate vulnerability for developing countries**
+
+:::{.fragment}
+- Higher mean temperatures
+- Greater impact of temperature on output
+- Long coastlines 
+- Lower incomes, smaller safety nets
+:::
+
+## Three literatures
+
+\
+
+- Quantifying vulnerabilities
+- Measuring adaptation
+- Spatial linkages
+
+## Climate Adaptation
+
+![](img/nimrata.png){fig-align="center"}
+
+## Climate Adaptation
+
+![](img/climate_map.png){fig-align="center"}
+
+## Research Methods 
+
+:::{.fragment}
+- Panel data to find relationship between observed changes and output
+- Project to future changes, assuming everything stays constant
+- Problems:
+  + Long-run adaptations
+  + Short-run adaptations
+  + Mechanisms?
+
+:::
+
+## Research Methods 
+
+\
+
+**Recent developments**
+
+:::{.fragment}
+- Long-run changes (climate vs weather)
+- Focus on expectations
+- Experiments with adaptation
+:::
+
+## Climate Adaptation
+
+**Climate change mitigation strategies**
+
+:::{.fragment}
+- Weather insurance
+- Migration
+- Cash transfers
+- Credit
+- New technology
+- Infrastructure
+- Safety nets
+:::
+
+
+# O’Brien-Udry (2023)
+
+
+
+# Albert at al. (2022)
+
+## Measurement
+
+:::{.fragment}
+- Reported natural disasters
+- Moisture deficit relative to long-run average
+- Agriculture yields
+- Bank loans
+- Migration and labor
+:::
+
+## Findings
+
+![](img/albert1.png){fig-align="center"}
+
+## Findings
+
+![](img/albert2.png){fig-align="center"}
+
+## Findings
+
+![](img/albert3.png){fig-align="center"}
+
+## Findings
+
+- Dryness causes reallocation of capital and labor
+- Dryness lowers productivity and reallocates remaining labor away from agriculture and to manufacturing
+- Capital connected areas see reduced 
+- Labor connected areas see inflows

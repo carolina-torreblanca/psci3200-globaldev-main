@@ -1,0 +1,40 @@
+---
+title: "Data Assignment 1"
+subtitle: "Using Interaction Terms and Fixed Effects"
+author: "Jeremy Springman"
+
+institute: "University of Pennsylvania"
+date: last-modified
+toc: true
+
+format: 
+  html:
+    self-contained: true
+
+editor: source
+---
+
+
+
+```{r }
+#| include: false
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(readr)
+library(ggdag)
+library(tidyverse)
+library(gt)
+library(modelsummary)
+
+# read-in data
+#cdat = read_csv("https://raw.githubusercontent.com/jrspringman/psci3200-globaldev/main/workshops/cambodia_ngos/data.csv")
+
+
+```
+
+
+
+
+

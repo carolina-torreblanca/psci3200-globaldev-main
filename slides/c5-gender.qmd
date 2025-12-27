@@ -1,0 +1,405 @@
+---
+title: "Gender and Development"
+subtitle: ""
+author: "Carolina Torreblanca"
+institute: "University of Pennsylvania"
+
+editor: source
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.05
+    logo: DevLab_Logo_29Mar2023.png
+    embed-resources: true
+    template-partials:
+      - title-slide.html
+    gfm:
+    mermaid-format: png
+    highlight-style: atom-one-dark
+    code-overflow: wrap
+---
+
+## Agenda
+
+-   Development and Gender
+
+-   Chattopadhyay and Duflo, 2004
+
+-   Interaction Models
+
+## Gender and Representation
+
+-   Gender gap in political representation
+
+    -   Women hold only 27.0% of legislative seats (Inter-Parliamentary Union, 2023)
+    -   23% of cabinet positions (UNWOMEN)
+
+-   Gender gap in political participation:
+
+    -   Disputed gender gap in turnout, large variance
+
+## Gender and Development
+
+-   Gender and poverty (feminization of poverty to a degree)
+
+-   Gender and economic participation
+
+    -   Labor force participation gap: 27% globally (ILO, 2023)
+    -   Gender wage gap [(Pew)](https://www.pewresearch.org/social-trends/2023/03/01/the-enduring-grip-of-the-gender-pay-gap/)
+
+-   Gender and violence
+
+    -   1/3 women have experienced GBV
+
+-   Gender and education
+
+    -   Literacy rates: 90% male vs. 83% female globally (World Bank Data, 2022)
+
+    -   School attendance gap (UNESCO, 2023)
+
+## Gender, Development, and Representation
+
+-   The two are undoubtedly related
+
+-   But could improving gender representation produce development?
+
+```{r simple-dag, echo=FALSE, fig.width=6, fig.height=3, fig.align='center'}
+
+par(mar = c(1, 1, 1, 1), bg = NA) 
+plot(0, 0, type = "n", xlim = c(0, 10), ylim = c(0, 2), 
+     xaxt = "n", yaxt = "n", xlab = "", ylab = "", 
+     main = "", bty = "n")
+
+symbols(c(3, 7), c(1, 1), circles = c(1, 1), 
+        inches = FALSE, add = TRUE, bg = "white")
+
+
+text(3, 1, "Gender\nRepresentation", cex = 0.9)
+text(7, 1, "Development\nOutcomes", cex = 0.9)
+
+# Add arrow
+arrows(4, 1, 6, 1, length = 0.1, lwd = 1.5)
+```
+
+## From Representation to development
+
+**Why might having more women in office improve development?**
+
+::: incremental
+-   Women may want different things
+
+-   Women may behave differently
+
+-   Women may be better at their job
+
+-   Women representatives may teach about equality
+:::
+
+## Our Expectations
+
+-   **Different outcomes?**
+    -   Do women prioritize different policy domains?
+-   **Better outcomes?**
+    -   Potential improvements in service delivery and reduced corruption
+-   **Conditionally different outcomes?**
+    -   Effectiveness depends on institutional context
+    -   Critical mass may be necessary
+    -   Interactions with other social identities
+
+## Empirical Test?
+
+-   Seems like a good theory with important implications that we want to validate empirically
+
+-   Imagine we have data on share of female legislators and many development outcomes
+
+-   We compare places with female politicians to places with male politicians and see development differences
+
+-   What is the problem with this?
+
+## A (more realistic) DAG
+
+```{r complex-dag, echo=FALSE, fig.width=8, fig.height=5, fig.align='center'}
+
+par(mar = c(1, 1, 1, 1), bg = NA)  # Reduce margins and set transparent background
+plot(0, 0, type = "n", xlim = c(0, 10), ylim = c(0, 6), 
+     xaxt = "n", yaxt = "n", xlab = "", ylab = "", 
+     main = "", bty = "n")  # bty="n" removes the box
+
+# Define node positions
+x_pos <- c(3, 7, 2, 5)
+y_pos <- c(3, 3, 5, 5)
+labels <- c("Gender\nRepresentation", "Development\nOutcomes", 
+           "Previous\nDevelopment", "Gender\nNorms")
+
+# Add nodes as circles
+symbols(x_pos, y_pos, circles = rep(0.8, 4), 
+        inches = FALSE, add = TRUE, bg = "white")
+
+# Add text to nodes
+text(x_pos, y_pos, labels, cex = 0.8)
+
+# Add arrows
+# Direct effect
+arrows(3.8, 3, 6.2, 3, length = 0.1, lwd = 1.5)
+
+# Confounding paths
+arrows(2, 4.2, 2.7, 3.8, length = 0.1, lwd = 1, lty = 2)  # Previous dev -> Gender rep
+arrows(2, 4.2, 6.3, 3.8, length = 0.1, lwd = 1, lty = 2)  # Previous dev -> Dev outcomes
+
+arrows(5, 4.2, 3.7, 3.8, length = 0.1, lwd = 1, lty = 2)  # Gender norms -> Gender rep
+arrows(5, 4.2, 6.3, 3.8, length = 0.1, lwd = 1, lty = 2)  # Gender norms -> Dev outcomes
+
+# Add legend
+legend(1, 1, 
+       legend = c("Direct effect", "Confounding paths"), 
+       lty = c(1, 2), 
+       lwd = c(1.5, 1), 
+       cex = 0.7,
+       bty = "n")
+```
+
+## Gender Quotas: What are they?
+
+-   Rules requiring minimum women's representation in politics
+
+-   Goal: Improve gender parity in government
+
+-   Vary by country, region, and level of government
+
+-   Typically set minimum thresholds (20-50%)
+
+## Gender Quotas: Types
+
+-   **Voluntary quotas**:
+    -   Set by political parties themselves
+    -   No legal enforcement
+-   **Mandatory quotas**:
+    -   Required by law
+        -   **Reserved seats**:
+            -   Specific seats only women can hold
+        -   **Candidate quotas**:
+            -   Parties must nominate certain % of women
+
+## Gender Quota Adoption
+
+-   Started in 1990s, expanded rapidly
+
+-   Now used in about 130 countries
+
+-   Most common in newer democracies
+
+-   Less common in older democracies (US, Japan)
+
+-   Highest representation achieved in Rwanda (61%)
+
+## Chattopadhyay and Duflo, 2004
+
+::: incremental
+-   India reserved 1/3 of village council (panchayat) head positions for women (1993)
+
+-   Reserved positions assigned by random lottery
+
+-   Randomization creates natural experiment
+
+-   Solves confounding problem $\rightarrow$ can identify causal effects!
+:::
+
+## In a nutshell
+
+-   RQ: [What are the policy consequences of "mandated representation of women"?]{.fragment}
+
+-   Hypothesis: [In reserved villages, there is more investment in goods women prioritize]{.fragment}
+
+-   Mechanism: [Heterogeneous priorities]{.fragment}
+
+-   Treatment: [Village council being randomly assigned to have female head]{.fragment}
+
+-   Outcome: [Investment Decisions]{.fragment}
+
+-   Data: [Sample of Villages]{.fragment}
+
+## A bit more detail
+
+\ 
+$Y_{ij} = \beta_1 + \beta_2 * R_j + \beta_3 D_i * R_j + \sum_{l=1}^{N} \beta_l d_{li} + \epsilon_{ij}$
+
+Where:
+\
+
+-   $Y_{ij}$ is an outcome of interest
+
+-   $R_j$ takes the value of 1 if GM is reserved
+
+-   $D_i$ is differences in request about that good (women - men)
+
+-   $d_{li}$ are good Fixed Effects!
+
+<!-- ![](images/Captura de Pantalla 2025-03-13 a la(s) 5.49.55 p.m.-01.png){fig-align="center"} -->
+
+## Main Findings
+
+![](images/dufloresults.png){fig-align="center"}
+
+# Interaction Terms
+
+## What are Interaction Terms?
+
+-   An interaction term is the product of two variables used as a covariate in a regression model
+
+-   Captures how the effect of one variable depends on the value of another variable
+
+-   Powerful for testing conditional hypotheses
+ 
+\
+**Key Modeling Assumption**
+
+An increase in $X$ is associated with an increase in $Y$ only when a specific condition is met
+
+## Recap: OLS Interpretation Basics
+\
+
+$Y_{i} = \alpha + \beta_1 * X_i + \beta_2 * Z_i + \epsilon_{i}$ 
+
+-   $\hat{\beta_1}$ represents the change in $Y$ when $X$ increases by one unit
+
+-   $\hat{\beta_2}$ represents the change in $Y$ when $Z$ increases by one unit
+
+- Why?
+
+## Coefficients as Marginal Changes
+
+A partial derivative of the equation shows how $Y$ changes when $X$ changes by 1:
+
+
+\
+
+$Y_{i} = \alpha + \beta_1 * X_i + \beta_2 * Z_i + \epsilon_{i}$ 
+
+-   $\frac{\partial Y}{\partial X} = \beta_1$
+
+-   $\frac{\partial Y}{\partial Z} = \beta_2$
+
+## Interaction Effects
+
+-   Idea, the effect of X on Y depends on Z
+
+$Y = \alpha + \beta_1X + \beta_2Z + \beta_3(X*Z) + \epsilon$
+
+
+## Think of it as another covariate!
+
+```{r binary-table, echo=FALSE}
+require(tidyverse)
+# Create a table showing binary interaction
+binary_example <- data.frame(
+  X = c(0, 1, 0, 1),
+  Z = c(0, 0, 1, 1),
+ `X*Z` = c(0, 0, 0, 1)
+)
+knitr::kable(binary_example, caption = "")
+```
+
+- What needs to happen for the new covariate to be 1?
+
+## New model
+\
+
+$Y_{i} = \alpha + \beta_1 * X_i + \beta_2 * Z_i + \beta_3 * Z_i * X_i + \epsilon_{i}$
+
+
+-   How to interpret $\beta_3$: [Expected change in Y when the product of $X \times Z$ increases by 1 unit.]{.fragment}
+
+-   How to interpret $\beta_1$: [Change in Y when X increases by 1 unit AND $Z =0$]{.fragment}
+
+-   How to interpret $\beta_2$: [Change in Y when X increases by 1 unit AND $X =0$]{.fragment}
+
+## Back to Math!
+
+\ 
+**Why does the interpretation of $\beta_1$ and $\beta_2$ change?**
+
+$Y_{i} = \alpha + \beta_1 * X_i + \beta_2 * Z_i + \beta_3 * Z_i * X_i \epsilon_{i}$ 
+
+-   $\frac{\partial Y}{\partial X} = \beta_1 + \beta_3*Z_i$
+
+-   $\frac{\partial Y}{\partial Z} = \beta_2  + \beta_3*X_i$
+
+## Three Simple Rules for Interaction
+
+1.  Use for conditional hypotheses
+
+2.  Always include all constituent terms 
+
+3.  Interpret $\beta_1$ and $\beta_2$ correctly
+
+## Practical Example
+
+- Lets simulate some data to see how we can fit an interactive model in R
+- We are going to look at a binary covariate
+
+```{r}
+#| echo: true
+#| warning: false
+#| centering: true
+
+alpha <- 1
+beta_1 <- -.5    # Coefficient for women's representation
+beta_2 <- 1.5  # Coefficient for quota system
+beta_3 <- 3    # Coefficient for interaction term
+
+set.seed(12)
+interaction_data <- tibble(
+  women_representation = runif(100, 0, 1), # any number btw 0 and 1
+  quota_system = sample(0:1, 100, replace = T)) %>% # either 1 or 0
+  mutate(policy_outcome = alpha + 
+               beta_1 * women_representation + 
+               beta_2 * quota_system + 
+               beta_3 * (women_representation * quota_system) + 
+                rnorm(n(), 0, 0.5))
+
+
+```
+
+
+## Visualize Conditional Relationship
+
+
+```{r, results=T, echo=F}
+
+ggplot(interaction_data, 
+       aes(x = women_representation, 
+           y = policy_outcome, 
+           color = factor(quota_system))) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(x = "% of Female Representatives",
+       y = "Policy Outcome",
+       color = "Quota?") + 
+  theme_minimal(base_size = 14) +
+  scale_color_brewer(palette = 3, type = "qual")
+
+```
+
+## Practical Example 
+
+- You can fit the model with lm like usual 
+
+```{r}
+
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| centering: true
+#| code-summary: "Show code"
+ 
+# Fit interaction model
+interaction_model <- lm(policy_outcome ~  women_representation * quota_system, 
+                        data = interaction_data)
+
+summary(interaction_model)
+```
+
+
+

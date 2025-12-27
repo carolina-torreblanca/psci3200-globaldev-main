@@ -1,0 +1,168 @@
+---
+title: "Github Pages"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+    code-line-numbers: false
+editor: source
+
+highlight-style: github
+
+bibliography: img/references.bib
+---
+
+# Logistics
+
+## Update
+
+- Today's lecture shifted to Mon
+- Feedback on *Research Question and Data* will come *Thursday*
+- Any research proposals focused on environmental topics?
+- March 5 *Research Design* shifted 24 hours
+- Sending `.html` files
+
+# Github Pages
+
+## Approach
+
+- We're going to create a *personal* website using your git username
+- You can use this method to create separate websites that branch out from your personal site
+  - Ex. My personal website $\rightarrow$ my course website
+
+## Create a free website with Github Pages
+
+- Keep a repository of your website
+- Push changes to your website via Github
+- See changes almost instantly
+
+## Create a website
+
+**Moving to RStudio**
+
+- File $\rightarrow$ New Project $\rightarrow$ New Directory $\rightarrow$ Quarto Website
+
+
+![](img/website_initiate.png){height=4.5in fig-align="center"}
+
+## Create a website
+
+- Directory Name: Use your git handle (ex. `jrspringman`)
+- Subdirectory: use folder containing your repo from Monday
+
+![](img/website_initiate.png){height=4.5in fig-align="center"}
+
+## Create a website
+
+- Check *Create a git repository*
+- Uncheck *Use visual markdown editor*
+
+![](img/website_initiate.png){height=4.5in fig-align="center"}
+
+
+## Create a website
+
+**6 files in your repo**
+
+![](img/website_files.png){height=6in fig-align="center"}
+
+## Create a website
+
+- Render `index.qmd` to view local instance in browser
+- `about.qmd` is additional tab
+- `_quarto.yml` is yaml parameters for the entire website
+- `.Rproj` is an R Project file
+
+
+## Create a website
+
+**In `_quarto.yml`, change output director to `docs`**
+
+![](img/website_docs.png){height=5.5in fig-align="center"}
+
+
+
+## Publish to Github pages
+
+- Publish local git repo to github.com
+- Uncheck 'Keep this code private'
+- Open repo on github.com
+- Settings $\rightarrow$ Pages (left-sidebar)
+
+
+## Publish to Github pages
+
+**Open Github Desktop and add repo**
+
+![](img/pages_add.png){height=5.5in fig-align="center"}
+
+## Publish to Github pages
+
+**Open Github Desktop and add repo**
+
+![](img/pages_add2.png){height=5.5in fig-align="center"}
+
+
+## Publish to Github pages
+
+**You shouldn't get this error**
+
+![](img/pages_add3.png){height=5.5in fig-align="center"}
+
+
+
+## Publish to Github pages
+
+**Uncheck 'Keep this code private'**
+
+![](img/pages_add4.png){height=5.5in fig-align="center"}
+
+
+## Publish to Github pages
+
+**Open `github.com/repo/settings`**
+
+![](img/pages_publish.png){height=5.5in fig-align="center"}
+
+
+## Publish to Github pages
+
+**Settings $\rightarrow$ Pages (left-sidebar)**
+
+![](img/pages_publish2.png){height=5.5in fig-align="center"}
+
+## Publish to Github pages
+
+**Branch $\rightarrow$ `main` $\rightarrow$ `/docs` $\rightarrow$ Save**
+
+![](img/pages_publish2.png){height=5.5in fig-align="center"}
+
+
+## Host Your Final Project 
+
+- Delete `_site` folder (now its using `docs`)
+- Create `data` folder to store your dataset
+- Add final project `.qmd` file to your repo (or drop it into `index.qmd`)
+- Use `_quarto.yml` to add new pages to navigation bar 
+- Render `index.qmd`; confirm that other pages have been rendered
+- Push commit and check that the website updated
+
+## More Complex Stuff
+
+- Terminal: `quarto render`
+- Terminal: `quarto render file.qmd`
+- 
+
+

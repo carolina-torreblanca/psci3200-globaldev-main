@@ -1,0 +1,23 @@
+---
+title: "Regression"
+date: 2024-02-06
+---
+
+
+## Required Readings
+
+- DSS [Ch 3](/files/dss_ch3.pdf)
+- DSS [Ch 4](/files/dss_ch4.pdf)
+
+## Assignment
+
+- Create Github repo for the course
+  + [Instructions](/assignments/01_github.html)
+  + [Git with R](https://happygitwithr.com/install-git#install-git)
+  + [Blackwell tutorial](https://github.com/gov50-f23/gov50-f23.github.io/blob/main/assignments/00-problem-set.qmd)
+
+## Slides
+
+- [Slides](/slides/07-inference.html)
+
+

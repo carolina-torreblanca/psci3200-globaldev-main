@@ -1,0 +1,446 @@
+---
+title: "Sampling, Linear Regression, and Uncertainty"
+subtitle: ""
+author: "Carolina Torreblanca"
+institute: "University of Pennsylvania"
+
+editor: source
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.05
+    logo: DevLab_Logo_29Mar2023.png
+    embed-resources: true
+    template-partials:
+      - title-slide.html
+    gfm:
+    mermaid-format: png
+    highlight-style: atom-one-dark
+    code-overflow: wrap
+---
+
+
+## Housekeeping
+
+- You have two assignments next week!
+
+## Today's Roadmap
+
+1.  Targeting Population Parameters with Sample Estimates
+2.  The Uncertainty in Sample Estimates
+3.  Linear Regression and its Parameters
+4.  Quantifying Uncertainty in Linear Regression's Estimated Parameters
+
+## From sample to population
+
+::: incremental
+-   Often we want to know some characteristic about a population of interest
+
+-   But we only have a sample of that population
+
+-   How do we make inferences about the population with what we learn from our sample?
+:::
+
+## From sample to population
+
+::: incremental
+-   The first step is to make sure our sample is representative of the population
+
+    -   What do we mean by this?
+    -   Why is it important?
+
+-   How can we achieve representativeness?
+
+-   Beware! We not only need to *sample* a representative group of individuals, we also need a representative group of them to *answer* our questions
+:::
+
+## It's not all about sample size!
+
+-   1936 Presidential Election in the US: FDR vs Alf Landon
+
+-   A newspaper called the Literary Digest ran a survey and asked 10 million (!!!) Americans who they would vote for
+
+    -   2.4 million of them answered
+
+## It's not (all) about sample size!
+
+![](img/literarydigest.png){fig-align="center"}
+
+## Empirical Example: Brexit
+
+::: incremental
+-   Data from a random sample of British citizens: the British Electoral Survey
+
+-   We want to learn the probability that a British citizen supports Brexiting in the **country.**
+
+    -   This is a population parameter
+
+-   Such probability is the same in expectation as the proportion of pro-brexiting citizens
+
+    -   Why?
+:::
+
+## Empirical Example: Brexit
+
+```{r one}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+brex <- read.csv(here::here("./slides/code/BES.csv"))
+str(brex)
+table(brex$vote, useNA = "always")
+brex$exit <- ifelse(brex$vote=="leave", 1, 
+                ifelse(brex$vote == "stay", 0, NA))
+prop.table(table(brex$exit))*100
+```
+
+## Empirical Example: Brexit
+
+-   Random Variable: the outcome of some process where there’s uncertainty
+
+    -   Think of flipping a coin: we do not know if the result of a single flip will be heads or tails, but we know that with p = .5 it will be the former
+
+-   *"Support of Brexit"* is a Random Variable:
+
+    -   $Support \sim \text{Bernoulli}(p)$
+
+-   Where $E(Support) = p$
+
+## Empirical Example: Brexit
+
+-   We want to know what $p$ is!
+
+-   But it is a *population parameter* and we only have a sample
+
+-   We can estimate $\hat{p}$ by doing
+
+```{r two, eval=T, echo=TRUE, results=T, include=TRUE}
+brex <- dplyr::filter(brex, is.na(exit)==F)
+(phat <- mean(brex$exit, na.rm =T))
+
+```
+
+-   To see why, imagine a fair coin toss. How many Heads do you expect after flipping the coin 100 times?
+
+## Sampling Distribution of $\hat{p}$
+
+-   On expectation, our sample $E[\hat{p}] = p$
+
+    -   This property is called unbiasedness
+    -   As our sample size increases, our $\hat{p}$ converges in probability to p
+
+-   But if our sample were slightly different, we would have gotten a different $\hat{p}$!
+
+    -   We need to account for this uncertainty!
+
+-   Let's simulate the different sample means we would have gotten if our sample changed slightly:
+
+## Sampling Distribution of $\hat{p}$
+
+```{r three}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| centering: true
+#| code-summary: "Show code"
+
+require(tidyverse)
+set.seed(7)
+
+out.means <- c()
+for (i in 1:1000) {
+  temp_dat <- sample_n(brex, nrow(brex), replace = T)
+  out.means[i] <- mean(temp_dat$exit, na.rm = T)
+  rm(temp_dat)
+}
+
+hist(out.means)
+abline(v = mean(out.means), col = "red", lwd = 2, add = T)
+```
+
+## Sampling Distribution of $\hat{p}$
+
+-   That's just a normal distribution!
+
+-   **All normal distributions can be described by their mean and their standard deviation**
+
+-   This one is called "sampling distribution of the sample mean"
+
+    -   Centered around our estimate $\hat{p}$
+    -   $SE =  \sqrt{\frac{Var (Support)}{n}}$
+
+-   Knowing it is a normal distribution helps us quantify the *uncertainty* in our estimates
+
+## ![](img/normal.jpg)
+
+## Standard Errors
+
+::: incremental
+-   The standard deviation of the sampling distribution of an estimator is called "standard error"
+
+-   By calculating the standard error we can know the shape of the sampling distribution. This helps us do two important things:
+
+    1.  Construct confidence intervals (what is the range within which the true value is likely to be?)
+    2.  Do hypothesis testing (p-values and statistical significance)
+:::
+
+## Confidence Intervals
+
+::: incremental
+-   Range of values that **likely** includes the true value of our parameter of interest
+
+    -   The range that includes a pre-specified proportion of the density of the sampling distribution
+
+-   Interpretation: "With X% confidence, the true parameter is within the confidence interval"
+
+    -   More specifically "If I drew millions of samples and constructed a confidence interval for each one, my true parameter would be inside the CI X% of the times"
+:::
+
+## Confidence Intervals
+
+-   Because of the properties of the normal distribution, we know that 95% of the density will be within the following range:
+
+```{=tex}
+\begin{align*}
+CI_{95\%} = \hat{p} - 1.96 \times \sqrt{\frac{Var (Support)}{n}},\\
+\hat{p} + 1.96 \times \sqrt{\frac{Var (Support)}{n}} 
+\end{align*}
+```
+## Computing CI's: Example
+
+```{r four}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+# standard deviation of the sampling distribution computed with the formula
+se <- round(sqrt(var(brex$exit, na.rm = T)/nrow(brex)),3)
+# An analytic solution to the confidence interval
+(ci_95 <- c(phat - (1.96*se), phat + (1.96*se)))
+# We can check that it's the same as the interval that leave 95% of the mass inside
+# of the sampling distribution 
+quantile(out.means, c(.025, .975))
+```
+
+## Linear Regression
+
+-   We can think of the parameters of a linear regression in the same way.
+
+```{=tex}
+\begin{equation*}
+Y_i = \alpha + \beta X_i + \varepsilon_i
+\end{equation*}
+```
+
+  -   $\alpha$ an intercept, common to all units.
+
+  -   $\beta$ the slope, common to all units.
+
+-   We need to describe the relationship between X and Y with a line using information from our sample
+
+## Linear Regression: Intuition
+
+- Our data includes the outcome $y_i$ and our explanatory variable $x_i$
+
+- But we can draw infinite lines through those points 
+
+- How to choose the correct $\widehat{\beta}$ and $\widehat{\alpha}$, like we chose the correct $\widehat{p}$?
+
+
+## Linear Regression: Intuition
+
+- If we have a slope and an intercept, for every $X_i$, the equation of a line gives us a predicted $Y_i$, or $\widehat{Y_i}$
+
+- So, for each plausible estimates of $\widehat{\beta}$ and $\widehat{\alpha}$ we can calculate the *prediction error*
+
+\begin{align*}
+\hat{\varepsilon}_i =& Y_i - \hat{Y_i} \\ 
+\hat{\varepsilon}_i =& Y_i - \hat{\alpha} - \hat{\beta} x_i 
+\end{align*}
+
+## Linear Regression: Intuition
+
+- If we add up the prediction error for each observation, we get the *S*um of *S*quared *R*esiduals
+
+\begin{equation*}
+SSR = \widehat{\varepsilon}^2 = (Y_i - \widehat{\alpha} - \widehat{\beta}X_i)^2
+\end{equation*}
+
+- Minimizing this objective yields the “ordinary least squares” (OLS) estimates of $\alpha$ and $\beta$
+
+## Linear Regression: Simulation 
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: false
+#| code-summary: "Show code"
+
+# Simulated data
+set.seed(8)
+# TRUE alpha and beta
+alpha <- 5
+beta <- -.216
+x <- rnorm(100, 4, .8) # 
+error <- rnorm(100, 0, 1)
+# relationship is linear by construction because I'm simulation god!!
+y <- alpha + (beta*x) + error
+
+```
+
+## Linear Regression: Simulation 
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+# Fit linear model
+model <- lm(y ~ x)
+# Predict $y_hat$ or the expected y given the model and x
+y_pred <- predict(model)
+# Plot the data
+plot(x, y, main="Visualizing OLS", xlab="X", ylab="Y", pch=16, col="gray45")
+# Add best fit line
+abline(model, col="maroon", lwd=2)
+# Draw vertical lines showing each prediction error
+segments(x, y, x, y_pred, col="purple", lty=2)
+
+```
+
+## Linear Regression: Interpretation
+
+-   Why are $\hat{\beta}$ and $\hat{\alpha}$ different from $\alpha$ and $\beta$?
+
+```{r}
+summary(model)
+(beta_hat <- coefficients(model)[2])
+(se_beta <- summary(model)$coefficients[2, "Std. Error"])
+```
+
+## Linear Regression
+
+-   Estimates of $\hat{\beta}$ and $\hat{\alpha}$ have uncertainty
+
+::: incremental
+
+-   They have their own sampling distributions!
+
+    -   CLT: They are also normal
+
+-   We can use what I know about normal distributions to quantify their uncertainty
+
+-   We can construct confidence intervals in the exact same way!
+
+-   Or do hypothesis tests
+
+:::
+
+
+## Hypothesis Testing and P-values
+
+-   We are often interested in determining whether the true parameter is different from zero with a pre-specified level of confidence
+
+```{=tex}
+\begin{align*}
+H_0: \beta = 0 \\
+H_1: \beta \neq 0
+\end{align*}
+```
+-   We are going to reject $H_0$ in favor of $H_1$ if we are sufficiently confident we aren't making a (type I) mistake
+
+## P-value
+
+1.  Assume the true effect/parameter is 0
+
+2.  "Draw" the sampling distribution of the parameter
+
+    -   Remember we know that its sd = se
+
+3.  Calculate the probability of observing an *estimate* at least as extreme as the one you observed with your sample if the true parameter is zero
+
+4.  If you are doing a two-tailed test, use absolute value
+
+## P-value
+
+-   Simulated data to visualize the p-value
+
+```{r}
+
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| centering: true
+#| code-summary: "Show code"
+
+x1 <- rnorm(100000, mean = beta_hat, sd = se_beta)
+x2 <- rnorm(100000, mean = 0, sd = se_beta)
+
+density_data <- density(x2)
+   density_df <- data.frame(x = density_data$x, y = density_data$y)
+shade_region <- density_df %>% filter(x < beta_hat)
+shade_region2 <- density_df %>% filter(x > -1*beta_hat)
+
+ ggplot() + 
+  geom_density(aes(x = x1, color = "Our sampling distribution")) +
+  geom_vline(aes(xintercept = beta_hat), linetype = "dashed", color = "navy") + 
+  geom_vline(aes(xintercept = -beta_hat), linetype = "dashed", color = "navy") + 
+  geom_area(data = shade_region, aes(x = x, y = y), fill = "pink") +
+  geom_area(data = shade_region2, aes(x = x, y = y), fill = "pink") +
+  geom_density(aes(x = x2, color = "Sampling distribution if beta = 0")) + 
+  theme_classic(base_size = 15) +
+  scale_color_manual(values = c("blue", "maroon")) +
+  labs(color = "", y = "", x ="" ) +
+  coord_cartesian(xlim = c(min(x2), max(x2)))
+
+```
+
+
+## Statistical Significance
+
+-   If you are using a level of statistical significance of 95%, you reject $H0: \beta = 0$ if $\text{p-value} \leq .05$
+
+-   If you are using a level of statistical significance of 99%, you reject $H0: \beta = 0$ if $\text{p-value} \leq .01$
+
+-   When we have estimates with a p-value less or equal to that, we say our coefficient is "statistically significant"
+
+-   It just means we are sure enough the parameter is different from zero
+
+-   In papers, they report this with different number of stars!
+
+
+## Statistical Significance
+
+- In our example, would we reject $H0: \beta = 0$ with 90% confidence? With 95% confidence? With 99%?
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| centering: true
+#| code-summary: "Show code"
+
+summary(model)
+
+```
+
+
+## Summing Up: 2 Takeaways
+
+-   The representative-ness of our samples is crucial to make inferences abt. population
+
+    - The more observations we have, the better "powered" we are to detect small effects
+
+    - But sample size does not substitute for representative-ness
+
+-   Statistical significance is important but it is NOT a measure of **SCIENTIFIC** importance
+
+    -   Statistical significance just means an effect or difference is likely NOT to be zero
+
+

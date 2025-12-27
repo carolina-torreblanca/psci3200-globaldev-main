@@ -1,0 +1,758 @@
+---
+title: "Migration 1"
+subtitle: "Plus Difference-in-Differences"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+editor: source
+---
+
+# Logistics
+
+## Assignments
+
+- Today
+  + [Rozo and Grossman (2025)](https://voxdev.org/voxdevlit/refugees-and-other-forcibly-displaced-populations) (download the pdf and/or watch the YouTube video)
+  + [Gazeaud, Jules, Eric Mvukiyehe, and Olivier Sterck (2020)](https://voxdev.org/topic/migration-urbanisation/constraints-migration-evidence-comoros) 
+  + [Sviatschi (2022)](https://voxdev.org/topic/migration-urbanisation/impact-us-deportation-policy-gang-activity-el-salvador)
+
+
+## Agenda
+
+\
+
+1. Research Design Debrief
+2. Migration
+3. Causal Inference with Observational Data: Difference-in-Differences
+
+# Research Design Debrief
+
+## Debrief
+
+**Submissions**
+
+- You need to *check* what you send me...
+- Read the basic instructions (quarto + html file)
+- I didn't penalize anyone, but next time I will
+
+**Research Designs**
+
+- Justify your sample
+- Just "controlling for observables" will not get you full credit
+- Next week, we'll cover essentials... bring your questions!
+
+# Migration Overview
+
+## Overview of International Migration
+
+![](img/un_migration.png){fig-align="center"}
+
+## Economic Equilibrium
+
+\
+
+- Push factors
+- Pull factors
+- Costs
+
+## Economic Equilibrium: Push
+
+\
+
+**Push factors: origin country factors that affect the well-being**
+
+::: {.fragment}
+::: {.incremental}
+- Demographics: youth bulge
+- Living standards: poor infrastructure, crime
+- Economic opportunities: unemployment
+- Politics: exclusion
+:::
+:::
+
+## Economic Equilibrium: Pull
+
+\
+
+**Pull factors: destination country factors that affect expected well-being**
+
+::: {.incremental}
+- Demographics: aging population
+- Living standards: good infrastructure, security
+- Economic opportunities: labor demand, credit
+- Politics: inclusion
+:::
+
+## Economic Equilibrium: Costs
+
+\
+
+**Costs: factors that shape the costs of migrating**
+
+::: {.fragment}
+::: {.incremental}
+- Legal restrictions
+- Transportation
+- Asset mobility
+:::
+:::
+
+## Economic Equilibrium Perspective
+
+\
+
+- Migration decisions are based on expected return
+- Movements from poorer to richer regions will equalize wages
+
+
+## Migration Systems
+
+
+**Macro linkages between sending and receiving countries** 
+
+- Migration is driven by prior links between sending and receiving countries 
+  + Colonization, political or cultural influence, trade, language
+
+**Micro linkages between households**
+
+- Migration is driven by prior links between individuals and households 
+  + Social ties to households in the destination country
+
+# Rozo & Grossman
+
+## Quiz
+
+**5 minutes: send me a Slack DM with something you learned from this article**
+
+## Trends: Displacement
+
+![](img/unhcr.png){fig-align="center"}
+
+## Trends: Displacement
+
+![](img/unhcr2.png){fig-align="center"}
+
+
+## Trends: Conflict
+
+\
+
+::: {.incremental}
+
+- War deaths continue to decline
+- Interstate wars are rare by historical standards
+- Geopolitical tensions are increasing
+- Number, intensity, complexity, and duration of civil wars are increasing
+:::
+
+
+## Trends: Conflict
+
+![](img/ucpd.png){fig-align="center"}
+
+## Trends: Climate
+
+\
+
+- 78% of global land area has become drier over the past 30 years
+- Warmer temperatures are causing extreme weather events
+
+## Trends: Research
+
+![](img/rozo_methods.png){fig-align="center"}
+
+## Trends: Research
+
+![](img/rozo_topics.png){fig-align="center"}
+
+
+## Impact on Host: Labor markets
+
+\
+
+::: {.incremental}
+
+- Who gets hurt?
+- Who benefits?
+- Net effects effects?
+  + Short-term challenges
+  + Long-term growth
+
+:::
+
+
+::: {.notes}
+
+Benefit: skilled laborers, formal businesses
+Hurt: unskilled (women, youth), informal businesses
+
+:::
+
+## Impact on Host: Other
+
+\
+
+::: {.incremental}
+
+- Service provision
+  + Displacement effects (public to private)
+  + Disease burden
+- Politics
+  + Wealth
+  + Prior exposure
+  
+:::  
+  
+## Supporting Migrants
+
+\
+
+**Unique challenges for forced migrants?**
+
+::: {.fragment}
+
+- Loss of assets
+- Trauma and mental health
+- Legal uncertainty
+- Language and cultural barriers
+
+:::
+
+## Supporting Migrants
+
+**Cash transfers**
+
+- Short-term increases in consumption, well-being
+
+**Labor market integration**
+
+- Increased consumption, well-being
+- Reduced crime, fertility
+- Kakuma vs Kalobeyei; Uganda business mentors
+
+## Supporting Migrants
+
+\
+
+- Mental health
+- Social cohesion
+  + Teacher bias
+  + Shared aid + integration policies
+  + Perspective-taking, contact
+
+## Policy Implications
+
+\
+
+::: {.fragment}
+
+- Shift from humanitarian response to self-reliance
+- Allow hosts to benefit from aid
+- Increase labor market integration
+- Address discrimination and mental health
+
+:::
+
+# Gazeaud et al. (2023)
+
+## Constraints to migration
+
+\
+
+- Migration causes huge income gains
+- Desire for migration is extremely high
+- Actual migration flows are relatively small
+- Why?
+
+## Intervention
+
+**Conditional cash transfer**
+
+::: {.fragment}
+- Cash payment for labor on public works
+:::
+
+::: {.fragment}
+Mechanisms:
+:::
+
+::: {.fragment}
+1. Liquidity
+2. Opportunity cost
+3. Collateral and access to credit
+4. Risk-aversion
+:::
+
+## Findings
+
+- Treatment households 38% more likely to migrate 
+- How did they measure spillovers?
+- Mechanisms:
+  + What were the mechanisms at play?
+  + How did they reach these conclusions?
+
+
+## Findings
+
+![](img/gazeud_mechanism.png){fig-align="center"}
+
+## Policy Implications
+
+**How does this relate to the equilibrium model?**
+
+\
+
+**Policy implications**
+
+::: {.fragment}
+- The poorest individuals in sending countries are not the most likely to migrate ([Clements and Mendola, 2020](https://www.cgdev.org/publication/migration-developing-countries-selection-income-elasticity-and-simpsons-paradox))
+- Improving welfare in sending countries will not necessarily reduce desire to migrate
+- Networks may be less influential (over short time periods and with large pre-treatment migration)
+:::
+
+
+
+
+# Difference-in Differences
+
+## Review
+
+\
+
+- What is an interaction term?
+- What are fixed effects?
+- Why do we like randomization?
+
+## Identification strategy
+
+**In the real world, there are always confounders that we can't observe (measure) or adjust for**
+
+- A *research design* that allows us to isolate a causal effect from observational data
+- Approximates an experiment by ensuring that the treatment and untreated (control) group are similar
+- These strategies rely on assumptions that we can *attempt* to validate
+
+
+## Holy Trinity of Causal Inference
+
+\
+
+1. **Difference-in-Differences**
+2. Regression Discontinuity
+3. Instrumental Variables
+
+
+## Difference-in-Differences
+
+\
+
+$$
+Y_{it} = \alpha + \beta_1 \text{Treatment}_i + \beta_2 \text{Post}_t + \gamma (\text{Treatment}_i \times \text{Post}_t) + \epsilon_{it}
+$$
+
+- $\gamma (\text{Treatment}_i \times \text{Post}_t)$
+- Assumes measurement at two points in time
+
+## Simulation Example
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+# Load required libraries
+library(dplyr)
+library(modelsummary)
+
+# Generate example data
+set.seed(123)
+data <- data.frame(
+  treatment = rep(c(1, 0), each = 100),
+  post = rep(c(1, 0), each = 50, times = 2),
+  outcome = c(rnorm(50, mean = 10, sd = 4), # control: pre-treatment
+              rnorm(50, mean = 10, sd = 4), # control: post-treatment
+              rnorm(50, mean = 10, sd = 4), # treatment: pre-treatment
+              rnorm(50, mean = 12, sd = 4)) # treatment: post-treatment
+)
+
+head(data)
+
+```
+
+
+
+## Simulation Example
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+# Summarize the output
+modelsummary(
+  list(lm(outcome ~ treatment + post, data = data),# standard model
+       lm(outcome ~ treatment * post, data = data)), # difference-in-differences model
+  estimate  = "{estimate}{stars} ({std.error})",
+             statistic = NULL,
+  gof_omit = 'IC|RMSE|Log|F|R2$|Std.')
+
+```
+
+
+## DiD: Assumptions
+
+- Treatment and control units would have changed in similar ways 
+  + Parallel trends
+- Requires *at least* 3 observation periods
+
+
+## Why can't we just observe how units change over time?
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+library(ggplot2)
+
+Year = c(0,1,2,3)
+Outcome = c(NA, 1.3, 1.7, NA)
+Treatment = c("Treatment", "Treatment","Treatment","Treatment")
+
+dat = data.frame(Year, Outcome, Treatment)
+
+ggplot(data = dat, aes(x = Year, y = Outcome, group = Treatment, color = Treatment)) +
+  geom_line(aes(linetype=Treatment),size=2) +
+  geom_point(size = 6) +
+  xlim(0,3) + 
+  ylim(0.8, 2.2) +
+  scale_linetype_manual(values=c("solid", "solid")) +
+  scale_color_manual(values = c("blue") ) +
+  theme(legend.position = c(0.8, 0.2), text = element_text(size=20),
+        legend.title=element_blank())
+
+```
+
+## Why can't we just observe how units change over time?
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+Year = c(0,1,2,3)
+Outcome = c(0.9, 1.3, 1.7, 2.1)
+Treatment = c("Treatment", "Treatment","Treatment","Treatment")
+
+dat = data.frame(Year, Outcome, Treatment)
+
+ggplot(data = dat, aes(x = Year, y = Outcome, group = Treatment, color = Treatment)) +
+  geom_line(aes(linetype=Treatment),size=2) +
+  geom_point(size = 6) +
+  xlim(0,3) + 
+  ylim(0.8, 2.2) +
+  scale_linetype_manual(values=c("solid", "solid")) +
+  scale_color_manual(values = c("blue") ) +
+  theme(legend.position = c(0.8, 0.2), text = element_text(size=20),
+        legend.title=element_blank())
+
+```
+
+
+
+## Why can't we just compare units without randomization?
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+Year = c(0,1,2,3)
+Outcome = c(NA, 1.2, 1.4, NA, 
+            NA, 1.3, 1.7, NA)
+Treatment = c("Control", "Control","Control","Control", 
+              "Treatment", "Treatment", "Treatment", "Treatment")
+
+dat = data.frame(Year, Outcome, Treatment)
+dat$Treatment = factor(dat$Treatment, levels = c("Treatment", "Control"))
+
+ggplot(data = dat, aes(x = Year, y = Outcome, group = Treatment, color = Treatment)) +
+  geom_line(aes(linetype=Treatment),size=2) +
+  geom_point(size = 6) +
+  xlim(0,3) + 
+  ylim(0.8, 2.2) +
+  scale_linetype_manual(values=c("solid", "solid")) +
+  scale_color_manual(values = c("blue", "red") ) +
+  theme(legend.position = c(0.8, 0.2), text = element_text(size=20),
+        legend.title=element_blank())
+
+```
+
+
+
+## Why can't we just compare units without randomization?
+
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+Year = c(0,1,2,3)
+Outcome = c(1, 1.2, 1.4, 1.6, 
+            0.9, 1.3, 1.7, 2.1)
+Treatment = c("Control", "Control","Control","Control", 
+              "Treatment", "Treatment", "Treatment", "Treatment")
+
+dat = data.frame(Year, Outcome, Treatment)
+dat$Treatment = factor(dat$Treatment, levels = c("Treatment", "Control"))
+
+
+ggplot(data = dat, aes(x = Year, y = Outcome, group = Treatment, color = Treatment)) +
+  geom_line(aes(linetype=Treatment),size=2) +
+  geom_point(size = 6) +
+  xlim(0,3) + 
+  ylim(0.8, 2.2) +
+  scale_linetype_manual(values=c("solid", "solid")) +
+  scale_color_manual(values = c("blue", "red") ) +
+  theme(legend.position = c(0.8, 0.2), text = element_text(size=20),
+        legend.title=element_blank())
+
+```
+
+
+## Why can't we just compare units without randomization?
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+Year = c(0,1,2,3)
+Outcome = c(NA, 1.3, 1.5, NA,
+            1, 1.2, 1.4, NA,
+            1.1, 1.3, 1.7, NA)
+Treatment = c("Comparison","Comparison","Comparison","Comparison",
+              "Control", "Control","Control","Control",
+              "Treatment", "Treatment", "Treatment", "Treatment")
+
+dat = data.frame(Year, Outcome, Treatment)
+dat$Treatment = factor(dat$Treatment, levels = c("Treatment", "Comparison", "Control"))
+
+ggplot(data = dat, aes(x = Year, y = Outcome,  color = Treatment)) +
+  geom_line(aes(linetype=Treatment),size=2) +
+  geom_point(size = 6) +
+  ylim(0.8, 2.2) +
+  scale_linetype_manual(values=c("solid", "dotted", "solid")) +
+  scale_color_manual(values = c("blue", "black", "red"  ) ) +
+  theme(legend.position = c(0.8, 0.2), text = element_text(size=20),
+        legend.title=element_blank())
+
+```
+
+## Why can't we just compare units without randomization?
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+Year = c(0,1,2,3)
+Outcome = c(NA, 1.3, 1.5, 1.7,
+            1, 1.2, 1.4,1.6,
+            1.1, 1.3, 1.7, 1.9)
+Treatment = c("Comparison","Comparison","Comparison","Comparison",
+              "Control", "Control","Control","Control",
+              "Treatment", "Treatment", "Treatment", "Treatment")
+
+dat = data.frame(Year, Outcome, Treatment)
+dat$Treatment = factor(dat$Treatment, levels = c("Treatment", "Comparison", "Control"))
+
+ggplot(data = dat, aes(x = Year, y = Outcome,  color = Treatment)) +
+  geom_line(aes(linetype=Treatment),size=2) +
+  geom_point(size = 6) +
+  ylim(0.8, 2.2) +
+  scale_linetype_manual(values=c("solid", "dotted", "solid")) +
+  scale_color_manual(values = c("blue", "black", "red"  ) ) +
+  theme(legend.position = c(0.8, 0.2), text = element_text(size=20),
+        legend.title=element_blank())
+
+```
+
+# Sviatschi (2022)
+
+## Sviatschi (2022)
+
+\
+
+- What is the effect of mass deportations on the root causes of migration?
+
+
+## Three sources of variation
+
+\
+
+1. Geography (birth municipality)
+2. Time (policy change)
+3. Age (recruitment age)
+
+## Identifying assumption
+
+\
+
+- Municipalities where gang-deportees were born would have changed in similar ways to other municipalities *in the absence of a policy change*
+
+
+## Findings
+
+![](img/sviatschi_did.png){fig-align="center"}
+
+## Policy Implications
+
+\
+
+- Addressing pull factors can have unintended affects on push factors in complex ways
+
+
+## Threats to Inference
+
+\
+
+- Confounders
+- Colliders
+- Mechanisms
+- Reverse Causality
+
+## Adjusting on Observables
+
+\
+
+- Matching
+- Weighting
+- Synthetic Control (very fancy weighting)
+
+## Validity
+
+::: {.incremental}
+- Internal validity
+- External validity
+- What are the trade-offs between experiments and observational studies?
+  + Experiments have more internal validity
+  + But... they often have synthetic treatments, convenience samples
+- Where are these studies used in the real-world?
+:::
+
+
+
+<!-- ## Inference -->
+
+<!-- Estimate = Estimand + Bias + Noise -->
+<!-- Estimand: the true quantity of interest (e.g., the proportion of people who engage in bribery; the correlation between wealth and bribery) -->
+<!-- Estimate: the number we get from our analysis. Our approximation to the true value.  -->
+<!-- Estimator: the procedure we use to generate the estimate.  -->
+<!-- Bias: errors that occur systematically -->
+<!-- Noise: idiosyncratic (unsystematic) errors -->
+
+
+# 3ie Evidence Review
+
+## Irregular Migration Evidence Review
+
+**Objective:**
+
+- Review evidence efficacy of interventions designed to target the root causes of irregular migration
+
+**Root causes: social and political conditions that induce departures**
+
+1. Lack of economic opportunity
+2. Lack of capacity to adopt to shocks
+3. High levels of violence
+4. Lack of regular migration channels
+
+
+## Irregular Migration Evidence Review
+
+\
+
+**What is irregular migration?**
+
+::: {.fragment}
+- Migration outside legal channels
+:::
+
+**Why is it different from regular migration?**
+
+::: {.fragment}
+- Additional risks relative to legal migration (violence, exploitation, access to legal system)
+:::
+
+<!-- ## Whats the process -->
+
+<!-- 1. Identify root causes of migration -->
+<!-- 2. Look for papers assessing interventions on these root causes and with some reference to migration -->
+<!-- 3. Find the subset of studies that specifically look at outcomes related to migration -->
+
+## Findings
+
+Studies reporting migration outcomes are concentrated on 3 intervention categories: 
+
+1. Human capital strengthening 
+2. Active labor market policies
+3. Information campaigns 
+<!-- legal rights, risks of irregular migration, legal alternatives, and/or working conditions -->
+
+<!-- ## Evidence base -->
+
+<!-- evidence base is concentrated in two domains: -->
+<!-- 1. economic opportunities and decent work (n = 64)  -->
+<!-- -- human capital strengthening (cash transfers) -->
+<!-- -- active labor market policies (vocational training) -->
+<!-- 2. orderly and safe migration managemen -->
+<!-- -- information campaigns -->
+
+<!-- we also see eivdnece on -->
+<!-- 1. strengthening resilience against shocks -->
+<!-- -- disaster risk financing (resistance seeds, crop management) -->
+
+<!-- No evidence on: -->
+<!-- - building safer communities through violence prevention -->
+<!-- -- likely due to long time lags -->
+
+<!-- ## Evidence base -->
+
+<!-- RCTs: -->
+<!-- - Cash transfers within the human-capital strengthening intervention category (e.g., -->
+<!-- Angelucci 2004, 2013; Barham, Macours, and Maluccio 2018; Gazeaud et al. -->
+<!-- 2022a); -->
+<!-- - Vocational trainings and other active labor market policies (e.g., Ahn et al. 2020; -->
+<!-- Hardy et al. 2019; Das 2017); and -->
+<!-- - Information campaigns on the risks of migrating irregularly and other risks (e.g., -->
+<!-- Beam, McKenzie, and Yang 2016; Tjaden and Dunsch 2021; Bah et al. 2023). -->
+
+## Conclusions
+
+\
+
+- Some evidence on interventions that address the root causes of irregular migration
+- Almost no evidence looking at irregular migration as a primary outcome
+- A number of studies are ongoing

@@ -1,0 +1,15 @@
+---
+title: "Climate and Development 1"
+---
+
+# Guest Lecture: [Cleo O'Brien Udry](https://cobrienudry.github.io/research/)
+
+## Required Readings
+
+- [O’Brien-Udry (working paper)](/files/o'brien-udry_JMP.pdf)
+- [Seiler et al. (2023)](https://www.cgdev.org/blog/what-can-we-learn-jetps-south-africa-and-indonesia-so-far)
+- [Seiler et al. (2023)](https://www.cgdev.org/publication/just-energy-transition-partnerships-early-successes-and-challenges-indonesia-and-south)
+
+## Slides
+
+- [Slides](/slides/23-climate1.html)

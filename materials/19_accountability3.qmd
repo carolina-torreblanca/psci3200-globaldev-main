@@ -1,0 +1,20 @@
+---
+title: "Accountability and Information 3"
+date: 2024-03-28
+---
+
+
+## Required Readings
+
+- [Dunning et al. (2019)](/files/2019_Science_PE_voter_information_campaigns.pdf)
+  + [Supplementary Material](/files/aaw2612_sm.pdf)
+
+## Slides
+
+- [Slides](/slides/19-accountability3.html)
+
+
+## Additional Readings (non-required)
+
+- [Annual Review on Accountability](/files/arps_accountability.pdf)
+- [Annual Review on Distributive Politics](/files/arps_distributive.pdf)

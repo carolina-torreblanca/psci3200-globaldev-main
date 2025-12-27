@@ -1,0 +1,188 @@
+---
+title: "Review of Sampling and Population Characteristics"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  pptx:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+    code-line-numbers: false
+
+
+highlight-style: github
+
+---
+
+
+## Resources
+
+This activity draws on two sources:
+
+- Chapter 3 in [Data Analysis for Social Science: A Friendly and Practical Introduction (DSS)](https://press.princeton.edu/books/paperback/9780691199436/data-analysis-for-social-science)
+  + [interactive visualization: sampling](https://ellaudet.iq.harvard.edu/random_sampling)
+- [Chapter 7 in Modern Dive](https://moderndive.com/7-sampling.html#sampling)
+
+
+:::{.notes}
+This tutorial draws heavily on two resources. An online copy of the DSS textbook chapter can be purchased at the Princeton Press website. 
+Modern Dive is a free, open-source textbook created with R + Markdown and hosted in Github pages.
+:::
+
+
+## Inferring Population Characteristics
+
+- We often want to *describe* a population of interest
+  + What is the average number of years of education completed by a country's citizens?
+  + What share the teachers in a district receive their salary on time?
+- We usually can't collect data on the entire population
+- Sampling allows us to estimate population characteristics from a *subset* of the population
+- Random sampling makes it most likely that our sample is *representative* of the population
+
+:::{.notes}
+One common goal of research is to make inferences about the characteristics of a broader population.
+- For example, we might want to know the average number of years of education completed by a country's citizens
+- Or we might want to know what share of the teachers in a district received salary payments on-time.
+- However, it is extremely rare that we can collect data on the entire population. Collecting data from every member of the population is extremely expensive and logistically very difficult. This is why most countries only collect census data on their citizens once every 10 years. 
+- Fortunately, this doesn't mean that we can't get good answers to these questions. Sampling allows us to estimate these quantities of interest by collecting data on a subset of the population of interest. 
+- The method of sampling and the size of our sample determine how reliable this estimate will be.
+- Random sampling allows us to assume that the units in our sample (people, teachers, etc) will be a good representation of the full population
+:::
+
+## Sample Size and Variance
+
+- Random samples are used to calculate "point estimates" of population parameters (mean, median, proportion, etc.)
+- Large samples have a higher chance of resembling the population, and allow us to more confident in our estimates
+  + [Check out this interactive visualization](https://ellaudet.iq.harvard.edu/random_sampling)
+  + Observe how increases in sample size lead to a sample that is more and more similar to the population 
+- Sampling variation means that any specific sample will have a parameter value that is above or below the value in the population
+  + Calculate the *standard error* to quantify how far your estimate is likely to be from the true parameter value
+
+:::{.notes}
+Random samples are used to calculate "point estimates" of  parameters (mean, median, proportion, etc.). With a large sample size, it is more likely that your sample will resemble the broader population on the parameter value you are trying to estimate. In a new tab, open this interactive visualization of how sample size leads to better estimates of population parameters. Follow the instructions to watch how increases in sample size lead to a sample that is more and more similar to the population.
+Random samples exhibit natural "sampling variation" that leads to any specific sample to have a parameter value that is above or below the true value of the parameter in the population that you are trying to infer from the sample. You can calculate an approximation of the *standard error* to quantify how far your estimate is likely to be from the true parameter value based on the amount of variation in the data and the sample size.
+:::
+
+## Getting a Representative Samples
+
+- Sampling frame: Comprehensive list of units in the population
+  + Population census, administrative records
+  + Create yourself on-the-ground
+- Multi-stage sampling
+  + Populations are often nested within multiple units (citizens are in neighborhoods, citizens, districts)
+  + Randomly sampling which higher-level units to target can make randomly selecting individual units much easier
+
+:::{.notes}
+In order to draw a random sample from a population, you must have a "sampling frame". A sampling frame is a comprehensive list of every unit in the population. If your population of interest is the citizens of a country, you may be able to get a sampling frame through a census or through government records. If a recent census or administrative records aren't available, you might need to construct a sampling frame yourself. 
+- In development research, we often mix these two approaches in multi-stage sampling. For example, to collect a random sample of citizens in a specific city to complete a survey, you might first randomly sample neighborhoods from government records and then work with community leaders in each neighborhood to create a list of every household from which you can draw a random sample.
+:::
+
+## Sampling Strategies
+
+- Probability sampling strategies:
+  + Simple random sampling 
+  + Stratified sampling
+- Assume that unit and item non-response are effectively random
+
+:::{.notes}
+Probability sampling is a method used in statistical research to select a sample of elements from a larger population in such a way that each element has a known, non-zero chance of being selected. This approach allows the results from the sample to be generalized to the larger population, which is a key aspect of statistical inference. There are multiple approaches to random sampling, which we will discuss below. However, they all assume that your data collection is perfect, meaning that you are able to successfull collect data from every unit that is selected to be included in the sample. In the real world, this is almost never the case. We will return to issues of non-response at the end of this activity. 
+:::
+
+## Simple Random Sampling
+
+- Each unit within the population has the same probability of being chosen
+- Can be logistically difficult
+- May lead to the exclusion of small but important groups within the population
+
+:::{.notes}
+Simple Random Sampling is the most straightforward approach. In SRS, each unit within the population has the exact some probability of being included in your sample. However, it is often logistically difficult to collect data in this manner. For example, if you randomly select citizens from the entire population to answer an in-person survey, you will probably need to send an enumerator to a different part of the country for every citizen (unless you randomly sample multiple respondents that live near one another by chance). Also, SRS can miss small but important groups within the population. If you want to make inferences about parameter values for subgroups within the population, such as citizens living in a specific region of the country, you may need a more sophisticated approach to random sampling. 
+:::
+
+## Stratified sampling
+
+::: {.incremental}
+- Allows for more precise estimates of small group characteristics
+- Divide the entire population into *homogeneous* strata
+  + Ex. Gender, geographic location, etc.
+- Randomly sample units from each stratum
+  + Decreases risk that certain strata will be absent or under-represented
+  + Number of units sampled can be constant across strata or proportional to the strata's size 
+  + If units are not sampled according to their proportion of the population, estimating population parameters requires weighting
+:::
+
+:::{.notes}
+Stratified sampling provides a more nuanced approach to random sampling. This approach can help to ensure that we collect enough data about various groups within the population so that we can make inferences about those groups. Here, we begin by dividing the population into groups of similar units, for example by gender or geographic location. We then randomly sample a certain number of units from within those strata. This decreases the risk that members of certain strata will be absent or under-represented in your sample. The number of units sampled from each strata can be constant across strata (will will lead small groups to be over-represented or over-sampled compared to their share of the broader population) or proportional to their share of the broader population. If the number of units from each strata does not correspond to that strata's share of the population, you must apply weights when estimating the value of population parameters. It is important to note that, in order to perform stratified sampling, you must have data on which strata each unit belongs to in your sample frame.
+:::
+
+<!-- ## Cluster sampling -->
+
+<!-- ::: {.incremental} -->
+<!-- - Divide population into *heterogeneous* clusters  -->
+<!-- - Take random sample of clusters -->
+<!--   + Decreases costs of sampling -->
+<!--   + Ex. Districts, schools, businesses -->
+<!-- ::: -->
+
+<!-- :::{.notes} -->
+
+<!-- ::: -->
+
+## Non-Response Bias
+
+- Unit non-response (no data)
+  + When you cannot get data on certain units that were selected to be included in your sample
+  + Ex. A citizen declines to take your survey
+- Item non-response (missing data)
+  + When you cannot get data on all relevant characteristics of a unit that is included in your sample
+  + A survey respondent chooses not to answer specific questions
+- Selection into sample can bias estimates, induce spurious relationships
+
+:::{.notes}
+Random sampling ensures that the statistically most likely outcome is that our sample is representative of the broader population
+- However, non-response can introduce bias that makes the sample less representative
+- Random sampling works because no characteristics of units makes them more or less likely to be included in the sample
+- Statistically, the most likely outcome is that the sample resembles the population at large
+- When citizens refuse to take a survey (unit non-response) or answer certain questions (item non-response), or administrators at a certain school are unwilling to provide data on teacher payments (unit non-response) or have incomplete records for some teachers (item non-response), this can create bias. Citizens with more years of education may be less likely to respond, or schools with worse records of on-time payments might be less able to provide accurate data.
+- If the characteristics that make units select whether to be included are also correlated with the population characteristic that you want to estimate, this creates bias. 
+- This introduces what we call "selection bias," meaning that sampling is no longer random because certain units select whether to be included in the sample
+- All data collection suffers from selection bias, so it is important to think carefully about how the specific types of bias you encountered might affect your estimates of population characteristics.
+:::
+
+## Dealing with Non-Response
+
+- Unit non-response (no data)
+  + Incentives
+  + Fancy weighting
+- Item non-response (missing data)
+  + Self-administration
+- Always look at the distribution of non-response before making inferences with your data
+
+
+:::{.notes}
+There are many strategies to reduce the threats to inference posed by non-response. To reduce unit non-response, you can offer incentives or apply weighting to try to account for higher levels of non-response among certain types of units. To reduce item non-response, you can allow individual surveys to be self-administered or emphasize anonymity to reduce hesitation to sharing information. However, none of these strategies are guaranteed to work, so it is always important to investigate patterns in both unit and item non-response in your sample. Investigate whether sampled units in certain areas or strata were less likely to provide data than others, or whether certain types of units were less likely to provide certain types of data or information. 
+:::
+
+
+## Quiz Questions
+
+- Which method would be a more reliable way to estimate the proportion of citizens in your country that support a specific policy?
+  + Asking 100 citizens selected randomly from the entire population
+  + Asking 1,000 citizens that respond to a poll posted on social media
+- What is selection bias?
+  + When the population characteristics that you want to estimate differ systematically across specific groups within the populatioon
+  + When characteristics that make units more or less likely to provide data are correlated with the population characteristics that you want to estimate
+
+:::{.notes}
+Answers:
+- Option 1
+- Option 2
+:::

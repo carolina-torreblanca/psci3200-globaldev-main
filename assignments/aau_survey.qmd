@@ -1,0 +1,160 @@
+---
+title: "Data Assignment 1"
+subtitle: "Working with Panel Survey Data"
+author: "Jeremy Springman"
+
+institute: "University of Pennsylvania"
+date: last-modified
+toc: true
+
+format: 
+  html:
+    self-contained: true
+
+editor: source
+---
+
+## Introduction
+
+This assignment is designed to test your understanding of some of the core concepts and your ability to implement some of the core tools that will be necessary for the final project. We have covered these concepts and tools in class, but you have not been required to use them on your own.
+
+This project should be submitted via Slack by **11:59pm EST on Friday, April 11**. Your submission must include:
+
+- An html file with your written answers, tables and figures, and printed code showing your work
+- A `.qmd` file that you used to generate the html file
+- All code should be thoroughly commented to explain the choices you are making and the techniques you are using. Note: much of the code I have used to demonstrate concepts during in-class workshops *has not* been thoroughly commented. Adding comments to code that you adapt will force you to figure out how I'm getting from point A to point B and bestow you with a deeper understanding. It will also help me give you partial credit if you get something wrong. If necessary, refer to commenting resources in the syllabus.
+
+In this assignment, you will be required to:
+
+- Create index variables to summarize variation on key outcomes
+- Estimate *and interpret* linear models and interaction effects
+- Describe your reasoning and demonstrate understanding of core concepts
+
+We are using a representative survey of students from Addis Ababa University in Ethiopia collected by DevLab researchers. This data contains two waves collected in May-June and October-November of 2022. A total of 825 students completed both waves of the survey. This data was part of a randomized experiment inviting students to participate in a one-day workshop that connected them with opportunities to interact with leaders of civil society, sign-up as volunteers in civil society organizations, and engage in structured dialogue about politics with a diverse group of peers.
+
+
+## Part 1: Read-in data and prepare for analysis
+
+You can read-in the data using this code:
+
+```{r }
+#| include: true
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(readr)
+library(ggdag)
+library(tidyverse)
+library(gt)
+library(modelsummary)
+
+# read-in data
+dat = read_csv(here::here("workshops/aau_survey/clean_endline_did.csv" )) %>%
+#dat = read_csv("https://raw.githubusercontent.com/jrspringman/psci3200-globaldev/main/workshops/aau_survey/clean_endline_did.csv" ) %>%
+    # clean home region variable
+  mutate(q8_baseline = ifelse(q8_baseline == "Southern Nations, Nationalities, and Peoples Region", "SNNPR", q8_baseline), 
+         q8_baseline = str_remove(q8_baseline, " Region"))
+# create color palette for plotting
+palette = MetBrewer::met.brewer(name = "Cross")
+
+```
+
+The dataset has a number of variables that you might use for the assignment. For each respondent, we have two observations made at different points in time (baseline and endline). The dataset is currently in 'wide' format, meaning that each respondent has one row and baseline and endline measurements for the same variable are stored in separate columns. Measurements taken at baseline have the suffix `_baseline` included in the column name; for example, `q11_3` is the endline measurement and `q11_3_baseline` is the baseline measurement.
+
+Some of these variables are described below:
+
+- `response_id`: A unique identifier for each respondent
+- `treatment_status`: A binary indicator taking a value of 1 for respondents assigned to receive an invitation to the treatment workshop
+- `user_language`: A categorical variable indicating whether the respondent took the survey in English, Ahmaric, or Afan
+- `q3_baseline`: A categorical variable indicating whether the respondent identifies as Male or Female
+<!-- - Reasons for not participating in politics (note: answer options changed between baseline and endline) -->
+<!--   + `q14_3`:	Fear of other consequences -->
+<!--   + `q14_2`:	Fear of other people’s opinions -->
+<!--   + `q14_5`:	Lack of information -->
+<!--   + `q14_4`:	Lack of interest -->
+<!--   + `q14_1`:	Lack of time or economic resources -->
+<!-- - Frequency of media consumption -->
+<!--   + `q11_3`:	Frequency of news from newspapers -->
+<!--   + `q11_1`:	Frequency of news from radio -->
+<!--   + `q11_4`:	Frequency of news from social media -->
+<!--   + `q11_2`:	Frequency of news from television -->
+<!--   + `q12`:	Frequency of political posts on social media -->
+- Future plans for a career in public sector or civil society
+  + `q26_civ`:	Plan to work in civil society
+  + `q26_politics`:	Plan to work in politics
+  + `q26_public`:	Plan to work in public sector
+  + `q27_1`:	Plan to run for political office
+  + `q27_3`:	Plan to start a non-governmental organization
+- Feelings of political efficacy
+  + `q17_3`:	Your participation can bring positive change
+  + `q17_1`:	Youth are given opportunities to engage
+  + `q17_2`:	Youth participation can bring positive change
+
+
+**Requirement 1** (10%)
+
+For all variables after `user_language`, please rename the column with a descriptive name that better conveys their meaning. Column names should never contain spaces and should be as easy to type as possible. Do this for both their baseline and endline values, making sure to indicate which columns are baseline measures and which are endline measures in the names you assign.
+
+## Part 2: Create Index Measures
+
+Next, you'll need to create index measures for different types of variables. We will use the two types of index methods described during the in-class workshop.
+
+**Requirement 2** (10%)
+
+First, in your own words, explain the concept of an additive index and an averaged z-score, including how they are calculated, when you should use them, and when you cannot use them. What are the benefits of each approach? 
+
+**Requirement 3** (20%)
+
+Next, you'll need to:
+
+1. Create an additive index for the baseline and endline measures of the "Future plans for a career in public sector or civil society" variables. This should correspond to seperate counts of the number of future plans that each individual has at baseline and endline.
+2. Create an averaged z-scores for the baseline and endline values of the "Future plans for a career in public sector or civil society" and "Feelings of political efficacy" variables.
+
+::: {.callout-note}
+Since many of these are ordered categorical values, you will need to convert them to numeric values that assign higher numbers to certain values and lower numbers to certain values. Make sure that your numeric assignments correspond with the direction of the ordered categorical values.
+:::
+
+**Requirement 4** (20%)
+
+To make sure that these scores look as you'd expect, create a `ggplot` visualizing the distribution of the z-scores at baseline and endline. You should have 4 figures: one corresponding to each z-score at baseline and endline. In words, describe whether the figures tell us anything about changes over time.
+
+## Part 3: Estimating models
+
+Now, let's estimate some models to assess the relationship between the two index measures. Before we get started, subset your data to include only `response_id`, `q3_baseline` (which you should have renamed), and the baseline and endline measures for each z-score. You should end up with 6 variables in your dataframe. 
+
+
+**Requirement 5** (15%)
+
+Using baseline values only, estimate a model regressing your "Future plans" index on your "Feelings of political efficacy" index. Your model should take the following form: 
+
+$$
+Future\_plans_i = \alpha + \beta_1 Efficacy_{i1} + \epsilon_i
+$$
+Use the `modelsummary()`package to visualize the results as a table. In your own words, interpret the meaning of $\alpha$ and $\beta_1$. Substantively, how should we interpret the relationship described in the data? What *does* this tell us about the world? What assumptions would we need in order to interpret the relationship as causal?
+
+**Requirement 6** (15%)
+
+For your baseline and endline values of the "Feelings of political efficacy" index, convert this index to a binary indicator taking a value of 1 of the individual has a value greater than or equal to the sample mean and a value of 0 if the individual has a value below the sample mean. 
+
+Using baseline values only, estimate the same model, but interact your binary "Feelings of political efficacy" indicator with the gender indicator. Your model should take the following form: 
+
+$$
+Future\_plans_i = \alpha + \beta_1 Efficacy_{i} + \beta_2 Gender_{i} + \beta_3 (Efficacy_{i}*Gender_{i}) + \epsilon_i
+$$
+Use the `modelsummary()`package to visualize the results as a table. In your own words, interpret the meaning of $\alpha$, $\beta_1$, $\beta_2$, and $\beta_3$. Substantively, how should we interpret the interactive relationship described in the data?
+
+
+**Requirement 7** (10%)
+
+Convert the data from 'wide' to 'long' format, so that each respondent (`response_id`) has two rows of data; one row is baseline and one row is endline. 
+
+Using this new 'long' format, estimate the original model, but add unit (`response_id`) fixed effects. Your model should take the following form: 
+
+$$
+Future\_plans_{it} = \alpha + \beta_1 Efficacy_{it} + \gamma_i + \epsilon_{it}
+$$
+
+In your own words, tell us how the meaning of $\beta_1$ has changed now that we've added fixed effects.
+
+

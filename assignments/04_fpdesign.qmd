@@ -1,0 +1,47 @@
+---
+title: "Final Project Research Design"
+
+author: "Jeremy Springman"
+
+institute: "University of Pennsylvania"
+date: 2024-03-05
+toc: true
+
+format: 
+  html:
+    self-contained: true
+
+editor: source
+
+---
+
+## Overview 
+
+Your second assignment for the final project is specifying a research plan that will guide your investigation of the research question you have identified. This assignment is designed to get you thinking more clearly about a specific hypothesis related to your research question and how you can produce and present evidence for or against it. 
+
+Like a Pre-Analysis Plan, you will need to state testable hypotheses, describe your measurement of the variables necessary to test the hypotheses, and specify a statistical model to conduct the test. Unlike a Pre-Analysis Plan, this is just a starting point.
+
+This project should be submitted via Slack by **11:59pm EST on Monday, March 5**. Your submission must include:
+
+- An html file presenting your written design and figures. It is not necessary to show printed code.
+- A `.qmd` file that you used to generate the html file
+- All code should be thoroughly commented to explain the choices you are making and the techniques you are using.
+
+## Requirements
+
+This assignment has four components. The components are presented below, along with their importance for the grading of the overall assignment.
+
+1. Describe your research question and provide some background on why you find it interesting or important. Be sure to incorporate the feedback provided on the first assignment. Include references to at least two pieces of existing research that illustrate what has already been discovered about the relationship you are investigating. This could be articles published in academic journals, policy reports and white papers, articles published by think tanks and other credible organizations (ex. Brookings, the United Nations High Commissioner for Refugees, etc.), or pieces of data journalism. A full-credit response will probably be around 150-200 words. (40%)
+2. State at least one testable hypothesis. Distill your research question into a statement about a specific relationship you expect to see in the world. In most cases, this hypothesis will describe a causal relationship between two variables (i.e. changes in x cause changes in y). Make an argument for why you expect to see this relationship. This should be based on related findings from existing research and/or your own theoretical/logical reasoning. A full-credit response will probably be around 150-200 words. (25%)
+3. Briefly discuss the specific variables you will use to test your hypothesis and the dataset they are drawn from. Be sure to mention the source of the data (the organization or individuals that produced it), the unit of analysis, and the sample. Create a `ggplot` to visualize the relationship between the variables being used to test your hypothesis. The best method of visualizing this relationship will depend on the scale of your variables. Good methods to consider are scatter plots (for continuous variables), grouped bar charts (for ordinal or binary variables), and line graphs (for continuous variables with time-series). (25%) 
+4. Specify the main regression model you will use to test your hypothesis. This regression model should provide a preliminary test for or against the validity of your hypothesis. Use markdown to render the equation neatly to the html file. (10%)
+
+
+::: {.callout-note}
+A hypothesis should look like a prediction. Often, a hypothesis states that you expect a decrease or increase in one variable to cause a decrease or increase in another variable. A hypothesis must also be falsifiable. In other words, it must be possible to prove that the hypothesis is false by showing that the relationship you are predicting to see in your data is not actually present. 
+:::
+
+In the next assignment, you will be asked to discuss the assumptions that your research design is making. For example, you will need to describe the assumptions that are necessary to interpret your regression model as evidence for your hypothesis. You will also be asked to propose additional tests that can help justify these assumptions, using variables that are available in your dataset. 
+
+<!-- Think about how answers to this research question can be the findings can be applied beyond the specific context of your study to broader populations. -->
+

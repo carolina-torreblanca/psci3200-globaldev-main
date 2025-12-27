@@ -1,0 +1,25 @@
+---
+title: "Correlation and Causation"
+date: 2025-01-23
+---
+
+
+## Required Readings
+
+<!-- - TCD [Ch 2](/files/M2_deMesquita&Fowler_2021_Chapter2.pdf) -->
+<!-- - TCD [Ch 3](/files/M2_deMesquita&Fowler_2021_Chapter3.pdf) -->
+
+- DSS [Ch 2](/files/dss_ch2.pdf) ([cheatsheet)](/files/dss_ch2_cheatsheet.pdf) 
+
+## Tasks
+
+- Complete the [PSCI 3200 Student Survey](https://upenn.co1.qualtrics.com/jfe/form/SV_0Cg0okE1EBZraXc)
+- Get logged-in on the course {{< fa brands slack >}} [Slack](%7B%7B%3C%20var%20course.slack%20%3E%7D%7D)
+
+## Slides
+
+- [Slides](/slides/02-causal-ctb.html)
+
+
+
+

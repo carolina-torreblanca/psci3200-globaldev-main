@@ -1,0 +1,264 @@
+---
+title: "Introduction to PSCI 3200"
+subtitle: "Overview of the course"
+author: "Carolina Torreblanca and Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+      - title-slide.html
+    gfm:
+    mermaid-format: png
+editor: source
+---
+
+## Agenda
+
+\
+\
+
+1. Introductions
+2. Course Description and Objectives
+3. Requirements
+4. Policies
+5. Schedule
+
+::: {.notes}
+- email
+- course website
+- survey
+:::
+
+# Introductions
+
+## Carolina 
+
+Background:
+
+- PhD from NYU, Postdoc here!
+- Comparativist & Quantitative Methods
+
+Interests:
+
+- Crime, policing, violence, human rights, Latin America
+- Quantitative (experimental and non experimental) methods
+
+## Jeremy
+
+Background:
+
+-   PhD from UPenn PSCI, Postdoc at Duke
+-   *Very* applied work
+
+Interests:
+
+-   Democracy and civil society, foreign aid and NGOs 
+-   Randomized experiments, machine learning
+-   Field Projects: Uganda, Ethiopia, Cambodia, Serbia
+<!-- -   Improving research for decision makers -->
+
+## You
+
+\
+
+Please tell us:
+
+-   Name, Year, Major
+-   One thing you're interested in
+-   One thing you'd like to get from the course
+
+
+# Course Description and Objectives
+
+## Course Description
+
+::: {.r-stack}
+
+- Blending subject-matter, research methods, and computational tools
+- Focusing on the type of work that goes on with and within development agencies 
+- Almost no math, light on the theory
+
+:::
+
+
+## Course Description
+
+- Follow-up to PSCI 1102
+  + 1102 covered big academic debates that we won’t (ex. institutions vs geography)
+- Focus on *applied research* with development agencies/industry 
+  + What is the state of the art? 
+  + "Big ideas" of political science only as context
+  + MUST have a good understanding of the basics of RM
+
+## Course Description
+
+- Substantive focus areas
+  + Democracy and Autocracy
+  + Migration
+  + Gender
+  + Poverty and Inequality
+  + Crime and Conflict
+  + Foreign Aid
+  + Climate change and adaptation
+
+## Course Description
+
+- Methods: 
+  + Deepen understanding of 'workhorse' statistical methods and research designs
+  + How these methods can be used to make inferences about population characteristics and causal relationships
+- Tools
+  + Introduce the computational tools that are needed to implement these methods 
+  + Software necessary to prepare professional documents and reproducible data analysis workflows
+
+## Course Objectives
+
+At the end of the course you should be able to:
+
+- Have a good overview of the field and be capable of evaluating the quality of evidence
+- Think clearly about how data can be used to learn about development and governance challenges
+- Use tools for data analysis such as R, RStudio, Quarto, and GitHub
+- Produce professional-quality documents that summarize original research
+
+# Requirements and Policies
+
+## Prerequisites
+
+\
+
+- Substance
+  + Big academic debates in development research (PSCI 1102)
+- Methods and Tools (PSCI 1800)
+  + Basic familiarity with R and RStudio
+  + Basic knowledge of statistics/econometrics/data science
+
+## Textbook
+
+\
+
+- [Data Analysis for Social Science: A Friendly and Practical Introduction (DSS)](https://press.princeton.edu/books/paperback/9780691199436/data-analysis-for-social-science)
+  + We will use DSS as a jumping-off point for this course
+  + Some of this material will be review
+
+
+## Grading
+
+Performance in this class will be evaluated by according to performance on the following course requirements:
+
+| Requirement      | Percent of Final Grade |
+|:-----------------|:-------------|
+| Quizzes (4)          | 10%          |
+| Workshops (4)        | 10%          |
+| Data Assignments (6) | 36%          |
+| Final Project (1)    | 44%          |
+
+## Quizzes
+
+\
+
+- On 4 randomly selected meetings, there will be a brief quiz 
+- If you paid any attention or did readings, you should get full credit
+- One pre-approved absence allowed
+
+## Workshops
+
+- 4 interactive, hands-on workshops working with diverse types of data, covering different statistical methods, or using new computational tools. 
+  + Tools: R and Rstudio, Quarto, github
+  + Data: Survey data, text data, financial data
+  + Methods: Randomized and quasi-experiments, text analysis. 
+- You will be required to submit a product demonstrating completion of the workshop
+
+## Data Assignments
+
+- 6 data assignments designed to make sure you are keeping up with the tools covered in class and making progress in your final project. 
+- For assignments where you are required to submit something, you will be required to submit your own code and write-up.
+- You can see the date of each assingment on the schedule
+
+## Final Project
+
+- Data analysis project with data of your choosing
+  + Formulate a research question
+  + Find data that can help you answer that question
+  + Apply the tools and methods from this course
+  + Write-up analysis
+- Produce a webpage to present your results for public consumption 
+
+::: {.notes}
+Your final submission will be a publicly available webpage that contains: (1) a brief introduction to your research question and data; (2) a discussion of your research design, its assumptions, and threats to inference; (3) a visualization that describes your data; (4) a presentation of the results from a regression model (as a table or graph) and discussion of its implications for your research question; and (5) a discussion of the implications of your findings for development policy or practice, including the limitations of your analysis and suggestions for future research.
+:::
+
+## Final Project
+
+\
+
+| Milestone                    | Due Date                 |
+|:-----------------------------|:-------------------------|
+| Create a GitHub repository   | Feb 10th |
+| Identify data source         | Mar 10th |
+| Submit proposal              | Mar 26nd |
+| Submit final project         | April 30th |
+
+
+::: {.notes}
+By April, I'll give you a break-down of how the grading will be done
+:::
+
+# Policies
+
+## Late Submissions and Regrading
+
+- Late submission of assignments
+  + penalty of 2 points for every day late
+  + except in **documented** cases of serious illness or family emergency
+- Regrade request
+  + detailed write-up of your dispute
+  + Regrade of the entire assignment (might increase or decrease) 
+
+## Use of AI Tools
+
+- You are welcome to use generative AI tools (if you must) but beware!
+- Do not let it come at the peril of your understanding of the material
+- AI tools frequently make errors and 'hallucinate' (journal articles, R functions, etc.)
+- It is your responsibility to verify the information provided 
+- You *must* disclose your use of AI tools for assignments in the form of footnotes or citations
+
+
+
+## Electronic Devices
+
+\
+
+- Laptops will be required in class
+- All other electronic devices should be silenced and hidden
+
+## Controversial Topics and Statements
+
+- Diverse perspectives, experiences, and backgrounds are essential for effective development research and practice
+- Contact me directly if you feel we're not achieving an inclusive environment
+- Students are required to treat one another with respect
+- Engage with any evidence that challenges your prior beliefs
+
+## Academic Honesty
+
+- Students are expected to follow the University of Pennsylvania's [Code of Academic Integrity](https://catalog.upenn.edu/pennbook/code-of-academic-integrity/)
+- Suspected violations will be referred to university administration for disciplinary action. 
+
+# Schedule
+
+##  {#slide4-id background-iframe="https://jrspringman.github.io/psci3200-globaldev/schedule.html" background-interactive="true" data-menu-title="Schedule"}
+
+
+<!-- ::: columns -->
+<!-- ::: {.column width="50%"} -->
+<!-- ::: -->
+
+<!-- ::: {.column width="50%"} -->
+<!-- ::: -->
+<!-- ::: -->

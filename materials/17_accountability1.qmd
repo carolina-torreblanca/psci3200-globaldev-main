@@ -1,0 +1,16 @@
+---
+title: "Final Project Essentials"
+date: 2024-03-21
+---
+
+
+## Required Readings
+
+- [de la Sierra (2020)](/files/sierra_2020.pdf)
+- [Jablonski and Seim (2023)](/files/what-politicians-do-not-know-can-hurt-you-the-effects-of-information-on-politicians-spending-decisions.pdf)
+
+## Slides
+
+- [Slides](/slides/17-accountability1.html)
+
+

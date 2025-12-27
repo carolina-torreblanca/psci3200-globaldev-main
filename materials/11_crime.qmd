@@ -1,0 +1,19 @@
+---
+title: "Crime and Corruption"
+date: 2024-02-20
+---
+
+# Esteemed Guest Lecturer: Carlos Schmidt-Padilla
+
+## Required Readings
+
+- [Angelova et al. (2023)](/files/judgediscretion.pdf)
+  + You can skim the section on "Model Setup." Just focus on the big picture issue of humans and AI in decision-making.
+
+
+## Slides
+
+- None
+
+## Interesting Stuff (non-required)
+

@@ -1,0 +1,114 @@
+---
+title: "PSCI 3200"
+subtitle: "Overview of the course"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+      - title-slide.html
+    gfm:
+    mermaid-format: png
+editor: source
+---
+
+
+## Course Description
+
+\
+
+- Introduction to contemporary development research
+- Mixture of policy and academic research
+- Data analysis methods, inferential techniques, and computational tools
+- Useful for development sector, policy, industry, etc.
+
+::: {.notes}
+- We spent a lot of time learning about the tools that academics use to understand the problems faced by developing countries
+- This isn't because I think that academic research does a good job or providing answers about how to advance development
+- Rather, I think these tools can be useful to those who are well positioned/incentivized to do that
+  + Think about the Kenya Education paper
+  + Think about UCTs
+
+:::
+
+## Course Objectives
+
+At the end of the course you should be able to:
+
+- Evaluate the quality of evidence in the development field
+- Think clearly about how data can be used to learn about development and governance challenges
+- Use tools for data analysis such as R, RStudio, Quarto, and GitHub
+- Produce professional-quality documents that summarize original research
+
+
+## Substantive Topics
+
+\
+
+- Substantive focus areas
+  + Democracy and Autocratization
+  + Migration
+  + Crime and Conflict
+  + Foreign Aid
+  + Climate change and adaptation
+
+## Methods & Tools
+
+- Methods: 
+  + Cover 'workhorse' statistical methods and research designs
+  + Inferences about population characteristics and causal relationships
+- Tools
+  + Computational tools that are needed to implement these methods 
+  + Software necessary to prepare documents and reproducible analysis
+
+## Prerequisites
+
+- Follow-up to PSCI 1102
+  + 1102 introduces big theoretical debates around governance and development
+  + 3200 focuses on *applied research* 
+- Building on PSCI 1800
+  + Basic familiarity with R and RStudio
+  + Basic knowledge of statistics/econometrics/data science
+
+
+## Activities & Grading
+
+\
+
+- Workshops
+- Data Assignments
+- Final Project
+
+
+
+## Final Project
+
+- Data analysis project with data of your choosing
+  + Formulate a research question
+  + Find data that can help you answer that question
+  + Apply the tools and methods from this course
+  + Write-up analysis
+- Produce a webpage to present your results for public consumption 
+
+::: {.notes}
+Your final submission will be a publicly available webpage that contains: (1) a brief introduction to your research question and data; (2) a discussion of your research design, its assumptions, and threats to inference; (3) a visualization that describes your data; (4) a presentation of the results from a regression model (as a table or graph) and discussion of its implications for your research question; and (5) a discussion of the implications of your findings for development policy or practice, including the limitations of your analysis and suggestions for future research.
+:::
+
+
+##  {#slide4-id background-iframe="https://jrspringman.github.io/psci3200-globaldev/" background-interactive="true" data-menu-title="website"}
+
+
+## Course Description
+
+> This course provides an introduction to data analysis methods, inferential techniques, and computational tools in the context of contemporary development research. You will learn how research techniques pioneered in academia can be applied to address big problems faced by developing countries. The course is organized around a final project, where you will apply these skills to real data and host the research product on your own free, open source website.
+
+
+

@@ -1,0 +1,311 @@
+---
+title: "Causation and Correlation"
+subtitle: "The basics"
+author: "Carolina Torreblanca"
+institute: "University of Pennsylvania"
+
+editor: source
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.05
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+      - title-slide.html
+    gfm:
+    mermaid-format: png
+    highlight-style: atom-one-dark
+    code-overflow: wrap
+---
+
+# Logistics
+
+## Assignments
+
+-   Did everyone find the readings for today?
+-   Does everyone have R and RStudio installed and running?
+-   Is everyone on the slack channel?
+
+## Agenda
+
+-   Measuring statistics vs relationships
+-   Summarizing relationships to predict
+-   Causality to explain
+    -   Potential outcomes framework
+    -   FPCI
+
+## Why analyze data as a social scientist?
+
+-   The type of social science we will study here heavily relies on data to . . .
+
+::: incremental
+1.  Measure
+2.  Predict
+3.  Explain
+:::
+
+# Measure
+
+-   Life expectancy
+-   Net exports
+-   Share of votes for candidate A
+-   The relationship between age and turnout
+
+# Measure
+
+-   Measures of central tendency
+    -   Mean
+    -   Median
+-   Measures of spread
+    -   Variance
+    -   Standard deviation
+
+## Central Tendency: Mean
+
+$$
+\mu_X = \frac{1}{n} \sum_{i}^{n} X_i
+$$
+
+## Spread: Variance
+
+$$
+\sigma^2_X = \frac{1}{N} \sum_{i}^{N} (X_i - \mu_X)^2
+$$
+
+::: incremental
+-   What does the square in $\sigma^2$ accomplish?
+-   What are the implications for interpretation?
+:::
+
+## We can combine them to measure relationships.
+
+::: incremental
+-   [Covariance]{style="color:red;"} $\text{Cov}(X, Y) = \frac{1}{n} \sum_{i}^{N} (X_i - \bar{X})(Y_i - \bar{Y})$
+    -   Range: unbounded
+-   [Correlation coefficient]{style="color:red;"} $\text{Cor}(X, Y) = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y}$
+    -   Range: -1 to 1
+-   [Slope]{style="color:red;"} $\beta_X = \frac{\text{Cov}(X, Y)}{\sigma^2_X}$
+    -   Expected change in $Y$ with 1-unit change in $X$
+:::
+
+# Predict
+
+-   Population growth
+-   Future resource availability
+-   Winner of an election!
+-   Expected turnout rate by age group
+
+# Predict
+
+To be able to use X to predict Y we need...
+
+::: incremental
+-   both variables to have **a relationship.**
+
+-   We then can use statistical models to ***summarize*** **the relationship.**
+
+-   And use the models to predict Y, given any X
+
+-   Give me some examples of statistical models often used to summarize relationships.
+:::
+
+# Measure vs Predict
+
+```{r, echo=T, results=T, include=TRUE}
+# Set up some fake data
+set.seed(390)
+# Predictor
+x <- rnorm(100, mean = -3, sd = 1)
+# Noise
+error <- rnorm(100, mean = 0)
+# Variable we want to explain
+y<- x + error 
+# Measure the relationship
+cov(x, y) # covariance
+cor(x, y) # correlation
+# or cov(x, y) / (sd(x)*sd(y))
+mod <- lm(y ~ x)
+coefficients(mod)[2]
+```
+
+# Measure vs Predict
+
+```{r, echo=T, results=T, include=TRUE}
+# To predict we need the full model
+coefficients(mod)
+# or cov(x, y) / var(x)
+hypothetical_x = 10
+# predict using the ENTIRE model
+coefficients(mod)[[1]] + coefficients(mod)[[2]]*hypothetical_x
+```
+
+## Measuring, predicting, and ... explaining?
+
+-   We can measure relationships
+
+-   We can summarize relationships in models and use them to predict
+
+-   For a variable X to be a good predictor of Y, X and Y need to have an association.
+
+-   But predictively powerful models tell us nothing about why X and Y are associated.
+
+## Causality as a way to explain
+
+-   When we are interested in explaining, we might want to know if X is just associated with Y or if X ***causes*** Y
+
+-   **The "causal effect of X on Y" is the change in the outcome Y produced by a change in the treatment X**
+
+    -   Does exposure to misinformation cause polarization?
+
+        -   What is X? What is Y?
+
+## Causality as a way to explain
+
+-   Broadly, two type of causal questions:
+
+    1.  Causes of consequences, e.g: Does democracy cause economic development?
+    2.  Consequences of causes: What is the causal effect of colonialism on the economic development of east African countries?
+
+-   Which do you think is more common in policy work?
+
+## Causality: the FPOCI
+
+::: incremental
+To answer "does democracy cause economic development?" we need to:
+
+1.  compare the economic development of democratic countries with
+2.  the economic development of those same democratic countries ***had they not been democracies.***
+:::
+
+## Causality: the FPOCI
+
+To answer "does democracy cause economic development?" we need to:
+
+1.  compare the economic development of democratic countries with
+2.  the economic development of those same democratic countries ***had they not been democracies.***
+
+-   We can NEVER do this
+
+-   We call this problem the fundamental problem of causal inference
+
+## Causality
+
+One way to think about causality from this angle more formally is using the **Potential Outcomes framework**
+
+-   Imagine n participants (indexed by *i*) in an experiment to test a new blood pressure medicine (X).
+
+-   Participants can either take (X=1) or not take (X=0) the medicine.
+
+## Causality
+
+Each participant, $i$ has two potential *health* outcomes:
+
+-   $Y_i(X_i = 0)$ = Person i's health outcome if they do not take the medicine and
+-   $Y_i(X_i = 1)$ = Person i's health outcome if they take the medicine
+
+::: small-font
+| Participant | Medicine? (X) | Observed BP | Yi(0) | Yi(1) | $Y_i(1) - Y_i(0)$ |
+|-------------|---------------|-------------|-------|-------|-------------------|
+| 1           | 1             | 121         | 125   | 121   | -4                |
+| 2           | 1             | 140         | 145   | 140   | -5                |
+| 3           | 0             | 120         | 120   | 119   | -1                |
+:::
+
+```{=html}
+<style>
+.small-font {
+  font-size: 19px;
+}
+</style>
+```
+## Causality
+
+-   We never can observe $Y_i$ when i took the medicine and when they did not!
+    -   We only observe the factual outcome, never the *counterfactual* outcome.
+
+::: small-font
+| Participant | Medicine? (X) | Observed BP | Yi(0) | Yi(1) |
+|-------------|---------------|-------------|-------|-------|
+| 1           | 1             | 121         | ???   | 121   |
+| 2           | 1             | 140         | ???   | 140   |
+| 3           | 0             | 120         | 120   | ???   |
+:::
+
+```{=html}
+<style>
+.small-font {
+  font-size: 24px;
+}
+</style>
+```
+## Causality: What to do?
+
+-   What if we think in terms of average causal effects instead?
+
+```{=tex}
+\begin{align*}
+\overline{\Delta Y} =& \frac{1}{n}\Sigma_{i = 1}^{n} \bigg(Y_i(1) - Y_i(0)\bigg)\\
+\overline{\Delta Y} =& \frac{1}{n}\Sigma_{i = 1}^{n} Y_i(1) - \frac{1}{n}\Sigma_{i = 1}^{n} Y_i(0)\\
+\overline{\Delta Y} =& \overline{Y(1)} - \overline{Y(0)} 
+\end{align*}
+```
+## Causality: on average
+
+-   What if we could plug-in the mean Y value of observations assigned to the treatment as $\overline{Y(1)}$ and the control observations as $\overline{Y(0)}$?
+
+-   Well our problems would be solved! At least on average.
+
+-   What would we need to assume about observations in treatment and control?
+
+## Causality: on average
+
+-   What if we could plug-in the mean Y value of observations assigned to the treatment as $\overline{Y(1)}$ and the control observations as $\overline{Y(0)}$?
+
+-   Well our problems would be solved! At least on average.
+
+-   What would we need to assume about observations in treatment and control?
+
+-   That these two populations are, on average, the same in every relevant dimension.
+
+## Causality: on average
+
+If X (receiving treatment) is independent of Y (outcome), then
+
+```{=tex}
+\begin{align*}
+\overline{\Delta Y} =& \overline{Y(1)} - \overline{Y(0)} \\ 
+\widehat{\overline{\Delta Y}} =& \overline{Y_{Treatment}} - \overline{Y_{Control}} 
+\end{align*}
+```
+$\widehat{\overline{\Delta Y}}$ is called the difference-in-means estimator.
+
+-   Think about independence like this: knowing $i$'s value of Y provides no information about their value of X.
+
+## Causality: on average
+
+-   Independence is a big assumption!
+
+-   One way to build treatment and control samples that are comparable is to ...
+
+## Causality: on average
+
+-   Independence is a big assumption!
+
+-   One way to build treatment and control samples that are plausibly comparable is to ...
+
+-   randomize treatment assignment.
+
+-   Not the only way to estimate causal effects...
+
+-   But ALL causal research designs require assumptions...
+
+## Next Meeting
+
+-   More causality - RCTs
+-   Causality with observational data
+-   Some light R!
+-   Assigment!! Please be sure to slack me your quarto file

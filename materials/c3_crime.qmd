@@ -1,0 +1,15 @@
+---
+title: "Crime and Punishment"
+date: 2025-02-26
+---
+  
+## Required Readings
+  
+  - [Crime: Bateson (2012)](/files/crime-victimization-and-political-participation.pdf)
+
+- [Punishment: Weaver and Lerman (2010)](/files/political-consequences-of-the-carceral-state.pdf)
+
+## Slides
+
+- [Slides](/slides/c3-crime.html)
+

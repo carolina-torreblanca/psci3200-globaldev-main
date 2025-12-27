@@ -1,0 +1,174 @@
+---
+title: "Causal Inference 3"
+subtitle: "Observational Data"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+editor: source
+---
+
+# Logistics
+
+## Assignments
+
+- Today
+  + DSS Ch 5
+  + Create a git repo for this class (psci3200_yourname)
+- Monday 
+  + Migration readings (will post before Monday)
+  + Git repo workshop (semi-optional)
+
+## Agenda
+
+\
+
+1. Review Linear Regression
+2. Causal Inference with Observational Data (pt. 1)
+3. Workshop
+4. Causal Inference with Observational Data (pt. 2)
+
+# Linear Regression
+
+## Linear Regression Model
+
+\
+
+$$
+Y_i = \alpha + \beta X_i + \epsilon_i
+$$
+
+
+## Linear Regression Model
+
+\
+
+**Estimating model parameters**
+
+$$
+\hat{Y_i} = \hat{\alpha} + \hat{\beta} X_i
+$$
+**Coefficient**
+$$
+\hat{\beta} = \Delta{\hat{Y}} / \Delta{X}
+$$
+
+
+## Minimizing the Residuals
+
+\
+
+**What are residuals**
+
+$$
+\hat{\epsilon_i} = Y_i - \hat{Y_i}
+$$
+
+**How do we minimize them?**
+
+$$
+SSR = \sum_{i}^{N} \hat{\epsilon}_i^2
+$$
+
+##  {#slide3-id background-iframe="https://ellaudet.iq.harvard.edu/least_squares" background-interactive="true" data-menu-title="Visualization 1"}
+
+## {#slide5-id background-iframe="https://ellaudet.iq.harvard.edu/linear_model" background-interactive="true" data-menu-title="Visualization 2"}
+
+
+# Casaul Inference 3 (pt. 1)
+
+## Causality without Randomization
+
+::: {.incremental}
+- You must control for...
+  + everything (observed and unobserved) that affects both the treatment variable and the outcome variable
+- You *must not* control for...
+  + anything that is affected by both the treatment variable and the outcome variable
+- You *need to think carefully before* controlling for...
+  + anything that is affected by the treatment variable that also affects the outcome variable
+::: 
+
+## Multiple Regression
+
+\
+
+$$
+Y_i = \alpha + \beta_1 X_{i1} + \beta_2 X_{i2} + \epsilon_i
+$$
+
+::: {.incremental}
+- How does our interpretation of $\alpha$ change?
+- How does our interpretation of $\beta_1$ change?
+:::
+
+## Threats to Inference
+
+\
+
+- Confounders
+- Colliders
+- Mechanisms
+- Reverse Causality
+
+# Workshop
+
+# Casaul Inference 3 (pt. 2)
+
+## Identification strategy
+
+**In the real world, there are always threats to inference that we can't measure/observe or understand well enough to adjust for**
+
+- A *research design* that allows us to isolate a causal effect from observational data
+- Approximates an experiment by ensuring that the treatment and control group are similar at baseline
+- These strategies rely on assumptions that we can *attempt* to validate
+
+
+## Holy Trinity of Causal Inference
+
+\
+
+1. Difference-in-Differences
+2. Regression Discontinuity
+3. Instrumental Variables
+
+## Validity
+
+::: {.incremental}
+- Internal validity
+- External validity
+- What are the trade-offs between experiments and observational studies?
+  + Experiments have more internal validity
+  + But... they often have synthetic treatments, convenience samples
+- Where are these studies used in the real-world?
+:::
+
+
+## Adjusting on Observables
+
+\
+
+- Matching
+- Weighting
+- Synthetic Control (very fancy weighting)
+
+
+<!-- ## Inference -->
+
+<!-- Estimate = Estimand + Bias + Noise -->
+<!-- Estimand: the true quantity of interest (e.g., the proportion of people who engage in bribery; the correlation between wealth and bribery) -->
+<!-- Estimate: the number we get from our analysis. Our approximation to the true value.  -->
+<!-- Estimator: the procedure we use to generate the estimate.  -->
+<!-- Bias: errors that occur systematically -->
+<!-- Noise: idiosyncratic (unsystematic) errors -->

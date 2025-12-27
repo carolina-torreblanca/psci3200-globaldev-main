@@ -1,0 +1,14 @@
+---
+title: "Introduction to PSCI 3200"
+date: 2025-01-15
+---
+
+
+## Required Readings
+
+- Review the [syllabus](/syllabus.qmd) and [schedule](/schedule.qmd)
+
+## Slides
+
+- Monday (1/15) lecture: [Slides](/slides/01-intro.html)
+

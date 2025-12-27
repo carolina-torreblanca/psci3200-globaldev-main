@@ -1,0 +1,230 @@
+---
+title: "Climate Adaptation 2"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+editor: source
+
+bibliography: img/references.bib
+---
+
+# Logistics
+
+## Assignments
+
+- Today
+  - [Namrata (2023)](https://voxdev.org/sites/default/files/2023-09/Climate_Adaptation_Issue_1.pdf)
+  - [Albert et al. (2022)](https://voxdev.org/topic/labour-markets-migration/how-climate-change-reallocates-capital-and-labour-within-countries)
+  - Final Project Research Design (11:59pm)
+- Tuesday (4/16)
+  + No Readings
+  + Git, Github, Github pages
+
+## Administration
+
+**Grading**
+
+- Quizzes & Workshops (7/8)
+- Data Assignments (2/3)
+
+**Scheduling**
+
+- Final Project
+  + Due: May 10 (11:59pm)
+  
+## Agenda
+
+\
+
+1. Climate change overview
+2. Namrata (2023)
+3. Albert (2022)
+4. Questions about Research Design
+
+
+## Climate Change
+
+\
+
+**Are we doomed?**
+
+:::{.fragment}
+- I don't think so
+:::
+
+## Where We Stand
+
+![](img/climate_tweet.png){fig-align="center"}
+
+## Targets and Trajectories
+
+![](img/climate1.png){fig-align="center"}
+
+
+## Wind and Solar
+
+
+![](img/climate_renewables.jpg){fig-align="center"}
+
+
+## Solar Panels
+
+
+![](img/climate_solar.jpg){fig-align="center"}
+
+## Electricity
+
+
+![](img/climate_energy.jpg){fig-align="center"}
+
+
+## Batteries
+
+
+![](img/climate_batteries.jpg){fig-align="center"}
+
+
+
+## Batteries
+
+
+![](img/climate_batteries2.png){fig-align="center"}
+
+## Electric Vehicles
+
+
+![](img/climate_vehicles.jpg){fig-align="center"}
+
+
+## Cross-National Variation
+
+![](img/climate_emissions.jpg){fig-align="center"}
+
+## China's Growth
+
+![](img/climate_china.jpg){fig-align="center"}
+
+
+## Decoupling
+
+\
+
+![](img/climate_growth.jpg){fig-align="center"}
+
+
+## Divergence
+
+\
+
+![](img/climate_growth2.jpg){fig-align="center"}
+
+
+# Namrata (2023)
+
+## Climate Adaptation
+
+\
+
+**Disproportionate vulnerability for developing countries**
+
+:::{.fragment}
+- Higher mean temperatures
+- Greater impact of temperature on output
+- Long coastlines 
+- Lower incomes, smaller safety nets
+:::
+
+## Three literatures
+
+\
+
+- Quantifying vulnerabilities
+- Measuring adaptation
+- Spatial linkages
+
+
+## Climate Adaptation
+
+![](img/climate_map.png){fig-align="center"}
+
+## Research Methods 
+
+:::{.fragment}
+- Panel data to find relationship between observed changes and output
+- Project to future changes, assuming everything stays constant
+- Problems:
+  + Long-run adaptations
+  + Short-run adaptations
+  + Mechanisms?
+
+:::
+
+## Research Methods 
+
+\
+
+**Recent developments**
+
+:::{.fragment}
+- Long-run changes (climate vs weather)
+- Focus on expectations
+- Experiments with adaptation
+:::
+
+## Climate Adaptation
+
+**Climate change mitigation strategies**
+
+:::{.fragment}
+- Weather insurance
+- Migration
+- Cash transfers
+- Credit
+- New technology
+- Infrastructure
+- Safety nets
+:::
+
+# Albert at al. (2022)
+
+## Measurement
+
+:::{.fragment}
+- Reported natural disasters
+- Moisture deficit relative to long-run average
+- Agriculture yields
+- Bank loans
+- Migration and labor
+:::
+
+## Findings
+
+![](img/albert1.png){fig-align="center"}
+
+## Findings
+
+![](img/albert2.png){fig-align="center"}
+
+## Findings
+
+![](img/albert3.png){fig-align="center"}
+
+## Findings
+
+- Dryness causes reallocation of capital and labor
+- Dryness lowers productivity and reallocates remaining labor away from agriculture and to manufacturing
+- Capital connected areas see reduced 
+- Labor connected areas see inflows

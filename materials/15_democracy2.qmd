@@ -1,0 +1,23 @@
+---
+title: "Final Project Essentials"
+date: 2024-03-14
+---
+
+
+## Required Readings
+
+- [VDem (2024); pages 9-45](https://v-dem.net/documents/43/v-dem_dr2024_lowres.pdf)
+  + [Interactive visualization](https://episodes.shinyapps.io/validation/)
+- [Garcia-Ponce and Wantchekon (2023)](/files/American J Political Sci - 2023 - García‐Ponce - Critical Junctures Independence Movements and Democracy in Africa.pdf)
+
+## Slides
+
+- [Slides](/slides/15-democracy2.html)
+
+## Interesting Stuff (non-required)
+
+- [Bush et al. (2023)](/files/international-rewards-for-gender-equality-reforms-in-autocracies.pdf)
+- [Waldner and Lust (2018)](/files/waldner-lust-2018-unwelcome-change-coming-to-terms-with-democratic-backsliding.pdf)
+- [Svolik (2019)](/files/svolik.pdf)
+
+

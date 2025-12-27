@@ -1,0 +1,38 @@
+---
+title: "Setting up R and RStudio"
+date: 2025-01-30
+---
+
+## Intro
+
+Your first mini assignment is to install R/RStudio and make sure it is working correctly.
+
+R is a language *and* an environment for statistical computing and graphics.
+
+## Steps
+
+1.  **Download the base software from [The R Project for Statistical Computing url](https://www.r-project.org/)**
+
+    -   Download R by clicking the hyperlink " To download R" in the first paragraph.
+
+    -   Whatever CRAN mirror is fine!
+
+    -   Make sure it is running!
+
+2.  
+
+    ![It should look something like this](img/rlookslike.png)
+
+<!-- -->
+
+2.  **Download RStudio from** [the RStudio Posit website](https://posit.co/download/rstudio-desktop/) - Scroll down to find the latest version that matches your OS
+
+```         
+-   Open Rstudio and make sure it is working!
+```
+
+![Looks something like this](img/rstudio.png)
+
+## Assignment
+
+We will run a small code in Rstudio in class to make sure everyone has it set up correctly!

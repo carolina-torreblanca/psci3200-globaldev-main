@@ -1,0 +1,346 @@
+---
+title: "Git, Github, Github Pages"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+    code-line-numbers: false
+editor: source
+
+highlight-style: github
+
+bibliography: img/references.bib
+---
+
+# Logistics
+
+## Final Project Assignments
+
+- Expect feedback on *Research Question and Data* by Wed EOD
+- Next deadline is March 5
+
+::: {.callout-warning}
+Late assignments deduct 2 points per day
+:::
+
+## Final Project Assignments
+
+\
+
+| Milestone                    | Due Date|
+|:-----------------------------|:--------|
+| [Create a GitHub repository](https://jrspringman.github.io/psci3200-globaldev/assignments/02_gitrepo.html)| Feb 17 |
+| [Research Question and Data](https://jrspringman.github.io/psci3200-globaldev/assignments/03_fprqd.html)  | Feb 19 |
+| [**Research Design**](https://jrspringman.github.io/psci3200-globaldev/assignments/04_fpdesign.html)          | Mar 5  |
+| [Submit proposal](https://jrspringman.github.io/psci3200-globaldev/assignments/05_fptest.html)            | Apr 2  |
+| [Submit final project](https://jrspringman.github.io/psci3200-globaldev/assignments/final_project.html)   | May 10 |
+
+
+
+# Git and Github
+
+:::{.notes}
+- Before we talk about git, let's start the installation process
+- 
+:::
+
+
+## Installing git
+
+1. Open the terminal/command prompt
+2. Check if you have git installed
+
+```{.default}
+git --version
+```
+
+:::{.fragment}
+![](img/git_nope.png){fig-align="center"}
+:::
+
+## Installing git
+
+\
+
+**If yes, consider running an update**
+
+```{.default}
+git update-git-for-windows
+```
+
+
+## Installing git
+
+**If no, install git**
+
+- [Installation instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+  + Download `.exe` and double-click
+- Two things to watch for:
+  + Adjusting the name of the initial branch: Override the default branch name (select 'main')
+  + Adjusting your PATH: make sure to select command line and 3rd-party
+
+
+
+## Installing git
+
+\
+
+![](img/git_exe.png){width=2in fig-align="center"}
+
+
+## Installing git
+
+![](img/git_exe_window.png){height=6in fig-align="center"}
+
+
+## Installing git
+
+![](img/git_origin.png){fig-align="center"}
+
+## Installing git
+
+![](img/git_3p.png){fig-align="center"}
+
+## Installing git
+
+![](img/git_installed.png){fig-align="center"}
+
+## git Basics
+
+**Git is a version control program**, so you can avoid...
+
+```{.default}
+analysis.R
+analysis_v1.R
+analysis_v2.R
+analysis_v2_FINAL.R
+```
+
+:::{.fragment}
+
+**Version control allows you to precisely track changes**
+
+![](img/git_diff.png){fig-align="center"}
+:::
+
+## git Basics
+
+\
+
+**Show off your productivity**
+
+![](img/git_activity.png){fig-align="center" width=60%}
+
+**Share projects publicly**
+
+![](img/git_account.png){fig-align="center" width=60%}
+
+## git Basics
+
+\
+
+**Git hosts data and code**
+
+- "Remote" (`main`) on github.com
+- "Local" on your harddrive(s) in a designated folder
+- Resembles Dropbox/Drive synch + Version history
+- Many advantages; a few disadvantages
+
+
+## git Basics
+
+**Version control**
+
+::: {.incremental}
+
+- Precisely tracks changes
+- Revert to old versions
+- Avoid devastating loss
+- Note: everything is public by default
+:::
+
+## git Basics
+
+**Collaboration**
+
+::: {.incremental}
+
+- When you collaborate, it's clear who to blame
+- Simultaneous editing can cause challenges
+![](img/git_merge.png){fig-align="center" width=60%}
+
+- Please don't create conflicts *with yourself*
+:::
+
+## git Basics
+
+**Basic commands**
+
+- `git pull origin main`
+- `git add .`
+- `git commit -m "describe your changes or vent frustration"`
+- `git push origin main`
+- `git pull origin main`
+
+## git Basics
+
+\
+
+**Git can be complicated**
+
+- Often used for serious software development
+- Branches, conflicts, merges, rebase
+- Massive online community to help with more sophisticated use
+
+
+## Connect your GitHub account
+
+\
+
+1. Open the terminal and enter the code below
+2. Replace `"Your Name"`and `"yourname@email.edu"` with your name/email used to sign up for GitHub
+3. Run the code
+
+```{.default}
+git config --global user.name "Your Name"
+git config --global user.email "yourname@email.edu"
+```
+
+## Connect your GitHub account
+
+**Check that the confirmation worked**
+
+```{.default}
+git config --list
+```
+
+![](img/git_config.png){height=5in fig-align="center"}
+
+
+## Install a git client
+
+1. Download [GitHub Desktop](https://desktop.github.com/) `.exe`
+2. Double click the `.exe`
+
+![](img/git_desktop_exe.png){height=3in fig-align="center"}
+
+## Install a git client
+
+![](img/git_desktop_signin.png){height=6in fig-align="center"}
+
+## Clone your repo
+
+![](img/git_desktop_clone.png){height=6in fig-align="center"}
+
+## Clone your repo
+
+![](img/git_desktop_clone2.png){fig-align="center"}
+
+## Clone your repo
+
+![](img/git_desktop_repo.png){fig-align="center"}
+
+## Commit changes
+
+![](img/git_desktop_commit.png){fig-align="center"}
+
+
+## Push to your repo
+
+
+![](img/git_desktop_push.png){fig-align="center"}
+
+## Pull from your repo
+
+![](img/git_desktop_pull.png){fig-align="center"}
+
+
+# Github Pages
+
+
+## Create a website
+
+**Moving to RStudio**
+
+- File $\rightarrow$ New Project $\rightarrow$ New Directory $\rightarrow$ Quarto Website
+
+
+![](img/website_initiate.png){height=4.5in fig-align="center"}
+
+## Create a website
+
+![](img/website_files.png){height=6in fig-align="center"}
+
+
+## Create a website
+
+**Change output director to `docs`**
+
+![](img/website_docs.png){height=5.5in fig-align="center"}
+
+
+## Publish to Github pages
+
+- Keep a repository of your website
+- Push changes to your website via Github
+- See changes almost instantly
+
+
+## Publish to Github pages
+
+- Publish local git repo to github.com
+- Uncheck 'Keep this code private'
+- Open repo on github.com
+- Settings $\rightarrow$ Pages (left-sidebar)
+
+
+## Publish to Github pages
+
+![](img/pages_add.png){height=5.5in fig-align="center"}
+
+## Publish to Github pages
+
+![](img/pages_add2.png){height=5.5in fig-align="center"}
+
+
+## Publish to Github pages
+
+![](img/pages_add3.png){height=5.5in fig-align="center"}
+
+
+
+## Publish to Github pages
+
+![](img/pages_add4.png){height=5.5in fig-align="center"}
+
+
+
+## Publish to Github pages
+
+![](img/pages_publish.png){height=5.5in fig-align="center"}
+
+
+## Publish to Github pages
+
+![](img/pages_publish2.png){height=5.5in fig-align="center"}
+
+## Host Your Final Project 
+
+- Delete `_site` folder (now its using `docs`)
+- Create `data` folder to store your dataset
+- Add final project `.qmd` file to your repo (or drop it into `index.qmd`)
+- Use `_quarto.yml` to add new pages to navigation bar 
+- Render `index.qmd`; confirm that other pages have been rendered
+- Push commit and check that the website updated

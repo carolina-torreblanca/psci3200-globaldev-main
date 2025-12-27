@@ -1,0 +1,254 @@
+---
+title: "Accountability and Information 1"
+subtitle: "Final Project Essentials: Fixed Effects"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+editor: source
+---
+
+# Logistics
+
+## Assignments
+
+- Today
+  + [Jablonski and Seim (2023)](/files/what-politicians-do-not-know-can-hurt-you-the-effects-of-information-on-politicians-spending-decisions.pdf)
+  + Questions about Data Assignment 1
+- Thursday (3/28)
+  + Data Assignment 1 Due
+  + Dunning et al. (2019)
+
+  
+## Agenda
+
+\
+
+1. Jablonski and Seim (2023)
+2. Data Assignment 1 Questions
+3. Final Project Essentials: Fixed Effects
+
+# Jablonski and Seim (2023)
+
+## Models of political accountability
+
+**What is political accountability?**
+
+- Accountability is meant to produce *responsiveness*
+- Responsiveness means that a government "adopts policies that are signaled as preferred by citizens" (Manin, 1999)
+- If governments fail to adopt citizens' preferred policies, they will be sanctioned
+
+
+::: {.fragment}
+**Assumptions**
+:::
+
+::: {.fragment}
+- Politicians have information about what citizens want
+- Citizens have information about which policies a politician is responsible for
+:::
+
+## Models of political accountability
+
+**Accountability requires that Voters:**
+
+- Observe credible signal of performance
+  + Attribution
+  + Benchmarking
+- Update their beliefs
+- Have credible alternatives
+
+## Models of political accountability
+
+\
+
+**Accountability requires that politicians:**
+
+- Seek to maintain office
+- Observe citizen preferences
+- Update their beliefs
+
+## Models of political accountability
+
+**Distributional politics**
+
+- Target public spending to maximize electoral advantage
+
+**Responsiveness**
+
+- Maximizing welfare across constituents
+
+**Decentalization**
+
+- Both sides have better information at a more local level 
+
+## Background
+
+![](img/arps1.png){fig-align="center"}
+
+## Background
+
+![](img/arps2.png){fig-align="center"}
+
+
+## Theory
+
+- Politicians aim to allocate to the community with the highest return on votes
+- This means that allocation is conditional on information about citizen preferences across eligible communities
+
+**Citizen utility**: $x_i = c_i(a) - p_i - d_i$
+
+- $c_i(a)$: Utility from investment $a$
+- $p_i$: Utility of voting for a challenger
+- $d_i$: Cost of voting
+
+
+## Theory
+
+**Politician utility:**
+
+$$
+v_j(a) = \sum_{i=1}^{N} 1(x_i > 0, p_i + d_i \geq 0)
+$$
+To allocate on electoral rewards, they need to know:
+
+::: {.fragment}
+- $c_i(a)$: Utility from investment $a$
+- $p_i$: Utility of voting for a challenger
+- $d_i$: Cost of voting
+- $n$: The number of individuals
+:::
+
+## Theory
+
+**Gathering information is costly**
+
+- Time
+- Coordination
+- Varies across constituencies (geography, social proximity)
+
+**Alternatives**
+
+- Rely on heuristics
+- Collect information from more accessible places
+
+## Theory
+
+\
+
+**By providing information to politicians, we can see how the lack of information affects allocation decisions**
+
+
+## Research Design
+
+**Information about schools**
+
+- Need: Class size, teacher housing, etc.
+  + Target communities with high consumption utilities ($c_i(a)$)
+- Aid: Existing aid projects at each school
+  + Marginal returns to overlapping investments 
+- Voting: Vote share at nearest polling station
+  + Update on $\bar{p_j}$
+  + $d$ determines whether to mobilize swing or base
+
+## Research Design
+
+\
+
+**Outcome**
+
+::: {.fragment}
+- Allocation of NGO supplies
+:::
+
+::: {.fragment}
+**Heterogeneous effects**
+:::
+
+::: {.fragment}
+- Transparency
+- Information costs
+:::
+
+## Research Design 
+
+![](img/seim2.png){fig-align="center"}
+
+
+## Research Design
+
+**Questions**
+
+:::{.incremental}
+- What do they mean by 'factorial assignment'?
+  + Each respondent has 1-3 pieces of information
+- In the estimation, how are they using interaction terms?
+  + Estimate the impact of information based on provision
+  + Estimate heterogeneous effects based on information costs and transparency
+:::
+
+::: {.fragment}
+$$
+P(Y_{nsi} = 1) = \phi(\beta_1z_i + \beta_2t_sz_i + \gamma X_is + e_{nsi})
+$$
+:::
+
+## Description of Information
+
+![](img/seim1.png){fig-align="center"}
+
+## Findings
+
+
+
+![](img/seim3.png){fig-align="center"}
+
+::: {.notes}
+* Why aren't these estimates causally identified?
+:::
+
+## Findings
+
+![](img/seim4.png){fig-align="center"}
+
+## Findings
+
+![](img/seim5.png){fig-align="center"}
+
+## Findings
+
+![](img/seim6.png){fig-align="center"}
+
+## Findings
+
+![](img/seim7.png){fig-align="center"}
+
+
+## Policy Implications
+
+\
+
+:::{.fragment}
+- Information gaps may explain disparities in public spending
+- Information can reduce disparities
+:::
+
+# Data Assignment Questions
+
+
+# Final Project Essentials
+
+
+

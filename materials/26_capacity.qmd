@@ -1,0 +1,23 @@
+---
+title: "State Capacity and Development"
+---
+
+# Guest Lecture: [Maria Nagawa](https://www.marianagawa.com/)
+
+## Required Readings
+
+- [NYT The Daily ((2/19))](https://www.nytimes.com/2025/02/19/podcasts/the-daily/trump-ederal-workers-musk.html)
+- [Bessley et al. (2022)](https://www.annualreviews.org/docserver/fulltext/economics/14/1/annurev-economics-080521-011950.pdf?expires=1743112181&id=id&accname=guest&checksum=DC7CDB5F8A90FB5F68C5B8D5CE707F10)
+- [Fukuyama (2013)](/files/Governance - 2013 - Fukuyama - What Is Governance.pdf)
+- [Rothstein et al., (2008)](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0491.2008.00391.x)
+- [Persson et al. (1997)](https://academic.oup.com/qje/article-abstract/112/4/1163/1911726)
+
+## Slides
+
+- [Slides](https://github.com/jrspringman/psci3200-globaldev/blob/main/slides/jeremysclass_statecapacity_v2.pdf)
+
+## Non-Required Readings
+
+- [Ekeh (1975)](/files/colonialism-and-the-two-publics-in-africa-a-theoretical-statement.pdf)
+- [Di Maro et al. (2021)](https://documents1.worldbank.org/curated/en/972301638988752613/pdf/Building-State-Capacity-What-Is-the-Impact-of-Development-Projects.pdf)
+

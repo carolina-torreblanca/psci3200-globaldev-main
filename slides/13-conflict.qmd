@@ -1,0 +1,258 @@
+---
+title: "Conflict & Cohesion 1"
+subtitle: "Plus Final Project Stuff"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+editor: source
+---
+
+# Logistics
+
+## Assignments
+
+- Today
+  + Think about Final Project
+- Tuesday (3/12)
+  + Final Project Assignment 1
+  
+
+## Agenda
+
+\
+
+1. Finishing Conflict and Cohesion
+2. Final Project Assignment
+
+
+
+# Mousa (2020)
+
+## Why Study Cohesion?
+
+\
+
+**What is social cohesion?**
+
+::: {.fragment}
+- Patterns of cooperation among individuals from different social groups who live and work in close proximity
+:::
+
+## Why Study Cohesion?
+
+\
+
+**Why do we want to increase cohesion?**
+
+::: {.fragment}
+- Better governance
+  + Adherence to norms and laws
+- Sustainable peace
+  + Identity as a cleavage
+  + Cooperation on peace agreements
+:::
+
+
+## Building social cohesion
+
+**What is the theory?**
+
+::: {.fragment}
+- Social contact promots cohesion
+  + Cooperation on shared goal
+  + Social equality
+  + Socially endorsed
+
+:::
+
+::: {.fragment}
+
+**What is the context?**
+
+:::
+
+::: {.fragment}
+
+- Post-war Iraq
+- Rigid inter-ethnic cleavages
+
+:::
+
+## Intervention
+
+**What is the intervention?**
+
+::: {.fragment}
+- Randomly assigning Christian teams to have three muslim players
+:::
+
+::: {.fragment}
+**What is the design?**
+:::
+
+::: {.fragment}
+- Block randomization on baseline perceived commonality
+:::
+
+
+## Outcomes
+
+**Generalizability**
+
+::: {.fragment}
+- On-the-field
+- Off-the-field
+:::
+
+::: {.fragment}
+**Domain**
+:::
+
+::: {.fragment}
+- Behavioral
+- Attitudinal
+:::
+
+## Outcomes
+
+![](img/mousa_outcomes.png){fig-align="center"}
+
+## Findings
+
+**Main findings**
+
+::: {.fragment}
+- Improved behavior towards Muslim teammates
+- No improvement in generalizable behavior
+- No improvements in attitudes toward Muslims
+:::
+
+::: {.fragment}
+**Exploratory findings**
+:::
+
+::: {.fragment}
+- Strong effects among successful teams
+- Improved generalizable behaviors across the league
+- Improved generalizable attitudes of exposed residents
+:::
+
+## Policy Implications
+
+\
+
+::: {.fragment}
+- Contact works, but in a narrow way
+  + We can improve people's treatment of those they have contact with, but it doesn't generalize
+  + This necessarily limits the potential impact
+- We can reduce discrimination without attitude change
+  + Creating personal ties can facilitate trade, negotiation, etc.
+  
+:::
+
+
+# Grady et al. (2023)
+
+## How contact can promote societal change
+
+**Theory**
+
+::: {.fragment}
+- Contact can create *societal* change through social diffusion
+:::
+
+::: {.fragment}
+**Mechanisms for diffusion**
+:::
+
+::: {.fragment}
+- Changing norms
+- Knowledge of positive contact
+
+:::
+
+
+## Intervention
+
+::: {.fragment}
+**Grant program for conflict-affected villages**
+
+- Mixed-group committees deciding on resource allocation
+- Mediation training
+- Forums to discuss conflict
+- Publicly visible cooperation
+:::
+
+::: {.fragment}
+**Design**
+:::
+
+::: {.fragment}
+- Village-level random assignment
+:::
+
+
+## Outcomes
+
+- Contact
+  + Self-reported contact
+  + Contact willingness experiment
+  + Observed behavior
+- Perceptions of security
+- Attitudes
+  + Endorsement experiment
+  + Self-reported attitudes
+- Cooperative behavioral game
+
+
+## Findings
+
+![](img/grady1.png){fig-align="center"}
+
+## Findings
+
+![](img/grady2.png){fig-align="center"}
+
+
+## Findings
+
+![](img/grady3.png){fig-align="center"}
+
+## Alternative Explanations
+
+\
+
+- Placebo outcomes
+- Bundled treatment
+
+
+## Policy Implications
+
+- Contact interventions can have wider societal change and reduce the barriers to peace between conflicting groups
+- For social diffusion, contact must be highly public
+
+
+<!-- **Contact Theory** -->
+
+<!-- 1. Equal status -->
+<!-- 2. Common goals -->
+<!-- 3. Socially sanctioned -->
+
+<!-- - Modal study involves indirect contact (second-hand or imagined) -->
+<!-- - Training to reduce prejudiced cognition -->
+<!-- - Dialogue -->
+<!-- - Direct contact -->
+<!-- - Extended and imagined contact -->

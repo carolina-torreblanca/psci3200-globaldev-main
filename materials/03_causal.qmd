@@ -1,0 +1,22 @@
+---
+title: "Causality"
+date: 2025-01-24
+---
+
+
+## Required Readings
+
+- DSS [Ch 5](/files/dss_ch5.pdf)
+
+## Tasks
+
+- Create a github account and post your git handle to the #general channel on the course Slack
+
+## Slides
+
+- [Slides](/slides/03-causal-ctb.html)
+
+## Interesting Stuff (non-required)
+
+- [Cause, Effect, and the Structure of the Social World](/files/STEVENSON.pdf) by Megan Stevenson
+  + This very recent article argues that the types of interventions that get evaluated using RCTs are unlikely to create meaningful change because of the way the social world is structured. In essence, we are not actually able to engineer real change. Stevenson provides evidence from a meta-analysis of experimental criminology research.

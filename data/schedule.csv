@@ -1,0 +1,32 @@
+week,date,date_end,title,deadline, reading,content,tutorial,assignment
+1,2025-01-15,,Introduction to the course,,,/materials/01_intro,,
+2,2025-01-20,,Correlation and Causation,,TCD Ch 2-3,/materials/02_causal,,
+2,2025-01-22,,Causal Inference 1,,DSS Ch 2; Duflo (2017),/materials/03_causal,,/assignments/01_quarto
+3,2025-01-27,,Survey Research ,,DSS Ch 3,/materials/04_sampling,,
+3,2025-01-29,,Rstudio and Quarto,,,/materials/05_quarto,https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/w1_quarto.qmd,
+4,2025-02-03,,Democracy and Autocratization 1 (Survey Experiments),,Grady; Albertus and Grossman (2021); Hollerbauer et al. (2024),/materials/05_autocracy1,,
+4,2025-02-05,,Linear Regression,,DSS Ch 4,/materials/06_regression,,/assignments/02_gitrepo
+5,2025-02-10,,Causal Inference 2,,DSS Ch 5,/materials/07_causal,,
+5,2025-02-12,,Migration 1,,3ie; Sviatschi (2022); Gazeaud (2020),/materials/08_migration,,
+6,2025-02-17,,Crime 1 (guest: Schmidt-Padilla),,Dell (2015); Sviatschi (2022),/materials/10_crime,,
+6,2025-02-19,,Crime 2 (guest: Schmidt-Padilla),,Angelova et al. (2023),/materials/11_crime,,
+7,2025-02-19,,Conflict & Cohesion 1,,Paluck et al. (2021); Grady et al. (2023); Mousa (2020),/materials/12_conflict,,
+7,2025-02-24,,Conflict & Cohesion 2,,,/materials/13_conflict,/workshops/survey_data.html,
+8,2025-02-26,,Spring Break,,,,,
+8,2025-03-03,,Spring Break,,,,,
+9,2025-03-05,,Final Project Essentials,,No readings,/materials/14_fp_essentials,https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/fp_essentials.qmd,/assignments/03_fprqd
+9,2025-03-10,,Democracy and Autocratization 2,,VDem (2024); Garcia-Ponce and Wantchekon (2023) ,/materials/15_democracy2,,
+10,2025-03-12,,Democracy and Autocratization 3,,Hassan et al. (2022); Lebas and Young (2023),/materials/16_democracy3,,
+10,2025-03-17,,Accountability and Information 1,,Jablonski and Seim (2023),/materials/17_accountability1,,
+11,2025-03-19,,Accountability 2,,Sierra (2020),/materials/18_accountability2,,
+11,2025-03-24,,Accountability 3,,Dunning et al. (2019),/materials/19_accountability3,,/assignments/aau_survey
+12,2025-03-26,,Foreign Aid and NGOs 1,,Briggs (2016); Briggs (2021),/materials/20_aid1,,
+12,2025-03-31,,Foreign Aid and NGOs 2,,Cruz (2017); Bold et al. (2018),/materials/21_aid2,,
+13,2025-04-02,,Climate and Development (guest: O'Brien-Udry),,O'Brien-Udry (2023),/materials/22_climate1,,
+13,2025-04-07,,Climate and Development 2,,Namrata (2023); Alberto et al. (2022),/materials/23_climate2,,/assignments/04_fpdesign
+14,2025-04-09,,Git and Github,,No readings,/slides/24-git,,
+14,2025-04-14,,No Class,,No readings,,,
+15,2025-04-16,,Github Pages,,No readings,/slides/25-git2,,
+15,2025-04-21,,State Capacity (guest: Nagawa),,Fukuyama (2013); Ekeh (1975); Di Maro et al. (2021),/materials/26_capacity,,
+16,2025-04-23,,Final Project Preparation,,Assorted short pieces,/materials/27_conclusion,,/assignments/05_fptest
+17,2025-04-30,,Final Project Due,,,,,/assignments/final_project

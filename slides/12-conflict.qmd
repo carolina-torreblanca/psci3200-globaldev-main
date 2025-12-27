@@ -1,0 +1,385 @@
+---
+title: "Conflict & Cohesion 1"
+subtitle: "Experiments to Improve Intergroup Relations"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+editor: source
+---
+
+# Logistics
+
+## Assignments
+
+- Today
+  + [Paluck et al. (2021)](/files/PaluckPoratClarkGreen_2020.pdf)
+  + [Mousa (2020)](/files/mousa_2020.pdf)
+  + [Grady et al. (2023)](/files/grady-et-al-2023-how-contact-can-promote-societal-change-amid-conflict-an-intergroup-contact-field-experiment-in-nigeria.pdf)
+- Thursday 
+  + Think very seriously about the data for your final project
+  + Come with questions 
+  
+
+## Agenda
+
+\
+
+1. Review of last 3 classes
+2. Final Project Assignment
+3. Conflict and Cohesion
+
+
+# Final Project Discussion
+
+## Final Project
+
+- Data analysis project with data of your choosing
+  + Formulate a research question
+  + Find data that can help you answer that question
+  + Apply the tools and methods from this course
+  + Write-up analysis
+- Produce a webpage to present your results for public consumption 
+
+## Write-up
+
+1. Introduction to research question and data
+2. Discussion of research design, assumptions, and threats to inference
+3. Visualization describing your data
+4. Presentation of results from a regression model and discussion of implications for research question 
+5. Discussion of policy implications
+
+## Public Datasets
+
+**[Dataset of datasets](https://github.com/erikgahner/PolData/blob/master/PolData.csv)**
+
+- [Varieties of Democracy](https://github.com/vdeminstitute/vdemdata)
+- [World Bank Development/Governance Indicators](https://cran.r-project.org/web/packages/WDI/WDI.pdf)
+- Armed Conflict Location & Event Data Project (ACLED)
+- AidData
+- Demographic and Health Survey
+
+## Other types of data
+
+- Election returns (various compilations, government websites)
+- Replication data (Dataverse, journal websites)
+- Public opinion (various 'barometer' surveys)
+
+## My Datasets
+
+- Machine Learning for Peace
+- Cambodian NGOs (n $\approx$ 100)
+  + Convenience sample
+  + Panel survey, financial data, networks, open-ended responses
+- Ethiopian University Students (n $\approx$ 900)
+  + Representative sample
+  + Panel survey, networks, open-ended responses
+- Ghanaian Radio Stations (n $\approx$ 400)
+  + Convenience sample
+
+## Assignment 1
+
+**March 12**
+
+- Send me a quarto html file that:
+  + Briefly describes your research question
+  + Proposes a dataset and measures that will help you answer it
+
+# Conflict Overview
+
+## Causes of Conflict 
+
+**The puzzle of conflict**
+
+- Fighting is *always* more costly than a negotiated settlement
+- Bargains can't always be reached
+  + Uncertainty
+  + Commitment problems
+- Some actors benefit from conflict
+  + These actors will often mobilize on intergroup cleavages
+
+# Paluck et al. (2021)
+
+## Types of interventions
+
+**Applied Interventions**
+
+- Anti-bias, multicultural, and moral education
+- Diversity Training
+
+## Types of interventions
+
+**Research Interventions**
+
+- Cognitive and emotional training
+- Value consistency and self-worth
+- Peer influence, discussion, and dialogue
+- Social categorization
+- Entertainment
+- Contact
+
+## Problems with existing research
+
+\
+
+::: {.fragment}
+- Treatment intensity
+  + Focus on light-touch interventions
+- Measurement duration
+- Realism and sample selection
+- Publication bias
+  + Small samples yield bigger effects
+
+:::
+
+## Problems with existing research
+
+![](img/paluck_1.png){fig-align="center"}
+
+## Problems with existing research
+
+![](img/paluck_2.png){fig-align="center"}
+
+
+## Land-mark Studies
+
+- Social contact
+  + Sports in Iraq and India
+- Interpersonal conversations
+  + Conversations in USA
+- Workplace diversity training
+  + Global corporate environment
+- Normative interventions
+  + Social sanctioning on Twitter
+
+
+
+# Mousa (2020)
+
+## Why Study Cohesion?
+
+\
+
+**What is social cohesion?**
+
+::: {.fragment}
+- Patterns of cooperation among individuals from different social groups who live and work in close proximity
+:::
+
+## Why Study Cohesion?
+
+\
+
+**Why do we want to increase cohesion?**
+
+::: {.fragment}
+- Better governance
+  + Adherence to norms and laws
+- Sustainable peace
+  + Identity as a cleavage
+  + Cooperation on peace agreements
+:::
+
+
+## Building social cohesion
+
+**What is the theory?**
+
+::: {.fragment}
+- Social contact promots cohesion
+  + Cooperation on shared goal
+  + Social equality
+  + Socially endorsed
+
+:::
+
+::: {.fragment}
+
+**What is the context?**
+
+:::
+
+::: {.fragment}
+
+- Post-war Iraq
+- Rigid inter-ethnic cleavages
+
+:::
+
+## Intervention
+
+**What is the intervention?**
+
+::: {.fragment}
+- Randomly assigning Christian teams to have three muslim players
+:::
+
+::: {.fragment}
+**What is the design?**
+:::
+
+::: {.fragment}
+- Block randomization on baseline perceived commonality
+:::
+
+
+## Outcomes
+
+**Generalizability**
+
+::: {.fragment}
+- On-the-field
+- Off-the-field
+:::
+
+::: {.fragment}
+**Domain**
+:::
+
+::: {.fragment}
+- Behavioral
+- Attitudinal
+:::
+
+## Outcomes
+
+![](img/mousa_outcomes.png){fig-align="center"}
+
+## Findings
+
+**Main findings**
+
+::: {.fragment}
+- Improved behavior towards Muslim teammates
+- No improvement in generalizable behavior
+- No improvements in attitudes toward Muslims
+:::
+
+::: {.fragment}
+**Exploratory findings**
+:::
+
+::: {.fragment}
+- Strong effects among successful teams
+- Improved generalizable behaviors across the league
+- Improved generalizable attitudes of exposed residents
+:::
+
+## Policy Implications
+
+\
+
+::: {.fragment}
+- Contact works, but in a narrow way
+  + We can improve people's treatment of those they have contact with, but it doesn't generalize
+  + This necessarily limits the potential impact
+- We can reduce discrimination without attitude change
+  + Creating personal ties can facilitate trade, negotiation, etc.
+  
+:::
+
+
+# Grady et al. (2023)
+
+## How contact can promote societal change
+
+**Theory**
+
+::: {.fragment}
+- Contact can create *societal* change through social diffusion
+:::
+
+::: {.fragment}
+**Mechanisms for diffusion**
+:::
+
+::: {.fragment}
+- Changing norms
+- Knowledge of positive contact
+
+:::
+
+
+## Intervention
+
+::: {.fragment}
+**Grant program for conflict-affected villages**
+
+- Mixed-group committees deciding on resource allocation
+- Mediation training
+- Forums to discuss conflict
+- Publicly visible cooperation
+:::
+
+::: {.fragment}
+**Design**
+:::
+
+::: {.fragment}
+- Village-level random assignment
+:::
+
+
+## Outcomes
+
+- Contact
+  + Self-reported contact
+  + Contact willingness experiment
+  + Observed behavior
+- Perceptions of security
+- Attitudes
+  + Endorsement experiment
+  + Self-reported attitudes
+- Cooperative behavioral game
+
+
+## Findings
+
+![](img/grady1.png){fig-align="center"}
+
+## Findings
+
+![](img/grady2.png){fig-align="center"}
+
+
+## Findings
+
+![](img/grady3.png){fig-align="center"}
+
+## Alternative Explanations
+
+\
+
+- Placebo outcomes
+- Bundled treatment
+
+
+## Policy Implications
+
+- Contact interventions can have wider societal change and reduce the barriers to peace between conflicting groups
+- For social diffusion, contact must be highly public
+
+
+<!-- **Contact Theory** -->
+
+<!-- 1. Equal status -->
+<!-- 2. Common goals -->
+<!-- 3. Socially sanctioned -->
+
+<!-- - Modal study involves indirect contact (second-hand or imagined) -->
+<!-- - Training to reduce prejudiced cognition -->
+<!-- - Dialogue -->
+<!-- - Direct contact -->
+<!-- - Extended and imagined contact -->

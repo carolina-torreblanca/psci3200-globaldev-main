@@ -1,0 +1,19 @@
+---
+title: "Git, Github, Github Pages"
+---
+
+## Required Readings
+
+- None
+
+## Slides
+
+- [Slides](/slides/24-git.html)
+
+
+## Resources
+
+- To learn more about using git with R, check out [happygitwithr.com](happygitwithr.com)
+- If you don't have git installed on your laptop, use these [installation instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
+

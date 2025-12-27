@@ -1,0 +1,257 @@
+---
+title: "Final Project Essentials"
+subtitle: "Index Measures and Interaction Terms"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+editor: source
+---
+
+# Logistics
+
+## Agenda
+
+\
+
+1. Final project example
+2. Final project essential tools
+3. Final project essentials Workshop
+
+# Final project example
+
+## Final project example
+
+**Check out `workshops/survey_data.(qmd|html)`**
+
+- `self-contained: true`
+- `bibliography: references.bib`
+- `modelsummary()` and `ggplot()`
+- `echo: false` and `warning: false`
+
+## Research Question
+
+**Does moving to a new city reduce the political engagement of young people?**  
+
+- I hypothesize that moving to a new city will reduce young people's likelihood of engaging in political or civic action
+  + Youth have low levels of political engagement, often driven by lack of information and experience
+  + Youth that move have less information and experience with engagement in their new city
+  + Youth that move probably have fewer social ties, and ties are important for facilitating engagement
+
+
+## Data and Variables
+
+**Data**
+
+- Random sample of 825 AAU students 
+- 2 waves (May-June, October-November of 2022)
+
+**Variables**
+
+- Outcome: survey questions measuring political participation
+- Treatment: whether student is originally from Addis Ababa
+- Building confidence: feelings of political efficacy, number of years since move, urban or rural origin, SES, etc.
+
+
+## Research Design
+
+::: {.incremental}
+- **Design**: [Estimate the relationship between *whether or not an individual moved to a new city to attend university* and their *level of political engagement*]{.fragment}
+- **Assumption**: [Individuals that moved to a AA would have participated the same amount as those that already lived there]{.fragment}
+- **Diagnosis**: [Unrealistic... even if we condition on observable characteristics]{.fragment}
+- **Plan**: [Build confidence by ruling-out potential differences in baseline propensity to participate among moving and non-moving students]{.fragment}
+:::
+
+## Researh Context
+
+\
+
+- Students at Addis Ababa University (AAU)
+  + Youth frequently move to a new city in order to obtain education
+  + AAU is Ethiopia's top university, and students from around the country move to study there
+  + Universities are important sites of political socialization
+
+
+## Building Confidence
+
+**Conditioning on baseline characteristics**
+
+::: {.incremental}
+- Urban vs rural home
+  + Students moving from another city will be less different (in their propensity to participate) than students from AA
+- Socio-Economic Status (SES)
+  + Students with similar SES will be less different (in their propensity to participate)
+:::
+
+
+
+## Building Confidence
+
+**Observable implications of the hypothesis (if it's causal)**
+
+::: {.incremental}
+- Some types of participation are more likely to be affected by moving
+  + Those that rely on social ties or information about the environment
+  + Estimate separate models for high/low types of participation 
+- The effect of moving should decrease over time
+  + As students become more embedded, the gap between moving and non-moving students should become smaller
+  + Estimate how the relationship differs depending on # of years since moving
+:::
+
+
+## Building Confidence
+
+\
+
+**Placebo tests**
+
+::: {.incremental}
+- Self-efficacy is related to participation
+  + Moving may affect feelings about your individual efficacy, but not the efficacy of youth in general
+- Effort is related to moving
+  + Moving may affect your real-world engagement, but not an opportunity within the survey
+:::
+
+## Data and Variables
+
+**Data**
+
+- Random sample of 825 AAU students 
+- 2 waves (May-June, October-November of 2022)
+
+**Variables**
+
+- Outcome: survey questions measuring political participation
+- Treatment: whether student is originally from Addis Ababa
+- Building confidence: feelings of political efficacy, number of years since move, urban or rural origin, SES, etc.
+
+
+# Final Project Essentials
+
+## Creating Index Measures
+
+**What is an index measure?**
+
+:::{.fragment}
+**When should we create an index measure?**
+
+::: {.incremental}
+- When you have many ways of measuring a single concept
+  + This is true for outcome measures, treatment measures, and covariates
+  
+**What does this accomplish?**
+
+- Simplifies analysis (fewer graphs, tables, etc.)
+- Reduces number of hypotheses being tested
+:::
+
+:::
+
+## Additive Scale
+
+**What is an additive scale?**
+
+- Simple sum across columns (`index = column_1 + column_2`)
+
+**When to use an additive scale**
+
+::: {.incremental}
+- Variables are measured on a common scale
+- Interested in a cumulative amount of something
+  + Number of times someone engaged in a specific behavior
+  + Amount of money from several different sources
+:::
+
+## Additive Scale
+
+\
+
+**Benefits of additive scales**
+
+- Interpretability: number on the original scale
+- Simplicity: Just plain addition
+
+## Averaged Z-Scores
+
+**What is a z-score?**
+
+- $Z = (X - \mu) / \sigma$
+- Standardized: Mean of 0 and standard deviation of 1
+
+**When to use averaged z-scores**
+
+- When variables are measured on different scales 
+- When variables cannot be summed
+
+## Averaged Z-Scores
+
+\
+
+**Benefits of averaged z-scores**
+
+- Interpretability: Standard deviations from the mean
+- Outlier detection: abs(3)
+
+## Fancier index techniques
+
+\
+
+- Principal Component Analysis
+- Factor Analysis
+- Inverse Covariance Weighting
+
+
+## Interaction Terms
+
+**What is an interaction term?**
+
+- Simple linear models assume that the effect of predictors is independent of other factors 
+- Interaction terms allow us to estimate the difference in the slope of a predictor across unit characteristics
+
+$$
+Y_i = \alpha + \beta_1 X_{i1} + \beta_2 X_{i2} + \beta_3 X_{i1}*X_{i2} + \epsilon_i
+$$
+
+## Interaction Terms
+
+**What are interaction terms used for?**
+
+- Heterogeneous effects
+  + Gender
+  + Education
+- Difference-in-differences
+  + Treated and not-treated units
+
+$$
+Y_i = \alpha + \beta_1 X_{i1} + \beta_2 X_{i2} + \beta_3 X_{i1}*X_{i2} + \epsilon_i
+$$
+
+## Interaction Terms
+
+$$
+Y_i = \alpha + \beta_1 X_{i1} + \beta_2 X_{i2} + \beta_3 X_{i1}*X_{i2} + \epsilon_i
+$$
+
+**Example:** Continuous outcome with two binary predictors
+
+::: {.incremental}
+- $\alpha$: [Intercept when $X_{i1}$ and $X_{i2}$ are 0]{.fragment}
+- $\beta_1$: [Slope when $X_{i2} = 0$]{.fragment}
+- $\beta_2$: [Difference in $\alpha$ between $X_{i2}=0$ and $X_{i2}=1$]{.fragment}
+- $\beta_3$: [Difference in $\beta_1$ between $X_{i2}=0$ and $X_{i2}=1$]{.fragment}
+:::
+
+
+

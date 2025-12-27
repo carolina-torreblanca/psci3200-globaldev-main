@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Carolina Torreblanca">
+
+<title>Crime and Punishment I – PSCI 3200</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../html/custom.scss">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">PSCI 3200</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#agenda" id="toc-agenda" class="nav-link active" data-scroll-target="#agenda">Agenda</a></li>
+  <li><a href="#why-does-the-state-exist" id="toc-why-does-the-state-exist" class="nav-link" data-scroll-target="#why-does-the-state-exist">Why does the state exist?</a></li>
+  <li><a href="#what-do-states-do" id="toc-what-do-states-do" class="nav-link" data-scroll-target="#what-do-states-do">What do states do?</a></li>
+  <li><a href="#security-and-development" id="toc-security-and-development" class="nav-link" data-scroll-target="#security-and-development">Security and Development</a></li>
+  <li><a href="#the-inevitability-of-internal-conflict" id="toc-the-inevitability-of-internal-conflict" class="nav-link" data-scroll-target="#the-inevitability-of-internal-conflict">The inevitability of internal conflict</a></li>
+  <li><a href="#crime-in-the-developing-world" id="toc-crime-in-the-developing-world" class="nav-link" data-scroll-target="#crime-in-the-developing-world">Crime in the Developing World</a></li>
+  <li><a href="#crime-in-the-developing-world-1" id="toc-crime-in-the-developing-world-1" class="nav-link" data-scroll-target="#crime-in-the-developing-world-1">Crime in the Developing World</a></li>
+  <li><a href="#police" id="toc-police" class="nav-link" data-scroll-target="#police">Police</a></li>
+  <li><a href="#crime-and-its-punishment" id="toc-crime-and-its-punishment" class="nav-link" data-scroll-target="#crime-and-its-punishment">Crime and its Punishment</a></li>
+  <li><a href="#bateson-2012" id="toc-bateson-2012" class="nav-link" data-scroll-target="#bateson-2012">Bateson, 2012</a></li>
+  <li><a href="#theoretical-expectations" id="toc-theoretical-expectations" class="nav-link" data-scroll-target="#theoretical-expectations">Theoretical Expectations</a></li>
+  <li><a href="#a-quick-aside" id="toc-a-quick-aside" class="nav-link" data-scroll-target="#a-quick-aside">A quick aside</a></li>
+  <li><a href="#context-data" id="toc-context-data" class="nav-link" data-scroll-target="#context-data">Context / Data</a></li>
+  <li><a href="#measurement" id="toc-measurement" class="nav-link" data-scroll-target="#measurement">Measurement</a></li>
+  <li><a href="#research-design" id="toc-research-design" class="nav-link" data-scroll-target="#research-design">Research Design</a></li>
+  <li><a href="#threats-to-inference" id="toc-threats-to-inference" class="nav-link" data-scroll-target="#threats-to-inference">Threats to Inference</a></li>
+  <li><a href="#is-causality-plausible" id="toc-is-causality-plausible" class="nav-link" data-scroll-target="#is-causality-plausible">Is Causality Plausible?</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#updating-on-the-results" id="toc-updating-on-the-results" class="nav-link" data-scroll-target="#updating-on-the-results">Updating on the Results</a></li>
+  <li><a href="#weaver-and-lerman-2010" id="toc-weaver-and-lerman-2010" class="nav-link" data-scroll-target="#weaver-and-lerman-2010">Weaver and Lerman, 2010</a>
+  <ul class="collapse">
+  <li><a href="#context" id="toc-context" class="nav-link" data-scroll-target="#context">Context</a></li>
+  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research Question</a></li>
+  <li><a href="#theory" id="toc-theory" class="nav-link" data-scroll-target="#theory">Theory</a></li>
+  <li><a href="#hypotheses" id="toc-hypotheses" class="nav-link" data-scroll-target="#hypotheses">Hypotheses</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#measurement-1" id="toc-measurement-1" class="nav-link" data-scroll-target="#measurement-1">Measurement</a></li>
+  <li><a href="#research-design-1" id="toc-research-design-1" class="nav-link" data-scroll-target="#research-design-1">Research Design</a></li>
+  <li><a href="#results-1" id="toc-results-1" class="nav-link" data-scroll-target="#results-1">Results</a></li>
+  <li><a href="#implications" id="toc-implications" class="nav-link" data-scroll-target="#implications">Implications</a></li>
+  <li><a href="#upside-down-world" id="toc-upside-down-world" class="nav-link" data-scroll-target="#upside-down-world">Upside down world?</a></li>
+  <li><a href="#for-researchers" id="toc-for-researchers" class="nav-link" data-scroll-target="#for-researchers">For researchers</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="c3-crime.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Crime and Punishment I</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Carolina Torreblanca </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            University of Pennsylvania
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="agenda" class="level2">
+<h2 class="anchored" data-anchor-id="agenda">Agenda</h2>
+<ul>
+<li><p>Bateson, 2012</p></li>
+<li><p>Weaver and Lerman, 2010</p></li>
+</ul>
+</section>
+<section id="why-does-the-state-exist" class="level2">
+<h2 class="anchored" data-anchor-id="why-does-the-state-exist">Why does the state exist?</h2>
+<div class="fragment">
+<p><strong>The provision of security as the central reason for the state</strong></p>
+<ul>
+<li>Hobbes: Prevent chaos <span class="math inline">\(\rightarrow\)</span> Protect our lives</li>
+<li>Locke: Prevent abuse <span class="math inline">\(\rightarrow\)</span> Protect our property (including our lives)</li>
+</ul>
+</div>
+</section>
+<section id="what-do-states-do" class="level2">
+<h2 class="anchored" data-anchor-id="what-do-states-do">What do states do?</h2>
+<div class="fragment">
+<p><strong>States provide public goods/services:</strong></p>
+<ul>
+<li>Health, schools, infrastructure</li>
+<li>The provision of security (internal and external)</li>
+</ul>
+</div>
+</section>
+<section id="security-and-development" class="level2">
+<h2 class="anchored" data-anchor-id="security-and-development">Security and Development</h2>
+<ul>
+<li>Security often thought as a prerequisite of development
+<ul>
+<li>Why?</li>
+</ul></li>
+<li>Conversely, internal violence (civil war) characterized as “development in reverse” (Collier, 2004)
+<ul>
+<li>Why?</li>
+</ul></li>
+</ul>
+</section>
+<section id="the-inevitability-of-internal-conflict" class="level2">
+<h2 class="anchored" data-anchor-id="the-inevitability-of-internal-conflict">The inevitability of internal conflict</h2>
+<ul>
+<li><p>Yet, states often fail to provide internal security</p></li>
+<li><p>Particularly developing states</p></li>
+<li><p>Political violence, civil war, and most commonly… crime</p></li>
+</ul>
+</section>
+<section id="crime-in-the-developing-world" class="level2">
+<h2 class="anchored" data-anchor-id="crime-in-the-developing-world">Crime in the Developing World</h2>
+<p><strong>Crime often identified as main concern of developing-world citizens</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/crime_stats.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="700"></p>
+</figure>
+</div>
+</section>
+<section id="crime-in-the-developing-world-1" class="level2">
+<h2 class="anchored" data-anchor-id="crime-in-the-developing-world-1">Crime in the Developing World</h2>
+<p><br>
+<strong>Consequences for Development?</strong></p>
+<div class="fragement">
+<ul>
+<li><p>In Latam, the most violent region in the world, the direct costs of crime in 2022 reached 3.44% of the region’s GDP <a href="https://www.iadb.org/en/news/high-crime-costs-burden-latin-america-and-caribbean#:~:text=November%2011%2C%202024.%20%2D%20Direct%20costs%20of,times%20the%20budget%20for%20research%20and%20development.">(Source: IDB)</a></p>
+<ul>
+<li><em>“The cost of crime is equivalent to 78% of the public budget for education, double the public budget for social assistance, and 12 times the budget for research and development.”</em></li>
+</ul></li>
+<li><p>At least 115k people were murdered in Latin America and the Caribbean during 2023</p></li>
+</ul>
+</div>
+</section>
+<section id="police" class="level2">
+<h2 class="anchored" data-anchor-id="police">Police</h2>
+<ul>
+<li>The state’s main tool to respond to insecurity is the police</li>
+<li>Yet police in developing context are often repressive, abusive, over-target poor and marginalized communities.</li>
+</ul>
+<div class="fragement">
+<ul>
+<li>Could policing backfire?</li>
+</ul>
+</div>
+</section>
+<section id="crime-and-its-punishment" class="level2">
+<h2 class="anchored" data-anchor-id="crime-and-its-punishment">Crime and its Punishment</h2>
+<ul>
+<li>What are the consequences of criminal violence?</li>
+<li>What are the consequences of poor policing?</li>
+</ul>
+</section>
+<section id="bateson-2012" class="level2">
+<h2 class="anchored" data-anchor-id="bateson-2012">Bateson, 2012</h2>
+<p><strong>Research Question:</strong> Can crime motivate people to participate more in politics?</p>
+<div class="incremental">
+<ul class="incremental">
+<li>If the answer is “no” then crime could trigger a vicious circle of disengagement <span class="math inline">\(\rightarrow\)</span> poor governance <span class="math inline">\(\rightarrow\)</span> worse developmental outcomes</li>
+</ul>
+<p><br>
+</p>
+<ul class="incremental">
+<li>If the answer is “yes” then violence today might (ironically) mean better outcomes tomorrow: crime <span class="math inline">\(\rightarrow\)</span> participation <span class="math inline">\(\rightarrow\)</span> Better development outcomes</li>
+</ul>
+</div>
+</section>
+<section id="theoretical-expectations" class="level2">
+<h2 class="anchored" data-anchor-id="theoretical-expectations">Theoretical Expectations</h2>
+<p><br>
+<strong>Why might we expect crime to depress political participation?</strong></p>
+<div class="fragment">
+<ul>
+<li>Fear</li>
+<li>Cost of participating</li>
+</ul>
+</div>
+<p><strong>Why might we expect crime to spur political participation?</strong></p>
+<div class="fragment">
+<ul>
+<li>Psychological reasons</li>
+<li>Instrumental reasons</li>
+</ul>
+</div>
+</section>
+<section id="a-quick-aside" class="level2">
+<h2 class="anchored" data-anchor-id="a-quick-aside">A quick aside</h2>
+<p><br>
+<strong>What were your priors?</strong></p>
+</section>
+<section id="context-data" class="level2">
+<h2 class="anchored" data-anchor-id="context-data">Context / Data</h2>
+<p><br>
+<strong>Author leverages four regional surveys</strong></p>
+<ol type="1">
+<li>Americas Barometer</li>
+<li>Eurobarometer</li>
+<li>Asian Barometer</li>
+<li>Afrobarometer</li>
+</ol>
+<p>You can download all of these surveys yourself!</p>
+</section>
+<section id="measurement" class="level2">
+<h2 class="anchored" data-anchor-id="measurement">Measurement</h2>
+<p><strong>What is the dependent variable?</strong></p>
+<div class="fragment">
+<ul>
+<li>Non-electoral participation
+<ul>
+<li>community action</li>
+<li>protest</li>
+<li>political interest</li>
+<li>town meetings</li>
+</ul></li>
+</ul>
+</div>
+<p><strong>What is the treatment or independent variable?</strong></p>
+<div class="fragment">
+<ul>
+<li>Direct or indirect criminal victimization in the past year</li>
+</ul>
+</div>
+</section>
+<section id="research-design" class="level2">
+<h2 class="anchored" data-anchor-id="research-design">Research Design</h2>
+<p><br>
+<strong>CIA or Selection on Observables</strong></p>
+<p>Treatment Group:</p>
+<div class="fragment">
+<ul>
+<li>Direct or indirect victims</li>
+</ul>
+</div>
+<p>Control Group:</p>
+<div class="fragment">
+<ul>
+<li>Non-victims</li>
+</ul>
+</div>
+<p>Controls:</p>
+<div class="fragment">
+<ul>
+<li>Age, Education, Gender, Urban, Country FE</li>
+</ul>
+</div>
+</section>
+<section id="threats-to-inference" class="level2">
+<h2 class="anchored" data-anchor-id="threats-to-inference">Threats to Inference</h2>
+<p><strong>The author makes causal claims, what crucial assumption is she making?</strong></p>
+<div class="fragment">
+<ul>
+<li>No confounders!
+<ul>
+<li>After including controls, who gets victimized is independent of participation decisions</li>
+</ul></li>
+<li>Assumption would not hold if:
+<ul>
+<li>People who participate more are more likely to be <em>crimed</em></li>
+<li>People who participate more are more likely to report they were <em>crimed</em></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="is-causality-plausible" class="level2">
+<h2 class="anchored" data-anchor-id="is-causality-plausible">Is Causality Plausible?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/batesoncharacteristics.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/batesonresults.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="updating-on-the-results" class="level2">
+<h2 class="anchored" data-anchor-id="updating-on-the-results">Updating on the Results</h2>
+<p><strong>Crime victims everywhere participate more in politics, regadless of the type of crime</strong></p>
+<ul>
+<li>Effect is roughly the same as 5-10 years of education (!!!)</li>
+<li>Author also finds that victims are more skeptical of democracy, support authoritarianism, and vigilantism</li>
+</ul>
+<p>Q1: Do we believe the results? Q2: What implications for democracy and development?</p>
+</section>
+<section id="weaver-and-lerman-2010" class="level1">
+<h1>Weaver and Lerman, 2010</h1>
+<section id="context" class="level2">
+<h2 class="anchored" data-anchor-id="context">Context</h2>
+<p><br>
+For US citizens, contact with the criminal justice system is more common now than ever before</p>
+<ul>
+<li>1/100 US citizens are incarcerate</li>
+<li>1/3 black men will sever time in prison</li>
+<li>Disadvantaged population routinely have unwanted/disciplinary interactions with police.</li>
+</ul>
+<div class="fragment">
+<p>Authors call the spacial concentrated, punitive, surveillance-oriented system found in some (minority) communities “carceral state”</p>
+</div>
+</section>
+<section id="research-question" class="level2">
+<h2 class="anchored" data-anchor-id="research-question">Research Question</h2>
+<p><em>How and in what ways encounters with the criminal justice system influence citizens’ political attitudes?</em></p>
+<ul>
+<li><p>More specifically:</p>
+<ul>
+<li>How does exposure to the criminal justice system socialize those exposed to it?</li>
+<li>What do people learn from constant, unwanted, aggressive, interactions with the state’s criminal system?</li>
+</ul></li>
+</ul>
+</section>
+<section id="theory" class="level2">
+<h2 class="anchored" data-anchor-id="theory">Theory</h2>
+<p>Interactions with the criminal system shape participation through two channels:</p>
+<ul>
+<li>Resources:
+<ul>
+<li>Fewer resources <span class="math inline">\(\rightarrow\)</span> less political participation (i.e.&nbsp;spend $ in court, have a criminal record, etc.)</li>
+</ul></li>
+<li>Learning:
+<ul>
+<li>What the authors call “interpretative effects”</li>
+<li>Encounters with bureaucrats teach citizens’ about the goals and nature of the government</li>
+<li>Bad experiences with police, courts, etc. may translate into bad impressions about the government</li>
+</ul></li>
+</ul>
+</section>
+<section id="hypotheses" class="level2">
+<h2 class="anchored" data-anchor-id="hypotheses">Hypotheses</h2>
+<p><strong>Interactions with the criminal justice system will:</strong></p>
+<div class="fragment">
+<ol type="1">
+<li>Depress participation and civic engagement</li>
+<li>Reduce trust in the government</li>
+</ol>
+</div>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>Data comes from two panel surveys</p>
+<ol type="1">
+<li><p>National Longitudinal Study of Adolescent Health <a href="https://addhealth.cpc.unc.edu/">(Add Health)</a></p>
+<ul>
+<li>“20,000 adolescents who were in grades 7-12 during the 1994-95 school year, and have been followed for five waves to date”</li>
+</ul></li>
+<li><p><a href="https://ffcws.princeton.edu/documentation">Fragile Families and Child Well-being Study</a></p></li>
+</ol>
+<p>Both surveys are publicly available and VERY RICH (and linked in the slides)</p>
+</section>
+<section id="measurement-1" class="level2">
+<h2 class="anchored" data-anchor-id="measurement-1">Measurement</h2>
+<p>Treatment:</p>
+<div class="fragment">
+<ul>
+<li>Criminal Justice Contact: no encounters, stopped by the police, charged, arrested, served time</li>
+</ul>
+</div>
+<p>Outcomes:</p>
+<div class="fragment">
+<ul>
+<li>Electoral participation</li>
+<li>Civic participation</li>
+<li>Political participation</li>
+<li>Trust in government</li>
+<li>Civic obligations (jury, military)</li>
+</ul>
+</div>
+</section>
+<section id="research-design-1" class="level2">
+<h2 class="anchored" data-anchor-id="research-design-1">Research Design</h2>
+<p><strong>CIA or Selection on Observables</strong></p>
+<ul>
+<li><p>Multivariate OLS regression</p></li>
+<li><p>Threats to inference: confounders!</p></li>
+<li><p>What might predict participation and contact with criminal system?</p></li>
+</ul>
+<div class="fragment">
+<ul>
+<li><p>Personality, criminality, income, education, etc.</p></li>
+<li><p>Authors try to control for all these and run placebos to test whether they might be driving the results</p></li>
+</ul>
+</div>
+</section>
+<section id="results-1" class="level2">
+<h2 class="anchored" data-anchor-id="results-1">Results</h2>
+<p><img src="img/weaverlermanresults.png" class="img-fluid"></p>
+</section>
+<section id="implications" class="level2">
+<h2 class="anchored" data-anchor-id="implications">Implications</h2>
+<ul>
+<li>Criminal justice contact deters political and civic life</li>
+<li>Especially for marginalized populations who are over-policed</li>
+<li>Who should security policy be responsive to?</li>
+<li>Implications for democracy?</li>
+<li>For inequality?</li>
+</ul>
+</section>
+<section id="upside-down-world" class="level2">
+<h2 class="anchored" data-anchor-id="upside-down-world">Upside down world?</h2>
+<ul>
+<li>Both crime and its punishment have important implications for politics</li>
+<li>Crime engenders participation and policing deters it (???)</li>
+<li>A cause and a consequence of development</li>
+<li>What is the appropriate response to crime? A <strong>very</strong> hard question to answer</li>
+</ul>
+</section>
+<section id="for-researchers" class="level2">
+<h2 class="anchored" data-anchor-id="for-researchers">For researchers</h2>
+<ul>
+<li>Both of these papers were published in the highest ranked journal of political science</li>
+<li>Both use survey data which you yourself could have downloaded</li>
+<li>You could have run all the analyses!</li>
+<li>Why are they published where they are?</li>
+<li>Why are they so influential?</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Content <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> 2025 by <a href="https://jrspringman.github.io/">Jeremy Springman</a> <br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc" aria-label="creative-commons-nc"></i> <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/jrspringman/psci3200-globaldev">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

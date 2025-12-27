@@ -1,0 +1,23 @@
+---
+title: "Climate and Development 2"
+---
+
+## Required Readings
+
+- [Albert et al. (2022)](https://voxdev.org/topic/labour-markets-migration/how-climate-change-reallocates-capital-and-labour-within-countries)
+- [Namrata (2023)](https://voxdev.org/sites/default/files/2023-09/Climate_Adaptation_Issue_1.pdf)
+  + [Video lecture version](https://voxdev.org/voxdevlit/climate-adaptation)
+
+## Slides
+
+- [Slides](/slides/24-climate1.html)
+
+
+## Supplementary Readings (non-required)
+
+- [Jayachandran (2017)](https://voxdev.org/topic/energy-environment/forest-conservation-uganda-using-financial-incentives-avert-climate-change)
+- [Jayachandran VoxDev Podcast](https://voxdev.org/topic/energy-environment/economics-conservation-low-and-middle-income-countries)
+- [Burgess VoxDev Podcast](https://voxdev.org/topic/energy-environment/environmental-economics-and-policy-low-and-middle-income-countries)
+- [Burgess (2024)](https://voxdev.org/topic/energy-environment/national-policy-reversals-and-deforestation-amazon)
+
+

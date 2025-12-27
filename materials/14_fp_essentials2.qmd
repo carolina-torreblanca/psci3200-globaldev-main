@@ -1,0 +1,22 @@
+---
+title: "Final Project Essentials"
+date: 2024-03-12
+---
+
+
+## Required Readings
+
+- None
+
+
+## Slides
+
+- [Slides](/slides/14-fp-essentials.html)
+
+## Assignments
+
+- [Expanded Research Design (4/4)](/assignments/05_fptest.html)
+
+## Workshop
+
+- [Workshop Code and Data](https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/fp_essentials.qmd)

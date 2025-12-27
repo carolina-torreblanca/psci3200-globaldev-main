@@ -1,0 +1,273 @@
+---
+title: "Democracy and Development"
+subtitle: ""
+author: "Carolina Torreblanca"
+institute: "University of Pennsylvania"
+
+editor: source
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.05
+    logo: DevLab_Logo_29Mar2023.png
+    embed-resources: true
+    template-partials:
+      - title-slide.html
+    gfm:
+    mermaid-format: png
+    highlight-style: atom-one-dark
+    code-overflow: wrap
+---
+
+## Agenda
+
+-   Democracy as a consequence of development
+-   Democracy as a cause of development
+-   Fixed effects
+
+## Democracy and Development
+
+![From Acemoglu et. al. 2008](img/income_dem.png){fig-align="center"}
+
+## Two explanations
+
+::: incremental
+1.  Direct causal link
+
+    -   Development $\rightarrow$ democracy
+    -   Democracy $\rightarrow$ development
+
+2.  Indirect link or correlation
+
+    -   Income $\rightarrow$ regime survival
+    -   Omitted variable
+:::
+
+# Development as cause
+
+## Modernization Theory, Lipset (1960)
+
+**Development causes democracy**
+
+::: incremental
+-   Economic development requires investing in education, infrastructure, urbanization...
+
+    -   Modernizing.
+
+-   Modernization triggers changes making democracy more likely
+
+    -   Society becomes more complex and organized
+    -   Education facilitates democratic citizenship
+    -   Infrastructure and urbanization facilitate political competition
+:::
+
+## The Threat of Revolution
+
+::: incremental
+-   [Acemoglu and Robinson (2001)](https://www.aeaweb.org/articles?id=10.1257/aer.91.4.938)
+-   Rich elites control autocratic societies
+    -   But they fear revolution!
+-   How to prevent it?
+    -   Democratize and redistribute some of the resources
+-   Elites and non-elites are better off
+:::
+
+# Development as consequence
+
+## Democracy Spurs Development
+
+Dictatorship, Democracy, and Development [(Olson, 1993)](https://www.jstor.org/stable/2938736?seq=5)
+
+::: incremental
+-   Autocrats want a wealthy country.
+
+-   Why would citizens produce wealth if it can be expropriated by an autocrat?
+
+    -   Solution: **Credibly** tie your own hands with democratic institutions
+
+-   By sharing political power and enshrining property rights, create incentives to produce wealth
+
+-   Democracy $\rightarrow$ development
+:::
+
+# Other Explanations
+
+## Democratic Survival
+
+::: incremental
+-   Democracy is established independently of development ...
+
+-   But development helps democracies survive
+
+-   "The more well-to-do a nation, the greater the chances it will sustain democracy" (Lipset, 1959)
+
+-   Empirical implications: There will be a correlation btw democracy and development even if development does not cause democracy!
+:::
+
+
+
+## Democracy and Development in Research
+
+- Are the theoretical arguments for $Democracy \rightarrow Development$ convincing?
+
+- Are the theoretical arguments for $Development \rightarrow Democracy$ convincing?
+
+## Democracy and Development in Research 
+
+- [Paglayan, 2020](https://www.cambridge.org/core/journals/american-political-science-review/article/nondemocratic-roots-of-mass-education-evidence-from-200-years/8C8C594AA07996A00ED4BEFC66B133B7) 
+
+    - Reconsiders whether democratization increases the provision of education. Finds that democratization *can* increase education provision, but that education is also a powerful for autocrats
+    
+- [Fujiwara, 2015](https://www.cambridge.org/core/journals/american-political-science-review/article/nondemocratic-roots-of-mass-education-evidence-from-200-years/8C8C594AA07996A00ED4BEFC66B133B7) 
+
+    - Electronic voting in Brazil reduced mistakes when voting from poorest, resulting in better accountability and more spending in health care
+
+## Democracy and Development in Research
+
+-   [Ferraz and Finan, 2008](https://academic.oup.com/qje/article/123/2/703/1930865)
+
+    -   Random audits of Brazilian majors reduces the chances that corrupt politicians are re-elected
+
+-   [Mori, et. al., 2024](https://www.journals.uchicago.edu/doi/10.1086/727799)
+
+    -   Use gender quotas to examine if female politicians use local budget more or less effectively
+
+-   [Pailler, 2018](https://www.sciencedirect.com/science/article/pii/S0095069616301577?casa_token=lxyQWsb-OwEAAAAA:_UixyIjFcdpfLphKULMOGM-1IhqRDTooRDDUTqx5n6SrEAwKe3NS0hnMVNxaNQ_qL-Ho4L2hEi4)
+
+    -   Democratic competition increases deforestation!
+
+## Acemoglu et. al. 2008
+
+-   The criticism: correlation of democracy and development does not mean causation
+
+-   Alternative: Countries embark on divergent development paths
+
+-   Empirical implication: Observed association is correlational
+
+## Which is the correct DAG?
+
+![](img/modernizationDAG.png)
+
+## Empirical Tests
+
+-   We cannot randomize development!
+
+-   We need to control for U
+
+- Is this possible?
+
+::: incremental
+
+- ... if we are willing to add some assumptions
+
+:::
+
+## Simpson Paradox
+
+![](img/simpson.webp)
+
+## Democracy and Development: Empirical example
+
+```{r rep, include=T, message=F, error=F, echo = T, tidy=TRUE}
+pacman::p_load(readxl, tidyverse,  here, estimatr)
+
+d <- read_xls(here("./slides/code/Income-and-Democracy-Data-AER-adjustment.xls"), sheet = 2) %>% 
+  filter(is.na(lrgdpch)==F, 
+         is.na(polity4)==F) %>% 
+  arrange(country, year) %>% 
+  group_by(country) %>% 
+  mutate(lag_dem = lag(polity4), 
+         lag_income = lag(lrgdpch)) %>% 
+  ungroup()
+# Polity2 Index
+summary(d$polity4)
+# Log real GDP per capita (PWT)
+summary(d$lrgdpch)
+```
+
+## Correlation
+
+```{r rep2, include=T, message=F, error=F, echo = T, tidy=T, centering = T}
+
+ggplot(d, aes(y = polity4, x = lag_income)) +
+  geom_point() +
+  geom_smooth(method = lm, se=F)
+
+```
+
+
+## By country
+
+```{r rep4, include=T, message=F, error=F, echo = F, centering = T, tidy=TRUE}
+cty <- c("Australia", "Nigeria", "Nicaragua", "China", "France", "Jordan")
+tempo <- d %>% ungroup() %>% dplyr::filter(country %in% cty)
+ggplot(tempo,
+       aes(y = polity4, x = lrgdpch, color = country)) +
+  geom_point() +
+  geom_smooth(method = lm, se=F) 
+```
+
+## Fixed effects
+
+Simple idea: control for "belonging to a group" using group-level Fixed Effects
+
+-   A way to control for *every* unobserved group characteristic that ***does not change***
+
+-  In practice: give an intercept to each group
+
+- Notice: only one slope!
+
+## Fixed effects
+
+Go from
+
+```{=tex}
+\begin{equation*}
+Dem_{it} = \alpha + \beta_1 Dem_{it} + \epsilon_{it}
+\end{equation*}
+```
+To
+
+```{=tex}
+\begin{align*}
+Dem_{it} = &\alpha + \beta_1 Dem_{it} + \mu_1 USA + \\
+\mu_2 France & + ... \mu_n Zimbabwe + \epsilon_{it}
+\end{align*}
+```
+
+
+
+## Empirical example
+
+```{r rep3, include=T, message=F, error=F, echo = T, tidy=TRUE}
+
+mod <- lm_robust(polity4~lag_dem + lag_income, clusters = country, data = d)
+modelsummary::modelsummary(mod, stars = T, coef_omit = "(Intercept)",  gof_omit = "AIC|BIC|Log.Lik|F|R2")
+```
+
+
+## Add Fixed Effects
+
+```{r rep5, include=T, message=F, error=F, echo = T, tidy=TRUE}
+require(estimatr)
+mod2 <- lm_robust(polity4~lag_dem + lag_income, fixed_effects = country + year, clusters = country, data = d)
+
+modelsummary::modelsummary(mod2, stars = T, coef_omit = "(Intercept)",  gof_omit = "AIC|BIC|Log.Lik|F|R2")
+
+```
+
+## Summing up
+
+-   Good theoretical reasons to think
+
+    -   Democracy is causally related to development
+
+-   Most extant work focuses on the micro, sub national dynamics
+
+-   But the broad theoretical argument is old!
+
+-   Fixed effects can help control for **time invariant** unobserved confounders
+
+-   If we think confounders might change in time (which they often do!) then FE cannot help

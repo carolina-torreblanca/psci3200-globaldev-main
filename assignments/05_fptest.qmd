@@ -1,0 +1,47 @@
+---
+title: "Final Project Expanded Research Design"
+
+author: "Jeremy Springman"
+
+institute: "University of Pennsylvania"
+date: 2024-05-02
+toc: true
+
+format: 
+  html:
+    self-contained: true
+
+editor: source
+
+---
+
+## Overview 
+
+Your third assignment for the final project is refining the research plan that will guide your investigation of your research question. This assignment is designed to get you thinking more clearly about the limitations of your research design and how you can strengthen your inferences. 
+
+This assignment will help you plan the remaining components of your final project analysis. This should look like an expanded, cleaned-up version of your previous assignment. 
+
+This project should be submitted via Slack by **11:59pm EST on Wednesday, April 2**. Your submission must include:
+
+- An html file presenting your written design and figures. It is not necessary to show printed code.
+- A `.qmd` file that you used to generate the html file
+- All code should be thoroughly commented to explain the choices you are making and the techniques you are using.
+
+## Requirements
+
+This assignment has four components. The components are presented below, along with their importance for the grading of the overall assignment.
+
+1. Introduction: Create an introduction section that discusses your research question. Incorporate previous feedback into your statement of the research question. Expand your discussion of previous work by other scholars and how your analysis will build-on earlier contributions. The best introductions will concisely explain the state of scholarly knowledge on the topic and the gap in this knowledge that your analysis aims to address. Your introduction should probably be around 400-600 words. (10%)
+2. Hypothesis: Incorporate previous feedback into the statement of your hypothesis or hypotheses. Expand your discussion of the logic behind the relationship that your hypothesis expects. (10%)
+3. Data: Describe the dataset(s) you are using to conduct your analysis. Discuss the specific variables you will use. Create a table or figures that communicate the mean and the range of your key variables. Add an informative caption to the `ggplot` figure that you created in the previous assignment. For guidance, see the captions in the academic papers we have been reading this semester. Interpret the plot; what does it tell us about your hypothesis? (30%) 
+4. Research Design: 
+    a. Specify the main regression model you will use to test your hypothesis. Include any covariates that you will use to control for potential confounders, and justify your decision to include these covariates. If you hypothesis states a causal relationship, discuss the threats to interpreting the coefficient on your primary independent variable as an estimate of a causal effect on the outcome. Describe potential unobserved confounders. (10%)
+    b. Identify one empirical extension that you will conduct that will add credibility to your inference. Think back to the examples I provided regarding the effect of moving to a new city for college on student civic engagement. For example, students that already lived in Addis Ababa are likely to be different from students that moved to Addis in many ways that may affect their engagement. One extension I proposed was to restrict my analysis to only compare students that moved from an urban area with students already living in Addis. If I were still to see a negative relationship between moving and engagement among these students, this would allow me to rule-out differences between students from urban vs rural homes as a confounder. Your empirical extension should allow you to rule out at least one potential confounder. (30%)
+5. Clean-up the document. If you haven't, incorporate a Bibliography using a `references.bib` file and [Quarto citations](https://quarto.org/docs/authoring/footnotes-and-citations.html). Remove the printed warnings and code from your document. Create clear sections for each stage of the analysis. (20%)
+
+
+
+
+
+<!-- Think about how answers to this research question can be the findings can be applied beyond the specific context of your study to broader populations. -->
+

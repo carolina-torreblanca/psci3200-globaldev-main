@@ -1,0 +1,20 @@
+---
+title: "Representation and Accountability"
+date: 2025-02-11
+---
+  
+## Required Readings
+  
+  - [Dunning et. al.(2019)](/files/2019_Science_PE_voter_information_campaigns.pdf)
+
+
+## Slides
+
+- [Slides](/slides/c2-account2.html)
+
+
+### Workshop
+
+- [Download the R Script for multiple regression basics](/workshops/multivariate_ols_workshop.R)
+
+

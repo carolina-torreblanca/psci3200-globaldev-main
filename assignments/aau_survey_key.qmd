@@ -1,0 +1,443 @@
+---
+title: "Answer Key: Data Assignment 1"
+subtitle: "Working with Panel Survey Data"
+author: "Jeremy Springman"
+
+institute: "University of Pennsylvania"
+date: last-modified
+toc: true
+
+format: 
+  html:
+    self-contained: true
+
+editor: source
+---
+
+## Part 1: Read-in data and prepare for analysis
+
+```{r }
+#| include: true
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(readr)
+library(ggdag)
+library(tidyverse)
+library(gt)
+library(modelsummary)
+
+# read-in data
+dat = read_csv(here::here("workshops/aau_survey/clean_endline_did.csv" )) %>%
+# dat = read_csv("https://raw.githubusercontent.com/jrspringman/psci3200-globaldev/main/workshops/aau_survey/clean_endline_did.csv" ) %>%
+    # clean home region variable
+  mutate(q8_baseline = ifelse(q8_baseline == "Southern Nations, Nationalities, and Peoples Region", "SNNPR", q8_baseline), 
+         q8_baseline = str_remove(q8_baseline, " Region"))
+# create color palette for plotting
+palette = MetBrewer::met.brewer(name = "Cross")
+
+```
+
+
+
+### Requirement 1 (10%)
+
+For all variables after `user_language`, please rename the column with a descriptive name that better conveys their meaning. Column names should never contain spaces and should be as easy to type as possible. Do this for both their baseline and endline values, making sure to indicate which columns are baseline measures and which are endline measures in the names you assign.
+
+```{r}
+#| echo: false
+#| warning: false
+
+## Create list of columns to be used for political efficacy index
+# baseline
+bcols = grep("^q17_.*_baseline$", names(dat), value = T)
+dat[, paste0(bcols, "_st")] = dat[, bcols]
+bcols = paste0(bcols,"_st")
+
+# endline
+ecols = grep("^q17_\\d$", names(dat), value = T)
+dat[, paste0(ecols, "_st")] = dat[, ecols]
+ecols = paste0(ecols,"_st")
+
+```
+
+## Part 2: Create Index Measures
+
+Next, you'll need to create index measures for different types of variables. We will use the two types of index methods described during the in-class workshop.
+
+### Requirement 2 (10%)
+
+First, in your own words, explain the concept of an additive index and an averaged z-score, including how they are calculated, when you should use them, and when you cannot use them. What are the benefits of each approach? 
+
+
+### Requirement 3 (20%)
+
+Next, you'll need to:
+
+1. Create an additive index for the baseline and endline measures of the "Future plans for a career in public sector or civil society" variables. This should correspond to seperate counts of the number of future plans that each individual has at baseline and endline.
+2. Create an averaged z-scores for the baseline and endline values of the "Future plans for a career in public sector or civil society" and "Feelings of political efficacy" variables.
+
+::: {.callout-note}
+Since many of these are ordered categorical values, you will need to convert them to numeric values that assign higher numbers to certain values and lower numbers to certain values. Make sure that your numeric assignments correspond with the direction of the ordered categorical values.
+:::
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+# Check class for every column in list
+
+lapply(dat[, c(bcols, ecols)], class)
+
+## Convert to numeric (they're already numeric, but for future reference)
+dat = dat %>% 
+  mutate(across(c(bcols, ecols), 
+                .fns = ~ as.numeric(.x)))
+
+# Create z-score function 
+z_score = function(x, y){
+  # calculate mean and sd of control group
+  c_mean = mean( as.numeric( unlist(x[, y])) , na.rm = T)
+  c_sd = sd( as.numeric( unlist(x[, y])) , na.rm = T)
+  # subtract control group mean; divide by control group SD
+  ( as.numeric(x[, y, drop = TRUE]) - c_mean) / c_sd
+}
+
+# calculate z-scores
+for (i in c(bcols, ecols)) {
+  dat[,i] = z_score(dat, i)
+}
+
+dat = dat %>% 
+  rowwise() %>% 
+  mutate( z_efficacy_base = mean(c_across(all_of(bcols)), na.rm = TRUE)) %>% 
+  mutate( z_efficacy_end = mean(c_across(all_of(ecols)), na.rm = TRUE)) %>%
+  ungroup()
+
+## Experimenting with different types of plots
+ggplot(dat, aes(x = z_efficacy_base)) + 
+  geom_histogram(binwidth = .1, # You may want to adjust the binwidth based on your data
+                 color = "black", fill = "blue") +
+  labs(x = "Political Efficacy Z-Score (Baseline)", y = "Count") +
+  theme_minimal()
+
+
+ggplot(dat, aes(x = z_efficacy_base)) + 
+  geom_histogram(binwidth = 1, # You may want to adjust the binwidth based on your data
+                 color = "black", fill = "blue") +
+  labs(x = "Political Efficacy Z-Score (Baseline)", y = "Count") +
+  theme_minimal()
+
+base_plot = ggplot(dat, aes(x = z_efficacy_base)) + 
+  geom_density(fill = "blue", alpha = 0.5) + # Adding a density plot
+  labs(x = "Political Efficacy Z-Score (Baseline)", y = "Density") + # Adjusting labels for a density plot
+  theme_minimal()
+
+ggplot(dat, aes(x = z_efficacy_base, y = z_efficacy_end)) + 
+  geom_point(alpha = 0.5, color = "blue") + # Adding a scatter plot
+  ggtitle("Political Efficacy Z-Score") +
+  geom_smooth(method = "lm", color = "red", se = FALSE) + # Adding a linear regression line
+  labs(x = "Baseline", y = "Endline") + # Adjusting labels for a scatter plot
+  theme_minimal()
+
+
+
+## Plotting together
+
+efficacy = dat %>% select(response_id, z_efficacy_end, z_efficacy_base) %>%
+  pivot_longer(cols = c(z_efficacy_end, z_efficacy_base),
+               names_to = "time",
+               values_to = "z_efficacy") %>%
+  mutate(time = case_when(time == "z_efficacy_end" ~ "Baseline", 
+                          TRUE ~ "Endline"))
+
+ggplot(efficacy, aes(x = z_efficacy)) + 
+  geom_density(fill = "blue", alpha = 0.5) + # Adding a density plot
+  facet_wrap(~time) +
+  labs(x = "Political Efficacy Z-Score", y = "Density") + # Adjusting labels for a density plot
+  theme_minimal()
+
+ggplot(efficacy, aes(x = z_efficacy, color = as.factor(time))) + 
+  geom_density( alpha = 0.5) + # Adding a density plot
+  labs(x = "Political Efficacy Z-Score", y = "Density", color = "Period") + # Adjusting labels for a density plot
+  theme_minimal()
+
+ggplot(efficacy, aes(x = z_efficacy, y = fct_rev(factor(time)), fill = fct_rev(factor(time))) ) + 
+  ggridges::geom_density_ridges() +
+  scale_fill_viridis_d() +
+  labs(x = "Political Efficacy Z-Score", y = NULL, fill = "Period") +
+  ggridges::theme_ridges()
+
+
+ggplot(efficacy, aes(y = z_efficacy, x = time )) + 
+  geom_boxplot() +
+  labs(y = "Political Efficacy Z-Score", x = NULL) +
+  theme_minimal()
+
+
+stats_summary <- efficacy %>%
+  group_by(time) %>%
+  summarise(
+    Mean = mean(z_efficacy, na.rm = T),
+    Median = median(z_efficacy, na.rm = T),
+    Range = paste0(round(min(z_efficacy, na.rm = T), digits = 2), " - ", round(max(z_efficacy, na.rm = T), digits = 2)),
+    SD = sd(z_efficacy, na.rm = T)
+  ) %>%
+  mutate(Annotation = paste("Mean:", round(Mean, digits = 2), "\nMedian:", round(Median, digits = 2),
+                            "\nRange:", Range, "\nSD:", round(SD, digits = 2)))
+
+
+ggplot(efficacy, aes(y = z_efficacy, x = time)) + 
+  geom_boxplot() +
+  labs(y = "Political Efficacy Z-Score", x = NULL) +
+  theme_minimal() +
+  geom_text(data = stats_summary, aes(x = time, y = Mean, label = Annotation) )
+
+
+```
+
+
+
+```{r}
+#| echo: false
+#| warning: false
+
+
+## Find future plans index
+# baseline
+bcols = grep("^q26_.*_baseline$|^q27_(1|3)_baseline$", names(dat), value = T)
+dat[, paste0(bcols, "_st")] = dat[, bcols]
+bcols = paste0(bcols,"_st")
+
+# endline
+ecols = grep("^q26_(civ|politics|public)$|^q27_(1|3)$", names(dat), value = T)
+dat[, paste0(ecols, "_st")] = dat[, ecols]
+ecols = paste0(ecols,"_st")
+
+
+dat = dat %>% 
+  mutate(across(c(bcols, ecols), 
+                .fns = ~ as.numeric(.x)))
+
+# Create z-score function from Kling, Liberman, and Katz (2007)
+z_score = function(x, y){
+  # calculate mean and sd of control group
+  c_mean = mean( as.numeric( unlist(x[, y])) , na.rm = T)
+  c_sd = sd( as.numeric( unlist(x[, y])) , na.rm = T)
+  # subtract control group mean; divide by control group SD
+  ( as.numeric(x[, y, drop = TRUE]) - c_mean) / c_sd
+}
+
+# calculate z-scores
+for (i in c(bcols, ecols)) {
+  dat[,i] = z_score(dat, i)
+}
+
+dat = dat %>% 
+  rowwise() %>% 
+  mutate( z_plans_base = mean(c_across(all_of(bcols)), na.rm = TRUE)) %>% 
+  mutate( z_plans_end = mean(c_across(all_of(ecols)), na.rm = TRUE)) %>%
+  ungroup()
+
+
+# standardized
+participate = dat %>% 
+  select(`Z-Score Index` = z_plans_base,
+         `Work in Civil Society` = q26_civ_baseline, 
+         `Work in Politics` = q26_politics_baseline, 
+         `Work in Govt` = q26_public_baseline, 
+         `Run for Office` = q27_1_baseline, 
+         `Start NGO` = q27_3_baseline) %>% 
+  drop_na() %>% 
+  pivot_longer(everything()) 
+
+
+ggplot(participate , aes(x = value )) + 
+  geom_histogram(aes(y = after_stat(count / sum(count))), 
+                 binwidth=.5, fill = palette[9]) +
+  facet_wrap(vars(name),  ncol = 2) + 
+  scale_y_continuous(labels = scales::percent) +
+  labs(y = "Percent of respondents", x = NULL, 
+       title = "Future plans")
+
+participate = dat %>% 
+  select(`Z-Score Index` = z_plans_base,
+         `Work in Civil Society` = q26_civ_baseline_st, 
+         `Work in Politics` = q26_politics_baseline_st, 
+         `Work in Govt` = q26_public_baseline_st, 
+         `Run for Office` = q27_1_baseline_st, 
+         `Start NGO` = q27_3_baseline_st) %>% 
+  drop_na() %>% 
+  pivot_longer(everything()) 
+
+
+ggplot(participate , aes(x = value )) + 
+  geom_histogram(aes(y = after_stat(count / sum(count))), 
+                 binwidth=.5, fill = palette[9]) +
+  facet_wrap(vars(name),  ncol = 2) + 
+  scale_y_continuous(labels = scales::percent) +
+  labs(y = "Percent of respondents", x = NULL, 
+       title = "Future plans")
+
+
+ggplot(data = dat) +
+  geom_density(aes(x = z_plans_base, color = "Baseline"), alpha = 0.5) +
+  geom_density(aes(x = z_plans_end, color = "Endline"), alpha = 0.5) +
+  labs(title = "Density of future plans for civil society and public sector at endline and baseline",
+       x = "Z-Score",
+       y = "Density",
+       fill = "Time") +
+  theme_minimal() +
+  scale_fill_manual(values = c("Baseline" = "blue", "Endline" = "red"))
+
+```
+
+
+
+
+## Part 3: Estimating models
+
+Now, let's estimate some models to assess the relationship between the two index measures. Before we get started, subset your data to include only `response_id`, `q3_baseline` (which you should have renamed), and the baseline and endline measures for each z-score. You should end up with 6 variables in your dataframe. 
+
+
+**Requirement 5** (15%)
+
+Using baseline values only, estimate a model regressing your "Future plans" index on your "Feelings of political efficacy" index. Your model should take the following form: 
+
+$$
+Future\_plans_i = \alpha + \beta_1 Efficacy_{i1} + \epsilon_i
+$$
+Use the `modelsummary()`package to visualize the results as a table. In your own words, interpret the meaning of $\alpha$ and $\beta_1$. Substantively, how should we interpret the relationship described in the data? What *does* this tell us about the world? What assumptions would we need in order to interpret the relationship as causal?
+
+
+
+
+**Requirement 6** (15%)
+
+For your baseline and endline values of the "Feelings of political efficacy" index, convert this index to a binary indicator taking a value of 1 of the individual has a value greater than or equal to the sample mean and a value of 0 if the individual has a value below the sample mean. 
+
+Using baseline values only, estimate the same model, but interact your binary "Feelings of political efficacy" indicator with the gender indicator. Your model should take the following form: 
+
+$$
+Future\_plans_i = \alpha + \beta_1 Efficacy_{i} + \beta_2 Gender_{i} + \beta_3 (Efficacy_{i}*Gender_{i}) + \epsilon_i
+$$
+Use the `modelsummary()`package to visualize the results as a table. In your own words, interpret the meaning of $\alpha$, $\beta_1$, $\beta_2$, and $\beta_3$. Substantively, how should we interpret the interactive relationship described in the data?
+
+```{r}
+#| echo: false
+#| warning: false
+
+dat = dat %>%
+  mutate(z_efficacy_base_bin = case_when(is.na(z_efficacy_base) ~ NA_real_, 
+                                         z_efficacy_base >= mean(z_efficacy_base, na.rm = T) ~ 1,
+                                         TRUE ~ 0),
+         z_efficacy_end_bin = case_when(is.na(z_efficacy_end) ~ NA_real_, 
+                                        z_efficacy_end >= mean(z_efficacy_end, na.rm = T) ~ 1,
+                                         TRUE ~ 0))
+
+models <- list()
+models[['Bivariate 1']] = lm(z_plans_base ~ z_efficacy_base, dat)
+models[['Bivariate 2']] = lm(z_plans_base ~ z_efficacy_base_bin, dat)
+models[['Interaction']] = lm(z_plans_base ~ z_efficacy_base_bin*q3_baseline, dat)
+
+modelsummary(
+  models,
+  estimate  = "{estimate}{stars} ({std.error})",
+             statistic = NULL,
+  gof_omit = 'IC|RMSE|Log|F|R2$|Std.')
+
+
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| 
+# Predict values based on the model
+predictions <- predict(lm(z_plans_base ~ z_efficacy_base_bin*q3_baseline, dat), newdata = dat)
+
+# Create a dataframe with predictions
+prediction_df <- data.frame(efficacy = dat$z_efficacy_base_bin, gender = dat$q3_baseline, prediction = predictions)
+
+# Plot the interaction
+ggplot(prediction_df, aes(x = efficacy, y = prediction, color = factor(gender))) +
+  geom_line() +
+  geom_point() +
+  scale_x_continuous(breaks = c(0, 1), labels=c("Low", "High")) +
+  labs(x = "Year", y = "Predicted z_participation_base", color = "Moved") +
+  ggtitle("Interaction Plot of z_participation_base by Year and Moved")
+
+```
+
+Convert the data from 'wide' to 'long' format, so that each respondent (`response_id`) has two rows of data; one row is baseline and one row is endline. Create a `Post` indicator that takes a value of 1 in rows that contain endline measures and a value of 0 in rows that contain baseline measures.
+
+Using this new 'long' format, estimate the same model, but interact your binary "Feelings of political efficacy" indicator with the Post indicator. Your model should take the following form: 
+
+$$
+Future\_plans_{it} = \alpha + \beta_1 Efficacy_{it} + \beta_2 Post_{it} + \beta_3 (Efficacy_{it}*Post_{it}) + \epsilon_{it}
+$$
+
+In your own words, interpret the meaning of $\alpha$, $\beta_1$, $\beta_2$, and $\beta_3$.
+
+
+```{r}
+#| echo: false
+#| warning: false
+
+dat = dat %>%
+  mutate(efficacy_change = case_when(
+    z_efficacy_base_bin != z_efficacy_end_bin ~ "Yes",
+    z_efficacy_base_bin == z_efficacy_end_bin ~ "No"
+  ))
+
+ggplot(dat %>% filter(!is.na(efficacy_change) ), 
+       aes(x = z_efficacy_base, y = z_efficacy_end, color = factor(efficacy_change))) +
+  geom_point(alpha = 0.5) + # Adding a scatter plot
+  ggtitle("Political Efficacy Z-Score") +
+  geom_smooth(method = "lm", color = "black", se = FALSE) + # Adding a linear regression line
+  labs(x = "Baseline", y = "Endline", color = "Efficacy\nChange") + # Adjusting labels for a scatter plot
+  theme_minimal() +
+  theme(legend.position = c(0.9, 0.1))
+
+## Continuous measures
+plans = dat %>% select(response_id, z_plans_base, z_plans_end, q3_baseline) %>%
+  pivot_longer(cols = c(z_plans_base, z_plans_end),
+               names_to = "time",
+               values_to = "z_plans") %>%
+  mutate(time = case_when(time == "z_plans_end" ~ 1, 
+                          TRUE ~ 0))
+
+efficacy = dat %>% select(response_id, z_efficacy_end, z_efficacy_base, q3_baseline) %>%
+  pivot_longer(cols = c(z_efficacy_end, z_efficacy_base),
+               names_to = "time",
+               values_to = "z_efficacy") %>%
+  mutate(time = case_when(time == "z_efficacy_end" ~ 1, 
+                          TRUE ~ 0))
+
+regd = merge(plans, efficacy)
+
+## Binary measures
+efficacy = dat %>% select(response_id, z_efficacy_end_bin, z_efficacy_base_bin, q3_baseline) %>%
+  pivot_longer(cols = c(z_efficacy_end_bin, z_efficacy_base_bin),
+               names_to = "time",
+               values_to = "z_efficacy_bin") %>%
+  mutate(time = case_when(time == "z_efficacy_end_bin" ~ 1, 
+                          TRUE ~ 0))
+
+regd = merge(regd, efficacy)
+
+
+models <- list()
+models[['Fixed Effects 1']] = lm(z_plans ~ z_efficacy + factor(response_id), regd)
+models[['Fixed Effects 2']] = lm(z_plans ~ z_efficacy_bin + factor(response_id), regd)
+
+modelsummary(
+  models,
+  coef_omit = "factor\\(.*",
+  estimate  = "{estimate}{stars} ({std.error})",
+             statistic = NULL,
+  gof_omit = 'IC|RMSE|Log|F|R2$|Std.')
+
+```

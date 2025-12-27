@@ -1,0 +1,181 @@
+---
+title: "Reflections on Development Research"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+    code-line-numbers: false
+editor: source
+
+highlight-style: github
+
+bibliography: img/references.bib
+---
+
+# Logistics
+
+## Assignments and Upcoming
+
+- Today
+  + Quick discussion
+- May 10 
+  + Final Project
+
+# Setting up the discussion
+
+## Future Plans
+
+**Before January, how many of you planned to pursue careers in international development?**
+
+- Why or why not?
+- In what capacity?
+
+
+## Takeaways
+
+:::{.incremental}
+- We spent a lot of time learning about the tools that academics use to understand the problems faced by developing countries
+- This isn't because I think that academic research does a good job of providing answers about how to advance development
+- Rather, I think these tools can be useful to those who are well positioned/incentivized to do that
+- This also applies to the private sector
+
+:::
+
+
+# Academic vs Policy Research
+
+## Academic research and policy research are two different things
+
+> I used to think there was such a thing as development economics. There are still richer and poorer countries, of course, but is there a “development economics,” a special type of economics for poor countries? I don’t think so.
+
+\- Alex Tabarrok
+
+
+## Academic research and policy research are two different things
+
+- What is the credibility revolution?
+
+:::{.fragment}
+**Two misunderstandings:**
+:::
+
+:::{.fragment}
+1. Policymakers have erroneously come to view policy research as indistinguishable from academic research
+2. Policymaking and implementation have largely been reduced to technical programmatic endeavors, and disembedded from contextual economics and politics
+:::
+
+
+## Why is academic research not enough?
+
+> The credibility revolution unambiguously improved research in the social sciences. However... a yawning gap has developed between rigorous academic social scientific research and policymaking...
+
+> It goes without saying that policy research can benefit from academic research and... should deploy cutting edge tools and methods used by academics. However, the two are completely different endeavors with different incentive structures. 
+
+
+## Standardized approaches and band-aids
+
+>  Standardized global approaches have made policy recommendations far removed from local economies’ ability to support them; not to mention the entrenchment of a paradigm that views development work as ... implementing anti-poverty programs instead of making policies to unleash commercial revolutions and broad-based economic transformation.
+
+
+## Feigned ignorance and generalization
+
+:::{.fragment}
+> [The knowledge production paradigm] conceptualizes the problem of under-development to be principally driven by ignorance (if only we knew whether it’s good to feed kids!) and poor policy implementation (largely due to “lack of political will”). 
+
+:::
+
+:::{.fragment}
+> Never mind interest groups and distributive politics. Never mind trying to figure out how to squeeze good learning outcomes within a country’s budget envelope. Never mind figuring out how countries should manage their macro policy. 
+
+:::
+
+
+## Technical solutions for political problems
+
+> Policy directions in major sectors like agriculture, education, and healthcare have since become dominated by global expertise and rendered technical problems that are, for all practical purposes, been divorced from domestic political policymaking processes.
+
+**Political policymaking processes**
+
+:::{.fragment}
+- Distributive politics, budget constraints, macro-policy and growth
+:::
+
+
+## Academic research isn't *how to*
+
+> The ultimate goal should be to cultivate country-based cadres of policymakers who understand the economics and politics of policymaking (i.e., appreciate the contextual variables highlighted above) while also being conversant with the good research being produced by academics.
+
+> Importantly, policy researchers should understand that the fundamental challenge facing low-income countries engaged in catch-up development is rarely what to do, but rather how to do.
+
+
+## Academic research isn't *how to*
+
+:::{.fragment}
+> While there are exceptions to the rule, a good heuristic for knowing whether policymakers in low-income countries lack ambition is the frequency with which they mention the MDGs/SDGs.
+
+> [Policymakers] should understand that what they hope to achieve has been done before; and that all they have to do is learn the right lessons from those who came before them.
+
+:::
+
+## Why is academic research not enough?
+
+:::{.incremental}
+1. Prioritize *how to do*
+2. Contextualized political economy (nth-best recommendations that are robust to governments’ fiscal and administrative-bureaucratic capacities as well as the realities of local distributive politics)
+3. Learn by doing (implementation is the hardest part)
+4. Anchored to implementation (contextual knowledge to influence formulation)
+5. Separate academic research
+:::
+
+## Policy Introversion
+
+1. Matching policies with domestic capacity (Why think about spending when funding is external)
+2. Small firms (property rights)
+3. Politicking over policy (educate, interest groups, legitimacy)
+4. Leverage distributive politics (F-35)
+
+# End of the aid paradigm
+
+## A New Internatational Development
+
+> Nobody should have any illusions of rebuilding what existed before — it achieved some good outcomes (notably in health and humanitarian relief), but was ultimately not good enough to help low-income countries grow and achieve structural economic change.
+
+> Furthermore, a good share of ongoing aid cuts will be permanent, with donor countries intensifying their use of whatever aid is left (both bilateral & multilateral) to more nakedly advance their narrow foreign policy goals.
+
+## A New Internatational Development
+
+> The chasm between the policy needs of low-income countries and the projects/policies that get foisted onto them will likely grow wider
+
+> It follows that anyone who builds their professional careers in service to the old model of aid dependency will struggle as aid becomes ever more nakedly associated with undue foreign interference, the coddling of unambitious leaders, and the facilitation of economic pillaging in low-income countries.
+
+## Career Advice for the New Paradigm
+
+\
+
+\
+
+**Were any of the 9 points interesting or helpful?** 
+
+# Conclusion
+
+## Future Plans
+
+\
+
+\
+
+**Given *everything*, has anyone updated their plans?**
+
+

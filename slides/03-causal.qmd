@@ -1,0 +1,672 @@
+---
+title: "Causal Inference 1"
+subtitle: "Digging Deeper"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+      - title-slide.html
+    gfm:
+    mermaid-format: png
+editor: source
+---
+
+# Logistics
+
+## Assignments
+
+- If you didn't post your git handle on Slack, please do
+- Next week: 
+  + Readings
+  + Install Quarto and create an empty pdf
+  + I'll put some helpful resources on next week's page
+
+## Agenda
+
+1. How to follow-along with the slides
+2. Estimating Causal Effects with Randomized Experiments 
+3. RCTs in International Development
+4. Economists as Plumbers
+<!-- 4. Final Project Details (maybe) -->
+
+##  {#slide4-id background-iframe="https://jrspringman.github.io/psci3200-globaldev/" background-interactive="true" data-menu-title="Finding Slides"}
+
+# Estimating Causal Effects with Randomized Experiments 
+
+## How do we think about causality?
+
+::: {.fragment}
+
+**Potential Outcomes**
+
+$$
+Y_i = 
+\begin{cases} 
+Y_i(1) & \text{if } D_i = 1 \text{ (treatment group)} \\
+Y_i(0) & \text{if } D_i = 0 \text{ (control group)}
+\end{cases}
+$$
+
+:::
+
+::: {.fragment}
+
+**Treatment Effect for individual $i$**
+
+$$
+TE_i = Y_i(1) - Y_i(0)
+$$
+
+:::
+
+## What's the problem?
+
+\
+
+::: {.fragment}
+**Fundamental Problem of Causal Inference**
+
+- We only observe any given unit in one treatment status at any one time so we can never directly observe the causal effect of a treatment on an individual unit
+
+:::
+
+## What's the solution?
+
+::: {.fragment}
+
+**Counterfactuals**
+
+- Individuals in the control group serve as a stand-in for the counter-factual of the treatment group
+
+$$
+\widehat{ATE} = \overline{Y}_{treatment\_group} - \overline{Y}_{control\_group}
+$$
+
+:::
+
+## What's complicated about this?
+
+::: {.incremental}
+- "Only valid when when the treatment and control group are comparable with respect to *all the variables that might affect the outcome* other than the treatment variable itself."
+- "We must *find or create a situation in which the treated observations and the untreated observations are similar* with respect to all the variables that might affect the outcome"
+- "By randomly assigning treatment, we ensure that treatment and control groups are, *on average*, identical to each other in all *observed and unobserved* pre-treatment characteristics"
+:::
+
+
+## Can't we just observe and compare?
+
+::: {.r-stack}
+![](img/nyt-dag1.png)
+
+![](img/nyt-dag2.png){.fragment}
+:::
+
+## Can't we just observe and compare?
+
+![](img/largenstweet.png)
+
+
+## Can't we just observe and compare?
+
+\
+
+**Example: What is the effect of class size on test scores**
+
+```{r edu-ex-simple, echo=FALSE, fig.width=9, fig.height=4.5, out.width="100%"}
+library(ggplot2)
+library(ggdag)
+
+edu_ex_coords <- list(x = c(Small = 2, Score = 4, Year = 2, Wealth = 4, 
+                              Location = 3, Attention = 3, Effort = 1, U1 = 3),
+                        y = c(Small = 2, Score = 2, Year = 3, Wealth = 3, 
+                              Location = 3, Attention = 1, Effort = 2, U1 = 4))
+
+dagify(
+  Score ~ Small,
+  exposure = "Small",
+  outcome = "Score",
+  coords = edu_ex_coords) |> 
+  tidy_dagitty() |> 
+  node_status() |> 
+  ggplot(aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_edges(start_cap = ggraph::circle(3, "lines"),
+                 end_cap = ggraph::circle(3, "lines"),
+                 edge_width = 1.5, 
+                 arrow_directed = grid::arrow(length = grid::unit(0.75, "lines"), type = "closed")) +
+  geom_dag_point(aes(color = status), size = 30) +
+  geom_dag_text(color = "black", size = 7) +
+  scale_color_manual(values = c("#FF4136", "#0074D9"),
+                     na.value = "#7FDBFF") +
+  guides(color = "none") +
+  theme_dag()
+```
+
+## Can't we just observe and compare?
+
+```{r edu-ex-simpleb, echo=FALSE, fig.width=9, fig.height=4.5, out.width="100%"}
+
+dagify(
+  Score ~ Small  + U1,
+  Small ~ U1,
+  exposure = "Small",
+  outcome = "Score",
+  latent = "U1",
+  labels = c("Small" = "Small Class", "Score" = "Test Scores",
+             "Year" = "Year", "Wealth" = "Parents' Wealth",
+             "Location" = "Location", "Attention" = "Teacher Attentioon",
+             "U1" = "Unobserved stuff"),
+  coords = edu_ex_coords) |> 
+  tidy_dagitty() |> 
+  node_status() |> 
+  ggplot(aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_edges() +
+  geom_dag_point(aes(color = status), size = 14) +
+  geom_dag_text(color = "black", size = 5) +
+  scale_color_manual(values = c("#FF4136", "grey60", "#0074D9"),
+                     na.value = "#7FDBFF") +
+  guides(color = "none") +
+  theme_dag()
+
+```
+
+## Can't we just observe and compare?
+
+```{r edu-ex-simplec, echo=FALSE, fig.width=9, fig.height=4.5, out.width="100%"}
+
+dagify(
+  Score ~ U1,
+  Small ~ U1,
+  exposure = "Small",
+  outcome = "Score",
+  latent = "U1",
+  labels = c("Small" = "Small Class", "Score" = "Test Scores",
+             "Year" = "Year", "Wealth" = "Parents' Wealth",
+             "Location" = "Location", "Attention" = "Teacher Attentioon",
+             "U1" = "Unobserved stuff"),
+  coords = edu_ex_coords) |> 
+  tidy_dagitty() |> 
+  node_status() |> 
+  ggplot(aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_edges() +
+  geom_dag_point(aes(color = status), size = 14) +
+  geom_dag_text(color = "black", size = 5) +
+  scale_color_manual(values = c("#FF4136", "grey60", "#0074D9"),
+                     na.value = "#7FDBFF") +
+  guides(color = "none") +
+  theme_dag()
+
+```
+
+## Can't we just observe and compare?
+
+```{r edu-ex-simpled, echo=FALSE, fig.width=9, fig.height=4.5, out.width="100%"}
+
+dagify(
+  Score ~ Small  + U1,
+  Small ~ U1,
+  exposure = "Small",
+  outcome = "Score",
+  #latent = "U1",
+  labels = c("Small" = "Small Class", "Score" = "Test Scores",
+             "Year" = "Year", "Wealth" = "Parents' Wealth",
+             "Location" = "Location", "Attention" = "Teacher Attentioon",
+             "U1" = "Unobserved stuff"),
+  coords = edu_ex_coords) |> 
+  tidy_dagitty() |> 
+  node_status() |> 
+  ggplot(aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_edges() +
+  geom_dag_point(aes(color = status), size = 14) +
+  geom_dag_text(color = "black", size = 5) +
+  scale_color_manual(values = c("#FF4136", "#0074D9"),
+                     na.value = "#7FDBFF") +
+  guides(color = "none") +
+  theme_dag()
+
+```
+
+## Can't we just observe and compare?
+
+```{r edu-ex-full, echo=FALSE, fig.width=9, fig.height=4.5, out.width="100%"}
+
+dagify(
+  #Score ~ Small ,
+  U1 ~ Small,
+  U1 ~ Score,
+  exposure = "Small",
+  outcome = "Score",
+  #latent = "U1",
+  labels = c("Small" = "Small Class", "Score" = "Test Scores",
+             "Year" = "Year", "Wealth" = "Parents' Wealth",
+             "Location" = "Location", "Attention" = "Teacher Attentioon",
+             "U1" = "Unobserved stuff"),
+  coords = edu_ex_coords) |> 
+  tidy_dagitty() |> 
+  node_status() |> 
+  ggplot(aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_edges() +
+  geom_dag_point(aes(color = status), size = 14) +
+  geom_dag_text(color = "black", size = 5) +
+  scale_color_manual(values = c("#FF4136", "#0074D9"),
+                     na.value = "#7FDBFF") +
+  guides(color = "none") +
+  theme_dag()
+
+```
+
+
+## Can't we just observe and compare?
+
+```{r edu-ex-fullb, echo=FALSE, fig.width=9, fig.height=4.5, out.width="100%"}
+
+dagify(
+  Score ~ Small + Year + Wealth + Location + Attention,
+  Small ~ Effort + Location + Wealth + Year,
+  Attention ~ Small,
+  Wealth ~ U1,
+  Location ~ U1,
+  exposure = "Small",
+  outcome = "Score",
+  latent = "U1",
+  labels = c("Small" = "Small Class", "Score" = "Test Scores",
+             "Year" = "Year", "Wealth" = "Parents' Wealth",
+             "Location" = "Location", "Attention" = "Teacher Attentioon",
+             "U1" = "Unobserved stuff"),
+  coords = edu_ex_coords) |> 
+  tidy_dagitty() |> 
+  node_status() |> 
+  ggplot(aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_edges() +
+  geom_dag_point(aes(color = status), size = 14) +
+  geom_dag_text(color = "black", size = 5) +
+  scale_color_manual(values = c("#FF4136", "grey60", "#0074D9"),
+                     na.value = "#7FDBFF") +
+  guides(color = "none") +
+  theme_dag()
+
+```
+
+## Can't we just observe and compare?
+
+```{r edu-ex-fullc, echo=FALSE, fig.width=9, fig.height=4.5, out.width="100%"}
+
+dagify(
+  Score ~ Small + Year + Wealth + Location + Attention + U1,
+  Small ~ Effort + Location + Wealth + Year+ U1,
+  Attention ~ Small,
+  exposure = "Small",
+  outcome = "Score",
+  latent = "U1",
+  labels = c("Small" = "Small Class", "Score" = "Test Scores",
+             "Year" = "Year", "Wealth" = "Parents' Wealth",
+             "Location" = "Location", "Attention" = "Teacher Attentioon",
+             "U1" = "Unobserved stuff"),
+  coords = edu_ex_coords) |> 
+  tidy_dagitty() |> 
+  node_status() |> 
+  ggplot(aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_edges() +
+  geom_dag_point(aes(color = status), size = 14) +
+  geom_dag_text(color = "black", size = 5) +
+  scale_color_manual(values = c("#FF4136", "grey60", "#0074D9"),
+                     na.value = "#7FDBFF") +
+  guides(color = "none") +
+  theme_dag()
+
+```
+
+## Can't we just observe and compare?
+
+```{r edu-ex-collider, echo=FALSE, fig.width=9, fig.height=4.5, out.width="100%"}
+
+dagify(
+  Score ~ Small + Year + Wealth + Location ,
+  Small ~ Effort + Location + Wealth + Year,
+  Attention ~ Small + Score,
+  Wealth ~ U1,
+  Location ~ U1,
+  exposure = "Small",
+  outcome = "Score",
+  latent = "U1",
+  labels = c("Small" = "Small Class", "Score" = "Test Scores",
+             "Year" = "Year", "Wealth" = "Parents' Wealth",
+             "Location" = "Location", "Attention" = "Teacher Attentioon",
+             "U1" = "Unobserved stuff"),
+  coords = edu_ex_coords) |> 
+  tidy_dagitty() |> 
+  node_status() |> 
+  ggplot(aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_edges() +
+  geom_dag_point(aes(color = status), size = 14) +
+  geom_dag_text(color = "black", size = 5) +
+  scale_color_manual(values = c("#FF4136", "grey60", "#0074D9"),
+                     na.value = "#7FDBFF") +
+  guides(color = "none") +
+  theme_dag()
+
+```
+
+
+
+
+
+## Why can't we just observe how units change over time?
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+library(ggplot2)
+
+Year = c(0,1,2,3)
+Outcome = c(NA, 1.3, 1.7,NA)
+Treatment = c("Control", "Control","Control","Control")
+
+dat = data.frame(Year, Outcome, Treatment)
+
+ggplot(data = dat, aes(x = Year, y = Outcome, group = Treatment, color = Treatment)) +
+  geom_line(aes(linetype=Treatment),size=2) +
+  geom_point(size = 6) +
+  scale_linetype_manual(values=c("solid")) +
+  xlim(0,3) + 
+  scale_y_continuous(limits = c(1,1.85), breaks = seq(1, 1.85, by = .1)) + 
+  scale_color_manual(values = c("blue") ) +
+  theme(legend.position = "none", text = element_text(size=20)) 
+ 
+```
+
+## Why can't we just observe how units change over time?
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+Year = c(0,1,2,3)
+Outcome = c(0.9, 1.3, 1.7, 2.1)
+Treatment = c("Control", "Control","Control","Control")
+
+dat = data.frame(Year, Outcome, Treatment)
+
+ggplot(data = dat, aes(x = Year, y = Outcome, group = Treatment, color = Treatment)) +
+  geom_line(aes(linetype=Treatment),size=2) +
+  geom_point(size = 6) +
+  xlim(0,3) + 
+  scale_y_continuous(breaks = seq(1, 1.85, by = .1)) + 
+  scale_linetype_manual(values=c("solid", "solid")) +
+  scale_color_manual(values = c("blue") ) +
+  coord_cartesian(ylim = c(1, 1.85), clip = "on") +
+  theme(legend.position = "none", text = element_text(size=20))
+
+```
+
+## Why can't we just compare units without randomization?
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+Year = c(0,1,2,3)
+Outcome = c(NA, 1.2, 1.4, NA, 
+            NA, 1.3, 1.7, NA)
+Treatment = c("Control", "Control","Control","Control", 
+              "Treatment", "Treatment", "Treatment", "Treatment")
+
+dat = data.frame(Year, Outcome, Treatment)
+
+ggplot(data = dat, aes(x = Year, y = Outcome, group = Treatment, color = Treatment)) +
+  geom_line(aes(linetype=Treatment),size=2) +
+  geom_point(size = 6) +
+  xlim(0,3) + 
+  scale_y_continuous(limits = c(1,1.85), breaks = seq(1, 1.85, by = .1)) + 
+  scale_linetype_manual(values=c("solid", "solid")) +
+  scale_color_manual(values = c("red", "blue") ) +
+  theme(legend.position = c(0.8, 0.2), text = element_text(size=20))
+
+```
+
+## Why can't we just compare units without randomization?
+
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+Year = c(0,1,2,3)
+Outcome = c(1, 1.2, 1.4, 1.6, 
+            0.9, 1.3, 1.7, 2.1)
+Treatment = c("Control", "Control","Control","Control", 
+              "Treatment", "Treatment", "Treatment", "Treatment")
+
+dat = data.frame(Year, Outcome, Treatment)
+
+
+ggplot(data = dat, aes(x = Year, y = Outcome, group = Treatment, color = Treatment)) +
+  geom_line(aes(linetype=Treatment),size=2) +
+  geom_point(size = 6) +
+  xlim(0,3) + 
+  scale_y_continuous(breaks = seq(1, 1.85, by = .1)) + 
+  scale_linetype_manual(values=c("solid", "solid")) +
+  scale_color_manual(values = c("red", "blue") ) +
+  coord_cartesian(ylim = c(1, 1.85), clip = "on") +
+  theme(legend.position = c(0.8, 0.2), text = element_text(size=20))
+
+```
+
+## Why can't we just compare units without randomization?
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+Year = c(0,1,2,3)
+Outcome = c(NA, 1.2, 1.4, NA, 
+            NA, 1.3, 1.7, NA, 
+            NA, 1.3, 1.5, NA)
+Treatment = c("Control", "Control","Control","Control", 
+              "Treatment", "Treatment", "Treatment", "Treatment",
+              "Comparison","Comparison","Comparison","Comparison")
+
+dat = data.frame(Year, Outcome, Treatment)
+
+
+ggplot(data = dat, aes(x = Year, y = Outcome, group = Treatment, color = Treatment)) +
+  geom_line(aes(linetype=Treatment),size=2) +
+  geom_point(size = 6) +
+  xlim(0,3) + 
+  scale_y_continuous(limits = c(1,1.85), breaks = seq(1, 1.85, by = .1)) + 
+  scale_linetype_manual(values=c("dotted", "solid", "solid")) +
+  scale_color_manual(values = c("black", "red", "blue") ) +
+  theme(legend.position = c(0.8, 0.2), text = element_text(size=20))
+
+```
+
+##  {#slide11-id background-iframe="https://ellaudet.iq.harvard.edu/random_treatment" background-interactive="true" data-menu-title="Visualization"}
+
+## Dealing with Small Sample Sizes
+
+- Re-randomization
+- Blocking
+- Non-bipartite matching
+
+::: {.fragment}
+- These fancy methods only ensure balance on *observed* characteristics
+:::
+
+## Counterpoint
+
+![](img/parachute_rct.png)
+
+
+# RCTs in International Development
+
+## Impact Evaluations vs M&E 
+
+**Traditional M&E focuses on implementation and outputs**
+
+- Did the intervention deliver the outputs that were planned?
+- Ex. Number of NGOs that attended a training
+
+**Impact Evaluations focuses on theory of change and outcomes**
+
+- Did the intervention lead to measurable changes in the desired outcomes?
+- Ex. Did the training lead NGOs to pursue new sources of funding?
+
+## Impact Evaluations vs M&E 
+
+\
+
+- To answer the question: Did the training lead NGOs to pursue new sources of funding?
+- We need to estimate the counterfactual: What sources of funding would have been pursued by NGOs without the intervention?
+
+## Impact Evaluations vs M&E 
+
+**Randomization Reduces Risk of Systematic Bias**
+
+- If we don’t have a comparison group, we don’t know how NGOs would have changed without the intervention
+- If we purposely select which NGOs receive the intervention, they may be systematically different and improving more quickly before the intervention
+- If we randomly select NGOs to receive the intervention, it is statistically most likely that they would have been similar without the intervention
+
+## IEs in International Development
+
+![](img/rct_design.png)
+
+# Economists as Plumbers
+
+## History of Experiments
+
+::: {.incremental}
+- Study of scurvy (Lind, 1747)
+  + Lemons
+- Education and cognitive psychology in 1880s
+  + teaching techniques, sensual perceptions
+- Agriculture, medicine, econ, political science in the 1920s
+  + fertilizer, radiation, indifference curves, voter registration
+- Policy and program evaluation in the 1960s
+  + 245 social policy RCTs in the US by 1978
+- Mexico’s PROGRESSA in 1997 (first large-scale policy RCT)
+
+:::
+
+## Credibility Revolution
+
+- "Let's Take the Con out of Econometrics" (Leamer, 2019)
+- Minimum Wages and Employment: A Case Study of the Fast-Food Industry in New Jersey and Pennsylvania (Card & Kreuger, 1994)
+- Identification and Estimation of Local Average Treatment Effects (Imbens and Angrist, 1994)
+- 2019 Nobel Prize in Economics (Banerjee, Duflo, and Kremer)
+- 2021 Nobel Prize in Economics (Imbens and Angrist)
+
+## Why Plumbers?
+
+Three categories of economists:
+
+::: {.fragment}
+::: {.incremental}
+1. Scientists
+2. Engineers
+3. Plumbers
+:::
+:::
+
+::: {.fragment}
+*“Scientists design general frames, engineers turn them into relevant machinery, and plumbers finally make them work in a complicated, messy policy environment.”*
+:::
+
+## Duflo's Example
+
+::: {.fragment}
+::: {.incremental}
+**Example of water connections:**
+
+- Big picture: people really need water
+- Details: they won’t navigate bureaucracy
+:::
+:::
+
+::: {.fragment}
+::: {.incremental}
+1. Design of the tap: details about communication or defaults
+2. Layout of the pipes: logistics of authority and responsibility
+:::
+:::
+
+## Big Picture + Details
+
+**Why focus on details?**
+
+1. Policymakers don’t have time to focus on details
+2. Details make all of the difference
+
+::: {.fragment}
+- “It turns out that most policymakers, and most bureaucrats, are not very good plumbers.”
+:::
+
+## Plumbing vs Science
+
+- Economists have the disciplinary training to make good plumbers
+  + behavioral science, incentives issues, and firm behavior
+  + understanding of organizations
+  + equilibrium consequences of apparently small changes
+- “Plumbing experiments, since they are primarily motivated by pragmatism, must focus on what is important for the world, not necessarily on the very subtle issues that theorists would find worth discussing.”
+
+## Plumbing vs Science
+
+::: {.incremental}
+- Scientists can tell us the drivers of human wellfare and prosperity
+  + But can we manipulate these macro-forces?
+  + Probably not really.
+- So what can we do as social scientists?
+  + Help at the margins in specific places with specific policies and programs
+:::
+
+::: {.fragment}
+- Any normatively uncomfortable findings?
+:::
+
+# Appendix
+
+## Communicating Effect Sizes
+
+- Standard deviations
+- Percentage change
+- Z-scores
+- Index measures
+
+## Can't we just observe and compare?
+
+![](plane.png)
+
+
+<!-- ## Why do we need to randomize? -->
+
+<!-- - Confounding -->
+<!--   + Unobserved variables influencing both treatment and outcome -->
+<!-- - Selection bias -->
+<!--   + Preferntial exclusion from the data -->
+
+
+<!-- - “And not all plumbers need to be economists. Sometimes, what a policymaker needs is a good software engineer, lawyer, or subject expert” -->
+<!-- - “economists have the disciplinary training to make good plumbers: economics trains us in behavioral science, incentives issues, and firm behavior; it also gives us an understanding of both governments and firms as organizations, though more work probably remains to be done there. We economists are even equipped to think about market equilibrium consequences of apparently small changes. This comparative advantage, along with the importance of getting these issues right, makes it a responsibility for our profession to engage with the world on those terms.” -->
+<!-- - “Plumbing experiments, since they are primarily motivated by pragmatism, must focus on what is important for the world, not necessarily on the very subtle issues that theorists would find worth discussing.” -->
+
+<!-- -- basic research: what do people want/need? What is preventing that from happening?  -->
+<!-- -- applied research: do specific things work to resolve these issues? -->
+<!-- -- “There may not be a theory fully worked out to accommodate these features, but she can use computation and lab experiments to simulate how they will play out” -->
+<!-- -- “The uncertainty in the environment creates a highly stochastic world: the natural way to “pay attention” to what happens, as I will argue below, is thus to analyze natural experiments or set up field experiments to try out different plumbing possibilities. -->

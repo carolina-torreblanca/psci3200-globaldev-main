@@ -1,0 +1,254 @@
+---
+title: "Sampling and Population Characteristics"
+subtitle: "Descriptive Inference"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+editor: source
+---
+
+# Logistics
+
+## Assignments
+
+- Today
+  + Read Ch 3
+  + Install Quarto and create an empty html
+- Thursday 
+  + Read Ch 4
+  + Create a git repo for this class (psci3200_yourname)
+
+## Agenda
+
+1. Finishing up Causality 1
+2. Inferring Population Characteristics via Survey Research
+3. Messing around in Quarto
+4. Final Project
+
+# Finishing up Causality 1
+
+## Identifying Assumptions
+
+::: {.incremental}
+- You must control for...
+  + everything (observed and unobserved) that affects both the treatment variable and the outcome variable
+- You *must not* control for...
+  + anything that is affected by both the treatment variable and the outcome variable
+::: 
+
+## Colliders
+
+![](plane.png){fig-align="center"}
+
+## Colliders
+
+```{r edu-ex-full, echo=FALSE, fig.width=9, fig.height=4.5, out.width="100%"}
+library(ggplot2)
+library(ggdag)
+
+edu_ex_coords <- list(x = c(Location = 2, Number = 4, Survival = 3),
+                        y = c(Location = 2, Number = 2, Survival = 4))
+
+dagify(
+  Survival ~ Number,
+  Survival ~ Location,
+  exposure = "Number",
+  outcome = "Location",
+  latent = "Survival",
+  labels = c(Number = "Number of\nHoles", Location = "Location of\nHoles",
+             Survival = "Survival"),
+  coords = edu_ex_coords) |> 
+  tidy_dagitty() |> 
+  node_status() |> 
+  ggplot(aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_edges() +
+  geom_dag_point(aes(color = status), size = 14) +
+  geom_dag_text(aes(label = label), color = "black", size = 5) +
+  scale_color_manual(values = c("#FF4136", "grey60", "#0074D9")) +
+  guides(color = "none") +
+  theme_dag()
+
+```
+
+
+::: {.notes}
+In this case, the illusion was the appearance of correlation (or statistical dependence) between the independent causes, giving rise to the theory that some locations receive more bullets than others (perhaps by being more exposed) when in fact the enemy sprayed them uniformly.
+The army observed more holes in the fuselage than the engine and recommended more armor on the former. This dependence however was created by selection bias.
+:::
+
+## Plumbing vs Science
+
+::: {.incremental}
+- Scientists can tell us the drivers of human welfare and prosperity
+  + Can we manipulate these macro-forces? Probably not.
+- So what can we do as social scientists?
+  + Help at the margins in specific places with specific policies and programs
+:::
+
+::: {.fragment}
+- Any normatively uncomfortable findings?
+:::
+
+
+# Inferring Population Characteristics via Survey Research
+
+## Survey Research
+
+::: {.incremental}
+- We often want to *describe* a population of interest
+  + Examples?
+  + How is this different from correlation?
+- We usually can't collect data on the entire population
+- Sampling allows us to estimate population characteristics from a *subset* of the population
+- Random sampling makes it most likely that our sample is *representative* of the population
+:::
+
+## Getting a Representative Samples
+
+::: {.incremental}
+- Sampling frame 
+  + Comprehensive list of units
+  + Ideally: Census, administrative records
+  + Developing contexts: create this yourself on-the-ground
+- Non-response
+  + Selection into sample can bias estimates, induce spurious relationships
+  + Think about collider example
+:::
+
+## Dealing with Missingness
+
+::: {.incremental}
+- Unit non-response
+  + Incentives
+  + Fancy weighting
+- Item non-response
+  + Self-administration
+- Misreporting
+  + List experiments
+:::
+
+## Dealing with Missingness
+
+- Always look at NAs immediately
+- Always think about how this might bias estimates
+
+## Sampling Strategies
+
+::: {.incremental}
+- Probability sampling strategies:
+  + Simple random sampling 
+  + Stratified sampling
+  + Cluster sampling
+- Non-Probability sampling strategies:
+  + Convenience sample
+:::
+
+## Simple Random Sampling
+
+- Each unit within the population has the same probability of being chosen
+- As size increases, the sample more closely resemble the population
+- Assumes that unit and item non-response are effectively random
+
+
+## Stratified sampling
+
+::: {.incremental}
+- Divide the entire population into *homogeneous* strata
+- Take random samples from each stratum
+  + Decreases risk of imbalance
+  + Ex. Race, gender, partisanship
+- Oversampling
+  + Allows for more precise estimates of small group characteristics
+  + Must adjust for population estimates
+:::
+
+## Cluster sampling
+
+::: {.incremental}
+- Divide population into *heterogeneous* clusters 
+- Take random sample of clusters
+  + Decreases costs of sampling
+  + Ex. Districts, schools, businesses
+:::
+
+
+# Final Project Discussion
+
+## Final Project
+
+- Data analysis project with data of your choosing
+  + Formulate a research question
+  + Find data that can help you answer that question
+  + Apply the tools and methods from this course
+  + Write-up analysis
+- Produce a webpage to present your results for public consumption 
+
+## Write-up
+
+1. Introduction to research question and data
+2. Discussion of research design, assumptions, and threats to inference
+3. Visualization describing your data
+4. Presentation of results from a regression model and discussion of implications for research question 
+5. Discussion of policy implications
+
+## Public Datasets
+
+- Varieties of Democracy
+- Machine Learning for Peace
+- Afrobarometer, Arab Barometer
+- Armed Conflict Location & Event Data Project (ACLED)
+- AidData
+
+## My Datasets
+
+- Cambodian NGOs (n $\approx$ 100)
+  + Convenience sample
+  + Panel survey, financial data, networks, open-ended responses
+- Ethiopian University Students (n $\approx$ 900)
+  + Representative sample
+  + Panel survey, networks, open-ended responses
+- Ghanaian Radio Stations (n $\approx$ 400)
+  + Convenience sample
+
+## DevLab Datasets
+
+- Too many to recall, but inquire with me and I will ask around
+
+## Final Project
+
+\
+
+| Milestone                    | Due Date|
+|:-----------------------------|:--------|
+| Create a GitHub repository   | Feb 8th |
+| Identify data source         | Mar 5th |
+| Submit proposal              | Apr 2nd |
+| Submit final project         | May 2nd |
+
+# RStudio and Quarto
+
+## Poll
+
+::: {.incremental}
+- Mac vs Windows?
+- Quarto running?
+:::
+
+## Instructions
+
+- Follow-along as I create a quarto page
+- Submit the html for the page to me via Slack *before* the end of class
+

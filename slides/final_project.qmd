@@ -1,0 +1,67 @@
+---
+title: "Final Project"
+author: "Jeremy Springman"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "jrspringman.github.io/psci3200-globaldev/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+    code-line-numbers: false
+editor: source
+
+
+highlight-style: github
+---
+
+
+# Final Project Discussion
+
+## Final Project
+
+- Data analysis project with data of your choosing
+  + Formulate a research question
+  + Find data that can help you answer that question
+  + Apply the tools and methods from this course
+  + Write-up analysis
+- Produce a webpage to present your results for public consumption 
+
+## Write-up
+
+1. Introduction to research question and data
+2. Discussion of research design, assumptions, and threats to inference
+3. Visualization describing your data
+4. Presentation of results from a regression model and discussion of implications for research question 
+5. Discussion of policy implications
+
+## Public Datasets
+
+- Varieties of Democracy
+- Machine Learning for Peace
+- Afrobarometer, Arab Barometer
+- Armed Conflict Location & Event Data Project (ACLED)
+- AidData
+
+## My Datasets
+
+- Cambodian NGOs (n $\approx$ 100)
+  + Convenience sample
+  + Panel survey, financial data, networks, open-ended responses
+- Ethiopian University Students (n $\approx$ 900)
+  + Representative sample
+  + Panel survey, networks, open-ended responses
+- Ghanaian Radio Stations (n $\approx$ 400)
+  + Convenience sample
+
+## DevLab Datasets
+
+- Too many to recall, but inquire with me and I will ask around

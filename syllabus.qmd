@@ -1,0 +1,188 @@
+---
+title: "Syllabus"
+slug: syllabus
+summary: "Information about the content and policies for PSCI 3200"
+date: last-modified
+citeproc: true
+output:
+  blogdown::html_page:
+      toc: TRUE
+---
+
+::: {.grid .course-details .course-details-smaller}
+::: g-col-6
+### Instructor
+
+-   {{< fa user >}}   [{{< var instructor.name_1 >}}]({{< var instructor.url >}})
+-   {{< fa envelope >}}   [{{< var instructor.email_1 >}}](mailto:{{< var instructor.email_1 >}})
+-   {{< fa university >}}   {{< var instructor.office_1 >}}
+-   {{< fa calendar-check >}}   [Schedule an appointment]({{< var instructor.appointment_url_1 >}})
+-   {{< fa user >}}   [{{< var instructor.name_2 >}}]({{< var instructor.url_2 >}})
+-   {{< fa envelope >}}   [{{< var instructor.email_2 >}}](mailto:{{< var instructor.email_2 >}})
+-   {{< fa university >}}   {{< var instructor.office_2 >}}
+:::
+
+
+::: g-col-6
+### Course Details
+
+-   {{< fa calendar >}}   {{< var course.days >}}
+-   {{< fa calendar-alt >}}   {{< var course.dates >}}
+-   {{< fa clock >}}   {{< var course.time >}}
+-   {{< fa location-dot >}}   {{< var course.location >}}
+-   {{< fa brands slack >}}   [Slack]({{< var course.slack >}})
+:::
+:::
+
+## Course Description and Objectives
+
+Recent years have seen a tremendous growth in the amount of data available and our ability to process it. This raises the exciting possibility that these advances can be used to improve governance and benefit the world's poor. In this course, students will engage with cutting-edge research that deploys new data and contemporary social science research methods and gain hands-on experience analyzing diverse types of data using rigorous research designs and broadly useful computational tools.
+
+The course will be organized around several timely substantive topics in global development, including democratic backsliding and autocratization, citizen engagement, crime and corruption, and climate change and migration. As we explore these topics, students will gain a deeper understanding of the challenges that shape governance and development outcomes and ways that contemporary social science and the development 'industry' seeks to address them.
+
+At the same time, students will be introduced to data analysis methods, inferential techniques, and computational tools that are useful across a wide range of applications. Specifically, students will deepen their understanding of basic statistical methods common to the social sciences, learn how these methods can be used to make inferences about population characteristics and causal relationships, and prepare documents that contain reproducible data analysis workflows.
+
+At the end of the course you should be able to:
+
+-   Evaluate the quality of evidence in the development field
+-   Think clearly about how data can be used to learn about development and governance challenges
+-   Use tools for data analysis such as R, RStudio, Quarto, and GitHub
+-   Produce professional-quality documents that summarize original research
+
+I hope that this course will encourage both passion and measured optimism about the potential for contemporary social science tools to address complex problems affecting governance and development in less developed countries.
+
+::: {.callout-warning appearance="default" icon="true"}
+## Prerequisites
+
+This class is designed as a follow-up to PSCI 1102. Students that have not taken PSCI 1102 and PSCI 1800 (or an equivalent) should contact the instructor before enrolling.
+:::
+
+## Course Materials
+
+This course relies primarily on free, open-source materials. However, the purchase of one textbook will be required. All other reading materials will be uploaded to this website or circulated on Slack at least one week before the meeting.
+
+### Books
+
+Students are required to purchase a copy of [Data Analysis for Social Science: A Friendly and Practical Introduction (DSS)](https://press.princeton.edu/books/paperback/9780691199436/data-analysis-for-social-science). We will use DSS as a jumping-off point for this course. While students are expected to already be familiar with many of the tools and concepts covered by this book, it will serve as a method to review core concepts and orient discussion about how to expand on these skills.
+
+::: {.callout-note appearance="default" icon="true"}
+## Required book
+
+I am asking students to purchase a copy of DSS because it comes with access to additional, helpful resources. If you are unable to purchase this book, you must let me know. To save money, consider e-renting the textbook.
+:::
+
+### Computing
+
+In the course, we will be using R for data cleaning, analysis, and visualization. [R](https://www.r-project.org/foundation/) is free, open source statistical computing environment available on all major operating systems. We will also be using [RStudio](http://www.rstudio.com), a free, widely used graphical interface for R. For document preparation, we will be using [Quarto](https://quarto.org/), a free, open-source scientific and technical publishing system that is compatible with both R/RStudio and Python, as well as several other languages. Both Quarto and RStudio are supported by a company called [Posit](https://posit.co/). For version control, we will be using [Github](https://github.com/).
+
+::: {.callout-note appearance="default" icon="true"}
+## Required software
+
+Students are expected to already have R and RStudio installed on the personal computer that they will be using for class. We will cover the installation of all other required computing tools during the course.
+:::
+
+Several course requirements will require you to write and submit R code. Your code must be appropriately commented and reproducible. To ensure your code meets the course standards, please follow this [style guide](http://adv-r.had.co.nz/Style.html) from Hadley Wickham (Chief Scientist at Posit and developer of `ggplot2` and `tidyverse`).
+
+## Course Structure
+
+Substantively, the course is divided into several parts. Part 1 presents a general introduction to the course and a brief introduction to correlation, causality and statistical inference. The remaining parts are structured around key substantive topics in development. For each topic, we will begin with a brief overview of the literature. Then, we will focus on one particular research question and use it as a guide to learn how to implement some of the most common research designs in the social sciences. Throughout, you will gain hands-on experience with diverse kinds of data through in-class workshops and data assignments. Weekly reading assignments will be divided between contemporary research on substantive topics in global development and textbook chapters focused on social science research methods. You are expected to attend class and be prepared to engage in discussion about the assigned readings.
+
+<!-- These topics may be adjusted in response to student interest and exciting developments in the literature. -->
+
+### Grading
+
+Performance in this class will be evaluated by according to performance on the following course requirements:
+
+| Requirement          | Percent of Final Grade |
+|:---------------------|:-----------------------|
+| Quizzes (4)          | 10%                    |
+| Workshops (4)        | 10%                    |
+| Data Assignments (3) | 36%                    |
+| Final Project (1)    | 44%                    |
+
+::: {.callout-tip appearance="default" icon="true"}
+## Bump-up policy
+
+I reserve the right to "bump up" the grades of students who have made valuable contributions to the course, including participation in lectures or workshops or helping other students by answering questions on Slack. This also applies to students who show tremendous progress over the semester.
+:::
+
+### Requirement Descriptions
+
+There are four graded requirements for this course.
+
+**Quizzes**
+
+-   You are expected to attend each course meeting. On **four** randomly selected meetings, there will be a brief quiz designed to test whether or not students did the readings. Students with a pre-approved absence will be required to take the quiz remotely within 24 hours of its administration (in the event your absence falls on a quiz date). Students will be permitted one pre-approved absence for the semester.
+-   Grade: 10%
+
+**Workshops**
+
+-   We will have **four** workshops throughout the semester. These will be interactive, hands-on workshops allowing students to gain familiarity with new statistical methods or computational tools. These workshops will cover important tools, such as quarto and github, and data analysis tasks, including cleaning, visualization, and modeling. After each workshop, you will be required to submit a product (ex. the link to a git repo, a quarto doc, an R script, etc.) demonstrating completion of the workshop.
+-   Grade: 10%
+
+**Data Assignments**
+
+-   There will be **three** data assignments throughout the semester. These assignments are designed to give you an opportunity to apply tools and methods discussed in readings, lectures, and workshops to data from the real world. Where possible, we will use data collected by DevLab\@Penn researchers. These are individual assignments. While I encourage you to collaborate with your colleagues as you think through the tasks, you will be required to submit your own code and write-up.
+-   Grade: 36%
+
+| Data Assignment | Due Date            |
+|:----------------|:--------------------|
+| Assignment 1    | Mar 28th 11:59pm ET |
+| Assignment 2    | Apr 11th 11:59pm ET |
+| Assignment 3    | Apr 30th 11:59pm ET |
+
+**Final Project**
+
+-   The final project is a data analysis project that will use data of your choosing. The only stipulation is that this data must be relevant to one of the global development topics covered in this course. The assignment will require you to formulate a research question, find data that can help you answer that question, apply the tools and methods from this course to the data you have selected to answer your research question, and present those results for public consumption.
+-   The goal will be to produce a *professional* project that can showcase the skills that you have gained to potential employers. Your final submission will be a publicly available webpage that contains: (1) a brief introduction to your research question and data; (2) a discussion of your research design, its assumptions, and threats to inference; (3) a visualization that describes your data; (4) a presentation of the results from a regression model (as a table or graph) and discussion of its implications for your research question; and (5) a discussion of the implications of your findings for development policy or practice, including the limitations of your analysis and suggestions for future research. In addition to the public-facing webpage, you must share access to a GitHub repo that contains the code to reproduce the project output.
+-   Grade: 44%
+
+| Milestone                                      | Due Date            |
+|:-----------------------------------------------|:--------------------|
+| Create a GitHub repository                     | Feb 8th 11:59pm ET  |
+| Idea for research question and data source     | Mar 12th 11:59pm ET |
+| Submit proposal (research question and design) | Apr 11th 11:59pm ET |
+| Submit final project (webpage url and repo)    | May 10th 11:59pm ET |
+
+## Course Policies
+
+Please review these course policies carefully. Any questions or concerns about these policies should be raised during the first week of class.
+
+### Late Submissions and Regrading
+
+Late submission of assignments will incur a penalty of 2 points for every day late, except in **documented** cases of serious illness or family emergency. If you feel there has been an error in the grading of one your assignment, you may request in writing a regrade of the assignment. First, I will request a detailed write-up of your dispute. Second, I will regrade the entire assignment, not just the part you are disputing. Therefore, your regrade might increase or decrease the overall grade on the assignment.
+
+### Use of AI Tools
+
+You are welcome to use generative AI tools, such as ChatGPT, to assist you with your work in this course. There is mounting evidence from rigorous research that these tools increase human productivity. I believe that their use will continue to proliferate, so it is important to gain experience integrating them into professional tasks. However, AI tools frequently make errors and 'hallucinate' information about things that do not exist (journal articles, R functions, etc.). It is your responsibility to verify the information provided by such tools. Most importantly, you are required to disclose your use of AI tools for assignments in the form of footnotes or citations. The use of AI tools will not be counted against you. On the contrary, I want to adopt and share your clever or innovative applications of AI tools.
+
+### Electronic Devices
+
+Laptops will be required in class. All other electronic devices should be silenced and hidden. If there is an emergency situation and your phone must be visible, please inform me at the beginning of class. Please don't make me come up with consequences for violating this policy.
+
+### Controversial Topics and Statements
+
+In our exploration of global development, we will strive to maintain an inclusive learning environment. I believe that respect for diverse perspectives, experiences, and backgrounds is essential for effective development research and practice. If you feel that statements made during class (by other students or by me) have undermined this, please contact me directly so that we can address the issue.
+
+This course may deal with subject-matter that is difficult or controversial. It is crucial to approach these topics with sensitivity and openness. Students are required to treat one another with respect, even in cases of disagreement. At times, research findings may be in-tension with your normative commitments. I urge students to engage earnestly and critically with any evidence that challenges your prior beliefs.
+
+### Academic Honesty
+
+Students are expected to follow the University of Pennsylvania's [Code of Academic Integrity](https://catalog.upenn.edu/pennbook/code-of-academic-integrity/). Suspected violations will be referred to university administration for disciplinary action. If you have any doubts or questions about what constitutes academic misconduct, please do not hesitate to contact me.
+
+## University Resources
+
+Utilizing university resources can be key to a successful college experience. These resources are available for a reason, and students should feel comfortable taking full advantage of them. I am not an expert in accessing these resources, but I will be happy to help you secure support that will help you succeed at Penn.
+
+### Mental Health
+
+Your mental health is important to me. Struggles with mental health, as well as serious mental illnesses, are common across students, faculty, and staff. Please feel free to reach out to me about issues you are having within or outside of this course. I emphatically encourage anyone who thinks they may benefit to utilize the university resources listed below:
+
+-   [Counseling and Mental Health Services](https://wellness.upenn.edu/student-health-and-counseling/student-health-and-counseling-counseling)
+-   [24/7 Services: 215-746-9355](https://wellness.upenn.edu/student-health-and-counseling/student-health-and-counseling-counseling#Drop-In%20Services)
+
+Please note that this list is not comprehensive. If there are services that you think should be added to this list, please let me know.
+
+### Accessibility
+
+Accessibility is a shared value and a shared responsibility at Penn. The Weingarten Center partners with other departments throughout campus to coordinate and improve the accessibility of buildings and grounds, transportation, communication, and digital infrastructure. Students that require academic accommodations should contact the [Weingarten Center](https://weingartencenter.universitylife.upenn.edu/academic-accommodations/). Academic accommodations are determined on an individualized basis through an interactive process that involves student self-disclosure, documentation of disability, and an initial meeting with a Disability Specialist. Accommodations do not alter fundamental requirements of the course and are not retroactive. Students should request accommodations as early as possible, since they may take time to implement. Students can notify the Weingarten Center at any time during the semester if adjustments to their communicated accommodation plan are needed.

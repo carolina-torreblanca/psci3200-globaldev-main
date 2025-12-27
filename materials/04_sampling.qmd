@@ -1,0 +1,27 @@
+---
+title: "Sampling and Population Characteristics"
+date: 2024-01-30
+---
+
+
+## Required Readings
+
+- DSS [Ch 3](/files/dss_ch3.pdf)
+  + [interactive visualization: sampling](https://ellaudet.iq.harvard.edu/random_sampling)
+  + [interactive visualization: mean and sd](https://ellaudet.iq.harvard.edu/mean_sd)
+  + [interactive visualization: correlation](https://ellaudet.iq.harvard.edu/correlation)
+
+## Assignment
+
+- Install Quarto and produce a blank document
+  + [Instructions](/assignments/01_quarto.html)
+  + [Intro to Quarto](https://quarto.org/docs/get-started/hello/rstudio.html)
+
+## Slides
+
+- [Slides](/slides/04-sampling.html)
+
+## Interesting Stuff (non-required)
+
+- Andrew Heiss's [Quarto Resource](https://evalsp24.classes.andrewheiss.com/resource/quarto.html)
+- Hadley Wickham's [Quarto Guide](https://r4ds.hadley.nz/quarto.html)

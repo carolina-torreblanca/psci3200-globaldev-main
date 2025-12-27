@@ -1,0 +1,15 @@
+---
+title: "Representation and Accountability"
+date: 2025-02-13
+---
+  
+  
+## Required Readings
+  
+  - [Manin, Przeworski, and Stokes. Chapter 1 (1999)](/files/Democracy_Accountability_and_Representation.pdf)
+  - [Ferraz and Finan, 2011](/files/ferraz-finan-2011-electoral-accountability-and-corruption-evidence-from-the-audits-of-local-governments.pdf)
+  
+## Slides
+
+- [Slides](/slides/c2-account1.html)
+
