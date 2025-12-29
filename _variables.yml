@@ -23,6 +23,8 @@ course:
   copyright_year: "2026"
   slack: "https://join.slack.com/t/global-devpsci3200/shared_invite/zt-3m4mixuwj-UftB7DcrQ4_xxUqj5gIneg"
   canvas: "https://canvas.upenn.edu/courses/1771152"
+  acknowledgements: |
+    Course site and instructional materials draw on content originally developed for PSCI 3200 by Jeremy Springman; materials have been adapted and updated for the current offering.
 
 university:
   name: "University of Pennsylvania"

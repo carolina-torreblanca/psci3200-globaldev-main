@@ -5,6 +5,10 @@ project:
     - "*.qmd"
     - "!files/"
 
+course:
+  acknowledgements: |
+    Course site and selected instructional materials draw on content originally developed for PSCI 3200 by Jeremy Springman; materials have been adapted and updated for the current offering.
+
 website:
   title: "PSCI 3200"
   navbar:
@@ -14,14 +18,15 @@ website:
       - syllabus.qmd
       - schedule.qmd
   page-footer:
-      left: |
-        Content {{< fa brands creative-commons >}} {{< var course.copyright_year >}} by [{{< var instructor.name_no_title >}}]({{< var instructor.url >}}) <br>
-        All content licensed under a {{< fa brands creative-commons >}}
-        {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}}
-        [Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)
-      right: |
-        Made with {{< fa brands r-project >}} and [Quarto](https://quarto.org/)<br>
-        [View the source at {{< fa brands github >}} GitHub]({{< var course.github >}})
+    left: |
+      Content {{< fa brands creative-commons >}} {{< var course.copyright_year >}} by [{{< var instructor.name_no_title >}}]({{< var instructor.url >}}) <br>
+      {{< var course.acknowledgements >}} <br>
+      All content licensed under a {{< fa brands creative-commons >}}
+      {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}}
+      [Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)
+    right: |
+      Made with {{< fa brands r-project >}} and [Quarto](https://quarto.org/)<br>
+      [View the source at {{< fa brands github >}} GitHub]({{< var course.github >}})
 
 format:
   html:
@@ -30,7 +35,3 @@ format:
       dark: darkly
     css: html/custom.scss
     toc: true
-
-
-
-

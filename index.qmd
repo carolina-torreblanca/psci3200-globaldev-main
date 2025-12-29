@@ -10,8 +10,8 @@ format:
   html:
     template-partials:
       - html/home/title-block.html
-course-logo: /files/img/stacked_logo_1.png
 ---
+
 
 ::: {.grid .course-details}
 ::: {.g-col-12 .g-col-md-4}
@@ -40,4 +40,3 @@ course-logo: /files/img/stacked_logo_1.png
 :::
 :::
 
-![](/files/img/map_luwero.jpg)

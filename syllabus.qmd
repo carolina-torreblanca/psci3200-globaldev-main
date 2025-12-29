@@ -13,13 +13,10 @@ output:
 ::: g-col-6
 ### Instructor
 
--   {{< fa user >}}   [{{< var instructor.name_1 >}}]({{< var instructor.url >}})
--   {{< fa envelope >}}   [{{< var instructor.email_1 >}}](mailto:{{< var instructor.email_1 >}})
--   {{< fa university >}}   {{< var instructor.office_1 >}}
--   {{< fa calendar-check >}}   [Schedule an appointment]({{< var instructor.appointment_url_1 >}})
--   {{< fa user >}}   [{{< var instructor.name_2 >}}]({{< var instructor.url_2 >}})
--   {{< fa envelope >}}   [{{< var instructor.email_2 >}}](mailto:{{< var instructor.email_2 >}})
--   {{< fa university >}}   {{< var instructor.office_2 >}}
+-   {{< fa user >}}   [{{< var instructor.name >}}]({{< var instructor.url >}})
+-   {{< fa envelope >}}   [{{< var instructor.email >}}](mailto:{{< var instructor.email >}})
+-   {{< fa university >}}   {{< var instructor.office >}}
+-   {{< fa calendar-check >}}   [Schedule an appointment]({{< var instructor.appointment_url >}})
 :::
 
 
@@ -36,11 +33,11 @@ output:
 
 ## Course Description and Objectives
 
-Recent years have seen a tremendous growth in the amount of data available and our ability to process it. This raises the exciting possibility that these advances can be used to improve governance and benefit the world's poor. In this course, students will engage with cutting-edge research that deploys new data and contemporary social science research methods and gain hands-on experience analyzing diverse types of data using rigorous research designs and broadly useful computational tools.
+Global development increasingly relies on data and quantitative evidence to inform policies that affect how resources are allocated and, ultimately, whose lives are impacted. The growth of new data sources and advances in computational tools have expanded what researchers can study and how precisely they can study it, creating the possibility of better-informed responses to long-standing challenges such as poverty, inequality, and governance. 
 
-The course will be organized around several timely substantive topics in global development, including democratic backsliding and autocratization, citizen engagement, crime and corruption, and climate change and migration. As we explore these topics, students will gain a deeper understanding of the challenges that shape governance and development outcomes and ways that contemporary social science and the development 'industry' seeks to address them.
+However, more data alone does not guarantee better policy. This course examines how contemporary social science research uses data to make claims about development and governance, and how to evaluate those claims critically. Students will engage with recent research and gain hands-on experience analyzing real-world data using common research designs and computational tools, with an emphasis on transparency, inference, and reproducibility.
 
-At the same time, students will be introduced to data analysis methods, inferential techniques, and computational tools that are useful across a wide range of applications. Specifically, students will deepen their understanding of basic statistical methods common to the social sciences, learn how these methods can be used to make inferences about population characteristics and causal relationships, and prepare documents that contain reproducible data analysis workflows.
+The course will be organized around several timely substantive topics in global development. As we explore these topics, students will gain a deeper understanding of the challenges that shape governance and development. At the same time, students will be introduced to data analysis methods, inferential techniques, and computational tools that are useful across a wide range of applications. Specifically, students will deepen their understanding of basic statistical methods common to the social sciences, learn how these methods can be used to make inferences about population characteristics and causal relationships, and prepare documents that contain reproducible data analysis workflows.
 
 At the end of the course you should be able to:
 
