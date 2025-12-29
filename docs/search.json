@@ -7080,106 +7080,106 @@
     "objectID": "slides/lees-R.html#resources",
     "href": "slides/lees-R.html#resources",
     "title": "R and RStudio",
-    "section": "",
-    "text": "This activity draws on Chapter 1 in Statistical Inference via Data Science: A ModernDive into R and the Tidyverse"
+    "section": "Resources",
+    "text": "Resources\n\nThis activity draws on Chapter 1 in Statistical Inference via Data Science: A ModernDive into R and the Tidyverse"
   },
   {
     "objectID": "slides/lees-R.html#what-are-r-and-rstudio",
     "href": "slides/lees-R.html#what-are-r-and-rstudio",
     "title": "R and RStudio",
-    "section": "",
-    "text": "In the quantitative methods tutorial, we will use R and RStudio to illustrate basic statistical concepts\nR is a programming language and free computing environment for statistical computing and graphics\nRStudio is an integrated development environment (IDE) that provides an interface by adding many convenient features and tools\nThink of R as a car’s engine and RStudio as the dashboard\n\n\nR is a programming language and free computing environment for statistical computing and graphics. It can be runs on a wide variety of operating systems, including Linux, Windows, and MacOS. RStudio is an integrated development environment (IDE) that provides an interface by adding many convenient features and tools.\nYou can think of R as a car’s engine and RStudio as the dashboard. In the same way that having access to a speedometer and a navigation system makes driving much easier, using RStudio’s interface makes using R much easier as well.\nR and RStudio are entirely free and updated on a regular basis, making them much more accessible and widely used than paid alternatives. You can conduct nearly any analysis using R, ranging from calculating the average of a variable to creating maps and conducting spatial analysis to conducting the analysis for an impact evaluation."
+    "section": "What are R and RStudio?",
+    "text": "What are R and RStudio?\n\nIn the quantitative methods tutorial, we will use R and RStudio to illustrate basic statistical concepts\nR is a programming language and free computing environment for statistical computing and graphics\nRStudio is an integrated development environment (IDE) that provides an interface by adding many convenient features and tools\nThink of R as a car’s engine and RStudio as the dashboard\n\n\nR is a programming language and free computing environment for statistical computing and graphics. It can be runs on a wide variety of operating systems, including Linux, Windows, and MacOS. RStudio is an integrated development environment (IDE) that provides an interface by adding many convenient features and tools.\nYou can think of R as a car’s engine and RStudio as the dashboard. In the same way that having access to a speedometer and a navigation system makes driving much easier, using RStudio’s interface makes using R much easier as well.\nR and RStudio are entirely free and updated on a regular basis, making them much more accessible and widely used than paid alternatives. You can conduct nearly any analysis using R, ranging from calculating the average of a variable to creating maps and conducting spatial analysis to conducting the analysis for an impact evaluation."
   },
   {
     "objectID": "slides/lees-R.html#installing-r",
     "href": "slides/lees-R.html#installing-r",
     "title": "R and RStudio",
-    "section": "",
-    "text": "Download and install R by going to https://cloud.r-project.org/\n\nWindows: Click on “Download R for Windows”, then click on “base”, then click on the Download link\nmacOS user: Click on “Download R for macOS”, then under “Latest release:” click on R-X.X.X.pkg, where R-X.X.X is the version number\nLinux user: Click on “Download R for Linux” and choose your distribution for more information on installing R for your setup\n\n\n\nIf you don’t have R and RStudio already installed, that will be the first step. You will first need to download and install both R and RStudio (Desktop version) on your computer. It is important that you install R first and then install RStudio."
+    "section": "Installing R",
+    "text": "Installing R\n\nDownload and install R by going to https://cloud.r-project.org/\n\nWindows: Click on “Download R for Windows”, then click on “base”, then click on the Download link\nmacOS user: Click on “Download R for macOS”, then under “Latest release:” click on R-X.X.X.pkg, where R-X.X.X is the version number\nLinux user: Click on “Download R for Linux” and choose your distribution for more information on installing R for your setup\n\n\n\nIf you don’t have R and RStudio already installed, that will be the first step. You will first need to download and install both R and RStudio (Desktop version) on your computer. It is important that you install R first and then install RStudio."
   },
   {
     "objectID": "slides/lees-R.html#installing-rstudio",
     "href": "slides/lees-R.html#installing-rstudio",
     "title": "R and RStudio",
-    "section": "",
-    "text": "Download and install RStudio at https://www.rstudio.com/products/rstudio/download/\n\nScroll down to “Installers for Supported Platforms” near the bottom of the page\nClick on the download link corresponding to your computer’s operating system\n\n\n\nOnce you have installed R, you can now install RStudio."
+    "section": "Installing RStudio",
+    "text": "Installing RStudio\n\nDownload and install RStudio at https://www.rstudio.com/products/rstudio/download/\n\nScroll down to “Installers for Supported Platforms” near the bottom of the page\nClick on the download link corresponding to your computer’s operating system\n\n\n\nOnce you have installed R, you can now install RStudio."
   },
   {
     "objectID": "slides/lees-R.html#using-r-via-rstudio",
     "href": "slides/lees-R.html#using-r-via-rstudio",
     "title": "R and RStudio",
-    "section": "",
-    "text": "Using R by opening RStudio"
+    "section": "Using R via RStudio",
+    "text": "Using R via RStudio\n\nUsing R by opening RStudio"
   },
   {
     "objectID": "slides/lees-R.html#using-r-via-rstudio-1",
     "href": "slides/lees-R.html#using-r-via-rstudio-1",
     "title": "R and RStudio",
-    "section": "",
-    "text": "After you open RStudio, you should see something like this\n\n\n\nNote the three panes which are three panels dividing the screen: the console pane, the files pane, and the environment pane. Over the course of this tutorial, you’ll come to learn what purpose each of these panes serves."
+    "section": "Using R via RStudio",
+    "text": "Using R via RStudio\n\nAfter you open RStudio, you should see something like this\n\n\n\nNote the three panes which are three panels dividing the screen: the console pane, the files pane, and the environment pane. Over the course of this tutorial, you’ll come to learn what purpose each of these panes serves."
   },
   {
     "objectID": "slides/lees-R.html#peronalization",
     "href": "slides/lees-R.html#peronalization",
     "title": "R and RStudio",
-    "section": "",
-    "text": "Customize the appearance of your R IDE by going to Tools -&gt; Global Options -&gt; Appearance"
+    "section": "Peronalization",
+    "text": "Peronalization\n\nCustomize the appearance of your R IDE by going to Tools -&gt; Global Options -&gt; Appearance"
   },
   {
     "objectID": "slides/lees-R.html#layout",
     "href": "slides/lees-R.html#layout",
     "title": "R and RStudio",
-    "section": "",
-    "text": "Rstudio contains 4 panes: source, console, environment, and viewer\nThe left pane is the source where you write code\nTry typing 2 + 2 into the source panel and hitting ENTER\n\nThe console panel pop-up in the bottom-left and return a value of 4\n\n\n[INSERT SCREEN RECORDING]"
+    "section": "Layout",
+    "text": "Layout\n\nRstudio contains 4 panes: source, console, environment, and viewer\nThe left pane is the source where you write code\nTry typing 2 + 2 into the source panel and hitting ENTER\n\nThe console panel pop-up in the bottom-left and return a value of 4\n\n\n[INSERT SCREEN RECORDING]"
   },
   {
     "objectID": "slides/lees-R.html#layout-1",
     "href": "slides/lees-R.html#layout-1",
     "title": "R and RStudio",
-    "section": "",
-    "text": "The top-right includes the Environment panel\n\nThis contains information about any objects that you load into your environment\nType sum = 2 + 2 into the source and hit ENTER\nThe object sum should appear in your environment\n\nThe bottom-right includes the Viewer panel, where you will be able to see graphics that you generate"
+    "section": "Layout",
+    "text": "Layout\n\nThe top-right includes the Environment panel\n\nThis contains information about any objects that you load into your environment\nType sum = 2 + 2 into the source and hit ENTER\nThe object sum should appear in your environment\n\nThe bottom-right includes the Viewer panel, where you will be able to see graphics that you generate"
   },
   {
     "objectID": "slides/lees-R.html#basic-programming-concepts",
     "href": "slides/lees-R.html#basic-programming-concepts",
     "title": "R and RStudio",
-    "section": "",
-    "text": "Running code: telling R to perform an act by giving it commands in the source or console\nObjects: where values are saved in R. On the last slide, you created the object sum.\nData types:\n\nIntegers are whole numbers like -1, 0, 2, 4092\nDoubles are integers with decimal values like -24.932 and 0.8\nLogicals are either TRUE or FALSE\nCharacters are text or strings like \"hello world\" and \"welcome to R\""
+    "section": "Basic programming concepts",
+    "text": "Basic programming concepts\n\nRunning code: telling R to perform an act by giving it commands in the source or console\nObjects: where values are saved in R. On the last slide, you created the object sum.\nData types:\n\nIntegers are whole numbers like -1, 0, 2, 4092\nDoubles are integers with decimal values like -24.932 and 0.8\nLogicals are either TRUE or FALSE\nCharacters are text or strings like \"hello world\" and \"welcome to R\""
   },
   {
     "objectID": "slides/lees-R.html#basic-programming-concepts-1",
     "href": "slides/lees-R.html#basic-programming-concepts-1",
     "title": "R and RStudio",
-    "section": "",
-    "text": "Vectors are a series of values. These are created using the c() function. For example, c(6, 11, 13, 31) creates a four element vector of integers.\nFactors are a group of characters/strings with a fixed number of unique values\nData frames are objects where the rows correspond to observations and the columns correspond to variables that describe the observations"
+    "section": "Basic programming concepts",
+    "text": "Basic programming concepts\n\nVectors are a series of values. These are created using the c() function. For example, c(6, 11, 13, 31) creates a four element vector of integers.\nFactors are a group of characters/strings with a fixed number of unique values\nData frames are objects where the rows correspond to observations and the columns correspond to variables that describe the observations"
   },
   {
     "objectID": "slides/lees-R.html#basic-programming-concepts-2",
     "href": "slides/lees-R.html#basic-programming-concepts-2",
     "title": "R and RStudio",
-    "section": "",
-    "text": "Conditionals:\n\nTesting for equality in R is done using ==. For example, 2 + 1 == 3 will return TRUE\nBoolean algebra: Operators such as &lt; (less than), &lt;= (less than or equal), and !=(not equal to). For example, 3 + 5 &lt;= 1 will return FALSE\nLogical operators: & represent “and” while | represents “or.” For example, (2 + 1 == 3) & (2 + 1 == 4) returns FALSE since both clauses are not TRUE"
+    "section": "Basic programming concepts",
+    "text": "Basic programming concepts\n\nConditionals:\n\nTesting for equality in R is done using ==. For example, 2 + 1 == 3 will return TRUE\nBoolean algebra: Operators such as &lt; (less than), &lt;= (less than or equal), and !=(not equal to). For example, 3 + 5 &lt;= 1 will return FALSE\nLogical operators: & represent “and” while | represents “or.” For example, (2 + 1 == 3) & (2 + 1 == 4) returns FALSE since both clauses are not TRUE"
   },
   {
     "objectID": "slides/lees-R.html#loading-packages",
     "href": "slides/lees-R.html#loading-packages",
     "title": "R and RStudio",
-    "section": "",
-    "text": "R gives you accesss to thousands of “packages” that are created by users\nPackages contain datasets and bundles of code called “functions” that can execute specific tasks\nUse install.packages() to install a package\n\nInsert the name of the package contained in quotation marks\nStart by installing the dplyr package"
+    "section": "Loading Packages",
+    "text": "Loading Packages\n\nR gives you accesss to thousands of “packages” that are created by users\nPackages contain datasets and bundles of code called “functions” that can execute specific tasks\nUse install.packages() to install a package\n\nInsert the name of the package contained in quotation marks\nStart by installing the dplyr package"
   },
   {
     "objectID": "slides/lees-R.html#loading-data",
     "href": "slides/lees-R.html#loading-data",
     "title": "R and RStudio",
-    "section": "",
-    "text": "Load data into your environment by “reading-in” a spreadsheet\nSpreadsheets should be saved as a .csv file\nUse read.csv() to pull data from a spreadsheet on your harddrive into your R/RStudio environment\n\nWithin the parentheses, add the full file pathway where the .csv file is stored\n\n\n[INSERT SCREEN RECORDING]"
+    "section": "Loading Data",
+    "text": "Loading Data\n\nLoad data into your environment by “reading-in” a spreadsheet\nSpreadsheets should be saved as a .csv file\nUse read.csv() to pull data from a spreadsheet on your harddrive into your R/RStudio environment\n\nWithin the parentheses, add the full file pathway where the .csv file is stored\n\n\n[INSERT SCREEN RECORDING]"
   },
   {
     "objectID": "slides/lees-R.html#errors-warnings-and-messages",
     "href": "slides/lees-R.html#errors-warnings-and-messages",
     "title": "R and RStudio",
-    "section": "",
-    "text": "When you run code, R often provides feedback in the console\nThere are 3 main types of feedback that appear in RED\n\nErrors: When the RED text is prefaced with “Error in…”, your code will not work. The error message will try to explain the problem.\nWarnings: When the red text is prefaced with “Warning:”, your code will still work, but there still might be a problem. The warning message will try to explain the problem.\nMessages: When the red text doesn’t start with “Error” or “Warning”, it’s just a friendly message"
+    "section": "Errors, warnings, and messages",
+    "text": "Errors, warnings, and messages\n\nWhen you run code, R often provides feedback in the console\nThere are 3 main types of feedback that appear in RED\n\nErrors: When the RED text is prefaced with “Error in…”, your code will not work. The error message will try to explain the problem.\nWarnings: When the red text is prefaced with “Warning:”, your code will still work, but there still might be a problem. The warning message will try to explain the problem.\nMessages: When the red text doesn’t start with “Error” or “Warning”, it’s just a friendly message"
   },
   {
     "objectID": "slides/lees-pages.html",
@@ -8453,7 +8453,7 @@
     "href": "index.html",
     "title": "\n            Global Development\n        ",
     "section": "",
-    "text": "Global Development\n        \n        \n            Intermediate Topics in Politics, Policy, and Data\n        \n        \n            PSCI 3200 • Spring 2025University of Pennsylvania\n        \n    \n    \n      \n        \n        \n        \n      \n    \n\n\n\n\nInstructor\n\n   Jeremy Springman\n   jspr@sas.upenn.edu\n   PCPE 448\n   Schedule an appointment\n   Carolina Torreblanca\n   catba@sas.upenn.edu\n   PCPE 436\n\n\n\nCourse details\n\n   Mon/Wed\n   January 15th - April 30th\n   3:30–4:59 PM\n   PCPE 202\n   Slack\n\n\n\nContacting me\nGeneral questions about the course, materials, or assignments should be posted to the course Slack. This will allow other students to benefit from the answer(s) provided. For other issues (absences, accomodations, etc.), email me or send me a direct message on Slack. I will attempt to respond to these messages within 48 hours, but please be patient!"
+    "text": "Global Development\n        \n        \n            Intermediate Topics in Politics, Policy, and Data\n        \n        \n            PSCI 3200 • Spring 2026University of Pennsylvania\n        \n    \n    \n      \n        \n        \n        \n      \n    \n\n\n\n\n\nInstructor\n\n   Carolina Torreblanca\n   catba@sas.upenn.edu\n   PCPE 436\n   Schedule an appointment\n\n\n\nCourse details\n\n   Mon/Wed\n   January 15th - April 30th\n   5:15-6:44 PM\n   PCPE 202\n   Slack\n\n\n\nContacting me\nGeneral questions about the course, materials, or assignments should be posted to the course Slack. This will allow other students to benefit from the answer(s) provided. For other issues (absences, accomodations, etc.), email me or send me a direct message on Slack. I will attempt to respond to these messages within 48 hours, but please be patient!"
   },
   {
     "objectID": "slides/08-migration.html#sviatschi-2022-1",

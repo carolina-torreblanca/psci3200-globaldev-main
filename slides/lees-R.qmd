@@ -4,16 +4,12 @@ author: "Jeremy Springman"
 institute: "University of Pennsylvania"
 
 format:
-  pptx:
+  revealjs:
     toc: false
     theme: [custom_iea.scss]
-    width: 1050
-    margin: 0.1
-    logo: DevLab_Logo_29Mar2023.png
-    footer: "jrspringman.github.io/psci3200-globaldev/"
-    embed-resources: true
     template-partials:
-    - title-slide.html
+      - title-slide.html
+    embed-resources: true
     gfm:
     mermaid-format: png
     code-line-numbers: false
