@@ -33,7 +33,7 @@ output:
 
 ## Course Description and Objectives
 
-Global development increasingly relies on data and quantitative evidence to inform policies that affect how resources are allocated and, ultimately, whose lives are impacted. The growth of new data sources and advances in computational tools have expanded what researchers can study and how precisely they can study it, creating the possibility of better-informed responses to long-standing challenges such as poverty, inequality, and governance. 
+Global development increasingly relies on data and quantitative evidence to inform policies. Thus, the growth of new data sources and advances in computational tools have expanded what researchers can study and how well they can study it, creating the possibility of better-informed responses to long-standing challenges such as poverty, inequality, and governance. 
 
 However, more data alone does not guarantee better policy. This course examines how contemporary social science research uses data to make claims about development and governance, and how to evaluate those claims critically. Students will engage with recent research and gain hands-on experience analyzing real-world data using common research designs and computational tools, with an emphasis on transparency, inference, and reproducibility.
 
@@ -46,17 +46,15 @@ At the end of the course you should be able to:
 -   Use tools for data analysis such as R, RStudio, Quarto, and GitHub
 -   Produce professional-quality documents that summarize original research
 
-I hope that this course will encourage both passion and measured optimism about the potential for contemporary social science tools to address complex problems affecting governance and development in less developed countries.
-
 ::: {.callout-warning appearance="default" icon="true"}
 ## Prerequisites
 
-This class is designed as a follow-up to PSCI 1102. Students that have not taken PSCI 1102 and PSCI 1800 (or an equivalent) should contact the instructor before enrolling.
+This class is designed as a follow-up to PSCI 1102. Students that have not taken PSCI 1102 and PSCI 1800 (or an equivalent) should contact the instructor before enrolling. 
 :::
 
 ## Course Materials
 
-This course relies primarily on free, open-source materials. However, the purchase of one textbook will be required. All other reading materials will be uploaded to this website or circulated on Slack at least one week before the meeting.
+This course relies primarily on free, open-source materials. However, the purchase of one textbook will be required. All other reading materials will be uploaded to this website or circulated on Slack at least one week before the meeting. Course site and instructional materials draw on content originally developed for PSCI 3200 by Jeremy Springman
 
 ### Books
 
@@ -93,15 +91,9 @@ Performance in this class will be evaluated by according to performance on the f
 | Requirement          | Percent of Final Grade |
 |:---------------------|:-----------------------|
 | Quizzes (4)          | 10%                    |
-| Workshops (4)        | 10%                    |
-| Data Assignments (3) | 36%                    |
-| Final Project (1)    | 44%                    |
-
-::: {.callout-tip appearance="default" icon="true"}
-## Bump-up policy
-
-I reserve the right to "bump up" the grades of students who have made valuable contributions to the course, including participation in lectures or workshops or helping other students by answering questions on Slack. This also applies to students who show tremendous progress over the semester.
-:::
+| Workshops (4)        | 15%                    |
+| Data Assignments (3) | 35%                    |
+| Final Project (1)    | 40%                    |
 
 ### Requirement Descriptions
 
@@ -115,12 +107,12 @@ There are four graded requirements for this course.
 **Workshops**
 
 -   We will have **four** workshops throughout the semester. These will be interactive, hands-on workshops allowing students to gain familiarity with new statistical methods or computational tools. These workshops will cover important tools, such as quarto and github, and data analysis tasks, including cleaning, visualization, and modeling. After each workshop, you will be required to submit a product (ex. the link to a git repo, a quarto doc, an R script, etc.) demonstrating completion of the workshop.
--   Grade: 10%
+-   Grade: 15%
 
 **Data Assignments**
 
--   There will be **three** data assignments throughout the semester. These assignments are designed to give you an opportunity to apply tools and methods discussed in readings, lectures, and workshops to data from the real world. Where possible, we will use data collected by DevLab\@Penn researchers. These are individual assignments. While I encourage you to collaborate with your colleagues as you think through the tasks, you will be required to submit your own code and write-up.
--   Grade: 36%
+-   There will be **three** data assignments throughout the semester. These assignments are designed to give you an opportunity to apply tools and methods discussed in readings, lectures, and workshops to data from the real world. These are individual assignments. While I encourage you to collaborate with your colleagues as you think through the tasks, you will be required to submit your own code and write-up.
+-   Grade: 35%
 
 | Data Assignment | Due Date            |
 |:----------------|:--------------------|
@@ -132,7 +124,7 @@ There are four graded requirements for this course.
 
 -   The final project is a data analysis project that will use data of your choosing. The only stipulation is that this data must be relevant to one of the global development topics covered in this course. The assignment will require you to formulate a research question, find data that can help you answer that question, apply the tools and methods from this course to the data you have selected to answer your research question, and present those results for public consumption.
 -   The goal will be to produce a *professional* project that can showcase the skills that you have gained to potential employers. Your final submission will be a publicly available webpage that contains: (1) a brief introduction to your research question and data; (2) a discussion of your research design, its assumptions, and threats to inference; (3) a visualization that describes your data; (4) a presentation of the results from a regression model (as a table or graph) and discussion of its implications for your research question; and (5) a discussion of the implications of your findings for development policy or practice, including the limitations of your analysis and suggestions for future research. In addition to the public-facing webpage, you must share access to a GitHub repo that contains the code to reproduce the project output.
--   Grade: 44%
+-   Grade: 40%
 
 | Milestone                                      | Due Date            |
 |:-----------------------------------------------|:--------------------|
@@ -155,21 +147,15 @@ You are welcome to use generative AI tools, such as ChatGPT, to assist you with 
 
 ### Electronic Devices
 
-Laptops will be required in class. All other electronic devices should be silenced and hidden. If there is an emergency situation and your phone must be visible, please inform me at the beginning of class. Please don't make me come up with consequences for violating this policy.
+Laptops will be required in class. All other electronic devices should be silenced and hidden. If there is an emergency situation and your phone must be visible, please inform me at the beginning of class. 
 
 ### Controversial Topics and Statements
-
-In our exploration of global development, we will strive to maintain an inclusive learning environment. I believe that respect for diverse perspectives, experiences, and backgrounds is essential for effective development research and practice. If you feel that statements made during class (by other students or by me) have undermined this, please contact me directly so that we can address the issue.
 
 This course may deal with subject-matter that is difficult or controversial. It is crucial to approach these topics with sensitivity and openness. Students are required to treat one another with respect, even in cases of disagreement. At times, research findings may be in-tension with your normative commitments. I urge students to engage earnestly and critically with any evidence that challenges your prior beliefs.
 
 ### Academic Honesty
 
 Students are expected to follow the University of Pennsylvania's [Code of Academic Integrity](https://catalog.upenn.edu/pennbook/code-of-academic-integrity/). Suspected violations will be referred to university administration for disciplinary action. If you have any doubts or questions about what constitutes academic misconduct, please do not hesitate to contact me.
-
-## University Resources
-
-Utilizing university resources can be key to a successful college experience. These resources are available for a reason, and students should feel comfortable taking full advantage of them. I am not an expert in accessing these resources, but I will be happy to help you secure support that will help you succeed at Penn.
 
 ### Mental Health
 

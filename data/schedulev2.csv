@@ -1,33 +1,32 @@
 ﻿week,date,date_end,title,deadline, reading,content,tutorial,assignment
-1,1/15/2025,,Introduction to the course (JS),,,/materials/01_intro,,
-2,1/20/2025,,MLK Jr. Day (no classes),,,,,
-2,1/22/2025,,Correlation vs. Causation (CT),,DSS Ch 2,/materials/02_causal,,/assignments/00_setupr
-3,1/27/2025,,Causality (CT),,DSS Ch 5,/materials/03_causal,,/assignments/01_quarto
-3,1/29/2025,,Rstudio and Quarto Workshop (JS),,,/materials/05_quarto,https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/w1_quarto.qmd,
-4,2/3/2025,,Democracy and Autocracy (CT),,"Przeworski 2024, Grossman et. al., 2021",/materials/05_autocracy1,,
-4,2/5/2025,,Democracy and Development (CT),,"Acemoglu et. al., 2008",/materials/06_autocracy2,,
-5,2/10/2025,,Final Project Overview (JS),,No readings,/materials/08_final_project,,
-5,2/12/2025,,Linear Regression and Uncertainty (CT),,DSS Ch 3 and 4,/materials/06_regression,,
-6,2/17/2025,,Representation and Accountability (CT),,"Manin, Przeworski, and Stokes, 1999; Ferraz and Finan, 2011",/materials/c1_accountability,,/assignments/02_gitrepo
-6,2/19/2025,,Representation and Accountability Reconsidered (CT), ,Dunning et. al. 2019,/materials/c2_accountability,,/assignments/03_fprqd
-7,2/24/2025,,Github Workshop (JS),,No readings,/materials/12_github,,
-7,2/26/2025,,Github Workshop (JS),,No readings,/materials/12_github2,,
-8,3/3/2025,,Crime and Punishment (CT),,"Bateson, 2012;  Weaver and Lerman, 2010",/materials/c3_crime,,
-8,3/5/2025,,Crime and Punishment 2 (CT),,"Gustavo A. Flores-Macías and Jessica Zarkin, 2024",/materials/c4_crime,,
-9,3/10/2025,,Spring Break,,,,,/assignments/04_fpdesign
-9,3/12/2025,,Spring Break,,,,,
-10,3/17/2025,,Gender (CT),,"Chattopadhyay and Duflo, 2004 ",/materials/c5_gender,,
-10,3/19/2025,,Migration 1 (JS),,Rozo and Grossman (2025); Sviatschi (2022); Gazeaud (2020),/materials/08_migration,,
-11,3/24/2025,,Final Project Essentials (JS),,No readings,/materials/14_fp_essentials,https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/fp_essentials.qmd,
-11,3/26/2025,,Text as Data workshop (CT),,No readings,/materials/c6_tad,,
-12,3/31/2025,,State Capacity (Guest: Nagawa),,"Bessley et al. (2022); Fukuyama (2013); Rothstein et al., (2008); Persson et al. (1997)",/materials/26_capacity,,
-12,4/2/2025,,Final Project Preparation (JS) ,,No readings,,/workshops/survey_data,/assignments/05_fptest
-13,4/7/2025,,Foreign Aid and NGOs 1 (JS),,Briggs (2016); Briggs (2021),/materials/20_aid1,,
-13,4/9/2025,,Foreign Aid and NGOs 2 (JS),,Cruz (2017); Bold et al. (2018),/materials/21_aid2,,/assignments/aau_survey
-14,4/14/2025,,Foreign Aid : An Obituary,,,/materials/23_aid3,,
-14,4/16/2025,,Climate and Development (JS),,O'Brien-Udry (2023),/materials/22_climate1,,
-15,4/21/2025,,Climate and Development 2 (JS),,Namrata (2023); Alberto et al. (2022),/materials/23_climate2,,
-15,4/23/2025,,Climate and Development 3 (Guest: Marinov),,,,,
-16,4/28/2025,,What is development? (JS),,Assorted short pieces,/materials/27_conclusion,,
-16,4/30/2025,,Reflections on development research (JS),,Assorted short pieces,/materials/27_conclusion2,,
-17,5/10/2025,,Final Project Due,,,,,/assignments/final_project
+1,1/14/26,,Introduction to the course,,,/materials/01_intro,,
+2,1/19/26,,MLK Jr. Day (no classes),,,,,
+2,1/21/26,,Correlation vs. Causation,,DSS Ch 2,/materials/02_causal,,/assignments/00_setupr
+3,1/26/26,,Causality,,DSS Ch 5,/materials/03_causal,,/assignments/01_quarto
+3,1/28/26,,Rstudio and Quarto Workshop,,,/materials/05_quarto,https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/w1_quarto.qmd,
+4,2/2/26,,Democracy and Autocracy,,"Przeworski 2024, Grossman et. al., 2021",/materials/05_autocracy1,,
+4,2/4/26,,Democracy and Development,,"Acemoglu et. al., 2008",/materials/06_autocracy2,,
+5,2/9/26,,Final Project Overview,,No readings,/materials/08_final_project,,
+5,2/11/26,,Linear Regression and Uncertainty,,DSS Ch 3 and 4,/materials/06_regression,,
+6,2/16/26,,Representation and Accountability,,"Manin, Przeworski, and Stokes, 1999; Ferraz and Finan, 2011",/materials/c1_accountability,,/assignments/02_gitrepo
+6,2/18/26,,Representation and Accountability Reconsidered, ,Dunning et. al. 2019,/materials/c2_accountability,,/assignments/03_fprqd
+7,2/23/26,,Github Workshop,,No readings,/materials/12_github,,
+7,2/25/26,,Github Workshop,,No readings,/materials/12_github2,,
+8,3/2/26,,Crime and Punishment,,"Bateson, 2012;  Weaver and Lerman, 2010",/materials/c3_crime,,
+8,3/4/26,,Crime and Punishment 2,,"Gustavo A. Flores-Macías and Jessica Zarkin, 2024",/materials/c4_crime,,
+9,3/9/26,,Spring Break,,,,,/assignments/04_fpdesign
+9,3/11/26,,Spring Break,,,,,
+10,3/16/26,,Gender,,"Chattopadhyay and Duflo, 2004 ",/materials/c5_gender,,
+10,3/18/26,,Migration,,Rozo and Grossman (2025); Sviatschi (2022); Gazeaud (2020),/materials/08_migration,,
+11,3/23/26,,Final Project Essentials,,No readings,/materials/14_fp_essentials,https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/fp_essentials.qmd,
+11,3/25/26,,Text as Data workshop,,No readings,/materials/c6_tad,,
+12,3/30/26,,State Capacity (Guest: Nagawa),,"Bessley et al. (2022); Fukuyama (2013); Rothstein et al., (2008); Persson et al. (1997)",/materials/26_capacity,,
+12,4/1/26,,Final Project Preparation,,No readings,,/workshops/survey_data,/assignments/05_fptest
+13,4/6/26,,Foreign Aid and NGOs 1 (JS),,Briggs (2016); Briggs (2021),/materials/20_aid1,,
+13,4/8/26,,Foreign Aid and NGOs 2 (JS),,Cruz (2017); Bold et al. (2018),/materials/21_aid2,,/assignments/aau_survey
+14,4/13/26,,Conflict and Development,,,,,
+14,4/15/26,,Conflict and Development 2,,,,,
+15,4/20/26,,Climate and Development,,O'Brien-Udry (2023),/materials/22_climate1,,
+15,4/22/26,,Climate and Development 2 (JS),,Namrata (2023); Alberto et al. (2022),/materials/23_climate2,,
+16,4/27/26,,What is development?,,Assorted short pieces,/materials/27_conclusion,,
+16,4/29/26,,Final Project Due,,,,,/assignments/final_project
