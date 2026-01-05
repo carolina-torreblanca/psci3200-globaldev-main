@@ -82,8 +82,8 @@ Please tell us:
   + 1102 covered big academic debates that we won’t (ex. institutions vs geography)
 - Focus on *applied research* with development agencies/industry 
   + What is the state of the art? 
-  + "Big ideas" of political science only as context
-  + MUST have a good understanding of the basics of RM
+  + "Big ideas" of political science as context
+  + MUST have a good understanding of the basics of research methods
 
 ## Course Description
 
@@ -100,7 +100,7 @@ Please tell us:
 
 - Methods: 
   + Deepen understanding of 'workhorse' statistical methods and research designs
-  + How these methods can be used to make inferences about population characteristics and causal relationships
+  + How these methods can be used to make inferences about causal relationships
 - Tools
   + Introduce the computational tools that are needed to implement these methods 
   + Software necessary to prepare professional documents and reproducible data analysis workflows
@@ -143,7 +143,7 @@ Performance in this class will be evaluated by according to performance on the f
 |:-----------------|:-------------|
 | Quizzes (4)          | 10%          |
 | Workshops (4)        | 10%          |
-| Data Assignments (6) | 36%          |
+| Data Assignments (4) | 36%          |
 | Final Project (1)    | 44%          |
 
 ## Quizzes
@@ -158,15 +158,15 @@ Performance in this class will be evaluated by according to performance on the f
 
 - 4 interactive, hands-on workshops working with diverse types of data, covering different statistical methods, or using new computational tools. 
   + Tools: R and Rstudio, Quarto, github
-  + Data: Survey data, text data, financial data
+  + Data: Survey data, text data
   + Methods: Randomized and quasi-experiments, text analysis. 
 - You will be required to submit a product demonstrating completion of the workshop
 
 ## Data Assignments
 
-- 6 data assignments designed to make sure you are keeping up with the tools covered in class and making progress in your final project. 
+- Four data assignments designed to make sure you are keeping up with the tools covered in class and making progress in your final project. 
 - For assignments where you are required to submit something, you will be required to submit your own code and write-up.
-- You can see the date of each assingment on the schedule
+- You can see the date of each assignment on the schedule
 
 ## Final Project
 
@@ -187,10 +187,10 @@ Your final submission will be a publicly available webpage that contains: (1) a 
 
 | Milestone                    | Due Date                 |
 |:-----------------------------|:-------------------------|
-| Create a GitHub repository   | Feb 10th |
-| Identify data source         | Mar 10th |
-| Submit proposal              | Mar 26nd |
-| Submit final project         | April 30th |
+| Create a GitHub repository   | Feb 11th |
+| Identify data source         | Mar 11th |
+| Submit proposal              | Mar 30th |
+| Submit final project         | April 29th |
 
 
 ::: {.notes}
@@ -230,7 +230,6 @@ By April, I'll give you a break-down of how the grading will be done
 - Diverse perspectives, experiences, and backgrounds are essential for effective development research and practice
 - Contact me directly if you feel we're not achieving an inclusive environment
 - Students are required to treat one another with respect
-- Engage with any evidence that challenges your prior beliefs
 
 ## Academic Honesty
 

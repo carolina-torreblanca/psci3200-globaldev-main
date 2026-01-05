@@ -4504,8 +4504,8 @@
     "objectID": "slides/01-intro.html#agenda",
     "href": "slides/01-intro.html#agenda",
     "title": "Introduction to PSCI 3200",
-    "section": "",
-    "text": "Introductions\nCourse Description and Objectives\nRequirements\nPolicies\nSchedule\n\n\n\nemail\ncourse website\nsurvey"
+    "section": "Agenda",
+    "text": "Agenda\n\n\n\n\nIntroductions\nCourse Description and Objectives\nRequirements\nPolicies\nSchedule\n\n\n\nemail\ncourse website\nsurvey"
   },
   {
     "objectID": "slides/01-intro.html#carolina",
@@ -4540,7 +4540,7 @@
     "href": "slides/01-intro.html#course-description-1",
     "title": "Introduction to PSCI 3200",
     "section": "Course Description",
-    "text": "Course Description\n\nFollow-up to PSCI 1102\n\n1102 covered big academic debates that we won’t (ex. institutions vs geography)\n\nFocus on applied research with development agencies/industry\n\nWhat is the state of the art?\n“Big ideas” of political science only as context\nMUST have a good understanding of the basics of RM"
+    "text": "Course Description\n\nFollow-up to PSCI 1102\n\n1102 covered big academic debates that we won’t (ex. institutions vs geography)\n\nFocus on applied research with development agencies/industry\n\nWhat is the state of the art?\n“Big ideas” of political science as context\nMUST have a good understanding of the basics of research methods"
   },
   {
     "objectID": "slides/01-intro.html#course-description-2",
@@ -4554,7 +4554,7 @@
     "href": "slides/01-intro.html#course-description-3",
     "title": "Introduction to PSCI 3200",
     "section": "Course Description",
-    "text": "Course Description\n\nMethods:\n\nDeepen understanding of ‘workhorse’ statistical methods and research designs\nHow these methods can be used to make inferences about population characteristics and causal relationships\n\nTools\n\nIntroduce the computational tools that are needed to implement these methods\nSoftware necessary to prepare professional documents and reproducible data analysis workflows"
+    "text": "Course Description\n\nMethods:\n\nDeepen understanding of ‘workhorse’ statistical methods and research designs\nHow these methods can be used to make inferences about causal relationships\n\nTools\n\nIntroduce the computational tools that are needed to implement these methods\nSoftware necessary to prepare professional documents and reproducible data analysis workflows"
   },
   {
     "objectID": "slides/01-intro.html#course-objectives",
@@ -4582,7 +4582,7 @@
     "href": "slides/01-intro.html#grading",
     "title": "Introduction to PSCI 3200",
     "section": "Grading",
-    "text": "Grading\nPerformance in this class will be evaluated by according to performance on the following course requirements:\n\n\n\nRequirement\nPercent of Final Grade\n\n\n\n\nQuizzes (4)\n10%\n\n\nWorkshops (4)\n10%\n\n\nData Assignments (6)\n36%\n\n\nFinal Project (1)\n44%"
+    "text": "Grading\nPerformance in this class will be evaluated by according to performance on the following course requirements:\n\n\n\nRequirement\nPercent of Final Grade\n\n\n\n\nQuizzes (4)\n10%\n\n\nWorkshops (4)\n10%\n\n\nData Assignments (4)\n36%\n\n\nFinal Project (1)\n44%"
   },
   {
     "objectID": "slides/01-intro.html#quizzes",
@@ -4596,14 +4596,14 @@
     "href": "slides/01-intro.html#workshops",
     "title": "Introduction to PSCI 3200",
     "section": "Workshops",
-    "text": "Workshops\n\n4 interactive, hands-on workshops working with diverse types of data, covering different statistical methods, or using new computational tools.\n\nTools: R and Rstudio, Quarto, github\nData: Survey data, text data, financial data\nMethods: Randomized and quasi-experiments, text analysis.\n\nYou will be required to submit a product demonstrating completion of the workshop"
+    "text": "Workshops\n\n4 interactive, hands-on workshops working with diverse types of data, covering different statistical methods, or using new computational tools.\n\nTools: R and Rstudio, Quarto, github\nData: Survey data, text data\nMethods: Randomized and quasi-experiments, text analysis.\n\nYou will be required to submit a product demonstrating completion of the workshop"
   },
   {
     "objectID": "slides/01-intro.html#data-assignments",
     "href": "slides/01-intro.html#data-assignments",
     "title": "Introduction to PSCI 3200",
     "section": "Data Assignments",
-    "text": "Data Assignments\n\n6 data assignments designed to make sure you are keeping up with the tools covered in class and making progress in your final project.\nFor assignments where you are required to submit something, you will be required to submit your own code and write-up.\nYou can see the date of each assingment on the schedule"
+    "text": "Data Assignments\n\nFour data assignments designed to make sure you are keeping up with the tools covered in class and making progress in your final project.\nFor assignments where you are required to submit something, you will be required to submit your own code and write-up.\nYou can see the date of each assignment on the schedule"
   },
   {
     "objectID": "slides/01-intro.html#final-project",
@@ -4617,7 +4617,7 @@
     "href": "slides/01-intro.html#final-project-1",
     "title": "Introduction to PSCI 3200",
     "section": "Final Project",
-    "text": "Final Project\n\n\n\n\n\nMilestone\nDue Date\n\n\n\n\nCreate a GitHub repository\nFeb 10th\n\n\nIdentify data source\nMar 10th\n\n\nSubmit proposal\nMar 26nd\n\n\nSubmit final project\nApril 30th\n\n\n\n\nBy April, I’ll give you a break-down of how the grading will be done"
+    "text": "Final Project\n\n\n\n\n\nMilestone\nDue Date\n\n\n\n\nCreate a GitHub repository\nFeb 11th\n\n\nIdentify data source\nMar 11th\n\n\nSubmit proposal\nMar 30th\n\n\nSubmit final project\nApril 29th\n\n\n\n\nBy April, I’ll give you a break-down of how the grading will be done"
   },
   {
     "objectID": "slides/01-intro.html#late-submissions-and-regrading",
@@ -4645,7 +4645,7 @@
     "href": "slides/01-intro.html#controversial-topics-and-statements",
     "title": "Introduction to PSCI 3200",
     "section": "Controversial Topics and Statements",
-    "text": "Controversial Topics and Statements\n\nDiverse perspectives, experiences, and backgrounds are essential for effective development research and practice\nContact me directly if you feel we’re not achieving an inclusive environment\nStudents are required to treat one another with respect\nEngage with any evidence that challenges your prior beliefs"
+    "text": "Controversial Topics and Statements\n\nDiverse perspectives, experiences, and backgrounds are essential for effective development research and practice\nContact me directly if you feel we’re not achieving an inclusive environment\nStudents are required to treat one another with respect"
   },
   {
     "objectID": "slides/01-intro.html#academic-honesty",
@@ -10778,5 +10778,12 @@
     "title": "Reflections on Development Research",
     "section": "Academic research isn’t how to",
     "text": "Academic research isn’t how to\n\n\nWhile there are exceptions to the rule, a good heuristic for knowing whether policymakers in low-income countries lack ambition is the frequency with which they mention the MDGs/SDGs.\n\n\n[Policymakers] should understand that what they hope to achieve has been done before; and that all they have to do is learn the right lessons from those who came before them."
+  },
+  {
+    "objectID": "slides/01-intro.html#slide4-id",
+    "href": "slides/01-intro.html#slide4-id",
+    "title": "Introduction to PSCI 3200",
+    "section": "",
+    "text": "https://carolina-torreblanca.github.io/psci3200-globaldev-main/"
   }
 ]
