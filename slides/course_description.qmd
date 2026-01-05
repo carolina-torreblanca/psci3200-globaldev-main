@@ -1,7 +1,7 @@
 ---
 title: "PSCI 3200"
 subtitle: "Overview of the course"
-author: "Jeremy Springman"
+author: "Carolina Torreblanca"
 institute: "University of Pennsylvania"
 
 format:
@@ -11,7 +11,7 @@ format:
     width: 1050
     margin: 0.1
     logo: DevLab_Logo_29Mar2023.png
-    footer: "jrspringman.github.io/psci3200-globaldev/"
+    footer: "https://carolina-torreblanca.github.io/psci3200-globaldev-main/"
     embed-resources: true
     template-partials:
       - title-slide.html
@@ -103,7 +103,7 @@ Your final submission will be a publicly available webpage that contains: (1) a 
 :::
 
 
-##  {#slide4-id background-iframe="https://jrspringman.github.io/psci3200-globaldev/" background-interactive="true" data-menu-title="website"}
+##  {#slide4-id background-iframe="https://carolina-torreblanca.github.io/psci3200-globaldev-main/" background-interactive="true" data-menu-title="website"}
 
 
 ## Course Description

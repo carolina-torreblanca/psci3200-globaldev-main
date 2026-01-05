@@ -1,6 +1,6 @@
 ---
 title: "Final Project Overview"
-author: "Jeremy Springman"
+author: "Carolina Torreblanca"
 institute: "University of Pennsylvania"
 
 format:
@@ -10,7 +10,7 @@ format:
     width: 1050
     margin: 0.1
     logo: DevLab_Logo_29Mar2023.png
-    footer: "jrspringman.github.io/psci3200-globaldev/"
+    footer: "https://carolina-torreblanca.github.io/psci3200-globaldev-main/"
     embed-resources: true
     template-partials:
     - title-slide.html
@@ -69,11 +69,11 @@ bibliography: img/references.bib
 
 | Milestone                    | Due Date|
 |:-----------------------------|:--------|
-| [Create a GitHub repository](https://jrspringman.github.io/psci3200-globaldev/assignments/02_gitrepo.html)| Feb 17 |
-| [Research Question and Data](https://jrspringman.github.io/psci3200-globaldev/assignments/03_fprqd.html)  | Feb 19 |
-| [Research Design](https://jrspringman.github.io/psci3200-globaldev/assignments/04_fpdesign.html)          | Mar 5  |
-| [Submit proposal](https://jrspringman.github.io/psci3200-globaldev/assignments/05_fptest.html)            | Apr 2  |
-| [Submit final project](https://jrspringman.github.io/psci3200-globaldev/assignments/final_project.html)   | May 10 |
+| [Create a GitHub repository](https://carolina-torreblanca.github.io/psci3200-globaldev-main/assignments/02_gitrepo.html)| Feb 17 |
+| [Research Question and Data](https://carolina-torreblanca.github.io/psci3200-globaldev-main/assignments/03_fprqd.html)  | Feb 19 |
+| [Research Design](https://carolina-torreblanca.github.io/psci3200-globaldev-main/assignments/04_fpdesign.html)          | Mar 5  |
+| [Submit proposal](https://carolina-torreblanca.github.io/psci3200-globaldev-main/assignments/05_fptest.html)            | Apr 2  |
+| [Submit final project](https://carolina-torreblanca.github.io/psci3200-globaldev-main/assignments/final_project.html)   | May 10 |
 
 # Examples
 

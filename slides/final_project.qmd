@@ -1,6 +1,6 @@
 ---
 title: "Final Project"
-author: "Jeremy Springman"
+author: "Carolina Torreblanca"
 institute: "University of Pennsylvania"
 
 format:
@@ -10,7 +10,7 @@ format:
     width: 1050
     margin: 0.1
     logo: DevLab_Logo_29Mar2023.png
-    footer: "jrspringman.github.io/psci3200-globaldev/"
+    footer: "https://carolina-torreblanca.github.io/psci3200-globaldev-main/"
     embed-resources: true
     template-partials:
     - title-slide.html

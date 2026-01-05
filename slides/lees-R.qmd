@@ -1,6 +1,6 @@
 ---
 title: "R and RStudio"
-author: "Jeremy Springman"
+author: "Carolina Torreblanca"
 institute: "University of Pennsylvania"
 
 format:

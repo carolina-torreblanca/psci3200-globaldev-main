@@ -1,7 +1,7 @@
 ---
 title: "Introduction to PSCI 3200"
 subtitle: "Overview of the course"
-author: "Carolina Torreblanca and Jeremy Springman"
+author: "Carolina Torreblanca"
 institute: "University of Pennsylvania"
 
 format:
@@ -11,7 +11,7 @@ format:
     width: 1050
     margin: 0.1
     logo: DevLab_Logo_29Mar2023.png
-    footer: "jrspringman.github.io/psci3200-globaldev/"
+    footer: "https://carolina-torreblanca.github.io/psci3200-globaldev-main/"
     embed-resources: true
     template-partials:
       - title-slide.html
@@ -51,19 +51,6 @@ Interests:
 - Crime, policing, violence, human rights, Latin America
 - Quantitative (experimental and non experimental) methods
 
-## Jeremy
-
-Background:
-
--   PhD from UPenn PSCI, Postdoc at Duke
--   *Very* applied work
-
-Interests:
-
--   Democracy and civil society, foreign aid and NGOs 
--   Randomized experiments, machine learning
--   Field Projects: Uganda, Ethiopia, Cambodia, Serbia
-<!-- -   Improving research for decision makers -->
 
 ## You
 
@@ -252,7 +239,7 @@ By April, I'll give you a break-down of how the grading will be done
 
 # Schedule
 
-##  {#slide4-id background-iframe="https://jrspringman.github.io/psci3200-globaldev/schedule.html" background-interactive="true" data-menu-title="Schedule"}
+##  {#slide4-id background-iframe="https://carolina-torreblanca.github.io/psci3200-globaldev-main/schedule.html" background-interactive="true" data-menu-title="Schedule"}
 
 
 <!-- ::: columns -->
