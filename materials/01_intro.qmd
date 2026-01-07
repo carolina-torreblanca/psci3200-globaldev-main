@@ -10,5 +10,5 @@ date: 2026-01-15
 
 ## Slides
 
-- Monday (1/15) lecture: [Slides](/slides/01-intro.html)
+- Wed (1/14) lecture: [Slides](/slides/01-intro.html)
 

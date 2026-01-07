@@ -15,13 +15,17 @@ format:
     embed-resources: true
     template-partials:
       - title-slide.html
-    gfm:
-    mermaid-format: png
     highlight-style: atom-one-dark
     code-overflow: wrap
+
+execute:
+  eval: false
+  echo: true
+  warning: false
+  message: false
+
 editor: source
 ---
-
 
 # Logistics
 
@@ -29,45 +33,261 @@ editor: source
 
 - Did everyone find the readings and slides for today?
 - For next week:
-  + I'll scan the chapter and upload tonight
-  + Remember you have a quasi-assignment
+  - Remember you have a quasi-assignment
 
-## Agenda
+---
 
-- Correlation
-  + What is it?
-  + What is it composed of?
-  + What is it good for?
-- Causation
-  + What is it good for?
-  + Why is it hard?
-  + Potential outcomes and counterfactuals
+# Correlation and Causation
 
-# Correlation
+## What are we trying to learn from data?
 
-## Which of the following statements describe a correlation?
+This lecture is not mainly about techniques.
 
-1. Most professional data analysis took a statistics course in college.
+It is about a conceptual problem that underlies all empirical social science:
 
-::: {.fragment .highlight-red}
-2. The longer a person runs the more calories they burn.
-:::
-3. People who live to be 100 years old typically take vitamins.
+How can we learn about cause and effect from data?
 
-::: {.fragment .highlight-red}
-4. Older people vote more than younger people.
-:::
+---
 
+## Start with something familiar: correlation
 
-## Correlations: Quantitative Comparison
+What does it mean to say that two variables, X and Y, are correlated?
 
-- Lots of bad analysis *implies* comparisons
-  + Ex. 10 things that extremely successful people do to be productive
-  + Ex. 60% of Americans now live paycheck-to-paycheck
-  + Ex. 70% of participants reported an improvement
-- Avoid 'selecting on the dependent variable'
-  + Applies to qualitative comparisons as well
+- They tend to move together
+- When X is high, Y tends to be high (or low)
+- There is a systematic pattern in observed data
 
+---
+
+## What correlation is
+
+Correlation is a statement about patterns in observed data.
+
+- It summarizes co-variation
+- It is descriptive
+- It does not, by itself, explain why the pattern exists
+
+This feels straightforward.
+
+---
+
+## Now a harder question: causation
+
+What does it mean to say that X causes Y?
+
+Take a moment to think about this.
+
+---
+
+## Common intuitions about causation
+
+People often answer:
+
+- X leads to Y
+- X produces Y
+- X makes Y happen
+- Y depends on X
+
+These answers feel intuitive.
+
+But notice what they do not tell us.
+
+---
+
+## The hidden problem
+
+None of these answers explain:
+
+How would we know that X causes Y?
+
+They describe a relationship, but not a method for establishing it.
+
+This is where the difficulty begins.
+
+---
+
+## A very old problem (Hume, simplified)
+
+When we say “X causes Y,” we are really asking two questions:
+
+- What do we mean by a cause?
+- How could we ever be sure that X really causes Y?
+
+Philosophers like David Hume pointed out that this is not obvious.
+
+---
+
+## Why causation is not observable
+
+We never directly observe causation.
+
+What we observe:
+- Events
+- Sequences
+- Regularities
+
+Example:
+- You flip a switch
+- The light turns on
+
+You observe the switch move.
+You observe the light turn on.
+
+You do not observe causation itself.
+
+---
+
+## Why repetition does not solve the problem
+
+Even if the switch always turns on the light:
+
+- You still only observe regularity
+- Not necessity
+- Not causation itself
+
+All the data in the world look the same whether causation is really there or not.
+
+---
+
+## Why this is a problem for science
+
+If causation is not directly observable, then:
+
+- Correlation alone cannot answer causal questions
+- Observed patterns admit multiple explanations
+- Data do not come labeled with causes
+
+So how does science proceed?
+
+---
+
+## Different kinds of questions
+
+It helps to distinguish different goals.
+
+- Descriptive questions: What is happening?
+- Predictive questions: Given X, what is likely to happen to Y?
+- Causal questions: What would happen if we intervened?
+
+These are not the same.
+
+---
+
+## Same data, different questions
+
+Example:
+
+People who live longer tend to take more vitamins.
+
+- Descriptive: Do vitamin users live longer?
+- Predictive: Can vitamin use help predict lifespan?
+- Causal: Would people live longer if they started taking vitamins?
+
+Only the last question is causal.
+
+---
+
+## The core difficulty
+
+Causal questions require a comparison:
+
+What actually happened  
+versus  
+what would have happened otherwise
+
+But we never observe both.
+
+This is the fundamental difficulty of causality.
+
+---
+
+# The Scientific Response
+
+## A redefinition of causality
+
+Rather than trying to observe causation directly, scientists made a practical move.
+
+They defined causality in a way that could be studied.
+
+This move came from applied problems, not philosophy.
+
+---
+
+## Historical origins
+
+The modern approach to causality emerged from:
+- Agriculture
+- Field experiments
+- Policy evaluation
+
+For example:
+What would crop yield be with fertilizer?
+What would it be without fertilizer?
+
+You cannot observe both on the same plot of land.
+
+---
+
+## The Neyman–Rubin contribution
+
+Jerzy Neyman and Donald Rubin formalized this approach.
+
+Their contribution is the **Potential Outcomes Framework**.
+
+Causality is defined through comparisons between potential outcomes.
+
+---
+
+## Potential outcomes
+
+For each unit \( i \), define:
+
+- \( Y_i(1) \): outcome if unit \( i \) receives treatment
+- \( Y_i(0) \): outcome if unit \( i \) does not receive treatment
+
+These are potential outcomes.
+
+---
+
+## Defining causal effects
+
+The individual-level causal effect is defined as:
+
+\[
+TE_i = Y_i(1) - Y_i(0)
+\]
+
+This is a definition: it tells us what we mean by a causal effect.
+
+---
+
+## The Fundamental Problem of Causal Inference (explicit)
+
+For any unit \( i \), we can observe:
+
+\[
+Y_i = 
+\begin{cases}
+Y_i(1) & \\text{if } D_i = 1 \\\\
+Y_i(0) & \\text{if } D_i = 0
+\end{cases}
+\]
+
+But we can never observe both \( Y_i(1) \) and \( Y_i(0) \) for the same unit at the same time.
+
+The unobserved potential outcome is counterfactual.
+
+---
+
+## Why this problem is fundamental
+
+This is not a data limitation.
+
+It is a logical one.
+
+No amount of additional data lets us observe both potential outcomes for the same unit at the same time.
+
+Causal inference is the craft of building credible counterfactual comparisons.
 
 ## Correlations: Necessary Components
 

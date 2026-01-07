@@ -13,8 +13,7 @@ date: 2026-01-23
 
 ## Tasks
 
-- Complete the [PSCI 3200 Student Survey](https://upenn.co1.qualtrics.com/jfe/form/SV_0Cg0okE1EBZraXc)
-- Get logged-in on the course {{< fa brands slack >}} [Slack](%7B%7B%3C%20var%20course.slack%20%3E%7D%7D)
+- Get logged-in on the course {{< fa brands slack >}} [Slack](https://join.slack.com/t/global-devpsci3200/shared_invite/zt-3m4mixuwj-UftB7DcrQ4_xxUqj5gIneg)
 
 ## Slides
 
