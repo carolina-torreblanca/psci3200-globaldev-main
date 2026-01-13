@@ -44,13 +44,14 @@ editor: source
 Background:
 
 - PhD from NYU, Postdoc here!
-- Comparativist & Quantitative Methods
+- Comparativist 
+- Political Methodologist
 
 Interests:
 
-- Crime, policing, violence, human rights, Latin America
-- Quantitative (experimental and non experimental) methods
-
+- Violence and inequality in Latin America
+- Epistemology of causal research
+- Movies
 
 ## You
 
@@ -156,15 +157,15 @@ Performance in this class will be evaluated by according to performance on the f
 
 ## Workshops
 
-- 4 interactive, hands-on workshops working with diverse types of data, covering different statistical methods, or using new computational tools. 
+- Four interactive, hands-on workshops working with diverse types of data, covering different statistical methods, or using new computational tools. 
   + Tools: R and Rstudio, Quarto, github
-  + Data: Survey data, text data
+  + Data cleaning and processing
   + Methods: Randomized and quasi-experiments, text analysis. 
 - You will be required to submit a product demonstrating completion of the workshop
 
 ## Data Assignments
 
-- Four data assignments designed to make sure you are keeping up with the tools covered in class and making progress in your final project. 
+- Four data assignments designed to make progress towards your final project. 
 - For assignments where you are required to submit something, you will be required to submit your own code and write-up.
 - You can see the date of each assignment on the schedule
 
@@ -187,10 +188,11 @@ Your final submission will be a publicly available webpage that contains: (1) a 
 
 | Milestone                    | Due Date                 |
 |:-----------------------------|:-------------------------|
-| Create a GitHub repository   | Feb 11th |
-| Identify data source         | Mar 11th |
-| Submit proposal              | Mar 30th |
-| Submit final project         | April 29th |
+| Create a GitHub repository   | Feb 16th |
+| Preliminary Research Question  | Feb 18th |
+| Preliminary Research Plan  | Mar 4th |
+| Research Plan  | Apr 1st |
+| Final project | April 29th |
 
 
 ::: {.notes}
@@ -227,9 +229,10 @@ By April, I'll give you a break-down of how the grading will be done
 
 ## Controversial Topics and Statements
 
+- Students are required to treat one another with respect
 - Diverse perspectives, experiences, and backgrounds are essential for effective development research and practice
 - Contact me directly if you feel we're not achieving an inclusive environment
-- Students are required to treat one another with respect
+
 
 ## Academic Honesty
 

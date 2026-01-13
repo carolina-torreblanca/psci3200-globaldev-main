@@ -30,15 +30,6 @@ editor: source
 - Data analysis methods, inferential techniques, and computational tools
 - Useful for development sector, policy, industry, etc.
 
-::: {.notes}
-- We spent a lot of time learning about the tools that academics use to understand the problems faced by developing countries
-- This isn't because I think that academic research does a good job or providing answers about how to advance development
-- Rather, I think these tools can be useful to those who are well positioned/incentivized to do that
-  + Think about the Kenya Education paper
-  + Think about UCTs
-
-:::
-
 ## Course Objectives
 
 At the end of the course you should be able to:
@@ -54,7 +45,7 @@ At the end of the course you should be able to:
 \
 
 - Substantive focus areas
-  + Democracy and Autocratization
+  + Democracy and Autocracy
   + Migration
   + Crime and Conflict
   + Foreign Aid

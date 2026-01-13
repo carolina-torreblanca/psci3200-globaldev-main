@@ -6,20 +6,9 @@ institute: "University of Pennsylvania"
 format:
   pptx:
     toc: false
-    theme: [custom_iea.scss]
-    width: 1050
-    margin: 0.1
-    logo: DevLab_Logo_29Mar2023.png
-    footer: "jrspringman.github.io/psci3200-globaldev/"
-    embed-resources: true
-    template-partials:
-    - title-slide.html
-    gfm:
-    mermaid-format: png
-    code-line-numbers: false
-
 
 highlight-style: github
+code-line-numbers: false
 ---
 
 <!-- https://docs.google.com/presentation/d/1kLVVitZ7T_h-csVscnFPYiCbOOvU8D9cPSvBmcBKITk/edit#slide=id.g2e9f3969cd6_0_220 -->
