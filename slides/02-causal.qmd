@@ -211,144 +211,30 @@ But if we want to answer causal questions...
 :::
 
 
-## Causation
+# The Causal Toolkit
 
-What does it mean to say that **X causes Y**?
+## What is Causation?
+
+\
+
+Correlation tells us X and Y move together.
 
 ::: fragment
-How is it different from saying they are correlated?
+But **causation** says something stronger: X *produces* or *changes* Y
 :::
 
 ::: fragment
 \
-*Take a moment to think about this.*
+How do we study this? Scientists made **two key moves**:
 :::
 
 ---
-
-## Common Intuitions About Causation
-
-\
-
-People often say:
-
-::: incremental
-- "X *leads to* Y"
-- "X *produces* Y"
-- "X *makes* Y happen"
-:::
-
-::: fragment
-\
-These feel intuitive. X as the source of a change in Y. But notice what they **don't** tell us...
-:::
-
----
-
-## The Hidden Problem
-
-\
-
-::: incremental
-- **How would we know X is the source of a change in Y instead of just correlated?**
-
-- Causality describes an assumed relationship that we can never directly observe! 
-
-- Causation is, in a sense, metaphysical! 
-:::
-
----
-
-## A Very Old Problem
-
-::: incremental
-1. What do we **mean** by a cause?
-2. How could we ever **know** that X really causes Y?
-:::
-
-::: fragment
-Philosophers like David Hume pointed out this is not obvious at all
-:::
-
----
-
-## Causation is Not Observable
-
-We never directly **observe** causation. We observe events, sequences and regularities
-
-
-::: fragment
-
-*Everyday, you hear your doorbell and Mexican food appears*
-
-Doorbells cause Mexican food to appear.  
-
-*Everyday, you sacrifice a child to Huitzilopotchli and the sun rises*
-
-Sacrifices cause sunrises
-
-*Whenever you flip the lightswitch, light turns on*
-
-Moving plastic objects on the wall turn on the light
-:::
-
----
-
-## Repetition Doesn't Solve It
-
-Even if the switch *always* turns on the light:
-
-::: incremental
-- You still only observe **regularity**
-- Not **necessity**
-- Not **causation itself**
-:::
-
-::: fragment
-All the data in the world look the same whether causation is really there or not.
-:::
-
----
-
-## The Problem for Science
-
-If causation is not directly observable:
-
-::: incremental
-- Correlation alone cannot answer causal questions
-- Observed patterns admit multiple explanations
-:::
-
-::: fragment
-**So how does science, interested in causes and consequences, proceed?**
-:::
-
----
-
-## The Core Difficulty
-
-Causal questions require a **comparison**:
-
-::: {.r-fit-text}
-What actually happened
-**vs.**
-What *would have* happened otherwise
-:::
-
-::: fragment
-But we **never observe both**.
-
-This is called *THE FUNDAMENTAL PROBLEM OF CAUSAL INFERENCE*
-:::
-
----
-
-# The Scientific Response
 
 ## Two Key Moves
 
+\
 
-Rather than trying to observe causation directly, scientists made **two practical moves**:
+Rather than trying to observe causation directly, scientists:
 
 ::: incremental
 1. **Define** causality as a comparison between TWO counterfactual states
@@ -374,11 +260,6 @@ There are many ways to define causality:
 - **Legal**: "But for" the defendant's action, would harm have occurred?
 - **Philosophical**: Necessary and sufficient conditions, mechanisms
 - **Social science**: Counterfactual comparison (what we'll use)
-:::
-
-::: fragment
-\
-We focus on the social science approach — but know that others exist.
 :::
 
 ---
@@ -412,11 +293,6 @@ A pharmaceutical company says:
 - Maybe they would have gotten better anyway!
 :::
 
-::: fragment
-\
-To know if the pill *caused* recovery, we need to compare **two states of the world**.
-:::
-
 ---
 
 ## Causality is a Comparison
@@ -429,13 +305,13 @@ To know if the pill *caused* recovery, we need to compare **two states of the wo
 \
 To answer this, we need to compare:
 
-1. What happened **with** the pill
-2. What *would have* happened **without** the pill
+1. What happened to the patient **with** the pill
+2. What *would have* happened to the same patient **without** the pill
 :::
 
 ::: fragment
 \
-Causality is always **relative** — treatment vs. *what alternative?*
+Causality is always **relative** treatment vs. *what alternative?*
 :::
 
 ---
@@ -477,16 +353,13 @@ Every patient has both. But we can only ever *see* one.
 ## The Individual Causal Effect
 
 
-DEFINE causality as the effect of the pill **for patient $i$**:
+DEFINE the individual causal effect as the effect of the pill, relative to no pill, **for patient $i$**:
 
 $$TE_i = Y_i(1) - Y_i(0)$$
 
 
 ::: fragment
-\
-This is a **definition** — it tells us what we *mean* by a causal effect.
-
-But can we calculate it?
+Can we calculate it?
 :::
 
 ---
@@ -579,7 +452,7 @@ Average recovery rate with pill **minus** average recovery rate without pill.
 
 \
 
-People are **different** — Ana and Diana aren't identical.
+People are **different** 
 
 ::: fragment
 \
@@ -593,6 +466,43 @@ We need to make an **assumption**.
 
 ---
 
+## A Bad Comparison
+
+\
+
+Imagine: people who feel **really sick** take the pill. People who feel fine don't.
+
+::: fragment
+\
+The pill group was sicker *to begin with*.
+
+They would have recovered less **even without the pill**.
+:::
+
+::: fragment
+\
+Comparing these groups tells us nothing about the pill's effect.
+:::
+
+---
+
+## The Problem
+
+\
+
+::: incremental
+- Sicker people chose to take the pill
+- Sickness affects recovery
+- We can't tell: is it the pill, or were they just sicker?
+:::
+
+::: fragment
+\
+The groups aren't **comparable** — they differed *before* treatment.
+:::
+
+---
+
 ## The Key Assumption
 
 \
@@ -601,31 +511,31 @@ We need to make an **assumption**.
 
 ::: fragment
 \
-This means: who takes the pill is *unrelated* to who would recover anyway.
+The pill group and no-pill group would have had similar outcomes *if neither had taken the pill*.
 :::
 
 ::: fragment
 \
-If this assumption holds → group averages are valid comparisons → we can estimate causal effects.
+If this holds → group averages are valid comparisons → we can estimate causal effects.
 :::
 
 ---
 
-## When Does This Hold?
+## When Is This Plausible?
 
 \
 
 ::: incremental
-- Ana is sicker than Diana? Doesn't matter — *if* sickness didn't determine who got the pill
+- When **who gets treatment** isn't determined by things that also affect the outcome
 
-- Some people recover faster? Doesn't matter — *if* that's unrelated to who got treatment
+- When there's no systematic difference between groups before treatment
 
-- Individual differences **cancel out** when treatment is independent of those differences
+- When it's "as if" treatment was assigned at random
 :::
 
 ::: fragment
 \
-**Causal inference is the craft of making this assumption credible.**
+**More on how to make this credible next class.**
 :::
 
 ---
@@ -642,7 +552,6 @@ If this assumption holds → group averages are valid comparisons → we can est
   + Did this program actually reduce poverty?
   + Would this policy improve outcomes?
 
-- Without causal reasoning, we're just guessing
 :::
 
 ---

@@ -158,7 +158,7 @@
     "href": "slides/02-causal.html#two-key-moves",
     "title": "Correlation and Causation",
     "section": "Two Key Moves",
-    "text": "Two Key Moves\nRather than trying to observe causation directly, scientists made two practical moves:\n\n\nDefine causality as a comparison between TWO counterfactual states\nShift from individual causal effects to averages\n\n\n\nLet’s unpack each move."
+    "text": "Two Key Moves\n\n\nRather than trying to observe causation directly, scientists:\n\n\nDefine causality as a comparison between TWO counterfactual states\nShift from individual causal effects to averages\n\n\n\nLet’s unpack each move."
   },
   {
     "objectID": "slides/02-causal.html#the-neymanrubin-framework",
@@ -179,7 +179,7 @@
     "href": "slides/02-causal.html#the-individual-causal-effect",
     "title": "Correlation and Causation",
     "section": "The Individual Causal Effect",
-    "text": "The Individual Causal Effect\nDEFINE causality as the effect of the pill for patient \\(i\\):\n\\[TE_i = Y_i(1) - Y_i(0)\\]\n\n\nThis is a definition — it tells us what we mean by a causal effect.\nBut can we calculate it?"
+    "text": "The Individual Causal Effect\nDEFINE the individual causal effect as the effect of the pill, relative to no pill, for patient \\(i\\):\n\\[TE_i = Y_i(1) - Y_i(0)\\]\n\nCan we calculate it?"
   },
   {
     "objectID": "slides/02-causal.html#the-fundamental-problem-of-causal-inference",
@@ -249,7 +249,7 @@
     "href": "slides/02-causal.html#why-causality-matters-for-development",
     "title": "Correlation and Causation",
     "section": "Why Causality Matters for Development",
-    "text": "Why Causality Matters for Development\n\n\nUnderstanding cause and effect is how we change things in the real world\nCausal inference separates good evaluations from bad\n\nDid this program actually reduce poverty?\nWould this policy improve outcomes?\n\nWithout causal reasoning, we’re just guessing"
+    "text": "Why Causality Matters for Development\n\n\nUnderstanding cause and effect is how we change things in the real world\nCausal inference separates good evaluations from bad\n\nDid this program actually reduce poverty?\nWould this policy improve outcomes?"
   },
   {
     "objectID": "slides/02-causal.html#many-tools-to-build-credible-comparisons",
@@ -305,14 +305,14 @@
     "href": "slides/02-causal.html#why-this-is-wrong",
     "title": "Correlation and Causation",
     "section": "Why This is Wrong",
-    "text": "Why This is Wrong\n\n\n\n\nWe saw the patient with the pill → got better\nWe didn’t see the patient without the pill\nMaybe they would have gotten better anyway!\n\n\n\n\nTo know if the pill caused recovery, we need to compare two states of the world."
+    "text": "Why This is Wrong\n\n\n\n\nWe saw the patient with the pill → got better\nWe didn’t see the patient without the pill\nMaybe they would have gotten better anyway!"
   },
   {
     "objectID": "slides/02-causal.html#causality-is-a-comparison",
     "href": "slides/02-causal.html#causality-is-a-comparison",
     "title": "Correlation and Causation",
     "section": "Causality is a Comparison",
-    "text": "Causality is a Comparison\n\n\nThe causal question: Did the pill make the patient better?\n\n\nTo answer this, we need to compare:\n\nWhat happened with the pill\nWhat would have happened without the pill\n\n\n\n\nCausality is always relative — treatment vs. what alternative?"
+    "text": "Causality is a Comparison\n\n\nThe causal question: Did the pill make the patient better?\n\n\nTo answer this, we need to compare:\n\nWhat happened to the patient with the pill\nWhat would have happened to the same patient without the pill\n\n\n\n\nCausality is always relative treatment vs. what alternative?"
   },
   {
     "objectID": "slides/02-causal.html#defining-the-key-terms",
@@ -333,7 +333,7 @@
     "href": "slides/02-causal.html#why-do-averages-work",
     "title": "Correlation and Causation",
     "section": "Why Do Averages Work?",
-    "text": "Why Do Averages Work?\n\n\nPeople are different — Ana and Diana aren’t identical.\n\n\nSo how can comparing group averages tell us anything causal?\n\n\n\nWe need to make an assumption."
+    "text": "Why Do Averages Work?\n\n\nPeople are different\n\n\nSo how can comparing group averages tell us anything causal?\n\n\n\nWe need to make an assumption."
   },
   {
     "objectID": "slides/02-causal.html#the-logic-of-comparison",
@@ -347,7 +347,7 @@
     "href": "slides/02-causal.html#the-key-assumption",
     "title": "Correlation and Causation",
     "section": "The Key Assumption",
-    "text": "The Key Assumption\n\n\nAssumption: The two groups are comparable on average.\n\n\nThis means: who takes the pill is unrelated to who would recover anyway.\n\n\n\nIf this assumption holds → group averages are valid comparisons → we can estimate causal effects."
+    "text": "The Key Assumption\n\n\nAssumption: The two groups are comparable on average.\n\n\nThe pill group and no-pill group would have had similar outcomes if neither had taken the pill.\n\n\n\nIf this holds → group averages are valid comparisons → we can estimate causal effects."
   },
   {
     "objectID": "slides/02-causal.html#when-does-this-hold",
@@ -361,6 +361,34 @@
     "href": "slides/02-causal.html#a-note-on-definitions",
     "title": "Correlation and Causation",
     "section": "A Note on Definitions",
-    "text": "A Note on Definitions\n\n\nThere are many ways to define causality:\n\n\nLegal: “But for” the defendant’s action, would harm have occurred?\nPhilosophical: Necessary and sufficient conditions, mechanisms\nSocial science: Counterfactual comparison (what we’ll use)\n\n\n\n\nWe focus on the social science approach — but know that others exist."
+    "text": "A Note on Definitions\n\n\nThere are many ways to define causality:\n\n\nLegal: “But for” the defendant’s action, would harm have occurred?\nPhilosophical: Necessary and sufficient conditions, mechanisms\nSocial science: Counterfactual comparison (what we’ll use)"
+  },
+  {
+    "objectID": "slides/02-causal.html#a-bad-comparison",
+    "href": "slides/02-causal.html#a-bad-comparison",
+    "title": "Correlation and Causation",
+    "section": "A Bad Comparison",
+    "text": "A Bad Comparison\n\n\nImagine: people who feel really sick take the pill. People who feel fine don’t.\n\n\nThe pill group was sicker to begin with.\nThey would have recovered less even without the pill.\n\n\n\nComparing these groups tells us nothing about the pill’s effect."
+  },
+  {
+    "objectID": "slides/02-causal.html#the-problem",
+    "href": "slides/02-causal.html#the-problem",
+    "title": "Correlation and Causation",
+    "section": "The Problem",
+    "text": "The Problem\n\n\n\n\nSicker people chose to take the pill\nSickness affects recovery\nWe can’t tell: is it the pill, or were they just sicker?\n\n\n\n\nThe groups aren’t comparable — they differed before treatment."
+  },
+  {
+    "objectID": "slides/02-causal.html#when-is-this-plausible",
+    "href": "slides/02-causal.html#when-is-this-plausible",
+    "title": "Correlation and Causation",
+    "section": "When Is This Plausible?",
+    "text": "When Is This Plausible?\n\n\n\n\nWhen who gets treatment isn’t determined by things that also affect the outcome\nWhen there’s no systematic difference between groups before treatment\nWhen it’s “as if” treatment was assigned at random\n\n\n\n\nMore on how to make this credible next class."
+  },
+  {
+    "objectID": "slides/02-causal.html#what-is-causation",
+    "href": "slides/02-causal.html#what-is-causation",
+    "title": "Correlation and Causation",
+    "section": "What is Causation?",
+    "text": "What is Causation?\n\n\nCorrelation tells us X and Y move together.\n\nBut causation says something stronger: X produces or changes Y\n\n\n\nHow do we study this? Scientists made two key moves:"
   }
 ]
