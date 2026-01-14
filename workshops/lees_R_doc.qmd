@@ -501,8 +501,7 @@ gt(desciptives) %>%
     observations = md("Respondents<br>(count)"),
     share = md("Respondents<br>(%)"),
     mean = md("Participation<br>(mean score)")
-  ) %>%
-  gtsave(filename = "tab_1.png")
+  )
 
 
 ```

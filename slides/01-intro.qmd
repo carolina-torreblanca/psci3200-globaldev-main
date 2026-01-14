@@ -72,7 +72,7 @@ Please tell us:
 
 - Blending subject-matter, research methods, and computational tools
 - Focusing on the type of work that goes on with and within development agencies 
-- Almost no math, light on the theory
+- Almost no math
 
 :::
 
