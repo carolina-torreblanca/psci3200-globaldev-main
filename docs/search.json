@@ -25,7 +25,7 @@
     "href": "slides/lees-quant.html#central-tendency-mean",
     "title": "Quantitative Analysis",
     "section": "Central Tendency: Mean",
-    "text": "Central Tendency: Mean\n\\mu_X = \\frac{1}{n} \\sum_{i}^{n} X_i\n\nmy_vector = rnorm(10, mean = 10, sd = 5)\n# Step 1: Sum the values\nsum_values &lt;- sum(my_vector)\n# Step 2: Count the number of elements\ncount_elements &lt;- length(my_vector)\n# Step 3: Calculate the mean\nmean_value &lt;- sum_values / count_elements\n\nprint(mean_value)\n\n[1] 12.19033\n\nmean(my_vector)\n\n[1] 12.19033\n\n\n\nWe begin by reviewing some basic statistical concepts and illustrating those concepts using R code. This will build your familiarity with R while providing a quick review of basic statistical concepts. Everyone knows how to calculate the mean of a variable. In R, there are multiple ways to do it. Here, I created a random variable with 10 values and an average value of 10. You can calculate the mean by hand or using the function ‘mean()’. Both approaches should give you the same value."
+    "text": "Central Tendency: Mean\n\\mu_X = \\frac{1}{n} \\sum_{i}^{n} X_i\n\nmy_vector = rnorm(10, mean = 10, sd = 5)\n# Step 1: Sum the values\nsum_values &lt;- sum(my_vector)\n# Step 2: Count the number of elements\ncount_elements &lt;- length(my_vector)\n# Step 3: Calculate the mean\nmean_value &lt;- sum_values / count_elements\n\nprint(mean_value)\n\n[1] 10.07027\n\nmean(my_vector)\n\n[1] 10.07027\n\n\n\nWe begin by reviewing some basic statistical concepts and illustrating those concepts using R code. This will build your familiarity with R while providing a quick review of basic statistical concepts. Everyone knows how to calculate the mean of a variable. In R, there are multiple ways to do it. Here, I created a random variable with 10 values and an average value of 10. You can calculate the mean by hand or using the function ‘mean()’. Both approaches should give you the same value."
   },
   {
     "objectID": "slides/lees-quant.html#spread-variance",
@@ -4288,7 +4288,7 @@
     "href": "slides/01-intro.html#grading",
     "title": "Introduction to PSCI 3200",
     "section": "Grading",
-    "text": "Grading\nPerformance in this class will be evaluated by according to performance on the following course requirements:\n\n\n\nRequirement\nPercent of Final Grade\n\n\n\n\nQuizzes (4)\n10%\n\n\nWorkshops (4)\n10%\n\n\nData Assignments (4)\n36%\n\n\nFinal Project (1)\n44%"
+    "text": "Grading\nPerformance in this class will be evaluated by according to performance on the following course requirements:\n\n\n\nRequirement\nPercent of Final Grade\n\n\n\n\nQuizzes (4)\n10%\n\n\nWorkshops (4)\n15%\n\n\nData Assignments (3)\n35%\n\n\nFinal Project (1)\n40%"
   },
   {
     "objectID": "slides/01-intro.html#quizzes",
@@ -4309,14 +4309,14 @@
     "href": "slides/01-intro.html#data-assignments",
     "title": "Introduction to PSCI 3200",
     "section": "Data Assignments",
-    "text": "Data Assignments\n\nFour data assignments designed to make progress towards your final project.\nFor assignments where you are required to submit something, you will be required to submit your own code and write-up.\nYou can see the date of each assignment on the schedule"
+    "text": "Data Assignments\n\nThree data assignments designed to make progress towards your final project\nYou will be required to submit your own code and write-up\n\n\n\n\nAssignment\nDue Date\n\n\n\n\nAssignment 1\nFeb 18th\n\n\nAssignment 2\nMar 4th\n\n\nAssignment 3\nApr 1st"
   },
   {
     "objectID": "slides/01-intro.html#final-project",
     "href": "slides/01-intro.html#final-project",
     "title": "Introduction to PSCI 3200",
     "section": "Final Project",
-    "text": "Final Project\n\nData analysis project with data of your choosing\n\nFormulate a research question\nFind data that can help you answer that question\nApply the tools and methods from this course\nWrite-up analysis\n\nProduce a webpage to present your results for public consumption\n\n\nYour final submission will be a publicly available webpage that contains: (1) a brief introduction to your research question and data; (2) a discussion of your research design, its assumptions, and threats to inference; (3) a visualization that describes your data; (4) a presentation of the results from a regression model (as a table or graph) and discussion of its implications for your research question; and (5) a discussion of the implications of your findings for development policy or practice, including the limitations of your analysis and suggestions for future research."
+    "text": "Final Project\n\nData analysis project with data of your choosing\n\nFormulate a research question\nFind data that can help you answer that question\nApply the tools and methods from this course\nWrite-up analysis\n\nProduce a webpage to present your results for public consumption\nDue: Apr 29th\n\n\nYour final submission will be a publicly available webpage that contains: (1) a brief introduction to your research question and data; (2) a discussion of your research design, its assumptions, and threats to inference; (3) a visualization that describes your data; (4) a presentation of the results from a regression model (as a table or graph) and discussion of its implications for your research question; and (5) a discussion of the implications of your findings for development policy or practice, including the limitations of your analysis and suggestions for future research."
   },
   {
     "objectID": "slides/01-intro.html#final-project-1",
@@ -4960,14 +4960,14 @@
     "href": "assignments/02_gitrepo.html",
     "title": "Creating a Final Project Git Repo",
     "section": "",
-    "text": "Create a github profile and start a git repo for the final project:\n\nThe git repo should follow the naming convention: psci3200_yourname\nSend me the url to your repo on Slack by 11:59pm EST on Wed, February 11"
+    "text": "Create a github profile and start a git repo for the final project:\n\nThe git repo should follow the naming convention: psci3200_yourname\nSend me the url to your repo on Slack by 11:59pm EST on Mon, February 23"
   },
   {
     "objectID": "assignments/02_gitrepo.html#assignment",
     "href": "assignments/02_gitrepo.html#assignment",
     "title": "Creating a Final Project Git Repo",
     "section": "",
-    "text": "Create a github profile and start a git repo for the final project:\n\nThe git repo should follow the naming convention: psci3200_yourname\nSend me the url to your repo on Slack by 11:59pm EST on Wed, February 11"
+    "text": "Create a github profile and start a git repo for the final project:\n\nThe git repo should follow the naming convention: psci3200_yourname\nSend me the url to your repo on Slack by 11:59pm EST on Mon, February 23"
   },
   {
     "objectID": "assignments/00_setupr.html",
@@ -8206,35 +8206,35 @@
   {
     "objectID": "syllabus.html",
     "href": "syllabus.html",
-    "title": "Syllabus",
+    "title": "Introduction to PSCI 3200",
     "section": "",
     "text": "Carolina Torreblanca\n   catba@sas.upenn.edu\n   PCPE 436\n   Schedule an appointment\n\n\n\n\n\n   Mon/Wed\n   January 14th - April 29th\n   5:15-6:44 PM\n   PCPE 202\n   Slack"
   },
   {
     "objectID": "syllabus.html#course-description-and-objectives",
     "href": "syllabus.html#course-description-and-objectives",
-    "title": "Syllabus",
+    "title": "Introduction to PSCI 3200",
     "section": "Course Description and Objectives",
     "text": "Course Description and Objectives\nGlobal development increasingly relies on data and quantitative evidence to inform policies. Thus, the growth of new data sources and advances in computational tools have expanded what researchers can study and how well they can study it, creating the possibility of better-informed responses to long-standing challenges such as poverty, inequality, and governance.\nHowever, more data alone does not guarantee better policy. This course examines how contemporary social science research uses data to make claims about development and governance, and how to evaluate those claims critically. Students will engage with recent research and gain hands-on experience analyzing real-world data using common research designs and computational tools, with an emphasis on transparency, inference, and reproducibility.\nThe course will be organized around several timely substantive topics in global development. As we explore these topics, students will gain a deeper understanding of the challenges that shape governance and development. At the same time, students will be introduced to data analysis methods, inferential techniques, and computational tools that are useful across a wide range of applications. Specifically, students will deepen their understanding of basic statistical methods common to the social sciences, learn how these methods can be used to make inferences about population characteristics and causal relationships, and prepare documents that contain reproducible data analysis workflows.\nAt the end of the course you should be able to:\n\nEvaluate the quality of evidence in the development field\nThink clearly about how data can be used to learn about development and governance challenges\nUse tools for data analysis such as R, RStudio, Quarto, and GitHub\nProduce professional-quality documents that summarize original research\n\n\n\n\n\n\n\nPrerequisites\n\n\n\nThis class is designed as a follow-up to PSCI 1102. Students that have not taken PSCI 1102 and PSCI 1800 (or an equivalent) should contact the instructor before enrolling."
   },
   {
     "objectID": "syllabus.html#course-materials",
     "href": "syllabus.html#course-materials",
-    "title": "Syllabus",
+    "title": "Introduction to PSCI 3200",
     "section": "Course Materials",
     "text": "Course Materials\nThis course relies primarily on free, open-source materials. However, the purchase of one textbook will be required. All other reading materials will be uploaded to this website or circulated on Slack at least one week before the meeting. Course site and instructional materials draw on content originally developed for PSCI 3200 by Jeremy Springman\n\nBooks\nStudents are required to purchase a copy of Data Analysis for Social Science: A Friendly and Practical Introduction (DSS). We will use DSS as a jumping-off point for this course. While students are expected to already be familiar with many of the tools and concepts covered by this book, it will serve as a method to review core concepts and orient discussion about how to expand on these skills.\n\n\n\n\n\n\nRequired book\n\n\n\nI am asking students to purchase a copy of DSS because it comes with access to additional, helpful resources. If you are unable to purchase this book, you must let me know. To save money, consider e-renting the textbook.\n\n\n\n\nComputing\nIn the course, we will be using R for data cleaning, analysis, and visualization. R is free, open source statistical computing environment available on all major operating systems. We will also be using RStudio, a free, widely used graphical interface for R. For document preparation, we will be using Quarto, a free, open-source scientific and technical publishing system that is compatible with both R/RStudio and Python, as well as several other languages. Both Quarto and RStudio are supported by a company called Posit. For version control, we will be using Github.\n\n\n\n\n\n\nRequired software\n\n\n\nStudents are expected to already have R and RStudio installed on the personal computer that they will be using for class. We will cover the installation of all other required computing tools during the course.\n\n\nSeveral course requirements will require you to write and submit R code. Your code must be appropriately commented and reproducible. To ensure your code meets the course standards, please follow this style guide from Hadley Wickham (Chief Scientist at Posit and developer of ggplot2 and tidyverse)."
   },
   {
     "objectID": "syllabus.html#course-structure",
     "href": "syllabus.html#course-structure",
-    "title": "Syllabus",
+    "title": "Introduction to PSCI 3200",
     "section": "Course Structure",
-    "text": "Course Structure\nSubstantively, the course is divided into several parts. Part 1 presents a general introduction to the course and a brief introduction to correlation, causality and statistical inference. The remaining parts are structured around key substantive topics in development. For each topic, we will begin with a brief overview of the literature. Then, we will focus on one particular research question and use it as a guide to learn how to implement some of the most common research designs in the social sciences. Throughout, you will gain hands-on experience with diverse kinds of data through in-class workshops and data assignments. Weekly reading assignments will be divided between contemporary research on substantive topics in global development and textbook chapters focused on social science research methods. You are expected to attend class and be prepared to engage in discussion about the assigned readings.\n\n\nGrading\nPerformance in this class will be evaluated by according to performance on the following course requirements:\n\n\n\nRequirement\nPercent of Final Grade\n\n\n\n\nQuizzes (4)\n10%\n\n\nWorkshops (4)\n20%\n\n\nData Assignments (6)\n30%\n\n\nFinal Project (1)\n40%\n\n\n\n\n\nRequirement Descriptions\nThere are four graded requirements for this course.\nQuizzes\n\nYou are expected to attend each course meeting. On four randomly selected meetings, there will be a brief quiz designed to test whether or not students did the readings. Students with a pre-approved absence will be required to take the quiz remotely within 24 hours of its administration (in the event your absence falls on a quiz date). Students will be permitted one pre-approved absence for the semester.\nGrade: 10%\n\nWorkshops\n\nWe will have four workshops throughout the semester. These will be interactive, hands-on workshops allowing students to gain familiarity with new statistical methods or computational tools. These workshops will cover important tools, such as quarto and github, and data analysis tasks, including cleaning, visualization, and modeling. After each workshop, you will be required to submit a product (ex. the link to a git repo, a quarto doc, an R script, etc.) demonstrating completion of the workshop.\nGrade: 15%\n\nData Assignments\n\nThere will be three data assignments throughout the semester. These assignments are designed to give you an opportunity to apply tools and methods discussed in readings, lectures, and workshops to data from the real world. These are individual assignments. While I encourage you to collaborate with your colleagues as you think through the tasks, you will be required to submit your own code and write-up.\nGrade: 35%\n\n\n\n\nData Assignment\nDue Date\n\n\n\n\nAssignment 1\nMar 28th 11:59pm ET\n\n\nAssignment 2\nApr 11th 11:59pm ET\n\n\nAssignment 3\nApr 30th 11:59pm ET\n\n\n\nFinal Project\n\nThe final project is a data analysis project that will use data of your choosing. The only stipulation is that this data must be relevant to one of the global development topics covered in this course. The assignment will require you to formulate a research question, find data that can help you answer that question, apply the tools and methods from this course to the data you have selected to answer your research question, and present those results for public consumption.\nThe goal will be to produce a professional project that can showcase the skills that you have gained to potential employers. Your final submission will be a publicly available webpage that contains: (1) a brief introduction to your research question and data; (2) a discussion of your research design, its assumptions, and threats to inference; (3) a visualization that describes your data; (4) a presentation of the results from a regression model (as a table or graph) and discussion of its implications for your research question; and (5) a discussion of the implications of your findings for development policy or practice, including the limitations of your analysis and suggestions for future research. In addition to the public-facing webpage, you must share access to a GitHub repo that contains the code to reproduce the project output.\nGrade: 40%\n\n\n\n\nMilestone\nDue Date\n\n\n\n\nCreate a GitHub repository\nFeb 8th 11:59pm ET\n\n\nIdea for research question and data source\nMar 12th 11:59pm ET\n\n\nSubmit proposal (research question and design)\nApr 11th 11:59pm ET\n\n\nSubmit final project (webpage url and repo)\nMay 10th 11:59pm ET"
+    "text": "Course Structure\nSubstantively, the course is divided into several parts. Part 1 presents a general introduction to the course and a brief introduction to correlation, causality and statistical inference. The remaining parts are structured around key substantive topics in development. For each topic, we will begin with a brief overview of the literature. Then, we will focus on one particular research question and use it as a guide to learn how to implement some of the most common research designs in the social sciences. Throughout, you will gain hands-on experience with diverse kinds of data through in-class workshops and data assignments. Weekly reading assignments will be divided between contemporary research on substantive topics in global development and textbook chapters focused on social science research methods. You are expected to attend class and be prepared to engage in discussion about the assigned readings.\n\n\nGrading\nPerformance in this class will be evaluated by according to performance on the following course requirements:\n\n\n\nRequirement\nPercent of Final Grade\n\n\n\n\nQuizzes (4)\n10%\n\n\nWorkshops (4)\n15%\n\n\nData Assignments (3)\n35%\n\n\nFinal Project (1)\n40%\n\n\n\n\n\nRequirement Descriptions\nThere are four graded requirements for this course.\nQuizzes\n\nYou are expected to attend each course meeting. On four randomly selected meetings, there will be a brief quiz designed to test whether or not students did the readings. Students with a pre-approved absence will be required to take the quiz remotely within 24 hours of its administration (in the event your absence falls on a quiz date). Students will be permitted one pre-approved absence for the semester.\nGrade: 10%\n\nWorkshops\n\nWe will have four workshops throughout the semester. These will be interactive, hands-on workshops allowing students to gain familiarity with new statistical methods or computational tools. These workshops will cover important tools, such as quarto and github, and data analysis tasks, including cleaning, visualization, and modeling. After each workshop, you will be required to submit a product (ex. the link to a git repo, a quarto doc, an R script, etc.) demonstrating completion of the workshop.\nGrade: 15%\n\nData Assignments\n\nThere will be three data assignments throughout the semester. These assignments are designed to give you an opportunity to apply tools and methods discussed in readings, lectures, and workshops to data from the real world. These are individual assignments. While I encourage you to collaborate with your colleagues as you think through the tasks, you will be required to submit your own code and write-up.\nGrade: 35%\n\n\n\n\nData Assignment\nDue Date\n\n\n\n\nAssignment 1\nFeb 18th 11:59pm ET\n\n\nAssignment 2\nMar 4th 11:59pm ET\n\n\nAssignment 3\nApr 1st 11:59pm ET\n\n\n\nFinal Project\n\nThe final project is a data analysis project that will use data of your choosing. The only stipulation is that this data must be relevant to one of the global development topics covered in this course. The assignment will require you to formulate a research question, find data that can help you answer that question, apply the tools and methods from this course to the data you have selected to answer your research question, and present those results for public consumption.\nThe goal will be to produce a professional project that can showcase the skills that you have gained to potential employers. Your final submission will be a publicly available webpage that contains: (1) a brief introduction to your research question and data; (2) a discussion of your research design, its assumptions, and threats to inference; (3) a visualization that describes your data; (4) a presentation of the results from a regression model (as a table or graph) and discussion of its implications for your research question; and (5) a discussion of the implications of your findings for development policy or practice, including the limitations of your analysis and suggestions for future research. In addition to the public-facing webpage, you must share access to a GitHub repo that contains the code to reproduce the project output.\nGrade: 40%\nDue: Apr 29th 11:59pm ET"
   },
   {
     "objectID": "syllabus.html#course-policies",
     "href": "syllabus.html#course-policies",
-    "title": "Syllabus",
+    "title": "Introduction to PSCI 3200",
     "section": "Course Policies",
     "text": "Course Policies\nPlease review these course policies carefully. Any questions or concerns about these policies should be raised during the first week of class.\n\nLate Submissions and Regrading\nLate submission of assignments will incur a penalty of 2 points for every day late, except in documented cases of serious illness or family emergency. If you feel there has been an error in the grading of one your assignment, you may request in writing a regrade of the assignment. First, I will request a detailed write-up of your dispute. Second, I will regrade the entire assignment, not just the part you are disputing. Therefore, your regrade might increase or decrease the overall grade on the assignment.\n\n\nUse of AI Tools\nYou are welcome to use generative AI tools, such as ChatGPT, to assist you with your work in this course. There is mounting evidence from rigorous research that these tools increase human productivity. I believe that their use will continue to proliferate, so it is important to gain experience integrating them into professional tasks. However, AI tools frequently make errors and ‘hallucinate’ information about things that do not exist (journal articles, R functions, etc.). It is your responsibility to verify the information provided by such tools. Most importantly, you are required to disclose your use of AI tools for assignments in the form of footnotes or citations. The use of AI tools will not be counted against you. On the contrary, I want to adopt and share your clever or innovative applications of AI tools.\n\n\nElectronic Devices\nLaptops will be required in class. All other electronic devices should be silenced and hidden. If there is an emergency situation and your phone must be visible, please inform me at the beginning of class.\n\n\nControversial Topics and Statements\nThis course may deal with subject-matter that is difficult or controversial. It is crucial to approach these topics with sensitivity and openness. Students are required to treat one another with respect, even in cases of disagreement. At times, research findings may be in-tension with your normative commitments. I urge students to engage earnestly and critically with any evidence that challenges your prior beliefs.\n\n\nAcademic Honesty\nStudents are expected to follow the University of Pennsylvania’s Code of Academic Integrity. Suspected violations will be referred to university administration for disciplinary action. If you have any doubts or questions about what constitutes academic misconduct, please do not hesitate to contact me.\n\n\nMental Health\nYour mental health is important to me. Struggles with mental health, as well as serious mental illnesses, are common across students, faculty, and staff. Please feel free to reach out to me about issues you are having within or outside of this course. I emphatically encourage anyone who thinks they may benefit to utilize the university resources listed below:\n\nCounseling and Mental Health Services\n24/7 Services: 215-746-9355\n\nPlease note that this list is not comprehensive. If there are services that you think should be added to this list, please let me know.\n\n\nAccessibility\nAccessibility is a shared value and a shared responsibility at Penn. The Weingarten Center partners with other departments throughout campus to coordinate and improve the accessibility of buildings and grounds, transportation, communication, and digital infrastructure. Students that require academic accommodations should contact the Weingarten Center. Academic accommodations are determined on an individualized basis through an interactive process that involves student self-disclosure, documentation of disability, and an initial meeting with a Disability Specialist. Accommodations do not alter fundamental requirements of the course and are not retroactive. Students should request accommodations as early as possible, since they may take time to implement. Students can notify the Weingarten Center at any time during the semester if adjustments to their communicated accommodation plan are needed."
   },
@@ -9728,5 +9728,145 @@
     "title": "R, RStudio, and Quarto",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nInlines notes are easier to write, since you don’t have to pick an identifier and move down to type the note.↩︎"
+  },
+  {
+    "objectID": "syllabus.html#agenda",
+    "href": "syllabus.html#agenda",
+    "title": "Introduction to PSCI 3200",
+    "section": "Agenda",
+    "text": "Agenda\n\n\n\n\nIntroductions\nCourse Description and Objectives\nRequirements\nPolicies\nSchedule\n\n\n\nemail\ncourse website\nsurvey"
+  },
+  {
+    "objectID": "syllabus.html#carolina",
+    "href": "syllabus.html#carolina",
+    "title": "Introduction to PSCI 3200",
+    "section": "Carolina",
+    "text": "Carolina\nBackground:\n\nPhD from NYU, Postdoc here!\nComparativist\nPolitical Methodologist\n\nInterests:\n\nViolence and inequality in Latin America\nEpistemology of causal research\nMovies"
+  },
+  {
+    "objectID": "syllabus.html#you",
+    "href": "syllabus.html#you",
+    "title": "Introduction to PSCI 3200",
+    "section": "You",
+    "text": "You\n\n\nPlease tell us:\n\nName, Year, Major\nOne thing you’re interested in\nOne thing you’d like to get from the course"
+  },
+  {
+    "objectID": "syllabus.html#course-description",
+    "href": "syllabus.html#course-description",
+    "title": "Introduction to PSCI 3200",
+    "section": "Course Description",
+    "text": "Course Description\n\n\nBlending subject-matter, research methods, and computational tools\nFocusing on the type of work that goes on with and within development agencies\nAlmost no math"
+  },
+  {
+    "objectID": "syllabus.html#course-description-1",
+    "href": "syllabus.html#course-description-1",
+    "title": "Introduction to PSCI 3200",
+    "section": "Course Description",
+    "text": "Course Description\n\nFollow-up to PSCI 1102\n\n1102 covered big academic debates that we won’t (ex. institutions vs geography)\n\nFocus on applied research with development agencies/industry\n\nWhat is the state of the art?\n“Big ideas” of political science as context\nMUST have a good understanding of the basics of research methods"
+  },
+  {
+    "objectID": "syllabus.html#course-description-2",
+    "href": "syllabus.html#course-description-2",
+    "title": "Introduction to PSCI 3200",
+    "section": "Course Description",
+    "text": "Course Description\n\nSubstantive focus areas\n\nDemocracy and Autocracy\nMigration\nGender\nPoverty and Inequality\nCrime and Conflict\nForeign Aid\nClimate change and adaptation"
+  },
+  {
+    "objectID": "syllabus.html#course-description-3",
+    "href": "syllabus.html#course-description-3",
+    "title": "Introduction to PSCI 3200",
+    "section": "Course Description",
+    "text": "Course Description\n\nMethods:\n\nDeepen understanding of ‘workhorse’ statistical methods and research designs\nHow these methods can be used to make inferences about causal relationships\n\nTools\n\nIntroduce the computational tools that are needed to implement these methods\nSoftware necessary to prepare professional documents and reproducible data analysis workflows"
+  },
+  {
+    "objectID": "syllabus.html#course-objectives",
+    "href": "syllabus.html#course-objectives",
+    "title": "Introduction to PSCI 3200",
+    "section": "Course Objectives",
+    "text": "Course Objectives\nAt the end of the course you should be able to:\n\nHave a good overview of the field and be capable of evaluating the quality of evidence\nThink clearly about how data can be used to learn about development and governance challenges\nUse tools for data analysis such as R, RStudio, Quarto, and GitHub\nProduce professional-quality documents that summarize original research"
+  },
+  {
+    "objectID": "syllabus.html#prerequisites-1",
+    "href": "syllabus.html#prerequisites-1",
+    "title": "Introduction to PSCI 3200",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\n\n\nSubstance\n\nBig academic debates in development research (PSCI 1102)\n\nMethods and Tools (PSCI 1800)\n\nBasic familiarity with R and RStudio\nBasic knowledge of statistics/econometrics/data science"
+  },
+  {
+    "objectID": "syllabus.html#textbook",
+    "href": "syllabus.html#textbook",
+    "title": "Introduction to PSCI 3200",
+    "section": "Textbook",
+    "text": "Textbook\n\n\n\nData Analysis for Social Science: A Friendly and Practical Introduction (DSS)\n\nWe will use DSS as a jumping-off point for this course\nSome of this material will be review"
+  },
+  {
+    "objectID": "syllabus.html#grading-1",
+    "href": "syllabus.html#grading-1",
+    "title": "Introduction to PSCI 3200",
+    "section": "Grading",
+    "text": "Grading\nPerformance in this class will be evaluated by according to performance on the following course requirements:\n\n\n\nRequirement\nPercent of Final Grade\n\n\n\n\nQuizzes (4)\n10%\n\n\nWorkshops (4)\n15%\n\n\nData Assignments (3)\n35%\n\n\nFinal Project (1)\n40%"
+  },
+  {
+    "objectID": "syllabus.html#quizzes",
+    "href": "syllabus.html#quizzes",
+    "title": "Introduction to PSCI 3200",
+    "section": "Quizzes",
+    "text": "Quizzes\n\n\n\nOn 4 randomly selected meetings, there will be a brief quiz\nIf you paid any attention or did readings, you should get full credit\nOne pre-approved absence allowed"
+  },
+  {
+    "objectID": "syllabus.html#workshops",
+    "href": "syllabus.html#workshops",
+    "title": "Introduction to PSCI 3200",
+    "section": "Workshops",
+    "text": "Workshops\n\nFour interactive, hands-on workshops working with diverse types of data, covering different statistical methods, or using new computational tools.\n\nTools: R and Rstudio, Quarto, github\nData cleaning and processing\nMethods: Randomized and quasi-experiments, text analysis.\n\nYou will be required to submit a product demonstrating completion of the workshop"
+  },
+  {
+    "objectID": "syllabus.html#data-assignments",
+    "href": "syllabus.html#data-assignments",
+    "title": "Introduction to PSCI 3200",
+    "section": "Data Assignments",
+    "text": "Data Assignments\n\nThree data assignments designed to make progress towards your final project\nYou will be required to submit your own code and write-up\n\n\n\n\nAssignment\nDue Date\n\n\n\n\nAssignment 1\nFeb 18th\n\n\nAssignment 2\nMar 4th\n\n\nAssignment 3\nApr 1st"
+  },
+  {
+    "objectID": "syllabus.html#final-project",
+    "href": "syllabus.html#final-project",
+    "title": "Introduction to PSCI 3200",
+    "section": "Final Project",
+    "text": "Final Project\n\nData analysis project with data of your choosing\n\nFormulate a research question\nFind data that can help you answer that question\nApply the tools and methods from this course\nWrite-up analysis\n\nProduce a webpage to present your results for public consumption\nDue: Apr 29th\n\n\nYour final submission will be a publicly available webpage that contains: (1) a brief introduction to your research question and data; (2) a discussion of your research design, its assumptions, and threats to inference; (3) a visualization that describes your data; (4) a presentation of the results from a regression model (as a table or graph) and discussion of its implications for your research question; and (5) a discussion of the implications of your findings for development policy or practice, including the limitations of your analysis and suggestions for future research."
+  },
+  {
+    "objectID": "syllabus.html#late-submissions-and-regrading-1",
+    "href": "syllabus.html#late-submissions-and-regrading-1",
+    "title": "Introduction to PSCI 3200",
+    "section": "Late Submissions and Regrading",
+    "text": "Late Submissions and Regrading\n\nLate submission of assignments\n\npenalty of 2 points for every day late\nexcept in documented cases of serious illness or family emergency\n\nRegrade request\n\ndetailed write-up of your dispute\nRegrade of the entire assignment (might increase or decrease)"
+  },
+  {
+    "objectID": "syllabus.html#use-of-ai-tools-1",
+    "href": "syllabus.html#use-of-ai-tools-1",
+    "title": "Introduction to PSCI 3200",
+    "section": "Use of AI Tools",
+    "text": "Use of AI Tools\n\nYou are welcome to use generative AI tools (if you must) but beware!\nDo not let it come at the peril of your understanding of the material\nAI tools frequently make errors and ‘hallucinate’ (journal articles, R functions, etc.)\nIt is your responsibility to verify the information provided\nYou must disclose your use of AI tools for assignments in the form of footnotes or citations"
+  },
+  {
+    "objectID": "syllabus.html#electronic-devices-1",
+    "href": "syllabus.html#electronic-devices-1",
+    "title": "Introduction to PSCI 3200",
+    "section": "Electronic Devices",
+    "text": "Electronic Devices\n\n\n\nLaptops will be required in class\nAll other electronic devices should be silenced and hidden"
+  },
+  {
+    "objectID": "syllabus.html#controversial-topics-and-statements-1",
+    "href": "syllabus.html#controversial-topics-and-statements-1",
+    "title": "Introduction to PSCI 3200",
+    "section": "Controversial Topics and Statements",
+    "text": "Controversial Topics and Statements\n\nStudents are required to treat one another with respect\nDiverse perspectives, experiences, and backgrounds are essential for effective development research and practice\nContact me directly if you feel we’re not achieving an inclusive environment"
+  },
+  {
+    "objectID": "syllabus.html#academic-honesty-1",
+    "href": "syllabus.html#academic-honesty-1",
+    "title": "Introduction to PSCI 3200",
+    "section": "Academic Honesty",
+    "text": "Academic Honesty\n\nStudents are expected to follow the University of Pennsylvania’s Code of Academic Integrity\nSuspected violations will be referred to university administration for disciplinary action."
   }
 ]

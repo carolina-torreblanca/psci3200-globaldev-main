@@ -91,8 +91,8 @@ Performance in this class will be evaluated by according to performance on the f
 | Requirement          | Percent of Final Grade |
 |:---------------------|:-----------------------|
 | Quizzes (4)          | 10%                    |
-| Workshops (4)        | 20%                    |
-| Data Assignments (6) | 30%                    |
+| Workshops (4)        | 15%                    |
+| Data Assignments (3) | 35%                    |
 | Final Project (1)    | 40%                    |
 
 ### Requirement Descriptions
@@ -116,22 +116,16 @@ There are four graded requirements for this course.
 
 | Data Assignment | Due Date            |
 |:----------------|:--------------------|
-| Assignment 1    | Mar 28th 11:59pm ET |
-| Assignment 2    | Apr 11th 11:59pm ET |
-| Assignment 3    | Apr 30th 11:59pm ET |
+| Assignment 1    | Feb 18th 11:59pm ET |
+| Assignment 2    | Mar 4th 11:59pm ET  |
+| Assignment 3    | Apr 1st 11:59pm ET  |
 
 **Final Project**
 
 -   The final project is a data analysis project that will use data of your choosing. The only stipulation is that this data must be relevant to one of the global development topics covered in this course. The assignment will require you to formulate a research question, find data that can help you answer that question, apply the tools and methods from this course to the data you have selected to answer your research question, and present those results for public consumption.
 -   The goal will be to produce a *professional* project that can showcase the skills that you have gained to potential employers. Your final submission will be a publicly available webpage that contains: (1) a brief introduction to your research question and data; (2) a discussion of your research design, its assumptions, and threats to inference; (3) a visualization that describes your data; (4) a presentation of the results from a regression model (as a table or graph) and discussion of its implications for your research question; and (5) a discussion of the implications of your findings for development policy or practice, including the limitations of your analysis and suggestions for future research. In addition to the public-facing webpage, you must share access to a GitHub repo that contains the code to reproduce the project output.
 -   Grade: 40%
-
-| Milestone                                      | Due Date            |
-|:-----------------------------------------------|:--------------------|
-| Create a GitHub repository                     | Feb 8th 11:59pm ET  |
-| Idea for research question and data source     | Mar 12th 11:59pm ET |
-| Submit proposal (research question and design) | Apr 11th 11:59pm ET |
-| Submit final project (webpage url and repo)    | May 10th 11:59pm ET |
+-   Due: Apr 29th 11:59pm ET
 
 ## Course Policies
 

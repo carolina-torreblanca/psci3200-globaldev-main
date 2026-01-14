@@ -143,9 +143,9 @@ Performance in this class will be evaluated by according to performance on the f
 | Requirement      | Percent of Final Grade |
 |:-----------------|:-------------|
 | Quizzes (4)          | 10%          |
-| Workshops (4)        | 10%          |
-| Data Assignments (4) | 36%          |
-| Final Project (1)    | 44%          |
+| Workshops (4)        | 15%          |
+| Data Assignments (3) | 35%          |
+| Final Project (1)    | 40%          |
 
 ## Quizzes
 
@@ -165,9 +165,14 @@ Performance in this class will be evaluated by according to performance on the f
 
 ## Data Assignments
 
-- Four data assignments designed to make progress towards your final project. 
-- For assignments where you are required to submit something, you will be required to submit your own code and write-up.
-- You can see the date of each assignment on the schedule
+- Three data assignments designed to make progress towards your final project
+- You will be required to submit your own code and write-up
+
+| Assignment   | Due Date  |
+|:-------------|:----------|
+| Assignment 1 | Feb 18th  |
+| Assignment 2 | Mar 4th   |
+| Assignment 3 | Apr 1st   |
 
 ## Final Project
 
@@ -176,27 +181,11 @@ Performance in this class will be evaluated by according to performance on the f
   + Find data that can help you answer that question
   + Apply the tools and methods from this course
   + Write-up analysis
-- Produce a webpage to present your results for public consumption 
+- Produce a webpage to present your results for public consumption
+- **Due: Apr 29th**
 
 ::: {.notes}
 Your final submission will be a publicly available webpage that contains: (1) a brief introduction to your research question and data; (2) a discussion of your research design, its assumptions, and threats to inference; (3) a visualization that describes your data; (4) a presentation of the results from a regression model (as a table or graph) and discussion of its implications for your research question; and (5) a discussion of the implications of your findings for development policy or practice, including the limitations of your analysis and suggestions for future research.
-:::
-
-## Final Project
-
-\
-
-| Milestone                    | Due Date                 |
-|:-----------------------------|:-------------------------|
-| Create a GitHub repository   | Feb 16th |
-| Preliminary Research Question  | Feb 18th |
-| Preliminary Research Plan  | Mar 4th |
-| Research Plan  | Apr 1st |
-| Final project | April 29th |
-
-
-::: {.notes}
-By April, I'll give you a break-down of how the grading will be done
 :::
 
 # Policies
