@@ -4217,8 +4217,8 @@
     "objectID": "slides/01-intro.html#agenda",
     "href": "slides/01-intro.html#agenda",
     "title": "Introduction to PSCI 3200",
-    "section": "",
-    "text": "Introductions\nCourse Description and Objectives\nRequirements\nPolicies\nSchedule\n\n\n\nemail\ncourse website\nsurvey"
+    "section": "Agenda",
+    "text": "Agenda\n\n\n\n\nIntroductions\nCourse Description and Objectives\nRequirements\nPolicies\nSchedule\n\n\n\nemail\ncourse website\nsurvey"
   },
   {
     "objectID": "slides/01-intro.html#carolina",
@@ -4316,7 +4316,7 @@
     "href": "slides/01-intro.html#final-project",
     "title": "Introduction to PSCI 3200",
     "section": "Final Project",
-    "text": "Final Project\n\nData analysis project with data of your choosing\n\nFormulate a research question\nFind data that can help you answer that question\nApply the tools and methods from this course\nWrite-up analysis\n\nProduce a webpage to present your results for public consumption\nDue: Apr 29th\n\n\nYour final submission will be a publicly available webpage that contains: (1) a brief introduction to your research question and data; (2) a discussion of your research design, its assumptions, and threats to inference; (3) a visualization that describes your data; (4) a presentation of the results from a regression model (as a table or graph) and discussion of its implications for your research question; and (5) a discussion of the implications of your findings for development policy or practice, including the limitations of your analysis and suggestions for future research."
+    "text": "Final Project\n\nData analysis project with data of your choosing\n\nFormulate a research question\nFind data that can help you answer that question\nApply the tools and methods from this course\nWrite-up analysis\n\nProduce a webpage to present your results for public consumption\nDue: May 10th\n\n\nYour final submission will be a publicly available webpage that contains: (1) a brief introduction to your research question and data; (2) a discussion of your research design, its assumptions, and threats to inference; (3) a visualization that describes your data; (4) a presentation of the results from a regression model (as a table or graph) and discussion of its implications for your research question; and (5) a discussion of the implications of your findings for development policy or practice, including the limitations of your analysis and suggestions for future research."
   },
   {
     "objectID": "slides/01-intro.html#final-project-1",
