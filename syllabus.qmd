@@ -116,16 +116,16 @@ There are four graded requirements for this course.
 
 | Data Assignment | Due Date            |
 |:----------------|:--------------------|
-| Assignment 1    | Feb 18th 11:59pm ET |
-| Assignment 2    | Mar 4th 11:59pm ET  |
-| Assignment 3    | Apr 1st 11:59pm ET  |
+| Assignment 1    | Mar 4th 11:59pm ET  |
+| Assignment 2    | Mar 18th 11:59pm ET |
+| Assignment 3    | Apr 15th 11:59pm ET |
 
 **Final Project**
 
 -   The final project is a data analysis project that will use data of your choosing. The only stipulation is that this data must be relevant to one of the global development topics covered in this course. The assignment will require you to formulate a research question, find data that can help you answer that question, apply the tools and methods from this course to the data you have selected to answer your research question, and present those results for public consumption.
 -   The goal will be to produce a *professional* project that can showcase the skills that you have gained to potential employers. Your final submission will be a publicly available webpage that contains: (1) a brief introduction to your research question and data; (2) a discussion of your research design, its assumptions, and threats to inference; (3) a visualization that describes your data; (4) a presentation of the results from a regression model (as a table or graph) and discussion of its implications for your research question; and (5) a discussion of the implications of your findings for development policy or practice, including the limitations of your analysis and suggestions for future research. In addition to the public-facing webpage, you must share access to a GitHub repo that contains the code to reproduce the project output.
 -   Grade: 40%
--   Due: Apr 29th 11:59pm ET
+-   Due: May 10th 11:59pm ET
 
 ## Course Policies
 

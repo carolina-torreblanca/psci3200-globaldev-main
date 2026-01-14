@@ -170,9 +170,9 @@ Performance in this class will be evaluated by according to performance on the f
 
 | Assignment   | Due Date  |
 |:-------------|:----------|
-| Assignment 1 | Feb 18th  |
-| Assignment 2 | Mar 4th   |
-| Assignment 3 | Apr 1st   |
+| Assignment 1 | Mar 4th   |
+| Assignment 2 | Mar 18th  |
+| Assignment 3 | Apr 15th  |
 
 ## Final Project
 
@@ -182,7 +182,7 @@ Performance in this class will be evaluated by according to performance on the f
   + Apply the tools and methods from this course
   + Write-up analysis
 - Produce a webpage to present your results for public consumption
-- **Due: Apr 29th**
+- **Due: May 10th**
 
 ::: {.notes}
 Your final submission will be a publicly available webpage that contains: (1) a brief introduction to your research question and data; (2) a discussion of your research design, its assumptions, and threats to inference; (3) a visualization that describes your data; (4) a presentation of the results from a regression model (as a table or graph) and discussion of its implications for your research question; and (5) a discussion of the implications of your findings for development policy or practice, including the limitations of your analysis and suggestions for future research.
