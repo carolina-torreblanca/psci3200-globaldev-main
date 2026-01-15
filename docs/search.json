@@ -4911,14 +4911,14 @@
     "href": "assignments/final_project.html",
     "title": "Final Project Assignment",
     "section": "",
-    "text": "The final project is the culmination of this course. It should reflect the substantive knowledge and technical skills that you developed and the work from the three touch-point assignments that you submitted and received feedback on. The objective of this assignment is to give you experience generating a viable research question based on a topic that you are interested in, refining that broad research question into a testable hypothesis, identifying data that can be used to provide evidence for or against your hypothesis, and communicating the results of your analysis to others.\nUnderstanding this process can not only help you answer research questions in the future, but can also help you assess the strength of evidence presented by others. As data becomes an increasingly important part of our lives, these skills will be useful in your career, especially if you conduct your own research or incorporate research by others into your decision-making.\nThis project should be submitted via Slack by 11:59pm EST on Friday, May 10. The grade on your submission will constitute 44% of your final grade for this course. Your submission must include:\n\nA url linking me to a clean, professional webpage on your personal website that presents your research to potential employers\nThe .qmd file that you used to generate the html file\nAll code should be thoroughly commented to explain the choices you are making and the techniques you are using.\n\n\n\n\n\n\n\nNote\n\n\n\nImportantly, the grade for this assignment will not be affected by whether your analysis uncovers a statistically significant relationship. If you provide a clear, plausible argument for why you expect to find a relationship between your dependent and independent variables, a null finding provides interesting information about the world! All good (and honest) researchers find that their theoretical expectations were wrong just as often as they find that they were right."
+    "text": "The final project is the culmination of this course. It should reflect the substantive knowledge and technical skills that you developed and the work from the three touch-point assignments that you submitted and received feedback on. The objective of this assignment is to give you experience generating a viable research question based on a topic that you are interested in, refining that broad research question into a testable hypothesis, identifying data that can be used to provide evidence for or against your hypothesis, and communicating the results of your analysis to others.\nUnderstanding this process can not only help you answer research questions in the future, but can also help you assess the strength of evidence presented by others. As data becomes an increasingly important part of our lives, these skills will be useful in your career, especially if you conduct your own research or incorporate research by others into your decision-making.\nThis project should be submitted via Slack by 11:59pm EST on May 10th. The grade on your submission will constitute 40% of your final grade for this course. Your submission must include:\n\nA url linking me to a clean, professional webpage on your personal website that presents your research to potential employers\nThe .qmd file that you used to generate the html file\nAll code should be thoroughly commented to explain the choices you are making and the techniques you are using.\n\n\n\n\n\n\n\nNote\n\n\n\nImportantly, the grade for this assignment will not be affected by whether your analysis uncovers a statistically significant relationship. If you provide a clear, plausible argument for why you expect to find a relationship between your dependent and independent variables, a null finding provides interesting information about the world! All good (and honest) researchers find that their theoretical expectations were wrong just as often as they find that they were right."
   },
   {
     "objectID": "assignments/final_project.html#overview",
     "href": "assignments/final_project.html#overview",
     "title": "Final Project Assignment",
     "section": "",
-    "text": "The final project is the culmination of this course. It should reflect the substantive knowledge and technical skills that you developed and the work from the three touch-point assignments that you submitted and received feedback on. The objective of this assignment is to give you experience generating a viable research question based on a topic that you are interested in, refining that broad research question into a testable hypothesis, identifying data that can be used to provide evidence for or against your hypothesis, and communicating the results of your analysis to others.\nUnderstanding this process can not only help you answer research questions in the future, but can also help you assess the strength of evidence presented by others. As data becomes an increasingly important part of our lives, these skills will be useful in your career, especially if you conduct your own research or incorporate research by others into your decision-making.\nThis project should be submitted via Slack by 11:59pm EST on Friday, May 10. The grade on your submission will constitute 44% of your final grade for this course. Your submission must include:\n\nA url linking me to a clean, professional webpage on your personal website that presents your research to potential employers\nThe .qmd file that you used to generate the html file\nAll code should be thoroughly commented to explain the choices you are making and the techniques you are using.\n\n\n\n\n\n\n\nNote\n\n\n\nImportantly, the grade for this assignment will not be affected by whether your analysis uncovers a statistically significant relationship. If you provide a clear, plausible argument for why you expect to find a relationship between your dependent and independent variables, a null finding provides interesting information about the world! All good (and honest) researchers find that their theoretical expectations were wrong just as often as they find that they were right."
+    "text": "The final project is the culmination of this course. It should reflect the substantive knowledge and technical skills that you developed and the work from the three touch-point assignments that you submitted and received feedback on. The objective of this assignment is to give you experience generating a viable research question based on a topic that you are interested in, refining that broad research question into a testable hypothesis, identifying data that can be used to provide evidence for or against your hypothesis, and communicating the results of your analysis to others.\nUnderstanding this process can not only help you answer research questions in the future, but can also help you assess the strength of evidence presented by others. As data becomes an increasingly important part of our lives, these skills will be useful in your career, especially if you conduct your own research or incorporate research by others into your decision-making.\nThis project should be submitted via Slack by 11:59pm EST on May 10th. The grade on your submission will constitute 40% of your final grade for this course. Your submission must include:\n\nA url linking me to a clean, professional webpage on your personal website that presents your research to potential employers\nThe .qmd file that you used to generate the html file\nAll code should be thoroughly commented to explain the choices you are making and the techniques you are using.\n\n\n\n\n\n\n\nNote\n\n\n\nImportantly, the grade for this assignment will not be affected by whether your analysis uncovers a statistically significant relationship. If you provide a clear, plausible argument for why you expect to find a relationship between your dependent and independent variables, a null finding provides interesting information about the world! All good (and honest) researchers find that their theoretical expectations were wrong just as often as they find that they were right."
   },
   {
     "objectID": "assignments/final_project.html#structure",
@@ -4939,14 +4939,14 @@
     "href": "assignments/04_fpdesign.html",
     "title": "Final Project Research Design",
     "section": "",
-    "text": "Your second assignment for the final project is specifying a research plan that will guide your investigation of the research question you have identified. This assignment is designed to get you thinking more clearly about a specific hypothesis related to your research question and how you can produce and present evidence for or against it.\nLike a Pre-Analysis Plan, you will need to state testable hypotheses, describe your measurement of the variables necessary to test the hypotheses, and specify a statistical model to conduct the test. Unlike a Pre-Analysis Plan, this is just a starting point.\nThis project should be submitted via Slack by 11:59pm EST on March 30. Your submission must include:\n\nAn html file presenting your written design and figures. It is not necessary to show printed code.\nA .qmd file that you used to generate the html file\nAll code should be thoroughly commented to explain the choices you are making and the techniques you are using."
+    "text": "Your second assignment for the final project is specifying a research plan that will guide your investigation of the research question you have identified. This assignment is designed to get you thinking more clearly about a specific hypothesis related to your research question and how you can produce and present evidence for or against it.\nLike a Pre-Analysis Plan, you will need to state testable hypotheses, describe your measurement of the variables necessary to test the hypotheses, and specify a statistical model to conduct the test. Unlike a Pre-Analysis Plan, this is just a starting point.\nThis project should be submitted via Slack by 11:59pm EST on March 18th. Your submission must include:\n\nAn html file presenting your written design and figures. It is not necessary to show printed code.\nA .qmd file that you used to generate the html file\nAll code should be thoroughly commented to explain the choices you are making and the techniques you are using."
   },
   {
     "objectID": "assignments/04_fpdesign.html#overview",
     "href": "assignments/04_fpdesign.html#overview",
     "title": "Final Project Research Design",
     "section": "",
-    "text": "Your second assignment for the final project is specifying a research plan that will guide your investigation of the research question you have identified. This assignment is designed to get you thinking more clearly about a specific hypothesis related to your research question and how you can produce and present evidence for or against it.\nLike a Pre-Analysis Plan, you will need to state testable hypotheses, describe your measurement of the variables necessary to test the hypotheses, and specify a statistical model to conduct the test. Unlike a Pre-Analysis Plan, this is just a starting point.\nThis project should be submitted via Slack by 11:59pm EST on March 30. Your submission must include:\n\nAn html file presenting your written design and figures. It is not necessary to show printed code.\nA .qmd file that you used to generate the html file\nAll code should be thoroughly commented to explain the choices you are making and the techniques you are using."
+    "text": "Your second assignment for the final project is specifying a research plan that will guide your investigation of the research question you have identified. This assignment is designed to get you thinking more clearly about a specific hypothesis related to your research question and how you can produce and present evidence for or against it.\nLike a Pre-Analysis Plan, you will need to state testable hypotheses, describe your measurement of the variables necessary to test the hypotheses, and specify a statistical model to conduct the test. Unlike a Pre-Analysis Plan, this is just a starting point.\nThis project should be submitted via Slack by 11:59pm EST on March 18th. Your submission must include:\n\nAn html file presenting your written design and figures. It is not necessary to show printed code.\nA .qmd file that you used to generate the html file\nAll code should be thoroughly commented to explain the choices you are making and the techniques you are using."
   },
   {
     "objectID": "assignments/04_fpdesign.html#requirements",
@@ -5023,14 +5023,14 @@
     "href": "assignments/03_fprqd.html",
     "title": "Final Project Research Question and Dataset",
     "section": "",
-    "text": "Your first assignment for the final project is sketching a research question that you’d like to investigate and identifying data that could be used to answer that question.\nSend me a quarto html file that:\n\nBriefly describes your idea for a research question\n\nThis should be at least 3-4 sentences describing some relationship in the world that you want to investigate. This should involve at least two things in the world that can be measured with existing quantitative data.\nYou are welcome to submit more than 1 idea.\n\nProposes a dataset and measures that will help you answer it\n\nThis should include a specific, existing dataset that you can access\nThis should also include mention of the specific variables within that dataset that will be used to answer the research question\n\n\nThis project should be submitted via Slack by 11:59pm EST on March, 11. Your submission must include:\nAfter you submit this assignment, I will provide feedback on the viability of the questions, the suitability of the data, and the extent to which your general idea will meet my expectations for the final project."
+    "text": "Your first assignment for the final project is sketching a research question that you’d like to investigate and identifying data that could be used to answer that question.\nSend me a quarto html file that:\n\nBriefly describes your idea for a research question\n\nThis should be at least 3-4 sentences describing some relationship in the world that you want to investigate. This should involve at least two things in the world that can be measured with existing quantitative data.\nYou are welcome to submit more than 1 idea.\n\nProposes a dataset and measures that will help you answer it\n\nThis should include a specific, existing dataset that you can access\nThis should also include mention of the specific variables within that dataset that will be used to answer the research question\n\n\nThis project should be submitted via Slack by 11:59pm EST on March 4th. Your submission must include:\nAfter you submit this assignment, I will provide feedback on the viability of the questions, the suitability of the data, and the extent to which your general idea will meet my expectations for the final project."
   },
   {
     "objectID": "assignments/03_fprqd.html#assignment",
     "href": "assignments/03_fprqd.html#assignment",
     "title": "Final Project Research Question and Dataset",
     "section": "",
-    "text": "Your first assignment for the final project is sketching a research question that you’d like to investigate and identifying data that could be used to answer that question.\nSend me a quarto html file that:\n\nBriefly describes your idea for a research question\n\nThis should be at least 3-4 sentences describing some relationship in the world that you want to investigate. This should involve at least two things in the world that can be measured with existing quantitative data.\nYou are welcome to submit more than 1 idea.\n\nProposes a dataset and measures that will help you answer it\n\nThis should include a specific, existing dataset that you can access\nThis should also include mention of the specific variables within that dataset that will be used to answer the research question\n\n\nThis project should be submitted via Slack by 11:59pm EST on March, 11. Your submission must include:\nAfter you submit this assignment, I will provide feedback on the viability of the questions, the suitability of the data, and the extent to which your general idea will meet my expectations for the final project."
+    "text": "Your first assignment for the final project is sketching a research question that you’d like to investigate and identifying data that could be used to answer that question.\nSend me a quarto html file that:\n\nBriefly describes your idea for a research question\n\nThis should be at least 3-4 sentences describing some relationship in the world that you want to investigate. This should involve at least two things in the world that can be measured with existing quantitative data.\nYou are welcome to submit more than 1 idea.\n\nProposes a dataset and measures that will help you answer it\n\nThis should include a specific, existing dataset that you can access\nThis should also include mention of the specific variables within that dataset that will be used to answer the research question\n\n\nThis project should be submitted via Slack by 11:59pm EST on March 4th. Your submission must include:\nAfter you submit this assignment, I will provide feedback on the viability of the questions, the suitability of the data, and the extent to which your general idea will meet my expectations for the final project."
   },
   {
     "objectID": "assignments/03_fprqd.html#types-of-data",
@@ -5051,14 +5051,14 @@
     "href": "assignments/05_fptest.html",
     "title": "Final Project Expanded Research Design",
     "section": "",
-    "text": "Your third assignment for the final project is refining the research plan that will guide your investigation of your research question. This assignment is designed to get you thinking more clearly about the limitations of your research design and how you can strengthen your inferences.\nThis assignment will help you plan the remaining components of your final project analysis. This should look like an expanded, cleaned-up version of your previous assignment.\nThis project should be submitted via Slack by 11:59pm EST on Wednesday, April 1st. Your submission must include:\n\nAn html file presenting your written design and figures. It is not necessary to show printed code.\nA .qmd file that you used to generate the html file\nAll code should be thoroughly commented to explain the choices you are making and the techniques you are using."
+    "text": "Your third assignment for the final project is refining the research plan that will guide your investigation of your research question. This assignment is designed to get you thinking more clearly about the limitations of your research design and how you can strengthen your inferences.\nThis assignment will help you plan the remaining components of your final project analysis. This should look like an expanded, cleaned-up version of your previous assignment.\nThis project should be submitted via Slack by 11:59pm EST on April 15th. Your submission must include:\n\nAn html file presenting your written design and figures. It is not necessary to show printed code.\nA .qmd file that you used to generate the html file\nAll code should be thoroughly commented to explain the choices you are making and the techniques you are using."
   },
   {
     "objectID": "assignments/05_fptest.html#overview",
     "href": "assignments/05_fptest.html#overview",
     "title": "Final Project Expanded Research Design",
     "section": "",
-    "text": "Your third assignment for the final project is refining the research plan that will guide your investigation of your research question. This assignment is designed to get you thinking more clearly about the limitations of your research design and how you can strengthen your inferences.\nThis assignment will help you plan the remaining components of your final project analysis. This should look like an expanded, cleaned-up version of your previous assignment.\nThis project should be submitted via Slack by 11:59pm EST on Wednesday, April 1st. Your submission must include:\n\nAn html file presenting your written design and figures. It is not necessary to show printed code.\nA .qmd file that you used to generate the html file\nAll code should be thoroughly commented to explain the choices you are making and the techniques you are using."
+    "text": "Your third assignment for the final project is refining the research plan that will guide your investigation of your research question. This assignment is designed to get you thinking more clearly about the limitations of your research design and how you can strengthen your inferences.\nThis assignment will help you plan the remaining components of your final project analysis. This should look like an expanded, cleaned-up version of your previous assignment.\nThis project should be submitted via Slack by 11:59pm EST on April 15th. Your submission must include:\n\nAn html file presenting your written design and figures. It is not necessary to show printed code.\nA .qmd file that you used to generate the html file\nAll code should be thoroughly commented to explain the choices you are making and the techniques you are using."
   },
   {
     "objectID": "assignments/05_fptest.html#requirements",
@@ -8206,35 +8206,35 @@
   {
     "objectID": "syllabus.html",
     "href": "syllabus.html",
-    "title": "Syllabus",
+    "title": "Final Project Assignment",
     "section": "",
     "text": "Carolina Torreblanca\n   catba@sas.upenn.edu\n   PCPE 436\n   Schedule an appointment\n\n\n\n\n\n   Mon/Wed\n   January 14th - April 29th\n   5:15-6:44 PM\n   PCPE 202\n   Slack"
   },
   {
     "objectID": "syllabus.html#course-description-and-objectives",
     "href": "syllabus.html#course-description-and-objectives",
-    "title": "Syllabus",
+    "title": "Final Project Assignment",
     "section": "Course Description and Objectives",
     "text": "Course Description and Objectives\nGlobal development increasingly relies on data and quantitative evidence to inform policies. Thus, the growth of new data sources and advances in computational tools have expanded what researchers can study and how well they can study it, creating the possibility of better-informed responses to long-standing challenges such as poverty, inequality, and governance.\nHowever, more data alone does not guarantee better policy. This course examines how contemporary social science research uses data to make claims about development and governance, and how to evaluate those claims critically. Students will engage with recent research and gain hands-on experience analyzing real-world data using common research designs and computational tools, with an emphasis on transparency, inference, and reproducibility.\nThe course will be organized around several timely substantive topics in global development. As we explore these topics, students will gain a deeper understanding of the challenges that shape governance and development. At the same time, students will be introduced to data analysis methods, inferential techniques, and computational tools that are useful across a wide range of applications. Specifically, students will deepen their understanding of basic statistical methods common to the social sciences, learn how these methods can be used to make inferences about population characteristics and causal relationships, and prepare documents that contain reproducible data analysis workflows.\nAt the end of the course you should be able to:\n\nEvaluate the quality of evidence in the development field\nThink clearly about how data can be used to learn about development and governance challenges\nUse tools for data analysis such as R, RStudio, Quarto, and GitHub\nProduce professional-quality documents that summarize original research\n\n\n\n\n\n\n\nPrerequisites\n\n\n\nThis class is designed as a follow-up to PSCI 1102. Students that have not taken PSCI 1102 and PSCI 1800 (or an equivalent) should contact the instructor before enrolling."
   },
   {
     "objectID": "syllabus.html#course-materials",
     "href": "syllabus.html#course-materials",
-    "title": "Syllabus",
+    "title": "Final Project Assignment",
     "section": "Course Materials",
     "text": "Course Materials\nThis course relies primarily on free, open-source materials. However, the purchase of one textbook will be required. All other reading materials will be uploaded to this website or circulated on Slack at least one week before the meeting. Course site and instructional materials draw on content originally developed for PSCI 3200 by Jeremy Springman\n\nBooks\nStudents are required to purchase a copy of Data Analysis for Social Science: A Friendly and Practical Introduction (DSS). We will use DSS as a jumping-off point for this course. While students are expected to already be familiar with many of the tools and concepts covered by this book, it will serve as a method to review core concepts and orient discussion about how to expand on these skills.\n\n\n\n\n\n\nRequired book\n\n\n\nI am asking students to purchase a copy of DSS because it comes with access to additional, helpful resources. If you are unable to purchase this book, you must let me know. To save money, consider e-renting the textbook.\n\n\n\n\nComputing\nIn the course, we will be using R for data cleaning, analysis, and visualization. R is free, open source statistical computing environment available on all major operating systems. We will also be using RStudio, a free, widely used graphical interface for R. For document preparation, we will be using Quarto, a free, open-source scientific and technical publishing system that is compatible with both R/RStudio and Python, as well as several other languages. Both Quarto and RStudio are supported by a company called Posit. For version control, we will be using Github.\n\n\n\n\n\n\nRequired software\n\n\n\nStudents are expected to already have R and RStudio installed on the personal computer that they will be using for class. We will cover the installation of all other required computing tools during the course.\n\n\nSeveral course requirements will require you to write and submit R code. Your code must be appropriately commented and reproducible. To ensure your code meets the course standards, please follow this style guide from Hadley Wickham (Chief Scientist at Posit and developer of ggplot2 and tidyverse)."
   },
   {
     "objectID": "syllabus.html#course-structure",
     "href": "syllabus.html#course-structure",
-    "title": "Syllabus",
+    "title": "Final Project Assignment",
     "section": "Course Structure",
     "text": "Course Structure\nSubstantively, the course is divided into several parts. Part 1 presents a general introduction to the course and a brief introduction to correlation, causality and statistical inference. The remaining parts are structured around key substantive topics in development. For each topic, we will begin with a brief overview of the literature. Then, we will focus on one particular research question and use it as a guide to learn how to implement some of the most common research designs in the social sciences. Throughout, you will gain hands-on experience with diverse kinds of data through in-class workshops and data assignments. Weekly reading assignments will be divided between contemporary research on substantive topics in global development and textbook chapters focused on social science research methods. You are expected to attend class and be prepared to engage in discussion about the assigned readings.\n\n\nGrading\nPerformance in this class will be evaluated by according to performance on the following course requirements:\n\n\n\nRequirement\nPercent of Final Grade\n\n\n\n\nQuizzes (4)\n10%\n\n\nWorkshops (4)\n15%\n\n\nData Assignments (3)\n35%\n\n\nFinal Project (1)\n40%\n\n\n\n\n\nRequirement Descriptions\nThere are four graded requirements for this course.\nQuizzes\n\nYou are expected to attend each course meeting. On four randomly selected meetings, there will be a brief quiz designed to test whether or not students did the readings. Students with a pre-approved absence will be required to take the quiz remotely within 24 hours of its administration (in the event your absence falls on a quiz date). Students will be permitted one pre-approved absence for the semester.\nGrade: 10%\n\nWorkshops\n\nWe will have four workshops throughout the semester. These will be interactive, hands-on workshops allowing students to gain familiarity with new statistical methods or computational tools. These workshops will cover important tools, such as quarto and github, and data analysis tasks, including cleaning, visualization, and modeling. After each workshop, you will be required to submit a product (ex. the link to a git repo, a quarto doc, an R script, etc.) demonstrating completion of the workshop.\nGrade: 15%\n\nData Assignments\n\nThere will be three data assignments throughout the semester. These assignments are designed to give you an opportunity to apply tools and methods discussed in readings, lectures, and workshops to data from the real world. These are individual assignments. While I encourage you to collaborate with your colleagues as you think through the tasks, you will be required to submit your own code and write-up.\nGrade: 35%\n\n\n\n\nData Assignment\nDue Date\n\n\n\n\nAssignment 1\nMar 4th 11:59pm ET\n\n\nAssignment 2\nMar 18th 11:59pm ET\n\n\nAssignment 3\nApr 15th 11:59pm ET\n\n\n\nFinal Project\n\nThe final project is a data analysis project that will use data of your choosing. The only stipulation is that this data must be relevant to one of the global development topics covered in this course. The assignment will require you to formulate a research question, find data that can help you answer that question, apply the tools and methods from this course to the data you have selected to answer your research question, and present those results for public consumption.\nThe goal will be to produce a professional project that can showcase the skills that you have gained to potential employers. Your final submission will be a publicly available webpage that contains: (1) a brief introduction to your research question and data; (2) a discussion of your research design, its assumptions, and threats to inference; (3) a visualization that describes your data; (4) a presentation of the results from a regression model (as a table or graph) and discussion of its implications for your research question; and (5) a discussion of the implications of your findings for development policy or practice, including the limitations of your analysis and suggestions for future research. In addition to the public-facing webpage, you must share access to a GitHub repo that contains the code to reproduce the project output.\nGrade: 40%\nDue: May 10th 11:59pm ET"
   },
   {
     "objectID": "syllabus.html#course-policies",
     "href": "syllabus.html#course-policies",
-    "title": "Syllabus",
+    "title": "Final Project Assignment",
     "section": "Course Policies",
     "text": "Course Policies\nPlease review these course policies carefully. Any questions or concerns about these policies should be raised during the first week of class.\n\nLate Submissions and Regrading\nLate submission of assignments will incur a penalty of 2 points for every day late, except in documented cases of serious illness or family emergency. If you feel there has been an error in the grading of one your assignment, you may request in writing a regrade of the assignment. First, I will request a detailed write-up of your dispute. Second, I will regrade the entire assignment, not just the part you are disputing. Therefore, your regrade might increase or decrease the overall grade on the assignment.\n\n\nUse of AI Tools\nYou are welcome to use generative AI tools, such as ChatGPT, to assist you with your work in this course. There is mounting evidence from rigorous research that these tools increase human productivity. I believe that their use will continue to proliferate, so it is important to gain experience integrating them into professional tasks. However, AI tools frequently make errors and ‘hallucinate’ information about things that do not exist (journal articles, R functions, etc.). It is your responsibility to verify the information provided by such tools. Most importantly, you are required to disclose your use of AI tools for assignments in the form of footnotes or citations. The use of AI tools will not be counted against you. On the contrary, I want to adopt and share your clever or innovative applications of AI tools.\n\n\nElectronic Devices\nLaptops will be required in class. All other electronic devices should be silenced and hidden. If there is an emergency situation and your phone must be visible, please inform me at the beginning of class.\n\n\nControversial Topics and Statements\nThis course may deal with subject-matter that is difficult or controversial. It is crucial to approach these topics with sensitivity and openness. Students are required to treat one another with respect, even in cases of disagreement. At times, research findings may be in-tension with your normative commitments. I urge students to engage earnestly and critically with any evidence that challenges your prior beliefs.\n\n\nAcademic Honesty\nStudents are expected to follow the University of Pennsylvania’s Code of Academic Integrity. Suspected violations will be referred to university administration for disciplinary action. If you have any doubts or questions about what constitutes academic misconduct, please do not hesitate to contact me.\n\n\nMental Health\nYour mental health is important to me. Struggles with mental health, as well as serious mental illnesses, are common across students, faculty, and staff. Please feel free to reach out to me about issues you are having within or outside of this course. I emphatically encourage anyone who thinks they may benefit to utilize the university resources listed below:\n\nCounseling and Mental Health Services\n24/7 Services: 215-746-9355\n\nPlease note that this list is not comprehensive. If there are services that you think should be added to this list, please let me know.\n\n\nAccessibility\nAccessibility is a shared value and a shared responsibility at Penn. The Weingarten Center partners with other departments throughout campus to coordinate and improve the accessibility of buildings and grounds, transportation, communication, and digital infrastructure. Students that require academic accommodations should contact the Weingarten Center. Academic accommodations are determined on an individualized basis through an interactive process that involves student self-disclosure, documentation of disability, and an initial meeting with a Disability Specialist. Accommodations do not alter fundamental requirements of the course and are not retroactive. Students should request accommodations as early as possible, since they may take time to implement. Students can notify the Weingarten Center at any time during the semester if adjustments to their communicated accommodation plan are needed."
   },
@@ -9732,140 +9732,140 @@
   {
     "objectID": "syllabus.html#agenda",
     "href": "syllabus.html#agenda",
-    "title": "Introduction to PSCI 3200",
+    "title": "Final Project Assignment",
     "section": "Agenda",
     "text": "Agenda\n\n\n\n\nIntroductions\nCourse Description and Objectives\nRequirements\nPolicies\nSchedule\n\n\n\nemail\ncourse website\nsurvey"
   },
   {
     "objectID": "syllabus.html#carolina",
     "href": "syllabus.html#carolina",
-    "title": "Introduction to PSCI 3200",
+    "title": "Final Project Assignment",
     "section": "Carolina",
     "text": "Carolina\nBackground:\n\nPhD from NYU, Postdoc here!\nComparativist\nPolitical Methodologist\n\nInterests:\n\nViolence and inequality in Latin America\nEpistemology of causal research\nMovies"
   },
   {
     "objectID": "syllabus.html#you",
     "href": "syllabus.html#you",
-    "title": "Introduction to PSCI 3200",
+    "title": "Final Project Assignment",
     "section": "You",
     "text": "You\n\n\nPlease tell us:\n\nName, Year, Major\nOne thing you’re interested in\nOne thing you’d like to get from the course"
   },
   {
     "objectID": "syllabus.html#course-description",
     "href": "syllabus.html#course-description",
-    "title": "Introduction to PSCI 3200",
+    "title": "Final Project Assignment",
     "section": "Course Description",
     "text": "Course Description\n\n\nBlending subject-matter, research methods, and computational tools\nFocusing on the type of work that goes on with and within development agencies\nAlmost no math"
   },
   {
     "objectID": "syllabus.html#course-description-1",
     "href": "syllabus.html#course-description-1",
-    "title": "Introduction to PSCI 3200",
+    "title": "Final Project Assignment",
     "section": "Course Description",
     "text": "Course Description\n\nFollow-up to PSCI 1102\n\n1102 covered big academic debates that we won’t (ex. institutions vs geography)\n\nFocus on applied research with development agencies/industry\n\nWhat is the state of the art?\n“Big ideas” of political science as context\nMUST have a good understanding of the basics of research methods"
   },
   {
     "objectID": "syllabus.html#course-description-2",
     "href": "syllabus.html#course-description-2",
-    "title": "Introduction to PSCI 3200",
+    "title": "Final Project Assignment",
     "section": "Course Description",
     "text": "Course Description\n\nSubstantive focus areas\n\nDemocracy and Autocracy\nMigration\nGender\nPoverty and Inequality\nCrime and Conflict\nForeign Aid\nClimate change and adaptation"
   },
   {
     "objectID": "syllabus.html#course-description-3",
     "href": "syllabus.html#course-description-3",
-    "title": "Introduction to PSCI 3200",
+    "title": "Final Project Assignment",
     "section": "Course Description",
     "text": "Course Description\n\nMethods:\n\nDeepen understanding of ‘workhorse’ statistical methods and research designs\nHow these methods can be used to make inferences about causal relationships\n\nTools\n\nIntroduce the computational tools that are needed to implement these methods\nSoftware necessary to prepare professional documents and reproducible data analysis workflows"
   },
   {
     "objectID": "syllabus.html#course-objectives",
     "href": "syllabus.html#course-objectives",
-    "title": "Introduction to PSCI 3200",
+    "title": "Final Project Assignment",
     "section": "Course Objectives",
     "text": "Course Objectives\nAt the end of the course you should be able to:\n\nHave a good overview of the field and be capable of evaluating the quality of evidence\nThink clearly about how data can be used to learn about development and governance challenges\nUse tools for data analysis such as R, RStudio, Quarto, and GitHub\nProduce professional-quality documents that summarize original research"
   },
   {
     "objectID": "syllabus.html#prerequisites-1",
     "href": "syllabus.html#prerequisites-1",
-    "title": "Introduction to PSCI 3200",
+    "title": "Final Project Assignment",
     "section": "Prerequisites",
     "text": "Prerequisites\n\n\n\nSubstance\n\nBig academic debates in development research (PSCI 1102)\n\nMethods and Tools (PSCI 1800)\n\nBasic familiarity with R and RStudio\nBasic knowledge of statistics/econometrics/data science"
   },
   {
     "objectID": "syllabus.html#textbook",
     "href": "syllabus.html#textbook",
-    "title": "Introduction to PSCI 3200",
+    "title": "Final Project Assignment",
     "section": "Textbook",
     "text": "Textbook\n\n\n\nData Analysis for Social Science: A Friendly and Practical Introduction (DSS)\n\nWe will use DSS as a jumping-off point for this course\nSome of this material will be review"
   },
   {
     "objectID": "syllabus.html#grading-1",
     "href": "syllabus.html#grading-1",
-    "title": "Introduction to PSCI 3200",
+    "title": "Final Project Assignment",
     "section": "Grading",
     "text": "Grading\nPerformance in this class will be evaluated by according to performance on the following course requirements:\n\n\n\nRequirement\nPercent of Final Grade\n\n\n\n\nQuizzes (4)\n10%\n\n\nWorkshops (4)\n15%\n\n\nData Assignments (3)\n35%\n\n\nFinal Project (1)\n40%"
   },
   {
     "objectID": "syllabus.html#quizzes",
     "href": "syllabus.html#quizzes",
-    "title": "Introduction to PSCI 3200",
+    "title": "Final Project Assignment",
     "section": "Quizzes",
     "text": "Quizzes\n\n\n\nOn 4 randomly selected meetings, there will be a brief quiz\nIf you paid any attention or did readings, you should get full credit\nOne pre-approved absence allowed"
   },
   {
     "objectID": "syllabus.html#workshops",
     "href": "syllabus.html#workshops",
-    "title": "Introduction to PSCI 3200",
+    "title": "Final Project Assignment",
     "section": "Workshops",
     "text": "Workshops\n\nFour interactive, hands-on workshops working with diverse types of data, covering different statistical methods, or using new computational tools.\n\nTools: R and Rstudio, Quarto, github\nData cleaning and processing\nMethods: Randomized and quasi-experiments, text analysis.\n\nYou will be required to submit a product demonstrating completion of the workshop"
   },
   {
     "objectID": "syllabus.html#data-assignments",
     "href": "syllabus.html#data-assignments",
-    "title": "Introduction to PSCI 3200",
+    "title": "Final Project Assignment",
     "section": "Data Assignments",
-    "text": "Data Assignments\n\nThree data assignments designed to make progress towards your final project\nYou will be required to submit your own code and write-up\n\n\n\n\nAssignment\nDue Date\n\n\n\n\nAssignment 1\nFeb 18th\n\n\nAssignment 2\nMar 4th\n\n\nAssignment 3\nApr 1st"
+    "text": "Data Assignments\n\nThree data assignments designed to make progress towards your final project\nYou will be required to submit your own code and write-up\n\n\n\n\nAssignment\nDue Date\n\n\n\n\nAssignment 1\nMar 4th\n\n\nAssignment 2\nMar 18th\n\n\nAssignment 3\nApr 15th"
   },
   {
     "objectID": "syllabus.html#final-project",
     "href": "syllabus.html#final-project",
-    "title": "Introduction to PSCI 3200",
+    "title": "Final Project Assignment",
     "section": "Final Project",
-    "text": "Final Project\n\nData analysis project with data of your choosing\n\nFormulate a research question\nFind data that can help you answer that question\nApply the tools and methods from this course\nWrite-up analysis\n\nProduce a webpage to present your results for public consumption\nDue: Apr 29th\n\n\nYour final submission will be a publicly available webpage that contains: (1) a brief introduction to your research question and data; (2) a discussion of your research design, its assumptions, and threats to inference; (3) a visualization that describes your data; (4) a presentation of the results from a regression model (as a table or graph) and discussion of its implications for your research question; and (5) a discussion of the implications of your findings for development policy or practice, including the limitations of your analysis and suggestions for future research."
+    "text": "Final Project\n\nData analysis project with data of your choosing\n\nFormulate a research question\nFind data that can help you answer that question\nApply the tools and methods from this course\nWrite-up analysis\n\nProduce a webpage to present your results for public consumption\nDue: May 10th\n\n\nYour final submission will be a publicly available webpage that contains: (1) a brief introduction to your research question and data; (2) a discussion of your research design, its assumptions, and threats to inference; (3) a visualization that describes your data; (4) a presentation of the results from a regression model (as a table or graph) and discussion of its implications for your research question; and (5) a discussion of the implications of your findings for development policy or practice, including the limitations of your analysis and suggestions for future research."
   },
   {
     "objectID": "syllabus.html#late-submissions-and-regrading-1",
     "href": "syllabus.html#late-submissions-and-regrading-1",
-    "title": "Introduction to PSCI 3200",
+    "title": "Final Project Assignment",
     "section": "Late Submissions and Regrading",
     "text": "Late Submissions and Regrading\n\nLate submission of assignments\n\npenalty of 2 points for every day late\nexcept in documented cases of serious illness or family emergency\n\nRegrade request\n\ndetailed write-up of your dispute\nRegrade of the entire assignment (might increase or decrease)"
   },
   {
     "objectID": "syllabus.html#use-of-ai-tools-1",
     "href": "syllabus.html#use-of-ai-tools-1",
-    "title": "Introduction to PSCI 3200",
+    "title": "Final Project Assignment",
     "section": "Use of AI Tools",
     "text": "Use of AI Tools\n\nYou are welcome to use generative AI tools (if you must) but beware!\nDo not let it come at the peril of your understanding of the material\nAI tools frequently make errors and ‘hallucinate’ (journal articles, R functions, etc.)\nIt is your responsibility to verify the information provided\nYou must disclose your use of AI tools for assignments in the form of footnotes or citations"
   },
   {
     "objectID": "syllabus.html#electronic-devices-1",
     "href": "syllabus.html#electronic-devices-1",
-    "title": "Introduction to PSCI 3200",
+    "title": "Final Project Assignment",
     "section": "Electronic Devices",
     "text": "Electronic Devices\n\n\n\nLaptops will be required in class\nAll other electronic devices should be silenced and hidden"
   },
   {
     "objectID": "syllabus.html#controversial-topics-and-statements-1",
     "href": "syllabus.html#controversial-topics-and-statements-1",
-    "title": "Introduction to PSCI 3200",
+    "title": "Final Project Assignment",
     "section": "Controversial Topics and Statements",
     "text": "Controversial Topics and Statements\n\nStudents are required to treat one another with respect\nDiverse perspectives, experiences, and backgrounds are essential for effective development research and practice\nContact me directly if you feel we’re not achieving an inclusive environment"
   },
   {
     "objectID": "syllabus.html#academic-honesty-1",
     "href": "syllabus.html#academic-honesty-1",
-    "title": "Introduction to PSCI 3200",
+    "title": "Final Project Assignment",
     "section": "Academic Honesty",
     "text": "Academic Honesty\n\nStudents are expected to follow the University of Pennsylvania’s Code of Academic Integrity\nSuspected violations will be referred to university administration for disciplinary action."
   },
@@ -9875,5 +9875,75 @@
     "title": "Introduction to PSCI 3200",
     "section": "",
     "text": "Introductions\nCourse Description and Objectives\nRequirements\nPolicies\nSchedule\n\n\n\nemail\ncourse website\nsurvey"
+  },
+  {
+    "objectID": "syllabus.html#assignment",
+    "href": "syllabus.html#assignment",
+    "title": "Final Project Assignment",
+    "section": "Assignment",
+    "text": "Assignment\nYour first assignment for the final project is sketching a research question that you’d like to investigate and identifying data that could be used to answer that question.\nSend me a quarto html file that:\n\nBriefly describes your idea for a research question\n\nThis should be at least 3-4 sentences describing some relationship in the world that you want to investigate. This should involve at least two things in the world that can be measured with existing quantitative data.\nYou are welcome to submit more than 1 idea.\n\nProposes a dataset and measures that will help you answer it\n\nThis should include a specific, existing dataset that you can access\nThis should also include mention of the specific variables within that dataset that will be used to answer the research question\n\n\nThis project should be submitted via Slack by 11:59pm EST on March 4th. Your submission must include:\nAfter you submit this assignment, I will provide feedback on the viability of the questions, the suitability of the data, and the extent to which your general idea will meet my expectations for the final project."
+  },
+  {
+    "objectID": "syllabus.html#types-of-data",
+    "href": "syllabus.html#types-of-data",
+    "title": "Final Project Assignment",
+    "section": "Types of data",
+    "text": "Types of data\nThere are many types of data in the world. Below is a brief discussion of the most common sources of data in the social sciences.\n\nElection returns\n\nThere are various compilations of election data from around the world, such as the Constituency-Level Elections Archive (CLEA)\nReturns for specific elections are often available from a country’s electoral commission website\n\nReplication data\n\nAny published research from the last 5-10 years should make the data and analysis files publicly available. You can almost always find where these replication materials are hosted on the article’s webpage at whichever journal puslished the article. Oftentimes, these data are hosted on Harvard’s Dataverse.\n\nSurvey data\n\nSurvey data is used extremely heavily on the social sciences. Most prominently in political science are the various ‘barometer’ surveys (Afrobarometer, Latinobarometer, etc.).\n\nAdministrative data\n\nData on government (or organization) programs or\n\nExpert-coded data\n\nData where experts code the characteristics of countries or political entities (such as parties)"
+  },
+  {
+    "objectID": "syllabus.html#popular-public-datasets",
+    "href": "syllabus.html#popular-public-datasets",
+    "title": "Final Project Assignment",
+    "section": "Popular Public Datasets",
+    "text": "Popular Public Datasets\nThere are many publicly available datasets. This Dataset of datasets may be useful in identifying datasets that are relevant for your research question. Below, I list several of the most widely used, high-quality datasets used by development scholars:\n\nVarieties of Democracy\nWorld Bank Development/Governance Indicators\nArmed Conflict Location & Event Data Project (ACLED)\nAidData\nDemographic and Health Survey\nInernational Organization for Migration"
+  },
+  {
+    "objectID": "syllabus.html#overview",
+    "href": "syllabus.html#overview",
+    "title": "Final Project Assignment",
+    "section": "Overview",
+    "text": "Overview\nYour second assignment for the final project is specifying a research plan that will guide your investigation of the research question you have identified. This assignment is designed to get you thinking more clearly about a specific hypothesis related to your research question and how you can produce and present evidence for or against it.\nLike a Pre-Analysis Plan, you will need to state testable hypotheses, describe your measurement of the variables necessary to test the hypotheses, and specify a statistical model to conduct the test. Unlike a Pre-Analysis Plan, this is just a starting point.\nThis project should be submitted via Slack by 11:59pm EST on March 18th. Your submission must include:\n\nAn html file presenting your written design and figures. It is not necessary to show printed code.\nA .qmd file that you used to generate the html file\nAll code should be thoroughly commented to explain the choices you are making and the techniques you are using."
+  },
+  {
+    "objectID": "syllabus.html#requirements",
+    "href": "syllabus.html#requirements",
+    "title": "Final Project Assignment",
+    "section": "Requirements",
+    "text": "Requirements\nThis assignment has four components. The components are presented below, along with their importance for the grading of the overall assignment.\n\nDescribe your research question and provide some background on why you find it interesting or important. Be sure to incorporate the feedback provided on the first assignment. Include references to at least two pieces of existing research that illustrate what has already been discovered about the relationship you are investigating. This could be articles published in academic journals, policy reports and white papers, articles published by think tanks and other credible organizations (ex. Brookings, the United Nations High Commissioner for Refugees, etc.), or pieces of data journalism. A full-credit response will probably be around 150-200 words. (40%)\nState at least one testable hypothesis. Distill your research question into a statement about a specific relationship you expect to see in the world. In most cases, this hypothesis will describe a causal relationship between two variables (i.e. changes in x cause changes in y). Make an argument for why you expect to see this relationship. This should be based on related findings from existing research and/or your own theoretical/logical reasoning. A full-credit response will probably be around 150-200 words. (25%)\nBriefly discuss the specific variables you will use to test your hypothesis and the dataset they are drawn from. Be sure to mention the source of the data (the organization or individuals that produced it), the unit of analysis, and the sample. Create a ggplot to visualize the relationship between the variables being used to test your hypothesis. The best method of visualizing this relationship will depend on the scale of your variables. Good methods to consider are scatter plots (for continuous variables), grouped bar charts (for ordinal or binary variables), and line graphs (for continuous variables with time-series). (25%)\nSpecify the main regression model you will use to test your hypothesis. This regression model should provide a preliminary test for or against the validity of your hypothesis. Use markdown to render the equation neatly to the html file. (10%)\n\n\n\n\n\n\n\nNote\n\n\n\nA hypothesis should look like a prediction. Often, a hypothesis states that you expect a decrease or increase in one variable to cause a decrease or increase in another variable. A hypothesis must also be falsifiable. In other words, it must be possible to prove that the hypothesis is false by showing that the relationship you are predicting to see in your data is not actually present.\n\n\nIn the next assignment, you will be asked to discuss the assumptions that your research design is making. For example, you will need to describe the assumptions that are necessary to interpret your regression model as evidence for your hypothesis. You will also be asked to propose additional tests that can help justify these assumptions, using variables that are available in your dataset."
+  },
+  {
+    "objectID": "syllabus.html#overview-1",
+    "href": "syllabus.html#overview-1",
+    "title": "Final Project Assignment",
+    "section": "Overview",
+    "text": "Overview\nYour third assignment for the final project is refining the research plan that will guide your investigation of your research question. This assignment is designed to get you thinking more clearly about the limitations of your research design and how you can strengthen your inferences.\nThis assignment will help you plan the remaining components of your final project analysis. This should look like an expanded, cleaned-up version of your previous assignment.\nThis project should be submitted via Slack by 11:59pm EST on April 15th. Your submission must include:\n\nAn html file presenting your written design and figures. It is not necessary to show printed code.\nA .qmd file that you used to generate the html file\nAll code should be thoroughly commented to explain the choices you are making and the techniques you are using."
+  },
+  {
+    "objectID": "syllabus.html#requirements-1",
+    "href": "syllabus.html#requirements-1",
+    "title": "Final Project Assignment",
+    "section": "Requirements",
+    "text": "Requirements\nThis assignment has four components. The components are presented below, along with their importance for the grading of the overall assignment.\n\nIntroduction: Create an introduction section that discusses your research question. Incorporate previous feedback into your statement of the research question. Expand your discussion of previous work by other scholars and how your analysis will build-on earlier contributions. The best introductions will concisely explain the state of scholarly knowledge on the topic and the gap in this knowledge that your analysis aims to address. Your introduction should probably be around 400-600 words. (10%)\nHypothesis: Incorporate previous feedback into the statement of your hypothesis or hypotheses. Expand your discussion of the logic behind the relationship that your hypothesis expects. (10%)\nData: Describe the dataset(s) you are using to conduct your analysis. Discuss the specific variables you will use. Create a table or figures that communicate the mean and the range of your key variables. Add an informative caption to the ggplot figure that you created in the previous assignment. For guidance, see the captions in the academic papers we have been reading this semester. Interpret the plot; what does it tell us about your hypothesis? (30%)\nResearch Design:\n\nSpecify the main regression model you will use to test your hypothesis. Include any covariates that you will use to control for potential confounders, and justify your decision to include these covariates. If you hypothesis states a causal relationship, discuss the threats to interpreting the coefficient on your primary independent variable as an estimate of a causal effect on the outcome. Describe potential unobserved confounders. (10%)\nIdentify one empirical extension that you will conduct that will add credibility to your inference. Think back to the examples I provided regarding the effect of moving to a new city for college on student civic engagement. For example, students that already lived in Addis Ababa are likely to be different from students that moved to Addis in many ways that may affect their engagement. One extension I proposed was to restrict my analysis to only compare students that moved from an urban area with students already living in Addis. If I were still to see a negative relationship between moving and engagement among these students, this would allow me to rule-out differences between students from urban vs rural homes as a confounder. Your empirical extension should allow you to rule out at least one potential confounder. (30%)\n\nClean-up the document. If you haven’t, incorporate a Bibliography using a references.bib file and Quarto citations. Remove the printed warnings and code from your document. Create clear sections for each stage of the analysis. (20%)"
+  },
+  {
+    "objectID": "syllabus.html#overview-2",
+    "href": "syllabus.html#overview-2",
+    "title": "Final Project Assignment",
+    "section": "Overview",
+    "text": "Overview\nThe final project is the culmination of this course. It should reflect the substantive knowledge and technical skills that you developed and the work from the three touch-point assignments that you submitted and received feedback on. The objective of this assignment is to give you experience generating a viable research question based on a topic that you are interested in, refining that broad research question into a testable hypothesis, identifying data that can be used to provide evidence for or against your hypothesis, and communicating the results of your analysis to others.\nUnderstanding this process can not only help you answer research questions in the future, but can also help you assess the strength of evidence presented by others. As data becomes an increasingly important part of our lives, these skills will be useful in your career, especially if you conduct your own research or incorporate research by others into your decision-making.\nThis project should be submitted via Slack by 11:59pm EST on May 10th. The grade on your submission will constitute 40% of your final grade for this course. Your submission must include:\n\nA url linking me to a clean, professional webpage on your personal website that presents your research to potential employers\nThe .qmd file that you used to generate the html file\nAll code should be thoroughly commented to explain the choices you are making and the techniques you are using.\n\n\n\n\n\n\n\nNote\n\n\n\nImportantly, the grade for this assignment will not be affected by whether your analysis uncovers a statistically significant relationship. If you provide a clear, plausible argument for why you expect to find a relationship between your dependent and independent variables, a null finding provides interesting information about the world! All good (and honest) researchers find that their theoretical expectations were wrong just as often as they find that they were right."
+  },
+  {
+    "objectID": "syllabus.html#structure",
+    "href": "syllabus.html#structure",
+    "title": "Final Project Assignment",
+    "section": "Structure",
+    "text": "Structure\nYour final project submission should be organized into the following sections. This format roughly follows the organization of an academic research paper or a policy report.\n\nIntroduction to the Research Question (~600 words)\n\nIn the introduction, you should introduce your research question to readers. Explain why you find it interesting or important. Describe existing research that is related to this topic and include references to relevant studies. This could be articles published in academic journals, policy reports and white papers, articles published by think tanks and other credible organizations (ex. Brookings, the United Nations High Commissioner for Refugees, etc.), or pieces of data journalism. For most topics, you should be able to identify and cite at least 3-4 relevant studies.\nBriefly discuss what has already been discovered about the relationship you are investigating and how these findings shaped your research question. The best introductions will concisely explain the state of scholarly knowledge on the topic and the gap in this knowledge that your analysis aims to fill.\n\nTheory and Hypotheses (~600 words)\n\nIn the theory and hypothesis section, you should refine your broad research question into a specific, testable hypothesis. State at least one testable hypothesis. Distill your research question into a statement about a specific relationship you expect to see in the world. In most cases, this hypothesis will describe a causal relationship between two variables (i.e. changes in x cause changes in y). Make an argument for why you expect to see this relationship. This should be based on related findings from existing research (cited in the introduction) and your own theoretical/logical reasoning. Readers should have a clear understanding of why you expect to see this relationship in the world. They might not agree, but they should understand your reasoning.\n\n\n\n\n\n\nNote\n\n\n\nA hypothesis should look like a prediction. Often, a hypothesis states that you expect a decrease or increase in one variable to cause a decrease or increase in another variable. A hypothesis must also be falsifiable. In other words, it must be possible to prove that the hypothesis is false by showing that the relationship you are predicting to see in your data is not actually present.\n\n\n\nResearch Design (~600 words; 1 table)\n\nDescribe the dataset(s) you are using to conduct your analysis. Be sure to mention the source of the data (the organization or individuals that produced it), the unit of analysis, and the sample. Are there any limitations that readers should be aware of?\nDiscuss the specific variables you will use to test your hypothesis. Explain how these variables map onto the theoretical concepts that underpin your hypothesis. Create a table that communicates the mean, range, and standard deviation of these variables. You can use packages like gt() or flextable.\nSpecify the main regression model you will use to test your hypothesis. Include any covariates that you will use to control for potential confounders, and justify your decision to include these covariates. If your hypothesis states a causal relationship, discuss the threats to interpreting the coefficient on your primary independent variable as an estimate of a causal effect on the outcome. Describe potential unobserved confounders.\nEvery empirical test has shortcomings that prevent us from being fully confident in the interpretation. What are the limitations of your test? Identify one empirical extension that you will conduct that will add credibility to the inference you are trying to make with your hypothesis test. Think back to the examples I provided regarding the effect of moving to a new city for college on student civic engagement. For example, students that already lived in Addis Ababa are likely to be different from students that moved to Addis in many ways that may affect their engagement. One extension I proposed was to restrict my analysis to only compare students that moved from an urban area with students already living in Addis. If I were still to see a negative relationship between moving and engagement among these students, this would allow me to rule-out differences between students from urban vs rural homes as a confounder.\nYour empirical extension should allow you to rule out at least one potential confounder.Make sure to clarify What purpose will it serve. Be specific about how it makes us more confident in the ability of your test to answer the research question.\n\nFindings (~300 words; 1 figure; at least 1 regression table)\n\nCreate at least one ggplot to visualize the relationship between the variables being used to test your hypothesis. The best method of visualizing this relationship will depend on the scale of your variables. Good methods to consider are scatter plots (for continuous variables), grouped bar charts (for ordinal or binary variables), and line graphs (for continuous variables with time-series). Your figure should have an informative caption that allows readers to understand what is being shown. For guidance, see the captions in the academic papers we have been reading this semester. Interpret the plot; does it tell us anything about the veracity your hypothesis?\nUse the modelsummary package to present the results of the regression model testing your hypothesis. Be sure to interpret the magnitudes of the main variables in your regression model. Substantively, is this a big effect or a small effect? Once you have discussed the magnitude of the key independent variable(s), tell us whether the results are statistically significant. If you have a large substantive magnitude on your independent variable’s coefficient but no statistical significance, discuss why this might be the case. Do you think it is related to the amount of statistical power of your hypothesis test?\n\nEmpirical Extension (~300 words; at least 1 regression table)\n\nRepeat the steps above for your empirical extension.\n\nDiscussion and Policy Implications (~300 words)\n\nDiscuss what we learned from your final project. How conclusive are your results? Is this strong evidence for/against your hypothesis? If so, are there any implications for policy? If your analysis does not provide strong evidence for/against the hypothesis, what future research could provide stronger evidence?"
+  },
+  {
+    "objectID": "syllabus.html#formatting-requirements",
+    "href": "syllabus.html#formatting-requirements",
+    "title": "Final Project Assignment",
+    "section": "Formatting Requirements",
+    "text": "Formatting Requirements\n\nCreate clear sections for each stage of the analysis described above\nRemove the printed warnings and code from your document\nIncorporate a Bibliography using a references.bib file and Quarto citations\nPost the resulting .html document to your webpage"
   }
 ]

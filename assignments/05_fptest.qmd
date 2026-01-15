@@ -21,7 +21,7 @@ Your third assignment for the final project is refining the research plan that w
 
 This assignment will help you plan the remaining components of your final project analysis. This should look like an expanded, cleaned-up version of your previous assignment. 
 
-This project should be submitted via Slack by **11:59pm EST on Wednesday, April 1st**. Your submission must include:
+This project should be submitted via Slack by **11:59pm EST on April 15th**. Your submission must include:
 
 - An html file presenting your written design and figures. It is not necessary to show printed code.
 - A `.qmd` file that you used to generate the html file

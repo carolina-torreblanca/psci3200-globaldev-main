@@ -21,7 +21,7 @@ Your second assignment for the final project is specifying a research plan that 
 
 Like a Pre-Analysis Plan, you will need to state testable hypotheses, describe your measurement of the variables necessary to test the hypotheses, and specify a statistical model to conduct the test. Unlike a Pre-Analysis Plan, this is just a starting point.
 
-This project should be submitted via Slack by **11:59pm EST on March 30**. Your submission must include:
+This project should be submitted via Slack by **11:59pm EST on March 18th**. Your submission must include:
 
 - An html file presenting your written design and figures. It is not necessary to show printed code.
 - A `.qmd` file that you used to generate the html file
