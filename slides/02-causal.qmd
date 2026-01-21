@@ -180,7 +180,7 @@ But it does **not** explain *why* the pattern exists.
 ## Correlation (in the summary statistic sense) Tells Us...
 
 ::: incremental
-- **Strength**: How tightly X and Y move together (0 to ±1)
+- **Strength**: How tightly X and Y move together 
 
 - **Direction**: Positive (both rise) or negative (one rises, other falls)
 
@@ -194,6 +194,14 @@ The UFOs and patents **really are** correlated in the data!
 
 ---
 
+---
+
+## What might explain this correlation? 
+
+![](img/corr2.png){fig-align="center" width="90%"}
+
+---
+
 ## The Limits of Description
 
 
@@ -202,11 +210,8 @@ Correlation and summary statistics are powerful for **description**
 ::: fragment
 But if we want to answer causal questions...
 
-*"Would a cash transfer reduce poverty?"*
 :::
-
 ::: fragment
-
 ...we need a different toolkit entirely.
 :::
 
@@ -215,17 +220,14 @@ But if we want to answer causal questions...
 
 ## What is Causation?
 
-\
+What do we mean when we say X causes Y?
 
-Correlation tells us X and Y move together.
+## Many ways to define causality:
 
-::: fragment
-But **causation** says something stronger: X *produces* or *changes* Y
-:::
-
-::: fragment
-\
-How do we study this? Scientists made **two key moves**:
+::: incremental
+- **Legal**: "But for" the defendant's action, would harm have occurred?
+- **Philosophical**: Necessary and sufficient conditions, mechanisms, metaphysical processes, etc.
+- **Social science**: Counterfactual comparison (what we'll use)
 :::
 
 ---
@@ -250,19 +252,7 @@ Let's unpack each move.
 
 # Move 1: Define Causality as Counterfactual Comparison
 
-## A Note on Definitions
 
-\
-
-There are many ways to define causality:
-
-::: incremental
-- **Legal**: "But for" the defendant's action, would harm have occurred?
-- **Philosophical**: Necessary and sufficient conditions, mechanisms
-- **Social science**: Counterfactual comparison (what we'll use)
-:::
-
----
 
 ## A Misleading Claim
 
@@ -546,7 +536,7 @@ If this holds → group averages are valid comparisons → we can estimate causa
 
 
 ::: incremental
-- Understanding cause and effect is how we **change things** in the real world
+- Understanding cause and effect is part of how we **change things** in the real world
 
 - Causal inference separates **good evaluations** from bad
   + Did this program actually reduce poverty?

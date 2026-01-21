@@ -5674,21 +5674,21 @@
     "href": "slides/02-causal.html#correlation-in-the-summary-statistic-sense-tells-us",
     "title": "Correlation and Causation",
     "section": "Correlation (in the summary statistic sense) Tells Us…",
-    "text": "Correlation (in the summary statistic sense) Tells Us…\n\n\nStrength: How tightly X and Y move together (0 to ±1)\nDirection: Positive (both rise) or negative (one rises, other falls)\nNothing about why they move together\n\n\n\n\nThe UFOs and patents really are correlated in the data!"
+    "text": "Correlation (in the summary statistic sense) Tells Us…\n\n\nStrength: How tightly X and Y move together\nDirection: Positive (both rise) or negative (one rises, other falls)\nNothing about why they move together\n\n\n\n\nThe UFOs and patents really are correlated in the data!"
   },
   {
     "objectID": "slides/02-causal.html#the-limits-of-description",
     "href": "slides/02-causal.html#the-limits-of-description",
     "title": "Correlation and Causation",
     "section": "The Limits of Description",
-    "text": "The Limits of Description\nCorrelation and summary statistics are powerful for description\n\nBut if we want to answer causal questions…\n“Would a cash transfer reduce poverty?”\n\n\n…we need a different toolkit entirely."
+    "text": "The Limits of Description\nCorrelation and summary statistics are powerful for description\n\nBut if we want to answer causal questions…\n\n\n…we need a different toolkit entirely."
   },
   {
     "objectID": "slides/02-causal.html#what-is-causation",
     "href": "slides/02-causal.html#what-is-causation",
     "title": "Correlation and Causation",
     "section": "What is Causation?",
-    "text": "What is Causation?\n\n\nCorrelation tells us X and Y move together.\n\nBut causation says something stronger: X produces or changes Y\n\n\n\nHow do we study this? Scientists made two key moves:"
+    "text": "What is Causation?\nWhat do we mean when we say X causes Y?"
   },
   {
     "objectID": "slides/02-causal.html#two-key-moves",
@@ -5821,7 +5821,7 @@
     "href": "slides/02-causal.html#why-causality-matters-for-development",
     "title": "Correlation and Causation",
     "section": "Why Causality Matters for Development",
-    "text": "Why Causality Matters for Development\n\n\nUnderstanding cause and effect is how we change things in the real world\nCausal inference separates good evaluations from bad\n\nDid this program actually reduce poverty?\nWould this policy improve outcomes?"
+    "text": "Why Causality Matters for Development\n\n\nUnderstanding cause and effect is part of how we change things in the real world\nCausal inference separates good evaluations from bad\n\nDid this program actually reduce poverty?\nWould this policy improve outcomes?"
   },
   {
     "objectID": "slides/02-causal.html#many-tools-to-build-credible-comparisons",
@@ -9945,5 +9945,19 @@
     "title": "Final Project Assignment",
     "section": "Formatting Requirements",
     "text": "Formatting Requirements\n\nCreate clear sections for each stage of the analysis described above\nRemove the printed warnings and code from your document\nIncorporate a Bibliography using a references.bib file and Quarto citations\nPost the resulting .html document to your webpage"
+  },
+  {
+    "objectID": "slides/02-causal.html#what-might-explain-this-correlation",
+    "href": "slides/02-causal.html#what-might-explain-this-correlation",
+    "title": "Correlation and Causation",
+    "section": "What might explain this correlation?",
+    "text": "What might explain this correlation?"
+  },
+  {
+    "objectID": "slides/02-causal.html#many-ways-to-define-causality",
+    "href": "slides/02-causal.html#many-ways-to-define-causality",
+    "title": "Correlation and Causation",
+    "section": "Many ways to define causality:",
+    "text": "Many ways to define causality:\n\n\nLegal: “But for” the defendant’s action, would harm have occurred?\nPhilosophical: Necessary and sufficient conditions, mechanisms, metaphysical processes, etc.\nSocial science: Counterfactual comparison (what we’ll use)"
   }
 ]
