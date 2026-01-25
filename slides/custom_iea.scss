@@ -4,11 +4,39 @@ $body-bg: #fff;
 $body-color: #222;
 $link-color: #011F5B;
 $presentation-heading-color: #222;
-$code-color: #222;
-$code-block-bg: grey;
-$code-block-border-color: #222;
+$code-color: #2d2d2d;
+$code-block-bg: #f8f8f8;
+$code-block-border-color: #ddd;
 
 /*-- scss:rules --*/
+
+/* Code block styling for better readability */
+.reveal pre {
+  background-color: #f8f8f8 !important;
+  border: 1px solid #ddd !important;
+  border-radius: 6px !important;
+  padding: 12px !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08) !important;
+}
+
+.reveal pre code {
+  background-color: transparent !important;
+  color: #2d2d2d !important;
+  font-size: 0.75em !important;
+}
+
+.reveal code {
+  background-color: #f0f0f0 !important;
+  color: #c7254e !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+}
+
+/* Output styling */
+.reveal .cell-output pre {
+  background-color: #fff !important;
+  border-left: 3px solid #011F5B !important;
+}
 
 
 .reveal .footer {

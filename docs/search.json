@@ -8446,21 +8446,21 @@
     "href": "slides/03-causal-ctb.html#announcements",
     "title": "Causality 2",
     "section": "Announcements",
-    "text": "Announcements\n\nThis Wed: RStudio and Quarto workshop with Jeremy"
+    "text": "Announcements\n\nThis Wed: RStudio and Quarto workshop"
   },
   {
     "objectID": "slides/03-causal-ctb.html#agenda-for-today",
     "href": "slides/03-causal-ctb.html#agenda-for-today",
     "title": "Causality 2",
     "section": "Agenda for today",
-    "text": "Agenda for today\n\nWhat is confounding?\nCausality with observational data"
+    "text": "Agenda for today\n\n\nRecap: The fundamental problem of causal inference\nWhat is confounding?\nHow randomization solves confounding\nCan we do causal inference with observational data?"
   },
   {
     "objectID": "slides/03-causal-ctb.html#causality-as-explanation",
     "href": "slides/03-causal-ctb.html#causality-as-explanation",
     "title": "Causality 2",
     "section": "Causality as Explanation",
-    "text": "Causality as Explanation\n\n\nLast week, we discussed the fundamental problem of causal inference:\n\nWe can never observe what could have happened - or the counterfactual outcome\n\nThis prevents us from ever observing individual treatment effects … but when treatment assignment is independent of our outcomes….\nWe can estimate average causal effects"
+    "text": "Causality as Explanation\n\n\nLast week, we discussed the fundamental problem of causal inference:\n\nWe can never observe what could have happened - or the counterfactual outcome\n\nThis prevents us from ever observing individual treatment effects…\n\n\n\n\n\n\n\n\n\nBut there’s hope!\n\n\nWhen treatment assignment is independent of our outcomes, we can estimate average causal effects"
   },
   {
     "objectID": "slides/03-causal-ctb.html#dags",
@@ -8509,7 +8509,7 @@
     "href": "slides/03-causal-ctb.html#randomization-as-a-way-to-get-independence",
     "title": "Causality 2",
     "section": "Randomization as a way to get independence",
-    "text": "Randomization as a way to get independence\n\nIndependence between treatment and outcome is a hard assumption!\nOne way to make it more convincing is to randomize treatment assignment: if treatment assignment depends on luck, not X, then we have a good theoretical reason to assume X and Y are independent."
+    "text": "Randomization as a way to get independence\n\n\n\n\n\n\nThe Core Challenge\n\n\nIndependence between treatment and outcome is a hard assumption!\n\n\n\n\nOne way to make it more convincing is to randomize treatment assignment:\n\n\n\nIf treatment assignment depends on luck, not X, then we have a good theoretical reason to assume X and Y are independent."
   },
   {
     "objectID": "slides/03-causal-ctb.html#example-from-a-rct-project-star",
@@ -8537,14 +8537,14 @@
     "href": "slides/03-causal-ctb.html#data-code-1",
     "title": "Causality 2",
     "section": "Data & Code",
-    "text": "Data & Code\n\n## Two-way frequency tables\ntable(star$classtype, star$graduated)\n\n         \n            0   1\n  regular  92 597\n  small    74 511\n\n## Two-way tables of proportions\nprop.table(table(star$classtype, star$graduated), 1) \n\n         \n                  0         1\n  regular 0.1335269 0.8664731\n  small   0.1264957 0.8735043\n\n# summary\nsummary(star$math)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  515.0   604.0   631.0   631.6   659.0   774.0"
+    "text": "Data & Code\n\n## Two-way frequency tables\ntable(star$classtype, star$graduated)\n\n         \n            0   1\n  regular  92 597\n  small    74 511\n\n## Two-way tables of proportions\nprop.table(table(star$classtype, star$graduated), 1)\n\n         \n                  0         1\n  regular 0.1335269 0.8664731\n  small   0.1264957 0.8735043\n\n# summary\nsummary(star$math)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  515.0   604.0   631.0   631.6   659.0   774.0"
   },
   {
     "objectID": "slides/03-causal-ctb.html#difference-in-means",
     "href": "slides/03-causal-ctb.html#difference-in-means",
     "title": "Causality 2",
     "section": "Difference-in-Means",
-    "text": "Difference-in-Means\nWhat is the average causal effect of class size on education outcomes?\nHow would you answer this question?\n\nRemember, we have kids randomly assigned to small classrooms and SAT scores."
+    "text": "Difference-in-Means\n\n\n\n\n\n\nThe Key Question\n\n\nWhat is the average causal effect of class size on education outcomes?\n\n\n\n\nHow would you answer this question?\n\n\nRemember, we have kids randomly assigned to small classrooms and SAT scores.\n\n\n\n\n\n\n\n\nThe Estimator\n\n\nCompare the mean outcome of treated vs. control groups!"
   },
   {
     "objectID": "slides/03-causal-ctb.html#difference-in-means-1",
@@ -8558,7 +8558,7 @@
     "href": "slides/03-causal-ctb.html#can-we-do-observational-causal-research",
     "title": "Causality 2",
     "section": "Can we do observational causal research?",
-    "text": "Can we do observational causal research?\n\nCausality hinges on independence between treatment and outcome\nBy randomizing treatment assignment, RCTs fabricate independence\nBut not everything can or ought to be randomized!\nObservational causal work relies on finding and leveraging accidentally or conditionally occurring random variation in treatment assignment"
+    "text": "Can we do observational causal research?\n\n\nCausality hinges on independence between treatment and outcome\nBy randomizing treatment assignment, RCTs plausibly fabricate independence\nBut not everything can or ought to be randomized!\n\n\n\n\n\n\n\n\n\nThe Observational Approach\n\n\nFind and leverage accidentally or conditionally occurring random variation in treatment assignment"
   },
   {
     "objectID": "slides/03-causal-ctb.html#natural--and-quasi-experiments",
@@ -8579,7 +8579,7 @@
     "href": "slides/03-causal-ctb.html#does-drinking-wine-make-you-live-longer",
     "title": "Causality 2",
     "section": "Does drinking wine make you live longer?",
-    "text": "Does drinking wine make you live longer?\nFrom Time magazine"
+    "text": "Does drinking wine make you live longer?\n\n\nThe researchers compared only Italian men who were the same age, and ate about the same.\nI.e., they “controlled” for age, diet, origin.\nIf nothing else confounds the relationship between drinking wine and life expectancy, then they identified a causal effect!\nDo we believe them? What else might be confounding?"
   },
   {
     "objectID": "slides/03-causal-ctb.html#does-drinking-wine-make-you-live-longer-1",
@@ -9959,5 +9959,222 @@
     "title": "Correlation and Causation",
     "section": "Many ways to define causality:",
     "text": "Many ways to define causality:\n\n\nLegal: “But for” the defendant’s action, would harm have occurred?\nPhilosophical: Necessary and sufficient conditions, mechanisms, metaphysical processes, etc.\nSocial science: Counterfactual comparison (what we’ll use)"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#causality-as-explanation-1",
+    "href": "slides/03-causal-ctb.html#causality-as-explanation-1",
+    "title": "Causality 2",
+    "section": "Causality as Explanation",
+    "text": "Causality as Explanation\nKey Questions:\n\nWhat is independence in the statistical sense?\n\n\n\nIn the substantive sense?\n\n\n\n\nIs independence observed or assumed?"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#independence-statistical-sense",
+    "href": "slides/03-causal-ctb.html#independence-statistical-sense",
+    "title": "Causality 2",
+    "section": "Independence: Statistical Sense",
+    "text": "Independence: Statistical Sense\n\n\n\n\n\n\nStatistical Independence\n\n\nTwo variables X and Y are statistically independent if knowing the value of X tells you nothing about the value of Y (and vice versa).\n\n\n\n\nFormally: \\(P(Y | X) = P(Y)\\)\n\n\nExample:\n\nIf a coin flip (X) is independent of your test score (Y), then knowing the coin landed heads doesn’t change our prediction of your score\nThe distribution of Y is the same regardless of X"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#independence-substantive-sense",
+    "href": "slides/03-causal-ctb.html#independence-substantive-sense",
+    "title": "Causality 2",
+    "section": "Independence: Substantive Sense",
+    "text": "Independence: Substantive Sense\n\n\n\n\n\n\nSubstantive Independence (for Causal Inference)\n\n\nTreatment assignment is independent of potential outcomes — meaning who gets treated is unrelated to how they would respond to treatment.\n\n\n\n\nIn plain language:\n\nThe people who got treated are not systematically different from those who didn’t . . .\n\nIndependence is assumed, not observed"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#is-independence-observed-or-assumed",
+    "href": "slides/03-causal-ctb.html#is-independence-observed-or-assumed",
+    "title": "Causality 2",
+    "section": "Is Independence Observed or Assumed?",
+    "text": "Is Independence Observed or Assumed?\n\n\n\n\n\n\n\nThe Hard Truth\n\n\nIndependence is assumed, not observed!\n\n\n\n\n\n\nWe cannot directly test whether treatment is independent of potential outcomes\nWhy? Because we never observe both potential outcomes for the same unit\n\n\n\n\n\n\n\n\n\nWhat We Can Do\n\n\n\nRCTs: Randomization gives us a strong theoretical reason to assume independence\nObservational data: We must argue why our setting approximates independence"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#dags-a-visual-language-for-causality",
+    "href": "slides/03-causal-ctb.html#dags-a-visual-language-for-causality",
+    "title": "Causality 2",
+    "section": "DAGs: A Visual Language for Causality",
+    "text": "DAGs: A Visual Language for Causality\nOne useful way to think about causality is using Directed Acyclical Graphs (DAGs)\n\n\n\n\n\n\n\nWhy DAGs?\n\n\nCausal inference requires assumptions and DAGs are ways for us to visualize those assumptions\n\n\n\n\n\nIn a DAG, each node is a variable and the edge represents a causal relationship. For example “X causes Y”:"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#dags-multicausality",
+    "href": "slides/03-causal-ctb.html#dags-multicausality",
+    "title": "Causality 2",
+    "section": "DAGS: Multicausality",
+    "text": "DAGS: Multicausality\nWhat if multiple things cause Y?\n\n\n\n\n\n\n\n\nKey Insight\n\n\nX and Y are independent if X is “separated” from other variables that go to Y."
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#dags-the-confounder-problem",
+    "href": "slides/03-causal-ctb.html#dags-the-confounder-problem",
+    "title": "Causality 2",
+    "section": "DAGs: The Confounder Problem",
+    "text": "DAGs: The Confounder Problem\nWhat if X and Y are both caused by some other variable, U?\n\n\n\n\n\n\n\n\nAre X and Y independent? Can we plug-in \\(\\bar{Y_c}\\) and \\(\\bar{Y_t}\\) and subtract?\n\n\nNO! U is a confounder — it creates a “backdoor path” between X and Y"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#section",
+    "href": "slides/03-causal-ctb.html#section",
+    "title": "Causality 2",
+    "section": "",
+    "text": "Example: Project STAR\n\n\nOne of the most influential education experiments in history"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#what-is-project-star",
+    "href": "slides/03-causal-ctb.html#what-is-project-star",
+    "title": "Causality 2",
+    "section": "What is Project STAR?",
+    "text": "What is Project STAR?\n\n\nStudent Teacher Achievement Ratio\nA landmark randomized experiment conducted in Tennessee (1985-1989)\nOver 11,000 students in 79 schools participated\nStudents were randomly assigned to one of three class types:\n\nSmall classes (13-17 students)\nRegular classes (22-25 students)\nRegular classes with a teacher’s aide\n\nStudents followed from kindergarten through 3rd grade"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#why-project-star-matters",
+    "href": "slides/03-causal-ctb.html#why-project-star-matters",
+    "title": "Causality 2",
+    "section": "Why Project STAR Matters",
+    "text": "Why Project STAR Matters\n\n\n\n\n\n\nA Rare Opportunity\n\n\nIt’s very hard to run large-scale education experiments. STAR cost $12 million and required buy-in from teachers, parents, and school districts.\n\n\n\n\nThe results have influenced education policy for decades — including debates about class size reduction in California, Wisconsin, and beyond."
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#the-research-question",
+    "href": "slides/03-causal-ctb.html#the-research-question",
+    "title": "Causality 2",
+    "section": "The Research Question",
+    "text": "The Research Question\n\nWhat is the causal effect of class size on educational outcomes?\n\n\nWhy is this hard to answer without an experiment?"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#the-confounding-problem",
+    "href": "slides/03-causal-ctb.html#the-confounding-problem",
+    "title": "Causality 2",
+    "section": "The Confounding Problem",
+    "text": "The Confounding Problem\nClass size and educational outcomes are probably confounded:\n\n\n\nParent’s wealth — richer parents may choose schools with smaller classes\nWhere people live — suburban vs. urban schools differ systematically\nSchool quality — better schools might have both smaller classes AND better outcomes\nStudent ability — struggling students might be placed in smaller classes\n\n\n\n\nWhat else can you think of?"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#the-experimental-solution",
+    "href": "slides/03-causal-ctb.html#the-experimental-solution",
+    "title": "Causality 2",
+    "section": "The Experimental Solution",
+    "text": "The Experimental Solution\n\n\n\n\n\n\nResearch Design\n\n\nRandomize the size of classrooms!\n\n\n\n\n\nHypothesis: Kids learn better in smaller classrooms\n\n\n\n\nKey insight: By randomly assigning students to class sizes, we break the link between class size and all confounders"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#difference-in-means-code",
+    "href": "slides/03-causal-ctb.html#difference-in-means-code",
+    "title": "Causality 2",
+    "section": "Difference-in-Means: Code",
+    "text": "Difference-in-Means: Code\n\n# 1. Mean Math score for people assinged to small classroom\nmath_treat &lt;- mean(star$math[star$classtype==\"small\"])\n# 2. Meam math score for people in regular classroms\nmath_control &lt;-  mean(star$math[star$classtype==\"regular\"])\n# 3. Mean reading for treatment\nreading_treat &lt;- mean(star$reading[star$classtype==\"small\"])\n# 4. Reading control\nreading_control &lt;- mean(star$reading[star$classtype==\"regular\"])\n\n### difference-in-means estimators ####\nmath_treat - math_control\n\n[1] 5.989905\n\nreading_treat - reading_control\n\n[1] 7.210547"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#interpreting-the-results",
+    "href": "slides/03-causal-ctb.html#interpreting-the-results",
+    "title": "Causality 2",
+    "section": "Interpreting the Results",
+    "text": "Interpreting the Results\n\n\n\n\n\n\nWhat do these numbers mean?\n\n\n\nStudents in small classes scored about 5-8 points higher on standardized tests\n\n\n\n\n\nLong-term follow-ups found that STAR students in small classes were also more likely to:\n\nGraduate high school\nAttend college\nEarn higher wages"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#section-1",
+    "href": "slides/03-causal-ctb.html#section-1",
+    "title": "Causality 2",
+    "section": "",
+    "text": "Natural Experiments\n\n\nWhen nature (or history) randomizes for us"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#example-russian-tv-in-ukraine",
+    "href": "slides/03-causal-ctb.html#example-russian-tv-in-ukraine",
+    "title": "Causality 2",
+    "section": "Example: Russian TV in Ukraine",
+    "text": "Example: Russian TV in Ukraine\n\n\n\n\n\n\nThe Study\n\n\nElectoral Effects of Biased Media: Russian Television in Ukraine (Peisakhin and Rozenas, 2018)\n\n\n\n\nResearch Question: Does exposure to state-funded pro-Russia news make Ukrainians more pro-Russia?"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#why-this-study-matters",
+    "href": "slides/03-causal-ctb.html#why-this-study-matters",
+    "title": "Causality 2",
+    "section": "Why This Study Matters",
+    "text": "Why This Study Matters\n\n\n\n\n\n\nThe Context\n\n\nThis study examines Ukraine before the 2014 Russian annexation of Crimea and the ongoing war.\n\n\n\n\n\n\nRussian state TV (channels like Channel One, Russia-1) broadcast heavily biased content\nMany Ukrainians, especially in the East, could receive these broadcasts\nCan foreign propaganda influence domestic elections?"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#the-challenge",
+    "href": "slides/03-causal-ctb.html#the-challenge",
+    "title": "Causality 2",
+    "section": "The Challenge",
+    "text": "The Challenge\nWhy is this hard? People don’t watch TV randomly!\n\n\n\nPro-Russia Ukrainians might seek out Russian TV\nAnti-Russia Ukrainians might avoid Russian TV\nPolitical views and TV watching are confounded"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#the-clever-solution",
+    "href": "slides/03-causal-ctb.html#the-clever-solution",
+    "title": "Causality 2",
+    "section": "The Clever Solution",
+    "text": "The Clever Solution\nDue to geography and topography, TV reception is as-if-random\n\n\n\nSignal strength depends on distance from transmitters and terrain (hills, valleys)\nTwo neighboring villages might have very different reception\nResidents didn’t choose where to live based on TV signal\nThis creates arbitrary variation in who can receive Russian TV"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#the-research-design",
+    "href": "slides/03-causal-ctb.html#the-research-design",
+    "title": "Causality 2",
+    "section": "The Research Design",
+    "text": "The Research Design\nKey idea: Compare nearby areas that are plausibly the same in all respects — except some receive Russian TV and others don’t, due to accidents of geography\n\n\n\nFind pairs of neighboring areas with different signal strength\nThese neighbors should be similar in demographics, history, economy\nThe only systematic difference is TV access\nAny difference in voting behavior → effect of Russian TV"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#the-key-assumptions",
+    "href": "slides/03-causal-ctb.html#the-key-assumptions",
+    "title": "Causality 2",
+    "section": "The Key Assumptions",
+    "text": "The Key Assumptions\nWhat must we believe for this to work?\n\n\nTV signal strength is unrelated to other factors affecting political views\nPeople didn’t move based on TV availability\nThe signal variation creates comparable groups\nNo other differences between signal/no-signal areas\n\n\n\nAre these assumptions plausible?"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#the-findings",
+    "href": "slides/03-causal-ctb.html#the-findings",
+    "title": "Causality 2",
+    "section": "The Findings",
+    "text": "The Findings\nThe study found that exposure to Russian TV:\n\n\nIncreased pro-Russia voting by 5-10 percentage points\nDecreased support for Ukrainian nationalist parties\nEffects were strongest in areas with historical ties to Russia\n\n\n\n\n\n\n\n\n\nPolicy Implication\n\n\nState-controlled media can be a powerful tool for political influence — even across borders"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#using-controls",
+    "href": "slides/03-causal-ctb.html#using-controls",
+    "title": "Causality 2",
+    "section": "Using Controls",
+    "text": "Using Controls\n\n\nIf we feel theoretically confident that we can observe all variables that confound the relationship between X and Y, we can control for them and estimate causal effects\nThis is a BIG BIG BIG assumption (called the Conditional Independence Assumption)\nWe cannot do anything with confounders we cannot observe!"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#section-2",
+    "href": "slides/03-causal-ctb.html#section-2",
+    "title": "Causality 2",
+    "section": "",
+    "text": "Does drinking wine make you live longer?"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#the-wine-study",
+    "href": "slides/03-causal-ctb.html#the-wine-study",
+    "title": "Causality 2",
+    "section": "The Wine Study",
+    "text": "The Wine Study\nFrom Time magazine"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#key-takeaways",
+    "href": "slides/03-causal-ctb.html#key-takeaways",
+    "title": "Causality 2",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\n\nCausality ALWAYS requires assumptions!\n\nDAGs are good ways to clarify our assumptions\n\nWhether our conclusions are causal depends on whether our assumptions hold\nAssumptions refer to what we cannot see — they are un-testable!\nGood research argues why a setting is well-suited to answer causal questions\n\n\n\n\n\n\nhttps://carolina-torreblanca.github.io/psci3200-globaldev-main/"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#the-hierarchy-of-causal-evidence",
+    "href": "slides/03-causal-ctb.html#the-hierarchy-of-causal-evidence",
+    "title": "Causality 2",
+    "section": "The Hierarchy of Causal Evidence",
+    "text": "The Hierarchy of Causal Evidence\n\n\n\n\nMethod\nStrength\nChallenge\n\n\n\n\nRCT\nGold standard\nExpensive, sometimes unethical\n\n\nNatural Experiment\nStrong if valid\nFinding good ones is hard\n\n\nObservational + Controls\nAccessible\nUnobserved confounding\n\n\n\n\n\n\n\n\n\n\n\nThe Bottom Line\n\n\nChoose your method based on your question, data, and what assumptions you’re willing to defend.\n\n\n\n\n\n\n\nhttps://carolina-torreblanca.github.io/psci3200-globaldev-main/"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#loading-the-data",
+    "href": "slides/03-causal-ctb.html#loading-the-data",
+    "title": "Causality 2",
+    "section": "Loading the Data",
+    "text": "Loading the Data\n\nstar &lt;- read.csv(\"./code/STAR.csv\")\ndim(star)\n\n[1] 1274    4\n\nhead(star)\n\n  classtype reading math graduated\n1     small     578  610         1\n2   regular     612  612         1\n3   regular     583  606         1\n4     small     661  648         1\n5     small     614  636         1\n6   regular     610  603         0"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#exploring-treatment-assignment",
+    "href": "slides/03-causal-ctb.html#exploring-treatment-assignment",
+    "title": "Causality 2",
+    "section": "Exploring Treatment Assignment",
+    "text": "Exploring Treatment Assignment\n\ntable(star$classtype)\n\n\nregular   small \n    689     585 \n\nprop.table(table(star$classtype, star$graduated), 1)\n\n         \n                  0         1\n  regular 0.1335269 0.8664731\n  small   0.1264957 0.8735043"
+  },
+  {
+    "objectID": "slides/03-causal-ctb.html#the-difference-in-means-estimator",
+    "href": "slides/03-causal-ctb.html#the-difference-in-means-estimator",
+    "title": "Causality 2",
+    "section": "The Difference-in-Means Estimator",
+    "text": "The Difference-in-Means Estimator\nWhat is the average causal effect of class size on education outcomes?\n\nThe Estimator:\n\\[\\hat{\\tau} = \\bar{Y}_{\\text{treated}} - \\bar{Y}_{\\text{control}}\\]\n\n\n\n\\(\\bar{Y}_{\\text{treated}}\\) = average outcome for the treatment group\n\\(\\bar{Y}_{\\text{control}}\\) = average outcome for the control group"
   }
 ]
