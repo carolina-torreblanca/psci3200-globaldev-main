@@ -1,26 +1,26 @@
-﻿week,date,date_end,title,deadline, reading,content,tutorial,assignment
+week,date,date_end,title,deadline, reading,content,tutorial,assignment
 1,1/14/26,,Introduction to the course,,,/materials/01_intro,,
 2,1/19/26,,MLK Jr. Day (no classes),,,,,
 2,1/21/26,,Correlation vs. Causation,,DSS Ch 2,/materials/02_causal,,/assignments/00_setupr
-3,1/26/26,,Causality,,DSS Ch 5,/materials/03_causal,,/assignments/01_quarto
-3,1/28/26,,Rstudio and Quarto Workshop,,,/materials/05_quarto,https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/w1_quarto.qmd,
-4,2/2/26,,Democracy and Autocracy,,"Przeworski 2024, Grossman et. al., 2021",/materials/05_autocracy1,,
-4,2/4/26,,Democracy and Development,,"Acemoglu et. al., 2008",/materials/06_autocracy2,,
-5,2/9/26,,Final Project Overview,,No readings,/materials/08_final_project,,
-5,2/11/26,,Linear Regression and Uncertainty,,DSS Ch 3 and 4,/materials/06_regression,,
-6,2/16/26,,Representation and Accountability,,"Manin, Przeworski, and Stokes, 1999; Ferraz and Finan, 2011",/materials/c1_accountability,,/assignments/02_gitrepo
-6,2/18/26,,Representation and Accountability Reconsidered, ,Dunning et. al. 2019,/materials/c2_accountability,,/assignments/03_fprqd
-7,2/23/26,,Github Workshop,,No readings,/materials/12_github,,
-7,2/25/26,,Github Workshop,,No readings,/materials/12_github2,,
-8,3/2/26,,Crime and Punishment,,"Bateson, 2012;  Weaver and Lerman, 2010",/materials/c3_crime,,
-8,3/4/26,,Crime and Punishment 2,,"Gustavo A. Flores-Macías and Jessica Zarkin, 2024",/materials/c4_crime,,/assignments/04_fpdesign
+3,1/26/26,,No class (weather),,,,,/assignments/01_quarto
+3,1/28/26,,Causality,,DSS Ch 5,/materials/03_causal,,
+4,2/2/26,,Rstudio and Quarto Workshop,,,/materials/05_quarto,https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/w1_quarto.qmd,
+4,2/4/26,,Democracy and Autocracy,,"Przeworski 2024, Grossman et. al., 2021",/materials/05_autocracy1,,
+5,2/9/26,,Democracy and Development,,"Acemoglu et. al., 2008",/materials/06_autocracy2,,
+5,2/11/26,,Final Project Overview,,No readings,/materials/08_final_project,,
+6,2/16/26,,Linear Regression and Uncertainty,,DSS Ch 3 and 4,/materials/06_regression,,/assignments/02_gitrepo
+6,2/18/26,,Representation and Accountability,,"Manin, Przeworski, and Stokes, 1999; Ferraz and Finan, 2011",/materials/c1_accountability,,/assignments/03_fprqd
+7,2/23/26,,Representation and Accountability Reconsidered,,Dunning et. al. 2019,/materials/c2_accountability,,
+7,2/25/26,,Github Workshop,,No readings,/materials/12_github,,
+8,3/2/26,,Github Workshop,,No readings,/materials/12_github2,,
+8,3/4/26,,Crime and Punishment,,"Bateson, 2012;  Weaver and Lerman, 2010",/materials/c3_crime,,/assignments/04_fpdesign
 9,3/9/26,,Spring Break,,,,,
 9,3/11/26,,Spring Break,,,,,
-10,3/16/26,,Gender,,"Chattopadhyay and Duflo, 2004 ",/materials/c5_gender,,
-10,3/18/26,,Migration,,Rozo and Grossman (2025); Sviatschi (2022); Gazeaud (2020),/materials/08_migration,,
-11,3/23/26,,Final Project Essentials,,No readings,/materials/14_fp_essentials,https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/fp_essentials.qmd,
-11,3/25/26,,Text as Data workshop,,No readings,/materials/c6_tad,,
-12,3/30/26,,State Capacity (Guest: Nagawa),,"Bessley et al. (2022); Fukuyama (2013); Rothstein et al., (2008); Persson et al. (1997)",/materials/26_capacity,,
+10,3/16/26,,Crime and Punishment 2,,"Gustavo A. Flores-Macías and Jessica Zarkin, 2024",/materials/c4_crime,,
+10,3/18/26,,Gender,,"Chattopadhyay and Duflo, 2004 ",/materials/c5_gender,,
+11,3/23/26,,Migration,,Rozo and Grossman (2025); Sviatschi (2022); Gazeaud (2020),/materials/08_migration,,
+11,3/25/26,,Final Project Essentials,,No readings,/materials/14_fp_essentials,https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/fp_essentials.qmd,
+12,3/30/26,,Text as Data workshop,,No readings,/materials/c6_tad,,
 12,4/1/26,,Final Project Preparation,,No readings,,/workshops/survey_data,/assignments/05_fptest
 13,4/6/26,,Foreign Aid and NGOs 1 (JS),,Briggs (2016); Briggs (2021),/materials/20_aid1,,
 13,4/8/26,,Foreign Aid and NGOs 2 (JS),,Cruz (2017); Bold et al. (2018),/materials/21_aid2,,
