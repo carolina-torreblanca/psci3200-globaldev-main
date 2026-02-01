@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-01-29">
+<meta name="dcterms.date" content="2026-02-02">
 
-<title>R, RStudio, and Quarto – PSCI 3200</title>
+<title>R, RStudio, and Quarto Workshop – PSCI 3200</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -122,8 +122,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#assignment" id="toc-assignment" class="nav-link active" data-scroll-target="#assignment">Assignment</a></li>
-  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials">Materials</a></li>
+  <li><a href="#before-class" id="toc-before-class" class="nav-link active" data-scroll-target="#before-class">Before Class</a></li>
+  <li><a href="#get-your-github-account-ready" id="toc-get-your-github-account-ready" class="nav-link" data-scroll-target="#get-your-github-account-ready">Get Your GitHub Account Ready</a></li>
+  <li><a href="#workshop-materials" id="toc-workshop-materials" class="nav-link" data-scroll-target="#workshop-materials">Workshop Materials</a></li>
+  <li><a href="#optional-get-ahead-on-git" id="toc-optional-get-ahead-on-git" class="nav-link" data-scroll-target="#optional-get-ahead-on-git">Optional: Get Ahead on Git</a></li>
   </ul>
 </nav>
     </div>
@@ -132,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">R, RStudio, and Quarto</h1>
+<h1 class="title">R, RStudio, and Quarto Workshop</h1>
 </div>
 
 
@@ -143,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 29, 2026</p>
+      <p class="date">February 2, 2026</p>
     </div>
   </div>
   
@@ -155,42 +157,42 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="assignment" class="level2">
-<h2 class="anchored" data-anchor-id="assignment">Assignment</h2>
+<section id="before-class" class="level2">
+<h2 class="anchored" data-anchor-id="before-class">Before Class</h2>
+<p>You should have:</p>
 <ul>
-<li>Install RStudio
-<ul>
-<li><a href="../assignments/install-R.html">Instructions</a></li>
-</ul></li>
-<li>Install <a href="https://quarto.org/docs/get-started/hello/rstudio.html">Quarto</a>
-<ul>
-<li><a href="../assignments/01_quarto.html">Instructions</a></li>
-</ul></li>
+<li>R + RStudio installed (<a href="../assignments/install-R.html">Instructions</a>)</li>
+<li>Quarto installed (<a href="../assignments/01_quarto.html">Instructions</a>)</li>
 </ul>
 </section>
-<section id="materials" class="level2">
-<h2 class="anchored" data-anchor-id="materials">Materials</h2>
-<p>Please download the <em>R Tutorial Source</em> script using the link below. I will be using the <em>R Tutorial Source</em> file (.qmd) to lead the session. The <em>R Tutorial Visual</em> contains a link to a rendered version of the <em>R Tutorial Source</em> that you can open as an .html document in your web browser. If you prefer, you can copy and paste code from the html file into RStudio.</p>
+<section id="get-your-github-account-ready" class="level2">
+<h2 class="anchored" data-anchor-id="get-your-github-account-ready">Get Your GitHub Account Ready</h2>
+<p>Create a GitHub account if you don’t have one yet:</p>
+<ol type="1">
+<li>Go to <a href="https://github.com/">github.com</a></li>
+<li>Click “Sign up” and follow the instructions</li>
+<li>Post your GitHub username to Slack</li>
+</ol>
+<p>We’ll use GitHub later in the course for version control and hosting your final project.</p>
+</section>
+<section id="workshop-materials" class="level2">
+<h2 class="anchored" data-anchor-id="workshop-materials">Workshop Materials</h2>
+<p><strong>Slides:</strong></p>
 <ul>
 <li><a href="../slides/05_quarto.html">R + Quarto Slides</a></li>
-<li><a href="https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/w1_quarto.qmd">R Tutorial Source (.qmd)</a></li>
-<li><a href="../workshops/w1_quarto.html">R Tutorial Visual (.html)</a></li>
-<li><a href="https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/aau_survey/clean_endline_did.csv">Data</a></li>
-<li><a href="../slides/lees-git.html">Github Slides</a></li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>All materials for this course are available on the <a href="https://github.com/jrspringman/psci3200-globaldev">git repo</a>. Rendered materials (usually <code>.html</code>) are available in the <code>psci3200-globaldev/docs</code> folder. Source code (usually <code>.qmd</code>) for slides, workshops, assignments, and all other materials are available in their respective subfolders.</p>
-</div>
-</div>
+<p><strong>Code for Today:</strong></p>
+<ul>
+<li><a href="https://github.com/carolina-torreblanca/psci3200-globaldev-main/blob/main/workshops/intro_to_r.R">Introduction to R (.R)</a> — R basics, dplyr, ggplot</li>
+<li><a href="https://github.com/carolina-torreblanca/psci3200-globaldev-main/blob/main/workshops/w1_quarto.qmd">Introduction to Quarto (.qmd)</a> — Markdown, code chunks, rendering</li>
+</ul>
+</section>
+<section id="optional-get-ahead-on-git" class="level2">
+<h2 class="anchored" data-anchor-id="optional-get-ahead-on-git">Optional: Get Ahead on Git</h2>
+<p>If you want a head start on Git and GitHub (we’ll cover this in Weeks 7-8):</p>
+<ul>
+<li><a href="../slides/lees-git.html">Git and GitHub Slides</a></li>
+</ul>
 
 
 </section>

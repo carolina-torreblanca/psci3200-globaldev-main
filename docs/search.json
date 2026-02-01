@@ -4049,8 +4049,8 @@
     "objectID": "slides/05_quarto.html#preparedness",
     "href": "slides/05_quarto.html#preparedness",
     "title": "R, RStudio, and Quarto",
-    "section": "Preparedness",
-    "text": "Preparedness\nYou should have…\n\nR + RStudio installed\nQuarto doc rendered and sent to CT\nGitHub account created and posted to Slack"
+    "section": "",
+    "text": "You should have…\n\nR + RStudio installed\nQuarto doc rendered and sent to CT\nGitHub account created and posted to Slack"
   },
   {
     "objectID": "slides/05_quarto.html#motivation",
@@ -4063,29 +4063,29 @@
     "objectID": "slides/05_quarto.html#resources",
     "href": "slides/05_quarto.html#resources",
     "title": "R, RStudio, and Quarto",
-    "section": "Resources",
-    "text": "Resources\nFree, open-source textbook that teaches statistics using R\n\nStatistical Inference via Data Science: A ModernDive into R and the Tidyverse (moderndive.com)\nR for Data Science (r4ds.had.co.nz)\nJPAL Online Course\n\nSupport for R:\n\nChatGPT (OpenAI), Claude (Anthropic), Gemini (Google)\nStack Overflow"
+    "section": "",
+    "text": "Free, open-source textbook that teaches statistics using R\n\nStatistical Inference via Data Science: A ModernDive into R and the Tidyverse (moderndive.com)\nR for Data Science (r4ds.had.co.nz)\nJPAL Online Course\n\nSupport for R:\n\nChatGPT (OpenAI), Claude (Anthropic), Gemini (Google)\nStack Overflow"
   },
   {
     "objectID": "slides/05_quarto.html#what-are-r-and-rstudio",
     "href": "slides/05_quarto.html#what-are-r-and-rstudio",
     "title": "R, RStudio, and Quarto",
-    "section": "What are R and RStudio?",
-    "text": "What are R and RStudio?\n\nR is a programming language and free computing environment for statistical computing and graphics\nRStudio is an integrated development environment (IDE) that provides an interface by adding many convenient features and tools\nThink of R as a car’s engine and RStudio as the dashboard\nRStudio can also be used to manage projects, produce documents, build websites\n\n\nR is a programming language and free computing environment for statistical computing and graphics. It can be runs on a wide variety of operating systems, including Linux, Windows, and MacOS. RStudio is an integrated development environment (IDE) that provides an interface by adding many convenient features and tools.\nYou can think of R as a car’s engine and RStudio as the dashboard. In the same way that having access to a speedometer and a navigation system makes driving much easier, using RStudio’s interface makes using R much easier as well.\nR and RStudio are entirely free and updated on a regular basis, making them much more accessible and widely used than paid alternatives. You can conduct nearly any analysis using R, ranging from calculating the average of a variable to creating maps and conducting spatial analysis to conducting the analysis for an impact evaluation."
+    "section": "",
+    "text": "R is a programming language and free computing environment for statistical computing and graphics\nRStudio is an integrated development environment (IDE) that provides an interface by adding many convenient features and tools\nThink of R as a car’s engine and RStudio as the dashboard\nRStudio can also be used to manage projects, produce documents, build websites\n\n\nR is a programming language and free computing environment for statistical computing and graphics. It can be runs on a wide variety of operating systems, including Linux, Windows, and MacOS. RStudio is an integrated development environment (IDE) that provides an interface by adding many convenient features and tools.\nYou can think of R as a car’s engine and RStudio as the dashboard. In the same way that having access to a speedometer and a navigation system makes driving much easier, using RStudio’s interface makes using R much easier as well.\nR and RStudio are entirely free and updated on a regular basis, making them much more accessible and widely used than paid alternatives. You can conduct nearly any analysis using R, ranging from calculating the average of a variable to creating maps and conducting spatial analysis to conducting the analysis for an impact evaluation."
   },
   {
     "objectID": "slides/05_quarto.html#peronalization",
     "href": "slides/05_quarto.html#peronalization",
     "title": "R, RStudio, and Quarto",
-    "section": "Peronalization",
-    "text": "Peronalization\n\nCustomize the appearance of your R IDE by going to Tools -&gt; Global Options -&gt; Appearance"
+    "section": "",
+    "text": "Customize the appearance of your R IDE by going to Tools -&gt; Global Options -&gt; Appearance"
   },
   {
     "objectID": "slides/05_quarto.html#quarto",
     "href": "slides/05_quarto.html#quarto",
     "title": "R, RStudio, and Quarto",
-    "section": "Quarto",
-    "text": "Quarto\n\nQuarto integrates code into document production (R, Python, etc.)\nUseful for producing professional .pdf or .html files, building websites\nAll assignments will require building .html files in Quarto\nFinal project will build a public website presenting an original analysis\n\n\n\n\n\nhttps://carolina-torreblanca.github.io/psci3200-globaldev-main/"
+    "section": "",
+    "text": "Quarto integrates code into document production (R, Python, etc.)\nUseful for producing professional .pdf or .html files, building websites\nAll assignments will require building .html files in Quarto\nFinal project will build a public website presenting an original analysis"
   },
   {
     "objectID": "slides/05-demaut1.html#agenda",
@@ -5133,9 +5133,9 @@
   {
     "objectID": "materials/05_quarto.html",
     "href": "materials/05_quarto.html",
-    "title": "R, RStudio, and Quarto",
+    "title": "R, RStudio, and Quarto Workshop",
     "section": "",
-    "text": "Install RStudio\n\nInstructions\n\nInstall Quarto\n\nInstructions"
+    "text": "You should have:\n\nR + RStudio installed (Instructions)\nQuarto installed (Instructions)"
   },
   {
     "objectID": "materials/05_quarto.html#assignment",
@@ -9634,9 +9634,9 @@
   {
     "objectID": "workshops/w1_quarto.html",
     "href": "workshops/w1_quarto.html",
-    "title": "R, RStudio, and Quarto",
+    "title": "Introduction to Quarto",
     "section": "",
-    "text": "Before using R to illustrate basic programming concepts and data analysis tools, we will get familiar with the RStudio layout.\n\n\nRStudio has four primary panels that will help you interact with your data. We will use the default layout of these panels.\n\nSource panel: Top left\n\nEdit files to create ‘scripts’ of code\n\nConsole panel: Bottom left\n\nAccepts code as input\nDisplays output when we run code\n\nEnvironment panel: Top right\n\nEverything that R is holding in memory\nObjects that you create in the console or source panels will appear here\nYou can clear the environment with the broom icon\n\nViewer panel: Bottom-right\n\nView graphics that you generate\nNavigate files\n\n\n\n\n\nLet’s use these panels to create and interact with data.\nConsole:\n\nPerform a calculation: type 2 + 2 into the console panel and hit ENTER\nCreate and store an object: type sum = 2 + 2 into the console panel and hit ENTER\n\nSource:\n\nStart an R script: Open new .R file (button in top-left below “File”)\nCreate and store an object: type sum = 2 + 3 into the source panel and hit cntrl+ENTER\n\nEnvironment:\n\nConfirm that the object sum is stored in our environment\nUse rm(sum) to clear the object from the environment\nClear the environment with the broom icon\n\nViewer:\n\nNavigate through your computer’s files\nCreate a plot in the source panel"
+    "text": "Quarto is a publishing system that lets you combine text, code, and output into a single document.\nWhy use Quarto?\n\nWrite analysis and explanation in one place\nCode runs and updates automatically when you render\nExport to HTML, PDF, Word, slides, websites\nAll your assignments will be .qmd files rendered to .html\nYour final project will be a Quarto website\n\nThe workflow:\n\nWrite text and code in a .qmd file\nClick “Render” (or Ctrl+Shift+K)\nQuarto runs your code and produces a polished document"
   },
   {
     "objectID": "workshops/w1_quarto.html#rstudio-contains-4-panels",
@@ -9725,9 +9725,9 @@
   {
     "objectID": "workshops/w1_quarto.html#footnotes",
     "href": "workshops/w1_quarto.html#footnotes",
-    "title": "R, RStudio, and Quarto",
+    "title": "Introduction to Quarto",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nInlines notes are easier to write, since you don’t have to pick an identifier and move down to type the note.↩︎"
+    "text": "Footnotes\n\n\nThis is the footnote text.↩︎"
   },
   {
     "objectID": "syllabus.html#agenda",
@@ -10176,5 +10176,124 @@
     "title": "Causality 2",
     "section": "The Difference-in-Means Estimator",
     "text": "The Difference-in-Means Estimator\nWhat is the average causal effect of class size on education outcomes?\n\nThe Estimator:\n\\[\\hat{\\tau} = \\bar{Y}_{\\text{treated}} - \\bar{Y}_{\\text{control}}\\]\n\n\n\n\\(\\bar{Y}_{\\text{treated}}\\) = average outcome for the treatment group\n\\(\\bar{Y}_{\\text{control}}\\) = average outcome for the control group"
+  },
+  {
+    "objectID": "materials/05_quarto.html#before-class",
+    "href": "materials/05_quarto.html#before-class",
+    "title": "R, RStudio, and Quarto Workshop",
+    "section": "",
+    "text": "You should have:\n\nR + RStudio installed (Instructions)\nQuarto installed (Instructions)"
+  },
+  {
+    "objectID": "materials/05_quarto.html#get-your-github-account-ready",
+    "href": "materials/05_quarto.html#get-your-github-account-ready",
+    "title": "R, RStudio, and Quarto Workshop",
+    "section": "Get Your GitHub Account Ready",
+    "text": "Get Your GitHub Account Ready\nCreate a GitHub account if you don’t have one yet:\n\nGo to github.com\nClick “Sign up” and follow the instructions\nPost your GitHub username to Slack\n\nWe’ll use GitHub later in the course for version control and hosting your final project."
+  },
+  {
+    "objectID": "materials/05_quarto.html#workshop-materials",
+    "href": "materials/05_quarto.html#workshop-materials",
+    "title": "R, RStudio, and Quarto Workshop",
+    "section": "Workshop Materials",
+    "text": "Workshop Materials\nSlides:\n\nR + Quarto Slides\n\nCode for Today:\n\nIntroduction to R (.R) — R basics, dplyr, ggplot\nIntroduction to Quarto (.qmd) — Markdown, code chunks, rendering"
+  },
+  {
+    "objectID": "materials/05_quarto.html#optional-get-ahead-on-git",
+    "href": "materials/05_quarto.html#optional-get-ahead-on-git",
+    "title": "R, RStudio, and Quarto Workshop",
+    "section": "Optional: Get Ahead on Git",
+    "text": "Optional: Get Ahead on Git\nIf you want a head start on Git and GitHub (we’ll cover this in Weeks 7-8):\n\nGit and GitHub Slides"
+  },
+  {
+    "objectID": "workshops/w1_quarto.html#the-yaml-header",
+    "href": "workshops/w1_quarto.html#the-yaml-header",
+    "title": "Introduction to Quarto",
+    "section": "The YAML Header",
+    "text": "The YAML Header\nEvery Quarto document starts with a YAML header between --- marks:\n---\ntitle: \"My Analysis\"\nauthor: \"Your Name\"\ndate: today\nformat: html\n---\nThis controls the document’s metadata and output format."
+  },
+  {
+    "objectID": "workshops/w1_quarto.html#markdown-formatting",
+    "href": "workshops/w1_quarto.html#markdown-formatting",
+    "title": "Introduction to Quarto",
+    "section": "Markdown Formatting",
+    "text": "Markdown Formatting\nQuarto uses Markdown for text formatting:\n\nitalics with *italics*\nbold with **bold**\nlinks with [text](url)\nCreate sections with #, ##, ###\n\n\nLists\nBullet points:\n\nFirst item\nSecond item\nThird item\n\nNumbered lists:\n\nFirst step\nSecond step\nThird step\n\n\n\nMath\nUse LaTeX for equations. Inline math: \\(y = mx + b\\)\nDisplay equations:\n\\[\n\\bar{x} = \\frac{1}{n} \\sum_{i=1}^{n} x_i\n\\]\n\n\nImages\nInclude images from your project folder:\n![Caption text](image.png){width=\"50%\"}\n\n\n\nShakira knows what’s up\n\n\n\n\nTables\nCreate tables by hand:\n\n\n\nColumn 1\nColumn 2\nColumn 3\n\n\n\n\nA\nB\nC\n\n\nD\nE\nF\n\n\n\n\n\nFootnotes\nAdd footnotes like this.1"
+  },
+  {
+    "objectID": "workshops/w1_quarto.html#code-chunks",
+    "href": "workshops/w1_quarto.html#code-chunks",
+    "title": "Introduction to Quarto",
+    "section": "Code Chunks",
+    "text": "Code Chunks\nInsert R code in “chunks” that look like this:\n```{r}\n# Your R code here\nmean(c(1, 2, 3, 4, 5))\n```\nWhen you render, the code runs and the output appears in your document."
+  },
+  {
+    "objectID": "workshops/w1_quarto.html#example-running-code",
+    "href": "workshops/w1_quarto.html#example-running-code",
+    "title": "Introduction to Quarto",
+    "section": "Example: Running Code",
+    "text": "Example: Running Code\n\n# This code will run when you render\nx &lt;- c(10, 20, 30, 40, 50)\nmean(x)\n\n[1] 30"
+  },
+  {
+    "objectID": "workshops/w1_quarto.html#chunk-options",
+    "href": "workshops/w1_quarto.html#chunk-options",
+    "title": "Introduction to Quarto",
+    "section": "Chunk Options",
+    "text": "Chunk Options\nControl how chunks behave with options:\n#| echo: true       # Show the code in output\n#| echo: false      # Hide the code, show only results\n#| eval: false      # Show code but don't run it\n#| warning: false   # Suppress warning messages\n#| message: false   # Suppress messages"
+  },
+  {
+    "objectID": "workshops/w1_quarto.html#example-hidden-code",
+    "href": "workshops/w1_quarto.html#example-hidden-code",
+    "title": "Introduction to Quarto",
+    "section": "Example: Hidden Code",
+    "text": "Example: Hidden Code\nSometimes you want to show results but hide the code:\n\n\n\n\n\n\n\n\n\nThe plot appears, but readers don’t see the code that made it."
+  },
+  {
+    "objectID": "workshops/w1_quarto.html#inline-code",
+    "href": "workshops/w1_quarto.html#inline-code",
+    "title": "Introduction to Quarto",
+    "section": "Inline Code",
+    "text": "Inline Code\nReference values directly in your text using inline code.\n\nn_cars &lt;- nrow(mtcars)\navg_mpg &lt;- round(mean(mtcars$mpg), 1)\n\nWrite: “The dataset contains `r n_cars` cars with an average fuel efficiency of `r avg_mpg` mpg.”\nResult: The dataset contains 32 cars with an average fuel efficiency of 20.1 mpg.\nIf your data changes, these numbers update automatically!"
+  },
+  {
+    "objectID": "workshops/w1_quarto.html#labeled-figures",
+    "href": "workshops/w1_quarto.html#labeled-figures",
+    "title": "Introduction to Quarto",
+    "section": "Labeled Figures",
+    "text": "Labeled Figures\nGive figures labels and captions for cross-referencing:\n\nggplot(mtcars, aes(x = hp, y = mpg, color = factor(cyl))) +\n  geom_point(size = 3) +\n  labs(x = \"Horsepower\", y = \"Miles per Gallon\", color = \"Cylinders\") +\n  theme_minimal()\n\n\n\n\n\n\n\nFigure 1: Relationship between horsepower and fuel efficiency\n\n\n\n\n\nReference it in text with @fig-scatter: See Figure 1."
+  },
+  {
+    "objectID": "workshops/w1_quarto.html#tables-from-code",
+    "href": "workshops/w1_quarto.html#tables-from-code",
+    "title": "Introduction to Quarto",
+    "section": "Tables from Code",
+    "text": "Tables from Code\n\nlibrary(dplyr)\n\nWarning: package 'dplyr' was built under R version 4.1.2\n\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nmtcars %&gt;%\n  group_by(cyl) %&gt;%\n  summarize(\n    `Average MPG` = round(mean(mpg), 1),\n    `Count` = n()\n  ) %&gt;%\n  knitr::kable()\n\n\n\nTable 1: Average MPG by number of cylinders\n\n\n\n\n\n\ncyl\nAverage MPG\nCount\n\n\n\n\n4\n26.7\n11\n\n\n6\n19.7\n7\n\n\n8\n15.1\n14\n\n\n\n\n\n\n\n\nReference with @tbl-summary: See Table 1."
+  },
+  {
+    "objectID": "slides/05_quarto.html",
+    "href": "slides/05_quarto.html",
+    "title": "R, RStudio, and Quarto",
+    "section": "",
+    "text": "You should have…\n\nR + RStudio installed\nQuarto doc rendered and sent to CT\nGitHub account created and posted to Slack\n\n\n\n\n\nUnconventional path: 4 years at an NGO in Mexico before the PhD\nAll I did was data analysis in R — became very proficient\nCame to NYU without the typical econ masters background\nMy peers knew the literature, they knew math proofs — but I knew something they didn’t: how to code\nThat skill saved me\n\n\n\n\n\nData skills remain highly marketable\nR is free (Stata: $600+/year) and widely used in policy, research, and industry\nSame workflow at World Bank, think tanks, tech companies\n\n\n\n\n\nIn the age of GPT and Claude, coding is changing\nBut the mental structure it gives you — how to think about problems — is worth learning\nMy two cents: don’t ask AI to do something you couldn’t do yourself\nBut it’s fine to ask it to do something you could do, just faster or better\n\n\n\n\nFree, open-source textbook that teaches statistics using R\n\nStatistical Inference via Data Science: A ModernDive into R and the Tidyverse (moderndive.com)\nR for Data Science (r4ds.had.co.nz)\nJPAL Online Course\n\nSupport for R:\n\nChatGPT (OpenAI), Claude (Anthropic), Gemini (Google)\nStack Overflow\n\n\n\n\n\nR is a programming language and free computing environment for statistical computing and graphics\nRStudio is an integrated development environment (IDE) that provides an interface by adding many convenient features and tools\nThink of R as a car’s engine and RStudio as the dashboard\nRStudio can also be used to manage projects, produce documents, build websites\n\n\nR is a programming language and free computing environment for statistical computing and graphics. It can be runs on a wide variety of operating systems, including Linux, Windows, and MacOS. RStudio is an integrated development environment (IDE) that provides an interface by adding many convenient features and tools.\nYou can think of R as a car’s engine and RStudio as the dashboard. In the same way that having access to a speedometer and a navigation system makes driving much easier, using RStudio’s interface makes using R much easier as well.\nR and RStudio are entirely free and updated on a regular basis, making them much more accessible and widely used than paid alternatives. You can conduct nearly any analysis using R, ranging from calculating the average of a variable to creating maps and conducting spatial analysis to conducting the analysis for an impact evaluation.\n\n\n\n\n\nCustomize the appearance of your R IDE by going to Tools -&gt; Global Options -&gt; Appearance\n\n\n\n\n\n\nQuarto integrates code into document production (R, Python, etc.)\nUseful for producing professional .pdf or .html files, building websites\nAll assignments will require building .html files in Quarto\nFinal project will build a public website presenting an original analysis"
+  },
+  {
+    "objectID": "slides/05_quarto.html#motivation-my-story",
+    "href": "slides/05_quarto.html#motivation-my-story",
+    "title": "R, RStudio, and Quarto",
+    "section": "",
+    "text": "Unconventional path: 4 years at an NGO in Mexico before the PhD\nAll I did was data analysis in R — became very proficient\nCame to NYU without the typical econ masters background\nMy peers knew the literature, they knew math proofs — but I knew something they didn’t: how to code\nThat skill saved me"
+  },
+  {
+    "objectID": "slides/05_quarto.html#motivation-the-market",
+    "href": "slides/05_quarto.html#motivation-the-market",
+    "title": "R, RStudio, and Quarto",
+    "section": "",
+    "text": "Data skills remain highly marketable\nR is free (Stata: $600+/year) and widely used in policy, research, and industry\nSame workflow at World Bank, think tanks, tech companies"
+  },
+  {
+    "objectID": "slides/05_quarto.html#on-ai-and-coding",
+    "href": "slides/05_quarto.html#on-ai-and-coding",
+    "title": "R, RStudio, and Quarto",
+    "section": "",
+    "text": "In the age of GPT and Claude, coding is changing\nBut the mental structure it gives you — how to think about problems — is worth learning\nMy two cents: don’t ask AI to do something you couldn’t do yourself\nBut it’s fine to ask it to do something you could do, just faster or better"
   }
 ]

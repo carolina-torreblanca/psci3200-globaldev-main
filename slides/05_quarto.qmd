@@ -27,12 +27,6 @@ bibliography: img/references.bib
 
 # R and RStudio
 
-## Introductions
-
-- Name
-- One thing you’re interested in
-- Any past experience with R
-
 ## Preparedness
 
 You should have...
@@ -42,15 +36,26 @@ You should have...
 - GitHub account created and posted to Slack
 
 
-## Motivation
+## Motivation: My Story
 
-- Qualtrics survey results
-  + Trajectory is policy and industry
-  + Little experience cleaning data
-- Academic research tools are more useful than knowing the literature 
-  + Dealing with messy data
-  + Professional presentation
-  + Reproducible work
+- Unconventional path: 4 years at an NGO in Mexico before the PhD
+- All I did was data analysis in R — became very proficient
+- Came to NYU without the typical econ masters background
+- My peers knew the literature, they knew math proofs — but I knew something they didn't: how to code
+- That skill saved me
+
+## Motivation: The Market
+
+- Data skills remain highly marketable
+- R is free (Stata: $600+/year) and widely used in policy, research, and industry
+- Same workflow at World Bank, think tanks, tech companies
+
+## On AI and Coding
+
+- In the age of GPT and Claude, coding is changing
+- But the mental structure it gives you — how to think about problems — is worth learning
+- My two cents: don't ask AI to do something you couldn't do yourself
+- But it's fine to ask it to do something you *could* do, just faster or better
 
 ## Resources
 

@@ -4,7 +4,7 @@ week,date,date_end,title,deadline, reading,content,tutorial,assignment
 2,1/21/26,,Correlation vs. Causation,,DSS Ch 2,/materials/02_causal,,/assignments/00_setupr
 3,1/26/26,,No class (weather),,,,,/assignments/01_quarto
 3,1/28/26,,Causality,,DSS Ch 5,/materials/03_causal,,
-4,2/2/26,,Rstudio and Quarto Workshop,,,/materials/05_quarto,https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/w1_quarto.qmd,
+4,2/2/26,,Rstudio and Quarto Workshop,,,/materials/05_quarto,,
 4,2/4/26,,Democracy and Autocracy,,"Przeworski 2024, Grossman et. al., 2021",/materials/05_autocracy1,,
 5,2/9/26,,Democracy and Development,,"Acemoglu et. al., 2008",/materials/06_autocracy2,,
 5,2/11/26,,Final Project Overview,,No readings,/materials/08_final_project,,
@@ -19,7 +19,7 @@ week,date,date_end,title,deadline, reading,content,tutorial,assignment
 10,3/16/26,,Crime and Punishment 2,,"Gustavo A. Flores-Macías and Jessica Zarkin, 2024",/materials/c4_crime,,
 10,3/18/26,,Gender,,"Chattopadhyay and Duflo, 2004 ",/materials/c5_gender,,
 11,3/23/26,,Migration,,Rozo and Grossman (2025); Sviatschi (2022); Gazeaud (2020),/materials/08_migration,,
-11,3/25/26,,Final Project Essentials,,No readings,/materials/14_fp_essentials,https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/fp_essentials.qmd,
+11,3/25/26,,Final Project Essentials,,No readings,/materials/14_fp_essentials,https://github.com/carolina-torreblanca/psci3200-globaldev-main/blob/main/workshops/fp_essentials.qmd,
 12,3/30/26,,Text as Data workshop,,No readings,/materials/c6_tad,,
 12,4/1/26,,Final Project Preparation,,No readings,,/workshops/survey_data,/assignments/05_fptest
 13,4/6/26,,Foreign Aid and NGOs 1 (JS),,Briggs (2016); Briggs (2021),/materials/20_aid1,,
