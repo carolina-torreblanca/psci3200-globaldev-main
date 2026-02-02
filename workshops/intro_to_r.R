@@ -62,11 +62,12 @@ my_data <- data.frame(
   name = c("Alice", "Bob", "Carolina"),
   age = c(22, 25, 30),
   score = c(85, 92, 78)
-)
+  )
 
 my_data
+View(my_data)
 
-# Accessing columns
+# Accessing columns -- give them the money
 my_data$name
 my_data$age
 
@@ -112,11 +113,6 @@ data()  # see all available datasets
 
 cars <- mtcars  # copy to a new name for clarity
 
-# For your own data, you would use:
-# my_data <- read.csv("path/to/your/file.csv")
-# my_data <- read.csv("https://some-website.com/data.csv")
-
-
 # =============================================================================
 # PART 5: Exploring Data
 # =============================================================================
@@ -125,6 +121,7 @@ cars <- mtcars  # copy to a new name for clarity
 head(cars)          # first 6 rows
 tail(cars)          # last 6 rows
 head(cars, 10)      # first 10 rows
+View(cars)
 
 # Structure and dimensions
 dim(cars)           # rows x columns
@@ -143,6 +140,51 @@ min(cars$hp)
 max(cars$hp)
 table(cars$cyl)
 table(cars$am)
+
+# mpg - miles per gallon
+# cyl - cylinders
+# disp - displacement (idk)
+# hp - gross horsepower
+# drat rear axle ration (idk)
+# wt - weight
+# qsc 1/4 mile time
+# am - transmission (0 = auomoatic, 1, manual)
+# gear #
+# carb number of carburators
+
+# =============================================================================
+# PART 5b: Data Manipulation with Base R
+# =============================================================================
+
+# Before dplyr, people used base R for everything
+# Still useful to know!
+
+# --- Subsetting rows ---
+cars[cars$cyl == 4, ]              # filter: only 4-cylinder cars
+cars[cars$mpg > 25, ]              # filter: mpg greater than 25
+
+# --- Subsetting columns ---
+cars[, c("mpg", "hp")]             # select: just mpg and hp
+cars[, 1:3]                        # select: first 3 columns
+
+# --- Both at once ---
+cars[cars$cyl == 4, c("mpg", "hp")]  # 4-cylinder cars, only mpg and hp
+
+# --- Creating new columns ---
+cars$hp_per_cyl <- cars$hp / cars$cyl
+
+# --- How would you create a new variable with the names of each car?
+
+# ?????
+
+# --- Sorting ---
+cars[order(cars$mpg), ]            # sort by mpg (ascending)
+cars[order(-cars$mpg), ]           # sort by mpg (descending)
+
+# --- Aggregating (base R way) ---
+aggregate(mpg ~ cyl, data = cars, FUN = mean)  # mean mpg by cylinder
+
+# Base R works, but dplyr is more readable...
 
 
 # =============================================================================
@@ -170,11 +212,17 @@ cars %>%
 cars %>%
   mutate(hp_per_cyl = hp / cyl)
 
+# ifelse
 cars %>%
   mutate(
     hp_per_cyl = hp / cyl,
-    is_automatic = am == 0
+    is_stickshift = ifelse(am == 1, 1, 0)
   )
+
+
+# --- arrange
+
+cars %>% arrange(-qsec)
 
 # --- summarize(): collapse to summary statistics ---
 cars %>%
@@ -193,6 +241,7 @@ cars %>%
     n = n()
   )
 
+
 # --- Chaining multiple operations ---
 cars %>%
   filter(am == 1) %>%
@@ -203,6 +252,10 @@ cars %>%
     n = n()
   ) %>%
   arrange(desc(avg_mpg))
+
+# --- are any of these changes saved in the data?
+# ???
+
 
 # --- Save results to a new object ---
 cars_summary <- cars %>%
@@ -215,6 +268,49 @@ cars_summary <- cars %>%
 
 cars_summary
 
+# =============================================================================
+# PART 6b: Basic Visualization with Base R
+# =============================================================================
+
+# Before ggplot, we used base R plotting
+# Quick and dirty, good for exploring
+
+# --- Simple scatter plot ---
+plot(cars$hp, cars$mpg)
+
+# --- Add labels ---
+plot(cars$hp, cars$mpg,
+     main = "Horsepower vs MPG",
+     xlab = "Horsepower",
+     ylab = "Miles per Gallon")
+
+# we can add a linear regression line (more on that later)
+
+my_regression <- lm(cars$mpg~cars$hp)
+
+plot(cars$hp, cars$mpg,
+     main = "Horsepower vs MPG",
+     xlab = "Horsepower",
+     ylab = "Miles per Gallon")
+abline(my_regression, add = T, col = "red")
+
+
+# --- Histogram ---
+hist(cars$mpg)
+hist(cars$mpg, breaks = 10, col = "red", main = "Distribution of MPG")
+
+# --- Correlation ---
+cor(cars$hp, cars$mpg)  # correlation coefficient: -0.78 (negative relationship)
+
+# Correlation matrix for multiple variables
+cor(cars[, c("mpg", "hp", "wt", "disp")])
+
+# --- Quick pairs plot (all correlations at once) ---
+pairs(cars[, c("mpg", "hp", "wt")])
+
+# Base R plots are fast for exploration
+# ggplot is better for publication-quality figures
+
 
 # =============================================================================
 # PART 7: Visualization with ggplot2
@@ -222,6 +318,7 @@ cars_summary
 
 # ggplot2 uses a "grammar of graphics"
 # Build plots layer by layer
+# more detail
 
 # --- Histogram ---
 ggplot(cars, aes(x = mpg)) +
@@ -229,37 +326,28 @@ ggplot(cars, aes(x = mpg)) +
 
 # Add some style
 ggplot(cars, aes(x = mpg)) +
-  geom_histogram(binwidth = 2, fill = "steelblue", color = "white") +
+  geom_histogram(binwidth = 2, fill = "blue", color = "white") +
   labs(title = "Distribution of Fuel Efficiency",
        x = "Miles per Gallon",
        y = "Count")
 
-# --- Histogram by group ---
-# First, make cyl a factor for better plotting
-cars <- cars %>%
-  mutate(cyl = factor(cyl))
-
-ggplot(cars, aes(x = mpg, fill = cyl)) +
-  geom_histogram(binwidth = 2, alpha = 0.6, position = "identity") +
-  labs(title = "Fuel Efficiency by Number of Cylinders")
-
-# --- Box plot ---
-ggplot(cars, aes(x = cyl, y = mpg)) +
-  geom_boxplot()
-
-ggplot(cars, aes(x = cyl, y = mpg, fill = cyl)) +
-  geom_boxplot() +
-  labs(title = "Fuel Efficiency by Cylinders",
-       x = "Number of Cylinders",
-       y = "Miles per Gallon") +
-  theme_minimal()
 
 # --- Scatter plot ---
 ggplot(cars, aes(x = hp, y = mpg)) +
   geom_point()
 
-ggplot(cars, aes(x = hp, y = mpg, color = cyl)) +
+ggplot(cars, aes(x = hp, y = mpg)) +
   geom_point(size = 3, alpha = 0.7) +
+  labs(title = "Horsepower vs Fuel Efficiency",
+       x = "Horsepower",
+       y = "Miles per Gallon") +
+  theme_minimal()
+
+# add a linear regression
+
+ggplot(cars, aes(x = hp, y = mpg)) +
+  geom_point(size = 3, alpha = 0.7) + # with a new stat
+  geom_smooth(method = lm, formula = "y ~x", color = "red") +
   labs(title = "Horsepower vs Fuel Efficiency",
        x = "Horsepower",
        y = "Miles per Gallon") +
@@ -275,31 +363,42 @@ ggplot(cars_summary, aes(x = factor(cyl), y = avg_mpg, fill = factor(cyl))) +
 
 
 # =============================================================================
-# PART 8: Quick Analysis - Does Engine Size Affect Efficiency?
+# PART 8: Importing and Exporting Data
 # =============================================================================
 
-# Compare mpg across cylinder groups
-cars %>%
-  group_by(cyl) %>%
-  summarize(
-    avg_mpg = mean(mpg),
-    sd_mpg = sd(mpg),
-    n = n()
-  )
+# --- CSV files (most common) ---
 
-# Simple linear regression
-model <- lm(mpg ~ hp, data = cars)
-summary(model)
+# Export to CSV
+write.csv(cars_summary, "cars_summary.csv", row.names = FALSE)
 
-# Visualize the relationship
-ggplot(cars, aes(x = hp, y = mpg)) +
-  geom_point(aes(color = cyl), size = 3, alpha = 0.7) +
-  geom_smooth(method = "lm", se = TRUE, color = "black") +
-  labs(title = "Does Horsepower Affect Fuel Efficiency?",
-       subtitle = "1974 Motor Trend Car Data",
-       x = "Horsepower",
-       y = "Miles per Gallon") +
-  theme_minimal()
+# Import from CSV
+my_data <- read.csv("cars_summary.csv")
+
+# --- RDS files (R's native format) ---
+# Preserves R object exactly (factors, types, etc.)
+# Smaller file size, faster to read/write
+
+# Export to RDS
+saveRDS(cars_summary, "cars_summary.rds")
+
+# Import from RDS
+my_data <- readRDS("cars_summary.rds")
+
+# --- Excel files (need readxl package) ---
+# install.packages("readxl")
+# library(readxl)
+# my_data <- read_excel("data.xlsx", sheet = 1)
+
+# --- From the web ---
+# my_data <- read.csv("https://example.com/data.csv")
+
+# --- Tip: check your working directory ---
+getwd()                    # where R is looking for files
+# setwd("/path/to/folder")  # change working directory
+
+# --- Clean up: remove files we created ---
+# file.remove("cars_summary.csv")
+# file.remove("cars_summary.rds")
 
 
 # =============================================================================
@@ -308,10 +407,8 @@ ggplot(cars, aes(x = hp, y = mpg)) +
 
 # 1. What's the average horsepower for each cylinder group?
 
-# 2. Filter to only manual transmission cars (am == 1).
-#    What's the average mpg by cylinder group?
 
-# 3. Create a histogram of horsepower, colored by cylinder group
+# 2. Create a scatter plot of weight (wt) vs mpg
 
-# 4. Create a scatter plot of weight (wt) vs mpg
+
 
