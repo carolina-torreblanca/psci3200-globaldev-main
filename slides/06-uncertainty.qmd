@@ -1,0 +1,584 @@
+---
+title: "Sampling and Uncertainty"
+subtitle: "Can We Trust Our Estimates?"
+author: "Carolina Torreblanca"
+institute: "University of Pennsylvania"
+
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.1
+    logo: DevLab_Logo_29Mar2023.png
+    footer: "https://carolina-torreblanca.github.io/psci3200-globaldev-main/"
+    embed-resources: true
+    template-partials:
+    - title-slide.html
+    gfm:
+    mermaid-format: png
+editor: source
+---
+
+
+## Agenda
+
+\
+
+1. Where does data come from? (Sampling)
+2. What makes a sample trustworthy? (Representativeness)
+3. How much should we trust any one estimate? (Uncertainty)
+4. Reading regression output with confidence
+
+
+# Where Does Data Come From?
+
+## Population vs. Sample
+
+\
+
+::: {.fragment}
+**Population:** every unit we care about
+
+- All countries, all voters, all households in a district
+:::
+
+::: {.fragment}
+**Sample:** the subset we actually observe
+
+- 80 countries with available data, 1,200 survey respondents
+:::
+
+::: {.fragment}
+\
+The goal of statistics: learn about the **population** from the **sample**.
+:::
+
+## Sampling Methods
+
+\
+
+::: {.incremental}
+- **Random sample:** every unit has a known probability of being selected
+- **Stratified sample:** divide population into groups, sample from each
+- **Convenience sample:** whoever is easiest to reach
+- **Census:** observe the entire population (rare and expensive)
+:::
+
+## How Sampling Goes Wrong
+
+\
+
+::: {.fragment}
+**Examples from development research:**
+:::
+
+::: {.fragment}
+::: {.incremental}
+- Survey only urban areas → miss rural poverty
+- Phone surveys → miss people without phones
+- Only villages near roads → miss remote populations
+- Household surveys → miss homeless, displaced, migrant populations
+- Voluntary response → people with strong opinions over-represented
+:::
+:::
+
+
+# Representativeness
+
+## What Makes a Sample Representative?
+
+\
+
+::: {.fragment}
+A sample is representative when its characteristics **match** the population's characteristics.
+:::
+
+::: {.fragment}
+::: {.incremental}
+- If 60% of the population is rural, ~60% of the sample should be rural
+- If the average income is $2,000, the sample average should be close to $2,000
+- This happens naturally with **random sampling** — but not with convenience samples
+:::
+:::
+
+## Simulation: Representative vs. Biased Samples
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+library(ggplot2)
+
+set.seed(42)
+
+# Create a "population" of 10,000 people
+population <- data.frame(
+  income = c(rlnorm(7000, log(1500), 0.8),  # rural: lower income
+             rlnorm(3000, log(5000), 0.6)),  # urban: higher income
+  type = c(rep("Rural", 7000), rep("Urban", 3000))
+)
+
+# Random sample (representative)
+random_sample <- population[sample(1:10000, 200), ]
+
+# Biased sample (only urban)
+urban_only <- population[population$type == "Urban", ]
+biased_sample <- urban_only[sample(1:nrow(urban_only), 200), ]
+
+pop_mean <- mean(population$income)
+random_mean <- mean(random_sample$income)
+biased_mean <- mean(biased_sample$income)
+
+samples <- rbind(
+  data.frame(income = random_sample$income, sample = paste0("Random sample\n(mean = $", round(random_mean), ")")),
+  data.frame(income = biased_sample$income, sample = paste0("Urban-only sample\n(mean = $", round(biased_mean), ")"))
+)
+
+ggplot(samples, aes(x = income)) +
+  geom_histogram(fill = "#011F5B", alpha = 0.7, bins = 30, color = "white") +
+  geom_vline(xintercept = pop_mean, color = "red", linewidth = 1.2, linetype = "dashed") +
+  facet_wrap(~sample, scales = "free_y") +
+  annotate("label", x = pop_mean, y = Inf, vjust = 2,
+           label = paste0("Population mean = $", round(pop_mean)),
+           color = "red", size = 4) +
+  labs(x = "Income ($)", y = "Count",
+       title = "Same population, different sampling strategies") +
+  theme_minimal(base_size = 16) +
+  scale_x_continuous(labels = scales::comma)
+```
+
+## The Problem with Biased Samples
+
+\
+
+::: {.incremental}
+- The urban-only sample **overestimates** the population average
+- Any conclusions we draw from this sample will be **misleading**
+- This is **selection bias** — the sample isn't representative
+- No amount of fancy statistics can fix a bad sample
+:::
+
+::: {.fragment}
+\
+**Lesson:** before trusting any result, ask: "Where did this data come from?"
+:::
+
+
+# The Sampling Distribution
+
+## A Thought Experiment
+
+\
+
+::: {.fragment}
+Imagine you could sample 200 countries, compute the average life expectancy, then...
+:::
+
+::: {.fragment}
+::: {.incremental}
+- Throw out the sample
+- Draw a new sample of 200 countries
+- Compute the average again
+- Repeat this 1,000 times
+:::
+:::
+
+::: {.fragment}
+\
+What would the **distribution of those averages** look like?
+:::
+
+## Let's Find Out: 1 Sample
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+set.seed(42)
+
+# True population
+pop_size <- 10000
+pop_life <- rnorm(pop_size, mean = 68, sd = 10)
+true_mean <- mean(pop_life)
+
+# Draw ONE sample
+one_sample <- sample(pop_life, 200)
+
+ggplot(data.frame(x = one_sample), aes(x = x)) +
+  geom_histogram(fill = "#011F5B", alpha = 0.7, bins = 25, color = "white") +
+  geom_vline(xintercept = mean(one_sample), color = "#011F5B", linewidth = 1.5) +
+  geom_vline(xintercept = true_mean, color = "red", linewidth = 1.5, linetype = "dashed") +
+  annotate("label", x = mean(one_sample) + 3, y = 25,
+           label = paste0("Sample mean = ", round(mean(one_sample), 1)),
+           color = "#011F5B", size = 5) +
+  annotate("label", x = true_mean - 3, y = 25,
+           label = paste0("True mean = ", round(true_mean, 1)),
+           color = "red", size = 5) +
+  labs(x = "Life expectancy", y = "Count",
+       title = "One sample of 200 countries") +
+  theme_minimal(base_size = 18)
+```
+
+
+## Now 1,000 Samples
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+set.seed(42)
+n_sims <- 1000
+sample_means <- numeric(n_sims)
+
+for (i in 1:n_sims) {
+  sample_means[i] <- mean(sample(pop_life, 200))
+}
+
+ggplot(data.frame(means = sample_means), aes(x = means)) +
+  geom_histogram(fill = "#011F5B", alpha = 0.7, bins = 30, color = "white") +
+  geom_vline(xintercept = true_mean, color = "red", linewidth = 1.5, linetype = "dashed") +
+  annotate("label", x = true_mean, y = 100,
+           label = paste0("True mean = ", round(true_mean, 1)),
+           color = "red", size = 6) +
+  labs(x = "Sample mean", y = "Count",
+       title = "Distribution of 1,000 sample means",
+       subtitle = "Each is the average from a random sample of 200 countries") +
+  theme_minimal(base_size = 18)
+```
+
+## What Just Happened?
+
+\
+
+::: {.incremental}
+- Each sample gives a **slightly different** answer
+- But the answers **cluster around the truth**
+- The distribution of sample estimates is called the **sampling distribution**
+- It's approximately **bell-shaped** (Central Limit Theorem)
+:::
+
+## This Works for Regression Coefficients Too
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+set.seed(42)
+true_beta <- 0.0004
+n_sims <- 1000
+betas <- numeric(n_sims)
+
+for (i in 1:n_sims) {
+  x <- runif(100, 500, 50000)
+  y <- 55 + true_beta * x + rnorm(100, 0, 4)
+  betas[i] <- coef(lm(y ~ x))[2]
+}
+
+ggplot(data.frame(betas = betas), aes(x = betas)) +
+  geom_histogram(fill = "#011F5B", alpha = 0.7, bins = 30, color = "white") +
+  geom_vline(xintercept = true_beta, color = "red", linewidth = 1.5, linetype = "dashed") +
+  annotate("label", x = true_beta, y = 100,
+           label = paste0("True slope = ", true_beta),
+           color = "red", size = 6) +
+  labs(x = expression(hat(beta)), y = "Count",
+       title = "1,000 estimated slopes from 1,000 samples",
+       subtitle = "Same idea: estimates scatter around the truth") +
+  theme_minimal(base_size = 18)
+```
+
+## The Key Insight
+
+\
+
+::: {.fragment}
+Our estimate from any one sample is **one draw** from the sampling distribution.
+:::
+
+::: {.fragment}
+::: {.incremental}
+- We don't know exactly where in the distribution our estimate falls
+- But we can estimate **how wide** the distribution is
+- That width is the **standard error**
+:::
+:::
+
+
+# Standard Errors and Confidence Intervals
+
+## Standard Error
+
+\
+
+::: {.fragment}
+**Standard error** = the standard deviation of the sampling distribution.
+:::
+
+::: {.fragment}
+::: {.incremental}
+- It measures: **how much would our estimate bounce around if we could repeat the study?**
+- Small SE → our estimate is precise (the sampling distribution is narrow)
+- Large SE → our estimate is imprecise (the sampling distribution is wide)
+:::
+:::
+
+## What Affects the Standard Error?
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+set.seed(42)
+true_beta <- 0.0004
+
+betas_small <- numeric(1000)
+betas_large <- numeric(1000)
+
+for (i in 1:1000) {
+  x_sm <- runif(30, 500, 50000)    # small sample
+  x_lg <- runif(500, 500, 50000)   # large sample
+  y_sm <- 55 + true_beta * x_sm + rnorm(30, 0, 4)
+  y_lg <- 55 + true_beta * x_lg + rnorm(500, 0, 4)
+  betas_small[i] <- coef(lm(y_sm ~ x_sm))[2]
+  betas_large[i] <- coef(lm(y_lg ~ x_lg))[2]
+}
+
+compare <- rbind(
+  data.frame(beta = betas_small, sample = paste0("n = 30 (SE = ", round(sd(betas_small), 6), ")")),
+  data.frame(beta = betas_large, sample = paste0("n = 500 (SE = ", round(sd(betas_large), 6), ")"))
+)
+
+ggplot(compare, aes(x = beta)) +
+  geom_histogram(fill = "#011F5B", alpha = 0.7, bins = 30, color = "white") +
+  geom_vline(xintercept = true_beta, color = "red", linewidth = 1.2, linetype = "dashed") +
+  facet_wrap(~sample, ncol = 1) +
+  labs(x = expression(hat(beta)), y = "Count",
+       title = "Larger samples → smaller standard errors → more precision") +
+  theme_minimal(base_size = 16)
+```
+
+## Confidence Intervals
+
+\
+
+::: {.fragment}
+A **95% confidence interval** gives us a plausible range for the true value.
+:::
+
+::: {.fragment}
+$$
+CI = \hat{\beta} \pm 1.96 \times SE
+$$
+:::
+
+::: {.fragment}
+**Interpretation:** "If we repeated this study many times, about 95% of the confidence intervals would contain the true value."
+:::
+
+## Visualizing Confidence Intervals
+
+```{r}
+#| echo: true
+#| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
+
+set.seed(42)
+n_sims <- 100
+results <- data.frame(
+  sim = 1:n_sims,
+  beta = numeric(n_sims),
+  se = numeric(n_sims)
+)
+
+for (i in 1:n_sims) {
+  x <- runif(100, 500, 50000)
+  y <- 55 + true_beta * x + rnorm(100, 0, 4)
+  fit <- lm(y ~ x)
+  results$beta[i] <- coef(fit)[2]
+  results$se[i] <- summary(fit)$coefficients[2, 2]
+}
+
+results$lower <- results$beta - 1.96 * results$se
+results$upper <- results$beta + 1.96 * results$se
+results$covers <- results$lower <= true_beta & results$upper >= true_beta
+coverage <- round(mean(results$covers) * 100)
+
+ggplot(results, aes(x = sim, y = beta, color = covers)) +
+  geom_point(size = 1.5) +
+  geom_errorbar(aes(ymin = lower, ymax = upper), width = 0, alpha = 0.5) +
+  geom_hline(yintercept = true_beta, color = "red", linewidth = 1.2, linetype = "dashed") +
+  scale_color_manual(values = c("FALSE" = "orange", "TRUE" = "#011F5B"),
+                     labels = c("Misses truth", "Contains truth")) +
+  labs(x = "Simulation", y = expression(hat(beta)),
+       title = paste0(coverage, " out of 100 confidence intervals contain the truth"),
+       color = "") +
+  theme_minimal(base_size = 16) +
+  theme(legend.position = "bottom")
+```
+
+
+## Confidence Intervals in R
+
+```{r}
+#| echo: true
+#| warning: false
+
+# Using the model from last class
+countries <- data.frame(gdp_pc = runif(80, 500, 50000))
+set.seed(42)
+countries$life_exp <- 55 + 0.0004 * countries$gdp_pc + rnorm(80, 0, 4)
+
+model <- lm(life_exp ~ gdp_pc, data = countries)
+confint(model)
+```
+
+::: {.fragment}
+\
+"We are 95% confident that the true effect of a $1 increase in GDP per capita on life expectancy is between `r round(confint(model)[2,1], 5)` and `r round(confint(model)[2,2], 5)` years."
+:::
+
+
+# Hypothesis Testing
+
+## Is This Coefficient Real or Just Noise?
+
+\
+
+::: {.fragment}
+**Null hypothesis ($H_0$):** There is no relationship. $\beta = 0$.
+:::
+
+::: {.fragment}
+**Alternative hypothesis ($H_A$):** There is a relationship. $\beta \neq 0$.
+:::
+
+::: {.fragment}
+\
+The **p-value** answers: "If there were truly no relationship, how surprising would our estimate be?"
+:::
+
+## Visualizing the p-value
+
+```{r}
+#| echo: false
+#| warning: false
+
+# Sampling distribution under the null
+set.seed(42)
+null_betas <- numeric(1000)
+for (i in 1:1000) {
+  x <- runif(100, 500, 50000)
+  y <- 55 + 0 * x + rnorm(100, 0, 4) # NO relationship
+  null_betas[i] <- coef(lm(y ~ x))[2]
+}
+
+# Our actual estimate
+our_beta <- coef(model)[2]
+
+null_df <- data.frame(beta = null_betas)
+
+ggplot(null_df, aes(x = beta)) +
+  geom_histogram(fill = "grey70", bins = 30, color = "white") +
+  geom_vline(xintercept = our_beta, color = "red", linewidth = 1.5) +
+  annotate("label", x = our_beta, y = 80,
+           label = paste0("Our estimate = ", round(our_beta, 6)),
+           color = "red", size = 5) +
+  labs(x = expression(hat(beta)),
+       y = "Count",
+       title = "Sampling distribution if the true slope were zero",
+       subtitle = "Our estimate (red) is far from what we'd expect under no relationship") +
+  theme_minimal(base_size = 18)
+```
+
+## Interpreting p-values
+
+\
+
+::: {.incremental}
+- **Small p-value** (< 0.05): our estimate would be very surprising if there were no relationship → we reject $H_0$
+- **Large p-value** (> 0.05): our estimate is consistent with no relationship → we fail to reject $H_0$
+- **p-value is NOT** the probability that the null is true
+- **p-value is NOT** the probability of making an error
+:::
+
+## The Stars in Regression Output
+
+\
+
+| Symbol | p-value | Meaning |
+|--------|---------|---------|
+| `***` | < 0.001 | Very strong evidence |
+| `**` | < 0.01 | Strong evidence |
+| `*` | < 0.05 | Evidence |
+| `.` | < 0.1 | Weak evidence |
+| (none) | > 0.1 | Not statistically significant |
+
+::: {.fragment}
+\
+These are conventions. The 0.05 threshold is arbitrary but widely used.
+:::
+
+
+# Putting It All Together
+
+## Full Circle: Reading `summary(lm())`
+
+```{r}
+#| echo: true
+#| warning: false
+
+summary(model)
+```
+
+## Now You Can Read Every Number
+
+\
+
+::: {.incremental}
+- **Estimate**: the slope or intercept — association between $X$ and $Y$
+- **Std. Error**: how much the estimate would vary across samples
+- **t value**: Estimate $\div$ Std. Error — how many SEs away from zero
+- **Pr(>|t|)**: p-value — would this be surprising if there were no relationship?
+- **R-squared**: fraction of variation in $Y$ explained by $X$
+:::
+
+## When Should You Trust Your Results?
+
+\
+
+::: {.incremental}
+- Is the **sample representative** of the population you care about?
+- Are the **standard errors small** relative to the coefficient?
+- Is the **p-value small** enough to rule out noise?
+- Do the **residuals look well-behaved**?
+- Does the result **make substantive sense**?
+:::
+
+::: {.fragment}
+\
+Statistics can't save you from a bad sample or a bad research design.
+:::
+
+
+## Connecting to What's Next
+
+\
+
+::: {.incremental}
+- Now you know how to **run** a regression and **evaluate** the output
+- But regression alone gives us **associations**, not causal effects
+- Next: **Democracy and Development**
+  + Uses regression with **fixed effects** to move toward causal claims
+  + Fixed effects = a way to control for all time-invariant differences across units
+  + It builds directly on multiple regression: $Y_{it} = \alpha_i + \beta X_{it} + \epsilon_{it}$
+:::

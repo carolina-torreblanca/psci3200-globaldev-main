@@ -1,0 +1,17 @@
+---
+title: "Sampling and Uncertainty"
+date: 2026-03-04
+---
+
+## Required Readings
+
+- DSS [Ch 3](/files/dss_ch3.pdf)
+
+## Slides
+
+- [Slides](/slides/06-uncertainty.html)
+
+## Interesting Stuff (non-required)
+
+- An interactive visualization of confidence intervals [here](https://rpsychologist.com/d3/ci/)
+- Imai & Llaudet on sampling and standard errors (DSS Ch 3.4-3.5)

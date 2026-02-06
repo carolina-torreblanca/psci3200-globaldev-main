@@ -1,0 +1,17 @@
+---
+title: "Introduction to OLS"
+date: 2026-02-09
+---
+
+## Required Readings
+
+- DSS [Ch 4](/files/dss_ch4.pdf)
+
+## Slides
+
+- [Slides](/slides/05-ols.html)
+
+## Interesting Stuff (non-required)
+
+- A visual introduction to OLS [here](https://setosa.io/ev/ordinary-least-squares-regression/)
+- Imai & Llaudet on prediction vs. causation (DSS Ch 4.1)
