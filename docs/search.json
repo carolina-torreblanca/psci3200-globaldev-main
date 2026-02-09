@@ -10014,21 +10014,21 @@
     "href": "slides/05-ols.html#the-workhorse-of-social-science",
     "title": "Introduction to OLS",
     "section": "The Workhorse of Social Science",
-    "text": "The Workhorse of Social Science\n\n\n\nAlmost every empirical paper you’ve read in this course uses linear regression.\n\n\n\n\nComparing a treatment group to a control group? Regression.\nControlling for confounders? Regression.\nFixed effects? Regression with extra variables.\nDifference-in-Differences? Regression with an interaction term.\nYour final project? Regression."
+    "text": "The Workhorse of Social Science\n\n\n\nAlmost every empirical paper in this course uses linear regression\n\n\n\n\nComparing a treatment group to a control group? Regression\nFixed effects? Regression with dummies as controls\nFancy Difference-in-Differences? Regression with an interaction term\nYour final project? Likely Regression"
   },
   {
     "objectID": "slides/05-ols.html#why-should-you-care",
     "href": "slides/05-ols.html#why-should-you-care",
     "title": "Introduction to OLS",
     "section": "Why Should You Care?",
-    "text": "Why Should You Care?\n\n\n\nFor your final projects, you need to:\n\n\n\n\nEstimate a relationship between variables\nControl for things that might confound that relationship\nPresent and interpret your results\nAll of this is regression\n\n\n\n\n\nToday: what regression actually does, and how to use it."
+    "text": "Why Should You Care?\n\n\n\nFor your final projects, you need to:\n\n\n\nCome up with a research question\nAnswer it with data\nPresent and interpret your results\n\n\n\n\nToday: what regression actually does, and how to use it."
   },
   {
     "objectID": "slides/05-ols.html#thing-1-best-guess-of-y",
     "href": "slides/05-ols.html#thing-1-best-guess-of-y",
     "title": "Introduction to OLS",
     "section": "Thing 1: Best Guess of Y",
-    "text": "Thing 1: Best Guess of Y\n\n\n\n“Given what I know about X, what is my best guess for Y?”\n\n\n\n\nIf I tell you a country’s GDP per capita is $10,000…\nWhat’s your best guess for its life expectancy?\nRegression gives you that guess — and a formula for making it"
+    "text": "Thing 1: Best Guess of Y\n\n\n\n“Given what I know about X, what is my best guess for Y?”\n\n\n\n\nIf I tell you a country’s GDP per capita is $10,000…\nWhat’s your best guess for its life expectancy?\nRegression gives a linear best guess"
   },
   {
     "objectID": "slides/05-ols.html#thing-2-how-much-does-y-change",
@@ -10042,7 +10042,7 @@
     "href": "slides/05-ols.html#something-you-already-know",
     "title": "Introduction to OLS",
     "section": "Something You Already Know",
-    "text": "Something You Already Know\n\n\nComparing a treatment group to a control group:\n\\[\n\\text{Effect} = \\overline{Y}_{treatment} - \\overline{Y}_{control}\n\\]\n\nYou’ve been doing this since the causality lectures.\nThis is regression."
+    "text": "Something You Already Know\n\n\nComparing a treatment group to a control group:\n\\[\n\\text{Effect} = \\overline{Y}_{treatment} - \\overline{Y}_{control}\n\\]\n\nRemember the STAR experiment?\nWe can estimate this with regression"
   },
   {
     "objectID": "slides/05-ols.html#lets-prove-it",
@@ -10056,14 +10056,14 @@
     "href": "slides/05-ols.html#same-answer",
     "title": "Introduction to OLS",
     "section": "Same Answer",
-    "text": "Same Answer\n\n\n\n\nThe intercept = the control group mean\nThe slope on treatment = the difference in means\nRegression with a binary variable IS a difference in means\nSo you already understand the core idea — now we generalize it"
+    "text": "Same Answer\n\n\n\nThe intercept = the control group mean\nThe slope on treatment = the difference in means\nRegression with a binary variable IS a difference in means"
   },
   {
     "objectID": "slides/05-ols.html#why-not-just-use-difference-in-means-for-everything",
     "href": "slides/05-ols.html#why-not-just-use-difference-in-means-for-everything",
     "title": "Introduction to OLS",
     "section": "Why Not Just Use Difference-in-Means for Everything?",
-    "text": "Why Not Just Use Difference-in-Means for Everything?\n\n\n\nBecause the real world is more complicated:\n\n\n\n\nWhat if your key variable isn’t binary? (GDP is continuous)\nWhat if you need to control for something? (Education, geography…)\nWhat if you want to compare across multiple groups at once?\nRegression handles all of this. Difference-in-means can’t."
+    "text": "Why Not Just Use Difference-in-Means for Everything?\n\n\n\nBecause the real world is more complicated:\n\n\n\n\nWhat if your key variable isn’t binary? (GDP is continuous)\nWhat if you need to control for something? (Education, geography…)\nWhat if you want to compare across multiple groups at once?\nRegression handles all of this. Difference-in-means can’t"
   },
   {
     "objectID": "slides/05-ols.html#now-with-a-continuous-variable",
@@ -10077,21 +10077,21 @@
     "href": "slides/05-ols.html#which-line",
     "title": "Introduction to OLS",
     "section": "Which Line?",
-    "text": "Which Line?\n\n\nWe need a rule for “best.” That rule is OLS."
+    "text": "Which Line?\n\n\nWe need a rule for “best line” That rule is OLS."
   },
   {
     "objectID": "slides/05-ols.html#the-equation",
     "href": "slides/05-ols.html#the-equation",
     "title": "Introduction to OLS",
     "section": "The Equation",
-    "text": "The Equation\n\n\nA line needs two numbers — an intercept and a slope:\n\\[\nY_i = \\alpha + \\beta X_i + \\epsilon_i\n\\]\n\n\n\n\\(\\alpha\\) (intercept): our best guess of \\(Y\\) when \\(X = 0\\)\n\\(\\beta\\) (slope): how much \\(Y\\) changes when \\(X\\) goes up by one unit"
+    "text": "The Equation\n\n\nA line needs two numbers: an intercept and a slope\n\\[\nY_i = \\alpha + \\beta X_i + \\epsilon_i\n\\]\n\n\n\\(\\alpha\\) (intercept): value of \\(Y\\) when \\(X = 0\\)\n\\(\\beta\\) (slope): how much \\(Y\\) changes when \\(X\\) goes up by one unit"
   },
   {
     "objectID": "slides/05-ols.html#what-about-epsilon",
     "href": "slides/05-ols.html#what-about-epsilon",
     "title": "Introduction to OLS",
     "section": "What About \\(\\epsilon\\)?",
-    "text": "What About \\(\\epsilon\\)?\n\n\n\\[\nY_i = \\alpha + \\beta X_i + \\epsilon_i\n\\]\n\nLife expectancy depends on a million things: healthcare, diet, war, genetics, luck…\n\n\n\n\nWe’re only using GDP to predict life expectancy\nEverything else lands in \\(\\epsilon_i\\) (the error term)\nThe error is not a mistake — it’s the gap between our simple model and complicated reality"
+    "text": "What About \\(\\epsilon\\)?\n\n\n\\[\nY_i = \\alpha + \\beta X_i + \\epsilon_i\n\\]\n\nLife expectancy depends on a million things: healthcare, diet, war, genetics, luck…\n\n\n\n\nWe’re only using GDP to predict life expectancy\nEverything else lands in \\(\\epsilon_i\\) (the error term)\nThe error is the gap between our simple model and complicated reality"
   },
   {
     "objectID": "slides/05-ols.html#how-ols-picks-the-line",
@@ -10119,14 +10119,14 @@
     "href": "slides/05-ols.html#a-simulation",
     "title": "Introduction to OLS",
     "section": "A Simulation",
-    "text": "A Simulation\n\n\n\nImagine you are God. You get to decide how the world works.\n\n\nYou decree: life expectancy = 55 + 0.4 \\(\\times\\) GDP\n\n\nThat’s the general rule. But you’re a generous God — each country gets a little bit of free will (randomness).\n\n\n\nQuestion: If a researcher only sees the data — not your rule — can they figure out what you decided?"
+    "text": "A Simulation\n\n\n\nImagine you are God. You get to decide how the world works\n\n\nYou decree: life expectancy = 55 + 0.4 \\(\\times\\) GDP\n\n\nThat’s the general rule. But you’re a generous God, each country gets a little bit of free will (randomness).\n\n\n\nQuestion: If a researcher only sees the data can they figure out what you decided?"
   },
   {
     "objectID": "slides/05-ols.html#you-create-the-world",
     "href": "slides/05-ols.html#you-create-the-world",
     "title": "Introduction to OLS",
     "section": "You Create the World",
-    "text": "You Create the World\n\nset.seed(123)\n\n# GOD'S RULE (the truth no one can see)\ntrue_intercept &lt;- 55\ntrue_slope     &lt;- 0.4\n\n# Generate data for 100 countries\nn &lt;- 100\ngdp &lt;- runif(n, 1, 50)  # GDP in thousands of USD\nlife_exp &lt;- true_intercept + true_slope * gdp + rnorm(n, 0, 4)\n\ngod_data &lt;- data.frame(gdp, life_exp)\n\n\n\nNow let’s pretend we’re a researcher who only sees the data, not the rule."
+    "text": "You Create the World\n\nset.seed(123)\n\n# GOD'S RULE (the truth no one can see)\ntrue_intercept &lt;- 55\ntrue_slope     &lt;- 0.4\n\n# Generate data for 100 countries\nn &lt;- 100\ngdp &lt;- runif(n, 1, 50)  # GDP in thousands of USD\nlife_exp &lt;- true_intercept + true_slope * gdp + rnorm(n, 0, 20)\n\ngod_data &lt;- data.frame(gdp, life_exp)\n\n\n\nNow let’s pretend we’re a researcher who only sees the data, not the rule."
   },
   {
     "objectID": "slides/05-ols.html#ols-tries-to-recover-the-truth",
@@ -10140,14 +10140,14 @@
     "href": "slides/05-ols.html#how-close",
     "title": "Introduction to OLS",
     "section": "How Close?",
-    "text": "How Close?\n\n# What God decided\nc(true_intercept = true_intercept, true_slope = true_slope)\n\ntrue_intercept     true_slope \n          55.0            0.4 \n\n# What OLS found\ncoef(fit)\n\n(Intercept)         gdp \n 54.9714938   0.3926668 \n\n\n\n\nNot perfect — because of the free will (randomness) — but very close."
+    "text": "How Close?\n\n# What God decided\nc(true_intercept = true_intercept, true_slope = true_slope)\n\ntrue_intercept     true_slope \n          55.0            0.4 \n\n# What OLS found\ncoef(fit)\n\n(Intercept)         gdp \n 54.8574688   0.3633341 \n\n\n\n\nNot perfect because of the free will (randomness) but very close."
   },
   {
     "objectID": "slides/05-ols.html#different-worlds-same-rule",
     "href": "slides/05-ols.html#different-worlds-same-rule",
     "title": "Introduction to OLS",
     "section": "Different Worlds, Same Rule",
-    "text": "Different Worlds, Same Rule\n\n\nShow code\npar_df &lt;- data.frame()\nfor (world in 1:3) {\n  set.seed(world * 10)\n  g &lt;- runif(n, 1, 50)\n  le &lt;- true_intercept + true_slope * g + rnorm(n, 0, 4)\n  f &lt;- lm(le ~ g)\n  par_df &lt;- rbind(par_df, data.frame(\n    gdp = g, life_exp = le,\n    world = paste(\"World\", world,\n                  \"  (slope =\", round(coef(f)[2], 2), \")\")\n  ))\n}\n\nggplot(par_df, aes(x = gdp, y = life_exp)) +\n  geom_point(alpha = 0.4, color = \"#011F5B\") +\n  geom_smooth(method = \"lm\", se = FALSE, color = \"#011F5B\", linewidth = 1) +\n  geom_abline(intercept = true_intercept, slope = true_slope,\n              color = \"red\", linewidth = 1, linetype = \"dashed\") +\n  facet_wrap(~world) +\n  labs(x = \"GDP per capita (thousands USD)\", y = \"Life expectancy\",\n       title = \"Same rule, different randomness — OLS is close each time\",\n       subtitle = \"Red dashed = God's truth (slope = 0.4)\") +\n  theme_minimal(base_size = 14)"
+    "text": "Different Worlds, Same Rule\n\n\nShow code\npar_df &lt;- data.frame()\nfor (world in 1:3) {\n  set.seed(world * 10)\n  g &lt;- runif(n, 1, 50)\n  le &lt;- true_intercept + true_slope * g + rnorm(n, 0, 20)\n  f &lt;- lm(le ~ g)\n  par_df &lt;- rbind(par_df, data.frame(\n    gdp = g, life_exp = le,\n    world = paste(\"World\", world,\n                  \"  (slope =\", round(coef(f)[2], 2), \")\")\n  ))\n}\n\nggplot(par_df, aes(x = gdp, y = life_exp)) +\n  geom_point(alpha = 0.4, color = \"#011F5B\") +\n  geom_smooth(method = \"lm\", se = FALSE, color = \"#011F5B\", linewidth = 1) +\n  geom_abline(intercept = true_intercept, slope = true_slope,\n              color = \"red\", linewidth = 1, linetype = \"dashed\") +\n  facet_wrap(~world) +\n  labs(x = \"GDP per capita (thousands USD)\", y = \"Life expectancy\",\n       title = \"Same rule, different randomness — OLS is close each time\",\n       subtitle = \"Red dashed = God's truth (slope = 0.4)\") +\n  theme_minimal(base_size = 14)"
   },
   {
     "objectID": "slides/05-ols.html#ols-works-when-the-truth-is-linear",
@@ -10175,7 +10175,7 @@
     "href": "slides/05-ols.html#the-problem-omitted-variables",
     "title": "Introduction to OLS",
     "section": "The Problem: Omitted Variables",
-    "text": "The Problem: Omitted Variables\n\n\n\nWhat if we left something important out of the model?\n\n\n\nLet’s play God again — but this time with two variables that matter."
+    "text": "The Problem: Omitted Variables\n\n\n\nWhat if we left something important out of the model?\n\n\n\nLet’s play God again but this time with two variables that matter\nLife expectancy is going to depend on both GDP and average education BUT education depends on gdp as wel"
   },
   {
     "objectID": "slides/05-ols.html#gods-new-rule",
@@ -10189,21 +10189,21 @@
     "href": "slides/05-ols.html#what-happens-if-we-forget-education",
     "title": "Introduction to OLS",
     "section": "What Happens If We Forget Education?",
-    "text": "What Happens If We Forget Education?\n\n\n\n\n\n\nGDP only\nGDP + Education\n\n\n\n\n(Intercept)\n47.854*** (1.089)\n45.131*** (0.427)\n\n\ngdp\n0.808*** (0.035)\n0.170*** (0.032)\n\n\neducation\n\n1.535*** (0.070)\n\n\nNum.Obs.\n80\n80\n\n\nR2 Adj.\n0.871\n0.982"
+    "text": "What Happens If We Forget Education?\n\n\nShow code\nmodel_no_ctrl   &lt;- lm(life_exp ~ gdp, data = ctrl)\nmodel_with_ctrl &lt;- lm(life_exp ~ gdp + education, data = ctrl)\n\nmodelsummary(list(\"Life Exp\" = model_no_ctrl,\n                  \"Life Exp\" = model_with_ctrl),\n  estimate  = \"{estimate}{stars} ({std.error})\",\n  statistic = NULL,\n  gof_omit = 'IC|RMSE|Log|F|R2$|Std.')\n\n\n\n\n\n\nLife Exp\nLife Exp\n\n\n\n\n(Intercept)\n47.854*** (1.089)\n45.131*** (0.427)\n\n\ngdp\n0.808*** (0.035)\n0.170*** (0.032)\n\n\neducation\n\n1.535*** (0.070)\n\n\nNum.Obs.\n80\n80\n\n\nR2 Adj.\n0.871\n0.982"
   },
   {
     "objectID": "slides/05-ols.html#what-just-happened",
     "href": "slides/05-ols.html#what-just-happened",
     "title": "Introduction to OLS",
     "section": "What Just Happened?",
-    "text": "What Just Happened?\n\n\n\n\nWithout education: the GDP coefficient is inflated\nWith education: it drops dramatically, closer to God’s truth (0.2)\nWhy? GDP and education are correlated — GDP was getting credit for education’s work\nThis is omitted variable bias"
+    "text": "What Just Happened?\n\n\n\n\nWithout education: the GDP coefficient is inflated\nWith education: it drops dramatically, closer to God’s truth (0.2)\nWhy? GDP and education are correlated\nGDP was getting credit for education’s work\nThis is omitted variable bias"
   },
   {
     "objectID": "slides/05-ols.html#omitted-variable-bias-visually",
     "href": "slides/05-ols.html#omitted-variable-bias-visually",
     "title": "Introduction to OLS",
     "section": "Omitted Variable Bias, Visually",
-    "text": "Omitted Variable Bias, Visually\n\n\nWithout controlling for Education, the GDP \\(\\rightarrow\\) LifeExp path picks up the GDP \\(\\rightarrow\\) Education \\(\\rightarrow\\) LifeExp path too."
+    "text": "Omitted Variable Bias, Visually"
   },
   {
     "objectID": "slides/05-ols.html#interpretation-with-controls",
@@ -10217,7 +10217,7 @@
     "href": "slides/05-ols.html#does-controlling-make-it-causal",
     "title": "Introduction to OLS",
     "section": "Does Controlling Make It Causal?",
-    "text": "Does Controlling Make It Causal?\n\n\n\nNot automatically.\n\n\n\n\nRemember the causality lectures: a causal effect is about the counterfactual\n“What would have happened to this country if its GDP were higher, but everything else stayed the same?”\nThat’s not a question about the best fit line — it’s an assumption about the data generating process"
+    "text": "Does Controlling Make It Causal?\n\n\n\n\n\nRemember the causality lectures: a causal effect is about the counterfactual\n“What would have happened to this country if its GDP were higher, but everything else was held constant?”"
   },
   {
     "objectID": "slides/05-ols.html#when-can-we-make-causal-claims",
@@ -10231,7 +10231,7 @@
     "href": "slides/05-ols.html#where-do-good-reasons-come-from",
     "title": "Introduction to OLS",
     "section": "Where Do Good Reasons Come From?",
-    "text": "Where Do Good Reasons Come From?\n\n\n\nThey rely on the data generating process — how the data came to be:\n\n\n\n\nRandomized experiments: we controlled assignment, so treatment and control are comparable by design\nDifference-in-Differences: we use time variation and assume parallel trends\nRegression Discontinuity: we exploit a cutoff that creates quasi-random assignment\nInstrumental Variables: we find an exogenous source of variation\n\n\n\n\n\nAll of these use regression to estimate effects — but the causal claim comes from the design, not the model."
+    "text": "Where Do Good Reasons Come From?\n\n\n\nThey rely on the data generating process that led some units to be treated\n\n\n\n\nRandomized experiments: we controlled assignment ourselves\nRegression Discontinuity: we exploit a random cutoff\nInstrumental Variables: we find an exogenous source of variation\nDifference in Differences: We find a comparable group and look at differences in changes"
   },
   {
     "objectID": "slides/05-ols.html#the-full-workflow",
@@ -10245,14 +10245,14 @@
     "href": "slides/05-ols.html#what-each-piece-means",
     "title": "Introduction to OLS",
     "section": "What Each Piece Means",
-    "text": "What Each Piece Means\n\n\n\n\nEstimate: the intercept and slope — our best guesses of \\(\\alpha\\) and \\(\\beta\\)\nStd. Error: how precise our estimate is (more on this in the uncertainty lecture)\nPr(&gt;|t|): p-value — how likely we’d see an estimate this large if the true value were zero (also uncertainty lecture)\nR-squared: fraction of variation in \\(Y\\) explained by \\(X\\) (0 = nothing, 1 = everything)\n\n\n\n\nFor today, focus on the Estimate column."
+    "text": "What Each Piece Means\n\n\n\n\nEstimate: the intercept and slope are our best guesses of \\(\\alpha\\) and \\(\\beta\\)\nStd. Error: the standard deviation of the sampling distribution of our estimates\nPr(&gt;|t|): how likely we’d see an estimate this large if the true value were zero\nR-squared: fraction of variation in \\(Y\\) explained by \\(Xs\\) (0 = nothing, 1 = everything)"
   },
   {
     "objectID": "slides/05-ols.html#interpreting-the-slope",
     "href": "slides/05-ols.html#interpreting-the-slope",
     "title": "Introduction to OLS",
     "section": "Interpreting the Slope",
-    "text": "Interpreting the Slope\n\ncoef(model)\n\n(Intercept)         gdp \n 54.6994253   0.4204093 \n\n\n\n\nInterpretation: “A $1,000 increase in GDP per capita is associated with a 0.42 year increase in life expectancy.”\n\n\nOr: “A $10,000 increase in GDP is associated with a 4.2 year increase in life expectancy.”"
+    "text": "Interpreting the Slope\n\ncoef(model)\n\n(Intercept)         gdp \n 54.6994253   0.4204093 \n\n\n\n\nInterpretation: “A one unit ($1k) increase in GDP per capita is associated with a 0.42 year increase in life expectancy.”\n\n\nOr: “A $10k increase in GDP is associated with a 4.2 year increase in life expectancy.”"
   },
   {
     "objectID": "slides/05-ols.html#clean-output-with-modelsummary",
@@ -10273,14 +10273,14 @@
     "href": "slides/05-ols.html#what-regression-gives-you",
     "title": "Introduction to OLS",
     "section": "What Regression Gives You",
-    "text": "What Regression Gives You\n\n\n\n\nA best guess of \\(Y\\) for any value of \\(X\\) (prediction)\nA slope that tells you how \\(Y\\) changes when \\(X\\) changes (association)\nThe ability to control for other variables (reducing omitted variable bias)\nA framework that everything else in this course builds on"
+    "text": "What Regression Gives You\n\n\n\n\nA best (linear) guess of \\(Y\\) for any value of \\(X\\) (prediction)\nA slope that tells you how \\(Y\\) changes when \\(X\\) changes (association)\nThe ability to control for other variables, or hold them constant"
   },
   {
     "objectID": "slides/05-ols.html#what-regression-does-not-give-you",
     "href": "slides/05-ols.html#what-regression-does-not-give-you",
     "title": "Introduction to OLS",
     "section": "What Regression Does NOT Give You",
-    "text": "What Regression Does NOT Give You\n\n\n\n\nCausality does not come from the model — it comes from the research design\nThe best fit line can be wrong if the relationship isn’t linear — but in practice OLS is surprisingly robust\nControls only help if you’ve identified the right confounders (think about your DAGs!)\n\n\n\n\n\n\nhttps://carolina-torreblanca.github.io/psci3200-globaldev-main/"
+    "text": "What Regression Does NOT Give You\n\n\n\n\nCausality does not come from the model, it comes from the persuasivness of your research design\nA theory of the world! Controls only help if you’ve identified the right confounders (think about your DAGs!)\n\n\n\n\n\n\nhttps://carolina-torreblanca.github.io/psci3200-globaldev-main/"
   },
   {
     "objectID": "workshops/lees_R_doc.html",
@@ -10358,5 +10358,19 @@
     "title": "Live R Coding Session",
     "section": "Averaged Z-Scores",
     "text": "Averaged Z-Scores\n\n## Find participation measures that are based on likert\n# baseline\nbcols = grep(\"^q13_.*_baseline$\", names(dat), value = T)\ndat[, paste0(bcols, \"_st\")] = dat[, bcols]\nbcols = paste0(bcols,\"_st\")\n\n# endline\necols = grep(\"^q13_[1-7]_\\\\d$\", names(dat), value = T)\ndat[, paste0(ecols, \"_st\")] = dat[, ecols]\necols = paste0(ecols,\"_st\")\n\n\n# Create treatment variable\ndat = dat %&gt;% mutate(moved = case_when(home_region == \"Addis Ababa\" ~ 0, TRUE ~ 1) )\n\n# clean q13_\nlevels = c(\"Never\", \"Once or Twice\", \"More than twice\", \"More than 5 times\", \n           \"More than 10 times\")\ndat = dat %&gt;% \n  mutate(across(c(bcols), \n                .fns = ~ factor(.x, levels = levels)))\n\n# Create z-score function from Kling, Liberman, and Katz (2007)\nz_score = function(x, y){\n  # calculate mean and sd of control group\n  c_mean = mean( as.numeric( unlist(x[, y])) , na.rm = T)\n  c_sd = sd( as.numeric( unlist(x[, y])) , na.rm = T)\n  # subtract control group mean; divide by control group SD\n  ( as.numeric(x[, y, drop = TRUE]) - c_mean) / c_sd\n}\n\n# calculate z-scores\nfor (i in c(bcols, ecols)) {\n  dat[,i] = z_score(dat, i)\n}\n\ndat = dat %&gt;% \n  rowwise() %&gt;% \n  mutate( z_participation_end = mean(c_across(all_of(bcols)), na.rm = TRUE)) %&gt;% \n  mutate( z_participation_base = mean(c_across(all_of(ecols)), na.rm = TRUE)) %&gt;%\n  ungroup()\n\n\nregd = dat %&gt;% select(z_participation_end, z_participation_base, moved, response_id ) %&gt;%\n  pivot_longer(cols = c(z_participation_end, z_participation_base),\n               names_to = \"time\",\n               values_to = \"z_participation\") %&gt;%\n  mutate(time = case_when(time == \"z_participation_end\" ~ 1,\n                          TRUE ~ 0))\n\nmodels &lt;- list()\nmodels[['Bivariate']] = lm(z_participation ~ moved, regd)\nmodels[['Multivariate']] = lm(z_participation ~ moved + time, regd)\nmodels[['Interaction']] = lm(z_participation ~ moved + time + moved*time, regd)\n\nmodelsummary(\n  models,\n  estimate  = \"{estimate}{stars} ({std.error})\",\n             statistic = NULL,\n  gof_omit = 'IC|RMSE|Log|F|R2$|Std.')\n\n\n\n\n\nBivariate\nMultivariate\nInteraction\n\n\n\n\n(Intercept)\n-0.159*** (0.026)\n-0.156*** (0.030)\n-0.156*** (0.037)\n\n\nmoved\n0.247*** (0.032)\n0.247*** (0.032)\n0.247*** (0.046)\n\n\ntime\n\n-0.004 (0.031)\n-0.005 (0.052)\n\n\nmoved x time\n\n\n0.001 (0.065)\n\n\nNum.Obs.\n1597\n1597\n1597\n\n\nR2 Adj.\n0.035\n0.034\n0.034"
+  },
+  {
+    "objectID": "slides/05-ols.html#thing-2-how-much-does-y-change-when-x-changes",
+    "href": "slides/05-ols.html#thing-2-how-much-does-y-change-when-x-changes",
+    "title": "Introduction to OLS",
+    "section": "Thing 2: How Much Does Y Change when X changes?",
+    "text": "Thing 2: How Much Does Y Change when X changes?\n\n\n\n“When X goes up by one unit, how much does Y change?”\n\n\n\n\nIf GDP per capita increases by one unit\nHow many more years of life expectancy should we expect?\nThis is the slope\nMaybe the causal effect of X on Y, depends…"
+  },
+  {
+    "objectID": "slides/05-ols.html#visualize-the-dag",
+    "href": "slides/05-ols.html#visualize-the-dag",
+    "title": "Introduction to OLS",
+    "section": "Visualize the DAG",
+    "text": "Visualize the DAG"
   }
 ]

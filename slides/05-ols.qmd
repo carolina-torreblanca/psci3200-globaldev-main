@@ -46,16 +46,15 @@ options(scipen = 999)
 \
 
 ::: {.fragment}
-Almost every empirical paper you've read in this course uses **linear regression**.
+Almost every empirical paper in this course uses **linear regression**
 :::
 
 ::: {.fragment}
 ::: {.incremental}
-- Comparing a treatment group to a control group? **Regression.**
-- Controlling for confounders? **Regression.**
-- Fixed effects? **Regression** with extra variables.
-- Difference-in-Differences? **Regression** with an interaction term.
-- Your final project? **Regression.**
+- Comparing a treatment group to a control group? **Regression**
+- Fixed effects? **Regression** with dummies as controls
+- Fancy Difference-in-Differences? **Regression** with an interaction term
+- Your final project? Likely **Regression**
 :::
 :::
 
@@ -68,12 +67,9 @@ For your final projects, you need to:
 :::
 
 ::: {.fragment}
-::: {.incremental}
-1. Estimate a relationship between variables
-2. Control for things that might confound that relationship
+1. Come up with a research question
+2. Answer it with data
 3. Present and interpret your results
-4. All of this is regression
-:::
 :::
 
 ::: {.fragment}
@@ -96,11 +92,11 @@ Today: what regression actually does, and how to use it.
 ::: {.incremental}
 - If I tell you a country's GDP per capita is $10,000...
 - What's your best guess for its life expectancy?
-- Regression gives you that guess — and a formula for making it
+- Regression gives a linear best guess
 :::
 :::
 
-## Thing 2: How Much Does Y Change?
+## Thing 2: How Much Does Y Change when X changes?
 
 \
 
@@ -110,15 +106,11 @@ Today: what regression actually does, and how to use it.
 
 ::: {.fragment}
 ::: {.incremental}
-- If GDP per capita increases by $1,000...
-- How many more years of life expectancy do we predict?
-- This is the **slope** — one number that summarizes the relationship
+- If GDP per capita increases by one unit
+- How many more years of life expectancy should we expect?
+- This is the **slope** 
+- *Maybe* the causal effect of X on Y, depends...
 :::
-:::
-
-::: {.fragment}
-\
-These are two sides of the same coin. The line gives you both.
 :::
 
 
@@ -135,9 +127,9 @@ $$
 $$
 
 ::: {.fragment}
-You've been doing this since the causality lectures.
+Remember the STAR experiment?
 
-**This is regression.**
+**We can estimate this with regression**
 :::
 
 
@@ -180,12 +172,10 @@ coef(lm(outcome ~ treatment, data = experiment))
 
 \
 
-::: {.incremental}
 - The intercept = the control group mean
 - The slope on `treatment` = the difference in means
 - **Regression with a binary variable IS a difference in means**
-- So you already understand the core idea — now we generalize it
-:::
+
 
 
 ## Why Not Just Use Difference-in-Means for Everything?
@@ -201,7 +191,7 @@ Because the real world is more complicated:
 - What if your key variable isn't binary? (GDP is continuous)
 - What if you need to **control** for something? (Education, geography...)
 - What if you want to compare across **multiple groups** at once?
-- Regression handles all of this. Difference-in-means can't.
+- Regression handles all of this. Difference-in-means can't
 :::
 :::
 
@@ -251,12 +241,12 @@ ggplot(countries, aes(x = gdp, y = life_exp)) +
               linewidth = 1.2, alpha = 0.7) +
   labs(x = "GDP per capita (thousands USD)",
        y = "Life expectancy (years)",
-       title = "Three candidate lines — which is best?") +
+       title = "Three candidate lines: which is best?") +
   theme_minimal(base_size = 18)
 ```
 
 ::: {.fragment}
-We need a rule for "best." That rule is **OLS**.
+We need a rule for "best line" That rule is **OLS**.
 :::
 
 
@@ -264,17 +254,15 @@ We need a rule for "best." That rule is **OLS**.
 
 \
 
-A line needs two numbers — an **intercept** and a **slope**:
+A line needs two numbers: an **intercept** and a **slope**
 
 $$
 Y_i = \alpha + \beta X_i + \epsilon_i
 $$
 
 ::: {.fragment}
-::: {.incremental}
-- $\alpha$ (**intercept**): our best guess of $Y$ when $X = 0$
+- $\alpha$ (**intercept**): value of $Y$ when $X = 0$
 - $\beta$ (**slope**): how much $Y$ changes when $X$ goes up by one unit
-:::
 :::
 
 ## What About $\epsilon$?
@@ -293,7 +281,7 @@ Life expectancy depends on a million things: healthcare, diet, war, genetics, lu
 ::: {.incremental}
 - We're only using GDP to predict life expectancy
 - Everything else lands in $\epsilon_i$ (the **error term**)
-- The error is not a mistake — it's the **gap between our simple model and complicated reality**
+- The error is the **gap between our simple model and complicated reality**
 :::
 :::
 
@@ -375,7 +363,7 @@ OLS = the line that makes these red segments as small as possible (in total).
 \
 
 ::: {.fragment}
-Imagine you are God. You get to decide how the world works.
+Imagine you are God. You get to decide how the world works
 :::
 
 ::: {.fragment}
@@ -383,12 +371,12 @@ You decree: **life expectancy = 55 + 0.4 $\times$ GDP**
 :::
 
 ::: {.fragment}
-That's the general rule. But you're a generous God — each country gets a little bit of **free will** (randomness).
+That's the general rule. But you're a generous God, each country gets a little bit of **free will** (randomness).
 :::
 
 ::: {.fragment}
 \
-**Question:** If a researcher only sees the data — not your rule — can they figure out what you decided?
+**Question:** If a researcher only sees the data can they figure out what you decided?
 :::
 
 ## You Create the World
@@ -406,7 +394,7 @@ true_slope     <- 0.4
 # Generate data for 100 countries
 n <- 100
 gdp <- runif(n, 1, 50)  # GDP in thousands of USD
-life_exp <- true_intercept + true_slope * gdp + rnorm(n, 0, 4)
+life_exp <- true_intercept + true_slope * gdp + rnorm(n, 0, 20)
 
 god_data <- data.frame(gdp, life_exp)
 ```
@@ -455,7 +443,7 @@ coef(fit)
 
 ::: {.fragment}
 \
-Not perfect — because of the free will (randomness) — but very close.
+Not perfect because of the free will (randomness) but very close.
 :::
 
 ## Different Worlds, Same Rule
@@ -470,7 +458,7 @@ par_df <- data.frame()
 for (world in 1:3) {
   set.seed(world * 10)
   g <- runif(n, 1, 50)
-  le <- true_intercept + true_slope * g + rnorm(n, 0, 4)
+  le <- true_intercept + true_slope * g + rnorm(n, 0, 20)
   f <- lm(le ~ g)
   par_df <- rbind(par_df, data.frame(
     gdp = g, life_exp = le,
@@ -561,8 +549,47 @@ What if we left something important out of the model?
 
 ::: {.fragment}
 \
-Let's play God again — but this time with **two** variables that matter.
+Let's play God again but this time with **two** variables that matter
+
+Life expectancy is going to depend on both GDP and average education BUT education depends on gdp as wel
 :::
+
+## Visualize the DAG
+
+```{r}
+#| echo: false
+#| warning: false
+library(ggdag)
+
+ovb_coords <- list(
+  x = c(GDP = 1, LifeExp = 3, Education = 2),
+  y = c(GDP = 1, LifeExp = 1, Education = 2)
+)
+
+dagify(
+  LifeExp ~ GDP + Education,
+  Education ~ GDP,
+  exposure = "GDP",
+  outcome = "LifeExp",
+  coords = ovb_coords
+) |>
+  tidy_dagitty() |>
+  node_status() |>
+  ggplot(aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_edges(edge_width = 1,
+    arrow_directed = grid::arrow(length = grid::unit(0.6, "lines"),
+                                 type = "closed")) +
+  geom_dag_point(aes(color = status), size = 22) +
+  geom_dag_text(color = "black", size = 5) +
+  scale_color_manual(values = c("gray88", "gray88"),
+                     na.value = "gray88") +
+  guides(color = "none") +
+  theme_dag() +
+  labs(title = "",
+       subtitle = "")
+```
+
+
 
 ## God's New Rule
 
@@ -593,14 +620,16 @@ God decided:
 ## What Happens If We Forget Education?
 
 ```{r}
-#| echo: false
+#| echo: true
 #| warning: false
+#| code-fold: true
+#| code-summary: "Show code"
 
 model_no_ctrl   <- lm(life_exp ~ gdp, data = ctrl)
 model_with_ctrl <- lm(life_exp ~ gdp + education, data = ctrl)
 
-modelsummary(list("GDP only" = model_no_ctrl,
-                  "GDP + Education" = model_with_ctrl),
+modelsummary(list("Life Exp" = model_no_ctrl,
+                  "Life Exp" = model_with_ctrl),
   estimate  = "{estimate}{stars} ({std.error})",
   statistic = NULL,
   gof_omit = 'IC|RMSE|Log|F|R2$|Std.')
@@ -613,48 +642,12 @@ modelsummary(list("GDP only" = model_no_ctrl,
 ::: {.incremental}
 - **Without education**: the GDP coefficient is inflated
 - **With education**: it **drops dramatically**, closer to God's truth (0.2)
-- Why? GDP and education are correlated — GDP was getting credit for education's work
+- Why? GDP and education are correlated 
+- GDP was getting credit for education's work
 - This is **omitted variable bias**
 :::
 
-## Omitted Variable Bias, Visually
 
-```{r}
-#| echo: false
-#| warning: false
-library(ggdag)
-
-ovb_coords <- list(
-  x = c(GDP = 1, LifeExp = 3, Education = 2),
-  y = c(GDP = 1, LifeExp = 1, Education = 2)
-)
-
-dagify(
-  LifeExp ~ GDP + Education,
-  Education ~ GDP,
-  exposure = "GDP",
-  outcome = "LifeExp",
-  coords = ovb_coords
-) |>
-  tidy_dagitty() |>
-  node_status() |>
-  ggplot(aes(x = x, y = y, xend = xend, yend = yend)) +
-  geom_dag_edges(edge_width = 1,
-    arrow_directed = grid::arrow(length = grid::unit(0.6, "lines"),
-                                 type = "closed")) +
-  geom_dag_point(aes(color = status), size = 22) +
-  geom_dag_text(color = "black", size = 5) +
-  scale_color_manual(values = c("#FF4136", "#0074D9"),
-                     na.value = "#7FDBFF") +
-  guides(color = "none") +
-  theme_dag() +
-  labs(title = "Education is a confounder",
-       subtitle = "It affects both GDP and life expectancy")
-```
-
-::: {.fragment}
-Without controlling for Education, the GDP $\rightarrow$ LifeExp path picks up the GDP $\rightarrow$ Education $\rightarrow$ LifeExp path too.
-:::
 
 
 ## Interpretation With Controls
@@ -686,14 +679,9 @@ Without controlling for Education, the GDP $\rightarrow$ LifeExp path picks up t
 \
 
 ::: {.fragment}
-Not automatically.
-:::
-
-::: {.fragment}
 ::: {.incremental}
 - Remember the causality lectures: a causal effect is about the **counterfactual**
-- "What **would have happened** to this country if its GDP were higher, but everything else stayed the same?"
-- That's not a question about the best fit line — it's an **assumption** about the data generating process
+- "What **would have happened** to this country if its GDP were higher, *but everything else was held constant?*"
 :::
 :::
 
@@ -712,29 +700,6 @@ We need a **good reason** for why the contrasts we're estimating are causal.
 - This is an assumption about the **world**, not about the model
 :::
 :::
-
-## Where Do Good Reasons Come From?
-
-\
-
-::: {.fragment}
-They rely on the **data generating process** — how the data came to be:
-:::
-
-::: {.fragment}
-::: {.incremental}
-- **Randomized experiments**: we controlled assignment, so treatment and control are comparable by design
-- **Difference-in-Differences**: we use time variation and assume parallel trends
-- **Regression Discontinuity**: we exploit a cutoff that creates quasi-random assignment
-- **Instrumental Variables**: we find an exogenous source of variation
-:::
-:::
-
-::: {.fragment}
-\
-All of these **use** regression to estimate effects — but the causal claim comes from the **design**, not the model.
-:::
-
 
 # Running OLS in R
 
@@ -756,15 +721,10 @@ summary(model)
 \
 
 ::: {.incremental}
-- **Estimate**: the intercept and slope — our best guesses of $\alpha$ and $\beta$
-- **Std. Error**: how precise our estimate is (more on this in the uncertainty lecture)
-- **Pr(>|t|)**: p-value — how likely we'd see an estimate this large if the true value were zero (also uncertainty lecture)
-- **R-squared**: fraction of variation in $Y$ explained by $X$ (0 = nothing, 1 = everything)
-:::
-
-::: {.fragment}
-\
-For today, focus on the **Estimate** column.
+- **Estimate**: the intercept and slope are our best guesses of $\alpha$ and $\beta$
+- **Std. Error**: the standard deviation of the sampling distribution of our estimates
+- **Pr(>|t|)**: how likely we'd see an estimate this large if the true value were zero 
+- **R-squared**: fraction of variation in $Y$ explained by $Xs$ (0 = nothing, 1 = everything)
 :::
 
 ## Interpreting the Slope
@@ -776,11 +736,11 @@ coef(model)
 
 ::: {.fragment}
 \
-**Interpretation:** "A $1,000 increase in GDP per capita is associated with a `r round(coef(model)[2], 2)` year increase in life expectancy."
+**Interpretation:** "A one unit ($1k) increase in GDP per capita is associated with a `r round(coef(model)[2], 2)` year increase in life expectancy."
 :::
 
 ::: {.fragment}
-Or: "A **$10,000** increase in GDP is associated with a **`r round(coef(model)[2] * 10, 1)`** year increase in life expectancy."
+Or: "A **$10k** increase in GDP is associated with a **`r round(coef(model)[2] * 10, 1)`** year increase in life expectancy."
 :::
 
 
@@ -818,10 +778,9 @@ ggplot(countries, aes(x = gdp, y = life_exp)) +
 \
 
 ::: {.incremental}
-1. A **best guess** of $Y$ for any value of $X$ (prediction)
+1. A **best (linear) guess** of $Y$ for any value of $X$ (prediction)
 2. A **slope** that tells you how $Y$ changes when $X$ changes (association)
-3. The ability to **control** for other variables (reducing omitted variable bias)
-4. A framework that everything else in this course builds on
+3. The ability to **control** for other variables, or hold them constant
 :::
 
 ## What Regression Does NOT Give You
@@ -829,7 +788,6 @@ ggplot(countries, aes(x = gdp, y = life_exp)) +
 \
 
 ::: {.incremental}
-- Causality does not come from the model — it comes from the **research design**
-- The best fit line can be wrong if the relationship isn't linear — but in practice OLS is surprisingly robust
-- Controls only help if you've identified the right confounders (think about your DAGs!)
+- Causality does not come from the model, it comes from the **persuasivness of your research design**
+- A theory of the world! Controls only help if you've identified the right confounders (think about your DAGs!)
 :::
