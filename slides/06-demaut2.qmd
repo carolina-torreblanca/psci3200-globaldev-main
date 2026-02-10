@@ -19,6 +19,7 @@ format:
     mermaid-format: png
     highlight-style: atom-one-dark
     code-overflow: wrap
+    code-fold: true
 ---
 
 ## Agenda
@@ -138,136 +139,321 @@ Dictatorship, Democracy, and Development [(Olson, 1993)](https://www.jstor.org/s
 
     -   Democratic competition increases deforestation!
 
+## That Correlation Again
+
+![From Acemoglu et. al. 2008](img/income_dem.png){fig-align="center"}
+
 ## Acemoglu et. al. 2008
 
 -   The criticism: correlation of democracy and development does not mean causation
 
--   Alternative: Countries embark on divergent development paths
+::: incremental
+-   Alternative: countries embark on divergent development paths
 
--   Empirical implication: Observed association is correlational
+-   Empirical implication: observed association is correlational
+:::
 
 ## Which is the correct DAG?
 
 ![](img/modernizationDAG.png)
 
-## Empirical Tests
+## The Problem
 
--   We cannot randomize development!
+- If the confounded DAG is correct, we need to control for U
 
--   We need to control for U
+- What U do the authors propose?
 
-- Is this possible?
+. . .
 
-::: incremental
+> *"The major source of potential bias in a regression of democracy on income per capita is country-­specific, historical factors influencing both political and economic development."*
 
-- ... if we are willing to add some assumptions
+- Cannot control for all historical factors individually. So what do we do?
 
-:::
+# Fixed Effects
 
-## Simpson Paradox
+## Strategy 1: Fixed Effects
 
-![](img/simpson.webp)
+> *"We utilize two strategies to investigate the causal effect of income on democracy. Our first strategy is to control for country-specific factors affecting both income and democracy by including country fixed effects"*
 
-## Democracy and Development: Empirical example
+## From Between to Within
 
-```{r rep, include=T, message=F, error=F, echo = T, tidy=TRUE}
-pacman::p_load(readxl, tidyverse,  here, estimatr)
+- The standard regression compares rich countries to poor countries (*between* variation)
 
-d <- read_xls(here("./slides/code/Income-and-Democracy-Data-AER-adjustment.xls"), sheet = 2) %>% 
-  filter(is.na(lrgdpch)==F, 
-         is.na(polity4)==F) %>% 
-  arrange(country, year) %>% 
-  group_by(country) %>% 
-  mutate(lag_dem = lag(polity4), 
-         lag_income = lag(lrgdpch)) %>% 
-  ungroup()
-# Polity2 Index
-summary(d$polity4)
-# Log real GDP per capita (PWT)
-summary(d$lrgdpch)
-```
+> *"The idea of fixed effects is to move beyond this comparison and investigate the "within-country variation," t"*
 
-## Correlation
+- When a country gets richer *than its own average*, does it become more democratic *than its own average*?
 
-```{r rep2, include=T, message=F, error=F, echo = T, tidy=T, centering = T}
+## Why Does This Matter? Simpson's Paradox
 
-ggplot(d, aes(y = polity4, x = lag_income)) +
+```{r simpson_sim, include=T, message=F, warning=F, error=F, echo=F, fig.width=10, fig.height=4.5}
+pacman::p_load(tidyverse, patchwork)
+
+set.seed(123)
+n_per <- 40
+sim <- bind_rows(
+  tibble(Group = "Group A", x = rnorm(n_per, 2, 0.6)) %>%
+    mutate(y = 2 - 0.4 * (x - 2) + rnorm(n_per, 0, 0.3)),
+  tibble(Group = "Group B", x = rnorm(n_per, 5, 0.6)) %>%
+    mutate(y = 5 - 0.4 * (x - 5) + rnorm(n_per, 0, 0.3)),
+  tibble(Group = "Group C", x = rnorm(n_per, 8, 0.6)) %>%
+    mutate(y = 8 - 0.4 * (x - 8) + rnorm(n_per, 0, 0.3))
+)
+
+p1 <- ggplot(sim, aes(x = x, y = y)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE, color = "blue", linewidth = 1.2) +
+  labs(x = "X", y = "Y", title = "Pooled: positive trend") +
+  theme_minimal(base_size = 14)
+
+p2 <- ggplot(sim, aes(x = x, y = y, color = Group)) +
   geom_point() +
-  geom_smooth(method = lm, se=F)
+  geom_smooth(method = "lm", se = FALSE, linewidth = 1) +
+  labs(x = "X", y = "Y", title = "By group: negative trends") +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "bottom")
 
+p1 + p2
 ```
 
+## Simpson's Paradox
 
-## By country
+A trend in pooled data can reverse when the data is split into groups. The overall trend is driven by differences *between* groups, not by the relationship *within* groups
 
-```{r rep4, include=T, message=F, error=F, echo = F, centering = T, tidy=TRUE}
-cty <- c("Australia", "Nigeria", "Nicaragua", "China", "France", "Jordan")
-tempo <- d %>% ungroup() %>% dplyr::filter(country %in% cty)
-ggplot(tempo,
-       aes(y = polity4, x = lrgdpch, color = country)) +
-  geom_point() +
-  geom_smooth(method = lm, se=F) 
-```
+## FE = Unit-Level Intercepts
 
-## Fixed effects
+- FE give each unit its own intercept, just like splitting by group
 
-Simple idea: control for "belonging to a group" using group-level Fixed Effects
+- The pooled regression mixes *between* and *within* variation
 
--   A way to control for *every* unobserved group characteristic that ***does not change***
+- FE isolates only *within-group* variation, which can flip conclusions
 
--  In practice: give an intercept to each group
+## Fixed Effects in Practice
 
-- Notice: only one slope!
-
-## Fixed effects
+Add a dummy variable for each country (one intercept per country, one shared slope)
 
 Go from
 
 ```{=tex}
 \begin{equation*}
-Dem_{it} = \alpha + \beta_1 Dem_{it} + \epsilon_{it}
+Dem_{it} = \alpha + \beta_1 Income_{it} + \epsilon_{it}
 \end{equation*}
 ```
 To
 
 ```{=tex}
 \begin{align*}
-Dem_{it} = &\alpha + \beta_1 Dem_{it} + \mu_1 USA + \\
+Dem_{it} = &\alpha + \beta_1 Income_{it} + \mu_1 USA + \\
 \mu_2 France & + ... \mu_n Zimbabwe + \epsilon_{it}
 \end{align*}
 ```
 
+## Why Time-Invariant Only?
 
+> *"If these omitted characteristics are, to a first approximation, time-invariant, the inclusion of fixed effects will remove them and this source of bias. "*
 
-## Empirical example
+- Colonial history and geography are in the past. They do not change. FE absorbs them
 
-```{r rep3, include=T, message=F, error=F, echo = T, tidy=TRUE}
+- But new things happen: wars, oil discoveries, coups. These change the within-country link between income and democracy in new, unexpected ways
 
-mod <- lm_robust(polity4~lag_dem + lag_income, clusters = country, data = d)
-modelsummary::modelsummary(mod, stars = T, coef_omit = "(Intercept)",  gof_omit = "AIC|BIC|Log.Lik|F|R2")
+# Applying FE to the Acemoglu Data
+
+## Load and Prepare Data
+
+```{r code_load, include=T, message=F, error=F, echo=T}
+pacman::p_load(readxl, tidyverse, here)
+
+d <- read_xls(here("./slides/code/Income-and-Democracy-Data-AER-adjustment.xls"),
+              sheet = 2) %>%
+  filter(!is.na(lrgdpch), !is.na(polity4)) %>%
+  arrange(country, year) %>%
+  group_by(country) %>%
+  mutate(lag_dem = lag(polity4),
+         lag_income = lag(lrgdpch)) %>%
+  ungroup()
+# polity4: standardized democracy score (-10 to 10)
+summary(d$polity4)
+# lrgdpch: log real GDP per capita
+summary(d$lrgdpch)
 ```
 
+Why lag? Why not current GDP? Why include lagged democracy?
 
-## Add Fixed Effects
+## Cross-Sectional Correlation
 
-```{r rep5, include=T, message=F, error=F, echo = T, tidy=TRUE}
-require(estimatr)
-mod2 <- lm_robust(polity4~lag_dem + lag_income, fixed_effects = country + year, clusters = country, data = d)
+This is the pattern that modernization theory predicts
 
-modelsummary::modelsummary(mod2, stars = T, coef_omit = "(Intercept)",  gof_omit = "AIC|BIC|Log.Lik|F|R2")
-
+```{r code_scatter, include=T, message=F, error=F, echo=T, fig.align='center'}
+ggplot(d, aes(y = polity4, x = lag_income)) +
+  geom_point(alpha = 0.3) +
+  geom_smooth(method = lm, se = FALSE) +
+  labs(x = "Lagged Log GDP per capita", y = "Polity Score") +
+  theme_bw()
 ```
+
+## OLS Regression (no FE)
+
+::: {style="font-size: 0.75em;"}
+```{r code_ols, include=T, message=F, error=F, echo=T}
+mod_ols <- lm(polity4 ~ lag_dem + lag_income, data = d)
+modelsummary::modelsummary(mod_ols, stars = TRUE,
+  coef_omit = "Intercept",
+  gof_omit = "AIC|BIC|Log.Lik|F")
+```
+:::
+
+## Adding Fixed Effects with lm
+
+::: {style="font-size: 0.7em;"}
+```{r code_fe_lm, include=T, message=F, error=F, echo=T}
+mod_fe <- lm(polity4 ~ lag_dem + lag_income +
+               factor(country) + factor(year), data = d)
+modelsummary::modelsummary(
+  list("OLS" = mod_ols, "Country + Year FE" = mod_fe),
+  stars = TRUE,
+  coef_omit = "factor|Intercept",
+  gof_omit = "AIC|BIC|Log.Lik|F|R2")
+```
+:::
+
+## What Changed?
+
+- In OLS, lag_income is positive and significant
+
+- With FE, the income coefficient drops to almost zero, not distinguishable from zero
+
+- This is Acemoglu et al.'s key finding
+
+## A Better Package: estimatr
+
+::: {style="font-size: 0.65em;"}
+```{r code_robust, include=T, message=F, error=F, echo=T}
+pacman::p_load(estimatr)
+# cluster-robust SEs + efficient FE
+mod_robust <- lm_robust(polity4 ~ lag_dem + lag_income,
+  fixed_effects = country + year,
+  clusters = country, data = d)
+modelsummary::modelsummary(mod_robust, stars = TRUE,
+  coef_omit = "Intercept",
+  gof_omit = "AIC|BIC|Log.Lik|F|R2")
+```
+:::
+
+## Visualizing FE in Our Data
+
+```{r simpson_data, include=T, message=F, warning=F, error=F, echo=F, fig.width=10, fig.height=5}
+cty <- c("Australia", "Nigeria", "Nicaragua", "China", "France", "Jordan")
+tempo <- d %>% filter(country %in% cty)
+
+# FE slope from the full specification (country + year FE + lag_dem control)
+full_fe_mod <- lm(polity4 ~ lag_dem + lag_income +
+                    factor(country) + factor(year), data = d)
+fe_slope <- coef(full_fe_mod)["lag_income"]
+
+cty_means <- tempo %>%
+  group_by(country) %>%
+  summarise(mean_x = mean(lrgdpch, na.rm = TRUE),
+            mean_y = mean(polity4, na.rm = TRUE))
+cty_means <- cty_means %>%
+  mutate(intercept = mean_y - fe_slope * mean_x)
+
+p_pooled <- ggplot(d, aes(x = lrgdpch, y = polity4)) +
+  geom_point(alpha = 0.15, size = 0.8) +
+  geom_smooth(method = "lm", se = FALSE, color = "blue", linewidth = 1.2) +
+  labs(x = "Log GDP per capita", y = "Polity Score",
+       title = "Pooled OLS: positive slope") +
+  theme_minimal(base_size = 14)
+
+p_fe <- ggplot(tempo, aes(x = lrgdpch, y = polity4, color = country)) +
+  geom_point(size = 2, alpha = 0.7) +
+  geom_abline(data = cty_means,
+              aes(slope = fe_slope, intercept = intercept, color = country),
+              linewidth = 1) +
+  labs(x = "Log GDP per capita", y = "Polity Score",
+       title = "Country FE") +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "bottom", legend.title = element_blank())
+
+p_pooled + p_fe
+```
+
+## Why Are Rich Countries Democratic?
+
+> *"These results naturally raise the following important question: why is there a cross-sectional correlation between income and democracy? In other words, why are rich countries democratic today?"*
+
+## The Authors' Answer
+
+> *"At a statistical level, the answer is clear: even though there is no relationship between changes in income and democracy in the postwar era or over the past 100 years or so, there is a positive association over the past 500 years. "*
+
+## Historical Roots of the Correlation
+
+> *"In particular, for the whole world sample, the positive association is considerably weakened when we control for date of independence, early constraints on the executive, and religion. "*
+
+## Do We Buy It?
+
+- Acemoglu et al.'s claim: the income-democracy correlation reflects deep historical divergence, not a modern causal effect of income on democracy
+
+- What do you think? Is this convincing?
+
+- What would it take to change your mind?
 
 ## Summing up
 
--   Good theoretical reasons to think
+-   Good theoretical reasons to think democracy is causally related to development
 
-    -   Democracy is causally related to development
+-   Most extant work focuses on micro, sub-national dynamics
 
--   Most extant work focuses on the micro, sub national dynamics
+-   Fixed effects control for **time-invariant** unobserved confounders
 
--   But the broad theoretical argument is old!
+-   If confounders change over time, FE cannot help
 
--   Fixed effects can help control for **time invariant** unobserved confounders
+# Appendix: Instrumental Variables {visibility="uncounted"}
 
--   If we think confounders might change in time (which they often do!) then FE cannot help
+## Strategy 2: Instrumental Variables
+
+> *"Our second strategy is to use instrumental-variables (IV) regressions to estimate the impact of income on democracy"*
+
+- When FE is not enough (time-varying confounders remain), IV provides another approach
+
+- Core idea: find a variable Z that shifts income but has no direct effect on democracy
+
+## IV Intuition
+
+- We need a variable Z (the "instrument") that:
+    1. Is correlated with income (relevance)
+    2. Affects democracy *only* through income (exclusion restriction)
+
+- Z isolates the part of income variation that is "as-if random"
+
+- Acemoglu et al. use **trade-weighted world income** as instrument: global economic shocks shift a country's income but arguably do not directly cause democratization
+
+## The Exclusion Restriction
+
+- The critical assumption: Z affects democracy ONLY through income
+
+$$Z \rightarrow Income \rightarrow Democracy$$
+
+- There must be **no direct arrow** from Z to Democracy
+
+- This is untestable; it must be argued on substantive grounds
+
+- If the exclusion restriction fails, IV estimates are biased
+
+## IV in Acemoglu et al.
+
+- Instrument: trade-weighted world income
+
+- Logic: when your trading partners get richer, your income goes up (relevance)
+
+- Exclusion: your partners' income growth does not directly change your political institutions
+
+- Result: IV estimates also show no causal effect of income on democracy
+
+## Limitations of IV
+
+- Exclusion restriction is never testable
+
+- Results depend heavily on instrument choice
+
+- IV estimates a *local* effect (for observations affected by the instrument)
+
+- Combined with FE evidence, strengthens the case against modernization theory

@@ -1439,7 +1439,7 @@
     "href": "slides/06-demaut2.html#acemoglu-et.-al.-2008",
     "title": "Democracy and Development",
     "section": "Acemoglu et. al. 2008",
-    "text": "Acemoglu et. al. 2008\n\nThe criticism: correlation of democracy and development does not mean causation\nAlternative: Countries embark on divergent development paths\nEmpirical implication: Observed association is correlational"
+    "text": "Acemoglu et. al. 2008\n\nThe criticism: correlation of democracy and development does not mean causation\n\n\n\nAlternative: countries embark on divergent development paths\nEmpirical implication: observed association is correlational"
   },
   {
     "objectID": "slides/06-demaut2.html#which-is-the-correct-dag",
@@ -1516,7 +1516,7 @@
     "href": "slides/06-demaut2.html#summing-up",
     "title": "Democracy and Development",
     "section": "Summing up",
-    "text": "Summing up\n\nGood theoretical reasons to think\n\nDemocracy is causally related to development\n\nMost extant work focuses on the micro, sub national dynamics\nBut the broad theoretical argument is old!\nFixed effects can help control for time invariant unobserved confounders\nIf we think confounders might change in time (which they often do!) then FE cannot help"
+    "text": "Summing up\n\nGood theoretical reasons to think democracy is causally related to development\nMost extant work focuses on micro, sub-national dynamics\nFixed effects control for time-invariant unobserved confounders\nIf confounders change over time, FE cannot help"
   },
   {
     "objectID": "slides/16-democracy3.html#assignments",
@@ -10372,5 +10372,236 @@
     "title": "Introduction to OLS",
     "section": "Visualize the DAG",
     "text": "Visualize the DAG"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#the-problem",
+    "href": "slides/06-demaut2.html#the-problem",
+    "title": "Democracy and Development",
+    "section": "The Problem",
+    "text": "The Problem\n\nIf the confounded DAG is correct, we need to control for U\nWhat U do the authors propose?\n\n\n\n“The major source of potential bias in a regression of democracy on income per capita is country-­specific, historical factors influencing both political and economic development.”\n\n\nCannot control for all historical factors individually. So what do we do?"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#simpsons-paradox",
+    "href": "slides/06-demaut2.html#simpsons-paradox",
+    "title": "Democracy and Development",
+    "section": "Simpson’s Paradox",
+    "text": "Simpson’s Paradox\nA trend in pooled data can reverse when the data is split into groups. The overall trend is driven by differences between groups, not by the relationship within groups"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#strategy-1-fixed-effects",
+    "href": "slides/06-demaut2.html#strategy-1-fixed-effects",
+    "title": "Democracy and Development",
+    "section": "Strategy 1: Fixed Effects",
+    "text": "Strategy 1: Fixed Effects\n\n“We utilize two strategies to investigate the causal effect of income on democracy. Our first strategy is to control for country-specific factors affecting both income and democracy by including country fixed effects”"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#from-between-to-within",
+    "href": "slides/06-demaut2.html#from-between-to-within",
+    "title": "Democracy and Development",
+    "section": "From Between to Within",
+    "text": "From Between to Within\n\nThe standard regression compares rich countries to poor countries (between variation)\n\n\n“The idea of fixed effects is to move beyond this comparison and investigate the”within-country variation,” t”\n\n\nWhen a country gets richer than its own average, does it become more democratic than its own average?"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#visualizing-within",
+    "href": "slides/06-demaut2.html#visualizing-within",
+    "title": "Democracy and Development",
+    "section": "Visualizing “Within”",
+    "text": "Visualizing “Within”\nEach country has a different average income and democracy level. FE removes these differences by subtracting each country’s mean, so all countries overlap at the center. What remains is only the within-country variation over time."
+  },
+  {
+    "objectID": "slides/06-demaut2.html#fixed-effects-in-practice",
+    "href": "slides/06-demaut2.html#fixed-effects-in-practice",
+    "title": "Democracy and Development",
+    "section": "Fixed Effects in Practice",
+    "text": "Fixed Effects in Practice\nAdd a dummy variable for each country (one intercept per country, one shared slope)\nGo from\n\\[\\begin{equation*}\nDem_{it} = \\alpha + \\beta_1 Income_{it} + \\epsilon_{it}\n\\end{equation*}\\]\nTo\n\\[\\begin{align*}\nDem_{it} = &\\alpha + \\beta_1 Income_{it} + \\mu_1 USA + \\\\\n\\mu_2 France & + ... \\mu_n Zimbabwe + \\epsilon_{it}\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#visualizing-fixed-effects",
+    "href": "slides/06-demaut2.html#visualizing-fixed-effects",
+    "title": "Democracy and Development",
+    "section": "Visualizing Fixed Effects",
+    "text": "Visualizing Fixed Effects"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#load-and-prepare-data",
+    "href": "slides/06-demaut2.html#load-and-prepare-data",
+    "title": "Democracy and Development",
+    "section": "Load and Prepare Data",
+    "text": "Load and Prepare Data\n\n\nCode\npacman::p_load(readxl, tidyverse, here)\n\nd &lt;- read_xls(here(\"./slides/code/Income-and-Democracy-Data-AER-adjustment.xls\"),\n              sheet = 2) %&gt;%\n  filter(!is.na(lrgdpch), !is.na(polity4)) %&gt;%\n  arrange(country, year) %&gt;%\n  group_by(country) %&gt;%\n  mutate(lag_dem = lag(polity4),\n         lag_income = lag(lrgdpch)) %&gt;%\n  ungroup()\n# polity4: standardized democracy score (-10 to 10)\nsummary(d$polity4)\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  0.000   0.150   0.700   0.573   0.950   1.000 \n\n\nCode\n# lrgdpch: log real GDP per capita\nsummary(d$lrgdpch)\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  6.094   7.297   8.149   8.167   8.960  10.413 \n\n\nWhy lag? Why not current GDP? Why include lagged democracy?"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#cross-sectional-correlation",
+    "href": "slides/06-demaut2.html#cross-sectional-correlation",
+    "title": "Democracy and Development",
+    "section": "Cross-Sectional Correlation",
+    "text": "Cross-Sectional Correlation\nThis is the pattern that modernization theory predicts\n\n\nCode\nggplot(d, aes(y = polity4, x = lag_income)) +\n  geom_point(alpha = 0.3) +\n  geom_smooth(method = lm, se = FALSE) +\n  labs(x = \"Lagged Log GDP per capita\", y = \"Polity Score\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#ols-without-fixed-effects",
+    "href": "slides/06-demaut2.html#ols-without-fixed-effects",
+    "title": "Democracy and Development",
+    "section": "OLS without Fixed Effects",
+    "text": "OLS without Fixed Effects\n\nmod &lt;- lm_robust(polity4 ~ lag_dem + lag_income, clusters = country, data = d)\nmodelsummary::modelsummary(mod, stars = TRUE, coef_omit = \"(Intercept)\", gof_omit = \"AIC|BIC|Log.Lik|F|R2\")\n\n\n\n\n\nModel 1\n\n\n\n\nlag_dem\n0.742***\n\n\n\n(0.032)\n\n\nlag_income\n0.063***\n\n\n\n(0.010)\n\n\nNum.Obs.\n900\n\n\nse_type\nCR2\n\n\n\n + p\n\n\n\n\n\n\n\n\n\nlag_income is positive and significant. Supports modernization theory?"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#adding-fixed-effects",
+    "href": "slides/06-demaut2.html#adding-fixed-effects",
+    "title": "Democracy and Development",
+    "section": "Adding Fixed Effects",
+    "text": "Adding Fixed Effects\n\nmod2 &lt;- lm_robust(polity4 ~ lag_dem + lag_income, fixed_effects = country + year,\n    clusters = country, data = d)\nmodelsummary::modelsummary(mod2, stars = TRUE, coef_omit = \"(Intercept)\", gof_omit = \"AIC|BIC|Log.Lik|F|R2\")\n\n\n\n\n\nModel 1\n\n\n\n\nlag_dem\n0.431***\n\n\n\n(0.054)\n\n\nlag_income\n0.005\n\n\n\n(0.033)\n\n\nNum.Obs.\n900\n\n\nse_type\nCR2\n\n\n\n + p\n\n\n\n\n\n\n\n\n\nThe income coefficient drops. Once we account for time-invariant country characteristics, the income-democracy link weakens. This is Acemoglu et al.’s key finding."
+  },
+  {
+    "objectID": "slides/06-demaut2.html#strategy-2-instrumental-variables",
+    "href": "slides/06-demaut2.html#strategy-2-instrumental-variables",
+    "title": "Democracy and Development",
+    "section": "Strategy 2: Instrumental Variables",
+    "text": "Strategy 2: Instrumental Variables\n\n“Our second strategy is to use instrumental-variables (IV) regressions to estimate the impact of income on democracy”\n\n\nWhen FE is not enough (time-varying confounders remain), IV provides another approach\nCore idea: find a variable Z that shifts income but has no direct effect on democracy"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#iv-intuition",
+    "href": "slides/06-demaut2.html#iv-intuition",
+    "title": "Democracy and Development",
+    "section": "IV Intuition",
+    "text": "IV Intuition\n\nWe need a variable Z (the “instrument”) that:\n\nIs correlated with income (relevance)\nAffects democracy only through income (exclusion restriction)\n\nZ isolates the part of income variation that is “as-if random”\nAcemoglu et al. use trade-weighted world income as instrument: global economic shocks shift a country’s income but arguably do not directly cause democratization"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#the-exclusion-restriction",
+    "href": "slides/06-demaut2.html#the-exclusion-restriction",
+    "title": "Democracy and Development",
+    "section": "The Exclusion Restriction",
+    "text": "The Exclusion Restriction\n\nThe critical assumption: Z affects democracy ONLY through income\n\n\\[Z \\rightarrow Income \\rightarrow Democracy\\]\n\nThere must be no direct arrow from Z to Democracy\nThis is untestable; it must be argued on substantive grounds\nIf the exclusion restriction fails, IV estimates are biased"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#why-are-rich-countries-democratic",
+    "href": "slides/06-demaut2.html#why-are-rich-countries-democratic",
+    "title": "Democracy and Development",
+    "section": "Why Are Rich Countries Democratic?",
+    "text": "Why Are Rich Countries Democratic?\n\n“These results naturally raise the following important question: why is there a cross-sectional correlation between income and democracy? In other words, why are rich countries democratic today?”"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#historical-roots-of-the-correlation",
+    "href": "slides/06-demaut2.html#historical-roots-of-the-correlation",
+    "title": "Democracy and Development",
+    "section": "Historical Roots of the Correlation",
+    "text": "Historical Roots of the Correlation\n\n“In particular, for the whole world sample, the positive association is considerably weakened when we control for date of independence, early constraints on the executive, and religion.”"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#simpsons-paradox-1",
+    "href": "slides/06-demaut2.html#simpsons-paradox-1",
+    "title": "Democracy and Development",
+    "section": "Simpson’s Paradox",
+    "text": "Simpson’s Paradox\nSimpson’s paradox occurs when a trend in pooled data reverses or disappears when the data is split into groups\nIn the pooled data, X and Y are positively correlated. But within each group, the relationship is negative. The overall trend is driven by differences between groups, not by the relationship within groups"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#ols-regression-no-fe",
+    "href": "slides/06-demaut2.html#ols-regression-no-fe",
+    "title": "Democracy and Development",
+    "section": "OLS Regression (no FE)",
+    "text": "OLS Regression (no FE)\n\n\n\nCode\nmod_ols &lt;- lm(polity4 ~ lag_dem + lag_income, data = d)\nmodelsummary::modelsummary(mod_ols, stars = TRUE,\n  coef_omit = \"Intercept\",\n  gof_omit = \"AIC|BIC|Log.Lik|F\")\n\n\n\n\n\n\nModel 1\n\n\n\n\nlag_dem\n0.742***\n\n\n\n(0.021)\n\n\nlag_income\n0.063***\n\n\n\n(0.008)\n\n\nNum.Obs.\n900\n\n\nR2\n0.746\n\n\nR2 Adj.\n0.746\n\n\n\n + p"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#adding-fixed-effects-with-lm",
+    "href": "slides/06-demaut2.html#adding-fixed-effects-with-lm",
+    "title": "Democracy and Development",
+    "section": "Adding Fixed Effects with lm",
+    "text": "Adding Fixed Effects with lm\n\n\n\nCode\nmod_fe &lt;- lm(polity4 ~ lag_dem + lag_income +\n               factor(country) + factor(year), data = d)\nmodelsummary::modelsummary(\n  list(\"OLS\" = mod_ols, \"Country + Year FE\" = mod_fe),\n  stars = TRUE,\n  coef_omit = \"factor|Intercept\",\n  gof_omit = \"AIC|BIC|Log.Lik|F|R2\")\n\n\n\n\n\n\nOLS\nCountry + Year FE\n\n\n\n\nlag_dem\n0.742***\n0.431***\n\n\n\n(0.021)\n(0.034)\n\n\nlag_income\n0.063***\n0.005\n\n\n\n(0.008)\n(0.027)\n\n\nNum.Obs.\n900\n900\n\n\n\n + p"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#what-changed",
+    "href": "slides/06-demaut2.html#what-changed",
+    "title": "Democracy and Development",
+    "section": "What Changed?",
+    "text": "What Changed?\n\nIn OLS, lag_income is positive and significant\nWith FE, the income coefficient drops to almost zero, not distinguishable from zero\nThis is Acemoglu et al.’s key finding"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#a-better-package-estimatr",
+    "href": "slides/06-demaut2.html#a-better-package-estimatr",
+    "title": "Democracy and Development",
+    "section": "A Better Package: estimatr",
+    "text": "A Better Package: estimatr\n\n\n\nCode\npacman::p_load(estimatr)\n# cluster-robust SEs + efficient FE\nmod_robust &lt;- lm_robust(polity4 ~ lag_dem + lag_income,\n  fixed_effects = country + year,\n  clusters = country, data = d)\nmodelsummary::modelsummary(mod_robust, stars = TRUE,\n  coef_omit = \"Intercept\",\n  gof_omit = \"AIC|BIC|Log.Lik|F|R2\")\n\n\n\n\n\n\nModel 1\n\n\n\n\nlag_dem\n0.431***\n\n\n\n(0.054)\n\n\nlag_income\n-0.005\n\n\n\n(0.033)\n\n\nNum.Obs.\n900\n\n\nse_type\nCR2\n\n\n\n + p"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#simpsons-paradox-in-our-data",
+    "href": "slides/06-demaut2.html#simpsons-paradox-in-our-data",
+    "title": "Democracy and Development",
+    "section": "Simpson’s Paradox in Our Data",
+    "text": "Simpson’s Paradox in Our Data"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#iv-in-acemoglu-et-al.",
+    "href": "slides/06-demaut2.html#iv-in-acemoglu-et-al.",
+    "title": "Democracy and Development",
+    "section": "IV in Acemoglu et al.",
+    "text": "IV in Acemoglu et al.\n\nInstrument: trade-weighted world income\nLogic: when your trading partners get richer, your income goes up (relevance)\nExclusion: your partners’ income growth does not directly change your political institutions\nResult: IV estimates also show no causal effect of income on democracy"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#limitations-of-iv",
+    "href": "slides/06-demaut2.html#limitations-of-iv",
+    "title": "Democracy and Development",
+    "section": "Limitations of IV",
+    "text": "Limitations of IV\n\nExclusion restriction is never testable\nResults depend heavily on instrument choice\nIV estimates a local effect (for observations affected by the instrument)\nCombined with FE evidence, strengthens the case against modernization theory"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#why-does-this-matter-simpsons-paradox",
+    "href": "slides/06-demaut2.html#why-does-this-matter-simpsons-paradox",
+    "title": "Democracy and Development",
+    "section": "Why Does This Matter? Simpson’s Paradox",
+    "text": "Why Does This Matter? Simpson’s Paradox"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#fe-unit-level-intercepts",
+    "href": "slides/06-demaut2.html#fe-unit-level-intercepts",
+    "title": "Democracy and Development",
+    "section": "FE = Unit-Level Intercepts",
+    "text": "FE = Unit-Level Intercepts\n\nFE give each unit its own intercept, just like splitting by group\nThe pooled regression mixes between and within variation\nFE isolates only within-group variation, which can flip conclusions"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#visualizing-fe-in-our-data",
+    "href": "slides/06-demaut2.html#visualizing-fe-in-our-data",
+    "title": "Democracy and Development",
+    "section": "Visualizing FE in Our Data",
+    "text": "Visualizing FE in Our Data"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#the-answer",
+    "href": "slides/06-demaut2.html#the-answer",
+    "title": "Democracy and Development",
+    "section": "The Answer",
+    "text": "The Answer\n\n“At a statistical level, the answer is clear: even though there is no relationship between changes in income and democracy in the postwar era or over the past 100 years or so, there is a positive association over the past 500 years.”"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#do-we-buy-it",
+    "href": "slides/06-demaut2.html#do-we-buy-it",
+    "title": "Democracy and Development",
+    "section": "Do We Buy It?",
+    "text": "Do We Buy It?\n\nAcemoglu et al.’s claim: the income-democracy correlation reflects deep historical divergence, not a modern causal effect of income on democracy\nWhat do you think? Is this convincing?\nWhat would it take to change your mind?"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#the-authors-answer",
+    "href": "slides/06-demaut2.html#the-authors-answer",
+    "title": "Democracy and Development",
+    "section": "The Authors’ Answer",
+    "text": "The Authors’ Answer\n\n“At a statistical level, the answer is clear: even though there is no relationship between changes in income and democracy in the postwar era or over the past 100 years or so, there is a positive association over the past 500 years.”"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#why-time-invariant-only",
+    "href": "slides/06-demaut2.html#why-time-invariant-only",
+    "title": "Democracy and Development",
+    "section": "Why Time-Invariant Only?",
+    "text": "Why Time-Invariant Only?\n\n“If these omitted characteristics are, to a first approximation, time-invariant, the inclusion of fixed effects will remove them and this source of bias.”\n\n\nColonial history and geography are in the past. They do not change. FE absorbs them\nBut new things happen: wars, oil discoveries, coups. These change the within-country link between income and democracy in new, unexpected ways"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#that-correlation-again",
+    "href": "slides/06-demaut2.html#that-correlation-again",
+    "title": "Democracy and Development",
+    "section": "That Correlation Again",
+    "text": "That Correlation Again\n\nFrom Acemoglu et. al. 2008"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#one-intercept-two-chiles",
+    "href": "slides/06-demaut2.html#one-intercept-two-chiles",
+    "title": "Democracy and Development",
+    "section": "One Intercept, Two Chiles",
+    "text": "One Intercept, Two Chiles\n\n\\(\\mu_{Chile}\\) is one number. It cannot separate the coup from the effect of income"
   }
 ]

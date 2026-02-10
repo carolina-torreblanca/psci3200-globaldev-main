@@ -24,6 +24,10 @@ date: 2026-02-01
 
 -   [Slides](/slides/06-demaut2.html)
 
+## Data
+
+- [Income and Democracy Dataset (Acemoglu et al. 2008)](/slides/code/Income-and-Democracy-Data-AER-adjustment.xls)
+
 ## Interesting Stuff (non-required)
 
 - A simple explanation of why we use Fixed Effects [here](https://theeffectbook.net/ch-FixedEffects.html)
