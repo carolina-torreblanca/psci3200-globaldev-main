@@ -9,8 +9,8 @@ week,date,date_end,title,deadline, reading,content,tutorial,assignment
 5,2/9/26,,Introduction to OLS,,DSS Ch 4,/materials/05_ols,,
 5,2/11/26,,Democracy and Development,,"Acemoglu et. al., 2008",/materials/06_autocracy2,,
 6,2/16/26,,Final Project Overview,,No readings,/materials/08_final_project,,/assignments/02_gitrepo
-6,2/18/26,,Representation and Accountability,,"Manin, Przeworski, and Stokes, 1999; Ferraz and Finan, 2011",/materials/c1_accountability,,/assignments/03_fprqd
-7,2/23/26,,Representation and Accountability Reconsidered,,Dunning et. al. 2019,/materials/c2_accountability,,
+6,2/18/26,,Representation and Accountability,,"Björkman and Svensson, 2009",/materials/c1_accountability,,/assignments/03_fprqd
+7,2/23/26,,Accountability: Scope Conditions,,"Ferraz and Finan, 2011; Chong et. al., 2015",/materials/c2_accountability,,
 7,2/25/26,,Github Workshop,,No readings,/materials/12_github,,
 8,3/2/26,,Github Workshop,,No readings,/materials/12_github2,,
 8,3/4/26,,Sampling and Uncertainty,,DSS Ch 3,/materials/06_uncertainty,,
