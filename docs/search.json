@@ -25,7 +25,7 @@
     "href": "slides/lees-quant.html#central-tendency-mean",
     "title": "Quantitative Analysis",
     "section": "Central Tendency: Mean",
-    "text": "Central Tendency: Mean\n\\mu_X = \\frac{1}{n} \\sum_{i}^{n} X_i\n\nmy_vector = rnorm(10, mean = 10, sd = 5)\n# Step 1: Sum the values\nsum_values &lt;- sum(my_vector)\n# Step 2: Count the number of elements\ncount_elements &lt;- length(my_vector)\n# Step 3: Calculate the mean\nmean_value &lt;- sum_values / count_elements\n\nprint(mean_value)\n\n[1] 8.595574\n\nmean(my_vector)\n\n[1] 8.595574\n\n\n\nWe begin by reviewing some basic statistical concepts and illustrating those concepts using R code. This will build your familiarity with R while providing a quick review of basic statistical concepts. Everyone knows how to calculate the mean of a variable. In R, there are multiple ways to do it. Here, I created a random variable with 10 values and an average value of 10. You can calculate the mean by hand or using the function ‘mean()’. Both approaches should give you the same value."
+    "text": "Central Tendency: Mean\n\\mu_X = \\frac{1}{n} \\sum_{i}^{n} X_i\n\nmy_vector = rnorm(10, mean = 10, sd = 5)\n# Step 1: Sum the values\nsum_values &lt;- sum(my_vector)\n# Step 2: Count the number of elements\ncount_elements &lt;- length(my_vector)\n# Step 3: Calculate the mean\nmean_value &lt;- sum_values / count_elements\n\nprint(mean_value)\n\n[1] 10.37032\n\nmean(my_vector)\n\n[1] 10.37032\n\n\n\nWe begin by reviewing some basic statistical concepts and illustrating those concepts using R code. This will build your familiarity with R while providing a quick review of basic statistical concepts. Everyone knows how to calculate the mean of a variable. In R, there are multiple ways to do it. Here, I created a random variable with 10 values and an average value of 10. You can calculate the mean by hand or using the function ‘mean()’. Both approaches should give you the same value."
   },
   {
     "objectID": "slides/lees-quant.html#spread-variance",
@@ -1316,207 +1316,263 @@
     "text": "Technique 4: Unsupervised Topic Modeling\nQuanteda also has a lot of built-in text models, including topic modeling. These models have deep theoretical foundations, but here we are just going to show a very hands-on application of a topic model. A popular one is LSA, or Latent Semantic Analysis. The idea is to identify “semantic dimensions”- or themes/ideas/concepts in documents.\n\nrequire(quanteda.textmodels)\n# Lets take the entire corpus\nspeeches_dfm &lt;- dfm(tokens(speeches), remove = stopwords(\"english\"), \n                    stem =T,\n                    remove_punct = T)\n\n# nd = number of semantic dimensions\n# lets say 2: economics and social issues \n# Note: it is unspurevised but WE have to make a substantive decision\n# re the number of semantic dimensions there are \nlsa_model &lt;- textmodel_lsa(speeches_dfm, nd = 2)\n\n# you can seee, each doc is assigned a score for 2 dimension\nhead(lsa_model$docs)\n\n                        [,1]        [,2]\nWashington-1790  0.006154892 0.005352405\nWashington-1790b 0.007043385 0.005295575\nWashington-1791  0.013496442 0.014350353\nWashington-1792  0.010954959 0.009935531\nWashington-1793  0.012479789 0.012618771\nWashington-1794  0.014478341 0.014691720\n\n# lets see what words load onto the dimensions\nfeatures &lt;- data.frame(feature = rownames(lsa_model$features),\n                       dim1 = lsa_model$features[,1], \n                       dim2 = lsa_model$features[,2]) \n\npacman::p_load(ggrepel)\n\nggplot(features, aes(x = dim1, y = dim2)) +\n  geom_point() +\n  geom_text_repel(data = filter(features, dim1 &gt; .12 | dim2 &gt;.12), \n  aes(label = feature)) +\n    geom_abline(slope = 1, intercept = 0,\n                linetype = \"dashed\", color = \"red\") +\n  theme_minimal() +\n  labs(x = \"Dimension 1\", y = \"Dimension 2\", \n       title = \"LSA Feature Loading\")\n\n\n\n\n\n\n\n# we can visualize it\ndocs &lt;- data.frame(doc = rownames(lsa_model$docs),\n                       dim1 = lsa_model$docs[,1],\n                       dim2 = lsa_model$docs[,2])\n\n# Create plot with ggplot2\nggplot(docs, aes(x = dim1, y = dim2, label = doc)) +\n  geom_point() +\n  geom_text_repel() +\n  theme_minimal() +\n      geom_abline(slope = 1, intercept = 0,\n                linetype = \"dashed\", color = \"red\") +\n  labs(x = \"Dimension 1\", y = \"Dimension 2\", \n       title = \"LSA Document Map\")\n\n\n\n\n\n\n\n# 2 semantic dimensions is probably not great!"
   },
   {
-    "objectID": "workshops/survey_data.html",
-    "href": "workshops/survey_data.html",
-    "title": "Final Report Example",
+    "objectID": "workshops/w1_quarto.html",
+    "href": "workshops/w1_quarto.html",
+    "title": "Introduction to Quarto",
     "section": "",
-    "text": "Does moving to a new city reduce the political engagement of youth?\nI hypothesize that moving to a new city will reduce an individuals’ likelihood of engaging in political or civic action. I argue that this is the case for several reasons:\n\nYouth have low levels of political engagement, often driven by lack of information and experience (Holbein and Hillygus 2020)\nYouth that move will have less information and experience with engagement in their new city\nYouth that move probably have fewer social ties in their new city, and ties are important for facilitating engagement (Campbell 2013)"
+    "text": "Quarto is a publishing system that lets you combine text, code, and output into a single document.\nWhy use Quarto?\n\nWrite analysis and explanation in one place\nCode runs and updates automatically when you render\nExport to HTML, PDF, Word, slides, websites\nAll your assignments will be .qmd files rendered to .html\nYour final project will be a Quarto website\n\nThe workflow:\n\nWrite text and code in a .qmd file\nClick “Render” (or Ctrl+Shift+K)\nQuarto runs your code and produces a polished document"
   },
   {
-    "objectID": "workshops/survey_data.html#research-question",
-    "href": "workshops/survey_data.html#research-question",
-    "title": "Final Report Example",
-    "section": "",
-    "text": "Does moving to a new city reduce the political engagement of youth?\nI hypothesize that moving to a new city will reduce an individuals’ likelihood of engaging in political or civic action. I argue that this is the case for several reasons:\n\nYouth have low levels of political engagement, often driven by lack of information and experience (Holbein and Hillygus 2020)\nYouth that move will have less information and experience with engagement in their new city\nYouth that move probably have fewer social ties in their new city, and ties are important for facilitating engagement (Campbell 2013)"
+    "objectID": "workshops/w1_quarto.html#the-yaml-header",
+    "href": "workshops/w1_quarto.html#the-yaml-header",
+    "title": "Introduction to Quarto",
+    "section": "The YAML Header",
+    "text": "The YAML Header\nEvery Quarto document starts with a YAML header between --- marks:\n---\ntitle: \"My Analysis\"\nauthor: \"Your Name\"\ndate: today\nformat: html\n---\nThis controls the document’s metadata and output format."
   },
   {
-    "objectID": "workshops/survey_data.html#research-design",
-    "href": "workshops/survey_data.html#research-design",
-    "title": "Final Report Example",
-    "section": "Research Design",
-    "text": "Research Design\nI will use a linear model to estimate the relationship between levels of political engagement and whether or not an individual has moved to a new city. This design relies on the assumption that individuals that moved to a new city had similar propensities to participate to those that did not, conditional on observable covariates.\nWhile this assumption is unrealistic, I will take several measures to rule-out potential sources of baseline differences in the propensity of moving and non-moving students to participate.\nFirst, I will identify specific types of participation that are more and less likely to be affected by whether at student moves. If my hypothesis is correct, we should expect to see the more likely forms of participation to be different between moving and non-moving students, while the less likely forms of participation should not be different between moving and non-moving students.\nSecond, I will condition my analysis to students that move from one urban place to another urban place. While students that move from a rural area to a city are likely to be different in many important ways that could affect their propensity to participate, those that move from one city to another city will be less different.\nThird, I will condition my analysis on students socio-economic status (SES). SES is one of the strongest predictors of political engagement, and students from different SES backgrounds will be different in ways that affect their propensity to participate.\nFourth, I will account for the length of time since respondents moved to their new city. My mechanisms linking moving to a new city with lower engagement (information and social ties) would predict that this effect reduces over time. Therefore, the gap between moving and non-moving students should be smaller for respondents that have been in their new city for longer."
+    "objectID": "workshops/w1_quarto.html#markdown-formatting",
+    "href": "workshops/w1_quarto.html#markdown-formatting",
+    "title": "Introduction to Quarto",
+    "section": "Markdown Formatting",
+    "text": "Markdown Formatting\nQuarto uses Markdown for text formatting:\n\nitalics with *italics*\nbold with **bold**\nlinks with [text](url)\nCreate sections with #, ##, ###\n\n\nLists\nBullet points:\n\nFirst item\nSecond item\nThird item\n\nNumbered lists:\n\nFirst step\nSecond step\nThird step\n\n\n\nMath\nUse LaTeX for equations. Inline math: \\(y = mx + b\\)\nDisplay equations:\n\\[\n\\bar{x} = \\frac{1}{n} \\sum_{i=1}^{n} x_i\n\\]\n\n\nImages\nInclude images from your project folder:\n![Caption text](image.png){width=\"50%\"}\n\n\n\nShakira knows what’s up\n\n\n\n\nTables\nCreate tables by hand:\n\n\n\nColumn 1\nColumn 2\nColumn 3\n\n\n\n\nA\nB\nC\n\n\nD\nE\nF\n\n\n\n\n\nFootnotes\nAdd footnotes like this.1"
   },
   {
-    "objectID": "workshops/survey_data.html#research-context",
-    "href": "workshops/survey_data.html#research-context",
-    "title": "Final Report Example",
-    "section": "Research Context",
-    "text": "Research Context\nI will student this research question among students at Addis Ababa University (AAU). AAU is Ethiopia’s top university, and students from around the country (and the continent) move to Addis Ababa in order to study there. Given the frequency with which youth move to a new city in order to obtain education, and the importance of universities and sites of political socialization, this is an important context in which to study the effects of moving on participation."
+    "objectID": "workshops/w1_quarto.html#code-chunks",
+    "href": "workshops/w1_quarto.html#code-chunks",
+    "title": "Introduction to Quarto",
+    "section": "Code Chunks",
+    "text": "Code Chunks\nInsert R code in “chunks” that look like this:\n```{r}\n# Your R code here\nmean(c(1, 2, 3, 4, 5))\n```\nWhen you render, the code runs and the output appears in your document."
   },
   {
-    "objectID": "workshops/survey_data.html#data-and-variables",
-    "href": "workshops/survey_data.html#data-and-variables",
-    "title": "Final Report Example",
-    "section": "Data and Variables",
-    "text": "Data and Variables\nI am using a representative survey of students from Addis Ababa University in Ethiopia collected by DevLab researchers. This data contains two waves collected in May-June and October-November of 2022. A total of 825 students completed both waves of the survey.\nThe variables being used fall into two categories. First, we use variables based on survey questions measuring respondent demographics, including whether or not the student is originally from Addis Ababa, whether they came from an urban or rural setting, the number of years they have been at university, and whether or not they work to support themselves and receive financial support from their parents. Second, we use variables based on survey questions measuring political participation."
+    "objectID": "workshops/w1_quarto.html#example-running-code",
+    "href": "workshops/w1_quarto.html#example-running-code",
+    "title": "Introduction to Quarto",
+    "section": "Example: Running Code",
+    "text": "Example: Running Code\n\n# This code will run when you render\nx &lt;- c(10, 20, 30, 40, 50)\nmean(x)\n\n[1] 30"
   },
   {
-    "objectID": "workshops/survey_data.html#describing-the-sample",
-    "href": "workshops/survey_data.html#describing-the-sample",
-    "title": "Final Report Example",
-    "section": "Describing the Sample",
-    "text": "Describing the Sample\n\nDemographics\n\n\n\n\n\n\n\n\n\n\n\nLevels of Engagement"
+    "objectID": "workshops/w1_quarto.html#chunk-options",
+    "href": "workshops/w1_quarto.html#chunk-options",
+    "title": "Introduction to Quarto",
+    "section": "Chunk Options",
+    "text": "Chunk Options\nControl how chunks behave with options:\n#| echo: true       # Show the code in output\n#| echo: false      # Hide the code, show only results\n#| eval: false      # Show code but don't run it\n#| warning: false   # Suppress warning messages\n#| message: false   # Suppress messages"
   },
   {
-    "objectID": "workshops/survey_data.html#results",
-    "href": "workshops/survey_data.html#results",
-    "title": "Final Report Example",
-    "section": "Results",
-    "text": "Results\n\n\n\n\n\n\nContact Official\nAttend Meeting\nNGO Volunteer\nSign Petition\n\n\n\n\n(Intercept)\n1.044*** (0.114)\n0.752*** (0.116)\n1.304*** (0.181)\n0.354*** (0.090)\n\n\nmoved\n0.178 (0.141)\n0.580*** (0.143)\n0.117 (0.222)\n0.529*** (0.110)\n\n\nNum.Obs.\n802\n801\n803\n801\n\n\nR2 Adj.\n0.001\n0.019\n0.001\n0.027"
+    "objectID": "workshops/w1_quarto.html#example-hidden-code",
+    "href": "workshops/w1_quarto.html#example-hidden-code",
+    "title": "Introduction to Quarto",
+    "section": "Example: Hidden Code",
+    "text": "Example: Hidden Code\nSometimes you want to show results but hide the code:\n\n\n\n\n\n\n\n\n\nThe plot appears, but readers don’t see the code that made it."
   },
   {
-    "objectID": "slides/06-demaut2.html#agenda",
-    "href": "slides/06-demaut2.html#agenda",
-    "title": "Democracy and Development",
+    "objectID": "workshops/w1_quarto.html#inline-code",
+    "href": "workshops/w1_quarto.html#inline-code",
+    "title": "Introduction to Quarto",
+    "section": "Inline Code",
+    "text": "Inline Code\nReference values directly in your text using inline code.\n\nn_cars &lt;- nrow(mtcars)\navg_mpg &lt;- round(mean(mtcars$mpg), 1)\n\nWrite: “The dataset contains `r n_cars` cars with an average fuel efficiency of `r avg_mpg` mpg.”\nResult: The dataset contains 32 cars with an average fuel efficiency of 20.1 mpg.\nIf your data changes, these numbers update automatically!"
+  },
+  {
+    "objectID": "workshops/w1_quarto.html#labeled-figures",
+    "href": "workshops/w1_quarto.html#labeled-figures",
+    "title": "Introduction to Quarto",
+    "section": "Labeled Figures",
+    "text": "Labeled Figures\nGive figures labels and captions for cross-referencing:\n\nggplot(mtcars, aes(x = hp, y = mpg, color = factor(cyl))) +\n  geom_point(size = 3) +\n  labs(x = \"Horsepower\", y = \"Miles per Gallon\", color = \"Cylinders\") +\n  theme_minimal()\n\n\n\n\n\n\n\nFigure 1: Relationship between horsepower and fuel efficiency\n\n\n\n\n\nReference it in text with @fig-scatter: See Figure 1."
+  },
+  {
+    "objectID": "workshops/w1_quarto.html#tables-from-code",
+    "href": "workshops/w1_quarto.html#tables-from-code",
+    "title": "Introduction to Quarto",
+    "section": "Tables from Code",
+    "text": "Tables from Code\n\nlibrary(dplyr)\n\nWarning: package 'dplyr' was built under R version 4.1.2\n\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nmtcars %&gt;%\n  group_by(cyl) %&gt;%\n  summarize(\n    `Average MPG` = round(mean(mpg), 1),\n    `Count` = n()\n  ) %&gt;%\n  knitr::kable()\n\n\n\nTable 1: Average MPG by number of cylinders\n\n\n\n\n\n\ncyl\nAverage MPG\nCount\n\n\n\n\n4\n26.7\n11\n\n\n6\n19.7\n7\n\n\n8\n15.1\n14\n\n\n\n\n\n\n\n\nReference with @tbl-summary: See Table 1."
+  },
+  {
+    "objectID": "workshops/w1_quarto.html#footnotes",
+    "href": "workshops/w1_quarto.html#footnotes",
+    "title": "Introduction to Quarto",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis is the footnote text.↩︎"
+  },
+  {
+    "objectID": "slides/c5-gender.html#agenda",
+    "href": "slides/c5-gender.html#agenda",
+    "title": "Gender and Development",
     "section": "Agenda",
-    "text": "Agenda\n\nDemocracy as a consequence of development\nDemocracy as a cause of development\nFixed effects"
+    "text": "Agenda\n\nDevelopment and Gender\nChattopadhyay and Duflo, 2004\nInteraction Models"
   },
   {
-    "objectID": "slides/06-demaut2.html#democracy-and-development",
-    "href": "slides/06-demaut2.html#democracy-and-development",
-    "title": "Democracy and Development",
-    "section": "Democracy and Development",
-    "text": "Democracy and Development\n\nFrom Acemoglu et. al. 2008"
+    "objectID": "slides/c5-gender.html#gender-and-representation",
+    "href": "slides/c5-gender.html#gender-and-representation",
+    "title": "Gender and Development",
+    "section": "Gender and Representation",
+    "text": "Gender and Representation\n\nGender gap in political representation\n\nWomen hold only 27.0% of legislative seats (Inter-Parliamentary Union, 2023)\n23% of cabinet positions (UNWOMEN)\n\nGender gap in political participation:\n\nDisputed gender gap in turnout, large variance"
   },
   {
-    "objectID": "slides/06-demaut2.html#two-explanations",
-    "href": "slides/06-demaut2.html#two-explanations",
-    "title": "Democracy and Development",
-    "section": "Two explanations",
-    "text": "Two explanations\n\n\nDirect causal link\n\nDevelopment \\(\\rightarrow\\) democracy\nDemocracy \\(\\rightarrow\\) development\n\nIndirect link or correlation\n\nIncome \\(\\rightarrow\\) regime survival\nOmitted variable"
+    "objectID": "slides/c5-gender.html#gender-and-development",
+    "href": "slides/c5-gender.html#gender-and-development",
+    "title": "Gender and Development",
+    "section": "Gender and Development",
+    "text": "Gender and Development\n\nGender and poverty (feminization of poverty to a degree)\nGender and economic participation\n\nLabor force participation gap: 27% globally (ILO, 2023)\nGender wage gap (Pew)\n\nGender and violence\n\n1/3 women have experienced GBV\n\nGender and education\n\nLiteracy rates: 90% male vs. 83% female globally (World Bank Data, 2022)\nSchool attendance gap (UNESCO, 2023)"
   },
   {
-    "objectID": "slides/06-demaut2.html#modernization-theory-lipset-1960",
-    "href": "slides/06-demaut2.html#modernization-theory-lipset-1960",
-    "title": "Democracy and Development",
-    "section": "Modernization Theory, Lipset (1960)",
-    "text": "Modernization Theory, Lipset (1960)\nDevelopment causes democracy\n\n\nEconomic development requires investing in education, infrastructure, urbanization…\n\nModernizing.\n\nModernization triggers changes making democracy more likely\n\nSociety becomes more complex and organized\nEducation facilitates democratic citizenship\nInfrastructure and urbanization facilitate political competition"
+    "objectID": "slides/c5-gender.html#gender-development-and-representation",
+    "href": "slides/c5-gender.html#gender-development-and-representation",
+    "title": "Gender and Development",
+    "section": "Gender, Development, and Representation",
+    "text": "Gender, Development, and Representation\n\nThe two are undoubtedly related\nBut could improving gender representation produce development?"
   },
   {
-    "objectID": "slides/06-demaut2.html#the-threat-of-revolution",
-    "href": "slides/06-demaut2.html#the-threat-of-revolution",
-    "title": "Democracy and Development",
-    "section": "The Threat of Revolution",
-    "text": "The Threat of Revolution\n\n\nAcemoglu and Robinson (2001)\nRich elites control autocratic societies\n\nBut they fear revolution!\n\nHow to prevent it?\n\nDemocratize and redistribute some of the resources\n\nElites and non-elites are better off"
+    "objectID": "slides/c5-gender.html#from-representation-to-development",
+    "href": "slides/c5-gender.html#from-representation-to-development",
+    "title": "Gender and Development",
+    "section": "From Representation to development",
+    "text": "From Representation to development\nWhy might having more women in office improve development?\n\n\nWomen may want different things\nWomen may behave differently\nWomen may be better at their job\nWomen representatives may teach about equality"
   },
   {
-    "objectID": "slides/06-demaut2.html#democracy-spurs-development",
-    "href": "slides/06-demaut2.html#democracy-spurs-development",
-    "title": "Democracy and Development",
-    "section": "Democracy Spurs Development",
-    "text": "Democracy Spurs Development\nDictatorship, Democracy, and Development (Olson, 1993)\n\n\nAutocrats want a wealthy country.\nWhy would citizens produce wealth if it can be expropriated by an autocrat?\n\nSolution: Credibly tie your own hands with democratic institutions\n\nBy sharing political power and enshrining property rights, create incentives to produce wealth\nDemocracy \\(\\rightarrow\\) development"
+    "objectID": "slides/c5-gender.html#our-expectations",
+    "href": "slides/c5-gender.html#our-expectations",
+    "title": "Gender and Development",
+    "section": "Our Expectations",
+    "text": "Our Expectations\n\nDifferent outcomes?\n\nDo women prioritize different policy domains?\n\nBetter outcomes?\n\nPotential improvements in service delivery and reduced corruption\n\nConditionally different outcomes?\n\nEffectiveness depends on institutional context\nCritical mass may be necessary\nInteractions with other social identities"
   },
   {
-    "objectID": "slides/06-demaut2.html#democratic-survival",
-    "href": "slides/06-demaut2.html#democratic-survival",
-    "title": "Democracy and Development",
-    "section": "Democratic Survival",
-    "text": "Democratic Survival\n\n\nDemocracy is established independently of development …\nBut development helps democracies survive\n“The more well-to-do a nation, the greater the chances it will sustain democracy” (Lipset, 1959)\nEmpirical implications: There will be a correlation btw democracy and development even if development does not cause democracy!"
+    "objectID": "slides/c5-gender.html#empirical-test",
+    "href": "slides/c5-gender.html#empirical-test",
+    "title": "Gender and Development",
+    "section": "Empirical Test?",
+    "text": "Empirical Test?\n\nSeems like a good theory with important implications that we want to validate empirically\nImagine we have data on share of female legislators and many development outcomes\nWe compare places with female politicians to places with male politicians and see development differences\nWhat is the problem with this?"
   },
   {
-    "objectID": "slides/06-demaut2.html#democracy-and-development-in-research",
-    "href": "slides/06-demaut2.html#democracy-and-development-in-research",
-    "title": "Democracy and Development",
-    "section": "Democracy and Development in Research",
-    "text": "Democracy and Development in Research\n\nAre the theoretical arguments for \\(Democracy \\rightarrow Development\\) convincing?\nAre the theoretical arguments for \\(Development \\rightarrow Democracy\\) convincing?"
+    "objectID": "slides/c5-gender.html#a-more-realistic-dag",
+    "href": "slides/c5-gender.html#a-more-realistic-dag",
+    "title": "Gender and Development",
+    "section": "A (more realistic) DAG",
+    "text": "A (more realistic) DAG"
   },
   {
-    "objectID": "slides/06-demaut2.html#democracy-and-development-in-research-1",
-    "href": "slides/06-demaut2.html#democracy-and-development-in-research-1",
-    "title": "Democracy and Development",
-    "section": "Democracy and Development in Research",
-    "text": "Democracy and Development in Research\n\nPaglayan, 2020\n\nReconsiders whether democratization increases the provision of education. Finds that democratization can increase education provision, but that education is also a powerful for autocrats\n\nFujiwara, 2015\n\nElectronic voting in Brazil reduced mistakes when voting from poorest, resulting in better accountability and more spending in health care"
+    "objectID": "slides/c5-gender.html#gender-quotas-what-are-they",
+    "href": "slides/c5-gender.html#gender-quotas-what-are-they",
+    "title": "Gender and Development",
+    "section": "Gender Quotas: What are they?",
+    "text": "Gender Quotas: What are they?\n\nRules requiring minimum women’s representation in politics\nGoal: Improve gender parity in government\nVary by country, region, and level of government\nTypically set minimum thresholds (20-50%)"
   },
   {
-    "objectID": "slides/06-demaut2.html#democracy-and-development-in-research-2",
-    "href": "slides/06-demaut2.html#democracy-and-development-in-research-2",
-    "title": "Democracy and Development",
-    "section": "Democracy and Development in Research",
-    "text": "Democracy and Development in Research\n\nFerraz and Finan, 2008\n\nRandom audits of Brazilian majors reduces the chances that corrupt politicians are re-elected\n\nMori, et. al., 2024\n\nUse gender quotas to examine if female politicians use local budget more or less effectively\n\nPailler, 2018\n\nDemocratic competition increases deforestation!"
+    "objectID": "slides/c5-gender.html#gender-quotas-types",
+    "href": "slides/c5-gender.html#gender-quotas-types",
+    "title": "Gender and Development",
+    "section": "Gender Quotas: Types",
+    "text": "Gender Quotas: Types\n\nVoluntary quotas:\n\nSet by political parties themselves\nNo legal enforcement\n\nMandatory quotas:\n\nRequired by law\n\nReserved seats:\n\nSpecific seats only women can hold\n\nCandidate quotas:\n\nParties must nominate certain % of women"
   },
   {
-    "objectID": "slides/06-demaut2.html#acemoglu-et.-al.-2008",
-    "href": "slides/06-demaut2.html#acemoglu-et.-al.-2008",
-    "title": "Democracy and Development",
-    "section": "Acemoglu et. al. 2008",
-    "text": "Acemoglu et. al. 2008\n\nThe criticism: correlation of democracy and development does not mean causation\n\n\n\nAlternative: countries embark on divergent development paths\nEmpirical implication: observed association is correlational"
+    "objectID": "slides/c5-gender.html#gender-quota-adoption",
+    "href": "slides/c5-gender.html#gender-quota-adoption",
+    "title": "Gender and Development",
+    "section": "Gender Quota Adoption",
+    "text": "Gender Quota Adoption\n\nStarted in 1990s, expanded rapidly\nNow used in about 130 countries\nMost common in newer democracies\nLess common in older democracies (US, Japan)\nHighest representation achieved in Rwanda (61%)"
   },
   {
-    "objectID": "slides/06-demaut2.html#which-is-the-correct-dag",
-    "href": "slides/06-demaut2.html#which-is-the-correct-dag",
-    "title": "Democracy and Development",
-    "section": "Which is the correct DAG?",
-    "text": "Which is the correct DAG?"
+    "objectID": "slides/c5-gender.html#chattopadhyay-and-duflo-2004",
+    "href": "slides/c5-gender.html#chattopadhyay-and-duflo-2004",
+    "title": "Gender and Development",
+    "section": "Chattopadhyay and Duflo, 2004",
+    "text": "Chattopadhyay and Duflo, 2004\n\n\nIndia reserved 1/3 of village council (panchayat) head positions for women (1993)\nReserved positions assigned by random lottery\nRandomization creates natural experiment\nSolves confounding problem \\(\\rightarrow\\) can identify causal effects!"
   },
   {
-    "objectID": "slides/06-demaut2.html#empirical-tests",
-    "href": "slides/06-demaut2.html#empirical-tests",
-    "title": "Democracy and Development",
-    "section": "Empirical Tests",
-    "text": "Empirical Tests\n\nWe cannot randomize development!\nWe need to control for U\nIs this possible?\n\n\n\n… if we are willing to add some assumptions"
+    "objectID": "slides/c5-gender.html#in-a-nutshell",
+    "href": "slides/c5-gender.html#in-a-nutshell",
+    "title": "Gender and Development",
+    "section": "In a nutshell",
+    "text": "In a nutshell\n\nRQ: What are the policy consequences of “mandated representation of women”?\nHypothesis: In reserved villages, there is more investment in goods women prioritize\nMechanism: Heterogeneous priorities\nTreatment: Village council being randomly assigned to have female head\nOutcome: Investment Decisions\nData: Sample of Villages"
   },
   {
-    "objectID": "slides/06-demaut2.html#simpson-paradox",
-    "href": "slides/06-demaut2.html#simpson-paradox",
-    "title": "Democracy and Development",
-    "section": "Simpson Paradox",
-    "text": "Simpson Paradox"
+    "objectID": "slides/c5-gender.html#a-bit-more-detail",
+    "href": "slides/c5-gender.html#a-bit-more-detail",
+    "title": "Gender and Development",
+    "section": "A bit more detail",
+    "text": "A bit more detail\n  \\(Y_{ij} = \\beta_1 + \\beta_2 * R_j + \\beta_3 D_i * R_j + \\sum_{l=1}^{N} \\beta_l d_{li} + \\epsilon_{ij}\\)\nWhere:\n\n\n\\(Y_{ij}\\) is an outcome of interest\n\\(R_j\\) takes the value of 1 if GM is reserved\n\\(D_i\\) is differences in request about that good (women - men)\n\\(d_{li}\\) are good Fixed Effects!"
   },
   {
-    "objectID": "slides/06-demaut2.html#democracy-and-development-empirical-example",
-    "href": "slides/06-demaut2.html#democracy-and-development-empirical-example",
-    "title": "Democracy and Development",
-    "section": "Democracy and Development: Empirical example",
-    "text": "Democracy and Development: Empirical example\n\npacman::p_load(readxl, tidyverse, here, estimatr)\n\nd &lt;- read_xls(here(\"./slides/code/Income-and-Democracy-Data-AER-adjustment.xls\"),\n    sheet = 2) %&gt;%\n    filter(is.na(lrgdpch) == F, is.na(polity4) == F) %&gt;%\n    arrange(country, year) %&gt;%\n    group_by(country) %&gt;%\n    mutate(lag_dem = lag(polity4), lag_income = lag(lrgdpch)) %&gt;%\n    ungroup()\n# Polity2 Index\nsummary(d$polity4)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  0.000   0.150   0.700   0.573   0.950   1.000 \n\n# Log real GDP per capita (PWT)\nsummary(d$lrgdpch)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  6.094   7.297   8.149   8.167   8.960  10.413"
+    "objectID": "slides/c5-gender.html#main-findings",
+    "href": "slides/c5-gender.html#main-findings",
+    "title": "Gender and Development",
+    "section": "Main Findings",
+    "text": "Main Findings"
   },
   {
-    "objectID": "slides/06-demaut2.html#correlation",
-    "href": "slides/06-demaut2.html#correlation",
-    "title": "Democracy and Development",
-    "section": "Correlation",
-    "text": "Correlation\n\nggplot(d, aes(y = polity4, x = lag_income)) + geom_point() + geom_smooth(method = lm,\n    se = F)"
+    "objectID": "slides/c5-gender.html#what-are-interaction-terms",
+    "href": "slides/c5-gender.html#what-are-interaction-terms",
+    "title": "Gender and Development",
+    "section": "What are Interaction Terms?",
+    "text": "What are Interaction Terms?\n\nAn interaction term is the product of two variables used as a covariate in a regression model\nCaptures how the effect of one variable depends on the value of another variable\nPowerful for testing conditional hypotheses  \nKey Modeling Assumption\n\nAn increase in \\(X\\) is associated with an increase in \\(Y\\) only when a specific condition is met"
   },
   {
-    "objectID": "slides/06-demaut2.html#by-country",
-    "href": "slides/06-demaut2.html#by-country",
-    "title": "Democracy and Development",
-    "section": "By country",
-    "text": "By country"
+    "objectID": "slides/c5-gender.html#recap-ols-interpretation-basics",
+    "href": "slides/c5-gender.html#recap-ols-interpretation-basics",
+    "title": "Gender and Development",
+    "section": "Recap: OLS Interpretation Basics",
+    "text": "Recap: OLS Interpretation Basics\n\n\n\\(Y_{i} = \\alpha + \\beta_1 * X_i + \\beta_2 * Z_i + \\epsilon_{i}\\)\n\n\\(\\hat{\\beta_1}\\) represents the change in \\(Y\\) when \\(X\\) increases by one unit\n\\(\\hat{\\beta_2}\\) represents the change in \\(Y\\) when \\(Z\\) increases by one unit\nWhy?"
   },
   {
-    "objectID": "slides/06-demaut2.html#fixed-effects",
-    "href": "slides/06-demaut2.html#fixed-effects",
-    "title": "Democracy and Development",
-    "section": "Fixed effects",
-    "text": "Fixed effects\nSimple idea: control for “belonging to a group” using group-level Fixed Effects\n\nA way to control for every unobserved group characteristic that does not change\nIn practice: give an intercept to each group\nNotice: only one slope!"
+    "objectID": "slides/c5-gender.html#coefficients-as-marginal-changes",
+    "href": "slides/c5-gender.html#coefficients-as-marginal-changes",
+    "title": "Gender and Development",
+    "section": "Coefficients as Marginal Changes",
+    "text": "Coefficients as Marginal Changes\nA partial derivative of the equation shows how \\(Y\\) changes when \\(X\\) changes by 1:\n\n\n\\(Y_{i} = \\alpha + \\beta_1 * X_i + \\beta_2 * Z_i + \\epsilon_{i}\\)\n\n\\(\\frac{\\partial Y}{\\partial X} = \\beta_1\\)\n\\(\\frac{\\partial Y}{\\partial Z} = \\beta_2\\)"
   },
   {
-    "objectID": "slides/06-demaut2.html#fixed-effects-1",
-    "href": "slides/06-demaut2.html#fixed-effects-1",
-    "title": "Democracy and Development",
-    "section": "Fixed effects",
-    "text": "Fixed effects\nGo from\n\\[\\begin{equation*}\nDem_{it} = \\alpha + \\beta_1 Dem_{it} + \\epsilon_{it}\n\\end{equation*}\\]\nTo\n\\[\\begin{align*}\nDem_{it} = &\\alpha + \\beta_1 Dem_{it} + \\mu_1 USA + \\\\\n\\mu_2 France & + ... \\mu_n Zimbabwe + \\epsilon_{it}\n\\end{align*}\\]"
+    "objectID": "slides/c5-gender.html#interaction-effects",
+    "href": "slides/c5-gender.html#interaction-effects",
+    "title": "Gender and Development",
+    "section": "Interaction Effects",
+    "text": "Interaction Effects\n\nIdea, the effect of X on Y depends on Z\n\n\\(Y = \\alpha + \\beta_1X + \\beta_2Z + \\beta_3(X*Z) + \\epsilon\\)"
   },
   {
-    "objectID": "slides/06-demaut2.html#empirical-example",
-    "href": "slides/06-demaut2.html#empirical-example",
-    "title": "Democracy and Development",
-    "section": "Empirical example",
-    "text": "Empirical example\n\nmod &lt;- lm_robust(polity4 ~ lag_dem + lag_income, clusters = country, data = d)\nmodelsummary::modelsummary(mod, stars = T, coef_omit = \"(Intercept)\", gof_omit = \"AIC|BIC|Log.Lik|F|R2\")\n\n\n\n\n\nModel 1\n\n\n\n\nlag_dem\n0.742***\n\n\n\n(0.032)\n\n\nlag_income\n0.063***\n\n\n\n(0.010)\n\n\nNum.Obs.\n900\n\n\nse_type\nCR2\n\n\n\n + p"
+    "objectID": "slides/c5-gender.html#think-of-it-as-another-covariate",
+    "href": "slides/c5-gender.html#think-of-it-as-another-covariate",
+    "title": "Gender and Development",
+    "section": "Think of it as another covariate!",
+    "text": "Think of it as another covariate!\n\n\n\n\n\nX\nZ\nX.Z\n\n\n\n\n0\n0\n0\n\n\n1\n0\n0\n\n\n0\n1\n0\n\n\n1\n1\n1\n\n\n\n\n\n\nWhat needs to happen for the new covariate to be 1?"
   },
   {
-    "objectID": "slides/06-demaut2.html#add-fixed-effects",
-    "href": "slides/06-demaut2.html#add-fixed-effects",
-    "title": "Democracy and Development",
-    "section": "Add Fixed Effects",
-    "text": "Add Fixed Effects\n\nrequire(estimatr)\nmod2 &lt;- lm_robust(polity4 ~ lag_dem + lag_income, fixed_effects = country + year,\n    clusters = country, data = d)\n\nmodelsummary::modelsummary(mod2, stars = T, coef_omit = \"(Intercept)\", gof_omit = \"AIC|BIC|Log.Lik|F|R2\")\n\n\n\n\n\nModel 1\n\n\n\n\nlag_dem\n0.431***\n\n\n\n(0.054)\n\n\nlag_income\n0.005\n\n\n\n(0.033)\n\n\nNum.Obs.\n900\n\n\nse_type\nCR2\n\n\n\n + p"
+    "objectID": "slides/c5-gender.html#new-model",
+    "href": "slides/c5-gender.html#new-model",
+    "title": "Gender and Development",
+    "section": "New model",
+    "text": "New model\n\n\n\\(Y_{i} = \\alpha + \\beta_1 * X_i + \\beta_2 * Z_i + \\beta_3 * Z_i * X_i + \\epsilon_{i}\\)\n\nHow to interpret \\(\\beta_3\\): Expected change in Y when the product of \\(X \\times Z\\) increases by 1 unit.\nHow to interpret \\(\\beta_1\\): Change in Y when X increases by 1 unit AND \\(Z =0\\)\nHow to interpret \\(\\beta_2\\): Change in Y when X increases by 1 unit AND \\(X =0\\)"
   },
   {
-    "objectID": "slides/06-demaut2.html#summing-up",
-    "href": "slides/06-demaut2.html#summing-up",
-    "title": "Democracy and Development",
-    "section": "Summing up",
-    "text": "Summing up\n\nGood theoretical reasons to think democracy is causally related to development\nMost extant work focuses on micro, sub-national dynamics\nFixed effects control for time-invariant unobserved confounders\nIf confounders change over time, FE cannot help"
+    "objectID": "slides/c5-gender.html#back-to-math",
+    "href": "slides/c5-gender.html#back-to-math",
+    "title": "Gender and Development",
+    "section": "Back to Math!",
+    "text": "Back to Math!\n  Why does the interpretation of \\(\\beta_1\\) and \\(\\beta_2\\) change?\n\\(Y_{i} = \\alpha + \\beta_1 * X_i + \\beta_2 * Z_i + \\beta_3 * Z_i * X_i \\epsilon_{i}\\)\n\n\\(\\frac{\\partial Y}{\\partial X} = \\beta_1 + \\beta_3*Z_i\\)\n\\(\\frac{\\partial Y}{\\partial Z} = \\beta_2  + \\beta_3*X_i\\)"
+  },
+  {
+    "objectID": "slides/c5-gender.html#three-simple-rules-for-interaction",
+    "href": "slides/c5-gender.html#three-simple-rules-for-interaction",
+    "title": "Gender and Development",
+    "section": "Three Simple Rules for Interaction",
+    "text": "Three Simple Rules for Interaction\n\nUse for conditional hypotheses\nAlways include all constituent terms\nInterpret \\(\\beta_1\\) and \\(\\beta_2\\) correctly"
+  },
+  {
+    "objectID": "slides/c5-gender.html#practical-example",
+    "href": "slides/c5-gender.html#practical-example",
+    "title": "Gender and Development",
+    "section": "Practical Example",
+    "text": "Practical Example\n\nLets simulate some data to see how we can fit an interactive model in R\nWe are going to look at a binary covariate\n\n\nalpha &lt;- 1\nbeta_1 &lt;- -.5    # Coefficient for women's representation\nbeta_2 &lt;- 1.5  # Coefficient for quota system\nbeta_3 &lt;- 3    # Coefficient for interaction term\n\nset.seed(12)\ninteraction_data &lt;- tibble(\n  women_representation = runif(100, 0, 1), # any number btw 0 and 1\n  quota_system = sample(0:1, 100, replace = T)) %&gt;% # either 1 or 0\n  mutate(policy_outcome = alpha + \n               beta_1 * women_representation + \n               beta_2 * quota_system + \n               beta_3 * (women_representation * quota_system) + \n                rnorm(n(), 0, 0.5))"
+  },
+  {
+    "objectID": "slides/c5-gender.html#visualize-conditional-relationship",
+    "href": "slides/c5-gender.html#visualize-conditional-relationship",
+    "title": "Gender and Development",
+    "section": "Visualize Conditional Relationship",
+    "text": "Visualize Conditional Relationship"
+  },
+  {
+    "objectID": "slides/c5-gender.html#practical-example-1",
+    "href": "slides/c5-gender.html#practical-example-1",
+    "title": "Gender and Development",
+    "section": "Practical Example",
+    "text": "Practical Example\n\nYou can fit the model with lm like usual\n\n\n\n\nCall:\nlm(formula = policy_outcome ~ women_representation * quota_system, \n    data = interaction_data)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-1.00935 -0.35365 -0.00404  0.34793  1.08715 \n\nCoefficients:\n                                  Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)                         0.9766     0.1348   7.245 1.09e-10 ***\nwomen_representation               -0.4865     0.2289  -2.125   0.0361 *  \nquota_system                        1.5993     0.2084   7.673 1.39e-11 ***\nwomen_representation:quota_system   2.8913     0.3921   7.374 5.85e-11 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.5064 on 96 degrees of freedom\nMultiple R-squared:  0.8993,    Adjusted R-squared:  0.8962 \nF-statistic: 285.8 on 3 and 96 DF,  p-value: &lt; 2.2e-16"
   },
   {
     "objectID": "slides/16-democracy3.html#assignments",
@@ -4748,23 +4804,23 @@
   {
     "objectID": "materials/c2_accountability.html",
     "href": "materials/c2_accountability.html",
-    "title": "Representation and Accountability",
+    "title": "Accountability: Scope Conditions",
     "section": "",
-    "text": "Dunning et. al.(2019)"
+    "text": "Ferraz and Finan (2011) - Electoral Accountability and Corruption: Evidence from the Audits of Local Governments\nChong et. al. (2015) - Does Corruption Information Inspire the Fight or Quash the Hope? A Field Experiment in Mexico"
   },
   {
     "objectID": "materials/c2_accountability.html#required-readings",
     "href": "materials/c2_accountability.html#required-readings",
-    "title": "Representation and Accountability",
+    "title": "Accountability: Scope Conditions",
     "section": "",
-    "text": "Dunning et. al.(2019)"
+    "text": "Ferraz and Finan (2011) - Electoral Accountability and Corruption: Evidence from the Audits of Local Governments\nChong et. al. (2015) - Does Corruption Information Inspire the Fight or Quash the Hope? A Field Experiment in Mexico"
   },
   {
     "objectID": "materials/c2_accountability.html#slides",
     "href": "materials/c2_accountability.html#slides",
-    "title": "Representation and Accountability",
+    "title": "Accountability: Scope Conditions",
     "section": "Slides",
-    "text": "Slides\n\nSlides\n\n\nWorkshop\n\nDownload the R Script for multiple regression basics"
+    "text": "Slides\n\nSlides"
   },
   {
     "objectID": "materials/27_conclusion2.html",
@@ -5530,6 +5586,13 @@
     "text": "Slides\n\nSlides"
   },
   {
+    "objectID": "materials/06_autocracy2.html#data",
+    "href": "materials/06_autocracy2.html#data",
+    "title": "Democracy and Autocracy II",
+    "section": "Data",
+    "text": "Data\n\nIncome and Democracy Dataset (Acemoglu et al. 2008)"
+  },
+  {
     "objectID": "materials/06_autocracy2.html#interesting-stuff-non-required",
     "href": "materials/06_autocracy2.html#interesting-stuff-non-required",
     "title": "Democracy and Autocracy II",
@@ -5891,14 +5954,21 @@
     "href": "materials/c1_accountability.html",
     "title": "Representation and Accountability",
     "section": "",
-    "text": "Manin, Przeworski, and Stokes. Chapter 1 (1999)\nFerraz and Finan, 2011"
+    "text": "Björkman and Svensson (2009) - Power to the People: Evidence from a Randomized Field Experiment on Community-Based Monitoring in Uganda"
   },
   {
     "objectID": "materials/c1_accountability.html#required-readings",
     "href": "materials/c1_accountability.html#required-readings",
     "title": "Representation and Accountability",
     "section": "",
-    "text": "Manin, Przeworski, and Stokes. Chapter 1 (1999)\nFerraz and Finan, 2011"
+    "text": "Björkman and Svensson (2009) - Power to the People: Evidence from a Randomized Field Experiment on Community-Based Monitoring in Uganda"
+  },
+  {
+    "objectID": "materials/c1_accountability.html#suggested-readings",
+    "href": "materials/c1_accountability.html#suggested-readings",
+    "title": "Representation and Accountability",
+    "section": "Suggested Readings",
+    "text": "Suggested Readings\n\nManin, Przeworski, and Stokes. Chapter 1 (1999)"
   },
   {
     "objectID": "materials/c1_accountability.html#slides",
@@ -8824,7 +8894,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Below is the schedule for the semester. You can find the materials for each course meeting under the “Content” links for that week. You should complete the required readings before each meeting.\nHere’s a guide to the schedule:\n\nMaterials (): This page contains the readings and slides for the meeting\nWorkshop (): A link to the workshop for that week\nAssignment (): This page contains the instructions for each assignment\n\nThe readings refer to following texts:\n\nDSS: Data Analysis for Social Science: A Friendly and Practical Introduction (DSS) by Kosuke Imai and Elena Llaudet \n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nReading\n\n\nMaterials\n\n\nWorkshop\n\n\nAssignment\n\n\n\n\n\n\nWeek 1\n\n\n\n\nJanuary 14\n\n\nIntroduction to the course\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2\n\n\n\n\nJanuary 19\n\n\nMLK Jr. Day (no classes)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJanuary 21\n\n\nCorrelation vs. Causation\n\n\nDSS Ch 2\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 3\n\n\n\n\nJanuary 26\n\n\nNo class (weather)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJanuary 28\n\n\nCausality\n\n\nDSS Ch 5\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 4\n\n\n\n\nFebruary 2\n\n\nRstudio and Quarto Workshop\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFebruary 4\n\n\nDemocracy and Autocracy\n\n\nPrzeworski 2024, Grossman et. al., 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 5\n\n\n\n\nFebruary 9\n\n\nIntroduction to OLS\n\n\nDSS Ch 4\n\n\n\n\n\n\n\n\n\n\n\n\n\nFebruary 11\n\n\nDemocracy and Development\n\n\nAcemoglu et. al., 2008\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 6\n\n\n\n\nFebruary 16\n\n\nFinal Project Overview\n\n\nNo readings\n\n\n\n\n\n\n\n\n\n\n\n\n\nFebruary 18\n\n\nRepresentation and Accountability\n\n\nManin, Przeworski, and Stokes, 1999; Ferraz and Finan, 2011\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 7\n\n\n\n\nFebruary 23\n\n\nRepresentation and Accountability Reconsidered\n\n\nDunning et. al. 2019\n\n\n\n\n\n\n\n\n\n\n\n\n\nFebruary 25\n\n\nGithub Workshop\n\n\nNo readings\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 8\n\n\n\n\nMarch 2\n\n\nGithub Workshop\n\n\nNo readings\n\n\n\n\n\n\n\n\n\n\n\n\n\nMarch 4\n\n\nSampling and Uncertainty\n\n\nDSS Ch 3\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 9\n\n\n\n\nMarch 9\n\n\nSpring Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMarch 11\n\n\nSpring Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 10\n\n\n\n\nMarch 16\n\n\nCrime and Punishment\n\n\nBateson, 2012; Weaver and Lerman, 2010\n\n\n\n\n\n\n\n\n\n\n\n\n\nMarch 18\n\n\nCrime and Punishment 2\n\n\nGustavo A. Flores-Macas and Jessica Zarkin, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 11\n\n\n\n\nMarch 23\n\n\nGender\n\n\nChattopadhyay and Duflo, 2004\n\n\n\n\n\n\n\n\n\n\n\n\n\nMarch 25\n\n\nMigration\n\n\nRozo and Grossman (2025); Sviatschi (2022); Gazeaud (2020)\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 12\n\n\n\n\nMarch 30\n\n\nFinal Project Essentials\n\n\nNo readings\n\n\n\n\n\n\n\n\n\n\n\n\n\nApril 1\n\n\nText as Data workshop\n\n\nNo readings\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 13\n\n\n\n\nApril 6\n\n\nFinal Project Preparation\n\n\nNo readings\n\n\n\n\n\n\n\n\n\n\n\n\n\nApril 8\n\n\nForeign Aid and NGOs 1 (JS)\n\n\nBriggs (2016); Briggs (2021)\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 14\n\n\n\n\nApril 13\n\n\nForeign Aid and NGOs 2 (JS)\n\n\nCruz (2017); Bold et al. (2018)\n\n\n\n\n\n\n\n\n\n\n\n\n\nApril 15\n\n\nConflict and Development\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 15\n\n\n\n\nApril 20\n\n\nConflict and Development 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApril 22\n\n\nClimate and Development\n\n\nO’Brien-Udry (2023)\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 16\n\n\n\n\nApril 27\n\n\nWhat is development?\n\n\nAssorted short pieces\n\n\n\n\n\n\n\n\n\n\n\n\n\nApril 29\n\n\nFinal Project Due"
+    "text": "Below is the schedule for the semester. You can find the materials for each course meeting under the “Content” links for that week. You should complete the required readings before each meeting.\nHere’s a guide to the schedule:\n\nMaterials (): This page contains the readings and slides for the meeting\nWorkshop (): A link to the workshop for that week\nAssignment (): This page contains the instructions for each assignment\n\nThe readings refer to following texts:\n\nDSS: Data Analysis for Social Science: A Friendly and Practical Introduction (DSS) by Kosuke Imai and Elena Llaudet \n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nReading\n\n\nMaterials\n\n\nWorkshop\n\n\nAssignment\n\n\n\n\n\n\nWeek 1\n\n\n\n\nJanuary 14\n\n\nIntroduction to the course\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2\n\n\n\n\nJanuary 19\n\n\nMLK Jr. Day (no classes)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJanuary 21\n\n\nCorrelation vs. Causation\n\n\nDSS Ch 2\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 3\n\n\n\n\nJanuary 26\n\n\nNo class (weather)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJanuary 28\n\n\nCausality\n\n\nDSS Ch 5\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 4\n\n\n\n\nFebruary 2\n\n\nRstudio and Quarto Workshop\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFebruary 4\n\n\nDemocracy and Autocracy\n\n\nPrzeworski 2024, Grossman et. al., 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 5\n\n\n\n\nFebruary 9\n\n\nIntroduction to OLS\n\n\nDSS Ch 4\n\n\n\n\n\n\n\n\n\n\n\n\n\nFebruary 11\n\n\nDemocracy and Development\n\n\nAcemoglu et. al., 2008\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 6\n\n\n\n\nFebruary 16\n\n\nFinal Project Overview\n\n\nNo readings\n\n\n\n\n\n\n\n\n\n\n\n\n\nFebruary 18\n\n\nRepresentation and Accountability\n\n\nBjrkman and Svensson, 2009\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 7\n\n\n\n\nFebruary 23\n\n\nAccountability: Scope Conditions\n\n\nFerraz and Finan, 2011; Chong et. al., 2015\n\n\n\n\n\n\n\n\n\n\n\n\n\nFebruary 25\n\n\nGithub Workshop\n\n\nNo readings\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 8\n\n\n\n\nMarch 2\n\n\nGithub Workshop\n\n\nNo readings\n\n\n\n\n\n\n\n\n\n\n\n\n\nMarch 4\n\n\nSampling and Uncertainty\n\n\nDSS Ch 3\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 9\n\n\n\n\nMarch 9\n\n\nSpring Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMarch 11\n\n\nSpring Break\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 10\n\n\n\n\nMarch 16\n\n\nCrime and Punishment\n\n\nBateson, 2012; Weaver and Lerman, 2010\n\n\n\n\n\n\n\n\n\n\n\n\n\nMarch 18\n\n\nCrime and Punishment 2\n\n\nGustavo A. Flores-Macas and Jessica Zarkin, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 11\n\n\n\n\nMarch 23\n\n\nGender\n\n\nChattopadhyay and Duflo, 2004\n\n\n\n\n\n\n\n\n\n\n\n\n\nMarch 25\n\n\nMigration\n\n\nRozo and Grossman (2025); Sviatschi (2022); Gazeaud (2020)\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 12\n\n\n\n\nMarch 30\n\n\nFinal Project Essentials\n\n\nNo readings\n\n\n\n\n\n\n\n\n\n\n\n\n\nApril 1\n\n\nText as Data workshop\n\n\nNo readings\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 13\n\n\n\n\nApril 6\n\n\nFinal Project Preparation\n\n\nNo readings\n\n\n\n\n\n\n\n\n\n\n\n\n\nApril 8\n\n\nForeign Aid and NGOs 1 (JS)\n\n\nBriggs (2016); Briggs (2021)\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 14\n\n\n\n\nApril 13\n\n\nForeign Aid and NGOs 2 (JS)\n\n\nCruz (2017); Bold et al. (2018)\n\n\n\n\n\n\n\n\n\n\n\n\n\nApril 15\n\n\nConflict and Development\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 15\n\n\n\n\nApril 20\n\n\nConflict and Development 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApril 22\n\n\nClimate and Development\n\n\nO’Brien-Udry (2023)\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 16\n\n\n\n\nApril 27\n\n\nWhat is development?\n\n\nAssorted short pieces\n\n\n\n\n\n\n\n\n\n\n\n\n\nApril 29\n\n\nFinal Project Due"
   },
   {
     "objectID": "slides/03-causal-ctb.html#assignments",
@@ -9247,263 +9317,326 @@
     "text": "Next Meeting\n\nMore causality - RCTs\nCausality with observational data\nSome light R!\nAssigment!! Please be sure to slack me your quarto file\n\n\n\n\n\nhttps://carolina-torreblanca.github.io/psci3200-globaldev-main/"
   },
   {
-    "objectID": "slides/c5-gender.html#agenda",
-    "href": "slides/c5-gender.html#agenda",
-    "title": "Gender and Development",
-    "section": "Agenda",
-    "text": "Agenda\n\nDevelopment and Gender\nChattopadhyay and Duflo, 2004\nInteraction Models"
-  },
-  {
-    "objectID": "slides/c5-gender.html#gender-and-representation",
-    "href": "slides/c5-gender.html#gender-and-representation",
-    "title": "Gender and Development",
-    "section": "Gender and Representation",
-    "text": "Gender and Representation\n\nGender gap in political representation\n\nWomen hold only 27.0% of legislative seats (Inter-Parliamentary Union, 2023)\n23% of cabinet positions (UNWOMEN)\n\nGender gap in political participation:\n\nDisputed gender gap in turnout, large variance"
-  },
-  {
-    "objectID": "slides/c5-gender.html#gender-and-development",
-    "href": "slides/c5-gender.html#gender-and-development",
-    "title": "Gender and Development",
-    "section": "Gender and Development",
-    "text": "Gender and Development\n\nGender and poverty (feminization of poverty to a degree)\nGender and economic participation\n\nLabor force participation gap: 27% globally (ILO, 2023)\nGender wage gap (Pew)\n\nGender and violence\n\n1/3 women have experienced GBV\n\nGender and education\n\nLiteracy rates: 90% male vs. 83% female globally (World Bank Data, 2022)\nSchool attendance gap (UNESCO, 2023)"
-  },
-  {
-    "objectID": "slides/c5-gender.html#gender-development-and-representation",
-    "href": "slides/c5-gender.html#gender-development-and-representation",
-    "title": "Gender and Development",
-    "section": "Gender, Development, and Representation",
-    "text": "Gender, Development, and Representation\n\nThe two are undoubtedly related\nBut could improving gender representation produce development?"
-  },
-  {
-    "objectID": "slides/c5-gender.html#from-representation-to-development",
-    "href": "slides/c5-gender.html#from-representation-to-development",
-    "title": "Gender and Development",
-    "section": "From Representation to development",
-    "text": "From Representation to development\nWhy might having more women in office improve development?\n\n\nWomen may want different things\nWomen may behave differently\nWomen may be better at their job\nWomen representatives may teach about equality"
-  },
-  {
-    "objectID": "slides/c5-gender.html#our-expectations",
-    "href": "slides/c5-gender.html#our-expectations",
-    "title": "Gender and Development",
-    "section": "Our Expectations",
-    "text": "Our Expectations\n\nDifferent outcomes?\n\nDo women prioritize different policy domains?\n\nBetter outcomes?\n\nPotential improvements in service delivery and reduced corruption\n\nConditionally different outcomes?\n\nEffectiveness depends on institutional context\nCritical mass may be necessary\nInteractions with other social identities"
-  },
-  {
-    "objectID": "slides/c5-gender.html#empirical-test",
-    "href": "slides/c5-gender.html#empirical-test",
-    "title": "Gender and Development",
-    "section": "Empirical Test?",
-    "text": "Empirical Test?\n\nSeems like a good theory with important implications that we want to validate empirically\nImagine we have data on share of female legislators and many development outcomes\nWe compare places with female politicians to places with male politicians and see development differences\nWhat is the problem with this?"
-  },
-  {
-    "objectID": "slides/c5-gender.html#a-more-realistic-dag",
-    "href": "slides/c5-gender.html#a-more-realistic-dag",
-    "title": "Gender and Development",
-    "section": "A (more realistic) DAG",
-    "text": "A (more realistic) DAG"
-  },
-  {
-    "objectID": "slides/c5-gender.html#gender-quotas-what-are-they",
-    "href": "slides/c5-gender.html#gender-quotas-what-are-they",
-    "title": "Gender and Development",
-    "section": "Gender Quotas: What are they?",
-    "text": "Gender Quotas: What are they?\n\nRules requiring minimum women’s representation in politics\nGoal: Improve gender parity in government\nVary by country, region, and level of government\nTypically set minimum thresholds (20-50%)"
-  },
-  {
-    "objectID": "slides/c5-gender.html#gender-quotas-types",
-    "href": "slides/c5-gender.html#gender-quotas-types",
-    "title": "Gender and Development",
-    "section": "Gender Quotas: Types",
-    "text": "Gender Quotas: Types\n\nVoluntary quotas:\n\nSet by political parties themselves\nNo legal enforcement\n\nMandatory quotas:\n\nRequired by law\n\nReserved seats:\n\nSpecific seats only women can hold\n\nCandidate quotas:\n\nParties must nominate certain % of women"
-  },
-  {
-    "objectID": "slides/c5-gender.html#gender-quota-adoption",
-    "href": "slides/c5-gender.html#gender-quota-adoption",
-    "title": "Gender and Development",
-    "section": "Gender Quota Adoption",
-    "text": "Gender Quota Adoption\n\nStarted in 1990s, expanded rapidly\nNow used in about 130 countries\nMost common in newer democracies\nLess common in older democracies (US, Japan)\nHighest representation achieved in Rwanda (61%)"
-  },
-  {
-    "objectID": "slides/c5-gender.html#chattopadhyay-and-duflo-2004",
-    "href": "slides/c5-gender.html#chattopadhyay-and-duflo-2004",
-    "title": "Gender and Development",
-    "section": "Chattopadhyay and Duflo, 2004",
-    "text": "Chattopadhyay and Duflo, 2004\n\n\nIndia reserved 1/3 of village council (panchayat) head positions for women (1993)\nReserved positions assigned by random lottery\nRandomization creates natural experiment\nSolves confounding problem \\(\\rightarrow\\) can identify causal effects!"
-  },
-  {
-    "objectID": "slides/c5-gender.html#in-a-nutshell",
-    "href": "slides/c5-gender.html#in-a-nutshell",
-    "title": "Gender and Development",
-    "section": "In a nutshell",
-    "text": "In a nutshell\n\nRQ: What are the policy consequences of “mandated representation of women”?\nHypothesis: In reserved villages, there is more investment in goods women prioritize\nMechanism: Heterogeneous priorities\nTreatment: Village council being randomly assigned to have female head\nOutcome: Investment Decisions\nData: Sample of Villages"
-  },
-  {
-    "objectID": "slides/c5-gender.html#a-bit-more-detail",
-    "href": "slides/c5-gender.html#a-bit-more-detail",
-    "title": "Gender and Development",
-    "section": "A bit more detail",
-    "text": "A bit more detail\n  \\(Y_{ij} = \\beta_1 + \\beta_2 * R_j + \\beta_3 D_i * R_j + \\sum_{l=1}^{N} \\beta_l d_{li} + \\epsilon_{ij}\\)\nWhere:\n\n\n\\(Y_{ij}\\) is an outcome of interest\n\\(R_j\\) takes the value of 1 if GM is reserved\n\\(D_i\\) is differences in request about that good (women - men)\n\\(d_{li}\\) are good Fixed Effects!"
-  },
-  {
-    "objectID": "slides/c5-gender.html#main-findings",
-    "href": "slides/c5-gender.html#main-findings",
-    "title": "Gender and Development",
-    "section": "Main Findings",
-    "text": "Main Findings"
-  },
-  {
-    "objectID": "slides/c5-gender.html#what-are-interaction-terms",
-    "href": "slides/c5-gender.html#what-are-interaction-terms",
-    "title": "Gender and Development",
-    "section": "What are Interaction Terms?",
-    "text": "What are Interaction Terms?\n\nAn interaction term is the product of two variables used as a covariate in a regression model\nCaptures how the effect of one variable depends on the value of another variable\nPowerful for testing conditional hypotheses  \nKey Modeling Assumption\n\nAn increase in \\(X\\) is associated with an increase in \\(Y\\) only when a specific condition is met"
-  },
-  {
-    "objectID": "slides/c5-gender.html#recap-ols-interpretation-basics",
-    "href": "slides/c5-gender.html#recap-ols-interpretation-basics",
-    "title": "Gender and Development",
-    "section": "Recap: OLS Interpretation Basics",
-    "text": "Recap: OLS Interpretation Basics\n\n\n\\(Y_{i} = \\alpha + \\beta_1 * X_i + \\beta_2 * Z_i + \\epsilon_{i}\\)\n\n\\(\\hat{\\beta_1}\\) represents the change in \\(Y\\) when \\(X\\) increases by one unit\n\\(\\hat{\\beta_2}\\) represents the change in \\(Y\\) when \\(Z\\) increases by one unit\nWhy?"
-  },
-  {
-    "objectID": "slides/c5-gender.html#coefficients-as-marginal-changes",
-    "href": "slides/c5-gender.html#coefficients-as-marginal-changes",
-    "title": "Gender and Development",
-    "section": "Coefficients as Marginal Changes",
-    "text": "Coefficients as Marginal Changes\nA partial derivative of the equation shows how \\(Y\\) changes when \\(X\\) changes by 1:\n\n\n\\(Y_{i} = \\alpha + \\beta_1 * X_i + \\beta_2 * Z_i + \\epsilon_{i}\\)\n\n\\(\\frac{\\partial Y}{\\partial X} = \\beta_1\\)\n\\(\\frac{\\partial Y}{\\partial Z} = \\beta_2\\)"
-  },
-  {
-    "objectID": "slides/c5-gender.html#interaction-effects",
-    "href": "slides/c5-gender.html#interaction-effects",
-    "title": "Gender and Development",
-    "section": "Interaction Effects",
-    "text": "Interaction Effects\n\nIdea, the effect of X on Y depends on Z\n\n\\(Y = \\alpha + \\beta_1X + \\beta_2Z + \\beta_3(X*Z) + \\epsilon\\)"
-  },
-  {
-    "objectID": "slides/c5-gender.html#think-of-it-as-another-covariate",
-    "href": "slides/c5-gender.html#think-of-it-as-another-covariate",
-    "title": "Gender and Development",
-    "section": "Think of it as another covariate!",
-    "text": "Think of it as another covariate!\n\n\n\n\n\nX\nZ\nX.Z\n\n\n\n\n0\n0\n0\n\n\n1\n0\n0\n\n\n0\n1\n0\n\n\n1\n1\n1\n\n\n\n\n\n\nWhat needs to happen for the new covariate to be 1?"
-  },
-  {
-    "objectID": "slides/c5-gender.html#new-model",
-    "href": "slides/c5-gender.html#new-model",
-    "title": "Gender and Development",
-    "section": "New model",
-    "text": "New model\n\n\n\\(Y_{i} = \\alpha + \\beta_1 * X_i + \\beta_2 * Z_i + \\beta_3 * Z_i * X_i + \\epsilon_{i}\\)\n\nHow to interpret \\(\\beta_3\\): Expected change in Y when the product of \\(X \\times Z\\) increases by 1 unit.\nHow to interpret \\(\\beta_1\\): Change in Y when X increases by 1 unit AND \\(Z =0\\)\nHow to interpret \\(\\beta_2\\): Change in Y when X increases by 1 unit AND \\(X =0\\)"
-  },
-  {
-    "objectID": "slides/c5-gender.html#back-to-math",
-    "href": "slides/c5-gender.html#back-to-math",
-    "title": "Gender and Development",
-    "section": "Back to Math!",
-    "text": "Back to Math!\n  Why does the interpretation of \\(\\beta_1\\) and \\(\\beta_2\\) change?\n\\(Y_{i} = \\alpha + \\beta_1 * X_i + \\beta_2 * Z_i + \\beta_3 * Z_i * X_i \\epsilon_{i}\\)\n\n\\(\\frac{\\partial Y}{\\partial X} = \\beta_1 + \\beta_3*Z_i\\)\n\\(\\frac{\\partial Y}{\\partial Z} = \\beta_2  + \\beta_3*X_i\\)"
-  },
-  {
-    "objectID": "slides/c5-gender.html#three-simple-rules-for-interaction",
-    "href": "slides/c5-gender.html#three-simple-rules-for-interaction",
-    "title": "Gender and Development",
-    "section": "Three Simple Rules for Interaction",
-    "text": "Three Simple Rules for Interaction\n\nUse for conditional hypotheses\nAlways include all constituent terms\nInterpret \\(\\beta_1\\) and \\(\\beta_2\\) correctly"
-  },
-  {
-    "objectID": "slides/c5-gender.html#practical-example",
-    "href": "slides/c5-gender.html#practical-example",
-    "title": "Gender and Development",
-    "section": "Practical Example",
-    "text": "Practical Example\n\nLets simulate some data to see how we can fit an interactive model in R\nWe are going to look at a binary covariate\n\n\nalpha &lt;- 1\nbeta_1 &lt;- -.5    # Coefficient for women's representation\nbeta_2 &lt;- 1.5  # Coefficient for quota system\nbeta_3 &lt;- 3    # Coefficient for interaction term\n\nset.seed(12)\ninteraction_data &lt;- tibble(\n  women_representation = runif(100, 0, 1), # any number btw 0 and 1\n  quota_system = sample(0:1, 100, replace = T)) %&gt;% # either 1 or 0\n  mutate(policy_outcome = alpha + \n               beta_1 * women_representation + \n               beta_2 * quota_system + \n               beta_3 * (women_representation * quota_system) + \n                rnorm(n(), 0, 0.5))"
-  },
-  {
-    "objectID": "slides/c5-gender.html#visualize-conditional-relationship",
-    "href": "slides/c5-gender.html#visualize-conditional-relationship",
-    "title": "Gender and Development",
-    "section": "Visualize Conditional Relationship",
-    "text": "Visualize Conditional Relationship"
-  },
-  {
-    "objectID": "slides/c5-gender.html#practical-example-1",
-    "href": "slides/c5-gender.html#practical-example-1",
-    "title": "Gender and Development",
-    "section": "Practical Example",
-    "text": "Practical Example\n\nYou can fit the model with lm like usual\n\n\n\n\nCall:\nlm(formula = policy_outcome ~ women_representation * quota_system, \n    data = interaction_data)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-1.00935 -0.35365 -0.00404  0.34793  1.08715 \n\nCoefficients:\n                                  Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)                         0.9766     0.1348   7.245 1.09e-10 ***\nwomen_representation               -0.4865     0.2289  -2.125   0.0361 *  \nquota_system                        1.5993     0.2084   7.673 1.39e-11 ***\nwomen_representation:quota_system   2.8913     0.3921   7.374 5.85e-11 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.5064 on 96 degrees of freedom\nMultiple R-squared:  0.8993,    Adjusted R-squared:  0.8962 \nF-statistic: 285.8 on 3 and 96 DF,  p-value: &lt; 2.2e-16"
-  },
-  {
-    "objectID": "workshops/w1_quarto.html",
-    "href": "workshops/w1_quarto.html",
-    "title": "Introduction to Quarto",
+    "objectID": "workshops/survey_data.html",
+    "href": "workshops/survey_data.html",
+    "title": "Final Report Example",
     "section": "",
-    "text": "Quarto is a publishing system that lets you combine text, code, and output into a single document.\nWhy use Quarto?\n\nWrite analysis and explanation in one place\nCode runs and updates automatically when you render\nExport to HTML, PDF, Word, slides, websites\nAll your assignments will be .qmd files rendered to .html\nYour final project will be a Quarto website\n\nThe workflow:\n\nWrite text and code in a .qmd file\nClick “Render” (or Ctrl+Shift+K)\nQuarto runs your code and produces a polished document"
+    "text": "Does moving to a new city reduce the political engagement of youth?\nI hypothesize that moving to a new city will reduce an individuals’ likelihood of engaging in political or civic action. I argue that this is the case for several reasons:\n\nYouth have low levels of political engagement, often driven by lack of information and experience (Holbein and Hillygus 2020)\nYouth that move will have less information and experience with engagement in their new city\nYouth that move probably have fewer social ties in their new city, and ties are important for facilitating engagement (Campbell 2013)"
   },
   {
-    "objectID": "workshops/w1_quarto.html#the-yaml-header",
-    "href": "workshops/w1_quarto.html#the-yaml-header",
-    "title": "Introduction to Quarto",
-    "section": "The YAML Header",
-    "text": "The YAML Header\nEvery Quarto document starts with a YAML header between --- marks:\n---\ntitle: \"My Analysis\"\nauthor: \"Your Name\"\ndate: today\nformat: html\n---\nThis controls the document’s metadata and output format."
+    "objectID": "workshops/survey_data.html#research-question",
+    "href": "workshops/survey_data.html#research-question",
+    "title": "Final Report Example",
+    "section": "",
+    "text": "Does moving to a new city reduce the political engagement of youth?\nI hypothesize that moving to a new city will reduce an individuals’ likelihood of engaging in political or civic action. I argue that this is the case for several reasons:\n\nYouth have low levels of political engagement, often driven by lack of information and experience (Holbein and Hillygus 2020)\nYouth that move will have less information and experience with engagement in their new city\nYouth that move probably have fewer social ties in their new city, and ties are important for facilitating engagement (Campbell 2013)"
   },
   {
-    "objectID": "workshops/w1_quarto.html#markdown-formatting",
-    "href": "workshops/w1_quarto.html#markdown-formatting",
-    "title": "Introduction to Quarto",
-    "section": "Markdown Formatting",
-    "text": "Markdown Formatting\nQuarto uses Markdown for text formatting:\n\nitalics with *italics*\nbold with **bold**\nlinks with [text](url)\nCreate sections with #, ##, ###\n\n\nLists\nBullet points:\n\nFirst item\nSecond item\nThird item\n\nNumbered lists:\n\nFirst step\nSecond step\nThird step\n\n\n\nMath\nUse LaTeX for equations. Inline math: \\(y = mx + b\\)\nDisplay equations:\n\\[\n\\bar{x} = \\frac{1}{n} \\sum_{i=1}^{n} x_i\n\\]\n\n\nImages\nInclude images from your project folder:\n![Caption text](image.png){width=\"50%\"}\n\n\n\nShakira knows what’s up\n\n\n\n\nTables\nCreate tables by hand:\n\n\n\nColumn 1\nColumn 2\nColumn 3\n\n\n\n\nA\nB\nC\n\n\nD\nE\nF\n\n\n\n\n\nFootnotes\nAdd footnotes like this.1"
+    "objectID": "workshops/survey_data.html#research-design",
+    "href": "workshops/survey_data.html#research-design",
+    "title": "Final Report Example",
+    "section": "Research Design",
+    "text": "Research Design\nI will use a linear model to estimate the relationship between levels of political engagement and whether or not an individual has moved to a new city. This design relies on the assumption that individuals that moved to a new city had similar propensities to participate to those that did not, conditional on observable covariates.\nWhile this assumption is unrealistic, I will take several measures to rule-out potential sources of baseline differences in the propensity of moving and non-moving students to participate.\nFirst, I will identify specific types of participation that are more and less likely to be affected by whether at student moves. If my hypothesis is correct, we should expect to see the more likely forms of participation to be different between moving and non-moving students, while the less likely forms of participation should not be different between moving and non-moving students.\nSecond, I will condition my analysis to students that move from one urban place to another urban place. While students that move from a rural area to a city are likely to be different in many important ways that could affect their propensity to participate, those that move from one city to another city will be less different.\nThird, I will condition my analysis on students socio-economic status (SES). SES is one of the strongest predictors of political engagement, and students from different SES backgrounds will be different in ways that affect their propensity to participate.\nFourth, I will account for the length of time since respondents moved to their new city. My mechanisms linking moving to a new city with lower engagement (information and social ties) would predict that this effect reduces over time. Therefore, the gap between moving and non-moving students should be smaller for respondents that have been in their new city for longer."
   },
   {
-    "objectID": "workshops/w1_quarto.html#code-chunks",
-    "href": "workshops/w1_quarto.html#code-chunks",
-    "title": "Introduction to Quarto",
-    "section": "Code Chunks",
-    "text": "Code Chunks\nInsert R code in “chunks” that look like this:\n```{r}\n# Your R code here\nmean(c(1, 2, 3, 4, 5))\n```\nWhen you render, the code runs and the output appears in your document."
+    "objectID": "workshops/survey_data.html#research-context",
+    "href": "workshops/survey_data.html#research-context",
+    "title": "Final Report Example",
+    "section": "Research Context",
+    "text": "Research Context\nI will student this research question among students at Addis Ababa University (AAU). AAU is Ethiopia’s top university, and students from around the country (and the continent) move to Addis Ababa in order to study there. Given the frequency with which youth move to a new city in order to obtain education, and the importance of universities and sites of political socialization, this is an important context in which to study the effects of moving on participation."
   },
   {
-    "objectID": "workshops/w1_quarto.html#example-running-code",
-    "href": "workshops/w1_quarto.html#example-running-code",
-    "title": "Introduction to Quarto",
-    "section": "Example: Running Code",
-    "text": "Example: Running Code\n\n# This code will run when you render\nx &lt;- c(10, 20, 30, 40, 50)\nmean(x)\n\n[1] 30"
+    "objectID": "workshops/survey_data.html#data-and-variables",
+    "href": "workshops/survey_data.html#data-and-variables",
+    "title": "Final Report Example",
+    "section": "Data and Variables",
+    "text": "Data and Variables\nI am using a representative survey of students from Addis Ababa University in Ethiopia collected by DevLab researchers. This data contains two waves collected in May-June and October-November of 2022. A total of 825 students completed both waves of the survey.\nThe variables being used fall into two categories. First, we use variables based on survey questions measuring respondent demographics, including whether or not the student is originally from Addis Ababa, whether they came from an urban or rural setting, the number of years they have been at university, and whether or not they work to support themselves and receive financial support from their parents. Second, we use variables based on survey questions measuring political participation."
   },
   {
-    "objectID": "workshops/w1_quarto.html#chunk-options",
-    "href": "workshops/w1_quarto.html#chunk-options",
-    "title": "Introduction to Quarto",
-    "section": "Chunk Options",
-    "text": "Chunk Options\nControl how chunks behave with options:\n#| echo: true       # Show the code in output\n#| echo: false      # Hide the code, show only results\n#| eval: false      # Show code but don't run it\n#| warning: false   # Suppress warning messages\n#| message: false   # Suppress messages"
+    "objectID": "workshops/survey_data.html#describing-the-sample",
+    "href": "workshops/survey_data.html#describing-the-sample",
+    "title": "Final Report Example",
+    "section": "Describing the Sample",
+    "text": "Describing the Sample\n\nDemographics\n\n\n\n\n\n\n\n\n\n\n\nLevels of Engagement"
   },
   {
-    "objectID": "workshops/w1_quarto.html#example-hidden-code",
-    "href": "workshops/w1_quarto.html#example-hidden-code",
-    "title": "Introduction to Quarto",
-    "section": "Example: Hidden Code",
-    "text": "Example: Hidden Code\nSometimes you want to show results but hide the code:\n\n\n\n\n\n\n\n\n\nThe plot appears, but readers don’t see the code that made it."
+    "objectID": "workshops/survey_data.html#results",
+    "href": "workshops/survey_data.html#results",
+    "title": "Final Report Example",
+    "section": "Results",
+    "text": "Results\n\n\n\n\n\n\nContact Official\nAttend Meeting\nNGO Volunteer\nSign Petition\n\n\n\n\n(Intercept)\n1.044*** (0.114)\n0.752*** (0.116)\n1.304*** (0.181)\n0.354*** (0.090)\n\n\nmoved\n0.178 (0.141)\n0.580*** (0.143)\n0.117 (0.222)\n0.529*** (0.110)\n\n\nNum.Obs.\n802\n801\n803\n801\n\n\nR2 Adj.\n0.001\n0.019\n0.001\n0.027"
   },
   {
-    "objectID": "workshops/w1_quarto.html#inline-code",
-    "href": "workshops/w1_quarto.html#inline-code",
-    "title": "Introduction to Quarto",
-    "section": "Inline Code",
-    "text": "Inline Code\nReference values directly in your text using inline code.\n\nn_cars &lt;- nrow(mtcars)\navg_mpg &lt;- round(mean(mtcars$mpg), 1)\n\nWrite: “The dataset contains `r n_cars` cars with an average fuel efficiency of `r avg_mpg` mpg.”\nResult: The dataset contains 32 cars with an average fuel efficiency of 20.1 mpg.\nIf your data changes, these numbers update automatically!"
+    "objectID": "slides/06-demaut2.html#agenda",
+    "href": "slides/06-demaut2.html#agenda",
+    "title": "Democracy and Development",
+    "section": "Agenda",
+    "text": "Agenda\n\nDemocracy as a consequence of development\nDemocracy as a cause of development\nFixed effects"
   },
   {
-    "objectID": "workshops/w1_quarto.html#labeled-figures",
-    "href": "workshops/w1_quarto.html#labeled-figures",
-    "title": "Introduction to Quarto",
-    "section": "Labeled Figures",
-    "text": "Labeled Figures\nGive figures labels and captions for cross-referencing:\n\nggplot(mtcars, aes(x = hp, y = mpg, color = factor(cyl))) +\n  geom_point(size = 3) +\n  labs(x = \"Horsepower\", y = \"Miles per Gallon\", color = \"Cylinders\") +\n  theme_minimal()\n\n\n\n\n\n\n\nFigure 1: Relationship between horsepower and fuel efficiency\n\n\n\n\n\nReference it in text with @fig-scatter: See Figure 1."
+    "objectID": "slides/06-demaut2.html#democracy-and-development",
+    "href": "slides/06-demaut2.html#democracy-and-development",
+    "title": "Democracy and Development",
+    "section": "Democracy and Development",
+    "text": "Democracy and Development\n\nFrom Acemoglu et. al. 2008"
   },
   {
-    "objectID": "workshops/w1_quarto.html#tables-from-code",
-    "href": "workshops/w1_quarto.html#tables-from-code",
-    "title": "Introduction to Quarto",
-    "section": "Tables from Code",
-    "text": "Tables from Code\n\nlibrary(dplyr)\n\nWarning: package 'dplyr' was built under R version 4.1.2\n\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nmtcars %&gt;%\n  group_by(cyl) %&gt;%\n  summarize(\n    `Average MPG` = round(mean(mpg), 1),\n    `Count` = n()\n  ) %&gt;%\n  knitr::kable()\n\n\n\nTable 1: Average MPG by number of cylinders\n\n\n\n\n\n\ncyl\nAverage MPG\nCount\n\n\n\n\n4\n26.7\n11\n\n\n6\n19.7\n7\n\n\n8\n15.1\n14\n\n\n\n\n\n\n\n\nReference with @tbl-summary: See Table 1."
+    "objectID": "slides/06-demaut2.html#two-explanations",
+    "href": "slides/06-demaut2.html#two-explanations",
+    "title": "Democracy and Development",
+    "section": "Two explanations",
+    "text": "Two explanations\n\n\nDirect causal link\n\nDevelopment \\(\\rightarrow\\) democracy\nDemocracy \\(\\rightarrow\\) development\n\nIndirect link or correlation\n\nIncome \\(\\rightarrow\\) regime survival\nOmitted variable"
   },
   {
-    "objectID": "workshops/w1_quarto.html#footnotes",
-    "href": "workshops/w1_quarto.html#footnotes",
-    "title": "Introduction to Quarto",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThis is the footnote text.↩︎"
+    "objectID": "slides/06-demaut2.html#modernization-theory-lipset-1960",
+    "href": "slides/06-demaut2.html#modernization-theory-lipset-1960",
+    "title": "Democracy and Development",
+    "section": "Modernization Theory, Lipset (1960)",
+    "text": "Modernization Theory, Lipset (1960)\nDevelopment causes democracy\n\n\nEconomic development requires investing in education, infrastructure, urbanization…\n\nModernizing.\n\nModernization triggers changes making democracy more likely\n\nSociety becomes more complex and organized\nEducation facilitates democratic citizenship\nInfrastructure and urbanization facilitate political competition"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#the-threat-of-revolution",
+    "href": "slides/06-demaut2.html#the-threat-of-revolution",
+    "title": "Democracy and Development",
+    "section": "The Threat of Revolution",
+    "text": "The Threat of Revolution\n\n\nAcemoglu and Robinson (2001)\nRich elites control autocratic societies\n\nBut they fear revolution!\n\nHow to prevent it?\n\nDemocratize and redistribute some of the resources\n\nElites and non-elites are better off"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#democracy-spurs-development",
+    "href": "slides/06-demaut2.html#democracy-spurs-development",
+    "title": "Democracy and Development",
+    "section": "Democracy Spurs Development",
+    "text": "Democracy Spurs Development\nDictatorship, Democracy, and Development (Olson, 1993)\n\n\nAutocrats want a wealthy country.\nWhy would citizens produce wealth if it can be expropriated by an autocrat?\n\nSolution: Credibly tie your own hands with democratic institutions\n\nBy sharing political power and enshrining property rights, create incentives to produce wealth\nDemocracy \\(\\rightarrow\\) development"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#democratic-survival",
+    "href": "slides/06-demaut2.html#democratic-survival",
+    "title": "Democracy and Development",
+    "section": "Democratic Survival",
+    "text": "Democratic Survival\n\n\nDemocracy is established independently of development …\nBut development helps democracies survive\n“The more well-to-do a nation, the greater the chances it will sustain democracy” (Lipset, 1959)\nEmpirical implications: There will be a correlation btw democracy and development even if development does not cause democracy!"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#democracy-and-development-in-research",
+    "href": "slides/06-demaut2.html#democracy-and-development-in-research",
+    "title": "Democracy and Development",
+    "section": "Democracy and Development in Research",
+    "text": "Democracy and Development in Research\n\nAre the theoretical arguments for \\(Democracy \\rightarrow Development\\) convincing?\nAre the theoretical arguments for \\(Development \\rightarrow Democracy\\) convincing?"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#democracy-and-development-in-research-1",
+    "href": "slides/06-demaut2.html#democracy-and-development-in-research-1",
+    "title": "Democracy and Development",
+    "section": "Democracy and Development in Research",
+    "text": "Democracy and Development in Research\n\nPaglayan, 2020\n\nReconsiders whether democratization increases the provision of education. Finds that democratization can increase education provision, but that education is also a powerful for autocrats\n\nFujiwara, 2015\n\nElectronic voting in Brazil reduced mistakes when voting from poorest, resulting in better accountability and more spending in health care"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#democracy-and-development-in-research-2",
+    "href": "slides/06-demaut2.html#democracy-and-development-in-research-2",
+    "title": "Democracy and Development",
+    "section": "Democracy and Development in Research",
+    "text": "Democracy and Development in Research\n\nFerraz and Finan, 2008\n\nRandom audits of Brazilian majors reduces the chances that corrupt politicians are re-elected\n\nMori, et. al., 2024\n\nUse gender quotas to examine if female politicians use local budget more or less effectively\n\nPailler, 2018\n\nDemocratic competition increases deforestation!"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#that-correlation-again",
+    "href": "slides/06-demaut2.html#that-correlation-again",
+    "title": "Democracy and Development",
+    "section": "That Correlation Again",
+    "text": "That Correlation Again\n\nFrom Acemoglu et. al. 2008"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#acemoglu-et.-al.-2008",
+    "href": "slides/06-demaut2.html#acemoglu-et.-al.-2008",
+    "title": "Democracy and Development",
+    "section": "Acemoglu et. al. 2008",
+    "text": "Acemoglu et. al. 2008\n\nThe criticism: correlation of democracy and development does not mean causation\n\n\n\nAlternative: countries embark on divergent development paths\nEmpirical implication: observed association is correlational"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#which-is-the-correct-dag",
+    "href": "slides/06-demaut2.html#which-is-the-correct-dag",
+    "title": "Democracy and Development",
+    "section": "Which is the correct DAG?",
+    "text": "Which is the correct DAG?"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#the-problem",
+    "href": "slides/06-demaut2.html#the-problem",
+    "title": "Democracy and Development",
+    "section": "The Problem",
+    "text": "The Problem\n\nIf the confounded DAG is correct, we need to control for U\nWhat U do the authors propose?\n\n\n\n“The major source of potential bias in a regression of democracy on income per capita is country-­specific, historical factors influencing both political and economic development.”\n\n\nCannot control for all historical factors individually. So what do we do?"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#strategy-1-fixed-effects",
+    "href": "slides/06-demaut2.html#strategy-1-fixed-effects",
+    "title": "Democracy and Development",
+    "section": "Strategy 1: Fixed Effects",
+    "text": "Strategy 1: Fixed Effects\n\n“We utilize two strategies to investigate the causal effect of income on democracy. Our first strategy is to control for country-specific factors affecting both income and democracy by including country fixed effects”"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#from-between-to-within",
+    "href": "slides/06-demaut2.html#from-between-to-within",
+    "title": "Democracy and Development",
+    "section": "From Between to Within",
+    "text": "From Between to Within\n\nThe standard regression compares rich countries to poor countries (between variation)\n\n\n“The idea of fixed effects is to move beyond this comparison and investigate the”within-country variation,” t”\n\n\nWhen a country gets richer than its own average, does it become more democratic than its own average?"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#why-does-this-matter-simpsons-paradox",
+    "href": "slides/06-demaut2.html#why-does-this-matter-simpsons-paradox",
+    "title": "Democracy and Development",
+    "section": "Why Does This Matter? Simpson’s Paradox",
+    "text": "Why Does This Matter? Simpson’s Paradox"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#simpsons-paradox",
+    "href": "slides/06-demaut2.html#simpsons-paradox",
+    "title": "Democracy and Development",
+    "section": "Simpson’s Paradox",
+    "text": "Simpson’s Paradox\nA trend in pooled data can reverse when the data is split into groups. The overall trend is driven by differences between groups, not by the relationship within groups"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#fe-unit-level-intercepts",
+    "href": "slides/06-demaut2.html#fe-unit-level-intercepts",
+    "title": "Democracy and Development",
+    "section": "FE = Unit-Level Intercepts",
+    "text": "FE = Unit-Level Intercepts\n\nFE give each unit its own intercept, just like splitting by group\nThe pooled regression mixes between and within variation\nFE isolates only within-group variation, which can flip conclusions"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#fixed-effects-in-practice",
+    "href": "slides/06-demaut2.html#fixed-effects-in-practice",
+    "title": "Democracy and Development",
+    "section": "Fixed Effects in Practice",
+    "text": "Fixed Effects in Practice\nAdd a dummy variable for each country (one intercept per country, one shared slope)\nGo from\n\\[\\begin{equation*}\nDem_{it} = \\alpha + \\beta_1 Income_{it} + \\epsilon_{it}\n\\end{equation*}\\]\nTo\n\\[\\begin{align*}\nDem_{it} = &\\alpha + \\beta_1 Income_{it} + \\mu_1 USA + \\\\\n\\mu_2 France & + ... \\mu_n Zimbabwe + \\epsilon_{it}\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#why-time-invariant-only",
+    "href": "slides/06-demaut2.html#why-time-invariant-only",
+    "title": "Democracy and Development",
+    "section": "Why Time-Invariant Only?",
+    "text": "Why Time-Invariant Only?\n\n“If these omitted characteristics are, to a first approximation, time-invariant, the inclusion of fixed effects will remove them and this source of bias.”\n\n\nColonial history and geography are in the past. They do not change. FE absorbs them\nBut new things happen: wars, oil discoveries, coups. These change the within-country link between income and democracy in new, unexpected ways"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#load-and-prepare-data",
+    "href": "slides/06-demaut2.html#load-and-prepare-data",
+    "title": "Democracy and Development",
+    "section": "Load and Prepare Data",
+    "text": "Load and Prepare Data\n\n\nCode\npacman::p_load(readxl, tidyverse, here)\n\nd &lt;- read_xls(here(\"./slides/code/Income-and-Democracy-Data-AER-adjustment.xls\"),\n              sheet = 2) %&gt;%\n  filter(!is.na(lrgdpch), !is.na(polity4)) %&gt;%\n  arrange(country, year) %&gt;%\n  group_by(country) %&gt;%\n  mutate(lag_dem = lag(polity4),\n         lag_income = lag(lrgdpch)) %&gt;%\n  ungroup()\n# polity4: standardized democracy score (-10 to 10)\nsummary(d$polity4)\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  0.000   0.150   0.700   0.573   0.950   1.000 \n\n\nCode\n# lrgdpch: log real GDP per capita\nsummary(d$lrgdpch)\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  6.094   7.297   8.149   8.167   8.960  10.413"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#cross-sectional-correlation",
+    "href": "slides/06-demaut2.html#cross-sectional-correlation",
+    "title": "Democracy and Development",
+    "section": "Cross-Sectional Correlation",
+    "text": "Cross-Sectional Correlation\nThis is the pattern that modernization theory predicts\n\n\nCode\nggplot(d, aes(y = polity4, x = lag_income)) +\n  geom_point(alpha = 0.3) +\n  geom_smooth(method = lm, se = FALSE) +\n  labs(x = \"Lagged Log GDP per capita\", y = \"Polity Score\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#ols-regression-no-fe",
+    "href": "slides/06-demaut2.html#ols-regression-no-fe",
+    "title": "Democracy and Development",
+    "section": "OLS Regression (no FE)",
+    "text": "OLS Regression (no FE)\n\n\n\nCode\nmod_ols &lt;- lm(polity4 ~ lag_dem + lag_income, data = d)\nmodelsummary::modelsummary(mod_ols, stars = TRUE,\n  coef_omit = \"Intercept\",\n  gof_omit = \"AIC|BIC|Log.Lik|F\")\n\n\n\n\n\n\nModel 1\n\n\n\n\nlag_dem\n0.742***\n\n\n\n(0.021)\n\n\nlag_income\n0.063***\n\n\n\n(0.008)\n\n\nNum.Obs.\n900\n\n\nR2\n0.746\n\n\nR2 Adj.\n0.746\n\n\n\n + p"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#why-lag",
+    "href": "slides/06-demaut2.html#why-lag",
+    "title": "Democracy and Development",
+    "section": "Why Lag?",
+    "text": "Why Lag?\n\nWhy use lagged GDP and not current GDP?\n\n\n\nLagged income happened before the current democracy score, which makes the causal direction clearer\nWhy include lagged democracy?\n\n\n\n\nDemocracy is persistent: this year’s regime looks a lot like last year’s\nWithout controlling for it, we might confuse “income causes democracy” with “democracy causes democracy”"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#adding-fixed-effects-with-lm",
+    "href": "slides/06-demaut2.html#adding-fixed-effects-with-lm",
+    "title": "Democracy and Development",
+    "section": "Adding Fixed Effects with lm",
+    "text": "Adding Fixed Effects with lm\n\n\n\nCode\nmod_fe &lt;- lm(polity4 ~ lag_dem + lag_income +\n               factor(country) + factor(year), data = d)\nmodelsummary::modelsummary(\n  list(\"OLS\" = mod_ols, \"Country + Year FE\" = mod_fe),\n  stars = TRUE,\n  coef_omit = \"factor|Intercept\",\n  gof_omit = \"AIC|BIC|Log.Lik|F|R2\")\n\n\n\n\n\n\nOLS\nCountry + Year FE\n\n\n\n\nlag_dem\n0.742***\n0.431***\n\n\n\n(0.021)\n(0.034)\n\n\nlag_income\n0.063***\n0.005\n\n\n\n(0.008)\n(0.027)\n\n\nNum.Obs.\n900\n900\n\n\n\n + p"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#what-changed",
+    "href": "slides/06-demaut2.html#what-changed",
+    "title": "Democracy and Development",
+    "section": "What Changed?",
+    "text": "What Changed?\n\nIn OLS, lag_income is positive and significant\nWith FE, the income coefficient drops to almost zero, not distinguishable from zero\nThis is Acemoglu et al.’s key finding"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#a-better-package-estimatr",
+    "href": "slides/06-demaut2.html#a-better-package-estimatr",
+    "title": "Democracy and Development",
+    "section": "A Better Package: estimatr",
+    "text": "A Better Package: estimatr\n\n\n\nCode\npacman::p_load(estimatr)\n# cluster-robust SEs + efficient FE\nmod_robust &lt;- lm_robust(polity4 ~ lag_dem + lag_income,\n  fixed_effects = country + year,\n  clusters = country, data = d)\nmodelsummary::modelsummary(mod_robust, stars = TRUE,\n  coef_omit = \"Intercept\",\n  gof_omit = \"AIC|BIC|Log.Lik|F|R2\")\n\n\n\n\n\n\nModel 1\n\n\n\n\nlag_dem\n0.431***\n\n\n\n(0.054)\n\n\nlag_income\n-0.005\n\n\n\n(0.033)\n\n\nNum.Obs.\n900\n\n\nse_type\nCR2\n\n\n\n + p"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#visualizing-fe-in-our-data",
+    "href": "slides/06-demaut2.html#visualizing-fe-in-our-data",
+    "title": "Democracy and Development",
+    "section": "Visualizing FE in Our Data",
+    "text": "Visualizing FE in Our Data"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#why-are-rich-countries-democratic",
+    "href": "slides/06-demaut2.html#why-are-rich-countries-democratic",
+    "title": "Democracy and Development",
+    "section": "Why Are Rich Countries Democratic?",
+    "text": "Why Are Rich Countries Democratic?\n\n“These results naturally raise the following important question: why is there a cross-sectional correlation between income and democracy? In other words, why are rich countries democratic today?”"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#the-authors-answer",
+    "href": "slides/06-demaut2.html#the-authors-answer",
+    "title": "Democracy and Development",
+    "section": "The Authors’ Answer",
+    "text": "The Authors’ Answer\n\n“At a statistical level, the answer is clear: even though there is no relationship between changes in income and democracy in the postwar era or over the past 100 years or so, there is a positive association over the past 500 years.”"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#historical-roots-of-the-correlation",
+    "href": "slides/06-demaut2.html#historical-roots-of-the-correlation",
+    "title": "Democracy and Development",
+    "section": "Historical Roots of the Correlation",
+    "text": "Historical Roots of the Correlation\n\n“In particular, for the whole world sample, the positive association is considerably weakened when we control for date of independence, early constraints on the executive, and religion.”"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#do-we-buy-it",
+    "href": "slides/06-demaut2.html#do-we-buy-it",
+    "title": "Democracy and Development",
+    "section": "Do We Buy It?",
+    "text": "Do We Buy It?\n\nAcemoglu et al.’s claim: the income-democracy correlation reflects deep historical divergence, not a modern causal effect of income on democracy\nWhat do you think? Is this convincing?\nWhat would it take to change your mind?"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#summing-up",
+    "href": "slides/06-demaut2.html#summing-up",
+    "title": "Democracy and Development",
+    "section": "Summing up",
+    "text": "Summing up\n\nGood theoretical reasons to think democracy is causally related to development\nMost extant work focuses on micro, sub-national dynamics\nFixed effects control for time-invariant unobserved confounders\nIf confounders change over time, FE cannot help"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#strategy-2-instrumental-variables",
+    "href": "slides/06-demaut2.html#strategy-2-instrumental-variables",
+    "title": "Democracy and Development",
+    "section": "Strategy 2: Instrumental Variables",
+    "text": "Strategy 2: Instrumental Variables\n\n“Our second strategy is to use instrumental-variables (IV) regressions to estimate the impact of income on democracy”\n\n\nWhen FE is not enough (time-varying confounders remain), IV provides another approach\nCore idea: find a variable Z that shifts income but has no direct effect on democracy"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#iv-intuition",
+    "href": "slides/06-demaut2.html#iv-intuition",
+    "title": "Democracy and Development",
+    "section": "IV Intuition",
+    "text": "IV Intuition\n\nWe need a variable Z (the “instrument”) that:\n\nIs correlated with income (relevance)\nAffects democracy only through income (exclusion restriction)\n\nZ isolates the part of income variation that is “as-if random”\nAcemoglu et al. use trade-weighted world income as instrument: global economic shocks shift a country’s income but arguably do not directly cause democratization"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#the-exclusion-restriction",
+    "href": "slides/06-demaut2.html#the-exclusion-restriction",
+    "title": "Democracy and Development",
+    "section": "The Exclusion Restriction",
+    "text": "The Exclusion Restriction\n\nThe critical assumption: Z affects democracy ONLY through income\n\n\\[Z \\rightarrow Income \\rightarrow Democracy\\]\n\nThere must be no direct arrow from Z to Democracy\nThis is untestable; it must be argued on substantive grounds\nIf the exclusion restriction fails, IV estimates are biased"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#iv-in-acemoglu-et-al.",
+    "href": "slides/06-demaut2.html#iv-in-acemoglu-et-al.",
+    "title": "Democracy and Development",
+    "section": "IV in Acemoglu et al.",
+    "text": "IV in Acemoglu et al.\n\nInstrument: trade-weighted world income\nLogic: when your trading partners get richer, your income goes up (relevance)\nExclusion: your partners’ income growth does not directly change your political institutions\nResult: IV estimates also show no causal effect of income on democracy"
+  },
+  {
+    "objectID": "slides/06-demaut2.html#limitations-of-iv",
+    "href": "slides/06-demaut2.html#limitations-of-iv",
+    "title": "Democracy and Development",
+    "section": "Limitations of IV",
+    "text": "Limitations of IV\n\nExclusion restriction is never testable\nResults depend heavily on instrument choice\nIV estimates a local effect (for observations affected by the instrument)\nCombined with FE evidence, strengthens the case against modernization theory"
   },
   {
     "objectID": "assignments/aau_survey_key.html",
@@ -10031,11 +10164,11 @@
     "text": "Thing 1: Best Guess of Y\n\n\n\n“Given what I know about X, what is my best guess for Y?”\n\n\n\n\nIf I tell you a country’s GDP per capita is $10,000…\nWhat’s your best guess for its life expectancy?\nRegression gives a linear best guess"
   },
   {
-    "objectID": "slides/05-ols.html#thing-2-how-much-does-y-change",
-    "href": "slides/05-ols.html#thing-2-how-much-does-y-change",
+    "objectID": "slides/05-ols.html#thing-2-how-much-does-y-change-when-x-changes",
+    "href": "slides/05-ols.html#thing-2-how-much-does-y-change-when-x-changes",
     "title": "Introduction to OLS",
-    "section": "Thing 2: How Much Does Y Change?",
-    "text": "Thing 2: How Much Does Y Change?\n\n\n\n“When X goes up by one unit, how much does Y change?”\n\n\n\n\nIf GDP per capita increases by $1,000…\nHow many more years of life expectancy do we predict?\nThis is the slope — one number that summarizes the relationship\n\n\n\n\n\nThese are two sides of the same coin. The line gives you both."
+    "section": "Thing 2: How Much Does Y Change when X changes?",
+    "text": "Thing 2: How Much Does Y Change when X changes?\n\n\n\n“When X goes up by one unit, how much does Y change?”\n\n\n\n\nIf GDP per capita increases by one unit\nHow many more years of life expectancy should we expect?\nThis is the slope\nMaybe the causal effect of X on Y, depends…"
   },
   {
     "objectID": "slides/05-ols.html#something-you-already-know",
@@ -10178,6 +10311,13 @@
     "text": "The Problem: Omitted Variables\n\n\n\nWhat if we left something important out of the model?\n\n\n\nLet’s play God again but this time with two variables that matter\nLife expectancy is going to depend on both GDP and average education BUT education depends on gdp as wel"
   },
   {
+    "objectID": "slides/05-ols.html#visualize-the-dag",
+    "href": "slides/05-ols.html#visualize-the-dag",
+    "title": "Introduction to OLS",
+    "section": "Visualize the DAG",
+    "text": "Visualize the DAG"
+  },
+  {
     "objectID": "slides/05-ols.html#gods-new-rule",
     "href": "slides/05-ols.html#gods-new-rule",
     "title": "Introduction to OLS",
@@ -10199,13 +10339,6 @@
     "text": "What Just Happened?\n\n\n\n\nWithout education: the GDP coefficient is inflated\nWith education: it drops dramatically, closer to God’s truth (0.2)\nWhy? GDP and education are correlated\nGDP was getting credit for education’s work\nThis is omitted variable bias"
   },
   {
-    "objectID": "slides/05-ols.html#omitted-variable-bias-visually",
-    "href": "slides/05-ols.html#omitted-variable-bias-visually",
-    "title": "Introduction to OLS",
-    "section": "Omitted Variable Bias, Visually",
-    "text": "Omitted Variable Bias, Visually"
-  },
-  {
     "objectID": "slides/05-ols.html#interpretation-with-controls",
     "href": "slides/05-ols.html#interpretation-with-controls",
     "title": "Introduction to OLS",
@@ -10225,13 +10358,6 @@
     "title": "Introduction to OLS",
     "section": "When Can We Make Causal Claims?",
     "text": "When Can We Make Causal Claims?\n\n\n\nWe need a good reason for why the contrasts we’re estimating are causal.\n\n\n\n\nThat reason always comes back to the same thing: the average counterfactual is valid\nThe comparison group is a good stand-in for what would have happened without the treatment\nThis is an assumption about the world, not about the model"
-  },
-  {
-    "objectID": "slides/05-ols.html#where-do-good-reasons-come-from",
-    "href": "slides/05-ols.html#where-do-good-reasons-come-from",
-    "title": "Introduction to OLS",
-    "section": "Where Do Good Reasons Come From?",
-    "text": "Where Do Good Reasons Come From?\n\n\n\nThey rely on the data generating process that led some units to be treated\n\n\n\n\nRandomized experiments: we controlled assignment ourselves\nRegression Discontinuity: we exploit a random cutoff\nInstrumental Variables: we find an exogenous source of variation\nDifference in Differences: We find a comparable group and look at differences in changes"
   },
   {
     "objectID": "slides/05-ols.html#the-full-workflow",
@@ -10358,250 +10484,5 @@
     "title": "Live R Coding Session",
     "section": "Averaged Z-Scores",
     "text": "Averaged Z-Scores\n\n## Find participation measures that are based on likert\n# baseline\nbcols = grep(\"^q13_.*_baseline$\", names(dat), value = T)\ndat[, paste0(bcols, \"_st\")] = dat[, bcols]\nbcols = paste0(bcols,\"_st\")\n\n# endline\necols = grep(\"^q13_[1-7]_\\\\d$\", names(dat), value = T)\ndat[, paste0(ecols, \"_st\")] = dat[, ecols]\necols = paste0(ecols,\"_st\")\n\n\n# Create treatment variable\ndat = dat %&gt;% mutate(moved = case_when(home_region == \"Addis Ababa\" ~ 0, TRUE ~ 1) )\n\n# clean q13_\nlevels = c(\"Never\", \"Once or Twice\", \"More than twice\", \"More than 5 times\", \n           \"More than 10 times\")\ndat = dat %&gt;% \n  mutate(across(c(bcols), \n                .fns = ~ factor(.x, levels = levels)))\n\n# Create z-score function from Kling, Liberman, and Katz (2007)\nz_score = function(x, y){\n  # calculate mean and sd of control group\n  c_mean = mean( as.numeric( unlist(x[, y])) , na.rm = T)\n  c_sd = sd( as.numeric( unlist(x[, y])) , na.rm = T)\n  # subtract control group mean; divide by control group SD\n  ( as.numeric(x[, y, drop = TRUE]) - c_mean) / c_sd\n}\n\n# calculate z-scores\nfor (i in c(bcols, ecols)) {\n  dat[,i] = z_score(dat, i)\n}\n\ndat = dat %&gt;% \n  rowwise() %&gt;% \n  mutate( z_participation_end = mean(c_across(all_of(bcols)), na.rm = TRUE)) %&gt;% \n  mutate( z_participation_base = mean(c_across(all_of(ecols)), na.rm = TRUE)) %&gt;%\n  ungroup()\n\n\nregd = dat %&gt;% select(z_participation_end, z_participation_base, moved, response_id ) %&gt;%\n  pivot_longer(cols = c(z_participation_end, z_participation_base),\n               names_to = \"time\",\n               values_to = \"z_participation\") %&gt;%\n  mutate(time = case_when(time == \"z_participation_end\" ~ 1,\n                          TRUE ~ 0))\n\nmodels &lt;- list()\nmodels[['Bivariate']] = lm(z_participation ~ moved, regd)\nmodels[['Multivariate']] = lm(z_participation ~ moved + time, regd)\nmodels[['Interaction']] = lm(z_participation ~ moved + time + moved*time, regd)\n\nmodelsummary(\n  models,\n  estimate  = \"{estimate}{stars} ({std.error})\",\n             statistic = NULL,\n  gof_omit = 'IC|RMSE|Log|F|R2$|Std.')\n\n\n\n\n\nBivariate\nMultivariate\nInteraction\n\n\n\n\n(Intercept)\n-0.159*** (0.026)\n-0.156*** (0.030)\n-0.156*** (0.037)\n\n\nmoved\n0.247*** (0.032)\n0.247*** (0.032)\n0.247*** (0.046)\n\n\ntime\n\n-0.004 (0.031)\n-0.005 (0.052)\n\n\nmoved x time\n\n\n0.001 (0.065)\n\n\nNum.Obs.\n1597\n1597\n1597\n\n\nR2 Adj.\n0.035\n0.034\n0.034"
-  },
-  {
-    "objectID": "slides/05-ols.html#thing-2-how-much-does-y-change-when-x-changes",
-    "href": "slides/05-ols.html#thing-2-how-much-does-y-change-when-x-changes",
-    "title": "Introduction to OLS",
-    "section": "Thing 2: How Much Does Y Change when X changes?",
-    "text": "Thing 2: How Much Does Y Change when X changes?\n\n\n\n“When X goes up by one unit, how much does Y change?”\n\n\n\n\nIf GDP per capita increases by one unit\nHow many more years of life expectancy should we expect?\nThis is the slope\nMaybe the causal effect of X on Y, depends…"
-  },
-  {
-    "objectID": "slides/05-ols.html#visualize-the-dag",
-    "href": "slides/05-ols.html#visualize-the-dag",
-    "title": "Introduction to OLS",
-    "section": "Visualize the DAG",
-    "text": "Visualize the DAG"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#the-problem",
-    "href": "slides/06-demaut2.html#the-problem",
-    "title": "Democracy and Development",
-    "section": "The Problem",
-    "text": "The Problem\n\nIf the confounded DAG is correct, we need to control for U\nWhat U do the authors propose?\n\n\n\n“The major source of potential bias in a regression of democracy on income per capita is country-­specific, historical factors influencing both political and economic development.”\n\n\nCannot control for all historical factors individually. So what do we do?"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#simpsons-paradox",
-    "href": "slides/06-demaut2.html#simpsons-paradox",
-    "title": "Democracy and Development",
-    "section": "Simpson’s Paradox",
-    "text": "Simpson’s Paradox\nA trend in pooled data can reverse when the data is split into groups. The overall trend is driven by differences between groups, not by the relationship within groups"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#strategy-1-fixed-effects",
-    "href": "slides/06-demaut2.html#strategy-1-fixed-effects",
-    "title": "Democracy and Development",
-    "section": "Strategy 1: Fixed Effects",
-    "text": "Strategy 1: Fixed Effects\n\n“We utilize two strategies to investigate the causal effect of income on democracy. Our first strategy is to control for country-specific factors affecting both income and democracy by including country fixed effects”"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#from-between-to-within",
-    "href": "slides/06-demaut2.html#from-between-to-within",
-    "title": "Democracy and Development",
-    "section": "From Between to Within",
-    "text": "From Between to Within\n\nThe standard regression compares rich countries to poor countries (between variation)\n\n\n“The idea of fixed effects is to move beyond this comparison and investigate the”within-country variation,” t”\n\n\nWhen a country gets richer than its own average, does it become more democratic than its own average?"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#visualizing-within",
-    "href": "slides/06-demaut2.html#visualizing-within",
-    "title": "Democracy and Development",
-    "section": "Visualizing “Within”",
-    "text": "Visualizing “Within”\nEach country has a different average income and democracy level. FE removes these differences by subtracting each country’s mean, so all countries overlap at the center. What remains is only the within-country variation over time."
-  },
-  {
-    "objectID": "slides/06-demaut2.html#fixed-effects-in-practice",
-    "href": "slides/06-demaut2.html#fixed-effects-in-practice",
-    "title": "Democracy and Development",
-    "section": "Fixed Effects in Practice",
-    "text": "Fixed Effects in Practice\nAdd a dummy variable for each country (one intercept per country, one shared slope)\nGo from\n\\[\\begin{equation*}\nDem_{it} = \\alpha + \\beta_1 Income_{it} + \\epsilon_{it}\n\\end{equation*}\\]\nTo\n\\[\\begin{align*}\nDem_{it} = &\\alpha + \\beta_1 Income_{it} + \\mu_1 USA + \\\\\n\\mu_2 France & + ... \\mu_n Zimbabwe + \\epsilon_{it}\n\\end{align*}\\]"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#visualizing-fixed-effects",
-    "href": "slides/06-demaut2.html#visualizing-fixed-effects",
-    "title": "Democracy and Development",
-    "section": "Visualizing Fixed Effects",
-    "text": "Visualizing Fixed Effects"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#load-and-prepare-data",
-    "href": "slides/06-demaut2.html#load-and-prepare-data",
-    "title": "Democracy and Development",
-    "section": "Load and Prepare Data",
-    "text": "Load and Prepare Data\n\n\nCode\npacman::p_load(readxl, tidyverse, here)\n\nd &lt;- read_xls(here(\"./slides/code/Income-and-Democracy-Data-AER-adjustment.xls\"),\n              sheet = 2) %&gt;%\n  filter(!is.na(lrgdpch), !is.na(polity4)) %&gt;%\n  arrange(country, year) %&gt;%\n  group_by(country) %&gt;%\n  mutate(lag_dem = lag(polity4),\n         lag_income = lag(lrgdpch)) %&gt;%\n  ungroup()\n# polity4: standardized democracy score (-10 to 10)\nsummary(d$polity4)\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  0.000   0.150   0.700   0.573   0.950   1.000 \n\n\nCode\n# lrgdpch: log real GDP per capita\nsummary(d$lrgdpch)\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  6.094   7.297   8.149   8.167   8.960  10.413 \n\n\nWhy lag? Why not current GDP? Why include lagged democracy?"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#cross-sectional-correlation",
-    "href": "slides/06-demaut2.html#cross-sectional-correlation",
-    "title": "Democracy and Development",
-    "section": "Cross-Sectional Correlation",
-    "text": "Cross-Sectional Correlation\nThis is the pattern that modernization theory predicts\n\n\nCode\nggplot(d, aes(y = polity4, x = lag_income)) +\n  geom_point(alpha = 0.3) +\n  geom_smooth(method = lm, se = FALSE) +\n  labs(x = \"Lagged Log GDP per capita\", y = \"Polity Score\") +\n  theme_bw()"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#ols-without-fixed-effects",
-    "href": "slides/06-demaut2.html#ols-without-fixed-effects",
-    "title": "Democracy and Development",
-    "section": "OLS without Fixed Effects",
-    "text": "OLS without Fixed Effects\n\nmod &lt;- lm_robust(polity4 ~ lag_dem + lag_income, clusters = country, data = d)\nmodelsummary::modelsummary(mod, stars = TRUE, coef_omit = \"(Intercept)\", gof_omit = \"AIC|BIC|Log.Lik|F|R2\")\n\n\n\n\n\nModel 1\n\n\n\n\nlag_dem\n0.742***\n\n\n\n(0.032)\n\n\nlag_income\n0.063***\n\n\n\n(0.010)\n\n\nNum.Obs.\n900\n\n\nse_type\nCR2\n\n\n\n + p\n\n\n\n\n\n\n\n\n\nlag_income is positive and significant. Supports modernization theory?"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#adding-fixed-effects",
-    "href": "slides/06-demaut2.html#adding-fixed-effects",
-    "title": "Democracy and Development",
-    "section": "Adding Fixed Effects",
-    "text": "Adding Fixed Effects\n\nmod2 &lt;- lm_robust(polity4 ~ lag_dem + lag_income, fixed_effects = country + year,\n    clusters = country, data = d)\nmodelsummary::modelsummary(mod2, stars = TRUE, coef_omit = \"(Intercept)\", gof_omit = \"AIC|BIC|Log.Lik|F|R2\")\n\n\n\n\n\nModel 1\n\n\n\n\nlag_dem\n0.431***\n\n\n\n(0.054)\n\n\nlag_income\n0.005\n\n\n\n(0.033)\n\n\nNum.Obs.\n900\n\n\nse_type\nCR2\n\n\n\n + p\n\n\n\n\n\n\n\n\n\nThe income coefficient drops. Once we account for time-invariant country characteristics, the income-democracy link weakens. This is Acemoglu et al.’s key finding."
-  },
-  {
-    "objectID": "slides/06-demaut2.html#strategy-2-instrumental-variables",
-    "href": "slides/06-demaut2.html#strategy-2-instrumental-variables",
-    "title": "Democracy and Development",
-    "section": "Strategy 2: Instrumental Variables",
-    "text": "Strategy 2: Instrumental Variables\n\n“Our second strategy is to use instrumental-variables (IV) regressions to estimate the impact of income on democracy”\n\n\nWhen FE is not enough (time-varying confounders remain), IV provides another approach\nCore idea: find a variable Z that shifts income but has no direct effect on democracy"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#iv-intuition",
-    "href": "slides/06-demaut2.html#iv-intuition",
-    "title": "Democracy and Development",
-    "section": "IV Intuition",
-    "text": "IV Intuition\n\nWe need a variable Z (the “instrument”) that:\n\nIs correlated with income (relevance)\nAffects democracy only through income (exclusion restriction)\n\nZ isolates the part of income variation that is “as-if random”\nAcemoglu et al. use trade-weighted world income as instrument: global economic shocks shift a country’s income but arguably do not directly cause democratization"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#the-exclusion-restriction",
-    "href": "slides/06-demaut2.html#the-exclusion-restriction",
-    "title": "Democracy and Development",
-    "section": "The Exclusion Restriction",
-    "text": "The Exclusion Restriction\n\nThe critical assumption: Z affects democracy ONLY through income\n\n\\[Z \\rightarrow Income \\rightarrow Democracy\\]\n\nThere must be no direct arrow from Z to Democracy\nThis is untestable; it must be argued on substantive grounds\nIf the exclusion restriction fails, IV estimates are biased"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#why-are-rich-countries-democratic",
-    "href": "slides/06-demaut2.html#why-are-rich-countries-democratic",
-    "title": "Democracy and Development",
-    "section": "Why Are Rich Countries Democratic?",
-    "text": "Why Are Rich Countries Democratic?\n\n“These results naturally raise the following important question: why is there a cross-sectional correlation between income and democracy? In other words, why are rich countries democratic today?”"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#historical-roots-of-the-correlation",
-    "href": "slides/06-demaut2.html#historical-roots-of-the-correlation",
-    "title": "Democracy and Development",
-    "section": "Historical Roots of the Correlation",
-    "text": "Historical Roots of the Correlation\n\n“In particular, for the whole world sample, the positive association is considerably weakened when we control for date of independence, early constraints on the executive, and religion.”"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#simpsons-paradox-1",
-    "href": "slides/06-demaut2.html#simpsons-paradox-1",
-    "title": "Democracy and Development",
-    "section": "Simpson’s Paradox",
-    "text": "Simpson’s Paradox\nSimpson’s paradox occurs when a trend in pooled data reverses or disappears when the data is split into groups\nIn the pooled data, X and Y are positively correlated. But within each group, the relationship is negative. The overall trend is driven by differences between groups, not by the relationship within groups"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#ols-regression-no-fe",
-    "href": "slides/06-demaut2.html#ols-regression-no-fe",
-    "title": "Democracy and Development",
-    "section": "OLS Regression (no FE)",
-    "text": "OLS Regression (no FE)\n\n\n\nCode\nmod_ols &lt;- lm(polity4 ~ lag_dem + lag_income, data = d)\nmodelsummary::modelsummary(mod_ols, stars = TRUE,\n  coef_omit = \"Intercept\",\n  gof_omit = \"AIC|BIC|Log.Lik|F\")\n\n\n\n\n\n\nModel 1\n\n\n\n\nlag_dem\n0.742***\n\n\n\n(0.021)\n\n\nlag_income\n0.063***\n\n\n\n(0.008)\n\n\nNum.Obs.\n900\n\n\nR2\n0.746\n\n\nR2 Adj.\n0.746\n\n\n\n + p"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#adding-fixed-effects-with-lm",
-    "href": "slides/06-demaut2.html#adding-fixed-effects-with-lm",
-    "title": "Democracy and Development",
-    "section": "Adding Fixed Effects with lm",
-    "text": "Adding Fixed Effects with lm\n\n\n\nCode\nmod_fe &lt;- lm(polity4 ~ lag_dem + lag_income +\n               factor(country) + factor(year), data = d)\nmodelsummary::modelsummary(\n  list(\"OLS\" = mod_ols, \"Country + Year FE\" = mod_fe),\n  stars = TRUE,\n  coef_omit = \"factor|Intercept\",\n  gof_omit = \"AIC|BIC|Log.Lik|F|R2\")\n\n\n\n\n\n\nOLS\nCountry + Year FE\n\n\n\n\nlag_dem\n0.742***\n0.431***\n\n\n\n(0.021)\n(0.034)\n\n\nlag_income\n0.063***\n0.005\n\n\n\n(0.008)\n(0.027)\n\n\nNum.Obs.\n900\n900\n\n\n\n + p"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#what-changed",
-    "href": "slides/06-demaut2.html#what-changed",
-    "title": "Democracy and Development",
-    "section": "What Changed?",
-    "text": "What Changed?\n\nIn OLS, lag_income is positive and significant\nWith FE, the income coefficient drops to almost zero, not distinguishable from zero\nThis is Acemoglu et al.’s key finding"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#a-better-package-estimatr",
-    "href": "slides/06-demaut2.html#a-better-package-estimatr",
-    "title": "Democracy and Development",
-    "section": "A Better Package: estimatr",
-    "text": "A Better Package: estimatr\n\n\n\nCode\npacman::p_load(estimatr)\n# cluster-robust SEs + efficient FE\nmod_robust &lt;- lm_robust(polity4 ~ lag_dem + lag_income,\n  fixed_effects = country + year,\n  clusters = country, data = d)\nmodelsummary::modelsummary(mod_robust, stars = TRUE,\n  coef_omit = \"Intercept\",\n  gof_omit = \"AIC|BIC|Log.Lik|F|R2\")\n\n\n\n\n\n\nModel 1\n\n\n\n\nlag_dem\n0.431***\n\n\n\n(0.054)\n\n\nlag_income\n-0.005\n\n\n\n(0.033)\n\n\nNum.Obs.\n900\n\n\nse_type\nCR2\n\n\n\n + p"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#simpsons-paradox-in-our-data",
-    "href": "slides/06-demaut2.html#simpsons-paradox-in-our-data",
-    "title": "Democracy and Development",
-    "section": "Simpson’s Paradox in Our Data",
-    "text": "Simpson’s Paradox in Our Data"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#iv-in-acemoglu-et-al.",
-    "href": "slides/06-demaut2.html#iv-in-acemoglu-et-al.",
-    "title": "Democracy and Development",
-    "section": "IV in Acemoglu et al.",
-    "text": "IV in Acemoglu et al.\n\nInstrument: trade-weighted world income\nLogic: when your trading partners get richer, your income goes up (relevance)\nExclusion: your partners’ income growth does not directly change your political institutions\nResult: IV estimates also show no causal effect of income on democracy"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#limitations-of-iv",
-    "href": "slides/06-demaut2.html#limitations-of-iv",
-    "title": "Democracy and Development",
-    "section": "Limitations of IV",
-    "text": "Limitations of IV\n\nExclusion restriction is never testable\nResults depend heavily on instrument choice\nIV estimates a local effect (for observations affected by the instrument)\nCombined with FE evidence, strengthens the case against modernization theory"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#why-does-this-matter-simpsons-paradox",
-    "href": "slides/06-demaut2.html#why-does-this-matter-simpsons-paradox",
-    "title": "Democracy and Development",
-    "section": "Why Does This Matter? Simpson’s Paradox",
-    "text": "Why Does This Matter? Simpson’s Paradox"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#fe-unit-level-intercepts",
-    "href": "slides/06-demaut2.html#fe-unit-level-intercepts",
-    "title": "Democracy and Development",
-    "section": "FE = Unit-Level Intercepts",
-    "text": "FE = Unit-Level Intercepts\n\nFE give each unit its own intercept, just like splitting by group\nThe pooled regression mixes between and within variation\nFE isolates only within-group variation, which can flip conclusions"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#visualizing-fe-in-our-data",
-    "href": "slides/06-demaut2.html#visualizing-fe-in-our-data",
-    "title": "Democracy and Development",
-    "section": "Visualizing FE in Our Data",
-    "text": "Visualizing FE in Our Data"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#the-answer",
-    "href": "slides/06-demaut2.html#the-answer",
-    "title": "Democracy and Development",
-    "section": "The Answer",
-    "text": "The Answer\n\n“At a statistical level, the answer is clear: even though there is no relationship between changes in income and democracy in the postwar era or over the past 100 years or so, there is a positive association over the past 500 years.”"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#do-we-buy-it",
-    "href": "slides/06-demaut2.html#do-we-buy-it",
-    "title": "Democracy and Development",
-    "section": "Do We Buy It?",
-    "text": "Do We Buy It?\n\nAcemoglu et al.’s claim: the income-democracy correlation reflects deep historical divergence, not a modern causal effect of income on democracy\nWhat do you think? Is this convincing?\nWhat would it take to change your mind?"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#the-authors-answer",
-    "href": "slides/06-demaut2.html#the-authors-answer",
-    "title": "Democracy and Development",
-    "section": "The Authors’ Answer",
-    "text": "The Authors’ Answer\n\n“At a statistical level, the answer is clear: even though there is no relationship between changes in income and democracy in the postwar era or over the past 100 years or so, there is a positive association over the past 500 years.”"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#why-time-invariant-only",
-    "href": "slides/06-demaut2.html#why-time-invariant-only",
-    "title": "Democracy and Development",
-    "section": "Why Time-Invariant Only?",
-    "text": "Why Time-Invariant Only?\n\n“If these omitted characteristics are, to a first approximation, time-invariant, the inclusion of fixed effects will remove them and this source of bias.”\n\n\nColonial history and geography are in the past. They do not change. FE absorbs them\nBut new things happen: wars, oil discoveries, coups. These change the within-country link between income and democracy in new, unexpected ways"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#that-correlation-again",
-    "href": "slides/06-demaut2.html#that-correlation-again",
-    "title": "Democracy and Development",
-    "section": "That Correlation Again",
-    "text": "That Correlation Again\n\nFrom Acemoglu et. al. 2008"
-  },
-  {
-    "objectID": "slides/06-demaut2.html#one-intercept-two-chiles",
-    "href": "slides/06-demaut2.html#one-intercept-two-chiles",
-    "title": "Democracy and Development",
-    "section": "One Intercept, Two Chiles",
-    "text": "One Intercept, Two Chiles\n\n\\(\\mu_{Chile}\\) is one number. It cannot separate the coup from the effect of income"
   }
 ]

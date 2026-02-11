@@ -276,8 +276,6 @@ summary(d$polity4)
 summary(d$lrgdpch)
 ```
 
-Why lag? Why not current GDP? Why include lagged democracy?
-
 ## Cross-Sectional Correlation
 
 This is the pattern that modernization theory predicts
@@ -300,6 +298,22 @@ modelsummary::modelsummary(mod_ols, stars = TRUE,
   gof_omit = "AIC|BIC|Log.Lik|F")
 ```
 :::
+
+## Why Lag?
+
+- Why use *lagged* GDP and not current GDP?
+
+. . .
+
+- Lagged income happened *before* the current democracy score, which makes the causal direction clearer
+
+- Why include lagged democracy?
+
+. . .
+
+- Democracy is persistent: this year's regime looks a lot like last year's
+
+- Without controlling for it, we might confuse "income causes democracy" with "democracy causes democracy"
 
 ## Adding Fixed Effects with lm
 

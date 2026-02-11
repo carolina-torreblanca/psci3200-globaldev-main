@@ -1729,7 +1729,6 @@ Dem_{it} = &amp;\alpha + \beta_1 Income_{it} + \mu_1 USA + \\
   6.094   7.297   8.149   8.167   8.960  10.413 </code></pre>
 </div>
 </div>
-<p>Why lag? Why not current GDP? Why include lagged democracy?</p>
 </section>
 <section id="cross-sectional-correlation" class="slide level2">
 <h2>Cross-Sectional Correlation</h2>
@@ -1806,6 +1805,24 @@ Dem_{it} = &amp;\alpha + \beta_1 Income_{it} + \mu_1 USA + \\
 
 </div>
 </div>
+</div>
+</section>
+<section id="why-lag" class="slide level2">
+<h2>Why Lag?</h2>
+<ul>
+<li>Why use <em>lagged</em> GDP and not current GDP?</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><p>Lagged income happened <em>before</em> the current democracy score, which makes the causal direction clearer</p></li>
+<li><p>Why include lagged democracy?</p></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><p>Democracy is persistent: this year’s regime looks a lot like last year’s</p></li>
+<li><p>Without controlling for it, we might confuse “income causes democracy” with “democracy causes democracy”</p></li>
+</ul>
 </div>
 </section>
 <section id="adding-fixed-effects-with-lm" class="slide level2">
