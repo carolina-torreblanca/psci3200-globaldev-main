@@ -70,22 +70,121 @@ bibliography: img/references.bib
 | Milestone                    | Due Date|
 |:-----------------------------|:--------|
 | [Create a GitHub repository](https://carolina-torreblanca.github.io/psci3200-globaldev-main/assignments/02_gitrepo.html)| Feb 17 |
-| [Research Question and Data](https://carolina-torreblanca.github.io/psci3200-globaldev-main/assignments/03_fprqd.html)  | Feb 19 |
+| [Research Question and Data](https://carolina-torreblanca.github.io/psci3200-globaldev-main/assignments/03_fprqd.html)  | Feb 23 |
 | [Research Design](https://carolina-torreblanca.github.io/psci3200-globaldev-main/assignments/04_fpdesign.html)          | Mar 5  |
 | [Submit proposal](https://carolina-torreblanca.github.io/psci3200-globaldev-main/assignments/05_fptest.html)            | Apr 2  |
 | [Submit final project](https://carolina-torreblanca.github.io/psci3200-globaldev-main/assignments/final_project.html)   | May 10 |
 
-# Examples
+# What Makes a Good Research Question?
+
+## Step 1: Find a question
+
+\
+
+The most important thing about a research question is that it is a **question**
+
+::: incremental
+- You do not know the answer. You could be wrong
+- Adding a question mark to a topic does not make it a question
+:::
+
+## Step 1: Find a question
+
+- "Girls' education?" -- not a question. This is a topic
+
+::: incremental
+- "Is girls' education important?" -- important how? To whom? Compared to what?
+
+- "Does expanding secondary school access increase women's labor force participation?"
+:::
+
+## Step 2: What's your hypothesis?
+
+You have a question. Now: what do you think the answer is, and why?
+
+::: incremental
+- Engage with what we already know. What has been studied? What do those studies find?
+- Do you have a reason to think the answer might be different in a different place, at a different time, for a different population?
+:::
+
+## Step 3: Research design
+
+How would you answer this?
+
+::: incremental
+- What is the counterfactual -- what are you comparing to what?
+- What data would you need?
+:::
+
+## Step 4: Is this tractable?
+
+Can you actually do this? Can one person do it in a semester?
+
+::: incremental
+- One outcome
+- One mechanism
+- One context
+:::
+
+# Let's build one together
+
+## Topic: Climate change
+
+Here are three things we know:
+
+::: incremental
+- [80% of people globally](https://climatepromise.undp.org/news-and-stories/worlds-largest-survey-climate-change-out-heres-what-results-show) want their governments to take stronger action on climate change (UNDP, 2024)
+- Extreme weather events are [increasing in frequency and intensity](https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-11/) -- more floods, droughts, heat waves (IPCC AR6)
+- But developing countries need $310-365 billion/year in adaptation finance and [received only $26 billion in 2023](https://www.unep.org/resources/adaptation-gap-report-2025) (UNEP, 2025)
+:::
+
+## What is a research question here?
+
+\
+
+. . .
+
+*Your turn*
+
+## What is your hypothesis?
+
+\
+
+. . .
+
+*Your turn*
+
+## How would you test it?
+
+If you were god and could run any experiment, what would you do?
+
+. . .
+
+Now come back to earth. What data would you need? Does it exist?
+
+## Some data that exists
+
+- [Yale Climate Opinion Maps](https://climatecommunication.yale.edu/visualizations-data/ycom-us/) -- public opinion on climate change across US counties
+- [Afrobarometer](https://www.afrobarometer.org/data/) -- survey data across African countries including climate questions
+- [EM-DAT](https://www.emdat.be/) -- international disaster database
+- [World Bank Climate Change Data](https://data.worldbank.org/topic/climate-change) -- emissions, energy, land use by country
+- [Notre Dame Global Adaptation Initiative](https://gain.nd.edu/our-work/country-index/) -- country-level climate vulnerability and readiness scores
+
+## Past Student Projects
+
+- [Chinese Development Loans and Corruption in Africa](https://glucier39.github.io/PSCI3200_Final/PSCI3200%20Final%20Project.html)
+- [Civil Society, Repression, and Electoral Democracy](https://isaac21694.github.io/Isaac21694/)
+- [Social Media Censorship and Political Action](https://norahtorious.github.io/PSCI3200_final_project/)
 
 # Assignment 1: Research Question and Data
 
 ## Research Question and Data
 
-**Must be submitted via Slack by 11:59pm EST on Monday, February 19**
+**Must be submitted via Slack by 11:59pm EST on Monday, February 23**
 
 - Sketch a research question that you'd like to investigate
 - Identify data that can answer that question
-- I will provide feedback on the viability of the questions, the suitability of the data, and the extent to which your general idea will meet my expectations for the final project
+- I will provide feedback on the viability of the questions, the suitability of the data, and the extent to which your general idea will meet my expectations
 
 ## Research Question and Data
 
@@ -94,34 +193,27 @@ bibliography: img/references.bib
 - Briefly describes your idea for a research question
   + 3-4 sentences describing some relationship in the world that you want to investigate
   + This should involve at least two things in the world that can be measured with existing data
-  + You may submit more than 1 idea. 
+  + You may submit more than 1 idea
 - Proposes data and measures that will help you answer it
   + Specific, existing dataset that you can access
   + Specific variables that will be used to answer the research question
 
-
 ## Types of data
-
-There are many types of data in the world. Below is a brief discussion of the most common sources of data in the social sciences. 
 
 - Election returns
   + Compilations of election data, such as [Constituency-Level Elections Archive (CLEA)](https://electiondataarchive.org/)
   + Returns for specific elections are often available from a country's electoral commission website
-
-## Types of data
-
 - Replication data
-  + Any published research from the last 5-10 years should make the data and analysis files publicly available. You can almost always find where these replication materials are hosted on the article's webpage at whichever journal puslished the article. Oftentimes, these data are hosted on Harvard's Dataverse.
+  + Published research from the last 5-10 years should make data publicly available, often on Harvard's Dataverse
 
 ## Types of data
 
 - Survey data
-  + Survey data is used extremely heavily on the social sciences. Most prominently in political science are the various 'barometer' surveys (Afrobarometer, Latinobarometer, etc.).
+  + Used extremely heavily in the social sciences: Afrobarometer, Latinobarometer, etc.
 - Administrative data
-  + Data on government (or organization) programs or 
-- Expert-coded data
-  + Data where experts code the characteristics of countries or political entities (such as parties) 
+  + Data on government or organization programs
 
+The world is full of data. Look hard. Ask me if you can't find anything suitable
 
 ## Popular Public Datasets
 
@@ -129,32 +221,24 @@ There are many types of data in the world. Below is a brief discussion of the mo
 
 - [Varieties of Democracy](https://github.com/vdeminstitute/vdemdata)
 - [World Bank Development/Governance Indicators](https://cran.r-project.org/web/packages/WDI/WDI.pdf)
-- Armed Conflict Location & Event Data Project (ACLED)
-- AidData
 - Demographic and Health Survey
-
-
-## My Datasets
-
-- [Machine Learning for Peace](mlpeace.org)
-  + This data captures the volume of reporting from high-quality, local news sources on 42 distinct political events from 2012-2023 for 60 aid-receiving countries. 
-  + Focuses on events that constitute changes in civic space, such as censorship, legal changes, and other forms of repression
-- Cambodian NGOs (n $\approx$ 100)
-  + Convenience sample
-  + Panel survey, financial data, networks, open-ended responses
-
-## My Datasets
-
-- Ethiopian University Students (n $\approx$ 900)
-  + Representative sample
-  + Panel survey, networks, open-ended responses
-- Ghanaian Radio Stations (n $\approx$ 400)
-  + Convenience sample
 
 # Assignment 2: Research Design
 
+## Research Design
 
-1. Describe your research question and provide some background on why you find it interesting or important. Be sure to incorporate the feedback provided on the first assignment. Include references to at least two pieces of existing research that illustrate what has already been discovered about the relationship you are investigating. This could be articles published in academic journals, policy reports and white papers, articles published by think tanks and other credible organizations (ex. Brookings, the United Nations High Commissioner for Refugees, etc.), or pieces of data journalism. A full-credit response will probably be around 150-200 words. (40%)
-2. State at least one testable hypothesis. Distill your research question into a statement about a specific relationship you expect to see in the world. In most cases, this hypothesis will describe a causal relationship between two variables (i.e. changes in x cause changes in y). Make an argument for why you expect to see this relationship. This should be based on related findings from existing research and/or your own theoretical/logical reasoning. A full-credit response will probably be around 150-200 words. (25%)
-3. Briefly discuss the specific variables you will use to test your hypothesis and the dataset they are drawn from. Be sure to mention the source of the data (the organization or individuals that produced it), the unit of analysis, and the sample. Create a `ggplot` to visualize the relationship between the variables being used to test your hypothesis. The best method of visualizing this relationship will depend on the scale of your variables. Good methods to consider are scatter plots (for continuous variables), grouped bar charts (for ordinal or binary variables), and line graphs (for continuous variables with time-series). (25%) 
-4. Specify the main regression model you will use to test your hypothesis. This regression model should provide a preliminary test for or against the validity of your hypothesis. Use markdown to render the equation neatly to the html file. (10%)
+**Due March 5**
+
+::: {style="font-size: 0.85em;"}
+1. **Research question and background** (40%): Describe your research question and why it is interesting or important. Incorporate feedback from Assignment 1. Include references to at least two pieces of existing research -- academic articles, policy reports, think tank publications (e.g. Brookings, UNHCR), or data journalism. ~150-200 words
+
+2. **Testable hypothesis** (25%): State at least one testable hypothesis. Describe a specific relationship you expect to see (i.e. changes in x cause changes in y). Make an argument for why, based on existing research or your own reasoning. ~150-200 words
+:::
+
+## Research Design
+
+::: {style="font-size: 0.85em;"}
+3. **Variables and visualization** (25%): Discuss the specific variables and dataset you will use. Mention the data source, unit of analysis, and sample. Create a `ggplot` to visualize the relationship between your variables. Good options: scatter plots (continuous), grouped bar charts (ordinal/binary), line graphs (time-series)
+
+4. **Regression model** (10%): Specify the main regression model you will use to test your hypothesis. Use markdown to render the equation neatly
+:::

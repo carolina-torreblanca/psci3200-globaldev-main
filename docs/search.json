@@ -6668,35 +6668,35 @@
     "href": "slides/08_final_project.html#final-project-touchpoints",
     "title": "Final Project Overview",
     "section": "Final Project Touchpoints",
-    "text": "Final Project Touchpoints\n\n\n\n\n\nMilestone\nDue Date\n\n\n\n\nCreate a GitHub repository\nFeb 17\n\n\nResearch Question and Data\nFeb 19\n\n\nResearch Design\nMar 5\n\n\nSubmit proposal\nApr 2\n\n\nSubmit final project\nMay 10"
+    "text": "Final Project Touchpoints\n\n\n\n\n\nMilestone\nDue Date\n\n\n\n\nCreate a GitHub repository\nFeb 17\n\n\nResearch Question and Data\nFeb 23\n\n\nResearch Design\nMar 5\n\n\nSubmit proposal\nApr 2\n\n\nSubmit final project\nMay 10"
   },
   {
     "objectID": "slides/08_final_project.html#research-question-and-data",
     "href": "slides/08_final_project.html#research-question-and-data",
     "title": "Final Project Overview",
     "section": "Research Question and Data",
-    "text": "Research Question and Data\nMust be submitted via Slack by 11:59pm EST on Monday, February 19\n\nSketch a research question that you’d like to investigate\nIdentify data that can answer that question\nI will provide feedback on the viability of the questions, the suitability of the data, and the extent to which your general idea will meet my expectations for the final project"
+    "text": "Research Question and Data\nMust be submitted via Slack by 11:59pm EST on Monday, February 23\n\nSketch a research question that you’d like to investigate\nIdentify data that can answer that question\nI will provide feedback on the viability of the questions, the suitability of the data, and the extent to which your general idea will meet my expectations"
   },
   {
     "objectID": "slides/08_final_project.html#research-question-and-data-1",
     "href": "slides/08_final_project.html#research-question-and-data-1",
     "title": "Final Project Overview",
     "section": "Research Question and Data",
-    "text": "Research Question and Data\nSend me a quarto html file that:\n\nBriefly describes your idea for a research question\n\n3-4 sentences describing some relationship in the world that you want to investigate\nThis should involve at least two things in the world that can be measured with existing data\nYou may submit more than 1 idea.\n\nProposes data and measures that will help you answer it\n\nSpecific, existing dataset that you can access\nSpecific variables that will be used to answer the research question"
+    "text": "Research Question and Data\nSend me a quarto html file that:\n\nBriefly describes your idea for a research question\n\n3-4 sentences describing some relationship in the world that you want to investigate\nThis should involve at least two things in the world that can be measured with existing data\nYou may submit more than 1 idea\n\nProposes data and measures that will help you answer it\n\nSpecific, existing dataset that you can access\nSpecific variables that will be used to answer the research question"
   },
   {
     "objectID": "slides/08_final_project.html#types-of-data",
     "href": "slides/08_final_project.html#types-of-data",
     "title": "Final Project Overview",
     "section": "Types of data",
-    "text": "Types of data\nThere are many types of data in the world. Below is a brief discussion of the most common sources of data in the social sciences.\n\nElection returns\n\nCompilations of election data, such as Constituency-Level Elections Archive (CLEA)\nReturns for specific elections are often available from a country’s electoral commission website"
+    "text": "Types of data\n\nElection returns\n\nCompilations of election data, such as Constituency-Level Elections Archive (CLEA)\nReturns for specific elections are often available from a country’s electoral commission website\n\nReplication data\n\nPublished research from the last 5-10 years should make data publicly available, often on Harvard’s Dataverse"
   },
   {
     "objectID": "slides/08_final_project.html#types-of-data-1",
     "href": "slides/08_final_project.html#types-of-data-1",
     "title": "Final Project Overview",
     "section": "Types of data",
-    "text": "Types of data\n\nReplication data\n\nAny published research from the last 5-10 years should make the data and analysis files publicly available. You can almost always find where these replication materials are hosted on the article’s webpage at whichever journal puslished the article. Oftentimes, these data are hosted on Harvard’s Dataverse."
+    "text": "Types of data\n\nSurvey data\n\nUsed extremely heavily in the social sciences: Afrobarometer, Latinobarometer, etc.\n\nAdministrative data\n\nData on government or organization programs\n\n\nThe world is full of data. Look hard. Ask me if you can’t find anything suitable"
   },
   {
     "objectID": "slides/08_final_project.html#types-of-data-2",
@@ -6710,7 +6710,7 @@
     "href": "slides/08_final_project.html#popular-public-datasets",
     "title": "Final Project Overview",
     "section": "Popular Public Datasets",
-    "text": "Popular Public Datasets\nDataset of datasets\n\nVarieties of Democracy\nWorld Bank Development/Governance Indicators\nArmed Conflict Location & Event Data Project (ACLED)\nAidData\nDemographic and Health Survey"
+    "text": "Popular Public Datasets\nDataset of datasets\n\nVarieties of Democracy\nWorld Bank Development/Governance Indicators\nDemographic and Health Survey"
   },
   {
     "objectID": "slides/08_final_project.html#my-datasets",
@@ -10484,5 +10484,96 @@
     "title": "Live R Coding Session",
     "section": "Averaged Z-Scores",
     "text": "Averaged Z-Scores\n\n## Find participation measures that are based on likert\n# baseline\nbcols = grep(\"^q13_.*_baseline$\", names(dat), value = T)\ndat[, paste0(bcols, \"_st\")] = dat[, bcols]\nbcols = paste0(bcols,\"_st\")\n\n# endline\necols = grep(\"^q13_[1-7]_\\\\d$\", names(dat), value = T)\ndat[, paste0(ecols, \"_st\")] = dat[, ecols]\necols = paste0(ecols,\"_st\")\n\n\n# Create treatment variable\ndat = dat %&gt;% mutate(moved = case_when(home_region == \"Addis Ababa\" ~ 0, TRUE ~ 1) )\n\n# clean q13_\nlevels = c(\"Never\", \"Once or Twice\", \"More than twice\", \"More than 5 times\", \n           \"More than 10 times\")\ndat = dat %&gt;% \n  mutate(across(c(bcols), \n                .fns = ~ factor(.x, levels = levels)))\n\n# Create z-score function from Kling, Liberman, and Katz (2007)\nz_score = function(x, y){\n  # calculate mean and sd of control group\n  c_mean = mean( as.numeric( unlist(x[, y])) , na.rm = T)\n  c_sd = sd( as.numeric( unlist(x[, y])) , na.rm = T)\n  # subtract control group mean; divide by control group SD\n  ( as.numeric(x[, y, drop = TRUE]) - c_mean) / c_sd\n}\n\n# calculate z-scores\nfor (i in c(bcols, ecols)) {\n  dat[,i] = z_score(dat, i)\n}\n\ndat = dat %&gt;% \n  rowwise() %&gt;% \n  mutate( z_participation_end = mean(c_across(all_of(bcols)), na.rm = TRUE)) %&gt;% \n  mutate( z_participation_base = mean(c_across(all_of(ecols)), na.rm = TRUE)) %&gt;%\n  ungroup()\n\n\nregd = dat %&gt;% select(z_participation_end, z_participation_base, moved, response_id ) %&gt;%\n  pivot_longer(cols = c(z_participation_end, z_participation_base),\n               names_to = \"time\",\n               values_to = \"z_participation\") %&gt;%\n  mutate(time = case_when(time == \"z_participation_end\" ~ 1,\n                          TRUE ~ 0))\n\nmodels &lt;- list()\nmodels[['Bivariate']] = lm(z_participation ~ moved, regd)\nmodels[['Multivariate']] = lm(z_participation ~ moved + time, regd)\nmodels[['Interaction']] = lm(z_participation ~ moved + time + moved*time, regd)\n\nmodelsummary(\n  models,\n  estimate  = \"{estimate}{stars} ({std.error})\",\n             statistic = NULL,\n  gof_omit = 'IC|RMSE|Log|F|R2$|Std.')\n\n\n\n\n\nBivariate\nMultivariate\nInteraction\n\n\n\n\n(Intercept)\n-0.159*** (0.026)\n-0.156*** (0.030)\n-0.156*** (0.037)\n\n\nmoved\n0.247*** (0.032)\n0.247*** (0.032)\n0.247*** (0.046)\n\n\ntime\n\n-0.004 (0.031)\n-0.005 (0.052)\n\n\nmoved x time\n\n\n0.001 (0.065)\n\n\nNum.Obs.\n1597\n1597\n1597\n\n\nR2 Adj.\n0.035\n0.034\n0.034"
+  },
+  {
+    "objectID": "slides/08_final_project.html#step-1-find-a-question",
+    "href": "slides/08_final_project.html#step-1-find-a-question",
+    "title": "Final Project Overview",
+    "section": "Step 1: Find a question",
+    "text": "Step 1: Find a question\n\n\nThe most important thing about a research question is that it is a question\n\n\nYou do not know the answer. You could be wrong\nAdding a question mark to a topic does not make it a question"
+  },
+  {
+    "objectID": "slides/08_final_project.html#step-1-find-a-question-1",
+    "href": "slides/08_final_project.html#step-1-find-a-question-1",
+    "title": "Final Project Overview",
+    "section": "Step 1: Find a question",
+    "text": "Step 1: Find a question\n\n“Girls’ education?” – not a question. This is a topic\n\n\n\n“Is girls’ education important?” – important how? To whom? Compared to what?\n“Does expanding secondary school access increase women’s labor force participation?”"
+  },
+  {
+    "objectID": "slides/08_final_project.html#step-2-whats-your-hypothesis",
+    "href": "slides/08_final_project.html#step-2-whats-your-hypothesis",
+    "title": "Final Project Overview",
+    "section": "Step 2: What’s your hypothesis?",
+    "text": "Step 2: What’s your hypothesis?\nYou have a question. Now: what do you think the answer is, and why?\n\n\nEngage with what we already know. What has been studied? What do those studies find?\nDo you have a reason to think the answer might be different in a different place, at a different time, for a different population?"
+  },
+  {
+    "objectID": "slides/08_final_project.html#step-3-research-design",
+    "href": "slides/08_final_project.html#step-3-research-design",
+    "title": "Final Project Overview",
+    "section": "Step 3: Research design",
+    "text": "Step 3: Research design\nHow would you answer this?\n\n\nWhat is the counterfactual – what are you comparing to what?\nWhat data would you need?"
+  },
+  {
+    "objectID": "slides/08_final_project.html#step-4-is-this-tractable",
+    "href": "slides/08_final_project.html#step-4-is-this-tractable",
+    "title": "Final Project Overview",
+    "section": "Step 4: Is this tractable?",
+    "text": "Step 4: Is this tractable?\nCan you actually do this? Can one person do it in a semester?\n\n\nOne outcome\nOne mechanism\nOne context"
+  },
+  {
+    "objectID": "slides/08_final_project.html#topic-climate-change",
+    "href": "slides/08_final_project.html#topic-climate-change",
+    "title": "Final Project Overview",
+    "section": "Topic: Climate change",
+    "text": "Topic: Climate change\nHere are three things we know:\n\n\n80% of people globally want their governments to take stronger action on climate change (UNDP, 2024)\nExtreme weather events are increasing in frequency and intensity – more floods, droughts, heat waves (IPCC AR6)\nBut developing countries need $310-365 billion/year in adaptation finance and received only $26 billion in 2023 (UNEP, 2025)"
+  },
+  {
+    "objectID": "slides/08_final_project.html#what-is-a-research-question-here",
+    "href": "slides/08_final_project.html#what-is-a-research-question-here",
+    "title": "Final Project Overview",
+    "section": "What is a research question here?",
+    "text": "What is a research question here?\n\n\n\nYour turn"
+  },
+  {
+    "objectID": "slides/08_final_project.html#what-is-your-hypothesis",
+    "href": "slides/08_final_project.html#what-is-your-hypothesis",
+    "title": "Final Project Overview",
+    "section": "What is your hypothesis?",
+    "text": "What is your hypothesis?\n\n\n\nYour turn"
+  },
+  {
+    "objectID": "slides/08_final_project.html#how-would-you-test-it",
+    "href": "slides/08_final_project.html#how-would-you-test-it",
+    "title": "Final Project Overview",
+    "section": "How would you test it?",
+    "text": "How would you test it?\nIf you were god and could run any experiment, what would you do?\n\nNow come back to earth. What data would you need? Does it exist?"
+  },
+  {
+    "objectID": "slides/08_final_project.html#some-data-that-exists",
+    "href": "slides/08_final_project.html#some-data-that-exists",
+    "title": "Final Project Overview",
+    "section": "Some data that exists",
+    "text": "Some data that exists\n\nYale Climate Opinion Maps – public opinion on climate change across US counties\nAfrobarometer – survey data across African countries including climate questions\nEM-DAT – international disaster database\nWorld Bank Climate Change Data – emissions, energy, land use by country\nNotre Dame Global Adaptation Initiative – country-level climate vulnerability and readiness scores"
+  },
+  {
+    "objectID": "slides/08_final_project.html#past-student-projects",
+    "href": "slides/08_final_project.html#past-student-projects",
+    "title": "Final Project Overview",
+    "section": "Past Student Projects",
+    "text": "Past Student Projects\n\nChinese Development Loans and Corruption in Africa\nCivil Society, Repression, and Electoral Democracy\nSocial Media Censorship and Political Action"
+  },
+  {
+    "objectID": "slides/08_final_project.html#research-design",
+    "href": "slides/08_final_project.html#research-design",
+    "title": "Final Project Overview",
+    "section": "Research Design",
+    "text": "Research Design\nDue March 5\n\n\nResearch question and background (40%): Describe your research question and why it is interesting or important. Incorporate feedback from Assignment 1. Include references to at least two pieces of existing research – academic articles, policy reports, think tank publications (e.g. Brookings, UNHCR), or data journalism. ~150-200 words\nTestable hypothesis (25%): State at least one testable hypothesis. Describe a specific relationship you expect to see (i.e. changes in x cause changes in y). Make an argument for why, based on existing research or your own reasoning. ~150-200 words"
+  },
+  {
+    "objectID": "slides/08_final_project.html#research-design-1",
+    "href": "slides/08_final_project.html#research-design-1",
+    "title": "Final Project Overview",
+    "section": "Research Design",
+    "text": "Research Design\n\n\nVariables and visualization (25%): Discuss the specific variables and dataset you will use. Mention the data source, unit of analysis, and sample. Create a ggplot to visualize the relationship between your variables. Good options: scatter plots (continuous), grouped bar charts (ordinal/binary), line graphs (time-series)\nRegression model (10%): Specify the main regression model you will use to test your hypothesis. Use markdown to render the equation neatly\n\n\n\n\n\n\nhttps://carolina-torreblanca.github.io/psci3200-globaldev-main/"
   }
 ]
