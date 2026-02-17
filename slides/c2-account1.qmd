@@ -23,18 +23,15 @@ format:
 
 ## Assignments
 
--   Two assignments due TODAY/Wed at midnight:
+- Final Project Git Repo: should have been submitted today
 
-1.  Creating a Final Project Git Repo
-
-2.  Idea for Final Research Project
-
--   Please send a Slack DM to both me and Jeremy
+- Research Question and Data sketch: due **Monday, February 23**
 
 ## Agenda
 
--   Background (Accountability 101)
--   Ferraz and Finan, 2011
+- Background (Accountability 101)
+- Björkman and Svensson, 2009
+- Interaction terms
 
 # Democracy, Accountability, and Representation
 
@@ -47,7 +44,7 @@ format:
 
 -   What is the claim connecting democracy and representation?
 
--   Under democracy, governments are representative because they are elected.
+-   Under democracy, governments are representative because they are elected
 
 -   But why?
 :::
@@ -101,7 +98,7 @@ format:
 
 -   Politicians are not legally compelled to abide by their platform in any democratic system! Why?
 
-## Pitfals in the Accountability View
+## Pitfalls in the Accountability View
 
 -   Idea is reward or punish depending on their performance
 
@@ -111,7 +108,7 @@ format:
 
 ## The Vote: Our One Blunt Tool
 
--   In the accountability view, voters are retrospective.
+-   In the accountability view, voters are retrospective
 
     -   They use the vote to punish
 
@@ -123,115 +120,247 @@ format:
 
 -   But we only have one vote. Can we achieve both goals?
 
-# Evidence from Brazil: Ferraz and Finan (2011)
+# Beyond Elections: Accountability in Public Services
 
-## Research question
+## Is Accountability Only About Elections?
+
+- So far we've talked about voters holding *elected politicians* accountable
+
+- But what about public services? Health clinics, schools, water systems?
+
+- The people running these services are often not elected. Should they still be accountable?
+
+# Björkman and Svensson (2009)
+
+## Community-Based Monitoring
+
+*"Community-based monitoring, or social accountability, is an approach towards building accountability that relies on civic engagement where citizens and civil society organizations directly or indirectly participate in extracting accountability"*
+
+## 1. The State of the World
+
+- In many poor countries, clinics are closed when they should be open
+
+- Health workers are frequently absent
+
+- Drugs and vaccines are misused, public funds are stolen
+
+- Top-down monitoring often weak and ineffective
+
+## 2. The Research Question
+
+- Can bottom-up, community-based monitoring improve health service delivery where top-down supervision has failed?
+
+## 3. The Hypotheses
 
 ::: incremental
--   Broadly: Do institutions affect accountability?
+1. Providing communities with information about facility performance will increase monitoring
 
--   Specifically: Do elections work as a disciplining device?
+2. Giving communities tools to organize collectively will increase monitoring
 
--   Reelection Incentives $\rightarrow$ corruption
+3. Increased monitoring will change provider behavior and improve health outcomes
 :::
 
-## Theory
+## 4. Mechanism: The Information Barrier
 
-\
+**H1**: Information $\rightarrow$ monitoring
 
-**Politicians who can get reelected have fewer incentives to steal funds**
+*"Provision of information on outcomes and performance improves citizens' ability to challenge abuses of the system, since reliable quantitative information is more difficult for service providers to brush aside as anecdotal, partial, or simply irrelevant"*
 
-- Why?
+## 4. Mechanisms: The Organization Barrier
 
-::: fragment
--   They want to get reelected! To get reelected, they need to serve the citizens.
+**H2**: Organization $\rightarrow$ monitoring
 
--   Voting as a disciplining tool
+*"Exerting accountability (monitoring providers) is subject to potentially large free-rider problems. Elite capture further complicates the process of holding providers accountable"*
+
+## 5. The Research Design
+
+- RCT across 50 communities in 9 districts in Uganda
+- Treatment communities got:
+  + Report cards on health facility performance (targets information barrier)
+  + Facilitated community meetings to develop action plans (targets organization barrier)
+- Control communities: nothing
+- ~110,000 households, ~600,000 people
+
+## Balance
+
+![](img/bs_balance.png){fig-align="center"}
+
+## The Main Specification
+
+$$y_{jd} = \alpha + \beta \, T_j + X_{jd}'\gamma + \theta_d + \varepsilon_{jd}$$
+
+::: incremental
+- $T_j$: treatment dummy (1 if community got the intervention)
+- $X_{jd}$: covariates (baseline characteristics)
+- $\theta_d$: district fixed effects
+- $\beta$: the treatment effect -- what we want
 :::
 
-## Case, Data
+## Results
 
--   Context: Municipalities in Brazil
+**Did monitoring increase?** (H1 + H2)
 
-    -   Brazilian mayors allowed to run for reelection starting in 2000
+- Treatment facilities adopted suggestion boxes, numbered waiting cards, posted patient rights
+- Communities discussed clinic performance at local council meetings
+- 70% of treatment facilities had at least one monitoring tool vs 16% of control
 
--   Data: Misappropriated Funds
+## H3: Health Outcomes
 
-    -   Random audits of municipalities since 2003
+![](img/bs_health_outcomes.png){fig-align="center" width="99%"}
 
-## Hypotheses
+## Another Specification
 
-::: fragment
--   Hypothesis 1: Mayors that can still get reelected will steal less
+B&S surveyed households before and after the intervention
 
--   Hypothesis 2: Especially when the "theft" is very visible
-:::
+They combine ("stack") both survey rounds into one dataset and estimate:
 
-## Research Design
+$$y_{ijt} = \gamma \, POST_t + \beta_{DD}(T_j \times POST_t) + \mu_j + \varepsilon_{ijt}$$
 
--   What is the treatment group?
--   What is the control group?
--   What are plausible threats to inference?
+What is $T_j \times POST_t$ doing?
 
-## Research Design
+# Interaction Terms
 
-![](img/ferrazdag.png){fig-align="center"}
+## Conditional Hypotheses
 
-## Research Design
+- Sometimes we think the effect of one variable depends on the value of another variable
 
-\ 
-**Constrain the Comparison**
+- Does studying more improve your grade? Probably. But does it help **more** if you slept well?
 
-::: fragment
+## Example
 
-  - Compare mayors who barely won and barely lost
-  - Compare 1st term mayors that later won to 2nd term mayors
-  - Compare mayors of equal experience
-  - Compare similar places only
-    
-:::
-    
-## Findings
+Imagine you have data on how much your peers slept and how well they performed
 
-![](img/ferrazfinan2011_table.png){fig-align="center"}
+```{r}
+#| echo: false
+#| warning: false
+#| fig-align: center
+#| fig-height: 4.5
 
-## Findings
+library(ggplot2)
+set.seed(42)
+n <- 200
+students <- data.frame(
+  study_hours = runif(n, 1, 10),
+  slept_well = sample(c("Yes", "No"), n, replace = TRUE)
+)
+students$score <- 50 +
+  3 * students$study_hours +
+  5 * (students$slept_well == "Yes") +
+  4 * students$study_hours * (students$slept_well == "Yes") +
+  rnorm(n, 0, 5)
 
--   Mayors who can still run for reelection are less corrupt.
+ggplot(students, aes(x = study_hours, y = score)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE, linewidth = 1.2) +
+  labs(x = "Hours Studied", y = "Test Score") +
+  theme_minimal(base_size = 16)
+```
 
-    -   Around 1.9-4 pp less corrupt than 2nd term mayors
+## Example
 
--   Because around 7.4% of all resources were stolen under 2nd term mayors, a 1.9-4 pp decrease is HUGE and A LOT of money
+We fit a regular OLS, like we know how to do
 
-## Robustness
+```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show code"
+summary(lm(score ~ study_hours, data = students))$coefficients |>
+  round(3)
+```
 
-\
+. . .
 
-**"If my story is true, what else should I observe in the data?"**
+But what if the effect of studying depends on whether you slept well?
 
-::: fragment
+## What Is an Interaction Term?
 
-- 1s term mayors procure more \$ from the fed. gov (effort)
-- Effects smaller where opposition is weak (who else are you going to vote for??)
+We add a product of the two variables to the regression:
 
-:::
+$$\text{score} = \alpha + \beta_1 \, \text{study} + \beta_2 \, \text{sleep} + \beta_3 (\text{study} \times \text{sleep}) + \varepsilon$$
 
-## Implications for Representation
+## Example
 
--   That 1st term mayors are less corrupt suggests votes are a good disciplining device
+```{r}
+#| echo: false
+#| warning: false
+#| fig-align: center
+#| fig-height: 4.5
 
-    -   The accountability theory seems to have empirical support
+ggplot(students, aes(x = study_hours, y = score, color = slept_well)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE, linewidth = 1.2) +
+  labs(x = "Hours Studied", y = "Test Score", color = "Slept Well?") +
+  theme_minimal(base_size = 16)
+```
 
--   But... is this evidence that voting does not help select good politicians?
+## Example
 
--   Could both mechanisms be operational?
+```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show code"
+summary(lm(score ~ study_hours * slept_well, data = students))$coefficients |>
+  round(3)
+```
 
-## Policy Implications
+## Reading the Output
 
--   Corruption is more pervasive in weakly institutionalized settings
+How many values can `slept_well` take? Two: 0 (No) and 1 (Yes)
 
-    -   How to make local governments in those settings more accountable?
+. . .
 
--   Implications for term limits?
+Plug in `slept_well = 0`:
 
--   Implications for politicians' salaries?
+$$\text{score} = \alpha + \beta_1 \, \text{study} + \beta_2 \cdot 0 + \beta_3 (\text{study} \times 0)$$
+
+. . .
+
+$$= \alpha + \beta_1 \, \text{study}$$
+
+One slope: $\beta_1$. This is the line for students who did **not** sleep well
+
+## Reading the Output
+
+Now plug in `slept_well = 1`:
+
+$$\text{score} = \alpha + \beta_1 \, \text{study} + \beta_2 \cdot 1 + \beta_3 (\text{study} \times 1)$$
+
+. . .
+
+$$= \alpha + \beta_1 \, \text{study} + \beta_2 + \beta_3 \, \text{study}$$
+
+The slope on study is now $\beta_1 + \beta_3$. This is the line for students who slept well
+
+. . .
+
+$\beta_3$ is the difference between the two slopes
+
+It tells you: does studying help **more** (or less) if you slept well?
+
+## Reading the Output
+
+- If $\beta_3 \approx 0$: same slopes, studying helps the same amount regardless of sleep
+
+- If $\beta_3 \neq 0$: different slopes, the effect of studying depends on whether you slept
+
+## Back to the Paper
+
+$$y_{ijt} = \gamma \, POST_t + \beta_{DD}(T_j \times POST_t) + \mu_j + \varepsilon_{ijt}$$
+
+- Outcomes change over time for everyone -- people get sick, seasons change, the economy shifts. $\gamma$ captures that
+
+- But did outcomes change **more** in treatment communities? That is what $\beta_{DD}$ tells us
+
+- The interaction $T_j \times POST_t$ separates what changed because of the intervention from what changed just because time passed
+
+## Difference-in-Differences
+
+- When the interaction is between a group and time
+
+- (plus a bunch of assumptions)
+
+- this is a **difference-in-differences**
+
+- More on this later
+
+

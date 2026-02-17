@@ -8145,21 +8145,21 @@
     "href": "slides/c2-account1.html#assignments",
     "title": "Representation and Accountability I",
     "section": "Assignments",
-    "text": "Assignments\n\nTwo assignments due TODAY/Wed at midnight:\n\n\nCreating a Final Project Git Repo\nIdea for Final Research Project\n\n\nPlease send a Slack DM to both me and Jeremy"
+    "text": "Assignments\n\nFinal Project Git Repo: should have been submitted today\nResearch Question and Data sketch: due Monday, February 23"
   },
   {
     "objectID": "slides/c2-account1.html#agenda",
     "href": "slides/c2-account1.html#agenda",
     "title": "Representation and Accountability I",
     "section": "Agenda",
-    "text": "Agenda\n\nBackground (Accountability 101)\nFerraz and Finan, 2011"
+    "text": "Agenda\n\nBackground (Accountability 101)\nBjörkman and Svensson, 2009\nInteraction terms"
   },
   {
     "objectID": "slides/c2-account1.html#przeworski-stokes-and-manin-1999",
     "href": "slides/c2-account1.html#przeworski-stokes-and-manin-1999",
     "title": "Representation and Accountability I",
     "section": "Przeworski, Stokes, and Manin, 1999",
-    "text": "Przeworski, Stokes, and Manin, 1999\n\nWhat do we mean by representation?\n\nActing in the voter’s best interests\nWhat is the claim connecting democracy and representation?\nUnder democracy, governments are representative because they are elected.\nBut why?"
+    "text": "Przeworski, Stokes, and Manin, 1999\n\nWhat do we mean by representation?\n\nActing in the voter’s best interests\nWhat is the claim connecting democracy and representation?\nUnder democracy, governments are representative because they are elected\nBut why?"
   },
   {
     "objectID": "slides/c2-account1.html#mandate-view",
@@ -8208,7 +8208,7 @@
     "href": "slides/c2-account1.html#the-vote-our-one-blunt-tool",
     "title": "Representation and Accountability I",
     "section": "The Vote: Our One Blunt Tool",
-    "text": "The Vote: Our One Blunt Tool\n\nIn the accountability view, voters are retrospective.\n\nThey use the vote to punish\n\nIn the mandate view, voters are prospective\n\nThey use the vote to select the best policy / best politicians\n\nIn reality, voters want to do both: select good policy and punish bad behavior\nBut we only have one vote. Can we achieve both goals?"
+    "text": "The Vote: Our One Blunt Tool\n\nIn the accountability view, voters are retrospective\n\nThey use the vote to punish\n\nIn the mandate view, voters are prospective\n\nThey use the vote to select the best policy / best politicians\n\nIn reality, voters want to do both: select good policy and punish bad behavior\nBut we only have one vote. Can we achieve both goals?"
   },
   {
     "objectID": "slides/c2-account1.html#research-question",
@@ -8264,7 +8264,7 @@
     "href": "slides/c2-account1.html#findings",
     "title": "Representation and Accountability I",
     "section": "Findings",
-    "text": "Findings"
+    "text": "Findings\n“One year into the program, we find a significant difference in the weight of infants (0.17 z-scores increase) and a markedly lower number of deaths among children under five (a 33 percent reduction in child deaths) in the treatment communities. Utilization (for general outpatient services) was 16 percent higher in the treatment compared to the control facilities.”"
   },
   {
     "objectID": "slides/c2-account1.html#findings-1",
@@ -8292,7 +8292,7 @@
     "href": "slides/c2-account1.html#policy-implications",
     "title": "Representation and Accountability I",
     "section": "Policy Implications",
-    "text": "Policy Implications\n\nCorruption is more pervasive in weakly institutionalized settings\n\nHow to make local governments in those settings more accountable?\n\nImplications for term limits?\nImplications for politicians’ salaries?"
+    "text": "Policy Implications\n\nCommunity monitoring can improve service delivery when top-down supervision fails\nTwo ingredients: information + collective action capacity\nHow generalizable is this? Does it work everywhere?\nNext week we test this: Ferraz and Finan (Brazil) + Chong et al. (Mexico)"
   },
   {
     "objectID": "slides/c3-crime.html#agenda",
@@ -10554,5 +10554,369 @@
     "title": "Live R Coding Session",
     "section": "Averaged Z-Scores",
     "text": "Averaged Z-Scores\n\n## Find participation measures that are based on likert\n# baseline\nbcols = grep(\"^q13_.*_baseline$\", names(dat), value = T)\ndat[, paste0(bcols, \"_st\")] = dat[, bcols]\nbcols = paste0(bcols,\"_st\")\n\n# endline\necols = grep(\"^q13_[1-7]_\\\\d$\", names(dat), value = T)\ndat[, paste0(ecols, \"_st\")] = dat[, ecols]\necols = paste0(ecols,\"_st\")\n\n\n# Create treatment variable\ndat = dat %&gt;% mutate(moved = case_when(home_region == \"Addis Ababa\" ~ 0, TRUE ~ 1) )\n\n# clean q13_\nlevels = c(\"Never\", \"Once or Twice\", \"More than twice\", \"More than 5 times\", \n           \"More than 10 times\")\ndat = dat %&gt;% \n  mutate(across(c(bcols), \n                .fns = ~ factor(.x, levels = levels)))\n\n# Create z-score function from Kling, Liberman, and Katz (2007)\nz_score = function(x, y){\n  # calculate mean and sd of control group\n  c_mean = mean( as.numeric( unlist(x[, y])) , na.rm = T)\n  c_sd = sd( as.numeric( unlist(x[, y])) , na.rm = T)\n  # subtract control group mean; divide by control group SD\n  ( as.numeric(x[, y, drop = TRUE]) - c_mean) / c_sd\n}\n\n# calculate z-scores\nfor (i in c(bcols, ecols)) {\n  dat[,i] = z_score(dat, i)\n}\n\ndat = dat %&gt;% \n  rowwise() %&gt;% \n  mutate( z_participation_end = mean(c_across(all_of(bcols)), na.rm = TRUE)) %&gt;% \n  mutate( z_participation_base = mean(c_across(all_of(ecols)), na.rm = TRUE)) %&gt;%\n  ungroup()\n\n\nregd = dat %&gt;% select(z_participation_end, z_participation_base, moved, response_id ) %&gt;%\n  pivot_longer(cols = c(z_participation_end, z_participation_base),\n               names_to = \"time\",\n               values_to = \"z_participation\") %&gt;%\n  mutate(time = case_when(time == \"z_participation_end\" ~ 1,\n                          TRUE ~ 0))\n\nmodels &lt;- list()\nmodels[['Bivariate']] = lm(z_participation ~ moved, regd)\nmodels[['Multivariate']] = lm(z_participation ~ moved + time, regd)\nmodels[['Interaction']] = lm(z_participation ~ moved + time + moved*time, regd)\n\nmodelsummary(\n  models,\n  estimate  = \"{estimate}{stars} ({std.error})\",\n             statistic = NULL,\n  gof_omit = 'IC|RMSE|Log|F|R2$|Std.')\n\n\n\n\n\nBivariate\nMultivariate\nInteraction\n\n\n\n\n(Intercept)\n-0.159*** (0.026)\n-0.156*** (0.030)\n-0.156*** (0.037)\n\n\nmoved\n0.247*** (0.032)\n0.247*** (0.032)\n0.247*** (0.046)\n\n\ntime\n\n-0.004 (0.031)\n-0.005 (0.052)\n\n\nmoved x time\n\n\n0.001 (0.065)\n\n\nNum.Obs.\n1597\n1597\n1597\n\n\nR2 Adj.\n0.035\n0.034\n0.034"
+  },
+  {
+    "objectID": "slides/c2-account1.html#pitfalls-in-the-accountability-view",
+    "href": "slides/c2-account1.html#pitfalls-in-the-accountability-view",
+    "title": "Representation and Accountability I",
+    "section": "Pitfalls in the Accountability View",
+    "text": "Pitfalls in the Accountability View\n\nIdea is reward or punish depending on their performance\nIs it plausible to think citizens have enough information to evaluate politicians?\nWhat if politicians do not value getting reelected"
+  },
+  {
+    "objectID": "slides/c2-account1.html#is-accountability-only-about-elections",
+    "href": "slides/c2-account1.html#is-accountability-only-about-elections",
+    "title": "Representation and Accountability I",
+    "section": "Is Accountability Only About Elections?",
+    "text": "Is Accountability Only About Elections?\n\nSo far we’ve talked about voters holding elected politicians accountable\nBut what about public services? Health clinics, schools, water systems?\nThe people running these services are often not elected. Should they still be accountable?"
+  },
+  {
+    "objectID": "slides/c2-account1.html#community-based-monitoring",
+    "href": "slides/c2-account1.html#community-based-monitoring",
+    "title": "Representation and Accountability I",
+    "section": "Community-Based Monitoring",
+    "text": "Community-Based Monitoring\n“Community-based monitoring, or social accountability, is an approach towards building accountability that relies on civic engagement where citizens and civil society organizations directly or indirectly participate in extracting accountability”"
+  },
+  {
+    "objectID": "slides/c2-account1.html#why-is-service-delivery-so-bad",
+    "href": "slides/c2-account1.html#why-is-service-delivery-so-bad",
+    "title": "Representation and Accountability I",
+    "section": "Why Is Service Delivery So Bad?",
+    "text": "Why Is Service Delivery So Bad?\n\nIn many poor countries, clinics are closed when they should be open\nHealth workers are frequently absent\nDrugs and vaccines are misused, public funds are stolen\nTop-down monitoring (government supervises providers) should fix this\nBut what if the monitors themselves are weak and ineffective?"
+  },
+  {
+    "objectID": "slides/c2-account1.html#two-problems",
+    "href": "slides/c2-account1.html#two-problems",
+    "title": "Representation and Accountability I",
+    "section": "Two Problems",
+    "text": "Two Problems\nThe paper targets two specific barriers to community monitoring:\n\n\nInformation: “Provision of information on outcomes and performance improves citizens’ ability to challenge abuses of the system, since reliable quantitative information is more difficult for service providers to brush aside as anecdotal, partial, or simply irrelevant”\nOrganization: “Exerting accountability (monitoring providers) is subject to potentially large free-rider problems. Elite capture further complicates the process of holding providers accountable. By enhancing local organization capacity and encouraging the community to develop its own monitoring strategy, these constraints are sought to be relaxed”"
+  },
+  {
+    "objectID": "slides/c2-account1.html#three-barriers",
+    "href": "slides/c2-account1.html#three-barriers",
+    "title": "Representation and Accountability I",
+    "section": "Three Barriers",
+    "text": "Three Barriers\nWhy don’t communities just monitor providers on their own?\n\n\nThey lack reliable information on overall quality (your own experience at the clinic is just one data point)\nFree-riding: everyone wants someone else to do the monitoring\nCommunities may lack the ability to sanction or reward providers"
+  },
+  {
+    "objectID": "slides/c2-account1.html#the-intervention",
+    "href": "slides/c2-account1.html#the-intervention",
+    "title": "Representation and Accountability I",
+    "section": "The Intervention",
+    "text": "The Intervention\n\nRCT across 50 communities in 9 districts in Uganda\nTreatment communities got:\n\nReport cards on health facility performance (targets information barrier)\nFacilitated community meetings to develop action plans (targets organization barrier)\n\nControl communities: nothing\n~110,000 households, ~600,000 people"
+  },
+  {
+    "objectID": "slides/c2-account1.html#timeline",
+    "href": "slides/c2-account1.html#timeline",
+    "title": "Representation and Accountability I",
+    "section": "Timeline",
+    "text": "Timeline"
+  },
+  {
+    "objectID": "slides/c2-account1.html#research-design-questions",
+    "href": "slides/c2-account1.html#research-design-questions",
+    "title": "Representation and Accountability I",
+    "section": "Research Design Questions",
+    "text": "Research Design Questions\n\n\nThey randomized. So why do balance tests? If treatment is truly random, what would you expect to see?\nWhy add covariates to an experiment if randomization already makes treatment and control comparable?"
+  },
+  {
+    "objectID": "slides/c2-account1.html#spillovers",
+    "href": "slides/c2-account1.html#spillovers",
+    "title": "Representation and Accountability I",
+    "section": "Spillovers",
+    "text": "Spillovers\n“Spillovers could affect the estimates in two ways. If information about the intervention spread to control areas and, as a result, control communities became more involved in monitoring the providers, the estimated treatment effect would be biased downward. If, on the other hand, households in control communities shifted from seeking care at the control facility to the nearest treatment clinic, it is possible that the estimated treatment effect would be biased upward.”\n\nWhich direction do you think is more likely?"
+  },
+  {
+    "objectID": "slides/c2-account1.html#what-did-communities-do",
+    "href": "slides/c2-account1.html#what-did-communities-do",
+    "title": "Representation and Accountability I",
+    "section": "What Did Communities Do?",
+    "text": "What Did Communities Do?"
+  },
+  {
+    "objectID": "slides/c2-account1.html#what-did-communities-do-1",
+    "href": "slides/c2-account1.html#what-did-communities-do-1",
+    "title": "Representation and Accountability I",
+    "section": "What Did Communities Do?",
+    "text": "What Did Communities Do?\n\nTreatment facilities: suggestion boxes, waiting cards, posted patient rights\nCommunities discussed clinic performance at local council meetings\n“The treatment communities became more involved in monitoring the provider”"
+  },
+  {
+    "objectID": "slides/c2-account1.html#what-changed",
+    "href": "slides/c2-account1.html#what-changed",
+    "title": "Representation and Accountability I",
+    "section": "What Changed?",
+    "text": "What Changed?\n“Treatment practices, as expressed both in perception-based responses by households and in more quantitative indicators (immunization of children, waiting time, examination procedures, absenteeism), improved significantly in the treatment communities, thus suggesting that the changes in quality and quantity of health care provision are due to behavioral changes of the staff.”"
+  },
+  {
+    "objectID": "slides/c2-account1.html#what-is-a-mechanism-1",
+    "href": "slides/c2-account1.html#what-is-a-mechanism-1",
+    "title": "Representation and Accountability I",
+    "section": "What Is a Mechanism?",
+    "text": "What Is a Mechanism?\n\nA mechanism is a chain of links connecting cause to effect\nIt answers: how does the treatment produce the outcome?\nThe paper doesn’t just show the treatment worked. It shows why"
+  },
+  {
+    "objectID": "slides/c2-account1.html#the-chain",
+    "href": "slides/c2-account1.html#the-chain",
+    "title": "Representation and Accountability I",
+    "section": "The Chain",
+    "text": "The Chain\nThree links:\n\n\nCommunities get information and organizational tools\nCommunities monitor providers more extensively\nProviders change behavior \\(\\rightarrow\\) health outcomes improve\n\n\n\n“To the extent we can measure it, the evidence suggests that treatment communities began to monitor the health unit more extensively in response to the intervention and that the health workers improved the provision of health services.”"
+  },
+  {
+    "objectID": "slides/c2-account1.html#why-does-this-matter",
+    "href": "slides/c2-account1.html#why-does-this-matter",
+    "title": "Representation and Accountability I",
+    "section": "Why Does This Matter?",
+    "text": "Why Does This Matter?\n\nA lot of research shows that something works. Fewer studies show how\nIf you know the mechanism, you can predict where the intervention will succeed and where it will fail\nYou can also design better interventions"
+  },
+  {
+    "objectID": "slides/c2-account1.html#how-do-they-estimate-this",
+    "href": "slides/c2-account1.html#how-do-they-estimate-this",
+    "title": "Representation and Accountability I",
+    "section": "How Do They Estimate This?",
+    "text": "How Do They Estimate This?\n\\[y_{ijt} = \\gamma \\, POST_t + \\beta_{DD}(T_j \\times POST_t) + \\mu_j + \\varepsilon_{ijt}\\]\n\nWhat does each piece mean?\n\n\n\n\\(POST_t\\): a dummy for “after the intervention”\n\\(T_j\\): a dummy for “treatment community”\n\\(T_j \\times POST_t\\): the interaction of treatment and time\n\\(\\mu_j\\): facility fixed effects"
+  },
+  {
+    "objectID": "slides/c2-account1.html#what-is-an-interaction-term",
+    "href": "slides/c2-account1.html#what-is-an-interaction-term",
+    "title": "Representation and Accountability I",
+    "section": "What Is an Interaction Term?",
+    "text": "What Is an Interaction Term?\nWe add a product of the two variables to the regression:\n\\[\\text{score} = \\alpha + \\beta_1 \\, \\text{study} + \\beta_2 \\, \\text{sleep} + \\beta_3 (\\text{study} \\times \\text{sleep}) + \\varepsilon\\]"
+  },
+  {
+    "objectID": "slides/c2-account1.html#interpreting-the-pieces",
+    "href": "slides/c2-account1.html#interpreting-the-pieces",
+    "title": "Representation and Accountability I",
+    "section": "Interpreting the Pieces",
+    "text": "Interpreting the Pieces\n\n\\(\\beta_1\\): effect of \\(X_1\\) when \\(X_2 = 0\\)\n\\(\\beta_2\\): effect of \\(X_2\\) when \\(X_1 = 0\\)\n\\(\\beta_3\\): how much the effect of \\(X_1\\) changes when \\(X_2\\) changes\n\\(\\beta_3\\) is the interaction. It tells us: does the effect depend on context?"
+  },
+  {
+    "objectID": "slides/c2-account1.html#back-to-the-paper",
+    "href": "slides/c2-account1.html#back-to-the-paper",
+    "title": "Representation and Accountability I",
+    "section": "Back to the Paper",
+    "text": "Back to the Paper\n\\[y_{ijt} = \\gamma \\, POST_t + \\beta_{DD}(T_j \\times POST_t) + \\mu_j + \\varepsilon_{ijt}\\]\n\nOutcomes change over time for everyone – people get sick, seasons change, the economy shifts. \\(\\gamma\\) captures that\nBut did outcomes change more in treatment communities? That is what \\(\\beta_{DD}\\) tells us\nThe interaction \\(T_j \\times POST_t\\) separates what changed because of the intervention from what changed just because time passed"
+  },
+  {
+    "objectID": "slides/c2-account1.html#why-interaction-terms-matter",
+    "href": "slides/c2-account1.html#why-interaction-terms-matter",
+    "title": "Representation and Accountability I",
+    "section": "Why Interaction Terms Matter",
+    "text": "Why Interaction Terms Matter\n\nThey let us ask: does the effect depend on context?\nWe will use them throughout this course\nNext week: does information always improve accountability? Or does it depend on the setting?"
+  },
+  {
+    "objectID": "slides/c2-account1.html#the-state-of-the-world",
+    "href": "slides/c2-account1.html#the-state-of-the-world",
+    "title": "Representation and Accountability I",
+    "section": "1. The State of the World",
+    "text": "1. The State of the World\n\nIn many poor countries, clinics are closed when they should be open\nHealth workers are frequently absent\nDrugs and vaccines are misused, public funds are stolen\nTop-down monitoring often weak and ineffective"
+  },
+  {
+    "objectID": "slides/c2-account1.html#the-research-question",
+    "href": "slides/c2-account1.html#the-research-question",
+    "title": "Representation and Accountability I",
+    "section": "2. The Research Question",
+    "text": "2. The Research Question\n\nCan bottom-up, community-based monitoring improve health service delivery where top-down supervision has failed?"
+  },
+  {
+    "objectID": "slides/c2-account1.html#the-mechanisms",
+    "href": "slides/c2-account1.html#the-mechanisms",
+    "title": "Representation and Accountability I",
+    "section": "The Mechanisms",
+    "text": "The Mechanisms\nThe paper targets two barriers to effective community monitoring:\n\n\nInformation: “Provision of information on outcomes and performance improves citizens’ ability to challenge abuses of the system, since reliable quantitative information is more difficult for service providers to brush aside as anecdotal, partial, or simply irrelevant”\nOrganization: “Exerting accountability (monitoring providers) is subject to potentially large free-rider problems. Elite capture further complicates the process of holding providers accountable. By enhancing local organization capacity and encouraging the community to develop its own monitoring strategy, these constraints are sought to be relaxed”"
+  },
+  {
+    "objectID": "slides/c2-account1.html#the-hypotheses",
+    "href": "slides/c2-account1.html#the-hypotheses",
+    "title": "Representation and Accountability I",
+    "section": "3. The Hypotheses",
+    "text": "3. The Hypotheses\n\n\nProviding communities with information about facility performance will increase monitoring\nGiving communities tools to organize collectively will increase monitoring\nIncreased monitoring will change provider behavior and improve health outcomes"
+  },
+  {
+    "objectID": "slides/c2-account1.html#the-research-design",
+    "href": "slides/c2-account1.html#the-research-design",
+    "title": "Representation and Accountability I",
+    "section": "5. The Research Design",
+    "text": "5. The Research Design\n\nRCT across 50 communities in 9 districts in Uganda\nTreatment communities got:\n\nReport cards on health facility performance (targets information barrier)\nFacilitated community meetings to develop action plans (targets organization barrier)\n\nControl communities: nothing\n~110,000 households, ~600,000 people"
+  },
+  {
+    "objectID": "slides/c2-account1.html#conditional-hypotheses",
+    "href": "slides/c2-account1.html#conditional-hypotheses",
+    "title": "Representation and Accountability I",
+    "section": "Conditional Hypotheses",
+    "text": "Conditional Hypotheses\n\nSometimes we think the effect of one variable depends on the value of another variable\nDoes studying more improve your grade? Probably. But does it help more if you slept well?"
+  },
+  {
+    "objectID": "slides/c2-account1.html#the-information-barrier",
+    "href": "slides/c2-account1.html#the-information-barrier",
+    "title": "Representation and Accountability I",
+    "section": "The Information Barrier",
+    "text": "The Information Barrier\n“Provision of information on outcomes and performance improves citizens’ ability to challenge abuses of the system, since reliable quantitative information is more difficult for service providers to brush aside as anecdotal, partial, or simply irrelevant”\n\n\nYou know your own experience at the clinic, but not overall quality\nYour child died, but you don’t know how many other children died\nWithout aggregate data, providers can dismiss complaints as anecdotal"
+  },
+  {
+    "objectID": "slides/c2-account1.html#the-organization-barrier",
+    "href": "slides/c2-account1.html#the-organization-barrier",
+    "title": "Representation and Accountability I",
+    "section": "The Organization Barrier",
+    "text": "The Organization Barrier\n“Exerting accountability (monitoring providers) is subject to potentially large free-rider problems. Elite capture further complicates the process of holding providers accountable”\n\n\nEveryone wants someone else to do the monitoring (free-riding)\nLocal elites may capture the process\nCommunities need tools to organize collectively"
+  },
+  {
+    "objectID": "slides/c2-account1.html#balance",
+    "href": "slides/c2-account1.html#balance",
+    "title": "Representation and Accountability I",
+    "section": "Balance",
+    "text": "Balance"
+  },
+  {
+    "objectID": "slides/c2-account1.html#the-main-specification",
+    "href": "slides/c2-account1.html#the-main-specification",
+    "title": "Representation and Accountability I",
+    "section": "The Main Specification",
+    "text": "The Main Specification\n\\[y_{jd} = \\alpha + \\beta \\, T_j + X_{jd}'\\gamma + \\theta_d + \\varepsilon_{jd}\\]\n\n\n\\(T_j\\): treatment dummy (1 if community got the intervention)\n\\(X_{jd}\\): covariates (baseline characteristics)\n\\(\\theta_d\\): district fixed effects\n\\(\\beta\\): the treatment effect – what we want"
+  },
+  {
+    "objectID": "slides/c2-account1.html#health-outcomes",
+    "href": "slides/c2-account1.html#health-outcomes",
+    "title": "Representation and Accountability I",
+    "section": "Health Outcomes",
+    "text": "Health Outcomes"
+  },
+  {
+    "objectID": "slides/c2-account1.html#the-mechanism",
+    "href": "slides/c2-account1.html#the-mechanism",
+    "title": "Representation and Accountability I",
+    "section": "The Mechanism",
+    "text": "The Mechanism\n\n\nCommunities get information and organizational tools\nCommunities monitor providers more extensively\nProviders change behavior \\(\\rightarrow\\) health outcomes improve\n\n\n\n“The evidence suggests that treatment communities began to monitor the health unit more extensively in response to the intervention and that the health workers improved the provision of health services.”"
+  },
+  {
+    "objectID": "slides/c2-account1.html#another-specification",
+    "href": "slides/c2-account1.html#another-specification",
+    "title": "Representation and Accountability I",
+    "section": "Another Specification",
+    "text": "Another Specification\nB&S surveyed households before and after the intervention\nThey combine (“stack”) both survey rounds into one dataset and estimate:\n\\[y_{ijt} = \\gamma \\, POST_t + \\beta_{DD}(T_j \\times POST_t) + \\mu_j + \\varepsilon_{ijt}\\]\nWhat is \\(T_j \\times POST_t\\) doing?"
+  },
+  {
+    "objectID": "slides/c2-account1.html#example",
+    "href": "slides/c2-account1.html#example",
+    "title": "Representation and Accountability I",
+    "section": "Example",
+    "text": "Example\nImagine you have data on how much your peers slept and how well they performed"
+  },
+  {
+    "objectID": "slides/c2-account1.html#example-1",
+    "href": "slides/c2-account1.html#example-1",
+    "title": "Representation and Accountability I",
+    "section": "Example",
+    "text": "Example\nWe fit a regular OLS, like we know how to do\n\n\nShow code\nsummary(lm(score ~ study_hours, data = students))$coefficients |&gt;\n  round(3)\n\n\n            Estimate Std. Error t value Pr(&gt;|t|)\n(Intercept)   52.523      2.733  19.219        0\nstudy_hours    5.190      0.436  11.915        0\n\n\n\nBut what if the effect of studying depends on whether you slept well?"
+  },
+  {
+    "objectID": "slides/c2-account1.html#looking-ahead",
+    "href": "slides/c2-account1.html#looking-ahead",
+    "title": "Representation and Accountability I",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\n\nInteraction terms let us test conditional hypotheses\nNext week: does information always improve accountability? Or does it depend on the setting?"
+  },
+  {
+    "objectID": "slides/c2-account1.html#why-the-information-barrier",
+    "href": "slides/c2-account1.html#why-the-information-barrier",
+    "title": "Representation and Accountability I",
+    "section": "4. Why? The Information Barrier",
+    "text": "4. Why? The Information Barrier\nH1: Information \\(\\rightarrow\\) monitoring\n“Provision of information on outcomes and performance improves citizens’ ability to challenge abuses of the system, since reliable quantitative information is more difficult for service providers to brush aside as anecdotal, partial, or simply irrelevant”\n\n\nYou know your own experience at the clinic, but not overall quality\nYour child died, but you don’t know how many other children died\nWithout aggregate data, providers can dismiss complaints as anecdotal"
+  },
+  {
+    "objectID": "slides/c2-account1.html#why-the-organization-barrier",
+    "href": "slides/c2-account1.html#why-the-organization-barrier",
+    "title": "Representation and Accountability I",
+    "section": "5. Why? The Organization Barrier",
+    "text": "5. Why? The Organization Barrier\nH2: Organization \\(\\rightarrow\\) monitoring\n“Exerting accountability (monitoring providers) is subject to potentially large free-rider problems. Elite capture further complicates the process of holding providers accountable”\n\n\nEveryone wants someone else to do the monitoring (free-riding)\nLocal elites may capture the process\nCommunities need tools to organize collectively"
+  },
+  {
+    "objectID": "slides/c2-account1.html#results",
+    "href": "slides/c2-account1.html#results",
+    "title": "Representation and Accountability I",
+    "section": "Results",
+    "text": "Results\nDid monitoring increase? (H1 + H2)\n\nTreatment facilities adopted suggestion boxes, numbered waiting cards, posted patient rights\nCommunities discussed clinic performance at local council meetings\n70% of treatment facilities had at least one monitoring tool vs 16% of control"
+  },
+  {
+    "objectID": "slides/c2-account1.html#mechanism-the-information-barrier",
+    "href": "slides/c2-account1.html#mechanism-the-information-barrier",
+    "title": "Representation and Accountability I",
+    "section": "4. Mechanism: The Information Barrier",
+    "text": "4. Mechanism: The Information Barrier\nH1: Information \\(\\rightarrow\\) monitoring\n“Provision of information on outcomes and performance improves citizens’ ability to challenge abuses of the system, since reliable quantitative information is more difficult for service providers to brush aside as anecdotal, partial, or simply irrelevant”"
+  },
+  {
+    "objectID": "slides/c2-account1.html#mechanisms-the-organization-barrier",
+    "href": "slides/c2-account1.html#mechanisms-the-organization-barrier",
+    "title": "Representation and Accountability I",
+    "section": "4. Mechanisms: The Organization Barrier",
+    "text": "4. Mechanisms: The Organization Barrier\nH2: Organization \\(\\rightarrow\\) monitoring\n“Exerting accountability (monitoring providers) is subject to potentially large free-rider problems. Elite capture further complicates the process of holding providers accountable”"
+  },
+  {
+    "objectID": "slides/c2-account1.html#h3-health-outcomes",
+    "href": "slides/c2-account1.html#h3-health-outcomes",
+    "title": "Representation and Accountability I",
+    "section": "H3: Health Outcomes",
+    "text": "H3: Health Outcomes"
+  },
+  {
+    "objectID": "slides/c2-account1.html#wait-when-x_2-0",
+    "href": "slides/c2-account1.html#wait-when-x_2-0",
+    "title": "Representation and Accountability I",
+    "section": "Wait: “When \\(X_2 = 0\\)”?",
+    "text": "Wait: “When \\(X_2 = 0\\)”?\n\\(\\beta_1\\) is NOT “the effect of \\(X_1\\).” It is the effect of \\(X_1\\) at a specific value of \\(X_2\\)\n\nWhat happens if we center \\(X_2\\)?\n\nstudents$slept_centered &lt;- as.numeric(students$slept_well == \"Yes\") -\n  mean(students$slept_well == \"Yes\")\n\ncbind(\n  Original = coef(lm(score ~ study_hours * I(slept_well == \"Yes\"),\n                      data = students)),\n  Centered = coef(lm(score ~ study_hours * slept_centered,\n                      data = students))\n) |&gt; round(3)\n\n                                       Original Centered\n(Intercept)                              50.067   52.643\nstudy_hours                               2.904    5.155\nI(slept_well == \"Yes\")TRUE                4.815    4.815\nstudy_hours:I(slept_well == \"Yes\")TRUE    4.206    4.206"
+  },
+  {
+    "objectID": "slides/c2-account1.html#wait-when-x_2-0-1",
+    "href": "slides/c2-account1.html#wait-when-x_2-0-1",
+    "title": "Representation and Accountability I",
+    "section": "Wait: “When \\(X_2 = 0\\)”?",
+    "text": "Wait: “When \\(X_2 = 0\\)”?\n\nThe coefficient on study_hours changed – because “when \\(X_2 = 0\\)” now means something different\nThe interaction (\\(\\beta_3\\)) stayed the same\nThe constitutive terms are conditional on where you evaluate them\nThe interaction is always the interaction"
+  },
+  {
+    "objectID": "slides/c2-account1.html#what-if-there-is-no-interaction",
+    "href": "slides/c2-account1.html#what-if-there-is-no-interaction",
+    "title": "Representation and Accountability I",
+    "section": "What If There Is No Interaction?",
+    "text": "What If There Is No Interaction?\n\nParallel lines: studying helps the same amount regardless of sleep. No interaction"
+  },
+  {
+    "objectID": "slides/c2-account1.html#reading-the-output",
+    "href": "slides/c2-account1.html#reading-the-output",
+    "title": "Representation and Accountability I",
+    "section": "Reading the Output",
+    "text": "Reading the Output\nHow many values can slept_well take? Two: 0 (No) and 1 (Yes)\n\nPlug in slept_well = 0:\n\\[\\text{score} = \\alpha + \\beta_1 \\, \\text{study} + \\beta_2 \\cdot 0 + \\beta_3 (\\text{study} \\times 0)\\]\n\n\n\\[= \\alpha + \\beta_1 \\, \\text{study}\\]\nOne slope: \\(\\beta_1\\). This is the line for students who did not sleep well"
+  },
+  {
+    "objectID": "slides/c2-account1.html#example-2",
+    "href": "slides/c2-account1.html#example-2",
+    "title": "Representation and Accountability I",
+    "section": "Example",
+    "text": "Example"
+  },
+  {
+    "objectID": "slides/c2-account1.html#example-3",
+    "href": "slides/c2-account1.html#example-3",
+    "title": "Representation and Accountability I",
+    "section": "Example",
+    "text": "Example\n\n\nShow code\nsummary(lm(score ~ study_hours * slept_well, data = students))$coefficients |&gt;\n  round(3)\n\n\n                          Estimate Std. Error t value Pr(&gt;|t|)\n(Intercept)                 50.067      1.158  43.247    0.000\nstudy_hours                  2.904      0.185  15.678    0.000\nslept_wellYes                4.815      1.605   3.000    0.003\nstudy_hours:slept_wellYes    4.206      0.256  16.439    0.000"
+  },
+  {
+    "objectID": "slides/c2-account1.html#reading-the-output-1",
+    "href": "slides/c2-account1.html#reading-the-output-1",
+    "title": "Representation and Accountability I",
+    "section": "Reading the Output",
+    "text": "Reading the Output\nNow plug in slept_well = 1:\n\\[\\text{score} = \\alpha + \\beta_1 \\, \\text{study} + \\beta_2 \\cdot 1 + \\beta_3 (\\text{study} \\times 1)\\]\n\n\\[= \\alpha + \\beta_1 \\, \\text{study} + \\beta_2 + \\beta_3 \\, \\text{study}\\]\nThe slope on study is now \\(\\beta_1 + \\beta_3\\). This is the line for students who slept well\n\n\n\\(\\beta_3\\) is the difference between the two slopes\nIt tells you: does studying help more (or less) if you slept well?"
+  },
+  {
+    "objectID": "slides/c2-account1.html#reading-the-output-2",
+    "href": "slides/c2-account1.html#reading-the-output-2",
+    "title": "Representation and Accountability I",
+    "section": "Reading the Output",
+    "text": "Reading the Output\n\nIf \\(\\beta_3 \\approx 0\\): same slopes, studying helps the same amount regardless of sleep\nIf \\(\\beta_3 \\neq 0\\): different slopes, the effect of studying depends on whether you slept"
+  },
+  {
+    "objectID": "slides/c2-account1.html#difference-in-differences",
+    "href": "slides/c2-account1.html#difference-in-differences",
+    "title": "Representation and Accountability I",
+    "section": "Difference-in-Differences",
+    "text": "Difference-in-Differences\n\nWhen the interaction is between a group and time\n(plus a bunch of assumptions)\nthis is a difference-in-differences\nMore on this later"
   }
 ]
