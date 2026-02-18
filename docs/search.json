@@ -10735,7 +10735,7 @@
     "href": "slides/c2-account1.html#the-research-design",
     "title": "Representation and Accountability I",
     "section": "5. The Research Design",
-    "text": "5. The Research Design\n\nRCT across 50 communities in 9 districts in Uganda\nTreatment communities got:\n\nReport cards on health facility performance (targets information barrier)\nFacilitated community meetings to develop action plans (targets organization barrier)\n\nControl communities: nothing\n~110,000 households, ~600,000 people"
+    "text": "5. The Research Design\n\nRCT across 50 communities in 9 districts in Uganda\nTreatment communities got:\n\nReport cards on health facility performance (targets information barrier)\nFacilitated community meetings to develop action plans (targets organization barrier)\n\nControl communities: nothing\n~5,000 households surveyed per round"
   },
   {
     "objectID": "slides/c2-account1.html#conditional-hypotheses",
@@ -10903,14 +10903,14 @@
     "href": "slides/c2-account1.html#reading-the-output-1",
     "title": "Representation and Accountability I",
     "section": "Reading the Output",
-    "text": "Reading the Output\nNow plug in slept_well = 1:\n\\[\\text{score} = \\alpha + \\beta_1 \\, \\text{study} + \\beta_2 \\cdot 1 + \\beta_3 (\\text{study} \\times 1)\\]\n\n\\[= \\alpha + \\beta_1 \\, \\text{study} + \\beta_2 + \\beta_3 \\, \\text{study}\\]\nThe slope on study is now \\(\\beta_1 + \\beta_3\\). This is the line for students who slept well\n\n\n\\(\\beta_3\\) is the difference between the two slopes\nIt tells you: does studying help more (or less) if you slept well?"
+    "text": "Reading the Output\nNow plug in slept_well = 1:\n\\[\\text{score} = \\alpha + \\beta_1 \\, \\text{study} + \\beta_2 \\cdot 1 + \\beta_3 (\\text{study} \\times 1)\\]\n\n\\[= \\alpha + \\beta_1 \\, \\text{study} + \\beta_2 + \\beta_3 \\, \\text{study}\\]\nIntercept is now \\(\\alpha + \\beta_2\\). Slope on study is now \\(\\beta_1 + \\beta_3\\)"
   },
   {
     "objectID": "slides/c2-account1.html#reading-the-output-2",
     "href": "slides/c2-account1.html#reading-the-output-2",
     "title": "Representation and Accountability I",
     "section": "Reading the Output",
-    "text": "Reading the Output\n\nIf \\(\\beta_3 \\approx 0\\): same slopes, studying helps the same amount regardless of sleep\nIf \\(\\beta_3 \\neq 0\\): different slopes, the effect of studying depends on whether you slept"
+    "text": "Reading the Output\n\n\nShow code\nsummary(lm(score ~ study_hours * slept_well, data = students))$coefficients |&gt;\n  round(2)\n\n\n                          Estimate Std. Error t value Pr(&gt;|t|)\n(Intercept)                  50.07       1.16   43.25        0\nstudy_hours                   2.90       0.19   15.68        0\nslept_wellYes                 4.81       1.60    3.00        0\nstudy_hours:slept_wellYes     4.21       0.26   16.44        0"
   },
   {
     "objectID": "slides/c2-account1.html#difference-in-differences",
@@ -10918,5 +10918,12 @@
     "title": "Representation and Accountability I",
     "section": "Difference-in-Differences",
     "text": "Difference-in-Differences\n\nWhen the interaction is between a group and time\n(plus a bunch of assumptions)\nthis is a difference-in-differences\nMore on this later"
+  },
+  {
+    "objectID": "slides/c2-account1.html#reading-the-output-3",
+    "href": "slides/c2-account1.html#reading-the-output-3",
+    "title": "Representation and Accountability I",
+    "section": "Reading the Output",
+    "text": "Reading the Output\n\nstudy_hours = 2.90: for students who did not sleep well, one more hour of studying raises their score by about 2.9 points on average\nslept_wellYes = 4.81: for a student who studied zero hours, going from sleeping bad to well raises their score by 4.8 points on average\nstudy_hours:slept_wellYes = 4.21: for students who slept well, one more hour of studying raises their score by an extra 4.2 points"
   }
 ]

@@ -1400,7 +1400,7 @@ margin-right: 0; }
 <li>Facilitated community meetings to develop action plans (targets organization barrier)</li>
 </ul></li>
 <li>Control communities: nothing</li>
-<li>~110,000 households, ~600,000 people</li>
+<li>~5,000 households surveyed per round</li>
 </ul>
 </section>
 <section id="balance" class="slide level2">
@@ -1519,18 +1519,32 @@ study_hours:slept_wellYes    4.206      0.256  16.439    0.000</code></pre>
 <p><span class="math display">\[\text{score} = \alpha + \beta_1 \, \text{study} + \beta_2 \cdot 1 + \beta_3 (\text{study} \times 1)\]</span></p>
 <div class="fragment">
 <p><span class="math display">\[= \alpha + \beta_1 \, \text{study} + \beta_2 + \beta_3 \, \text{study}\]</span></p>
-<p>The slope on study is now <span class="math inline">\(\beta_1 + \beta_3\)</span>. This is the line for students who slept well</p>
-</div>
-<div class="fragment">
-<p><span class="math inline">\(\beta_3\)</span> is the difference between the two slopes</p>
-<p>It tells you: does studying help <strong>more</strong> (or less) if you slept well?</p>
+<p>Intercept is now <span class="math inline">\(\alpha + \beta_2\)</span>. Slope on study is now <span class="math inline">\(\beta_1 + \beta_3\)</span></p>
 </div>
 </section>
 <section id="reading-the-output-2" class="slide level2">
 <h2>Reading the Output</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">summary</span>(<span class="fu">lm</span>(score <span class="sc">~</span> study_hours <span class="sc">*</span> slept_well, <span class="at">data =</span> students))<span class="sc">$</span>coefficients <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a></a>  <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>                          Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept)                  50.07       1.16   43.25        0
+study_hours                   2.90       0.19   15.68        0
+slept_wellYes                 4.81       1.60    3.00        0
+study_hours:slept_wellYes     4.21       0.26   16.44        0</code></pre>
+</div>
+</div>
+</section>
+<section id="reading-the-output-3" class="slide level2">
+<h2>Reading the Output</h2>
 <ul>
-<li><p>If <span class="math inline">\(\beta_3 \approx 0\)</span>: same slopes, studying helps the same amount regardless of sleep</p></li>
-<li><p>If <span class="math inline">\(\beta_3 \neq 0\)</span>: different slopes, the effect of studying depends on whether you slept</p></li>
+<li><code>study_hours</code> = 2.90: for students who did <strong>not</strong> sleep well, one more hour of studying raises their score by about 2.9 points on average</li>
+<li><code>slept_wellYes</code> = 4.81: for a student who studied <em>zero</em> hours, going from sleeping bad to well raises their score by 4.8 points on average</li>
+<li><code>study_hours:slept_wellYes</code> = 4.21: for students who slept well, one more hour of studying raises their score by an <strong>extra</strong> 4.2 points</li>
 </ul>
 </section>
 <section id="back-to-the-paper" class="slide level2">

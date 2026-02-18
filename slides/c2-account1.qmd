@@ -179,7 +179,7 @@ format:
   + Report cards on health facility performance (targets information barrier)
   + Facilitated community meetings to develop action plans (targets organization barrier)
 - Control communities: nothing
-- ~110,000 households, ~600,000 people
+- ~5,000 households surveyed per round
 
 ## Balance
 
@@ -329,19 +329,23 @@ $$\text{score} = \alpha + \beta_1 \, \text{study} + \beta_2 \cdot 1 + \beta_3 (\
 
 $$= \alpha + \beta_1 \, \text{study} + \beta_2 + \beta_3 \, \text{study}$$
 
-The slope on study is now $\beta_1 + \beta_3$. This is the line for students who slept well
-
-. . .
-
-$\beta_3$ is the difference between the two slopes
-
-It tells you: does studying help **more** (or less) if you slept well?
+Intercept is now $\alpha + \beta_2$. Slope on study is now $\beta_1 + \beta_3$
 
 ## Reading the Output
 
-- If $\beta_3 \approx 0$: same slopes, studying helps the same amount regardless of sleep
+```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show code"
+summary(lm(score ~ study_hours * slept_well, data = students))$coefficients |>
+  round(2)
+```
 
-- If $\beta_3 \neq 0$: different slopes, the effect of studying depends on whether you slept
+## Reading the Output
+
+- `study_hours` = 2.90: for students who did **not** sleep well, one more hour of studying raises their score by about 2.9 points on average
+- `slept_wellYes` = 4.81: for a student who studied *zero* hours, going from sleeping bad to well raises their score by 4.8 points on average
+- `study_hours:slept_wellYes` = 4.21: for students who slept well, one more hour of studying raises their score by an **extra** 4.2 points
 
 ## Back to the Paper
 
