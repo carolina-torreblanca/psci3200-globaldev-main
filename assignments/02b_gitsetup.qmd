@@ -1,0 +1,99 @@
+---
+title: "Git & GitHub Desktop Setup"
+date: 2026-02-25
+---
+
+## Overview
+
+Next Monday (March 2) we have a hands-on Github workshop where you will set up a website for your final project using Github Pages. To make the most of class time, you need to come with **git and GitHub Desktop installed and working** on your laptop.
+
+Please complete the steps below **before class on Monday**. If you run into issues, post on Slack and we will troubleshoot before the workshop.
+
+## Step 1: Install git
+
+**Check if you already have git installed.** Open a terminal (Mac: Terminal app; Windows: Command Prompt) and run:
+
+```default
+git --version
+```
+
+If you see a version number, you're good — skip to Step 2.
+
+If not, install git:
+
+- **Mac**: Open Terminal and run `xcode-select --install`. This installs git along with other developer tools. Alternatively, download from [git-scm.com](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+- **Windows**: Download the installer from [git-scm.com](https://git-scm.com/download/win). During installation, watch for two settings:
+  + *Default branch name*: select **main** (not master)
+  + *Adjusting your PATH*: select **Git from the command line and also from 3rd-party software**
+
+After installing, close and reopen your terminal, then run `git --version` again to confirm.
+
+
+## Step 2: Configure git with your identity
+
+This tells git who you are so your commits are attributed to you. In the terminal, run:
+
+```default
+git config --global user.name "Your Name"
+git config --global user.email "yourname@email.edu"
+```
+
+Replace with your actual name and the email you used to sign up for GitHub. Verify with:
+
+```default
+git config --list
+```
+
+You should see your name and email in the output.
+
+
+## Step 3: Install GitHub Desktop
+
+GitHub Desktop is a visual interface for git that makes it easier to commit, push, and pull without using the command line.
+
+1. Download from [desktop.github.com](https://desktop.github.com/)
+2. Install and open it
+3. Sign in with your GitHub account (the same one where your `psci3200_yourname` repo lives)
+
+
+## Step 4: Clone your repo
+
+1. In GitHub Desktop, click **File → Clone Repository**
+2. Find your `psci3200_yourname` repo in the list (or paste the URL)
+3. Choose a local folder where you want the repo to live on your computer
+4. Click **Clone**
+
+You should now see your repo in GitHub Desktop.
+
+
+## Step 5: Test the full workflow
+
+This is the most important step — it confirms that everything is connected.
+
+1. Open your cloned repo folder on your computer
+2. Create a new file called `test.txt` with any content (e.g., "hello")
+3. Go back to GitHub Desktop — you should see the new file listed under "Changes"
+4. Write a commit message (e.g., "test commit") and click **Commit to main**
+5. Click **Push origin** (top bar)
+6. Go to your repo on github.com and confirm that `test.txt` appeared
+
+If you can see the file on github.com, you are all set for Monday.
+
+
+## Troubleshooting
+
+**"Authentication failed" when pushing**: GitHub no longer accepts passwords. GitHub Desktop uses OAuth (browser sign-in), so make sure you completed the sign-in step. Try signing out and back in: GitHub Desktop → Preferences/Settings → Accounts → Sign Out → Sign In again.
+
+**Can't find your repo when cloning**: Make sure you're signed into the same GitHub account that owns the repo. Check at github.com which account the repo is under.
+
+**GitHub Desktop shows "This repository does not exist on disk"**: The local folder was moved or deleted. Re-clone from File → Clone Repository.
+
+**Git not recognized after installing (Windows)**: Close and reopen your terminal. If it still doesn't work, the installer may not have added git to your PATH — reinstall and make sure to select "Git from the command line and also from 3rd-party software."
+
+
+## Resources
+
+- [Happy Git and GitHub for the useR](https://happygitwithr.com/) — thorough guide to using git with R
+- [Git installation instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [GitHub Desktop documentation](https://docs.github.com/en/desktop)
+- [GitHub Desktop getting started guide (YouTube)](https://www.youtube.com/watch?v=RPagOAUx2SQ)

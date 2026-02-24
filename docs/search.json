@@ -11121,5 +11121,68 @@
     "title": "Representation and Accountability II",
     "section": "A Closer Look at the Findings",
     "text": "A Closer Look at the Findings\n\n\nCan we conclude the effect is zero?\n\n\nWe failed to reject the null hypothesis\nBut failing to reject \\(\\neq\\) accepting the null!\nMaybe the true effect is -0.30 and we just couldn’t detect it\nThis is where statistical power comes in"
+  },
+  {
+    "objectID": "assignments/02b_gitsetup.html",
+    "href": "assignments/02b_gitsetup.html",
+    "title": "Git & GitHub Desktop Setup",
+    "section": "",
+    "text": "Next Monday (March 2) we have a hands-on Github workshop where you will set up a website for your final project using Github Pages. To make the most of class time, you need to come with git and GitHub Desktop installed and working on your laptop.\nPlease complete the steps below before class on Monday. If you run into issues, post on Slack and we will troubleshoot before the workshop."
+  },
+  {
+    "objectID": "assignments/02b_gitsetup.html#overview",
+    "href": "assignments/02b_gitsetup.html#overview",
+    "title": "Git & GitHub Desktop Setup",
+    "section": "",
+    "text": "Next Monday (March 2) we have a hands-on Github workshop where you will set up a website for your final project using Github Pages. To make the most of class time, you need to come with git and GitHub Desktop installed and working on your laptop.\nPlease complete the steps below before class on Monday. If you run into issues, post on Slack and we will troubleshoot before the workshop."
+  },
+  {
+    "objectID": "assignments/02b_gitsetup.html#step-1-install-git",
+    "href": "assignments/02b_gitsetup.html#step-1-install-git",
+    "title": "Git & GitHub Desktop Setup",
+    "section": "Step 1: Install git",
+    "text": "Step 1: Install git\nCheck if you already have git installed. Open a terminal (Mac: Terminal app; Windows: Command Prompt) and run:\ngit --version\nIf you see a version number, you’re good — skip to Step 2.\nIf not, install git:\n\nMac: Open Terminal and run xcode-select --install. This installs git along with other developer tools. Alternatively, download from git-scm.com.\nWindows: Download the installer from git-scm.com. During installation, watch for two settings:\n\nDefault branch name: select main (not master)\nAdjusting your PATH: select Git from the command line and also from 3rd-party software\n\n\nAfter installing, close and reopen your terminal, then run git --version again to confirm."
+  },
+  {
+    "objectID": "assignments/02b_gitsetup.html#step-2-configure-git-with-your-identity",
+    "href": "assignments/02b_gitsetup.html#step-2-configure-git-with-your-identity",
+    "title": "Git & GitHub Desktop Setup",
+    "section": "Step 2: Configure git with your identity",
+    "text": "Step 2: Configure git with your identity\nThis tells git who you are so your commits are attributed to you. In the terminal, run:\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"yourname@email.edu\"\nReplace with your actual name and the email you used to sign up for GitHub. Verify with:\ngit config --list\nYou should see your name and email in the output."
+  },
+  {
+    "objectID": "assignments/02b_gitsetup.html#step-3-install-github-desktop",
+    "href": "assignments/02b_gitsetup.html#step-3-install-github-desktop",
+    "title": "Git & GitHub Desktop Setup",
+    "section": "Step 3: Install GitHub Desktop",
+    "text": "Step 3: Install GitHub Desktop\nGitHub Desktop is a visual interface for git that makes it easier to commit, push, and pull without using the command line.\n\nDownload from desktop.github.com\nInstall and open it\nSign in with your GitHub account (the same one where your psci3200_yourname repo lives)"
+  },
+  {
+    "objectID": "assignments/02b_gitsetup.html#step-4-clone-your-repo",
+    "href": "assignments/02b_gitsetup.html#step-4-clone-your-repo",
+    "title": "Git & GitHub Desktop Setup",
+    "section": "Step 4: Clone your repo",
+    "text": "Step 4: Clone your repo\n\nIn GitHub Desktop, click File → Clone Repository\nFind your psci3200_yourname repo in the list (or paste the URL)\nChoose a local folder where you want the repo to live on your computer\nClick Clone\n\nYou should now see your repo in GitHub Desktop."
+  },
+  {
+    "objectID": "assignments/02b_gitsetup.html#step-5-test-the-full-workflow",
+    "href": "assignments/02b_gitsetup.html#step-5-test-the-full-workflow",
+    "title": "Git & GitHub Desktop Setup",
+    "section": "Step 5: Test the full workflow",
+    "text": "Step 5: Test the full workflow\nThis is the most important step — it confirms that everything is connected.\n\nOpen your cloned repo folder on your computer\nCreate a new file called test.txt with any content (e.g., “hello”)\nGo back to GitHub Desktop — you should see the new file listed under “Changes”\nWrite a commit message (e.g., “test commit”) and click Commit to main\nClick Push origin (top bar)\nGo to your repo on github.com and confirm that test.txt appeared\n\nIf you can see the file on github.com, you are all set for Monday."
+  },
+  {
+    "objectID": "assignments/02b_gitsetup.html#troubleshooting",
+    "href": "assignments/02b_gitsetup.html#troubleshooting",
+    "title": "Git & GitHub Desktop Setup",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\n“Authentication failed” when pushing: GitHub no longer accepts passwords. GitHub Desktop uses OAuth (browser sign-in), so make sure you completed the sign-in step. Try signing out and back in: GitHub Desktop → Preferences/Settings → Accounts → Sign Out → Sign In again.\nCan’t find your repo when cloning: Make sure you’re signed into the same GitHub account that owns the repo. Check at github.com which account the repo is under.\nGitHub Desktop shows “This repository does not exist on disk”: The local folder was moved or deleted. Re-clone from File → Clone Repository.\nGit not recognized after installing (Windows): Close and reopen your terminal. If it still doesn’t work, the installer may not have added git to your PATH — reinstall and make sure to select “Git from the command line and also from 3rd-party software.”"
+  },
+  {
+    "objectID": "assignments/02b_gitsetup.html#resources",
+    "href": "assignments/02b_gitsetup.html#resources",
+    "title": "Git & GitHub Desktop Setup",
+    "section": "Resources",
+    "text": "Resources\n\nHappy Git and GitHub for the useR — thorough guide to using git with R\nGit installation instructions\nGitHub Desktop documentation\nGitHub Desktop getting started guide (YouTube)"
   }
 ]
