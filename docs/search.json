@@ -2678,14 +2678,14 @@
     "href": "slides/c2-account2.html#research-design",
     "title": "Representation and Accountability II",
     "section": "6. Research Design",
-    "text": "6. Research Design\nKey feature: the CGU audit lottery randomly selects which municipalities get audited\n\nThis gives us objective measures of corruption (not perceptions, not self-reports)\n476 municipalities audited before the 2004 elections\n\n\nComparison: first-term mayors (can be reelected) vs second-term mayors (cannot)\n\\[r_i = \\beta I_i + \\mathbf{X}_i \\varphi + \\mathbf{Z}_i \\gamma + \\varepsilon_i\\]"
+    "text": "6. Research Design\nKey feature: the CGU audit lottery randomly selects which municipalities get audited . . .\nComparison: first-term mayors (can be reelected) vs second-term mayors (cannot)\n\\[r_i = \\beta I_i + \\mathbf{X}_i \\varphi + \\mathbf{Z}_i \\gamma + \\varepsilon_i\\]\n\n\n\\(r_i\\): corruption level in municipality \\(i\\)\n\\(I_i\\): first-term mayor"
   },
   {
     "objectID": "slides/c2-account2.html#research-design-1",
     "href": "slides/c2-account2.html#research-design-1",
     "title": "Representation and Accountability II",
     "section": "6. Research Design",
-    "text": "6. Research Design\nIs this an experiment?\n\n\nNo! Whether a mayor is in their first or second term is not randomly assigned\nPotential confounds: ability, experience, selection"
+    "text": "6. Research Design\nIs this an experiment?\n\n\nNo! Whether a mayor is in their first or second term is not randomly assigned\nPotential confounds: ability, experience, selection\nSo how can we argue the results are causal?\nTHINK! mandate view says elections select good politicians\nSecond-term mayors have already won reelection\nShould they be better or worse than first-term mayors?"
   },
   {
     "objectID": "slides/c2-account2.html#ecological-validity",
@@ -2706,7 +2706,7 @@
     "href": "slides/c2-account2.html#research-design-2",
     "title": "Representation and Accountability II",
     "section": "6. Research Design",
-    "text": "6. Research Design\nThink about this through the lens of the mandate view\n\n\nThe mandate view says elections select good politicians\nSecond-term mayors have already won reelection — voters selected them as good\nIf ability and corruption are correlated, second-term mayors should be less corrupt (they are “better” politicians)\nBut we find the opposite! This actually strengthens the accountability interpretation\nTheory helps us think through the direction of potential confounding"
+    "text": "6. Research Design\n\nField experiment: 12 municipalities, 2,360 voting precincts\nFlyers distributed door-to-door one week before elections\nThree arms:\n\nTreatment: flyer with % of funds spent corruptly\nPlacebo: flyer with % of funds spent (no corruption info)\nControl: no flyer\n\nPlacebo is the reference group. Why?"
   },
   {
     "objectID": "slides/c2-account2.html#findings",
@@ -2762,7 +2762,7 @@
     "href": "slides/c2-account2.html#findings-2",
     "title": "Representation and Accountability II",
     "section": "7. Findings",
-    "text": "7. Findings\nHeterogeneous effects (how does this relate to interaction terms?)\n\n\nEffects are stronger in municipalities without local media\n\nWhere media is present: little difference (information substitutes for electoral pressure?)\nWhere media is absent: reelection incentives reduce corruption by 9pp\n\nEffects are stronger where elections were competitive"
+    "text": "7. Findings\n\nIf experience, ability, etc, were confounding the result, what sign should the results have?\nIs this an over or an underestimation?"
   },
   {
     "objectID": "slides/c2-account2.html#findings-3",
@@ -11001,14 +11001,14 @@
     "href": "slides/c2-account2.html#implications",
     "title": "Representation and Accountability II",
     "section": "8. Implications",
-    "text": "8. Implications\n\n\nElectoral accountability works: the threat of losing office constrains corruption\nBut it depends on institutional context (media, competition)\nThis is the politician incentive side of the story\n\n\n\nBut what about the voter information side? What happens when you give voters information about corruption?"
+    "text": "8. Implications\n\n\nElectoral accountability can work!\nThis is the politician incentive side of the story"
   },
   {
     "objectID": "slides/c2-account2.html#the-other-side-of-the-coin",
     "href": "slides/c2-account2.html#the-other-side-of-the-coin",
     "title": "Representation and Accountability II",
     "section": "The Other Side of the Coin",
-    "text": "The Other Side of the Coin\n\nF&F showed that reelection incentives discipline politicians\nBut the accountability view also assumes voters use information to punish\nWhat if we directly give voters information about corruption? Will they punish?"
+    "text": "The Other Side of the Coin\n\nF&F showed that reelection incentives discipline politicians\nBut the accountability view also assumes voters use information to punish\nWhat if we directly give voters information about corruption and hold incentives fixed?\nWhat should we expect to happen?"
   },
   {
     "objectID": "slides/c2-account2.html#the-state-of-the-world-1",
@@ -11036,7 +11036,7 @@
     "href": "slides/c2-account2.html#the-mechanism-1",
     "title": "Representation and Accountability II",
     "section": "4. The Mechanism",
-    "text": "4. The Mechanism\nWhy might information backfire?\n\n\nVoters may already suspect corruption; information confirms rather than surprises\nIf corruption is perceived as systemic, voters conclude no candidate can credibly withdraw from it\nVoting becomes pointless: “the costs of casting a ballot would be bigger than the benefits” (Downs, 1957)"
+    "text": "4. The Mechanism\nWhy might information backfire?\n\n\nVoters may already suspect corruption; information confirms rather than surprises\nIf corruption is perceived as systemic, voters conclude no candidate can credibly withdraw from it\nVoting may be seen as pointless"
   },
   {
     "objectID": "slides/c2-account2.html#data-and-measurement-2",
@@ -11057,21 +11057,21 @@
     "href": "slides/c2-account2.html#research-design-3",
     "title": "Representation and Accountability II",
     "section": "6. Research Design",
-    "text": "6. Research Design\nRobustness: Regression discontinuity\n\n\nCompare municipalities where the incumbent barely won reelection in 2000 (→ second term) vs barely lost (→ new first-term mayor)\nNear the threshold, who gets a first vs second-term mayor is essentially random\nResults hold"
+    "text": "6. Research Design\n\\[Y = \\beta_0 + \\beta_1 \\, CorruptionInfo + \\beta_2 \\, NoInfo + M_j + \\epsilon\\]\n\n\nOmitted category: placebo\n\\(\\beta_1\\): effect of receiving corruption info relative to placebo\n\\(\\beta_2\\): effect of receiving no flyer relative to placebo\n\\(M_j\\): municipality fixed effects"
   },
   {
     "objectID": "slides/c2-account2.html#findings-4",
     "href": "slides/c2-account2.html#findings-4",
     "title": "Representation and Accountability II",
     "section": "7. Findings",
-    "text": "7. Findings\n\n\nCorruption information decreases turnout by 2.5%\nDecreases incumbent party votes by 0.43pp\nDecreases challenger votes by 0.86pp\nEffects are larger where corruption is higher (&gt;66%: turnout drops 7pp)\n\n\n\nInformation does not “inspire the fight” — it “quashes the hope”"
+    "text": "7. Findings\n\n\nCorruption information decreases turnout by 2.5%\nDecreases incumbent party votes by 0.43pp\nDecreases challenger votes by 0.86pp\nEffects are larger where corruption is higher (&gt;66%: turnout drops 7pp)\n\n\n\nInformation here “quashed the hope”."
   },
   {
     "objectID": "slides/c2-account2.html#implications-1",
     "href": "slides/c2-account2.html#implications-1",
     "title": "Representation and Accountability II",
     "section": "8. Implications",
-    "text": "8. Implications\n\n\nInformation about corruption demobilizes voters\nIt hurts all parties, not just the incumbent\nVoters disengage from politics entirely when they learn about corruption\n“Information is clearly necessary to improve accountability, [but] corruption information is not sufficient because voters may respond to it by withdrawing from the political process”"
+    "text": "8. Implications\n\n“Information is clearly necessary to improve accountability, [but] corruption information is not sufficient because voters may respond to it by withdrawing from the political process”"
   },
   {
     "objectID": "slides/c2-account2.html#putting-it-together",
@@ -11092,14 +11092,14 @@
     "href": "slides/c2-account2.html#why-does-power-matter-here",
     "title": "Representation and Accountability II",
     "section": "Why Does Power Matter Here?",
-    "text": "Why Does Power Matter Here?\n\nWhen the main effect IS significant (turnout drops 2.5%, p &lt; 0.01), we can update\nWhen a sub-group effect is NOT significant, we should ask: did we have enough power to detect it?\n\n\n\nChong et al. had 2,340 precincts — powered to detect ~2.5pp effects overall\nBut splitting by corruption level → smaller subgroups → less power\nA non-significant sub-group result does not mean the effect is zero"
+    "text": "Why Does Power Matter Here?\n\nChong et al. had 2,340 precincts powered to detect ~2.5pp effects overall\nBut splitting by corruption level → smaller subgroups → less power\nA non-significant sub-group result does not mean the effect is zero! Means we dont know if it was zero or not"
   },
   {
     "objectID": "slides/c2-account2.html#research-design-4",
     "href": "slides/c2-account2.html#research-design-4",
     "title": "Representation and Accountability II",
     "section": "6. Research Design",
-    "text": "6. Research Design\n\nField experiment: 12 municipalities, 2,360 voting precincts\nFlyers distributed door-to-door one week before elections\nTreatment: corruption info flyer vs placebo flyers (budget/poverty info) vs control (no flyer)\nPlacebo group is the reference → isolates corruption content from receiving any flyer"
+    "text": "6. Research Design\nDoes the effect depend on how much corruption there is?\n\\[\\begin{aligned}\nY = \\beta_0 &+ \\beta_1 \\, Corr \\times Low + \\beta_2 \\, Corr \\times Med \\\\\n&+ \\beta_3 \\, Corr \\times High + \\beta_4 \\, NoInfo + M_j + \\epsilon\n\\end{aligned}\\]\n\n\n\\(Corr\\): received corruption info flyer (= 1 or 0)\n\\(Low\\), \\(Med\\), \\(High\\): municipality corruption level (0–33%, 33–66%, 66–100%)\nDoes the effect of treatment depend on how much corrupiton is reported?"
   },
   {
     "objectID": "slides/c2-account2.html#research-design-5",
@@ -11113,7 +11113,7 @@
     "href": "slides/c2-account2.html#a-closer-look-at-the-findings",
     "title": "Representation and Accountability II",
     "section": "A Closer Look at the Findings",
-    "text": "A Closer Look at the Findings\nChong et al. find that for medium levels of corruption (33–66%), the effect of corruption information on turnout is:\n\\[\\hat{\\beta} = -0.30, \\quad SE = 0.44, \\quad p &gt; 0.10\\]\n\nIs the effect zero?"
+    "text": "A Closer Look at the Findings\nChong et al. find that for medium levels of corruption (33–66%), the effect of corruption information on turnout is:\n\\[\\hat{\\beta} = -0.30, \\quad SE = 0.44\\]\nNo stars! Recall: *, **, *** indicate \\(p &lt; 0.10\\), \\(p &lt; 0.05\\), \\(p &lt; 0.01\\)\n\nThis coefficient is not statistically different from zero\n\n\nSo… is the effect zero?"
   },
   {
     "objectID": "slides/c2-account2.html#a-closer-look-at-the-findings-1",
@@ -11184,5 +11184,26 @@
     "title": "Git & GitHub Desktop Setup",
     "section": "Resources",
     "text": "Resources\n\nHappy Git and GitHub for the useR — thorough guide to using git with R\nGit installation instructions\nGitHub Desktop documentation\nGitHub Desktop getting started guide (YouTube)"
+  },
+  {
+    "objectID": "slides/c2-account2.html#corruption-in-the-global-south",
+    "href": "slides/c2-account2.html#corruption-in-the-global-south",
+    "title": "Representation and Accountability II",
+    "section": "Corruption in the Global South",
+    "text": "Corruption in the Global South\n\nThe global cost of corruption is at least $2.6 trillion, or 5% of global GDP (UN, 2018)\nCorruption costs developing countries an estimated $1.26 trillion per year\nEnough to lift 1.4 billion people above the poverty line for six years (WEF, 2019)"
+  },
+  {
+    "objectID": "slides/c2-account2.html#can-accountability-curtail-corruption",
+    "href": "slides/c2-account2.html#can-accountability-curtail-corruption",
+    "title": "Representation and Accountability II",
+    "section": "Can Accountability Curtail Corruption?",
+    "text": "Can Accountability Curtail Corruption?\nToday’s question: Can electoral accountability reduce corruption in the Global South?\n\n\nWe test two sides of the same coin:\n\nPolitician incentives: does the threat of losing office discipline politicians? (Ferraz and Finan, 2011)\nVoter information: does giving voters information about corruption change behavior? (Chong et al., 2015)"
+  },
+  {
+    "objectID": "slides/c2-account2.html#discussion",
+    "href": "slides/c2-account2.html#discussion",
+    "title": "Representation and Accountability II",
+    "section": "Discussion",
+    "text": "Discussion\nWhich is “worse” in research?\n\n\nType I error (false positive): concluding there is an effect when there isn’t one\nType II error (false negative): missing a real effect because your study couldn’t detect it"
   }
 ]

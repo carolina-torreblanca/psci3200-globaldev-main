@@ -52,14 +52,21 @@ For electoral accountability to work:
 
 Today we test both sides
 
-## Corruption in the Developing World
+## Corruption in the Global South
 
-- Corruption in local governments is a major obstacle to development
-- Funds intended for health, schools, and roads are diverted for private gain
+- The global cost of corruption is at least **$2.6 trillion**, or **5% of global GDP** (UN, 2018)
+- Corruption costs developing countries an estimated **$1.26 trillion per year**
+- Enough to lift 1.4 billion people above the poverty line for six years (WEF, 2019)
 
-. . .
+## Can Accountability Curtail Corruption?
 
-*"Corruption in local governments is responsible for losses of approximately US$550 million per year"* — Ferraz and Finan (2011)
+Today's question: **Can electoral accountability reduce corruption in the Global South?**
+
+::: incremental
+- We test two sides of the same coin:
+  + **Politician incentives**: does the *threat* of losing office discipline politicians? (Ferraz and Finan, 2011)
+  + **Voter information**: does *giving* voters information about corruption change behavior? (Chong et al., 2015)
+:::
 
 ## Assumptions
 
@@ -137,15 +144,16 @@ Three types of corruption identified in audits:
 ## 6. Research Design
 
 **Key feature**: the CGU audit lottery randomly selects which municipalities get audited
-
-- This gives us **objective measures** of corruption (not perceptions, not self-reports)
-- 476 municipalities audited before the 2004 elections
-
 . . .
 
 **Comparison**: first-term mayors (can be reelected) vs second-term mayors (cannot)
 
 $$r_i = \beta I_i + \mathbf{X}_i \varphi + \mathbf{Z}_i \gamma + \varepsilon_i$$
+
+::: incremental
+- $r_i$: corruption level in municipality $i$
+- $I_i$: **first-term mayor** 
+:::
 
 ## 6. Research Design
 
@@ -154,28 +162,10 @@ $$r_i = \beta I_i + \mathbf{X}_i \varphi + \mathbf{Z}_i \gamma + \varepsilon_i$$
 ::: incremental
 - No! Whether a mayor is in their first or second term is **not randomly assigned**
 - Potential confounds: ability, experience, selection
-:::
-
-## 6. Research Design
-
-**Think about this through the lens of the mandate view**
-
-::: incremental
-- The mandate view says elections *select good politicians*
-- Second-term mayors have already won reelection — voters selected them as good
-- If ability and corruption are correlated, second-term mayors should be **less corrupt** (they are "better" politicians)
-- But we find the opposite! This actually **strengthens** the accountability interpretation
-- Theory helps us think through the direction of potential confounding
-:::
-
-## 6. Research Design
-
-**Robustness**: Regression discontinuity
-
-::: incremental
-- Compare municipalities where the incumbent barely won reelection in 2000 (→ second term) vs barely lost (→ new first-term mayor)
-- Near the threshold, who gets a first vs second-term mayor is essentially random
-- Results hold
+- So how can we argue the results are causal?
+- THINK! mandate view says elections *select good politicians*
+- Second-term mayors have already won reelection
+- Should they be better or worse than first-term mayors?
 :::
 
 ## 7. Findings
@@ -192,26 +182,17 @@ $$r_i = \beta I_i + \mathbf{X}_i \varphi + \mathbf{Z}_i \gamma + \varepsilon_i$$
 
 ## 7. Findings
 
-**Heterogeneous effects** (how does this relate to interaction terms?)
+- If experience, ability, etc, were confounding the result, what sign should the results have?
+- Is this an over or an underestimation?
 
-::: incremental
-- Effects are **stronger** in municipalities without local media
-  + Where media is present: little difference (information substitutes for electoral pressure?)
-  + Where media is absent: reelection incentives reduce corruption by 9pp
-- Effects are **stronger** where elections were competitive
-:::
 
 ## 8. Implications
 
 ::: incremental
-- Electoral accountability works: the *threat* of losing office constrains corruption
-- But it depends on institutional context (media, competition)
+- Electoral accountability can work!
 - This is the **politician incentive** side of the story
 :::
 
-. . .
-
-But what about the **voter information** side? What happens when you *give* voters information about corruption?
 
 # Chong et al. (2015)
 
@@ -219,7 +200,8 @@ But what about the **voter information** side? What happens when you *give* vote
 
 - F&F showed that reelection incentives discipline politicians
 - But the accountability view also assumes voters **use information** to punish
-- What if we directly give voters information about corruption? Will they punish?
+- What if we directly give voters information about corruption and hold incentives fixed?
+- What should we expect to happen? 
 
 ## 1. The State of the World
 
@@ -257,7 +239,7 @@ Two competing predictions:
 ::: incremental
 - Voters may already suspect corruption; information confirms rather than surprises
 - If corruption is perceived as systemic, voters conclude *no candidate* can credibly withdraw from it
-- Voting becomes pointless: *"the costs of casting a ballot would be bigger than the benefits"* (Downs, 1957)
+- Voting may be seen as pointless
 :::
 
 ## 5. Data and Measurement
@@ -280,21 +262,37 @@ Two competing predictions:
 
 - Field experiment: 12 municipalities, 2,360 voting precincts
 - Flyers distributed door-to-door one week before elections
-- Treatment: corruption info flyer vs placebo flyers (budget/poverty info) vs control (no flyer)
-- Placebo group is the reference → isolates corruption *content* from receiving *any* flyer
+- Three arms:
+  + **Treatment**: flyer with % of funds spent *corruptly*
+  + **Placebo**: flyer with % of funds spent (no corruption info)
+  + **Control**: no flyer
+- Placebo is the reference group. Why?
 
 ## 6. Research Design
 
 $$Y = \beta_0 + \beta_1 \, CorruptionInfo + \beta_2 \, NoInfo + M_j + \epsilon$$
 
-- $\beta_1$: effect of corruption info relative to placebo
+::: incremental
+- Omitted category: **placebo**
+- $\beta_1$: effect of receiving **corruption info** relative to placebo
+- $\beta_2$: effect of receiving **no flyer** relative to placebo
 - $M_j$: municipality fixed effects
+:::
 
-. . .
+## 6. Research Design
 
 **Does the effect depend on how much corruption there is?**
 
-$$Y = \beta_0 + \beta_1 \, CorrInfo \times C_{0-33} + \beta_2 \, CorrInfo \times C_{33-66} + \beta_3 \, CorrInfo \times C_{66-100} + \beta_4 \, NoInfo + M_j + \epsilon$$
+$$\begin{aligned}
+Y = \beta_0 &+ \beta_1 \, Corr \times Low + \beta_2 \, Corr \times Med \\
+&+ \beta_3 \, Corr \times High + \beta_4 \, NoInfo + M_j + \epsilon
+\end{aligned}$$
+
+::: incremental
+- $Corr$: received corruption info flyer (= 1 or 0)
+- $Low$, $Med$, $High$: municipality corruption level (0–33%, 33–66%, 66–100%)
+- Does the effect of treatment depend on how much corrupiton is reported?
+:::
 
 ## 7. Findings
 
@@ -311,16 +309,12 @@ $$Y = \beta_0 + \beta_1 \, CorrInfo \times C_{0-33} + \beta_2 \, CorrInfo \times
 
 . . .
 
-Information does not "inspire the fight" — it "quashes the hope"
+Information here "quashed the hope". 
 
 ## 8. Implications
 
-::: incremental
-- Information about corruption **demobilizes** voters
-- It hurts *all* parties, not just the incumbent
-- Voters disengage from politics entirely when they learn about corruption
 - *"Information is clearly necessary to improve accountability, [but] corruption information is not sufficient because voters may respond to it by withdrawing from the political process"*
-:::
+
 
 # Taking Stock
 
@@ -343,11 +337,17 @@ Electoral accountability requires **both** incentives and information — but in
 
 Chong et al. find that for **medium levels of corruption** (33–66%), the effect of corruption information on turnout is:
 
-$$\hat{\beta} = -0.30, \quad SE = 0.44, \quad p > 0.10$$
+$$\hat{\beta} = -0.30, \quad SE = 0.44$$
+
+No stars! Recall: \*, \*\*, \*\*\* indicate $p < 0.10$, $p < 0.05$, $p < 0.01$
 
 . . .
 
-**Is the effect zero?**
+This coefficient is **not statistically different from zero**
+
+. . .
+
+So... is the effect zero?
 
 ## A Closer Look at the Findings
 
@@ -389,12 +389,16 @@ You can check out the [EGAP power calculator to understand better](https://egap.
 
 ## Why Does Power Matter Here?
 
-- When the main effect IS significant (turnout drops 2.5%, p < 0.01), we can update
-
-- When a sub-group effect is NOT significant, we should ask: did we have enough power to detect it?
-
-. . .
-
-- Chong et al. had 2,340 precincts — powered to detect ~2.5pp effects overall
+- Chong et al. had 2,340 precincts powered to detect ~2.5pp effects overall
 - But splitting by corruption level → smaller subgroups → less power
-- A non-significant sub-group result does not mean the effect is zero
+- A non-significant sub-group result does not mean the effect is zero! Means *we dont know if it was zero or not*
+
+## Discussion
+
+Which is "worse" in research?
+
+::: incremental
+- **Type I error** (false positive): concluding there is an effect when there isn't one
+- **Type II error** (false negative): missing a real effect because your study couldn't detect it
+:::
+
