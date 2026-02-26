@@ -1,0 +1,12 @@
+---
+title: "Health and Development"
+date: 2026-03-18
+---
+
+## Required Readings
+
+- [Chen et al. (2013)](/files/chen-et-al-2013-evidence-on-the-impact-of-sustained-exposure-to-air-pollution-on-life-expectancy-from-china-s-huai.pdf)
+
+## Slides
+
+- [Slides](/slides/c4-health.html)
