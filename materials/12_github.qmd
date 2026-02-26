@@ -8,7 +8,7 @@ title: "Git, Github, Github Pages"
 
 ## Slides
 
-- [Slides](/slides/24-git.html)
+- [Slides](/slides/24-git-v2.html)
 
 
 ## Resources

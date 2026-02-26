@@ -690,7 +690,7 @@
     "href": "slides/06-uncertainty.html#population-vs.-sample",
     "title": "Sampling and Uncertainty",
     "section": "Population vs. Sample",
-    "text": "Population vs. Sample\n\n\n\nPopulation: every unit we care about\n\nAll countries, all voters, all households in a district\n\n\n\nSample: the subset we actually observe\n\n80 countries with available data, 1,200 survey respondents\n\n\n\n\nThe goal of statistics: learn about the population from the sample."
+    "text": "Population vs. Sample\n\n\n\nPopulation: every unit you care about\n\nAll countries, all voters, all households in a district\n\n\n\nSample: the subset you actually observe\n\n80 countries with available data, 1,200 survey respondents, 50 Penn students you stopped on Locust Walk\n\n\n\n\nThe goal: learn about the population from the sample."
   },
   {
     "objectID": "slides/06-uncertainty.html#sampling-methods",
@@ -704,7 +704,7 @@
     "href": "slides/06-uncertainty.html#how-sampling-goes-wrong",
     "title": "Sampling and Uncertainty",
     "section": "How Sampling Goes Wrong",
-    "text": "How Sampling Goes Wrong\n\n\n\nExamples from development research:\n\n\n\n\nSurvey only urban areas → miss rural poverty\nPhone surveys → miss people without phones\nOnly villages near roads → miss remote populations\nHousehold surveys → miss homeless, displaced, migrant populations\nVoluntary response → people with strong opinions over-represented"
+    "text": "How Sampling Goes Wrong\n\n\n\nEven with good intentions, samples can be systematically off:\n\n\n\n\nSurvey only urban areas → miss rural poverty\nPhone surveys → miss people without phones\nOnly villages near roads → miss remote populations\nHousehold surveys → miss homeless, displaced, migrant populations\nVoluntary response → people with strong opinions over-represented"
   },
   {
     "objectID": "slides/06-uncertainty.html#what-makes-a-sample-representative",
@@ -753,7 +753,7 @@
     "href": "slides/06-uncertainty.html#what-just-happened",
     "title": "Sampling and Uncertainty",
     "section": "What Just Happened?",
-    "text": "What Just Happened?\n\n\n\n\nEach sample gives a slightly different answer\nBut the answers cluster around the truth\nThe distribution of sample estimates is called the sampling distribution\nIt’s approximately bell-shaped (Central Limit Theorem)"
+    "text": "What Just Happened?\n\n\n\n\nEvery sample gives a slightly different answer\nBut the answers cluster around the truth\nThe shape is roughly bell-shaped (this is the Central Limit Theorem at work)\nThis distribution of sample estimates is called the sampling distribution\n\n\n\nYour estimate from any one sample is one draw from this distribution. You do not know exactly where in the distribution you landed.\n\n\nSo how much could your estimate wiggle if you had grabbed a different sample?"
   },
   {
     "objectID": "slides/06-uncertainty.html#this-works-for-regression-coefficients-too",
@@ -788,7 +788,7 @@
     "href": "slides/06-uncertainty.html#confidence-intervals",
     "title": "Sampling and Uncertainty",
     "section": "Confidence Intervals",
-    "text": "Confidence Intervals\n\n\n\nA 95% confidence interval gives us a plausible range for the true value.\n\n\n\\[\nCI = \\hat{\\beta} \\pm 1.96 \\times SE\n\\]\n\n\nInterpretation: “If we repeated this study many times, about 95% of the confidence intervals would contain the true value.”"
+    "text": "Confidence Intervals\n\n\nYour point estimate is a bit off each time. So besides reporting one number, we report a range.\n\nThe SE is the standard deviation of the sampling distribution. So 95% of sample means fall within 1.96 SEs of the true value:\n\\[CI = \\text{estimate} \\pm 1.96 \\times SE\\]\n\n\nA 95% CI will contain the true value 95% of the time across repeated samples."
   },
   {
     "objectID": "slides/06-uncertainty.html#visualizing-confidence-intervals",
@@ -816,21 +816,21 @@
     "href": "slides/06-uncertainty.html#visualizing-the-p-value",
     "title": "Sampling and Uncertainty",
     "section": "Visualizing the p-value",
-    "text": "Visualizing the p-value"
+    "text": "Visualizing the p-value\nThe curve is what we would expect if \\(H_0\\) were true. The shaded area is the p-value."
   },
   {
     "objectID": "slides/06-uncertainty.html#interpreting-p-values",
     "href": "slides/06-uncertainty.html#interpreting-p-values",
     "title": "Sampling and Uncertainty",
     "section": "Interpreting p-values",
-    "text": "Interpreting p-values\n\n\n\n\nSmall p-value (&lt; 0.05): our estimate would be very surprising if there were no relationship → we reject \\(H_0\\)\nLarge p-value (&gt; 0.05): our estimate is consistent with no relationship → we fail to reject \\(H_0\\)\np-value is NOT the probability that the null is true\np-value is NOT the probability of making an error"
+    "text": "Interpreting p-values\n\n\n\n\nSmall p-value (&lt; 0.05): our estimate would be very surprising if there were no effect. We reject the null.\nLarge p-value (&gt; 0.05): our estimate is consistent with no effect. We fail to reject the null.\nThe p-value is NOT the probability that the null is true\nIt is the probability of seeing an estimate at least this extreme if the null were true"
   },
   {
     "objectID": "slides/06-uncertainty.html#the-stars-in-regression-output",
     "href": "slides/06-uncertainty.html#the-stars-in-regression-output",
     "title": "Sampling and Uncertainty",
     "section": "The Stars in Regression Output",
-    "text": "The Stars in Regression Output\n\n\n\n\n\nSymbol\np-value\nMeaning\n\n\n\n\n***\n&lt; 0.001\nVery strong evidence\n\n\n**\n&lt; 0.01\nStrong evidence\n\n\n*\n&lt; 0.05\nEvidence\n\n\n.\n&lt; 0.1\nWeak evidence\n\n\n(none)\n&gt; 0.1\nNot statistically significant\n\n\n\n\n\nThese are conventions. The 0.05 threshold is arbitrary but widely used."
+    "text": "The Stars in Regression Output\n\n\n\n\n\nSymbol\np-value\nWhat it means\n\n\n\n\n***\n&lt; 0.001\nVery strong evidence against the null\n\n\n**\n&lt; 0.01\nStrong evidence\n\n\n*\n&lt; 0.05\nEvidence\n\n\n.\n&lt; 0.1\nWeak evidence\n\n\n(none)\n&gt; 0.1\nNot statistically significant\n\n\n\n\nThe 0.05 threshold is a convention, not a law of nature."
   },
   {
     "objectID": "slides/06-uncertainty.html#full-circle-reading-summarylm",
@@ -844,7 +844,7 @@
     "href": "slides/06-uncertainty.html#now-you-can-read-every-number",
     "title": "Sampling and Uncertainty",
     "section": "Now You Can Read Every Number",
-    "text": "Now You Can Read Every Number\n\n\n\n\nEstimate: the slope or intercept — association between \\(X\\) and \\(Y\\)\nStd. Error: how much the estimate would vary across samples\nt value: Estimate \\(\\div\\) Std. Error — how many SEs away from zero\nPr(&gt;|t|): p-value — would this be surprising if there were no relationship?\nR-squared: fraction of variation in \\(Y\\) explained by \\(X\\)"
+    "text": "Now You Can Read Every Number\n\n\n\n\nEstimate: the slope. For each $1 increase in GDP per capita, life expectancy increases by 0.0004 years.\nStd. Error: if we grabbed a different sample of 80 countries, the slope would bounce around by about this much.\nt value: Estimate / Std. Error. How many standard errors is the estimate from zero?\nPr(&gt;|t|): the p-value. Would this be surprising if the true slope were zero?\nStars: shorthand for the p-value."
   },
   {
     "objectID": "slides/06-uncertainty.html#when-should-you-trust-your-results",
@@ -858,7 +858,7 @@
     "href": "slides/06-uncertainty.html#connecting-to-whats-next",
     "title": "Sampling and Uncertainty",
     "section": "Connecting to What’s Next",
-    "text": "Connecting to What’s Next\n\n\n\n\nNow you know how to run a regression and evaluate the output\nBut regression alone gives us associations, not causal effects\nNext: Democracy and Development\n\nUses regression with fixed effects to move toward causal claims\nFixed effects = a way to control for all time-invariant differences across units\nIt builds directly on multiple regression: \\(Y_{it} = \\alpha_i + \\beta X_{it} + \\epsilon_{it}\\)\n\n\n\n\n\n\n\nhttps://carolina-torreblanca.github.io/psci3200-globaldev-main/"
+    "text": "Connecting to What’s Next\n\n\n\n\nNow you know how to run a regression and evaluate the output\nYou can read every number in summary(lm()) — estimates, standard errors, p-values\nAfter spring break: Crime and Punishment — how policing and incarceration affect communities\nYour Research Design is due March 18 — you will need to specify a regression model and interpret its output\n\n\n\n\n\n\nhttps://carolina-torreblanca.github.io/psci3200-globaldev-main/"
   },
   {
     "objectID": "slides/08-migration.html#assignments",
@@ -11205,5 +11205,684 @@
     "title": "Representation and Accountability II",
     "section": "Discussion",
     "text": "Discussion\nWhich is “worse” in research?\n\n\nType I error (false positive): concluding there is an effect when there isn’t one\nType II error (false negative): missing a real effect because your study couldn’t detect it"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#final-project-assignments",
+    "href": "slides/24-git-v2.html#final-project-assignments",
+    "title": "Git, Github, Github Pages",
+    "section": "Final Project Assignments",
+    "text": "Final Project Assignments\n\n\n\n\n\nMilestone\nDue Date\n\n\n\n\nCreate a GitHub repository\nFeb 23\n\n\nResearch Question and Data\nFeb 23\n\n\nResearch Design\nMar 18\n\n\nExpanded Research Design\nApr 6\n\n\nFinal Project\nApr 29\n\n\n\n\n\n\n\n\n\nWarning\n\n\nLate assignments deduct 2 points per day"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#todays-goal",
+    "href": "slides/24-git-v2.html#todays-goal",
+    "title": "Git, Github, Github Pages",
+    "section": "Today’s Goal",
+    "text": "Today’s Goal\nBy the end of class, you will have a live website hosting your final project\n\nYour workflow for the rest of the semester:\n\nEdit .qmd file in RStudio\nRender\nCommit + push with GitHub Desktop\nYour website updates automatically"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#did-everyone-complete-the-setup",
+    "href": "slides/24-git-v2.html#did-everyone-complete-the-setup",
+    "title": "Git, Github, Github Pages",
+    "section": "Did Everyone Complete the Setup?",
+    "text": "Did Everyone Complete the Setup?\nOpen GitHub Desktop right now\n\n\nCan you see your psci3200_yourname repo?\nIs it cloned to a local folder on your computer?\nDid you successfully push a test commit last week?\n\n\n\nIf not — raise your hand and we’ll troubleshoot"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#troubleshooting",
+    "href": "slides/24-git-v2.html#troubleshooting",
+    "title": "Git, Github, Github Pages",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\n“I created my repo on github.com but never installed git”\n\nThat’s OK! Follow the setup instructions now\nMac: open Terminal, run xcode-select --install\nWindows: download from git-scm.com\n\n\n“GitHub Desktop won’t let me push”\n\nSign out and back in: Preferences → Accounts → Sign Out → Sign In\nMake sure you’re signed into the account that owns the repo"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#what-is-git",
+    "href": "slides/24-git-v2.html#what-is-git",
+    "title": "Git, Github, Github Pages",
+    "section": "What is Git?",
+    "text": "What is Git?\nGit is a version control program, so you can avoid…\nanalysis.R\nanalysis_v1.R\nanalysis_v2.R\nanalysis_v2_FINAL.R\n\nVersion control allows you to precisely track changes"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#git-basics",
+    "href": "slides/24-git-v2.html#git-basics",
+    "title": "Git, Github, Github Pages",
+    "section": "Git Basics",
+    "text": "Git Basics\n\n\nGit hosts data and code\n\n“Remote” (main) on github.com\n“Local” on your harddrive(s) in a designated folder\nResembles Dropbox/Drive synch + Version history"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#git-basics-1",
+    "href": "slides/24-git-v2.html#git-basics-1",
+    "title": "Git, Github, Github Pages",
+    "section": "Git Basics",
+    "text": "Git Basics\nThe workflow\n\ngit pull origin main — download latest changes\ngit add . — stage your changes\ngit commit -m \"describe your changes\" — save a snapshot\ngit push origin main — upload to github.com\n\n\nGitHub Desktop does all of this with buttons instead of commands"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#git-basics-2",
+    "href": "slides/24-git-v2.html#git-basics-2",
+    "title": "Git, Github, Github Pages",
+    "section": "Git Basics",
+    "text": "Git Basics\nCommit + Push in GitHub Desktop"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#git-basics-3",
+    "href": "slides/24-git-v2.html#git-basics-3",
+    "title": "Git, Github, Github Pages",
+    "section": "Git Basics",
+    "text": "Git Basics\nPush to your repo"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#what-is-github-pages",
+    "href": "slides/24-git-v2.html#what-is-github-pages",
+    "title": "Git, Github, Github Pages",
+    "section": "What is Github Pages?",
+    "text": "What is Github Pages?\n\nFree website hosting from GitHub\nYour repo becomes a website at yourusername.github.io/reponame\nPush changes to your repo → website updates automatically\n\n\nWe are going to turn your psci3200_yourname repo into a website for your final project"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#step-1-turn-your-repo-into-a-quarto-website",
+    "href": "slides/24-git-v2.html#step-1-turn-your-repo-into-a-quarto-website",
+    "title": "Git, Github, Github Pages",
+    "section": "Step 1: Turn Your Repo into a Quarto Website",
+    "text": "Step 1: Turn Your Repo into a Quarto Website\nIn RStudio: Open your cloned psci3200_yourname folder as a project\n\nFile → Open Project → navigate to your repo folder\n\n\nCreate _quarto.yml: File → New File → Text File → Save as _quarto.yml\nproject:\n  type: website\n  output-dir: docs\n\nwebsite:\n  title: \"Your Name - PSCI 3200\""
+  },
+  {
+    "objectID": "slides/24-git-v2.html#step-1-turn-your-repo-into-a-quarto-website-1",
+    "href": "slides/24-git-v2.html#step-1-turn-your-repo-into-a-quarto-website-1",
+    "title": "Git, Github, Github Pages",
+    "section": "Step 1: Turn Your Repo into a Quarto Website",
+    "text": "Step 1: Turn Your Repo into a Quarto Website\nWhy output-dir: docs?\n\nWhen you render, Quarto creates .html files from your .qmd files\noutput-dir: docs tells Quarto to put them in a docs/ folder (created automatically)\nLater, we’ll tell Github Pages to serve whatever is in docs/ as your website"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#step-2-set-up-your-homepage",
+    "href": "slides/24-git-v2.html#step-2-set-up-your-homepage",
+    "title": "Git, Github, Github Pages",
+    "section": "Step 2: Set Up Your Homepage",
+    "text": "Step 2: Set Up Your Homepage\nCreate index.qmd: File → New File → Quarto Document → Save as index.qmd\n---\ntitle: \"Your Name - PSCI 3200 Final Project\"\n---\n\n## Welcome\n\nThis site hosts my final project for PSCI 3200.\n\nRender it: click the Render button in RStudio or run in terminal:\nquarto render"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#step-3-add-your-rq-assignment",
+    "href": "slides/24-git-v2.html#step-3-add-your-rq-assignment",
+    "title": "Git, Github, Github Pages",
+    "section": "Step 3: Add Your RQ Assignment",
+    "text": "Step 3: Add Your RQ Assignment\n\nCopy your Research Question and Data .qmd file into the root folder of your repo (not docs/ — never put files there manually)\nAdd the page to your _quarto.yml navigation:\n\nproject:\n  type: website\n  output-dir: docs\n\nwebsite:\n  title: \"Your Name - PSCI 3200\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Home\n      - href: rq_data.qmd\n        text: Research Question"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#step-3-add-your-rq-assignment-1",
+    "href": "slides/24-git-v2.html#step-3-add-your-rq-assignment-1",
+    "title": "Git, Github, Github Pages",
+    "section": "Step 3: Add Your RQ Assignment",
+    "text": "Step 3: Add Your RQ Assignment\nRender again to generate the full site:\nquarto render\nYou should see a docs/ folder appear with .html files"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#step-4-push-to-github",
+    "href": "slides/24-git-v2.html#step-4-push-to-github",
+    "title": "Git, Github, Github Pages",
+    "section": "Step 4: Push to GitHub",
+    "text": "Step 4: Push to GitHub\nIn GitHub Desktop:\n\nYou should see all the new files under “Changes”\nWrite a commit message (e.g., “set up project website”)\nClick Commit to main\nClick Push origin"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#step-5-enable-github-pages",
+    "href": "slides/24-git-v2.html#step-5-enable-github-pages",
+    "title": "Git, Github, Github Pages",
+    "section": "Step 5: Enable Github Pages",
+    "text": "Step 5: Enable Github Pages\nOn github.com, go to your repo → Settings → Pages (left sidebar)"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#step-5-enable-github-pages-1",
+    "href": "slides/24-git-v2.html#step-5-enable-github-pages-1",
+    "title": "Git, Github, Github Pages",
+    "section": "Step 5: Enable Github Pages",
+    "text": "Step 5: Enable Github Pages\nSet source: Branch → main, Folder → /docs → Save"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#step-6-see-it-live",
+    "href": "slides/24-git-v2.html#step-6-see-it-live",
+    "title": "Git, Github, Github Pages",
+    "section": "Step 6: See It Live!",
+    "text": "Step 6: See It Live!\nWait 1-2 minutes, then visit:\nhttps://yourusername.github.io/psci3200_yourname/\n\nYou should see your homepage and your Research Question page in the navigation bar\n\n\nThis is now your final project website for the rest of the semester"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#edit-render-push-live",
+    "href": "slides/24-git-v2.html#edit-render-push-live",
+    "title": "Git, Github, Github Pages",
+    "section": "Edit → Render → Push → Live",
+    "text": "Edit → Render → Push → Live\nEvery time you work on your final project:\n\n\nEdit your .qmd file in RStudio\nRender (button or quarto render)\nCommit + Push in GitHub Desktop\nCheck your website — changes appear in 1-2 minutes"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#your-repo-structure",
+    "href": "slides/24-git-v2.html#your-repo-structure",
+    "title": "Git, Github, Github Pages",
+    "section": "Your Repo Structure",
+    "text": "Your Repo Structure\nBy the end of today, your repo should look like:\npsci3200_yourname/\n├── _quarto.yml\n├── index.qmd\n├── rq_data.qmd          ← your RQ assignment\n└── docs/                 ← generated by quarto render\n    ├── index.html\n    └── rq_data.html"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#workshop-deliverable",
+    "href": "slides/24-git-v2.html#workshop-deliverable",
+    "title": "Git, Github, Github Pages",
+    "section": "Workshop Deliverable",
+    "text": "Workshop Deliverable\nBy end of day today, send me on Slack:\n\nThe URL of your live Github Pages site (e.g., https://yourusername.github.io/psci3200_yourname/)\nYour Research Question and Data assignment should be visible on the site\n\n\nIf you get stuck, post on Slack — troubleshooting git is a rite of passage\n\n\n\n\nhttps://carolina-torreblanca.github.io/psci3200-globaldev-main/"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#building-your-final-project-over-time",
+    "href": "slides/24-git-v2.html#building-your-final-project-over-time",
+    "title": "Git, Github, Github Pages",
+    "section": "Building Your Final Project Over Time",
+    "text": "Building Your Final Project Over Time\n\nRight now you have your RQ assignment as a .qmd on your site\nFor your final project, you will create a new .qmd that brings everything together\nAs you complete milestones (Research Design, Expanded Design), practice the workflow: add a new .qmd → update _quarto.yml → render → push\nBy the end of the semester, your site hosts your complete final project"
+  },
+  {
+    "objectID": "slides/24-git-v2.html#example-the-course-website-repo",
+    "href": "slides/24-git-v2.html#example-the-course-website-repo",
+    "title": "Git, Github, Github Pages",
+    "section": "Example: The Course Website Repo",
+    "text": "Example: The Course Website Repo\nThis is the repo for the website you’ve been using all semester:\npsci3200-globaldev-main/\n├── _quarto.yml            ← website config + navbar\n├── index.qmd              ← homepage\n├── syllabus.qmd           ← another page\n├── schedule.qmd           ← another page\n├── assignments/           ← assignment pages\n├── materials/             ← lecture material pages\n├── slides/                ← slide decks\n├── data/                  ← data files\n└── docs/                  ← generated by quarto render\n\nSame structure you’re building just with more pages!"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#why-this-matters-for-your-final-project",
+    "href": "slides/06-uncertainty.html#why-this-matters-for-your-final-project",
+    "title": "Sampling and Uncertainty",
+    "section": "Why This Matters for Your Final Project",
+    "text": "Why This Matters for Your Final Project\n\nYour Research Design is due March 18\nYou will need to describe where your data comes from and why your sample is appropriate\nAfter today, you’ll be able to read and explain every number in your regression output"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#november-3-1948",
+    "href": "slides/06-uncertainty.html#november-3-1948",
+    "title": "Sampling and Uncertainty",
+    "section": "November 3, 1948",
+    "text": "November 3, 1948"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#what-went-wrong",
+    "href": "slides/06-uncertainty.html#what-went-wrong",
+    "title": "Sampling and Uncertainty",
+    "section": "What Went Wrong?",
+    "text": "What Went Wrong?\nThe pollsters were certain Dewey would win.\n\n\nGallup, Roper, and Crossley all predicted a comfortable Dewey victory\nThey used quota sampling: interviewers chose respondents matching demographic quotas\nBut interviewers gravitated toward wealthier, more accessible, more Republican-leaning people\nThe sample was big. That was not the problem.\nThe problem was who was in it and who was not."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#the-lesson",
+    "href": "slides/06-uncertainty.html#the-lesson",
+    "title": "Sampling and Uncertainty",
+    "section": "The Lesson",
+    "text": "The Lesson\n\n\nThe polls missed a late swing to Truman among undecided voters\nThe samples systematically over-represented one type of voter\nA big sample does not fix a biased sample\nThis is the first rule: before you trust any number, ask where the data came from"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#todays-plan",
+    "href": "slides/06-uncertainty.html#todays-plan",
+    "title": "Sampling and Uncertainty",
+    "section": "Today’s Plan",
+    "text": "Today’s Plan\n\n\n\nIs your sample any good? (Representativeness)\nEven with a good sample, different samples give different answers (Sampling variability)\nHow do we account for that noise? (Standard errors, confidence intervals)\nThe same logic applies to experiments and regressions (Inference)\n\n\nYour Research Design is due March 18. After today you will be able to describe your data, justify your sample, and interpret every number in a regression table."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#before-you-do-anything-else",
+    "href": "slides/06-uncertainty.html#before-you-do-anything-else",
+    "title": "Sampling and Uncertainty",
+    "section": "Before You Do Anything Else",
+    "text": "Before You Do Anything Else\n\n\nThink about your sample.\n\n\n\nWho is in it?\nWho is left out?\nWhy?"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#the-takeaway",
+    "href": "slides/06-uncertainty.html#the-takeaway",
+    "title": "Sampling and Uncertainty",
+    "section": "The Takeaway",
+    "text": "The Takeaway\n\n\n\n\nA bad sample will give you a wrong answer no matter how sophisticated your statistics are\nA big sample does not fix a biased sample (Dewey’s pollsters had thousands of respondents)\nRandom sampling is the gold standard because everyone has a known chance of being selected\nALWAYS interrogate your sample before you interpret results"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#a-running-example",
+    "href": "slides/06-uncertainty.html#a-running-example",
+    "title": "Sampling and Uncertainty",
+    "section": "A Running Example",
+    "text": "A Running Example\n\n\nSay we want to know the average height of Penn students.\n\nThere are about 25,000 students. We cannot measure all of them. So we grab 50 students at random.\n\n\nFor the sake of this simulation, let’s pretend we know the true average is 67.5 inches (about 5’8”)."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#you-sample-50-students",
+    "href": "slides/06-uncertainty.html#you-sample-50-students",
+    "title": "Sampling and Uncertainty",
+    "section": "You Sample 50 Students",
+    "text": "You Sample 50 Students\n\n\nShow code\nlibrary(ggplot2)\n\nset.seed(42)\n\n# True population of Penn students\npop_size &lt;- 25000\npop_height &lt;- rnorm(pop_size, mean = 67.5, sd = 3.5)\ntrue_mean &lt;- mean(pop_height)\n\n# Draw ONE sample of 50\none_sample &lt;- sample(pop_height, 50)\n\nggplot(data.frame(x = one_sample), aes(x = x)) +\n  geom_histogram(fill = \"#011F5B\", alpha = 0.7, bins = 20, color = \"white\") +\n  geom_vline(xintercept = mean(one_sample), color = \"#011F5B\", linewidth = 1.5) +\n  geom_vline(xintercept = true_mean, color = \"red\", linewidth = 1.5, linetype = \"dashed\") +\n  annotate(\"label\", x = mean(one_sample) + 2, y = 8,\n           label = paste0(\"Sample mean = \", round(mean(one_sample), 1), \" in\"),\n           color = \"#011F5B\", size = 5) +\n  annotate(\"label\", x = true_mean - 2, y = 8,\n           label = paste0(\"True mean = \", round(true_mean, 1), \" in\"),\n           color = \"red\", size = 5) +\n  labs(x = \"Height (inches)\", y = \"Count\",\n       title = \"One random sample of 50 Penn students\") +\n  theme_minimal(base_size = 18)"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#your-friend-samples-50-different-students",
+    "href": "slides/06-uncertainty.html#your-friend-samples-50-different-students",
+    "title": "Sampling and Uncertainty",
+    "section": "Your Friend Samples 50 Different Students",
+    "text": "Your Friend Samples 50 Different Students\nNeither of you did anything wrong. You both sampled randomly. But you grabbed different people, so you got a different answer.\n\n\nShow code\nset.seed(99)\nfriend_sample &lt;- sample(pop_height, 50)\n\nboth &lt;- rbind(\n  data.frame(height = one_sample,\n             who = paste0(\"Your sample (mean = \",\n                          round(mean(one_sample), 1), \" in)\")),\n  data.frame(height = friend_sample,\n             who = paste0(\"Friend's sample (mean = \",\n                          round(mean(friend_sample), 1), \" in)\"))\n)\n\nggplot(both, aes(x = height)) +\n  geom_histogram(fill = \"#011F5B\", alpha = 0.7, bins = 20, color = \"white\") +\n  geom_vline(xintercept = true_mean, color = \"red\", linewidth = 1.2, linetype = \"dashed\") +\n  facet_wrap(~who, ncol = 1) +\n  annotate(\"label\", x = true_mean, y = Inf, vjust = 2,\n           label = paste0(\"True mean = \", round(true_mean, 1), \" in\"),\n           color = \"red\", size = 4) +\n  labs(x = \"Height (inches)\", y = \"Count\",\n       title = \"Same population, different samples, different answers\") +\n  theme_minimal(base_size = 16)"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#what-if-1000-people-each-sampled-50-students",
+    "href": "slides/06-uncertainty.html#what-if-1000-people-each-sampled-50-students",
+    "title": "Sampling and Uncertainty",
+    "section": "What If 1,000 People Each Sampled 50 Students?",
+    "text": "What If 1,000 People Each Sampled 50 Students?\n\n\nShow code\nset.seed(42)\nn_sims &lt;- 1000\nsample_means &lt;- numeric(n_sims)\n\nfor (i in 1:n_sims) {\n  sample_means[i] &lt;- mean(sample(pop_height, 50))\n}\n\nggplot(data.frame(means = sample_means), aes(x = means)) +\n  geom_histogram(fill = \"#011F5B\", alpha = 0.7, bins = 30, color = \"white\") +\n  geom_vline(xintercept = true_mean, color = \"red\", linewidth = 1.5, linetype = \"dashed\") +\n  annotate(\"label\", x = true_mean, y = 90,\n           label = paste0(\"True mean = \", round(true_mean, 1), \" in\"),\n           color = \"red\", size = 6) +\n  labs(x = \"Sample mean (inches)\", y = \"Count\",\n       title = \"1,000 sample means from 1,000 different samples of 50 students\") +\n  theme_minimal(base_size = 18)"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#the-standard-error",
+    "href": "slides/06-uncertainty.html#the-standard-error",
+    "title": "Sampling and Uncertainty",
+    "section": "The Standard Error",
+    "text": "The Standard Error\nAny single estimate is still off by a little. How much?\n\nThe standard error (SE) is the standard deviation of the sampling distribution.\n\n\n\n\nIt tells you: how much does my estimate bounce around across repeated samples?\nSmall SE = precise (narrow distribution)\nLarge SE = imprecise (wide distribution)\nBigger sample = smaller SE"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#bigger-samples-less-wiggle",
+    "href": "slides/06-uncertainty.html#bigger-samples-less-wiggle",
+    "title": "Sampling and Uncertainty",
+    "section": "Bigger Samples, Less Wiggle",
+    "text": "Bigger Samples, Less Wiggle\n\n\nShow code\nset.seed(42)\n\nmeans_30 &lt;- replicate(1000, mean(sample(pop_height, 30)))\nmeans_200 &lt;- replicate(1000, mean(sample(pop_height, 200)))\n\ncompare &lt;- rbind(\n  data.frame(mean_height = means_30,\n             sample = paste0(\"n = 30  (SE = \", round(sd(means_30), 2), \" in)\")),\n  data.frame(mean_height = means_200,\n             sample = paste0(\"n = 200  (SE = \", round(sd(means_200), 2), \" in)\"))\n)\n\nggplot(compare, aes(x = mean_height)) +\n  geom_histogram(fill = \"#011F5B\", alpha = 0.7, bins = 30, color = \"white\") +\n  geom_vline(xintercept = true_mean, color = \"red\", linewidth = 1.2, linetype = \"dashed\") +\n  facet_wrap(~sample, ncol = 1) +\n  labs(x = \"Sample mean (inches)\", y = \"Count\",\n       title = \"More data, less wiggle\") +\n  theme_minimal(base_size = 16)"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#this-is-what-polls-report",
+    "href": "slides/06-uncertainty.html#this-is-what-polls-report",
+    "title": "Sampling and Uncertainty",
+    "section": "This Is What Polls Report",
+    "text": "This Is What Polls Report\n\n\nWhen a poll says “52% support Candidate A, plus or minus 3 percentage points”…\n\n\n\nThe 52% is their sample estimate\nThe +/- 3 is the margin of error (roughly 1.96 times the standard error)\nThey are saying: if we polled a different random sample of voters, the answer would probably land somewhere between 49% and 55%\n\n\n\n\nThis is a confidence interval."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#seeing-it-in-action",
+    "href": "slides/06-uncertainty.html#seeing-it-in-action",
+    "title": "Sampling and Uncertainty",
+    "section": "Seeing It in Action",
+    "text": "Seeing It in Action\nEach line is a 95% CI from a different sample. The red dashed line is the truth.\n\n\nShow code\nset.seed(42)\nn_sims &lt;- 100\nresults &lt;- data.frame(\n  sim = 1:n_sims,\n  mean_hat = numeric(n_sims),\n  se = numeric(n_sims)\n)\n\nfor (i in 1:n_sims) {\n  s &lt;- sample(pop_height, 50)\n  results$mean_hat[i] &lt;- mean(s)\n  results$se[i] &lt;- sd(s) / sqrt(50)\n}\n\nresults$lower &lt;- results$mean_hat - 1.96 * results$se\nresults$upper &lt;- results$mean_hat + 1.96 * results$se\nresults$covers &lt;- results$lower &lt;= true_mean & results$upper &gt;= true_mean\ncoverage &lt;- round(mean(results$covers) * 100)\n\nggplot(results, aes(x = sim, y = mean_hat, color = covers)) +\n  geom_point(size = 1.5) +\n  geom_errorbar(aes(ymin = lower, ymax = upper), width = 0, alpha = 0.5) +\n  geom_hline(yintercept = true_mean, color = \"red\", linewidth = 1.2, linetype = \"dashed\") +\n  scale_color_manual(values = c(\"FALSE\" = \"orange\", \"TRUE\" = \"#011F5B\"),\n                     labels = c(\"Misses the truth\", \"Contains the truth\")) +\n  labs(x = \"Sample number\", y = \"Estimated mean height (in)\",\n       title = paste0(coverage, \" out of 100 confidence intervals contain the true mean\"),\n       color = \"\") +\n  theme_minimal(base_size = 16) +\n  theme(legend.position = \"bottom\")"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#from-means-to-treatment-effects",
+    "href": "slides/06-uncertainty.html#from-means-to-treatment-effects",
+    "title": "Sampling and Uncertainty",
+    "section": "From Means to Treatment Effects",
+    "text": "From Means to Treatment Effects\n\n\nSo far: if you sample 50 students and compute the average height, a different sample gives a slightly different average. That is sampling variability.\n\nNow imagine you run an experiment. You randomly assign people to treatment and control, measure the outcome, and estimate the treatment effect.\n\n\nSame thing. A different random assignment, or a different sample of participants, would give you a slightly different estimate of the effect."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#a-quick-simulation",
+    "href": "slides/06-uncertainty.html#a-quick-simulation",
+    "title": "Sampling and Uncertainty",
+    "section": "A Quick Simulation",
+    "text": "A Quick Simulation\n\n\nShow code\nset.seed(42)\ntrue_effect &lt;- 3  # true treatment effect: 3 points on a test\n\nn_sims &lt;- 1000\neffects &lt;- numeric(n_sims)\n\nfor (i in 1:n_sims) {\n  treat &lt;- rnorm(50, mean = 75 + true_effect, sd = 10)\n  control &lt;- rnorm(50, mean = 75, sd = 10)\n  effects[i] &lt;- mean(treat) - mean(control)\n}\n\nggplot(data.frame(effect = effects), aes(x = effect)) +\n  geom_histogram(fill = \"#011F5B\", alpha = 0.7, bins = 30, color = \"white\") +\n  geom_vline(xintercept = true_effect, color = \"red\", linewidth = 1.5, linetype = \"dashed\") +\n  annotate(\"label\", x = true_effect, y = 90,\n           label = paste0(\"True effect = \", true_effect),\n           color = \"red\", size = 6) +\n  labs(x = \"Estimated treatment effect\", y = \"Count\",\n       title = \"1,000 experiments, each with 100 participants\",\n       subtitle = \"Same true effect, different estimates every time\") +\n  theme_minimal(base_size = 18)"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#so-how-do-we-know-if-an-effect-is-real",
+    "href": "slides/06-uncertainty.html#so-how-do-we-know-if-an-effect-is-real",
+    "title": "Sampling and Uncertainty",
+    "section": "So How Do We Know if an Effect Is Real?",
+    "text": "So How Do We Know if an Effect Is Real?\n\n\nThe question becomes: is my estimate far enough from zero that it probably is not just noise?\n\n\nNull hypothesis (\\(H_0\\)): there is no effect. The true parameter is zero.\n\n\nThe p-value: if there were truly no effect, how surprising would my estimate be?\n\n\n\n\nSmall p-value (&lt; 0.05): this would be very surprising under no effect → reject the null\nLarge p-value (&gt; 0.05): this is consistent with no effect → fail to reject the null"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#the-stars",
+    "href": "slides/06-uncertainty.html#the-stars",
+    "title": "Sampling and Uncertainty",
+    "section": "The Stars",
+    "text": "The Stars\n\n\n\n\n\nSymbol\np-value\nMeaning\n\n\n\n\n***\n&lt; 0.001\nVery strong evidence against \\(H_0\\)\n\n\n**\n&lt; 0.01\nStrong evidence\n\n\n*\n&lt; 0.05\nEvidence\n\n\n.\n&lt; 0.1\nWeak evidence\n\n\n(none)\n&gt; 0.1\nNot statistically significant\n\n\n\n\nThe 0.05 threshold is a convention, not a law of nature."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#reading-summarylm",
+    "href": "slides/06-uncertainty.html#reading-summarylm",
+    "title": "Sampling and Uncertainty",
+    "section": "Reading summary(lm())",
+    "text": "Reading summary(lm())\nWe have been working with height. Now let’s see this in a regression. We simulate data where each additional inch of height adds ~0.4 points to a basketball tryout score.\n\noptions(scipen = 999)\n\nset.seed(42)\ntryout &lt;- data.frame(\n  height = round(sample(pop_height, 80), 1)\n)\ntryout$score &lt;- 40 + 0.4 * tryout$height + rnorm(80, 0, 5)\n\nmodel &lt;- lm(score ~ height, data = tryout)\nsummary(model)\n\n\nCall:\nlm(formula = score ~ height, data = tryout)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-14.836  -3.067   0.504   3.273  13.627 \n\nCoefficients:\n            Estimate Std. Error t value    Pr(&gt;|t|)    \n(Intercept)  39.2662     7.1884   5.462 0.000000542 ***\nheight        0.4092     0.1064   3.845    0.000244 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 4.895 on 78 degrees of freedom\nMultiple R-squared:  0.1594,    Adjusted R-squared:  0.1486 \nF-statistic: 14.79 on 1 and 78 DF,  p-value: 0.0002445"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#confidence-interval-in-r",
+    "href": "slides/06-uncertainty.html#confidence-interval-in-r",
+    "title": "Sampling and Uncertainty",
+    "section": "Confidence Interval in R",
+    "text": "Confidence Interval in R\n\nconfint(model)\n\n                 2.5 %     97.5 %\n(Intercept) 24.9551596 53.5772870\nheight       0.1973415  0.6210762\n\n\n\n\nThe 95% CI for the effect of height is [0.2, 0.62].\n\n\nDoes not contain zero, consistent with the small p-value: we have evidence that taller students score higher on the tryout."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#before-you-trust-a-result",
+    "href": "slides/06-uncertainty.html#before-you-trust-a-result",
+    "title": "Sampling and Uncertainty",
+    "section": "Before You Trust a Result",
+    "text": "Before You Trust a Result\n\n\n\n\nIs the sample representative of the population you care about?\nAre the standard errors small relative to the coefficient?\nDoes the confidence interval exclude zero?\nDoes the result make substantive sense?\n\n\n\n\nStatistics cannot save you from a bad sample or a bad research design."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#what-is-next",
+    "href": "slides/06-uncertainty.html#what-is-next",
+    "title": "Sampling and Uncertainty",
+    "section": "What Is Next",
+    "text": "What Is Next\n\n\n\n\nNow you can run a regression and read every number in the output\nAfter spring break: Crime and Punishment, how policing and incarceration affect communities\nYour Research Design is due March 18: describe your sample, specify a regression model, interpret the output\n\n\n\n\n\n\nhttps://carolina-torreblanca.github.io/psci3200-globaldev-main/"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#the-big-question",
+    "href": "slides/06-uncertainty.html#the-big-question",
+    "title": "Sampling and Uncertainty",
+    "section": "The Big Question",
+    "text": "The Big Question\n\n\nMost of the time in research, we want to say something about a population.\n\n\nWhat is the average income in Nigeria?\nDoes a new vaccine reduce child mortality?\nDo term limits reduce corruption?\n\n\n\nBut we almost never observe the whole population. We observe a sample.\n\n\nSo: how do we make claims about the population from a sample?"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#before-anything-else",
+    "href": "slides/06-uncertainty.html#before-anything-else",
+    "title": "Sampling and Uncertainty",
+    "section": "Before Anything Else",
+    "text": "Before Anything Else\n\n\nBefore you run a single regression, before you compute a single mean, you need to ask:\n\n\n\nWho is in my sample?\nWho is left out?\nWhy?\n\n\n\n\nIf the answer to “who is left out” is “people who are systematically different from the rest,” you have a problem. And no amount of statistics will fix it."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#how-sampling-goes-wrong-in-practice",
+    "href": "slides/06-uncertainty.html#how-sampling-goes-wrong-in-practice",
+    "title": "Sampling and Uncertainty",
+    "section": "How Sampling Goes Wrong in Practice",
+    "text": "How Sampling Goes Wrong in Practice\n\n\n\nEven with good intentions, samples can be systematically off:\n\n\n\n\nSurvey only urban areas: miss rural poverty\nPhone surveys: miss people without phones\nOnly villages near roads: miss remote populations\nHousehold surveys: miss homeless, displaced, migrant populations\nVoluntary response: people with strong opinions over-represented"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#ok-but-what-if-your-sample-is-good",
+    "href": "slides/06-uncertainty.html#ok-but-what-if-your-sample-is-good",
+    "title": "Sampling and Uncertainty",
+    "section": "OK, But What If Your Sample Is Good?",
+    "text": "OK, But What If Your Sample Is Good?\n\n\nSay you did everything right. Random sampling, good coverage, representative.\n\nAre you done worrying?\n\n\nNo. Because even a perfectly representative sample introduces another kind of uncertainty."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#you-already-know-this-intuitively",
+    "href": "slides/06-uncertainty.html#you-already-know-this-intuitively",
+    "title": "Sampling and Uncertainty",
+    "section": "You Already Know This Intuitively",
+    "text": "You Already Know This Intuitively\n\n\nWhen a poll says “52% support Candidate A, plus or minus 3 percentage points”…\n\n\n\nThe 52% is their sample estimate\nThe +/- 3 is the margin of error (roughly 1.96 times the standard error)\nThey are saying: if we polled a different random sample of voters, the answer would probably land between 49% and 55%\n\n\n\n\nThat range is a confidence interval."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#how-to-interpret-a-confidence-interval",
+    "href": "slides/06-uncertainty.html#how-to-interpret-a-confidence-interval",
+    "title": "Sampling and Uncertainty",
+    "section": "How to Interpret a Confidence Interval",
+    "text": "How to Interpret a Confidence Interval\n\n\nThe correct interpretation:\nIf we repeated this study many times, each time drawing a new sample and computing a new CI, about 95% of those intervals would contain the true value.\n\nThe common but WRONG interpretation:\n“There is a 95% probability that the true value is in this interval.”\n\n\nWhy is that wrong? Because the true value is fixed. It is either in the interval or it is not. The interval is the thing that changes from sample to sample."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#from-averages-to-treatment-effects",
+    "href": "slides/06-uncertainty.html#from-averages-to-treatment-effects",
+    "title": "Sampling and Uncertainty",
+    "section": "From Averages to Treatment Effects",
+    "text": "From Averages to Treatment Effects\n\n\nEverything we just did was about estimating a mean. Different sample, different mean, standard error tells you how much it wiggles.\n\nNow think about causal research. You run an experiment: randomly assign people to treatment and control, measure the outcome, estimate the treatment effect.\n\n\nSame problem. If you had recruited slightly different participants, or randomized differently, you would get a slightly different estimate of the effect. The true effect is the same, but your estimate has noise."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#we-could-repeat-a-million-times",
+    "href": "slides/06-uncertainty.html#we-could-repeat-a-million-times",
+    "title": "Sampling and Uncertainty",
+    "section": "We Could Repeat a Million Times…",
+    "text": "We Could Repeat a Million Times…\n\n\nIn theory, if we could run the same experiment a million times with different samples, we would get a million estimates. The distribution of those estimates would be a bell curve centered on the true effect.\n\nLet’s pretend we can do that:"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#simulating-1000-experiments",
+    "href": "slides/06-uncertainty.html#simulating-1000-experiments",
+    "title": "Sampling and Uncertainty",
+    "section": "Simulating 1,000 Experiments",
+    "text": "Simulating 1,000 Experiments\n\n\nShow code\nset.seed(42)\ntrue_effect &lt;- 5  # true effect: 5 points on a test\n\nn_sims &lt;- 1000\neffects &lt;- numeric(n_sims)\n\nfor (i in 1:n_sims) {\n  treat &lt;- rnorm(40, mean = 70 + true_effect, sd = 12)\n  control &lt;- rnorm(40, mean = 70, sd = 12)\n  effects[i] &lt;- mean(treat) - mean(control)\n}\n\nggplot(data.frame(effect = effects), aes(x = effect)) +\n  geom_histogram(fill = \"#011F5B\", alpha = 0.7, bins = 30, color = \"white\") +\n  geom_vline(xintercept = true_effect, color = \"red\", linewidth = 1.5, linetype = \"dashed\") +\n  annotate(\"label\", x = true_effect + 1, y = 85,\n           label = paste0(\"True effect = \", true_effect, \" points\"),\n           color = \"red\", size = 5, hjust = 0) +\n  labs(x = \"Estimated treatment effect (points)\", y = \"Count\",\n       title = \"1,000 experiments, same true effect, different estimates\") +\n  theme_minimal(base_size = 18)"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#but-we-cannot",
+    "href": "slides/06-uncertainty.html#but-we-cannot",
+    "title": "Sampling and Uncertainty",
+    "section": "…But We Cannot",
+    "text": "…But We Cannot\n\n\nIn real life, you run your experiment once. You get one estimate.\n\nYou cannot repeat it a million times. So how do you know whether your one estimate is close to the truth or far from it?\n\n\nThis is the problem of statistical inference: using your one sample to say something about what would happen if you could repeat the study.\n\n\nThe tools are the same: standard errors tell you how much the estimate would wiggle, and confidence intervals give you a plausible range."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#but-there-is-a-harder-question",
+    "href": "slides/06-uncertainty.html#but-there-is-a-harder-question",
+    "title": "Sampling and Uncertainty",
+    "section": "But There Is a Harder Question",
+    "text": "But There Is a Harder Question\n\n\nWhen we were estimating average height, we just wanted to know “how close is our estimate to the truth?”\n\nWith treatment effects, we have a sharper question: is the effect actually there at all, or is it just noise?\n\n\n\nNull hypothesis (\\(H_0\\)): there is no effect. The true parameter is zero.\n\n\nThe p-value: if there were truly no effect, how surprising would our estimate be?"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#the-checklist",
+    "href": "slides/06-uncertainty.html#the-checklist",
+    "title": "Sampling and Uncertainty",
+    "section": "The Checklist",
+    "text": "The Checklist\n\n\nBefore you trust any result:\n\n\nIs the sample representative of the population you care about?\nIs the standard error small relative to the estimate?\nDoes the confidence interval exclude zero (or whatever value matters)?\nDoes the result make substantive sense?\n\n\n\n\nGood statistics cannot save a bad sample or a bad research design."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#today",
+    "href": "slides/06-uncertainty.html#today",
+    "title": "Sampling and Uncertainty",
+    "section": "Today",
+    "text": "Today\n\n\n\nKnow your sample\nGetting it right on average\nQuantifying how off you are\n\n\nYour Research Design is due March 18."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#your-data-can-only-speak-to-what-is-in-it",
+    "href": "slides/06-uncertainty.html#your-data-can-only-speak-to-what-is-in-it",
+    "title": "Sampling and Uncertainty",
+    "section": "Your Data Can Only Speak to What Is In It",
+    "text": "Your Data Can Only Speak to What Is In It\n\n\nBefore you run a single analysis, ask:\n\n\nWhat is my unit of observation?\nWhat units are in my sample?\nWhat units are left out?\n\n\n\nYour data cannot tell you anything about anything else!"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#this-happens-in-research-too",
+    "href": "slides/06-uncertainty.html#this-happens-in-research-too",
+    "title": "Sampling and Uncertainty",
+    "section": "This Happens in Research Too",
+    "text": "This Happens in Research Too\n\n\nSurvey only urban areas: miss rural poverty\nPhone surveys: miss people without phones\nOnly villages near roads: miss remote populations\nHousehold surveys: miss homeless, displaced, migrant populations\nVoluntary response: people with strong opinions over-represented"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#the-setup",
+    "href": "slides/06-uncertainty.html#the-setup",
+    "title": "Sampling and Uncertainty",
+    "section": "The Setup",
+    "text": "The Setup\n\n\nSay we want to know the average height of Penn students.\n\nThere are about 25,000 students. We cannot measure all of them. So we grab 30 at random.\n\n\nFor this simulation, let’s pretend we know the true average is 67.5 inches (about 5’8”)."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#one-sample-of-30-students",
+    "href": "slides/06-uncertainty.html#one-sample-of-30-students",
+    "title": "Sampling and Uncertainty",
+    "section": "One Sample of 30 Students",
+    "text": "One Sample of 30 Students\n\n\nShow code\nlibrary(ggplot2)\n\nset.seed(42)\n\n# True population of Penn students\npop_size &lt;- 25000\npop_height &lt;- rnorm(pop_size, mean = 67.5, sd = 5)\ntrue_mean &lt;- mean(pop_height)\n\n# Draw ONE sample of 30\none_sample &lt;- sample(pop_height, 30)\n\nggplot(data.frame(x = one_sample), aes(x = x)) +\n  geom_histogram(fill = \"#011F5B\", alpha = 0.7, bins = 15, color = \"white\") +\n  geom_vline(xintercept = mean(one_sample), color = \"#011F5B\", linewidth = 1.5) +\n  geom_vline(xintercept = true_mean, color = \"red\", linewidth = 1.5, linetype = \"dashed\") +\n  annotate(\"label\", x = mean(one_sample) + 2.5, y = 5,\n           label = paste0(\"Sample mean = \", round(mean(one_sample), 1), \" in\"),\n           color = \"#011F5B\", size = 5) +\n  annotate(\"label\", x = true_mean - 2.5, y = 5,\n           label = paste0(\"True mean = \", round(true_mean, 1), \" in\"),\n           color = \"red\", size = 5) +\n  labs(x = \"Height (inches)\", y = \"Count\",\n       title = \"One random sample of 30 Penn students\") +\n  theme_minimal(base_size = 18)"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#grab-another-sample",
+    "href": "slides/06-uncertainty.html#grab-another-sample",
+    "title": "Sampling and Uncertainty",
+    "section": "Grab Another Sample",
+    "text": "Grab Another Sample\nSame population. Another 30 students, chosen at random. Different answer.\n\n\nShow code\nset.seed(99)\nsecond_sample &lt;- sample(pop_height, 30)\n\nboth &lt;- rbind(\n  data.frame(height = one_sample,\n             which = paste0(\"Sample 1 (mean = \",\n                          round(mean(one_sample), 1), \" in)\")),\n  data.frame(height = second_sample,\n             which = paste0(\"Sample 2 (mean = \",\n                          round(mean(second_sample), 1), \" in)\"))\n)\n\nggplot(both, aes(x = height)) +\n  geom_histogram(fill = \"#011F5B\", alpha = 0.7, bins = 15, color = \"white\") +\n  geom_vline(xintercept = true_mean, color = \"red\", linewidth = 1.2, linetype = \"dashed\") +\n  facet_wrap(~which, ncol = 1) +\n  annotate(\"label\", x = true_mean, y = Inf, vjust = 2,\n           label = paste0(\"True mean = \", round(true_mean, 1), \" in\"),\n           color = \"red\", size = 4) +\n  labs(x = \"Height (inches)\", y = \"Count\",\n       title = \"Same population, two different random samples\") +\n  theme_minimal(base_size = 16)"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#now-do-this-1000-times",
+    "href": "slides/06-uncertainty.html#now-do-this-1000-times",
+    "title": "Sampling and Uncertainty",
+    "section": "Now Do This 1,000 Times",
+    "text": "Now Do This 1,000 Times\n\n\nShow code\nset.seed(42)\nn_sims &lt;- 1000\nsample_means &lt;- numeric(n_sims)\n\nfor (i in 1:n_sims) {\n  sample_means[i] &lt;- mean(sample(pop_height, 30))\n}\n\nggplot(data.frame(means = sample_means), aes(x = means)) +\n  geom_histogram(fill = \"#011F5B\", alpha = 0.7, bins = 30, color = \"white\") +\n  geom_vline(xintercept = true_mean, color = \"red\", linewidth = 1.5, linetype = \"dashed\") +\n  annotate(\"label\", x = true_mean, y = 80,\n           label = paste0(\"True mean = \", round(true_mean, 1), \" in\"),\n           color = \"red\", size = 6) +\n  labs(x = \"Sample mean (inches)\", y = \"Count\",\n       title = \"1,000 sample means, each from a different sample of 30\") +\n  theme_minimal(base_size = 18)"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#the-sampling-distribution",
+    "href": "slides/06-uncertainty.html#the-sampling-distribution",
+    "title": "Sampling and Uncertainty",
+    "section": "The Sampling Distribution",
+    "text": "The Sampling Distribution\n\n\n\n\nEvery sample gives a slightly different answer\nBut the answers cluster around the truth\nYou never observe this distribution in real life. You only have your one sample.\nBut you know this distribution is approximately normal. That is the Central Limit Theorem.\nAnd you can estimate how wide it is."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#from-point-estimates-to-ranges",
+    "href": "slides/06-uncertainty.html#from-point-estimates-to-ranges",
+    "title": "Sampling and Uncertainty",
+    "section": "From Point Estimates to Ranges",
+    "text": "From Point Estimates to Ranges\n\n\nYour point estimate is a little off each time. You saw this: every sample gives a slightly different mean.\n\nSo instead of reporting just one number, we report a range: the confidence interval.\n\n\n\\[CI = \\text{estimate} \\pm 1.96 \\times SE\\]\n\n\nA 95% confidence interval is constructed so that, across repeated samples, 95% of such intervals will contain the true value."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#the-same-logic-for-treatment-effects",
+    "href": "slides/06-uncertainty.html#the-same-logic-for-treatment-effects",
+    "title": "Sampling and Uncertainty",
+    "section": "The Same Logic for Treatment Effects",
+    "text": "The Same Logic for Treatment Effects\n\n\nIn research, we often do not just want to estimate a mean. We want to know whether some treatment or policy has an effect.\n\nSame problem: if you ran the experiment with a slightly different sample, you would get a slightly different estimate of the effect. There is noise.\n\n\nThe question becomes: is the effect different from zero, or is it just noise?"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#but-you-only-run-it-once",
+    "href": "slides/06-uncertainty.html#but-you-only-run-it-once",
+    "title": "Sampling and Uncertainty",
+    "section": "But You Only Run It Once",
+    "text": "But You Only Run It Once\n\n\nIn real life, you run your experiment once. You get one estimate. You cannot repeat it a thousand times to see where the truth is.\n\nThat is what inference is: using your one sample to reason about what would happen across many samples. The SE and CI are your tools.\n\n\n\nNull hypothesis (\\(H_0\\)): there is no effect. The true parameter is zero.\n\n\nThe p-value: if the true effect were zero, what is the probability of seeing an estimate at least as extreme as yours?"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#is-the-effect-different-from-zero",
+    "href": "slides/06-uncertainty.html#is-the-effect-different-from-zero",
+    "title": "Sampling and Uncertainty",
+    "section": "Is the Effect Different from Zero?",
+    "text": "Is the Effect Different from Zero?\n\n\n\nNull hypothesis (\\(H_0\\)): there is no effect. The true parameter is zero.\n\n\nThe p-value: if there were truly no effect, what is the probability of seeing an estimate at least as extreme as yours?\n\n\n\n\nSmall p-value (&lt; 0.05): very unlikely under no effect. Reject the null.\nLarge p-value (&gt; 0.05): consistent with no effect. Fail to reject."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#every-number-explained",
+    "href": "slides/06-uncertainty.html#every-number-explained",
+    "title": "Sampling and Uncertainty",
+    "section": "Every Number, Explained",
+    "text": "Every Number, Explained\n\n\n\n\nEstimate (height): for each additional inch of height, tryout score increases by ~0.4 points\nStd. Error: across repeated samples, this estimate would bounce around by about this much\nt value: Estimate / Std. Error. How many SEs away from zero?\nPr(&gt;|t|): the p-value. Would this be surprising if the true slope were zero?"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#a-cautionary-tale",
+    "href": "slides/06-uncertainty.html#a-cautionary-tale",
+    "title": "Sampling and Uncertainty",
+    "section": "A cautionary tale",
+    "text": "A cautionary tale"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#lets-measure-average-height-at-penn",
+    "href": "slides/06-uncertainty.html#lets-measure-average-height-at-penn",
+    "title": "Sampling and Uncertainty",
+    "section": "Let’s Measure Average Height at Penn",
+    "text": "Let’s Measure Average Height at Penn\n\n\nThere are about 25,000 students. We cannot measure all of them. So we grab 30 at random.\n\nFor this simulation, the true average is 67.5 inches. Let’s see what happens."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#that-is-bias",
+    "href": "slides/06-uncertainty.html#that-is-bias",
+    "title": "Sampling and Uncertainty",
+    "section": "That Is Bias",
+    "text": "That Is Bias\n\n\nThe people near the basketball court are systematically taller than the average Penn student\n\nNo matter how many times you repeat this, your estimate will be off in the same direction. This is the Dewey problem\n\n\nFix: take a random sample instead."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#random-sample",
+    "href": "slides/06-uncertainty.html#random-sample",
+    "title": "Sampling and Uncertainty",
+    "section": "Random Sample",
+    "text": "Random Sample\nNow we grab 30 students at random. For the simulation, the true average is 67.5 inches.\n\n\nShow code\nset.seed(42)\none_sample &lt;- sample(pop_height, 30)\n\nggplot(data.frame(x = one_sample), aes(x = x)) +\n  geom_histogram(fill = \"#011F5B\", alpha = 0.7, bins = 15, color = \"white\") +\n  geom_vline(xintercept = mean(one_sample), color = \"#011F5B\", linewidth = 1.5) +\n  geom_vline(xintercept = true_mean, color = \"red\", linewidth = 1.5, linetype = \"dashed\") +\n  annotate(\"label\", x = mean(one_sample) + 2.5, y = 5,\n           label = paste0(\"Sample mean = \", round(mean(one_sample), 1), \" in\"),\n           color = \"#011F5B\", size = 5) +\n  annotate(\"label\", x = true_mean - 2.5, y = 5,\n           label = paste0(\"True mean = \", round(true_mean, 1), \" in\"),\n           color = \"red\", size = 5) +\n  labs(x = \"Height (inches)\", y = \"Count\",\n       title = \"One random sample of 30 Penn students\") +\n  theme_minimal(base_size = 18)"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#a-bit-off.-grab-another.",
+    "href": "slides/06-uncertainty.html#a-bit-off.-grab-another.",
+    "title": "Sampling and Uncertainty",
+    "section": "A Bit Off. Grab Another.",
+    "text": "A Bit Off. Grab Another.\n\n\nShow code\nset.seed(99)\nsecond_sample &lt;- sample(pop_height, 30)\n\nboth &lt;- rbind(\n  data.frame(height = one_sample,\n             which = paste0(\"Sample 1 (mean = \",\n                          round(mean(one_sample), 1), \" in)\")),\n  data.frame(height = second_sample,\n             which = paste0(\"Sample 2 (mean = \",\n                          round(mean(second_sample), 1), \" in)\"))\n)\n\nggplot(both, aes(x = height)) +\n  geom_histogram(fill = \"#011F5B\", alpha = 0.7, bins = 15, color = \"white\") +\n  geom_vline(xintercept = true_mean, color = \"red\", linewidth = 1.2, linetype = \"dashed\") +\n  facet_wrap(~which, ncol = 1) +\n  annotate(\"label\", x = true_mean, y = Inf, vjust = 2,\n           label = paste0(\"True mean = \", round(true_mean, 1), \" in\"),\n           color = \"red\", size = 4) +\n  labs(x = \"Height (inches)\", y = \"Count\",\n       title = \"Same population, two different random samples\") +\n  theme_minimal(base_size = 16)"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#also-a-bit-off.-what-about-1000-times",
+    "href": "slides/06-uncertainty.html#also-a-bit-off.-what-about-1000-times",
+    "title": "Sampling and Uncertainty",
+    "section": "Also a Bit Off. What About 1,000 Times?",
+    "text": "Also a Bit Off. What About 1,000 Times?\n\n\nShow code\nset.seed(42)\nn_sims &lt;- 1000\nsample_means &lt;- numeric(n_sims)\n\nfor (i in 1:n_sims) {\n  sample_means[i] &lt;- mean(sample(pop_height, 30))\n}\n\nggplot(data.frame(means = sample_means), aes(x = means)) +\n  geom_histogram(fill = \"#011F5B\", alpha = 0.7, bins = 30, color = \"white\") +\n  geom_vline(xintercept = true_mean, color = \"red\", linewidth = 1.5, linetype = \"dashed\") +\n  annotate(\"label\", x = true_mean, y = 80,\n           label = paste0(\"True mean = \", round(true_mean, 1), \" in\"),\n           color = \"red\", size = 6) +\n  labs(x = \"Sample mean (inches)\", y = \"Count\",\n       title = \"1,000 sample means from 1,000 random samples of 30\") +\n  theme_minimal(base_size = 18)"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#on-average-we-get-it-right",
+    "href": "slides/06-uncertainty.html#on-average-we-get-it-right",
+    "title": "Sampling and Uncertainty",
+    "section": "On Average, We Get It Right",
+    "text": "On Average, We Get It Right\n\n\nTwo things:\n\n\nIs this the right population? That is your call as a researcher. If you sampled Penn students, your mean tells you about Penn students. Not Drexel, not Temple. The sample mean is always right for the population you sampled from.\nGiven that population, your sample mean will on average equal the population value. And the distribution of sample means, if you took a million samples, would be normal. This is the Central Limit Theorem.\n\n\n\nBut any single estimate is still off by a little. How much?"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#bigger-sample-less-wiggle",
+    "href": "slides/06-uncertainty.html#bigger-sample-less-wiggle",
+    "title": "Sampling and Uncertainty",
+    "section": "Bigger Sample, Less Wiggle",
+    "text": "Bigger Sample, Less Wiggle\n\n\nShow code\nset.seed(42)\n\nmeans_30 &lt;- replicate(1000, mean(sample(pop_height, 30)))\nmeans_200 &lt;- replicate(1000, mean(sample(pop_height, 200)))\n\ncompare &lt;- rbind(\n  data.frame(mean_height = means_30,\n             sample = paste0(\"n = 30  (SE = \", round(sd(means_30), 2), \" in)\")),\n  data.frame(mean_height = means_200,\n             sample = paste0(\"n = 200  (SE = \", round(sd(means_200), 2), \" in)\"))\n)\n\nggplot(compare, aes(x = mean_height)) +\n  geom_histogram(fill = \"#011F5B\", alpha = 0.7, bins = 30, color = \"white\") +\n  geom_vline(xintercept = true_mean, color = \"red\", linewidth = 1.2, linetype = \"dashed\") +\n  facet_wrap(~sample, ncol = 1) +\n  labs(x = \"Sample mean (inches)\", y = \"Count\",\n       title = \"More data, less wiggle\") +\n  theme_minimal(base_size = 16)"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#confidence-intervals-1",
+    "href": "slides/06-uncertainty.html#confidence-intervals-1",
+    "title": "Sampling and Uncertainty",
+    "section": "100 Confidence Intervals",
+    "text": "100 Confidence Intervals\n\n\nShow code\nset.seed(42)\nn_sims &lt;- 100\nresults &lt;- data.frame(\n  sim = 1:n_sims,\n  mean_hat = numeric(n_sims),\n  se = numeric(n_sims)\n)\n\nfor (i in 1:n_sims) {\n  s &lt;- sample(pop_height, 30)\n  results$mean_hat[i] &lt;- mean(s)\n  results$se[i] &lt;- sd(s) / sqrt(30)\n}\n\nresults$lower &lt;- results$mean_hat - 1.96 * results$se\nresults$upper &lt;- results$mean_hat + 1.96 * results$se\nresults$covers &lt;- results$lower &lt;= true_mean & results$upper &gt;= true_mean\ncoverage &lt;- round(mean(results$covers) * 100)\n\nggplot(results, aes(x = sim, y = mean_hat, color = covers)) +\n  geom_point(size = 1.5) +\n  geom_errorbar(aes(ymin = lower, ymax = upper), width = 0, alpha = 0.5) +\n  geom_hline(yintercept = true_mean, color = \"red\", linewidth = 1.2, linetype = \"dashed\") +\n  scale_color_manual(values = c(\"FALSE\" = \"orange\", \"TRUE\" = \"#011F5B\"),\n                     labels = c(\"Misses the truth\", \"Contains the truth\")) +\n  labs(x = \"Sample number\", y = \"Estimated mean height (in)\",\n       title = paste0(coverage, \" out of 100 intervals contain the true mean\"),\n       color = \"\") +\n  theme_minimal(base_size = 16) +\n  theme(legend.position = \"bottom\")"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#same-logic-for-treatment-effects",
+    "href": "slides/06-uncertainty.html#same-logic-for-treatment-effects",
+    "title": "Sampling and Uncertainty",
+    "section": "Same Logic for Treatment Effects",
+    "text": "Same Logic for Treatment Effects\n\n\nIn research, we often care about whether some treatment has an effect, not just what the average is. Same problem: different sample, slightly different estimate, noise.\n\nThe question is usually: is the effect different from zero, or is it just noise?\n\n\nTo answer this, we imagine a world where there is no effect (the null hypothesis, \\(H_0\\)). Under that assumption, the sampling distribution of our estimate is centered at zero. How far out does our estimate land?"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#experiments",
+    "href": "slides/06-uncertainty.html#experiments",
+    "title": "Sampling and Uncertainty",
+    "section": "1,000 Experiments",
+    "text": "1,000 Experiments\n\n\nShow code\nset.seed(42)\ntrue_effect &lt;- 5  # true effect: 5 points on a test\n\nn_sims &lt;- 1000\neffects &lt;- numeric(n_sims)\n\nfor (i in 1:n_sims) {\n  treat &lt;- rnorm(40, mean = 70 + true_effect, sd = 12)\n  control &lt;- rnorm(40, mean = 70, sd = 12)\n  effects[i] &lt;- mean(treat) - mean(control)\n}\n\nggplot(data.frame(effect = effects), aes(x = effect)) +\n  geom_histogram(fill = \"#011F5B\", alpha = 0.7, bins = 30, color = \"white\") +\n  geom_vline(xintercept = true_effect, color = \"red\", linewidth = 1.5, linetype = \"dashed\") +\n  annotate(\"label\", x = true_effect + 1, y = 85,\n           label = paste0(\"True effect = \", true_effect, \" points\"),\n           color = \"red\", size = 5, hjust = 0) +\n  labs(x = \"Estimated treatment effect (points)\", y = \"Count\",\n       title = \"1,000 experiments, same true effect, different estimates\") +\n  theme_minimal(base_size = 18)"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#p-values-and-stars",
+    "href": "slides/06-uncertainty.html#p-values-and-stars",
+    "title": "Sampling and Uncertainty",
+    "section": "p-values and Stars",
+    "text": "p-values and Stars\n\n\n\n\nSmall p-value (&lt; 0.05): very unlikely under no effect. Reject the null.\nLarge p-value (&gt; 0.05): consistent with no effect. Fail to reject.\n\n\n\n\n\n\nSymbol\np-value\nMeaning\n\n\n\n\n***\n&lt; 0.001\nVery strong evidence against \\(H_0\\)\n\n\n**\n&lt; 0.01\nStrong evidence\n\n\n*\n&lt; 0.05\nEvidence\n\n\n.\n&lt; 0.1\nWeak evidence\n\n\n(none)\n&gt; 0.1\nNot statistically significant"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#lets-measure-average-height-at-penn-1",
+    "href": "slides/06-uncertainty.html#lets-measure-average-height-at-penn-1",
+    "title": "Sampling and Uncertainty",
+    "section": "Let’s Measure Average Height at Penn",
+    "text": "Let’s Measure Average Height at Penn\n\n\nShow code\nlibrary(ggplot2)\n\nset.seed(42)\n\n# True population of Penn students\npop_size &lt;- 25000\npop_height &lt;- rnorm(pop_size, mean = 67.5, sd = 5)\ntrue_mean &lt;- mean(pop_height)\n\n# Biased sample: people near the basketball court are taller\nbasketball_sample &lt;- rnorm(30, mean = 73, sd = 4)\n\nggplot(data.frame(x = basketball_sample), aes(x = x)) +\n  geom_histogram(fill = \"#011F5B\", alpha = 0.7, bins = 15, color = \"white\") +\n  geom_vline(xintercept = mean(basketball_sample), color = \"#011F5B\", linewidth = 1.5) +\n  geom_vline(xintercept = true_mean, color = \"red\", linewidth = 1.5, linetype = \"dashed\") +\n  annotate(\"label\", x = mean(basketball_sample) + 2, y = 5,\n           label = paste0(\"Sample mean = \", round(mean(basketball_sample), 1), \" in\"),\n           color = \"#011F5B\", size = 5) +\n  annotate(\"label\", x = true_mean - 2, y = 5,\n           label = paste0(\"True mean = \", round(true_mean, 1), \" in\"),\n           color = \"red\", size = 5) +\n  labs(x = \"Height (inches)\", y = \"Count\",\n       title = \"Sample: 30 people outside the basketball court\") +\n  theme_minimal(base_size = 18)"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#biased-sample-outside-the-palestra",
+    "href": "slides/06-uncertainty.html#biased-sample-outside-the-palestra",
+    "title": "Sampling and Uncertainty",
+    "section": "Biased Sample: Outside the Palestra",
+    "text": "Biased Sample: Outside the Palestra\n\n\nShow code\nlibrary(ggplot2)\nlibrary(knitr)\n\nset.seed(42)\n\n# True population of Penn students\npop_size &lt;- 25000\npop_height &lt;- rnorm(pop_size, mean = 67.5, sd = 5)\ntrue_mean &lt;- mean(pop_height)\n\n# Biased samples: people near the basketball court are taller\nbball_means &lt;- round(rnorm(3, mean = 73, sd = 0.8), 1)\n\nkable(\n  data.frame(Sample = 1:3, `Sample Mean` = bball_means,\n             `True Mean` = round(true_mean, 1),\n             `Off By` = bball_means - round(true_mean, 1)),\n  col.names = c(\"Sample\", \"Sample Mean (in)\", \"True Mean (in)\", \"Off By\"),\n  align = \"cccc\"\n)\n\n\n\n\n\nSample\nSample Mean (in)\nTrue Mean (in)\nOff By\n\n\n\n\n1\n72.7\n67.5\n5.2\n\n\n2\n72.3\n67.5\n4.8\n\n\n3\n72.9\n67.5\n5.4\n\n\n\n\n\n\nSystematically too tall. This is the Dewey problem: no matter how many times you repeat it, you are off in the same direction. Why?"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#fix-random-samples",
+    "href": "slides/06-uncertainty.html#fix-random-samples",
+    "title": "Sampling and Uncertainty",
+    "section": "Fix: Random Samples",
+    "text": "Fix: Random Samples\n\n\nShow code\nset.seed(42)\nrandom_means &lt;- round(sapply(1:4, function(i) mean(sample(pop_height, 30))), 1)\n\nkable(\n  data.frame(Sample = 1:4, `Sample Mean` = random_means,\n             `True Mean` = round(true_mean, 1),\n             `Off By` = random_means - round(true_mean, 1)),\n  col.names = c(\"Sample\", \"Sample Mean (in)\", \"True Mean (in)\", \"Off By\"),\n  align = \"cccc\"\n)\n\n\n\n\n\nSample\nSample Mean (in)\nTrue Mean (in)\nOff By\n\n\n\n\n1\n66.1\n67.5\n-1.4\n\n\n2\n66.4\n67.5\n-1.1\n\n\n3\n69.0\n67.5\n1.5\n\n\n4\n66.9\n67.5\n-0.6\n\n\n\n\n\n\n\nSome overshoot, some undershoot. Why is this better?"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#what-about-1000-random-samples",
+    "href": "slides/06-uncertainty.html#what-about-1000-random-samples",
+    "title": "Sampling and Uncertainty",
+    "section": "What About 1,000 Random Samples?",
+    "text": "What About 1,000 Random Samples?\n\n\nShow code\nset.seed(42)\nn_sims &lt;- 1000\nsample_means &lt;- numeric(n_sims)\n\nfor (i in 1:n_sims) {\n  sample_means[i] &lt;- mean(sample(pop_height, 30))\n}\n\nggplot(data.frame(means = sample_means), aes(x = means)) +\n  geom_histogram(fill = \"#011F5B\", alpha = 0.7, bins = 30, color = \"white\") +\n  geom_vline(xintercept = true_mean, color = \"red\", linewidth = 1.5, linetype = \"dashed\") +\n  annotate(\"label\", x = true_mean, y = 80,\n           label = paste0(\"True mean = \", round(true_mean, 1), \" in\"),\n           color = \"red\", size = 6) +\n  labs(x = \"Sample mean (inches)\", y = \"Count\",\n       title = \"1,000 sample means from 1,000 random samples of 30\") +\n  theme_minimal(base_size = 18)"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#random-samples",
+    "href": "slides/06-uncertainty.html#random-samples",
+    "title": "Sampling and Uncertainty",
+    "section": "Random Samples",
+    "text": "Random Samples\n\n\nShow code\nlibrary(ggplot2)\nlibrary(knitr)\n\nset.seed(42)\n\n# True population of Penn students\npop_size &lt;- 25000\npop_height &lt;- rnorm(pop_size, mean = 67.5, sd = 5)\ntrue_mean &lt;- mean(pop_height)\n\nrandom_means &lt;- round(sapply(1:4, function(i) mean(sample(pop_height, 30))), 1)\n\nkable(\n  data.frame(Sample = 1:4, `Sample Mean` = random_means,\n             `True Mean` = round(true_mean, 1),\n             `Off By` = random_means - round(true_mean, 1)),\n  col.names = c(\"Sample\", \"Sample Mean (in)\", \"True Mean (in)\", \"Off By\"),\n  align = \"cccc\"\n)\n\n\n\n\n\nSample\nSample Mean (in)\nTrue Mean (in)\nOff By\n\n\n\n\n1\n67.0\n67.5\n-0.5\n\n\n2\n67.5\n67.5\n0.0\n\n\n3\n68.5\n67.5\n1.0\n\n\n4\n67.0\n67.5\n-0.5\n\n\n\n\n\n\nEach sample is a bit off, but sometimes too high, sometimes too low. On average, we get it right."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#the-central-limit-theorem",
+    "href": "slides/06-uncertainty.html#the-central-limit-theorem",
+    "title": "Sampling and Uncertainty",
+    "section": "The Central Limit Theorem",
+    "text": "The Central Limit Theorem\n\n\n\n\nThe sample means center on the population value\nAnd their distribution is normal\nYou never see this distribution in real life. You only have your one sample. But you know it is there and it is normal.\nWhy do we care that it is normal? Because we know everything about normal distributions. We can calculate exactly how spread out it is, where 95% of values fall, etc. That lets us quantify uncertainty."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#but-what-if-you-get-lazy",
+    "href": "slides/06-uncertainty.html#but-what-if-you-get-lazy",
+    "title": "Sampling and Uncertainty",
+    "section": "But What If You Get Lazy?",
+    "text": "But What If You Get Lazy?\nInstead of sampling randomly, you stand outside the Palestra after a basketball game and measure 30 people who walk out. Repeat three times.\n\n\nShow code\n# Biased samples: people near the basketball court are taller\nbball_means &lt;- round(rnorm(3, mean = 73, sd = 0.8), 1)\n\nkable(\n  data.frame(Sample = 1:3, `Sample Mean` = bball_means,\n             `True Mean` = round(true_mean, 1),\n             `Off By` = bball_means - round(true_mean, 1)),\n  col.names = c(\"Sample\", \"Sample Mean (in)\", \"True Mean (in)\", \"Off By\"),\n  align = \"cccc\"\n)\n\n\n\n\n\nSample\nSample Mean (in)\nTrue Mean (in)\nOff By\n\n\n\n\n1\n71.6\n67.5\n4.1\n\n\n2\n71.7\n67.5\n4.2\n\n\n3\n72.4\n67.5\n4.9"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#the-clt-still-works-here",
+    "href": "slides/06-uncertainty.html#the-clt-still-works-here",
+    "title": "Sampling and Uncertainty",
+    "section": "The CLT Still Works Here",
+    "text": "The CLT Still Works Here\n\n\n\n\nThe distribution of basketball-court sample means is still normal\nIt still centers on a population value\nBut it centers on the basketball-court population value, not the Penn student population value\nThe statistics are doing their job perfectly. You asked the wrong question!\nDewey problem"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#why-1.96",
+    "href": "slides/06-uncertainty.html#why-1.96",
+    "title": "Sampling and Uncertainty",
+    "section": "Why 1.96?",
+    "text": "Why 1.96?\nWe said the sampling distribution is normal. In a normal distribution:"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#the-p-value",
+    "href": "slides/06-uncertainty.html#the-p-value",
+    "title": "Sampling and Uncertainty",
+    "section": "The p-value",
+    "text": "The p-value\nIf the true effect were zero, this is what the sampling distribution would look like. The further out our estimate lands, the less likely it could have arisen by chance."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#p-values-in-practice",
+    "href": "slides/06-uncertainty.html#p-values-in-practice",
+    "title": "Sampling and Uncertainty",
+    "section": "p-values in Practice",
+    "text": "p-values in Practice\n\n\n\n\nSmall p-value (&lt; 0.05): very unlikely under no effect. Reject the null.\nLarge p-value (&gt; 0.05): consistent with no effect. Fail to reject.\nWe usually set the threshold at 0.05, but it could be anything. It is a convention, not a law of nature."
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#the-p-value-1",
+    "href": "slides/06-uncertainty.html#the-p-value-1",
+    "title": "Sampling and Uncertainty",
+    "section": "The p-value",
+    "text": "The p-value"
+  },
+  {
+    "objectID": "slides/06-uncertainty.html#the-p-value-2",
+    "href": "slides/06-uncertainty.html#the-p-value-2",
+    "title": "Sampling and Uncertainty",
+    "section": "The p-value",
+    "text": "The p-value\n\n\nThe p-value is the shaded area: the probability of seeing an estimate at least that extreme if \\(H_0\\) were true."
   }
 ]
