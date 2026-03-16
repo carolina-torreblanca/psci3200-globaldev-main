@@ -17,16 +17,16 @@ week,date,date_end,title,deadline, reading,content,tutorial,assignment
 9,3/9/26,,Spring Break,,,,,
 9,3/11/26,,Spring Break,,,,,
 10,3/16/26,,Crime and Punishment,,"Bateson, 2012;  Weaver and Lerman, 2010",/materials/c3_crime,,/assignments/04_fpdesign
-10,3/18/26,,Health and Development,,"Chen et al., 2013",/materials/c4_health,,
-11,3/23/26,,Gender,,"Chattopadhyay and Duflo, 2004 ",/materials/c5_gender,,
-11,3/25/26,,Migration,,Rozo and Grossman (2025); Sviatschi (2022); Gazeaud (2020),/materials/08_migration,,
+10,3/18/26,,Conflict and Development I: Causes,,"Miguel Satyanath and Sergenti, 2004",/materials/c5_conflict,,
+11,3/23/26,,Conflict and Development II: Consequences,,"Blattman and Annan, 2010",/materials/c6_conflict2,,
+11,3/25/26,,Health and Development,,"Chen et al., 2013",/materials/c4_health,,
 12,3/30/26,,Final Project Essentials,,No readings,/materials/14_fp_essentials,https://github.com/carolina-torreblanca/psci3200-globaldev-main/blob/main/workshops/fp_essentials.qmd,
 12,4/1/26,,Text as Data workshop,,No readings,/materials/c6_tad,,
 13,4/6/26,,Final Project Preparation,,No readings,,/workshops/survey_data,/assignments/05_fptest
 13,4/8/26,,Foreign Aid and NGOs 1 (JS),,Briggs (2016); Briggs (2021),/materials/20_aid1,,
 14,4/13/26,,Foreign Aid and NGOs 2 (JS),,Cruz (2017); Bold et al. (2018),/materials/21_aid2,,
-14,4/15/26,,Conflict and Development,,,,,
-15,4/20/26,,Conflict and Development 2,,,,,
+14,4/15/26,,Gender,,"Chattopadhyay and Duflo, 2004",/materials/c5_gender,,
+15,4/20/26,,Migration,,Rozo and Grossman (2025); Sviatschi (2022); Gazeaud (2020),/materials/08_migration,,
 15,4/22/26,,Climate and Development,,O'Brien-Udry (2023),/materials/22_climate1,,
 16,4/27/26,,What is development?,,Assorted short pieces,/materials/27_conclusion,,
 16,4/29/26,,Final Project Due,,,,,/assignments/final_project

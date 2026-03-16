@@ -1,0 +1,16 @@
+---
+title: "Conflict and Development I: Causes"
+date: 2026-03-18
+---
+
+## Required Readings
+
+- [Miguel, Satyanath, and Sergenti (2004), "Economic Shocks and Civil Conflict"](/files/miguel_satyanath_sergenti_2004.pdf)
+
+## Suggested Readings
+
+- [Blattman and Miguel (2010), "Civil War"](/files/blattman_miguel_2010.pdf)
+
+## Slides
+
+- [Slides](/slides/c5-conflict.html)
