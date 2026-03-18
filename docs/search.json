@@ -12142,14 +12142,14 @@
     "href": "slides/c5-conflict.html#agenda",
     "title": "Conflict and Development I",
     "section": "Agenda",
-    "text": "Agenda\n\nThe Poverty–Violence Correlation\nTwo Mechanisms: Opportunity Cost and Rapacity\nThe Endogeneity Problem\nMiguel, Satyanath, and Sergenti (2004)\nInstrumental Variables\n\n\nFinal Project Design due Wednesday (3/18)"
+    "text": "Agenda\n\nThe Poverty-Violence Correlation\nTwo Mechanisms: Opportunity Cost and Rapacity\nThe Endogeneity Problem\nMiguel, Satyanath, and Sergenti (2004)\nInstrumental Variables in Practice\n\n\nFinal Project Design due TONIGHT"
   },
   {
     "objectID": "slides/c5-conflict.html#last-week-the-state-and-security",
     "href": "slides/c5-conflict.html#last-week-the-state-and-security",
     "title": "Conflict and Development I",
     "section": "Last Week: The State and Security",
-    "text": "Last Week: The State and Security\n\nCrime can mobilize citizens (Bateson)\nBut policing can alienate them (Weaver and Lerman)\n\n\nToday: what happens when security breaks down entirely?\n\nCivil war as the extreme failure of the state\nViolence on a scale that reshapes economies and institutions"
+    "text": "Last Week: The State and Security\n\nCrime can mobilize citizens (Bateson)\nBut policing can alienate them (Weaver and Lerman)\n\n\nToday: what happens when security breaks down entirely?\n\nCivil war as failure of internal security provision\nViolence on a scale that reshapes economies and institutions"
   },
   {
     "objectID": "slides/c5-conflict.html#the-scale-of-civil-war",
@@ -12212,7 +12212,7 @@
     "href": "slides/c5-conflict.html#the-research-question",
     "title": "Conflict and Development I",
     "section": "The Research Question",
-    "text": "The Research Question\nDoes economic growth reduce the likelihood of civil conflict in sub-Saharan Africa?\n\n\n\nDo negative economic shocks — caused by drought — increase the probability of civil war onset?\n41 sub-Saharan African countries, 1981–1999"
+    "text": "The Research Question\nDo negative rainfall shocks (droughts) increase the probability of civil conflict?\n\n\n41 sub-Saharan African countries, 1981-1999\nThe instrument is rainfall variation: less rain \\(\\rightarrow\\) lower agricultural output \\(\\rightarrow\\) lower economic growth\nThey use rainfall to isolate the clean part of income variation"
   },
   {
     "objectID": "slides/c5-conflict.html#the-identification-problem",
@@ -12275,7 +12275,7 @@
     "href": "slides/c5-conflict.html#discussion-questions",
     "title": "Conflict and Development I",
     "section": "Discussion Questions",
-    "text": "Discussion Questions\n\n\nIf economic shocks cause conflict, what policies could break the cycle?\nIs the opportunity cost argument sufficient, or do we also need commitment problems?\nHow do natural resources (oil, diamonds) complicate the picture?\nHow does this connect to what we discussed about crime and the state?"
+    "text": "Discussion Questions\n\n\nIf economic shocks cause conflict, what policies could break the cycle?\nHow do natural resources (oil, diamonds) complicate the picture? Which channel dominates?\nCan you think of other instruments for income that might work in different settings?\nHow does this connect to what we discussed about crime and the state?"
   },
   {
     "objectID": "slides/c5-conflict.html#how-common-is-civil-war",
@@ -12289,14 +12289,14 @@
     "href": "slides/c5-conflict.html#civil-war-by-the-numbers",
     "title": "Conflict and Development I",
     "section": "Civil War by the Numbers",
-    "text": "Civil War by the Numbers\n\n\nCivil wars have caused three times as many deaths as wars between states since WWII (Fearon and Laitin, 2003)\nIn sub-Saharan Africa, 27% of country-years experienced civil conflict between 1981 and 1999 (Miguel, Satyanath, and Sergenti, 2004)\nThe number of countries experiencing internal conflict peaked around 35–37 in the early 1990s and again in the mid-2010s (UCDP)\nOverwhelmingly concentrated in the poorest countries"
+    "text": "Civil War by the Numbers\n\n\nCivil wars have caused three times as many deaths as wars between states since WWII (Fearon and Laitin, 2003)\nIn sub-Saharan Africa, 27% of country-years experienced civil conflict between 1981 and 1999 (Miguel, Satyanath, and Sergenti, 2004)\nThe number of countries experiencing internal conflict peaked around 35-37 in the early 1990s and again in the mid-2010s (UCDP)\nOverwhelmingly concentrated in the poorest countries"
   },
   {
     "objectID": "slides/c5-conflict.html#the-conflict-trap",
     "href": "slides/c5-conflict.html#the-conflict-trap",
     "title": "Conflict and Development I",
     "section": "The Conflict Trap",
-    "text": "The Conflict Trap\n\n\nPoverty \\(\\rightarrow\\) conflict: poor countries are more likely to have civil wars\nConflict \\(\\rightarrow\\) poverty: civil war destroys economies\nThis is the conflict trap (Collier et al., 2003)\n\n\n\nBut does poverty actually cause war? Or is the correlation driven by something else?"
+    "text": "The Conflict Trap\nDoes poverty actually cause war? Or does civil war cause poverty? Or are they both caused by something else, like geography?"
   },
   {
     "objectID": "slides/c5-conflict.html#the-empirical-correlation",
@@ -12324,14 +12324,14 @@
     "href": "slides/c5-conflict.html#what-is-opportunity-cost",
     "title": "Conflict and Development I",
     "section": "What Is Opportunity Cost?",
-    "text": "What Is Opportunity Cost?\nThe opportunity cost of doing something is what you give up by doing it.\n\nExample:\n\n\nThe opportunity cost of coming to class today is whatever else you could be doing — studying, working a shift, sleeping\nIf you had a final exam right now, the opportunity cost of being here would be very high\nIf you had nothing else to do, it would be very low"
+    "text": "What Is Opportunity Cost?\nThe opportunity cost of doing something is what you give up by doing it\n\n\n\nThe opportunity cost of joining a rebel group is everything else you could be doing instead\nEarning wages, spending time with your family, going to school, farming your land\nAll of that is increasing in outside wages: the better the economy, the more you give up by fighting"
   },
   {
     "objectID": "slides/c5-conflict.html#opportunity-cost-and-conflict",
     "href": "slides/c5-conflict.html#opportunity-cost-and-conflict",
     "title": "Conflict and Development I",
     "section": "Opportunity Cost and Conflict",
-    "text": "Opportunity Cost and Conflict\nNow apply this to conflict:\n\n\nThe opportunity cost of joining a rebel group is the income you could be earning instead\nIf wages are $1/day, fighting doesn’t cost you much\nIf wages are $50/day, fighting means giving up a lot\nPoverty lowers the opportunity cost of fighting \\(\\rightarrow\\) more people choose violence"
+    "text": "Opportunity Cost and Conflict\n\n\nIf wages are $1/day, joining a militia doesn’t cost you much\nIf wages are $50/day, you are giving up a lot\nPoverty lowers the opportunity cost of fighting \\(\\rightarrow\\) more people choose violence\n\n\n\nThis is the core intuition linking poverty to conflict"
   },
   {
     "objectID": "slides/c5-conflict.html#dal-bo-and-dal-bo-formalizing-the-intuition",
@@ -12345,7 +12345,7 @@
     "href": "slides/c5-conflict.html#but-wait-the-rapacity-effect",
     "title": "Conflict and Development I",
     "section": "But Wait: The Rapacity Effect",
-    "text": "But Wait: The Rapacity Effect\n\n\nSo far: poverty makes fighting cheaper. Fewer resources \\(\\rightarrow\\) more conflict\nBut what about the opposite direction?\nMore resources could mean more things to fight over\nIf oil is discovered, or land becomes more valuable, groups may fight harder to capture it\nThis is the rapacity effect: wealth increases can ALSO cause conflict\n\n\n\nSo which is it? Does more wealth cause peace or war?"
+    "text": "But Wait: The Rapacity Effect\n\n\nSo far: poverty makes fighting cheaper \\(\\rightarrow\\) more conflict\nBut what about the opposite?\nMore resources could mean more things to fight over\nOil is discovered, land becomes more valuable \\(\\rightarrow\\) groups fight harder to capture it\nThis is the rapacity effect: wealth increases can ALSO cause conflict\n\n\n\nSo which is it? Does more wealth cause peace or war?"
   },
   {
     "objectID": "slides/c5-conflict.html#it-depends-on-the-type-of-economy",
@@ -12429,21 +12429,21 @@
     "href": "slides/c5-conflict.html#what-is-an-instrumental-variable",
     "title": "Conflict and Development I",
     "section": "What Is an Instrumental Variable?",
-    "text": "What Is an Instrumental Variable?\n\n\nIncome and conflict are tangled together — we cannot separate cause from effect\nWe need a third variable — an “instrument” — that:\n\nAffects income (it changes how much people earn)\nDoes NOT directly cause conflict (only matters through income)\nIs essentially random (nobody controls it)\n\n\n\n\nNature running an experiment for us: we can’t randomly assign poverty, but nature randomly assigns droughts."
+    "text": "What Is an Instrumental Variable?\n\n\nIncome and conflict are tangled together — we cannot separate cause from effect\nWe need a third variable — an “instrument” — that:\n\nAffects income (changes how much people earn)\nDoes NOT directly cause conflict (only matters through income)\nIs essentially random (nobody controls it)"
   },
   {
     "objectID": "slides/c5-conflict.html#the-three-conditions",
     "href": "slides/c5-conflict.html#the-three-conditions",
     "title": "Conflict and Development I",
     "section": "The Three Conditions",
-    "text": "The Three Conditions\nFor a variable \\(Z\\) to be a valid instrument for \\(X\\) (income) in predicting \\(Y\\) (conflict):\n\n\nRelevance: \\(Z\\) must affect \\(X\\)\n\nDoes rainfall affect income? Yes — droughts destroy harvests\n\nExclusion restriction: \\(Z\\) affects \\(Y\\) only through \\(X\\)\n\nDoes rainfall cause conflict for reasons other than income? We need to argue no\n\nIndependence: \\(Z\\) is as-good-as-random\n\nDoes anyone control the weather? No"
+    "text": "The Three Conditions\nFor \\(Z\\) to be a valid instrument for \\(X\\) in estimating \\(X \\rightarrow Y\\):\n\n\nRelevance: \\(Z\\) actually moves \\(X\\)\n\n“Does the instrument shift the treatment?”\n\nExclusion restriction: \\(Z\\) has no direct arrow to \\(Y\\)\n\n“The ONLY reason \\(Z\\) matters for \\(Y\\) is because it changes \\(X\\)”\n\nIndependence: \\(U\\) has no arrow to \\(Z\\)\n\n“Confounders don’t affect the instrument”"
   },
   {
     "objectID": "slides/c5-conflict.html#iv-in-a-picture",
     "href": "slides/c5-conflict.html#iv-in-a-picture",
     "title": "Conflict and Development I",
     "section": "IV in a Picture",
-    "text": "IV in a Picture\n\\[\\text{Rainfall (Z)} \\longrightarrow \\text{Income (X)} \\longrightarrow \\text{Conflict (Y)}\\]\n\\[\\text{Confounders (institutions, ethnicity, ...)} \\longrightarrow \\text{Income (X)} \\text{ AND } \\text{Conflict (Y)}\\]\n\n\\[\\text{But: Confounders} \\not\\longrightarrow \\text{Rainfall}\\]\n\n\nConfounders affect both Income and Conflict — that’s the endogeneity problem\nBut they do NOT affect Rainfall — that’s why the instrument works\nRainfall gives us clean variation in income"
+    "text": "IV in a Picture\n\\[\\text{Instrument (Z)} \\longrightarrow \\text{X} \\longrightarrow \\text{Y}\\]\n\\[\\text{Confounders} \\longrightarrow \\text{X} \\text{ AND } \\text{Y}\\]\n\n\\[\\text{But: Confounders} \\not\\longrightarrow \\text{Z}\\]\n\n\nConfounders mess up the \\(X \\rightarrow Y\\) relationship — that’s the endogeneity problem\nBut they do NOT affect \\(Z\\) — that’s why the instrument works\n\\(Z\\) gives us clean variation in \\(X\\)"
   },
   {
     "objectID": "slides/c5-conflict.html#how-2sls-works-simply",
@@ -12464,7 +12464,7 @@
     "href": "slides/c5-conflict.html#first-stage-does-rainfall-predict-growth",
     "title": "Conflict and Development I",
     "section": "First Stage: Does Rainfall Predict Growth?",
-    "text": "First Stage: Does Rainfall Predict Growth?"
+    "text": "First Stage: Does Rainfall Predict Growth?\n\n\nCurrent and lagged rainfall growth significantly predict economic growth\nA drought leads to roughly a 1-2 percentage point decline in GDP growth"
   },
   {
     "objectID": "slides/c5-conflict.html#first-stage-the-verdict",
@@ -12499,21 +12499,21 @@
     "href": "slides/c5-conflict.html#threats-to-inference",
     "title": "Conflict and Development I",
     "section": "Threats to Inference",
-    "text": "Threats to Inference\n\n\nIs the exclusion restriction plausible? Could rainfall affect conflict directly?\n\nHarder to fight in mud? Drought causes migration?\nAuthors argue these channels are small relative to the economic channel\n\nWeak instrument? F-statistic of 4.5 is below 10\n\nBut the reduced form (rainfall \\(\\rightarrow\\) conflict directly) is also significant\n\nExternal validity? Only sub-Saharan Africa, only agrarian economies"
+    "text": "Threats to Inference\n\n\nExclusion restriction: could rainfall affect conflict directly?\n\nHarder to fight in mud? Drought causes migration?\nAuthors argue these are small relative to the economic channel\n\nWeak instrument: F-statistic of 4.5 is below 10\n\nBut the reduced form (rainfall \\(\\rightarrow\\) conflict directly) is also significant\n\nExternal validity: only sub-Saharan Africa, only agrarian economies"
   },
   {
     "objectID": "slides/c5-conflict.html#implications",
     "href": "slides/c5-conflict.html#implications",
     "title": "Conflict and Development I",
     "section": "Implications",
-    "text": "Implications\n\n\nEconomic shocks cause civil war — the opportunity cost mechanism is supported\nConsistent with the labor-intensive channel from Dal Bo and Dal Bo\nPolicy implication: economic interventions (crop insurance, irrigation, diversification, aid during droughts) could help prevent conflict"
+    "text": "Implications\n\n\nEconomic shocks cause civil war: the opportunity cost mechanism is supported\nConsistent with the labor-intensive channel from Dal Bo and Dal Bo\nPolicy implication: economic interventions (crop insurance, irrigation, diversification, aid during droughts) could help prevent conflict"
   },
   {
     "objectID": "slides/c5-conflict.html#next-class",
     "href": "slides/c5-conflict.html#next-class",
     "title": "Conflict and Development I",
     "section": "Next Class",
-    "text": "Next Class\nConflict and Development II: The Consequences of War\n\nReading: Blattman and Annan (2010) — “The Consequences of Child Soldiering”\nWe examined what causes conflict. Next: what does conflict destroy?"
+    "text": "Next Class\nConflict and Development II: The Consequences of War\n\nBlattman and Annan (2010): “The Consequences of Child Soldiering”\nMiguel, Saiegh, and Satyanath (2011): Civil War Exposure and Violence (on the Soccer Pitch)"
   },
   {
     "objectID": "slides/c6-conflict2.html#agenda",
@@ -12779,21 +12779,21 @@
     "href": "slides/c5-conflict.html#three-problems-with-a-naive-regression",
     "title": "Conflict and Development I",
     "section": "Three Problems with a Naive Regression",
-    "text": "Three Problems with a Naive Regression\n\n\nReverse causality: conflict destroys income — we confuse the effect with the cause\nOmitted variables: institutions, ethnic tensions, geography may cause both poverty and conflict\nAnticipation: if people expect instability, they stop investing \\(\\rightarrow\\) income falls before conflict starts\n\n\n\nWe need something that changes income but has no direct effect on conflict.\n\n\nWe can’t randomly assign poverty. But nature randomly assigns droughts."
+    "text": "Three Problems with a Naive Regression\n\n\nReverse causality: conflict destroys income, so we confuse the effect with the cause\nOmitted variables: institutions, ethnic tensions, geography may cause both poverty and conflict\nAnticipation: if people expect instability, they stop investing \\(\\rightarrow\\) income falls before conflict starts\n\n\n\nWe need something that changes income but has no direct effect on conflict"
   },
   {
     "objectID": "slides/c5-conflict.html#the-setting",
     "href": "slides/c5-conflict.html#the-setting",
     "title": "Conflict and Development I",
     "section": "The Setting",
-    "text": "The Setting\n\n\nSub-Saharan Africa: the region with the most civil wars since 1960\nAlso the poorest region and the most agriculturally dependent\nAgriculture is overwhelmingly rain-fed\nA bad rainfall year means a bad economic year"
+    "text": "The Setting\n\n\nSub-Saharan Africa: the region with the most civil wars since 1960\nAlso the poorest and most agriculturally dependent region\nAgriculture is overwhelmingly rain-fed: only ~1% of cropland irrigated\nWhen rainfall drops, harvests fail, and the economy contracts"
   },
   {
     "objectID": "slides/c5-conflict.html#how-2sls-works",
     "href": "slides/c5-conflict.html#how-2sls-works",
     "title": "Conflict and Development I",
     "section": "How 2SLS Works",
-    "text": "How 2SLS Works\nTwo-Stage Least Squares:\n\n\nStage 1 (First Stage): Regress income on rainfall\n\n“How much does rainfall predict economic growth?”\nIf the answer is “a lot,” we have a good instrument\n\nStage 2 (Second Stage): Regress conflict on predicted income (from Stage 1)\n\nWe use only the part of income that was caused by rainfall\nThis strips out the confounding — what’s left is the causal effect"
+    "text": "How 2SLS Works\nTwo-Stage Least Squares:\n\n\nStage 1: Regress \\(X\\) on \\(Z\\)\n\nThis gives us \\(\\widehat{X}\\): the part of \\(X\\) that is explained by \\(Z\\)\n\\(\\widehat{X}\\) contains only clean variation; the dirty part is left in the residuals\n\nStage 2: Regress \\(Y\\) on \\(\\widehat{X}\\)\n\nWe threw away the contaminated variation and kept only the clean part\nWhat’s left is the causal effect of \\(X\\) on \\(Y\\)"
   },
   {
     "objectID": "slides/c5-conflict.html#first-stage-results",
@@ -12807,6 +12807,230 @@
     "href": "slides/c5-conflict.html#ols-vs.-iv",
     "title": "Conflict and Development I",
     "section": "OLS vs. IV",
-    "text": "OLS vs. IV\n\n\nOLS estimates are much smaller and often insignificant\nIV estimates are larger — why?\nMeasurement error in African income data \\(\\rightarrow\\) attenuation bias in OLS\nIV uses cleaner variation (rainfall) and corrects this\nAlso possible: anticipation bias — investment falls before war starts, contaminating OLS"
+    "text": "OLS vs. IV\n\n\nOLS estimates are much smaller and often insignificant\nIV estimates are larger — why?\nMeasurement error in African income data \\(\\rightarrow\\) attenuation bias in OLS\nAnticipation bias — investment falls before war starts, contaminating OLS\nIV isolates the part of income variation driven by rainfall — cleaner signal"
+  },
+  {
+    "objectID": "slides/c5-conflict.html",
+    "href": "slides/c5-conflict.html",
+    "title": "Conflict and Development I",
+    "section": "",
+    "text": "The Poverty–Violence Correlation\nTwo Mechanisms: Opportunity Cost and Rapacity\nThe Endogeneity Problem\nMiguel, Satyanath, and Sergenti (2004)\nInstrumental Variables in Practice\n\n. . .\nFinal Project Design due TONIGHT"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#arguments-that-poverty-causes-violence",
+    "href": "slides/c5-conflict.html#arguments-that-poverty-causes-violence",
+    "title": "Conflict and Development I",
+    "section": "Arguments That Poverty Causes Violence",
+    "text": "Arguments That Poverty Causes Violence\n\n\nOpportunity cost: when you have nothing to lose, fighting is cheap\nState weakness: poor states cannot buy off or suppress rebels\nGrievance: deprivation and inequality breed resentment"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#arguments-that-it-does-not",
+    "href": "slides/c5-conflict.html#arguments-that-it-does-not",
+    "title": "Conflict and Development I",
+    "section": "Arguments That It Does Not",
+    "text": "Arguments That It Does Not\n\n\nBad institutions may cause both poverty and war\nGeography could cause both\nThe causation could go in the other direction: conflict causes poverty\n\n\n\nToday we focus on two mechanisms that formalize the “yes” side"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#dal-bo-and-dal-bo-a-model",
+    "href": "slides/c5-conflict.html#dal-bo-and-dal-bo-a-model",
+    "title": "Conflict and Development I",
+    "section": "Dal Bo and Dal Bo: A Model",
+    "text": "Dal Bo and Dal Bo: A Model\nA formal model of conflict between producers and predators:\n\n\nPeople choose between two activities: produce (earn wages) or fight (take what others produce)\nWhen wages fall, producing becomes less attractive\nFighting becomes relatively better \\(\\rightarrow\\) more insurrection"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#it-depends-can-you-pillage-it",
+    "href": "slides/c5-conflict.html#it-depends-can-you-pillage-it",
+    "title": "Conflict and Development I",
+    "section": "It Depends: Can You Pillage It?",
+    "text": "It Depends: Can You Pillage It?\n\n\nLabor-intensive wealth (agriculture, manufacturing):\n\nYou can’t steal someone’s harvest without a workforce: the value is in the labor\nA good economic shock to labor intensive products \\(\\rightarrow\\) higher wages \\(\\rightarrow\\) higher opportunity cost \\(\\rightarrow\\) peace\n\nCapital-intensive wealth (oil, minerals, diamonds):\n\nYou CAN seize a mine or an oil field: the value is in the ground\nA good economic shock to capital intensive products \\(\\rightarrow\\) more valuable prize to capture \\(\\rightarrow\\) conflict"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#the-takeaway",
+    "href": "slides/c5-conflict.html#the-takeaway",
+    "title": "Conflict and Development I",
+    "section": "The Takeaway",
+    "text": "The Takeaway\n\n\nPoverty \\(\\rightarrow\\) low opportunity cost \\(\\rightarrow\\) insurrection (opportunity cost channel)\nWealth \\(\\rightarrow\\) more to fight over \\(\\rightarrow\\) conflict (rapacity channel)\nWhich one dominates depends on the economic structure of the country\n\n\n\nBut how do we prove any of this? We can’t randomly make countries poor."
+  },
+  {
+    "objectID": "slides/c5-conflict.html#the-key-results",
+    "href": "slides/c5-conflict.html#the-key-results",
+    "title": "Conflict and Development I",
+    "section": "The Key Results",
+    "text": "The Key Results\n\n\nFirst stage: rainfall strongly predicts economic growth in rain-fed agricultural economies\nSecond stage: a 5 percentage-point decline in economic growth increases the likelihood of civil conflict by roughly 12 percentage points\nThat is nearly one-half of the average likelihood of conflict in the sample\nThe effect works through lagged growth — last year’s drought predicts this year’s conflict"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#connecting-back-to-theory",
+    "href": "slides/c5-conflict.html#connecting-back-to-theory",
+    "title": "Conflict and Development I",
+    "section": "Connecting Back to Theory",
+    "text": "Connecting Back to Theory\n\n\nRainfall affects agricultural income: labor-intensive\nYou can’t pillage labor so this is a shock to the opportunity cost channel\nDrought \\(\\rightarrow\\) harvest falls \\(\\rightarrow\\) wages fall \\(\\rightarrow\\) opportunity cost of fighting falls \\(\\rightarrow\\) conflict rises\nMSS provides evidence for the Dal Bo and Dal Bo mechanism"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#iv-in-r",
+    "href": "slides/c5-conflict.html#iv-in-r",
+    "title": "Conflict and Development I",
+    "section": "IV in R",
+    "text": "IV in R\n\nlibrary(ivreg)\n\n# OLS: uses all variation in growth (clean + dirty)\nols &lt;- lm(conflict ~ growth, data = mss)\n\n# IV: uses only the part of growth driven by rainfall\niv &lt;- ivreg(conflict ~ growth | rainfall, data = mss)\n\nsummary(iv, diagnostics = TRUE)"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#what-the-iv-output-tells-you",
+    "href": "slides/c5-conflict.html#what-the-iv-output-tells-you",
+    "title": "Conflict and Development I",
+    "section": "What the IV Output Tells You",
+    "text": "What the IV Output Tells You\n\n# Key things to check:\n# 1. First-stage F-statistic — is the instrument strong?\n#    Rule of thumb: F &gt; 10 (MSS gets 4.5, borderline)\n\n# 2. Coefficients — the causal effect of growth on conflict\n#    MSS: 5pp decline in growth → ~12pp increase in conflict\n\n# 3. Compare to OLS — if IV &gt; OLS, likely measurement error\n#    or anticipation bias in OLS"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#when-is-iv-useful",
+    "href": "slides/c5-conflict.html#when-is-iv-useful",
+    "title": "Conflict and Development I",
+    "section": "When Is IV Useful?",
+    "text": "When Is IV Useful?\n\n\nWhen you suspect endogeneity: reverse causality, omitted variables, anticipation\nWhen you can find a variable that is:\n\nRelevant (actually moves \\(X\\))\nExcludable (only affects \\(Y\\) through \\(X\\))\nIndependent (not driven by confounders)\n\nThe hardest part is always the exclusion restriction: you can’t test it, you have to argue it"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#is-the-relationship-causal",
+    "href": "slides/c5-conflict.html#is-the-relationship-causal",
+    "title": "Conflict and Development I",
+    "section": "Is the Relationship Causal?",
+    "text": "Is the Relationship Causal?\nDoes poverty actually cause war?"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#the-theoretical-takeaway",
+    "href": "slides/c5-conflict.html#the-theoretical-takeaway",
+    "title": "Conflict and Development I",
+    "section": "The Theoretical Takeaway",
+    "text": "The Theoretical Takeaway\n\n\nPoverty \\(\\rightarrow\\) low opportunity cost \\(\\rightarrow\\) insurrection (opportunity cost channel)\nWealth \\(\\rightarrow\\) more to fight over \\(\\rightarrow\\) conflict (rapacity channel)\nWhich one dominates depends on the economic structure of the country\n\n\n\nBut how do we prove any of this? We can’t randomly make countries poor"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#the-main-results",
+    "href": "slides/c5-conflict.html#the-main-results",
+    "title": "Conflict and Development I",
+    "section": "The Main Results",
+    "text": "The Main Results\n\n\nFirst stage: rainfall strongly predicts economic growth in rain-fed agricultural economies\nSecond stage: a 5 percentage-point decline in economic growth increases the likelihood of civil conflict by roughly 12 percentage points\nThat is nearly one-half of the average likelihood of conflict in the sample\nThe effect works through lagged growth — last year’s drought predicts this year’s conflict"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#the-idea",
+    "href": "slides/c5-conflict.html#the-idea",
+    "title": "Conflict and Development I",
+    "section": "The Idea",
+    "text": "The Idea\nImagine you want to know if \\(X\\) causes \\(Y\\), but they are tangled together:\n\n\n\\(X\\) might cause \\(Y\\)\nBut \\(Y\\) might also cause \\(X\\)\nAnd some third thing might cause both\n\n\n\nYou need a backdoor — a variable that nudges \\(X\\) but has nothing to do with \\(Y\\) except through \\(X\\)."
+  },
+  {
+    "objectID": "slides/c5-conflict.html#an-everyday-analogy",
+    "href": "slides/c5-conflict.html#an-everyday-analogy",
+    "title": "Conflict and Development I",
+    "section": "An Everyday Analogy",
+    "text": "An Everyday Analogy\nDoes drinking coffee make you more productive?\n\n\nProblem: maybe productive people just drink more coffee\nWhat if your commute route determines whether you pass a coffee shop?\nYour commute route affects your coffee intake…\n…but has no direct effect on your productivity\nSo any change in productivity linked to commute-driven coffee is causal\n\n\n\nThe commute route is the instrument."
+  },
+  {
+    "objectID": "slides/c5-conflict.html#why-rainfall-works-as-an-instrument",
+    "href": "slides/c5-conflict.html#why-rainfall-works-as-an-instrument",
+    "title": "Conflict and Development I",
+    "section": "Why Rainfall Works as an Instrument",
+    "text": "Why Rainfall Works as an Instrument\n\n\nRelevance: droughts destroy harvests \\(\\rightarrow\\) lower income\nExclusion: rainfall affects conflict only because it changes income\nIndependence: nobody controls the weather\n\n\n\\[\\text{Rainfall} \\longrightarrow \\text{Economic Growth} \\longrightarrow \\text{Conflict}\\]"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#second-stage-does-income-cause-conflict",
+    "href": "slides/c5-conflict.html#second-stage-does-income-cause-conflict",
+    "title": "Conflict and Development I",
+    "section": "Second Stage: Does Income Cause Conflict?",
+    "text": "Second Stage: Does Income Cause Conflict?\n\n\nA 5 percentage-point decline in economic growth increases the likelihood of civil conflict by roughly 12 percentage points\nThat is nearly one-half of the average likelihood of conflict in the sample\nThe effect works through lagged growth — last year’s drought predicts this year’s conflict"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#ols-vs.-iv-why-does-it-matter",
+    "href": "slides/c5-conflict.html#ols-vs.-iv-why-does-it-matter",
+    "title": "Conflict and Development I",
+    "section": "OLS vs. IV: Why Does It Matter?",
+    "text": "OLS vs. IV: Why Does It Matter?\n\n\nOLS estimates are much smaller and often insignificant\nIV estimates are larger — why?\nMeasurement error in African income data \\(\\rightarrow\\) attenuation bias in OLS\nAnticipation bias — investment falls before war starts, contaminating OLS\nIV isolates the part of income variation driven by rainfall — cleaner signal"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#what-to-look-for-in-iv-output",
+    "href": "slides/c5-conflict.html#what-to-look-for-in-iv-output",
+    "title": "Conflict and Development I",
+    "section": "What to Look For in IV Output",
+    "text": "What to Look For in IV Output\n\n# 1. First-stage F-statistic\n#    Is the instrument strong? Rule of thumb: F &gt; 10\n#    MSS gets 4.5 — borderline weak\n\n# 2. IV coefficients vs. OLS coefficients\n#    If IV &gt; OLS: measurement error or anticipation bias\n#    If IV &lt; OLS: OLS was picking up reverse causality\n\n# 3. The exclusion restriction\n#    You CANNOT test this statistically\n#    You have to argue it. This is always the hard part."
+  },
+  {
+    "objectID": "slides/c5-conflict.html#the-core-intuition",
+    "href": "slides/c5-conflict.html#the-core-intuition",
+    "title": "Conflict and Development I",
+    "section": "The Core Intuition",
+    "text": "The Core Intuition\nThink of \\(X\\) (income) as having two parts:\n\n\nClean variation: changes in income driven by forces that have nothing to do with conflict\nDirty variation: changes in income tangled up with confounders, reverse causality, anticipation\n\n\n\nOLS uses all the variation in \\(X\\): clean and dirty mixed together\n\n\nAn instrument \\(Z\\) lets us extract only the clean part. If \\(Z\\) moves \\(X\\) but has absolutely no relationship with \\(Y\\) except through \\(X\\), then the piece of \\(X\\) that \\(Z\\) explains is pure signal"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#an-analogy",
+    "href": "slides/c5-conflict.html#an-analogy",
+    "title": "Conflict and Development I",
+    "section": "An Analogy",
+    "text": "An Analogy\nYou want to know if class size (\\(X\\)) affects test scores (\\(Y\\)).\n\n\nProblem: rich districts have small classes AND high scores. Is it the class size or the wealth?\nNow imagine some districts get randomly assigned extra funding (\\(Z\\)) through a lottery\nLottery winners hire more teachers \\(\\rightarrow\\) smaller classes\nThe lottery has no direct effect on test scores — it only matters because it changes class size\nSo: compare scores in lottery-winner districts vs. losers \\(\\rightarrow\\) causal effect of class size\n\n\n\nThe lottery is the instrument. It gives us clean variation in class size."
+  },
+  {
+    "objectID": "slides/c5-conflict.html#iv-as-a-dag",
+    "href": "slides/c5-conflict.html#iv-as-a-dag",
+    "title": "Conflict and Development I",
+    "section": "IV as a DAG",
+    "text": "IV as a DAG"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#when-does-the-exclusion-restriction-fail",
+    "href": "slides/c5-conflict.html#when-does-the-exclusion-restriction-fail",
+    "title": "Conflict and Development I",
+    "section": "When Does the Exclusion Restriction Fail?",
+    "text": "When Does the Exclusion Restriction Fail?\nThe exclusion restriction says: \\(Z\\) affects \\(Y\\) only through \\(X\\). No other path.\n\nIt would fail if \\(Z\\) affects something else that also affects \\(Y\\):\n\n\nExample: rain \\(\\rightarrow\\) roads wash out \\(\\rightarrow\\) harder to move troops \\(\\rightarrow\\) conflict changes (not through income!)\nExample: rain \\(\\rightarrow\\) disease outbreaks \\(\\rightarrow\\) population displacement \\(\\rightarrow\\) conflict changes\nExample: rain \\(\\rightarrow\\) crop failure \\(\\rightarrow\\) migration \\(\\rightarrow\\) conflict in neighboring regions\n\n\n\n\nYou cannot test this statistically. You have to argue it. This is always the hardest part of IV."
+  },
+  {
+    "objectID": "slides/c5-conflict.html#an-example",
+    "href": "slides/c5-conflict.html#an-example",
+    "title": "Conflict and Development I",
+    "section": "An Example",
+    "text": "An Example\nDoes education (\\(X\\)) increase earnings (\\(Y\\))?\n\n\nDirty variation: motivated people get more education AND earn more: is it the schooling or the motivation?\nObservation: people who grew up closer to a college tend to get more education (Card, 1993)\nProximity to a college (\\(Z\\)) shifts education for geographic reasons, not because of ability or motivation\nThe part of education explained by distance is clean: free of the motivation confound\nUse only that clean part \\(\\rightarrow\\) causal effect of education on earnings"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#second-stage-the-causal-effect",
+    "href": "slides/c5-conflict.html#second-stage-the-causal-effect",
+    "title": "Conflict and Development I",
+    "section": "Second Stage: The Causal Effect",
+    "text": "Second Stage: The Causal Effect\nThe decline in economic growth caused by drought increases conflict:\n\n\nA 5 percentage-point decline in rainfall-driven growth increases the likelihood of civil conflict by roughly 12 percentage points\nThe effect comes through lagged growth: last year’s drought predicts this year’s conflict"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#does-the-exclusion-restriction-hold",
+    "href": "slides/c5-conflict.html#does-the-exclusion-restriction-hold",
+    "title": "Conflict and Development I",
+    "section": "Does the Exclusion Restriction Hold?",
+    "text": "Does the Exclusion Restriction Hold?\nThe instrument is only valid if rainfall affects conflict exclusively through income. But what if:\n\n\nDrought \\(\\rightarrow\\) roads deteriorate \\(\\rightarrow\\) harder to move troops \\(\\rightarrow\\) conflict changes for logistical reasons, not income\nDrought \\(\\rightarrow\\) disease outbreaks \\(\\rightarrow\\) displacement \\(\\rightarrow\\) conflict over new territory\nDrought \\(\\rightarrow\\) crop failure \\(\\rightarrow\\) migration to neighboring regions \\(\\rightarrow\\) conflict there\n\n\n\nThe authors argue these channels are small relative to the economic channel. You cannot test this statistically: you have to argue it"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#weak-instrument",
+    "href": "slides/c5-conflict.html#weak-instrument",
+    "title": "Conflict and Development I",
+    "section": "Weak Instrument?",
+    "text": "Weak Instrument?\n\n\nF-statistic of 4.5 is below the conventional threshold of 10\nThis means the instrument may not be strong enough to fully trust the IV estimates\nHowever, the reduced form (rainfall \\(\\rightarrow\\) conflict directly, skipping the two stages) is also significant\nExternal validity is limited: only sub-Saharan Africa, only agrarian economies"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#the-poverty-trap",
+    "href": "slides/c5-conflict.html#the-poverty-trap",
+    "title": "Conflict and Development I",
+    "section": "The Poverty Trap",
+    "text": "The Poverty Trap\nWe now have evidence running in both directions:\n\n\nPoverty \\(\\rightarrow\\) conflict (MSS: economic shocks cause civil war)\nConflict \\(\\rightarrow\\) poverty (next class: war destroys human capital, infrastructure, institutions)\nCountries can get stuck: poverty breeds conflict, conflict deepens poverty\n\n\n\nHow do you break the cycle? How do countries move from vicious spirals to virtuous ones?"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#discussion-1",
+    "href": "slides/c5-conflict.html#discussion-1",
+    "title": "Conflict and Development I",
+    "section": "Discussion",
+    "text": "Discussion\n\n\nMSS show that droughts cause conflict in agrarian economies. What would you expect in oil-rich countries: more conflict or less?\nBateson argued crime can push citizens toward political participation. Could the same logic apply to civil war?\nWe’ve now seen the state fail at two scales: policing and civil war. What makes some weak states experience crime while others tip into full-scale war?"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#what-is-a-civil-war",
+    "href": "slides/c5-conflict.html#what-is-a-civil-war",
+    "title": "Conflict and Development I",
+    "section": "What Is a Civil War?",
+    "text": "What Is a Civil War?\nWhat makes something a “civil war”?\n. . . Every definition is contested. One that is widely used is the Uppsala/PRIO definition:\n\n“A contested incompatibility which concerns government and/or territory where the use of armed force between two parties, of which at least one is the government of a state, results in at least 25 battle-related deaths”\n\n\nNote what this excludes: one-sided violence against civilians, non-state conflict between militias, anything below 25 deaths"
+  },
+  {
+    "objectID": "slides/c5-conflict.html#from-crime-to-civil-war",
+    "href": "slides/c5-conflict.html#from-crime-to-civil-war",
+    "title": "Conflict and Development I",
+    "section": "From Crime to Civil War",
+    "text": "From Crime to Civil War\nLast class we talked about crime and the state:\n\n\nCrime emerges when the state fails to provide internal security\nCivil war: some people actively fight the state\n\n\n\nIs there a continuum from crime to organized violence to civil war? Or are these fundamentally different phenomena?"
   }
 ]
