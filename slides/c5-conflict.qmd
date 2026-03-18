@@ -1,6 +1,6 @@
 ---
 title: "Conflict and Development I"
-subtitle: "The Causes of War"
+subtitle: "The Causes of Civil War"
 author: "Carolina Torreblanca"
 institute: "University of Pennsylvania"
 

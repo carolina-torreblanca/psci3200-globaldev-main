@@ -1,6 +1,6 @@
 ---
 title: "Conflict and Development II"
-subtitle: "The Consequences of War"
+subtitle: "The Consequences of Civil War"
 author: "Carolina Torreblanca"
 institute: "University of Pennsylvania"
 
@@ -29,152 +29,75 @@ format:
 
 ## Agenda
 
-1. A Puzzle: Soccer and Civil War
-2. The Costs of Civil War
-3. Consequences of Child Soldiering (Blattman and Annan, 2010)
-
-# A Puzzle
-
-## Does War Follow You Home?
-
-::: incremental
-- Miguel, Saiegh, and Satyanath (2011) study **thousands of professional soccer players** in European leagues
-- They compare players from countries with civil war histories to players from peaceful countries
-- Players from civil war countries receive significantly **more yellow and red cards** — even controlling for position, age, league, and talent
-- But they do NOT score more or fewer goals — the effect is specific to **violent behavior**
-:::
-
-. . .
-
-Conflict doesn't just destroy economies. It changes **people**.
+1. Last Week: What Causes Conflict?
+2. Blattman and Annan (2010): The Consequences of Child Soldiering
+3. Violence and Political Participation
+4. Miguel, Saiegh, and Satyanath (2011): Civil War and the Soccer Pitch
 
 
-## The Soccer Data
+# Last Week
 
-![](img/soccer_fig2.png){fig-align="center" height=4.5in}
-
-Yellow cards and civil war exposure (conditional on controls). Colombia and Israel are outliers.
-
-## Why This Matters
-
-::: incremental
-- Violence "follows people" even **outside** the conflict zone
-- The consequences of war extend beyond economics — they are **behavioral and psychological**
-- This motivates our question today: what does conflict destroy, and how long do the effects last?
-:::
-
-
-# Recap: What Causes Conflict?
-
-## Last Class
+## What Causes Conflict?
 
 ::: incremental
 - Poverty lowers the **opportunity cost** of fighting (Dal Bo and Dal Bo)
-- Weak states cannot **credibly commit** to peace
-- Miguel, Satyanath, and Sergenti (2004): rainfall shocks $\rightarrow$ income drops $\rightarrow$ civil conflict
-- The causal link from poverty to conflict is **real**
+- Wealth can also cause conflict if it increases the **returns to fighting**: rapacity
+- Other explanations: grievance, ethnic fractionalization, weak institutions
+- Conflict is both a cause and a consequence of poverty complicating causal analyses
+- We used **instrumental variables** to try to isolate the causal effect of income on conflict
 :::
 
 . . .
 
-Today: the other side of the conflict trap. What does conflict **cause**?
+Today: the other side. What does conflict **do** to people?
 
 
-# The Costs of Civil War
+# What Does Conflict Destroy?
 
-## Blattman and Miguel (2010)
-
-A comprehensive review of the **causes and consequences** of civil war
-
-. . .
-
-Three categories of destruction:
+## Three Kinds of Destruction
 
 ::: incremental
-- **Human capital**: lives, health, education
-- **Physical capital**: infrastructure, assets, investment
-- **Institutions**: state capacity, trust, rule of law
-:::
-
-
-## Human Capital
-
-::: incremental
-- **Death**: combat kills, but most civilian casualties come from disease, displacement, and famine
-- **Health**: war-related malnutrition in Zimbabwe led to children being significantly shorter as adults (Alderman, Hoddinott, and Kinsey, 2006)
-- **Health**: in Burundi, children in war-affected regions had height-for-age ~0.5 standard deviations lower (Bundervoet, Verwimp, and Akresh, 2009)
-- **Education**: schools destroyed, children recruited, families displaced
-- Akresh and de Walque (2008): Rwandan genocide reduced educational attainment by almost a full year
-:::
-
-
-## Physical Capital
-
-::: incremental
-- Infrastructure destroyed: roads, bridges, factories, hospitals
-- Capital flight: mobile capital flees to foreign assets; new investment dries up
-- Agricultural collapse: in Mozambique, 80% of the cattle stock was lost; in northern Uganda, families lost cattle, homes, and assets (Blattman and Miguel, 2010)
-- Cerra and Saxena (2008): output declines **6%** in the immediate aftermath of civil war
+- **Physical capital**: roads, bridges, factories, livestock
+- **Human capital**: education interrupted, health damaged, skills lost
+- **People themselves**: psychology, behavior, trust
 :::
 
 . . .
 
-But physical capital can recover — cities bombed in WWII (Japan, Germany) returned to pre-war population trends within 20–25 years.
-
-
-## Institutional Collapse
-
-::: incremental
-- State capacity erodes: tax collection, public services, rule of law
-- Corruption and war economies emerge: natural resource looting, drug trade
-- Social trust is damaged
-- Formal and informal institutions that took decades to build can be destroyed in years
-:::
-
-. . .
-
-Blattman and Miguel (2010): *"The social and institutional legacies of conflict are arguably the most important but least understood of all war impacts"*
-
-
-## The Recovery Debate
-
-::: incremental
-- **Pessimistic view**: civil war sets countries back decades, effects are permanent
-- **Optimistic view**: countries can "bounce back" — the "Phoenix effect"
-- Miguel and Roland (2011): Vietnam districts that were heavily bombed recovered to similar economic levels as less-bombed districts
-- But recovery is **uneven**: physical capital rebuilds faster than human capital and institutions
-:::
-
-. . .
-
-The truth depends on **what** was destroyed — and on **who** was affected.
+Most of what we know about the first two comes from macro data. To understand the third, we need micro evidence: what happens to individuals?
 
 
 # Blattman and Annan (2010)
 
-## Context: Northern Uganda
+## Setting
 
 ::: incremental
-- The Lord's Resistance Army (LRA) waged a brutal insurgency in northern Uganda from the late 1980s
-- Led by Joseph Kony
+- Northern Uganda, late 1980s onwards
+- The Lord's Resistance Army (LRA), led by Joseph Kony, waged a brutal insurgency
 - The LRA **abducted children and young adults** to serve as soldiers, porters, and laborers
-- Tens of thousands abducted, mostly boys aged 10–24
-:::
-
-
-## The Research Question
-
-What are the **long-run consequences** of forced military service on:
-
-::: incremental
-- Human capital (education, skills)
-- Economic outcomes (employment, earnings)
-- Psychological well-being
+- Tens of thousands abducted, mostly boys aged 10-24
 :::
 
 . . .
 
-Why is this hard to study?
+**What do you think happens to these children in the long run?**
+
+
+## Research Question
+
+What are the **long-run consequences** of forced military service on education, economic outcomes, and psychological well-being?
+
+
+## Hypotheses
+
+::: incremental
+- **H1 (human capital)**: abduction interrupts education and skill formation $\rightarrow$ lower earnings, worse economic outcomes
+- **H2 (psychology)**: exposure to extreme violence $\rightarrow$ lasting psychological distress, aggression, difficulty reintegrating
+:::
+
+. . .
+
+**What would make this hard to study? Why can't we just compare soldiers to non-soldiers?**
 
 
 ## The Identification Problem
@@ -185,57 +108,67 @@ Why is this hard to study?
 - **Selection bias**: the same things that lead to recruitment may also affect outcomes
 :::
 
-. . .
 
-So how do Blattman and Annan solve this?
-
-
-## The LRA as a Natural Experiment
+## Strategy
 
 The LRA's abduction strategy was essentially **random**:
 
 ::: incremental
-- *"Targets were generally unplanned and arbitrary; they raided whatever homesteads they encountered, regardless of wealth or other traits"* (p. 887)
-- Strategy: **abduct first, sort out later** — keep all adolescent and young adult males
+- *"Targets were generally unplanned and arbitrary; they raided whatever homesteads they encountered"* (p. 887)
+- Strategy: **abduct first, sort out later**: keep all adolescent and young adult males
 - Rural Acholi households live in isolation, making them vulnerable to roving raiding parties
-- Result: within a community, who was taken was largely a matter of **bad luck**
+- Within a community, who was taken was largely a matter of **bad luck**
 :::
 
 . . .
 
-The authors verify this: abductees and non-abductees look similar on pre-war characteristics (F-test p-value = 0.40).
+**What assumption does this rely on? What could go wrong?**
 
 
 ## Data
 
 ::: incremental
-- Survey of **741 male youth** aged 14–30 in 2005–2006
-- From **8 sub-counties** in two war-affected districts (Kitgum and Pader)
-- Compared those who were abducted to those who were not
-- Detailed measures of education, employment, earnings, health, and psychological distress
+- Survey of **741 male youth** aged 14-30 in 2005-2006
+- **8 sub-counties** in two war-affected districts (Kitgum and Pader)
+- Compared abductees to non-abductees **within the same communities**
+- **Outcomes**: years of education, literacy, daily earnings, employment type, psychological distress
 :::
 
 
 ## Results: Human Capital
 
 ::: incremental
-- Abductees had **0.75 fewer years of education** — a 10% reduction relative to the non-abducted average of 7.6 years
-- Were **15 percentage points less likely** to be functionally literate — nearly twice as likely to be illiterate as non-abductees
-- Large effects on the **youngest abductees** — those taken during critical schooling years
+- Abductees had **0.75 fewer years of education**: a 10% reduction
+- Were **15 percentage points less likely** to be functionally literate
+- Largest effects on the **youngest abductees**: those taken during critical schooling years
 :::
 
 . . .
 
-Abduction interrupted education at a crucial moment, and most never caught up.
+**Why would age at abduction matter?**
 
 
 ## Results: Economic Outcomes
 
 ::: incremental
-- Abductees' wages were **33% lower** (one-third less in daily earnings)
-- Were significantly less likely to be engaged in **skilled work**
+- Abductees' wages were **33% lower**
+- Significantly less likely to be engaged in **skilled work**
 - More likely to be in subsistence agriculture
 - The education gap explains much (but not all) of the earnings gap
+:::
+
+. . .
+
+**If education doesn't explain the full gap, what else could?**
+
+
+## Mechanism: Decomposing the Earnings Gap
+
+::: incremental
+- **Education** accounts for a large share of the earnings difference
+- But **psychological distress** independently predicts worse outcomes, even conditional on education
+- Those who witnessed or committed more violence during captivity had worse outcomes regardless of schooling
+- It's not just lost years of school: violence itself leaves a mark
 :::
 
 
@@ -244,49 +177,197 @@ Abduction interrupted education at a crucial moment, and most never caught up.
 ::: incremental
 - Abductees reported significantly higher levels of **psychological distress**
 - Higher rates of aggression and social difficulties
-- Those who experienced more **violence during captivity** had worse outcomes
-- The psychological scars may be as consequential as the economic ones
+- The **intensity of violence experienced** matters more than the duration of abduction
+- Someone abducted for 6 months who saw killings had worse outcomes than someone abducted for 2 years who did not
+:::
+
+
+# The Surprising Finding
+
+## Violence and Political Participation
+
+In a companion paper, Blattman (2009) uses the **same natural experiment** in northern Uganda and finds something unexpected:
+
+::: incremental
+- Abductees were **more likely to vote** than non-abductees
+- More likely to be **community leaders**
+- More engaged in **collective action**
 :::
 
 . . .
 
-Remember the soccer paper: violence follows people. Blattman and Annan show us **why**.
+Development outcomes worsen, but political participation **increases**
 
 
-## What Do We Learn?
+## Why?
 
 ::: incremental
-- Conflict doesn't just destroy infrastructure — it destroys **people's potential**
-- Children and young people bear disproportionate costs
-- The effects persist **long after** the fighting stops
-- Education loss alone generates a lifetime of lower earnings
-- And the psychological costs compound everything
+- Exposure to violence may change people's **relationship to the state**: they want to shape the political order that failed to protect them
+- War creates **shared identity** among survivors and a sense of collective purpose
+- Similar to what Bateson (2012) found with crime: victimization can be a **mobilizing** experience
+:::
+
+. . .
+
+How can the same experience destroy someone's economic prospects and make them MORE politically engaged? What does that tell us about what conflict does to people?
+
+
+# Miguel, Saiegh, and Satyanath (2011)
+
+## Motivation
+
+Blattman and Annan showed conflict changes people psychologically: more distress, more aggression
+
+. . .
+
+But that evidence comes from **within** the conflict zone
+
+. . .
+
+Can we detect behavioral consequences of war in a completely different setting, years later, thousands of miles away?
+
+
+## Setting
+
+::: incremental
+- Professional soccer: people from **very different countries** compete under **identical rules**
+- Same referees, same leagues, same competition
+- Violent behavior (fouls, yellow and red cards) is **precisely recorded**
+- Skill (goals, assists) is also recorded separately
+:::
+
+
+## Research Question
+
+Do players who grew up in countries experiencing civil war exhibit **more violent behavior** on the soccer pitch?
+
+. . .
+
+Before we go on: **what do you think?** What would you predict, and why?
+
+
+## Hypothesis
+
+**H1**: civil war exposure during formative years increases propensity toward violent behavior, even outside of war
+
+. . .
+
+**Mechanism**: growing up surrounded by violence normalizes aggression as a way of dealing with conflict and competition
+
+. . .
+
+**What alternative stories could explain the same pattern?**
+
+
+## Data
+
+::: incremental
+- Thousands of players in top European leagues (England, France, Germany, Italy, Spain)
+- **Treatment**: years of civil war in the player's home country (1980-2005)
+- **Outcomes**: yellow cards, red cards, goals scored
+- **Controls**: player position, age, minutes played, team quality, league
+:::
+
+
+## Strategy
+
+::: incremental
+- Compare players from **different countries** playing in the **same league**
+- Two players, same team, same position, same age: one from a country with 10 years of civil war, one from a peaceful country
+- **Assumption**: conditional on controls, nationality is not correlated with unobserved determinants of on-field aggression
+:::
+
+. . .
+
+**What could violate this assumption?**
+
+
+## Descriptive Evidence
+
+![](img/soccer_fig2.png){fig-align="center" width=100%}
+
+
+## Main Results
+
+![](img/soccer_table2.png){fig-align="center" width=100%}
+
+
+## Reading the Table
+
+::: incremental
+- More years of civil war $\rightarrow$ significantly **more yellow and red cards**
+- **No effect on goals scored**: aggression, not skill
+- Holds controlling for position, age, league, team quality
+- Robust to dropping outliers (Colombia, Israel)
+:::
+
+. . .
+
+**Why does the "no effect on goals" matter?**
+
+
+## Placebo Tests in Observational Data
+
+How do you build confidence in a result you can't experimentally verify?
+
+::: incremental
+- Ask: **if my story is right, what else should be true?**
+- And critically: **what should NOT be true?**
+- If your treatment affects an outcome it shouldn't, your story has a problem
+- If it does NOT affect that outcome, that's reassuring
+:::
+
+. . .
+
+A placebo test checks whether the pattern is **specific** to the mechanism you claim
+
+
+## Placebo Tests in This Paper
+
+::: incremental
+- **Should be true**: civil war exposure $\rightarrow$ more cards (aggression) $\checkmark$
+- **Should NOT be true**: civil war exposure $\rightarrow$ more goals
+  - If war predicted goals, something else is going on: playing style, desperation, not aggression
+  - Result: **no effect on goals** $\checkmark$
+- **Should be true**: effect stronger for players **younger** during the civil war (more impressionable)
+:::
+
+. . .
+
+The "no effect on goals" is the placebo: it rules out stories where war just makes you a different *kind* of player
+
+
+## Threats
+
+::: incremental
+- **Selection**: maybe only the most aggressive players from war countries make it to European leagues
+- **Referee bias**: could referees card players from certain countries more harshly?
+- **Omitted variables**: poverty, inequality, culture may correlate with both war and aggression
+:::
+
+. . .
+
+**How would you design a test to rule out referee bias?** Hint: think about what should vary if it's the ref's perception vs the player's behavior
+
+
+## Connecting the Papers
+
+::: incremental
+- Blattman and Annan: conflict destroys education, earnings, psychological health
+- Blattman (2009): but it also increases political engagement
+- Miguel, Saiegh, Satyanath: and it changes **behavior** years later, thousands of miles away
+- The common thread: war reshapes the people who lived through it
 :::
 
 
 # Discussion
 
-## The Conflict Trap, Revisited
+## Discussion
 
 ::: incremental
-- **Last class**: poverty causes conflict (MSS 2004)
-- **Today**: conflict destroys human capital, physical capital, institutions, and people's psychology
-- Destroyed human capital $\rightarrow$ lower earnings $\rightarrow$ poverty $\rightarrow$ more conflict
-- The **micro** evidence (Blattman and Annan) confirms the **macro** pattern (Blattman and Miguel review)
-:::
-
-. . .
-
-The trap is real. How do you break it?
-
-
-## Discussion Questions
-
-::: incremental
-- Given what MSS showed about economic shocks causing conflict, and what we see here about conflict destroying human capital — how does the trap perpetuate itself?
-- What kinds of **post-conflict interventions** would address the damage documented by Blattman and Annan?
-- Is physical capital or human capital harder to rebuild? Why?
+- Blattman and Annan show economic devastation; Blattman (2009) shows political mobilization. Can both be true? What does that mean for post-conflict societies?
 - The soccer paper shows behavioral effects far from the conflict zone. What does this imply for **refugee and diaspora** communities?
+- If the consequences of conflict are this persistent, what kinds of **interventions** could actually help?
 :::
 
 
@@ -294,5 +375,5 @@ The trap is real. How do you break it?
 
 **Health and Development**
 
-- Reading: Chen et al. (2013) — air pollution and life expectancy in China
-- We'll learn a new causal inference method: **Regression Discontinuity Design**
+- Reading: Chen et al. (2013): air pollution and life expectancy in China
+- A new causal inference method: **Regression Discontinuity Design**
