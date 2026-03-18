@@ -49,7 +49,7 @@ format:
 
 . . .
 
-Today: what happens when security **breaks down entirely**?
+Today: Civil war
 
 - Civil war as failure of internal security provision
 - Violence on a scale that reshapes economies and institutions
@@ -60,6 +60,7 @@ Today: what happens when security **breaks down entirely**?
 What makes something a "civil war"?
 
 . . .
+
 Every definition is contested. One that is widely used is the **Uppsala/PRIO** definition:
 
 > "A contested incompatibility which concerns government and/or territory where the use of armed force between two parties, of which at least one is the government of a state, results in at least **25 battle-related deaths**"
@@ -79,8 +80,7 @@ Note what this **excludes**: one-sided violence against civilians, non-state con
 ::: incremental
 - Civil wars have caused **three times** as many deaths as wars between states since WWII (Fearon and Laitin, 2003)
 - In sub-Saharan Africa, **27% of country-years** experienced civil conflict between 1981 and 1999 (Miguel, Satyanath, and Sergenti, 2004)
-- The number of countries experiencing internal conflict **peaked around 35-37** in the early 1990s and again in the mid-2010s (UCDP)
-- Overwhelmingly concentrated in the **poorest countries**
+- Overwhelmingly concentrated in the poorest countries
 :::
 
 
@@ -327,13 +327,13 @@ ggplot() +
   # Confounding arrows (dashed grey)
   curve_arrow(2.8, 1.3, 2.2, 0.25, 0.2, "#7f7f7f", "dashed", 1) +
   curve_arrow(3.2, 1.3, 3.8, 0.25, -0.2, "#7f7f7f", "dashed", 1) +
-  # Excluded: Z -> Y (red, curved below)
-  curve_arrow(0.4, -0.2, 3.6, -0.2, -0.4, "#d62728", "dotted", 0.9) +
+  # Excluded: Z -> Y (red, curved down)
+  curve_arrow(0.4, -0.15, 3.6, -0.15, 0.4, "#d62728", "dotted", 0.9) +
   annotate("text", x = 2, y = -0.7, label = "X  exclusion restriction",
            size = 4, color = "#d62728", fontface = "italic") +
-  # Excluded: U -> Z (red, curved above)
-  curve_arrow(2.7, 1.4, 0.3, 0.25, -0.3, "#d62728", "dotted", 0.9) +
-  annotate("text", x = 0.9, y = 1.3, label = "X  independence",
+  # Excluded: U -> Z (red, curved up)
+  curve_arrow(2.7, 1.4, 0.3, 0.25, 0.3, "#d62728", "dotted", 0.9) +
+  annotate("text", x = 0.9, y = 1.5, label = "X  independence",
            size = 4, color = "#d62728", fontface = "italic") +
   # Nodes
   geom_point(data = nodes, aes(x = x, y = y, color = fill), size = 18) +
