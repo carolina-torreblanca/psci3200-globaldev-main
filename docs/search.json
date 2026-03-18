@@ -12141,15 +12141,15 @@
     "objectID": "slides/c5-conflict.html#agenda",
     "href": "slides/c5-conflict.html#agenda",
     "title": "Conflict and Development I",
-    "section": "",
-    "text": "The Poverty-Violence Correlation\nTwo Mechanisms: Opportunity Cost and Rapacity\nThe Endogeneity Problem\nMiguel, Satyanath, and Sergenti (2004)\nInstrumental Variables in Practice\n\n. . .\nFinal Project Design due TONIGHT"
+    "section": "Agenda",
+    "text": "Agenda\n\nThe Poverty-Violence Correlation\nTwo Mechanisms: Opportunity Cost and Rapacity\nThe Endogeneity Problem\nMiguel, Satyanath, and Sergenti (2004)\nInstrumental Variables in Practice\n\n\nFinal Project Design due TONIGHT"
   },
   {
     "objectID": "slides/c5-conflict.html#last-week-the-state-and-security",
     "href": "slides/c5-conflict.html#last-week-the-state-and-security",
     "title": "Conflict and Development I",
     "section": "Last Week: The State and Security",
-    "text": "Last Week: The State and Security\n\nCrime can mobilize citizens (Bateson)\nBut policing can alienate them (Weaver and Lerman)\n\n. . .\nToday: Civil war\n\nCivil war as failure of internal security provision\nViolence on a scale that reshapes economies and institutions"
+    "text": "Last Week: The State and Security\n\nCrime can mobilize citizens (Bateson)\nBut policing can alienate them (Weaver and Lerman)\n\n\nToday: Civil war\n\nCivil war as failure of internal security provision\nViolence on a scale that reshapes economies and institutions"
   },
   {
     "objectID": "slides/c5-conflict.html#the-scale-of-civil-war",
@@ -12324,14 +12324,14 @@
     "href": "slides/c5-conflict.html#what-is-opportunity-cost",
     "title": "Conflict and Development I",
     "section": "What Is Opportunity Cost?",
-    "text": "What Is Opportunity Cost?\nThe opportunity cost of doing something is what you give up by doing it\n. . .\n\n\nThe opportunity cost of joining a rebel group is everything else you could be doing instead\nEarning wages, spending time with your family, going to school, farming your land\nAll of that is increasing in outside wages: the better the economy, the more you give up by fighting"
+    "text": "What Is Opportunity Cost?\nThe opportunity cost of doing something is what you give up by doing it\n\n\n\nThe opportunity cost of joining a rebel group is everything else you could be doing instead\nEarning wages, spending time with your family, going to school, farming your land\nAll of that is increasing in outside wages: the better the economy, the more you give up by fighting"
   },
   {
     "objectID": "slides/c5-conflict.html#opportunity-cost-and-conflict",
     "href": "slides/c5-conflict.html#opportunity-cost-and-conflict",
     "title": "Conflict and Development I",
     "section": "Opportunity Cost and Conflict",
-    "text": "Opportunity Cost and Conflict\n\n\nIf wages are $1/day, joining a militia doesn’t cost you much\nIf wages are $50/day, you are giving up a lot\nPoverty lowers the opportunity cost of fighting \\(\\rightarrow\\) more people choose violence\n\n\n. . .\nThis is the core intuition linking poverty to conflict"
+    "text": "Opportunity Cost and Conflict\n\n\nIf wages are $1/day, joining a militia doesn’t cost you much\nIf wages are $50/day, you are giving up a lot\nPoverty lowers the opportunity cost of fighting \\(\\rightarrow\\) more people choose violence\n\n\n\nThis is the core intuition linking poverty to conflict"
   },
   {
     "objectID": "slides/c5-conflict.html#dal-bo-and-dal-bo-formalizing-the-intuition",
@@ -12345,7 +12345,7 @@
     "href": "slides/c5-conflict.html#but-wait-the-rapacity-effect",
     "title": "Conflict and Development I",
     "section": "But Wait: The Rapacity Effect",
-    "text": "But Wait: The Rapacity Effect\n\n\nSo far: poverty makes fighting cheaper \\(\\rightarrow\\) more conflict\nBut what about the opposite?\nMore resources could mean more things to fight over\nOil is discovered, land becomes more valuable \\(\\rightarrow\\) groups fight harder to capture it\nThis is the rapacity effect: wealth increases can ALSO cause conflict\n\n\n. . .\nSo which is it? Does more wealth cause peace or war?"
+    "text": "But Wait: The Rapacity Effect\n\n\nSo far: poverty makes fighting cheaper \\(\\rightarrow\\) more conflict\nBut what about the opposite?\nMore resources could mean more things to fight over\nOil is discovered, land becomes more valuable \\(\\rightarrow\\) groups fight harder to capture it\nThis is the rapacity effect: wealth increases can ALSO cause conflict\n\n\n\nSo which is it? Does more wealth cause peace or war?"
   },
   {
     "objectID": "slides/c5-conflict.html#it-depends-on-the-type-of-economy",
@@ -12779,7 +12779,7 @@
     "href": "slides/c5-conflict.html#three-problems-with-a-naive-regression",
     "title": "Conflict and Development I",
     "section": "Three Problems with a Naive Regression",
-    "text": "Three Problems with a Naive Regression\n\n\nReverse causality: conflict destroys income, so we confuse the effect with the cause\nOmitted variables: institutions, ethnic tensions, geography may cause both poverty and conflict\nAnticipation: if people expect instability, they stop investing \\(\\rightarrow\\) income falls before conflict starts\n\n\n. . .\nWe need something that changes income but has no direct effect on conflict"
+    "text": "Three Problems with a Naive Regression\n\n\nReverse causality: conflict destroys income, so we confuse the effect with the cause\nOmitted variables: institutions, ethnic tensions, geography may cause both poverty and conflict\nAnticipation: if people expect instability, they stop investing \\(\\rightarrow\\) income falls before conflict starts\n\n\n\nWe need something that changes income but has no direct effect on conflict"
   },
   {
     "objectID": "slides/c5-conflict.html#the-setting",
@@ -12828,7 +12828,7 @@
     "href": "slides/c5-conflict.html#arguments-that-it-does-not",
     "title": "Conflict and Development I",
     "section": "Arguments That It Does Not",
-    "text": "Arguments That It Does Not\n\n\nBad institutions may cause both poverty and war\nGeography could cause both\nThe causation could go in the other direction: conflict causes poverty\n\n\n. . .\nToday we focus on two mechanisms that formalize the “yes” side"
+    "text": "Arguments That It Does Not\n\n\nBad institutions may cause both poverty and war\nGeography could cause both\nThe causation could go in the other direction: conflict causes poverty\n\n\n\nToday we focus on two mechanisms that formalize the “yes” side"
   },
   {
     "objectID": "slides/c5-conflict.html#dal-bo-and-dal-bo-a-model",
@@ -12898,7 +12898,7 @@
     "href": "slides/c5-conflict.html#the-theoretical-takeaway",
     "title": "Conflict and Development I",
     "section": "The Theoretical Takeaway",
-    "text": "The Theoretical Takeaway\n\n\nPoverty \\(\\rightarrow\\) low opportunity cost \\(\\rightarrow\\) insurrection (opportunity cost channel)\nWealth \\(\\rightarrow\\) more to fight over \\(\\rightarrow\\) conflict (rapacity channel)\nWhich one dominates depends on the economic structure of the country\n\n\n. . .\nBut how do we prove any of this? We can’t randomly make countries poor"
+    "text": "The Theoretical Takeaway\n\n\nPoverty \\(\\rightarrow\\) low opportunity cost \\(\\rightarrow\\) insurrection (opportunity cost channel)\nWealth \\(\\rightarrow\\) more to fight over \\(\\rightarrow\\) conflict (rapacity channel)\nWhich one dominates depends on the economic structure of the country\n\n\n\nBut how do we prove any of this? We can’t randomly make countries poor"
   },
   {
     "objectID": "slides/c5-conflict.html#the-main-results",
@@ -12954,7 +12954,7 @@
     "href": "slides/c5-conflict.html#the-core-intuition",
     "title": "Conflict and Development I",
     "section": "The Core Intuition",
-    "text": "The Core Intuition\nThink of \\(X\\) (income) as having two parts:\n\n\nClean variation: changes in income driven by forces that have nothing to do with conflict\nDirty variation: changes in income tangled up with confounders, reverse causality, anticipation\n\n\n. . .\nOLS uses all the variation in \\(X\\): clean and dirty mixed together\n. . .\nAn instrument \\(Z\\) lets us extract only the clean part. If \\(Z\\) moves \\(X\\) but has absolutely no relationship with \\(Y\\) except through \\(X\\), then the piece of \\(X\\) that \\(Z\\) explains is pure signal"
+    "text": "The Core Intuition\nThink of \\(X\\) (income) as having two parts:\n\n\nClean variation: changes in income driven by forces that have nothing to do with conflict\nDirty variation: changes in income tangled up with confounders, reverse causality, anticipation\n\n\n\nOLS uses all the variation in \\(X\\): clean and dirty mixed together\n\n\nAn instrument \\(Z\\) lets us extract only the clean part. If \\(Z\\) moves \\(X\\) but has absolutely no relationship with \\(Y\\) except through \\(X\\), then the piece of \\(X\\) that \\(Z\\) explains is pure signal"
   },
   {
     "objectID": "slides/c5-conflict.html#an-analogy",
@@ -12996,7 +12996,7 @@
     "href": "slides/c5-conflict.html#does-the-exclusion-restriction-hold",
     "title": "Conflict and Development I",
     "section": "Does the Exclusion Restriction Hold?",
-    "text": "Does the Exclusion Restriction Hold?\nThe instrument is only valid if rainfall affects conflict exclusively through income. But what if:\n\n\nDrought \\(\\rightarrow\\) roads deteriorate \\(\\rightarrow\\) harder to move troops \\(\\rightarrow\\) conflict changes for logistical reasons, not income\nDrought \\(\\rightarrow\\) disease outbreaks \\(\\rightarrow\\) displacement \\(\\rightarrow\\) conflict over new territory\nDrought \\(\\rightarrow\\) crop failure \\(\\rightarrow\\) migration to neighboring regions \\(\\rightarrow\\) conflict there\n\n\n. . .\nThe authors argue these channels are small relative to the economic channel. You cannot test this statistically: you have to argue it"
+    "text": "Does the Exclusion Restriction Hold?\nThe instrument is only valid if rainfall affects conflict exclusively through income. But what if:\n\n\nDrought \\(\\rightarrow\\) roads deteriorate \\(\\rightarrow\\) harder to move troops \\(\\rightarrow\\) conflict changes for logistical reasons, not income\nDrought \\(\\rightarrow\\) disease outbreaks \\(\\rightarrow\\) displacement \\(\\rightarrow\\) conflict over new territory\nDrought \\(\\rightarrow\\) crop failure \\(\\rightarrow\\) migration to neighboring regions \\(\\rightarrow\\) conflict there\n\n\n\nThe authors argue these channels are small relative to the economic channel. You cannot test this statistically: you have to argue it"
   },
   {
     "objectID": "slides/c5-conflict.html#weak-instrument",
@@ -13024,14 +13024,14 @@
     "href": "slides/c5-conflict.html#what-is-a-civil-war",
     "title": "Conflict and Development I",
     "section": "What Is a Civil War?",
-    "text": "What Is a Civil War?\nWhat makes something a “civil war”?\n. . .\nEvery definition is contested. One that is widely used is the Uppsala/PRIO definition:\n\n“A contested incompatibility which concerns government and/or territory where the use of armed force between two parties, of which at least one is the government of a state, results in at least 25 battle-related deaths”\n\n. . .\nNote what this excludes: one-sided violence against civilians, non-state conflict between militias, anything below 25 deaths"
+    "text": "What Is a Civil War?\nWhat makes something a “civil war”?\n\nEvery definition is contested. One that is widely used is the Uppsala/PRIO definition:\n\n“A contested incompatibility which concerns government and/or territory where the use of armed force between two parties, of which at least one is the government of a state, results in at least 25 battle-related deaths”\n\n\n\nNote what this excludes: one-sided violence against civilians, non-state conflict between militias, anything below 25 deaths"
   },
   {
     "objectID": "slides/c5-conflict.html#from-crime-to-civil-war",
     "href": "slides/c5-conflict.html#from-crime-to-civil-war",
     "title": "Conflict and Development I",
     "section": "From Crime to Civil War",
-    "text": "From Crime to Civil War\nLast class we talked about crime and the state:\n\n\nCrime emerges when the state fails to provide internal security\nCivil war: some people actively fight the state\n\n\n. . .\nIs there a continuum from crime to organized violence to civil war? Or are these fundamentally different phenomena?"
+    "text": "From Crime to Civil War\nLast class we talked about crime and the state:\n\n\nCrime emerges when the state fails to provide internal security\nCivil war: some people actively fight the state\n\n\n\nIs there a continuum from crime to organized violence to civil war? Or are these fundamentally different phenomena?"
   },
   {
     "objectID": "slides/c6-conflict2.html#what-causes-conflict",
