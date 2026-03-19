@@ -22,10 +22,10 @@ week,date,date_end,title,deadline, reading,content,tutorial,assignment
 11,3/25/26,,Migration,,"Yang, 2008",/materials/08_migration,,
 12,3/30/26,,Data Wrangling Workshop,,No readings,/materials/14_fp_essentials,,
 12,4/1/26,,Text as Data Workshop,,No readings,/materials/c6_tad,,
-13,4/6/26,,Gender,,"Chattopadhyay and Duflo, 2004",/materials/c5_gender,,/assignments/05_fptest
+13,4/6/26,,Gender,,"Chattopadhyay and Duflo, 2004",/materials/c5_gender,,
 13,4/8/26,,Health and Development,,"Chen et al., 2013",/materials/c4_health,,
 14,4/13/26,,Climate and Development,,"Dell Jones and Olken, 2012",/materials/22_climate1,,
-14,4/15/26,,Foreign Aid,,"Briggs, 2016",/materials/20_aid1,,
+14,4/15/26,,Foreign Aid,,"Briggs, 2016",/materials/20_aid1,,/assignments/05_fptest
 15,4/20/26,,Education and Development,,"Duflo, 2001",/materials/c7_education,,
 15,4/22/26,,Work on Final Project,,No readings,,,
 16,4/27/26,,Development Policy: What Works?,,Assorted short pieces,/materials/27_conclusion,,
