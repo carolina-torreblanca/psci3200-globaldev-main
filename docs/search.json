@@ -5105,21 +5105,21 @@
   {
     "objectID": "materials/08_migration.html",
     "href": "materials/08_migration.html",
-    "title": "Migration",
+    "title": "Migration and Development",
     "section": "",
-    "text": "Rozo and Grossman (2025) (download the pdf and/or watch the YouTube video)\nGazeaud, Jules, Eric Mvukiyehe, and Olivier Sterck (2020)\nSviatschi (2022)"
+    "text": "Yang (2008), “International Migration, Remittances, and Household Investment: Evidence from Philippine Migrants’ Exchange Rate Shocks”"
   },
   {
     "objectID": "materials/08_migration.html#required-readings",
     "href": "materials/08_migration.html#required-readings",
-    "title": "Migration",
+    "title": "Migration and Development",
     "section": "",
-    "text": "Rozo and Grossman (2025) (download the pdf and/or watch the YouTube video)\nGazeaud, Jules, Eric Mvukiyehe, and Olivier Sterck (2020)\nSviatschi (2022)"
+    "text": "Yang (2008), “International Migration, Remittances, and Household Investment: Evidence from Philippine Migrants’ Exchange Rate Shocks”"
   },
   {
     "objectID": "materials/08_migration.html#slides",
     "href": "materials/08_migration.html#slides",
-    "title": "Migration",
+    "title": "Migration and Development",
     "section": "Slides",
     "text": "Slides\n\nSlides"
   },
@@ -13368,5 +13368,152 @@
     "title": "Conflict and Development II",
     "section": "",
     "text": "Last Week: What Causes Conflict?\nBlattman and Annan (2010): The Consequences of Child Soldiering\nViolence and Political Participation\nMiguel, Saiegh, and Satyanath (2011): Civil War and the Soccer Pitch"
+  },
+  {
+    "objectID": "slides/c7-migration.html#agenda",
+    "href": "slides/c7-migration.html#agenda",
+    "title": "Migration and Development",
+    "section": "Agenda",
+    "text": "Agenda\n\nFrom Conflict to Migration\nWhy Do People Migrate?\nWho Can Migrate?\nYang (2008): Remittances and Household Investment\nMigration as Development Policy"
+  },
+  {
+    "objectID": "slides/c7-migration.html#last-class-the-consequences-of-civil-war",
+    "href": "slides/c7-migration.html#last-class-the-consequences-of-civil-war",
+    "title": "Migration and Development",
+    "section": "Last Class: The Consequences of Civil War",
+    "text": "Last Class: The Consequences of Civil War\n\n\nConflict destroys human capital, changes behavior, politicizes people\nOne of the most immediate consequences of conflict is displacement\nOver 110 million forcibly displaced people globally\nBut forced displacement is the extreme case: most migration is a choice\n\n\n\nToday: what does migration mean for development?"
+  },
+  {
+    "objectID": "slides/c7-migration.html#the-decision-to-migrate",
+    "href": "slides/c7-migration.html#the-decision-to-migrate",
+    "title": "Migration and Development",
+    "section": "The Decision to Migrate",
+    "text": "The Decision to Migrate\n\n\nFrame it in terms of opportunity cost: what are the returns of being somewhere else vs staying?\nMoving from a poor to a rich country can 2-3x your earnings overnight\nMigration may be the single most effective way to increase someone’s income\nLike conflict, the decision to migrate depends on expected returns relative to the status quo"
+  },
+  {
+    "objectID": "slides/c7-migration.html#types-of-migration",
+    "href": "slides/c7-migration.html#types-of-migration",
+    "title": "Migration and Development",
+    "section": "Types of Migration",
+    "text": "Types of Migration\n\n\nForced: conflict, persecution, disaster\nEconomic: labor migration, seeking better opportunities\nTemporary vs permanent: guest workers, seasonal labor, permanent resettlement\nInternal (rural to urban) vs international"
+  },
+  {
+    "objectID": "slides/c7-migration.html#the-scale",
+    "href": "slides/c7-migration.html#the-scale",
+    "title": "Migration and Development",
+    "section": "The Scale",
+    "text": "The Scale\n\n\nRemittances to developing countries are larger than all foreign aid combined\nIn 2022, remittances to low and middle-income countries exceeded $600 billion\nFor many countries, remittances are the largest source of foreign income\n\n\n\nWhy don’t we hear about remittances as much as we hear about foreign aid?"
+  },
+  {
+    "objectID": "slides/c7-migration.html#the-counterintuitive-finding",
+    "href": "slides/c7-migration.html#the-counterintuitive-finding",
+    "title": "Migration and Development",
+    "section": "The Counterintuitive Finding",
+    "text": "The Counterintuitive Finding\n\n\nIt is NOT the poorest who migrate\nMigration requires resources: savings for travel, networks at the destination, information about opportunities\nThe people trapped in the worst poverty often can’t move\nMigration is a development tool that doesn’t reach the people who need it most\n\n\n\nWhat does this imply for migration as anti-poverty policy?"
+  },
+  {
+    "objectID": "slides/c7-migration.html#selection",
+    "href": "slides/c7-migration.html#selection",
+    "title": "Migration and Development",
+    "section": "Selection",
+    "text": "Selection\n\n\nMigrants are not a random sample of the origin population\nThey tend to be younger, healthier, more educated, more risk-tolerant\nThis creates a measurement problem: if we compare migrants to non-migrants, we’re comparing different kinds of people\nSound familiar? (Connect to selection bias in Blattman and Annan)"
+  },
+  {
+    "objectID": "slides/c7-migration.html#setting",
+    "href": "slides/c7-migration.html#setting",
+    "title": "Migration and Development",
+    "section": "Setting",
+    "text": "Setting\n\n\nThe Philippines: one of the world’s largest migrant-sending countries\nMillions of Filipino workers abroad, mostly in the Middle East, East Asia, and the US\nThey send remittances home to their families\nWhat do families do with this money?"
+  },
+  {
+    "objectID": "slides/c7-migration.html#research-question",
+    "href": "slides/c7-migration.html#research-question",
+    "title": "Migration and Development",
+    "section": "Research Question",
+    "text": "Research Question\nDo remittances increase household investment in human capital and entrepreneurship in origin communities?\n\nWhat would you predict? Do families spend remittances on consumption (food, goods) or investment (education, business)?"
+  },
+  {
+    "objectID": "slides/c7-migration.html#hypothesis",
+    "href": "slides/c7-migration.html#hypothesis",
+    "title": "Migration and Development",
+    "section": "Hypothesis",
+    "text": "Hypothesis\n\n\nH1: remittance income increases investment in education and entrepreneurship\nMechanism: remittances relax credit constraints that prevent poor households from making productive investments\nAlternative: families might just consume more (better food, nicer house) without changing their long-run trajectory"
+  },
+  {
+    "objectID": "slides/c7-migration.html#the-identification-problem",
+    "href": "slides/c7-migration.html#the-identification-problem",
+    "title": "Migration and Development",
+    "section": "The Identification Problem",
+    "text": "The Identification Problem\n\n\nCan’t just compare households that receive remittances to those that don’t\nHouseholds with migrants abroad are different: more connected, more entrepreneurial, possibly wealthier to begin with\nNeed exogenous variation in remittance income\n\n\n\nWhat could serve as an instrument here?"
+  },
+  {
+    "objectID": "slides/c7-migration.html#strategy",
+    "href": "slides/c7-migration.html#strategy",
+    "title": "Migration and Development",
+    "section": "Strategy",
+    "text": "Strategy\n\n\nFilipino migrants work in many different countries\nExchange rate shocks: when the currency of the destination country appreciates against the Philippine peso, the same salary is worth MORE in pesos back home\nThese exchange rate movements are driven by global macro forces, not by individual migrant or household decisions\nInstrument: exchange rate shocks specific to where a household’s migrant works"
+  },
+  {
+    "objectID": "slides/c7-migration.html#data",
+    "href": "slides/c7-migration.html#data",
+    "title": "Migration and Development",
+    "section": "Data",
+    "text": "Data\n\n\nPanel of ~1,600 Filipino households with migrants abroad\nTrack household spending, education enrollment, entrepreneurial activity\nMatch each household to the destination country of their migrant\nObserve exchange rate changes over time"
+  },
+  {
+    "objectID": "slides/c7-migration.html#results-investment-in-education",
+    "href": "slides/c7-migration.html#results-investment-in-education",
+    "title": "Migration and Development",
+    "section": "Results: Investment in Education",
+    "text": "Results: Investment in Education\n\n\nPositive exchange rate shocks (bigger remittances) lead to significantly MORE spending on education\nChildren in recipient households are more likely to stay in school\nThe effect is concentrated in households with school-age children"
+  },
+  {
+    "objectID": "slides/c7-migration.html#results-entrepreneurship",
+    "href": "slides/c7-migration.html#results-entrepreneurship",
+    "title": "Migration and Development",
+    "section": "Results: Entrepreneurship",
+    "text": "Results: Entrepreneurship\n\n\nHouseholds receiving larger remittances are more likely to start small businesses\nMore hours worked in self-employment\nRemittances are functioning as startup capital"
+  },
+  {
+    "objectID": "slides/c7-migration.html#results-not-just-consumption",
+    "href": "slides/c7-migration.html#results-not-just-consumption",
+    "title": "Migration and Development",
+    "section": "Results: NOT Just Consumption",
+    "text": "Results: NOT Just Consumption\n\n\nThe increase in investment is NOT just an increase in overall spending\nHouseholds shift the COMPOSITION of their spending toward productive investment\nThis is the key finding: remittances change behavior, not just income"
+  },
+  {
+    "objectID": "slides/c7-migration.html#mechanisms",
+    "href": "slides/c7-migration.html#mechanisms",
+    "title": "Migration and Development",
+    "section": "Mechanisms",
+    "text": "Mechanisms\n\n\nWhy investment rather than consumption?\nRemittances relax credit constraints: families couldn’t borrow to send kids to school or start a business, but now they can\nThis is a story about market failures in developing countries: if credit markets worked, families would already be investing"
+  },
+  {
+    "objectID": "slides/c7-migration.html#what-do-we-learn",
+    "href": "slides/c7-migration.html#what-do-we-learn",
+    "title": "Migration and Development",
+    "section": "What Do We Learn?",
+    "text": "What Do We Learn?\n\n\nMigration generates massive financial flows to developing countries\nThese flows fund human capital and entrepreneurship, not just consumption\nRemittances may be doing more for development than foreign aid\nBut remember: only families who can send migrants abroad benefit"
+  },
+  {
+    "objectID": "slides/c7-migration.html#migration-as-development-policy",
+    "href": "slides/c7-migration.html#migration-as-development-policy",
+    "title": "Migration and Development",
+    "section": "Migration as Development Policy",
+    "text": "Migration as Development Policy\n\n\nIf migration is this effective at reducing poverty and increasing investment, should development policy focus on enabling migration?\nRemittances dwarf foreign aid: should we facilitate movement rather than send money?\nIf poverty causes conflict (MSS) and remittances alleviate poverty, could facilitating migration help prevent conflict?\nBut migration is politically toxic in destination countries: how do you square the development case with domestic politics?"
+  },
+  {
+    "objectID": "slides/c7-migration.html#discussion-1",
+    "href": "slides/c7-migration.html#discussion-1",
+    "title": "Migration and Development",
+    "section": "Discussion",
+    "text": "Discussion\n\n\nYang shows remittances fund education, but what about “brain drain”: the most educated people leave. Is migration a net positive or negative for origin countries?\nMigration requires resources: the poorest can’t move. Does this make migration a regressive development tool?\nHow does this connect to the conflict classes: displacement as forced migration vs economic migration as choice?"
+  },
+  {
+    "objectID": "slides/c7-migration.html#next-class",
+    "href": "slides/c7-migration.html#next-class",
+    "title": "Migration and Development",
+    "section": "Next Class",
+    "text": "Next Class\nData Wrangling Workshop\n\nNo readings\nBring your laptop and your final project data"
   }
 ]
