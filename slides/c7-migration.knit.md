@@ -27,6 +27,8 @@ format:
 </style>
 ```
 
+
+
 ## Agenda
 
 1. From Conflict to Migration
@@ -83,40 +85,15 @@ Today: what does migration mean for development?
 
 ## Myth 1: Migration is mostly South to North
 
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-#| fig-height: 5
 
-library(ggplot2)
-library(dplyr)
 
-# UN DESA 2020 estimates of migration by direction (millions)
-# Source: UN International Migration 2020 Highlights
-directions <- data.frame(
-  corridor = c("South to South", "South to North",
-               "North to North", "North to South"),
-  migrants = c(105, 82, 69, 25)
-) |>
-  mutate(corridor = factor(corridor,
-    levels = c("South to North", "South to South",
-               "North to North", "North to South")))
+::: {.cell}
+::: {.cell-output-display}
+![](c7-migration_files/figure-revealjs/unnamed-chunk-1-1.png){width=960}
+:::
+:::
 
-ggplot(directions, aes(x = corridor, y = migrants, fill = corridor)) +
-  geom_col(width = 0.7) +
-  geom_text(aes(label = paste0(migrants, "M")), vjust = -0.5, size = 5) +
-  scale_fill_manual(values = c("South to North" = "#011F5B",
-                                "South to South" = "#990000",
-                                "North to North" = "grey50",
-                                "North to South" = "grey70")) +
-  labs(x = NULL, y = "International migrants (millions, 2020)",
-       title = "South-South migration is the largest corridor",
-       caption = "Source: UN DESA, International Migration 2020 Highlights") +
-  theme_minimal(base_size = 16) +
-  theme(legend.position = "none") +
-  ylim(0, 120)
-```
+
 
 
 ## Myth 2: Most migrants are refugees
@@ -145,40 +122,15 @@ ggplot(directions, aes(x = corridor, y = migrants, fill = corridor)) +
 
 ## Myth 4: Migration drains origin countries
 
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-#| fig-height: 5
 
-library(WDI)
-library(scales)
-library(tidyr)
 
-# Remittances received and ODA received
-flows <- WDI(indicator = c("BX.TRF.PWKR.CD.DT", "DT.ODA.ODAT.CD"),
-             country = c("LMY"), start = 2000, end = 2022) |>
-  rename(remittances = BX.TRF.PWKR.CD.DT,
-         oda = DT.ODA.ODAT.CD) |>
-  filter(!is.na(remittances) | !is.na(oda)) |>
-  pivot_longer(cols = c(remittances, oda),
-               names_to = "flow", values_to = "value") |>
-  filter(!is.na(value)) |>
-  mutate(flow = ifelse(flow == "remittances",
-                       "Remittances received", "Official development aid"))
+::: {.cell}
+::: {.cell-output-display}
+![](c7-migration_files/figure-revealjs/unnamed-chunk-2-1.png){width=960}
+:::
+:::
 
-ggplot(flows, aes(x = year, y = value / 1e9, color = flow)) +
-  geom_line(linewidth = 1.5) +
-  scale_color_manual(values = c("Official development aid" = "#990000",
-                                "Remittances received" = "#011F5B")) +
-  scale_y_continuous(labels = dollar) +
-  labs(x = NULL, y = "Billions (current USD)",
-       title = "Remittances dwarf foreign aid to developing countries",
-       color = NULL,
-       caption = "Source: World Bank WDI. LMY = Low & Middle Income countries.") +
-  theme_minimal(base_size = 16) +
-  theme(legend.position = "bottom")
-```
+
 
 
 ## Myth 4: Migration drains origin countries
@@ -339,3 +291,4 @@ Do remittances increase household investment in human capital and entrepreneursh
 
 - No readings
 - Bring your laptop
+

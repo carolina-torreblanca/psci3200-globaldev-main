@@ -13395,14 +13395,14 @@
     "href": "slides/c7-migration.html#types-of-migration",
     "title": "Migration and Development",
     "section": "Types of Migration",
-    "text": "Types of Migration\n\n\nForced: conflict, persecution, disaster\nEconomic: labor migration, seeking better opportunities\nTemporary vs permanent: guest workers, seasonal labor, permanent resettlement\nInternal (rural to urban) vs international"
+    "text": "Types of Migration\n\n\nForced: conflict, persecution, disaster (refugees, asylum seekers, IDPs)\nVoluntary: economic opportunity, family reunification, education\nThe line between the two is often blurry: conflict destroys livelihoods, poverty makes people vulnerable to violence"
   },
   {
     "objectID": "slides/c7-migration.html#the-scale",
     "href": "slides/c7-migration.html#the-scale",
     "title": "Migration and Development",
     "section": "The Scale",
-    "text": "The Scale\n\n\nRemittances to developing countries are larger than all foreign aid combined\nIn 2022, remittances to low and middle-income countries exceeded $600 billion\nFor many countries, remittances are the largest source of foreign income\n\n\n\nWhy don’t we hear about remittances as much as we hear about foreign aid?"
+    "text": "The Scale"
   },
   {
     "objectID": "slides/c7-migration.html#the-counterintuitive-finding",
@@ -13514,7 +13514,7 @@
     "href": "slides/c7-migration.html#next-class",
     "title": "Migration and Development",
     "section": "Next Class",
-    "text": "Next Class\nData Wrangling Workshop\n\nNo readings\nBring your laptop and your final project data"
+    "text": "Next Class\nData Wrangling Workshop\n\nNo readings\nBring your laptop"
   },
   {
     "objectID": "slides/c6-conflict2.html#section",
@@ -13529,5 +13529,89 @@
     "title": "Conflict and Development II",
     "section": "Before we start",
     "text": "Before we start\nSlack me something you learned about the readings re causes or consequences of civil war"
+  },
+  {
+    "objectID": "slides/c7-migration.html#remittances",
+    "href": "slides/c7-migration.html#remittances",
+    "title": "Migration and Development",
+    "section": "Remittances",
+    "text": "Remittances\n\n\nRemittances to developing countries are larger than all foreign aid combined\nIn 2022, remittances to low and middle-income countries exceeded $600 billion\nFor many countries, remittances are the largest source of foreign income\n\n\n\nWhy don’t we hear about remittances as much as we hear about foreign aid?"
+  },
+  {
+    "objectID": "slides/c7-migration.html#where-do-migrants-come-from",
+    "href": "slides/c7-migration.html#where-do-migrants-come-from",
+    "title": "Migration and Development",
+    "section": "Where Do Migrants Come From?",
+    "text": "Where Do Migrants Come From?"
+  },
+  {
+    "objectID": "slides/c7-migration.html#migrants-as-share-of-population",
+    "href": "slides/c7-migration.html#migrants-as-share-of-population",
+    "title": "Migration and Development",
+    "section": "Migrants as Share of Population",
+    "text": "Migrants as Share of Population"
+  },
+  {
+    "objectID": "slides/c7-migration.html#remittances-vs-foreign-aid",
+    "href": "slides/c7-migration.html#remittances-vs-foreign-aid",
+    "title": "Migration and Development",
+    "section": "Remittances vs Foreign Aid",
+    "text": "Remittances vs Foreign Aid"
+  },
+  {
+    "objectID": "slides/c7-migration.html#where-do-migrants-go",
+    "href": "slides/c7-migration.html#where-do-migrants-go",
+    "title": "Migration and Development",
+    "section": "Where Do Migrants Go?",
+    "text": "Where Do Migrants Go?"
+  },
+  {
+    "objectID": "slides/c7-migration.html#major-migration-corridors",
+    "href": "slides/c7-migration.html#major-migration-corridors",
+    "title": "Migration and Development",
+    "section": "Major Migration Corridors",
+    "text": "Major Migration Corridors"
+  },
+  {
+    "objectID": "slides/c7-migration.html#myth-1-migration-is-mostly-south-to-north",
+    "href": "slides/c7-migration.html#myth-1-migration-is-mostly-south-to-north",
+    "title": "Migration and Development",
+    "section": "Myth 1: Migration is mostly South to North",
+    "text": "Myth 1: Migration is mostly South to North"
+  },
+  {
+    "objectID": "slides/c7-migration.html#myth-1-migration-is-mostly-south-to-north-1",
+    "href": "slides/c7-migration.html#myth-1-migration-is-mostly-south-to-north-1",
+    "title": "Migration and Development",
+    "section": "Myth 1: Migration is mostly South to North",
+    "text": "Myth 1: Migration is mostly South to North"
+  },
+  {
+    "objectID": "slides/c7-migration.html#myth-2-most-migrants-are-refugees",
+    "href": "slides/c7-migration.html#myth-2-most-migrants-are-refugees",
+    "title": "Migration and Development",
+    "section": "Myth 2: Most migrants are refugees",
+    "text": "Myth 2: Most migrants are refugees\n\n\nOf ~281 million international migrants, ~36 million are refugees or asylum seekers (~13%, UNHCR 2023)\nThe vast majority migrate for economic reasons: labor, family reunification, education\nForced and economic migration are often intertwined: conflict destroys livelihoods\nBut the political debate focuses almost entirely on refugees and asylum\n\n\n\nWhy does this distinction matter for policy?"
+  },
+  {
+    "objectID": "slides/c7-migration.html#myth-3-the-poorest-people-migrate",
+    "href": "slides/c7-migration.html#myth-3-the-poorest-people-migrate",
+    "title": "Migration and Development",
+    "section": "Myth 3: The poorest people migrate",
+    "text": "Myth 3: The poorest people migrate\n\n\nMigration requires resources: savings, networks, information\nThe people trapped in the worst poverty often can’t move\nMigrants tend to be younger, healthier, more educated, more risk-tolerant\nMigration is a development tool that doesn’t reach the people who need it most"
+  },
+  {
+    "objectID": "slides/c7-migration.html#myth-4-migration-drains-origin-countries",
+    "href": "slides/c7-migration.html#myth-4-migration-drains-origin-countries",
+    "title": "Migration and Development",
+    "section": "Myth 4: Migration drains origin countries",
+    "text": "Myth 4: Migration drains origin countries"
+  },
+  {
+    "objectID": "slides/c7-migration.html#myth-4-migration-drains-origin-countries-1",
+    "href": "slides/c7-migration.html#myth-4-migration-drains-origin-countries-1",
+    "title": "Migration and Development",
+    "section": "Myth 4: Migration drains origin countries",
+    "text": "Myth 4: Migration drains origin countries\n\n\nRemittances to low and middle-income countries exceeded $600 billion in 2022 (World Bank)\nFor many countries, remittances are the largest source of foreign income\nEmigration of skilled workers (“brain drain”) is a concern: ~77% of tertiary-educated adults from Haiti live abroad (Docquier and Rapoport 2012)\nBut diaspora networks, return migration, and remittance-funded education can generate “brain gain”"
   }
 ]
