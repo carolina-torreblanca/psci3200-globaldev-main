@@ -12667,7 +12667,7 @@
     "href": "slides/c6-conflict2.html#next-class",
     "title": "Conflict and Development II",
     "section": "Next Class",
-    "text": "Next Class\nHealth and Development\n\nReading: Chen et al. (2013): air pollution and life expectancy in China\nA new causal inference method: Regression Discontinuity Design"
+    "text": "Next Class\nMigration and Development\n\nReading: Yang (2008): remittances and household investment in the Philippines\nFrom destruction to movement: what happens when people leave?"
   },
   {
     "objectID": "materials/c6_conflict2.html",
@@ -13262,7 +13262,7 @@
     "href": "slides/c6-conflict2.html#threats",
     "title": "Conflict and Development II",
     "section": "Threats",
-    "text": "Threats\n\n\nSelection: maybe only the most aggressive players from war countries make it to European leagues\nReferee bias: could referees card players from certain countries more harshly?\nOmitted variables: poverty, inequality, culture may correlate with both war and aggression\n\n\n\nHow would you design a test to rule out referee bias?"
+    "text": "Threats\n\n\nSelection: maybe only the most aggressive players from war countries make it to European leagues\nReferee bias: could referees card players from certain countries more harshly?\nOmitted variables: poverty, inequality, culture may correlate with both war and aggression\n\n\n\nHow would you design a test to rule out referee bias? Hint: think about what should vary if it’s the ref’s perception vs the player’s behavior"
   },
   {
     "objectID": "slides/c6-conflict2.html#placebo-tests-what-else-should-be-true",
@@ -13515,5 +13515,19 @@
     "title": "Migration and Development",
     "section": "Next Class",
     "text": "Next Class\nData Wrangling Workshop\n\nNo readings\nBring your laptop and your final project data"
+  },
+  {
+    "objectID": "slides/c6-conflict2.html#section",
+    "href": "slides/c6-conflict2.html#section",
+    "title": "Conflict and Development II",
+    "section": "",
+    "text": "The Consequences of Child Soldiering\nNorthern Uganda | Labuje IDP Camp\n\nPhoto: Wikimedia Commons (CC)"
+  },
+  {
+    "objectID": "slides/c6-conflict2.html#before-we-start",
+    "href": "slides/c6-conflict2.html#before-we-start",
+    "title": "Conflict and Development II",
+    "section": "Before we start",
+    "text": "Before we start\nSlack me something you learned about the readings re causes or consequences of civil war"
   }
 ]

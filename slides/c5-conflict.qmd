@@ -327,13 +327,13 @@ ggplot() +
   # Confounding arrows (dashed grey)
   curve_arrow(2.8, 1.3, 2.2, 0.25, 0.2, "#7f7f7f", "dashed", 1) +
   curve_arrow(3.2, 1.3, 3.8, 0.25, -0.2, "#7f7f7f", "dashed", 1) +
-  # Excluded: Z -> Y (red, curved down)
-  curve_arrow(0.4, -0.15, 3.6, -0.15, 0.4, "#d62728", "dotted", 0.9) +
-  annotate("text", x = 2, y = -0.7, label = "X  exclusion restriction",
+  # Excluded: Z -> Y (red, curved down below the diagram)
+  curve_arrow(0.4, -0.15, 3.6, -0.15, -0.4, "#d62728", "dotted", 0.9) +
+  annotate("text", x = 2, y = -0.85, label = "X  exclusion restriction",
            size = 4, color = "#d62728", fontface = "italic") +
-  # Excluded: U -> Z (red, curved up)
-  curve_arrow(2.7, 1.4, 0.3, 0.25, 0.3, "#d62728", "dotted", 0.9) +
-  annotate("text", x = 0.9, y = 1.5, label = "X  independence",
+  # Excluded: U -> Z (red, curved up above the diagram)
+  curve_arrow(2.7, 1.4, 0.3, 0.25, -0.3, "#d62728", "dotted", 0.9) +
+  annotate("text", x = 0.9, y = 1.8, label = "X  independence",
            size = 4, color = "#d62728", fontface = "italic") +
   # Nodes
   geom_point(data = nodes, aes(x = x, y = y, color = fill), size = 18) +

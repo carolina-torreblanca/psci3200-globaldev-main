@@ -35,6 +35,11 @@ format:
 4. Miguel, Saiegh, and Satyanath (2011): Civil War and the Soccer Pitch
 
 
+## Before we start
+
+**Slack me something you learned about the readings re causes or consequences of civil war**
+
+
 # Last Week
 
 ## What Causes Conflict?
@@ -373,7 +378,7 @@ The "no effect on goals" is the placebo: it rules out stories where war just mak
 
 ## Next Class
 
-**Health and Development**
+**Migration and Development**
 
-- Reading: Chen et al. (2013): air pollution and life expectancy in China
-- A new causal inference method: **Regression Discontinuity Design**
+- Reading: Yang (2008): remittances and household investment in the Philippines
+- From destruction to movement: what happens when people leave?
