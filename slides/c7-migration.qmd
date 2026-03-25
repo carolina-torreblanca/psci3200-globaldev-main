@@ -29,11 +29,12 @@ format:
 
 ## Agenda
 
-1. From Conflict to Migration
+1. Types of Migration
 2. Why Do People Migrate?
-3. Who Can Migrate?
-4. Yang (2008): Remittances and Household Investment
-5. Migration as Development Policy
+3. Who Actually Migrates?
+4. Where Do They Go?
+5. Does Migration Drain Origin Countries?
+6. Yang (2008): Remittances and Household Investment
 
 
 # From Conflict to Migration
@@ -43,164 +44,162 @@ format:
 ::: incremental
 - Conflict destroys human capital, changes behavior, politicizes people
 - One of the most immediate consequences of conflict is displacement
-- Over 110 million forcibly displaced people globally
-- But forced displacement is the extreme case: most migration is a choice
+- Today: what does migration mean for development?
 :::
 
-. . .
+# Types of Migration
 
-Today: what does migration mean for development?
-
-
-# Why Do People Migrate?
-
-## The Decision to Migrate
-
-::: incremental
-- Frame it in terms of **opportunity cost**: what are the returns of being somewhere else vs staying?
-- Moving from a poor to a rich country can 2-3x your earnings overnight
-- Migration may be the single most effective way to increase someone's income
-- Like conflict, the decision to migrate depends on expected returns relative to the status quo
-:::
-
-
-## Types of Migration
+## Forced vs Voluntary
 
 ::: incremental
 - **Forced**: conflict, persecution, disaster (refugees, asylum seekers, IDPs)
 - **Voluntary**: economic opportunity, family reunification, education
-- The line between the two is often blurry: conflict destroys livelihoods, poverty makes people vulnerable to violence
+- Of ~281 million international migrants, ~36 million are refugees or asylum seekers (**~13%**, UNHCR 2023)
+- Is the difference btw forced and voluntary clear cut?
 :::
-
 
 ## The Scale
 
 ![](img/un_migration.png){fig-align="center" height=5in}
 
 
-# Myths About Migration
+# Why Do People Migrate?
 
+## The Place Premium
 
-## Myth 1: Migration is mostly South to North
-
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-#| fig-height: 5
-
-library(ggplot2)
-library(dplyr)
-
-# UN DESA 2020 estimates of migration by direction (millions)
-# Source: UN International Migration 2020 Highlights
-directions <- data.frame(
-  corridor = c("South to South", "South to North",
-               "North to North", "North to South"),
-  migrants = c(105, 82, 69, 25)
-) |>
-  mutate(corridor = factor(corridor,
-    levels = c("South to North", "South to South",
-               "North to North", "North to South")))
-
-ggplot(directions, aes(x = corridor, y = migrants, fill = corridor)) +
-  geom_col(width = 0.7) +
-  geom_text(aes(label = paste0(migrants, "M")), vjust = -0.5, size = 5) +
-  scale_fill_manual(values = c("South to North" = "#011F5B",
-                                "South to South" = "#990000",
-                                "North to North" = "grey50",
-                                "North to South" = "grey70")) +
-  labs(x = NULL, y = "International migrants (millions, 2020)",
-       title = "South-South migration is the largest corridor",
-       caption = "Source: UN DESA, International Migration 2020 Highlights") +
-  theme_minimal(base_size = 16) +
-  theme(legend.position = "none") +
-  ylim(0, 120)
-```
-
-
-## Myth 2: Most migrants are refugees
+Clemens, Montenegro, and Pritchett (2008) estimate the wage gap for **observably identical workers** across borders:
 
 ::: incremental
-- Of ~281 million international migrants, ~36 million are refugees or asylum seekers (**~13%**, UNHCR 2023)
-- The vast majority migrate for **economic reasons**: labor, family reunification, education
-- Forced and economic migration are often intertwined: conflict destroys livelihoods
-- But the political debate focuses almost entirely on refugees and asylum
+- A Bolivian worker earns **3x more** just by working in the US
+- A Nigerian worker earns **7x more**
+- These gaps dwarf returns to education, capital, or any other intervention
+- The biggest price distortion in the world economy is on wages! 
 :::
 
 . . .
 
-**Why does this distinction matter for policy?**
+So why doesn't everyone move?
 
 
-## Myth 3: The poorest people migrate
+## The Opportunity Cost of Staying
 
 ::: incremental
-- Migration requires resources: savings, networks, information
-- The people trapped in the worst poverty often **can't move**
-- Migrants tend to be younger, healthier, more educated, more risk-tolerant
-- Migration is a development tool that **doesn't reach the people who need it most**
+- Same logic as the conflict literature: people weigh costs and benefits
+- The **opportunity cost of staying** is the wage you could earn elsewhere
+- If wages at home are low, the returns to migration are enormous
+- Migration is an investment: pay upfront costs now, earn returns later
+:::
+
+. . .
+
+**So does that mean the poorest people migrate?**
+
+
+# Who Actually Migrates?
+
+## What do you think?
+
+**If migration is driven by opportunity cost, should the poorest people be the most likely to migrate?**
+
+. . .
+
+The conventional wisdom in policy circles says yes — and that development will reduce migration
+
+- Bill Clinton on NAFTA: *"as the benefits of economic growth are spread in Mexico ... there will be less illegal immigration"* (White House 1993)
+- EU Commission (2008): migration policy should *"focus much more on ... improving the socio-economic situation in low-income and middle-income countries"*
+
+
+## Migration as Investment
+
+If migration is an investment, **not everyone can afford it**:
+
+::: incremental
+- Moving costs money: transport, visas, fees, settling in a new place
+- You need **information**: where to go, how to get there, who can help
+- You need **networks**: a cousin, a friend, a community at the destination
+- The poorest people have the most to gain but **cannot pay the upfront cost**
 :::
 
 
-## Myth 4: Migration drains origin countries
+## Two Forces
 
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-#| fig-height: 5
-
-library(WDI)
-library(scales)
-library(tidyr)
-
-# Remittances received and ODA received
-flows <- WDI(indicator = c("BX.TRF.PWKR.CD.DT", "DT.ODA.ODAT.CD"),
-             country = c("LMY"), start = 2000, end = 2022) |>
-  rename(remittances = BX.TRF.PWKR.CD.DT,
-         oda = DT.ODA.ODAT.CD) |>
-  filter(!is.na(remittances) | !is.na(oda)) |>
-  pivot_longer(cols = c(remittances, oda),
-               names_to = "flow", values_to = "value") |>
-  filter(!is.na(value)) |>
-  mutate(flow = ifelse(flow == "remittances",
-                       "Remittances received", "Official development aid"))
-
-ggplot(flows, aes(x = year, y = value / 1e9, color = flow)) +
-  geom_line(linewidth = 1.5) +
-  scale_color_manual(values = c("Official development aid" = "#990000",
-                                "Remittances received" = "#011F5B")) +
-  scale_y_continuous(labels = dollar) +
-  labs(x = NULL, y = "Billions (current USD)",
-       title = "Remittances dwarf foreign aid to developing countries",
-       color = NULL,
-       caption = "Source: World Bank WDI. LMY = Low & Middle Income countries.") +
-  theme_minimal(base_size = 16) +
-  theme(legend.position = "bottom")
-```
-
-
-## Myth 4: Migration drains origin countries
+So what happens as countries develop?
 
 ::: incremental
-- Remittances to low and middle-income countries exceeded **$600 billion** in 2022 (World Bank)
-- For many countries, remittances are the **largest source of foreign income**
-- Emigration of skilled workers ("brain drain") is a concern: ~77% of tertiary-educated adults from Haiti live abroad (Docquier and Rapoport 2012)
-- But diaspora networks, return migration, and remittance-funded education can generate **"brain gain"**
+- **More financial reason to stay**: wages at home rise, the gap with abroad shrinks
+- **But easier to leave**: people can afford the trip, transport is cheaper, diaspora networks grow, information flows improve
+:::
+
+. . .
+
+Which effect dominates?
+
+
+## The Mobility Transition
+
+Clemens (2014) reviews 45 years of evidence:
+
+::: incremental
+- At low incomes, the **ability effect** dominates: development makes migration more affordable $\rightarrow$ emigration **rises**
+- Only after ~PPP \$7,000-8,000 does the **incentive effect** kick in: wages at home are high enough that fewer people want to leave
+- Result: an **inverted-U** between development and emigration
 :::
 
 
-# So Who Migrates, and Why?
+## Macro Evidence: The Migration Hump
 
-## Selection
+![](img/migration_hump.png){fig-align="center" height=5in}
+
+
+# Where Do They Go?
+
+## Does that mean migrants move to the richest countries?
+
+**What would you predict?**
+
+. . .
+
+Not necessarily.
+
+
+## South-South Migration
+
+![](img/migration_directions.png){fig-align="center" height=5in}
+
+
+## South-South Migration
 
 ::: incremental
-- Migrants are not a random sample of the origin population
-- They tend to be younger, healthier, more educated, more risk-tolerant
-- This creates a measurement problem: if we compare migrants to non-migrants, we're comparing different kinds of people
-- Sound familiar? (Connect to selection bias in Blattman and Annan)
+- **South-South** migration (105M) is larger than South-North (82M) (UN DESA 2020)
+- Most migration happens between neighboring countries, not across continents
+- Afghan refugees go to Iran and Pakistan, not Germany
+- Proximity, language, networks, and lower barriers matter more than wage gaps
 :::
+
+
+## Major Migration Corridors
+
+![](img/migration_corridors.png){fig-align="center" height=5in}
+
+
+# Does Migration Drain Origin Countries?
+
+## Remittances vs Foreign Aid
+
+![](img/remittances_vs_oda.png){fig-align="center" height=5in}
+
+
+## Remittances Are Huge — But Are They Productive?
+
+::: incremental
+- Remittances exceeded **$600 billion** in 2022 — larger than all foreign aid (World Bank)
+- But money alone doesn't guarantee development
+- Do families spend it on consumption (food, goods) or **investment** (education, business)?
+:::
+
+. . .
+
+This is what Yang (2008) studies.
 
 
 # Yang (2008)
@@ -233,6 +232,16 @@ Do remittances increase household investment in human capital and entrepreneursh
 :::
 
 
+## Selection Problem
+
+::: incremental
+- Migrants are not a random sample of the origin population
+- They tend to be younger, healthier, more educated, more risk-tolerant
+- This creates a measurement problem: if we compare migrants to non-migrants, we're comparing different kinds of people
+- Sound familiar? (Connect to selection bias in Blattman and Annan)
+:::
+
+
 ## The Identification Problem
 
 ::: incremental
@@ -253,6 +262,29 @@ Do remittances increase household investment in human capital and entrepreneursh
 - **Exchange rate shocks**: when the currency of the destination country appreciates against the Philippine peso, the same salary is worth MORE in pesos back home
 - These exchange rate movements are driven by global macro forces, not by individual migrant or household decisions
 - **Instrument**: exchange rate shocks specific to where a household's migrant works
+:::
+
+
+## The Instrument in Detail
+
+Yang uses the **1997 Asian financial crisis**:
+
+::: incremental
+- Some currencies **appreciated** against the peso (USD, Saudi riyal) $\rightarrow$ remittances worth more
+- Others **depreciated** (Malaysian ringgit, HK dollar) $\rightarrow$ remittances worth less
+- Each household gets a different shock depending on **where their migrant works**
+- Which country the migrant went to was decided **before** the crisis — not a response to it
+:::
+
+
+## Identifying Assumptions
+
+Instrument valid if exchange rate shocks are **unrelated to household type**
+
+::: incremental
+- **Threat**: richer households send migrants to dollar-pegged countries $\rightarrow$ controls for pre-crisis household characteristics
+- **Threat**: crisis changes labor demand, migrants come home $\rightarrow$ shows return rates don't differ across destinations
+- **Key**: variation comes from **which currency** your migrant earns in, decided before the crisis
 :::
 
 
@@ -327,7 +359,7 @@ Do remittances increase household investment in human capital and entrepreneursh
 ## Discussion
 
 ::: incremental
-- Yang shows remittances fund education, but what about "brain drain": the most educated people leave. Is migration a net positive or negative for origin countries?
+- Yang shows remittances fund education, but the most educated people leave. Is migration a net positive or negative for origin countries?
 - Migration requires resources: the poorest can't move. Does this make migration a regressive development tool?
 - How does this connect to the conflict classes: displacement as forced migration vs economic migration as choice?
 :::

@@ -13374,14 +13374,14 @@
     "href": "slides/c7-migration.html#agenda",
     "title": "Migration and Development",
     "section": "Agenda",
-    "text": "Agenda\n\nFrom Conflict to Migration\nWhy Do People Migrate?\nWho Can Migrate?\nYang (2008): Remittances and Household Investment\nMigration as Development Policy"
+    "text": "Agenda\n\nTypes of Migration\nWhy Do People Migrate?\nWho Actually Migrates?\nWhere Do They Go?\nDoes Migration Drain Origin Countries?\nYang (2008): Remittances and Household Investment"
   },
   {
     "objectID": "slides/c7-migration.html#last-class-the-consequences-of-civil-war",
     "href": "slides/c7-migration.html#last-class-the-consequences-of-civil-war",
     "title": "Migration and Development",
     "section": "Last Class: The Consequences of Civil War",
-    "text": "Last Class: The Consequences of Civil War\n\n\nConflict destroys human capital, changes behavior, politicizes people\nOne of the most immediate consequences of conflict is displacement\nOver 110 million forcibly displaced people globally\nBut forced displacement is the extreme case: most migration is a choice\n\n\n\nToday: what does migration mean for development?"
+    "text": "Last Class: The Consequences of Civil War\n\n\nConflict destroys human capital, changes behavior, politicizes people\nOne of the most immediate consequences of conflict is displacement\nToday: what does migration mean for development?"
   },
   {
     "objectID": "slides/c7-migration.html#the-decision-to-migrate",
@@ -13507,7 +13507,7 @@
     "href": "slides/c7-migration.html#discussion-1",
     "title": "Migration and Development",
     "section": "Discussion",
-    "text": "Discussion\n\n\nYang shows remittances fund education, but what about “brain drain”: the most educated people leave. Is migration a net positive or negative for origin countries?\nMigration requires resources: the poorest can’t move. Does this make migration a regressive development tool?\nHow does this connect to the conflict classes: displacement as forced migration vs economic migration as choice?"
+    "text": "Discussion\n\n\nYang shows remittances fund education, but the most educated people leave. Is migration a net positive or negative for origin countries?\nMigration requires resources: the poorest can’t move. Does this make migration a regressive development tool?\nHow does this connect to the conflict classes: displacement as forced migration vs economic migration as choice?"
   },
   {
     "objectID": "slides/c7-migration.html#next-class",
@@ -13613,5 +13613,166 @@
     "title": "Migration and Development",
     "section": "Myth 4: Migration drains origin countries",
     "text": "Myth 4: Migration drains origin countries\n\n\nRemittances to low and middle-income countries exceeded $600 billion in 2022 (World Bank)\nFor many countries, remittances are the largest source of foreign income\nEmigration of skilled workers (“brain drain”) is a concern: ~77% of tertiary-educated adults from Haiti live abroad (Docquier and Rapoport 2012)\nBut diaspora networks, return migration, and remittance-funded education can generate “brain gain”"
+  },
+  {
+    "objectID": "slides/c7-migration.html#the-place-premium",
+    "href": "slides/c7-migration.html#the-place-premium",
+    "title": "Migration and Development",
+    "section": "The Place Premium",
+    "text": "The Place Premium\nClemens, Montenegro, and Pritchett (2008) estimate the wage gap for observably identical workers across borders:\n\n\nA Bolivian worker earns 3x more just by working in the US\nA Nigerian worker earns 7x more\nThese gaps dwarf returns to education, capital, or any other intervention\nThe biggest price distortion in the world economy is on wages!\n\n\n\nSo why doesn’t everyone move?"
+  },
+  {
+    "objectID": "slides/c7-migration.html#does-poverty-cause-migration",
+    "href": "slides/c7-migration.html#does-poverty-cause-migration",
+    "title": "Migration and Development",
+    "section": "Does poverty cause migration?",
+    "text": "Does poverty cause migration?\nWhat do you think?\n\nThe conventional wisdom in policy circles: development reduces migration\n\nBill Clinton on NAFTA: “as the benefits of economic growth are spread in Mexico … there will be less illegal immigration” (White House 1993)\nEU Commission (2008): migration policy should “focus much more on … improving the socio-economic situation in low-income and middle-income countries”"
+  },
+  {
+    "objectID": "slides/c7-migration.html#the-mobility-transition",
+    "href": "slides/c7-migration.html#the-mobility-transition",
+    "title": "Migration and Development",
+    "section": "The Mobility Transition",
+    "text": "The Mobility Transition\nClemens (2014) reviews 45 years of evidence:\n\n\nAt low incomes, the ability effect dominates: development makes migration more affordable \\(\\rightarrow\\) emigration rises\nOnly after ~PPP $7,000-8,000 does the incentive effect kick in: wages at home are high enough that fewer people want to leave\nResult: an inverted-U between development and emigration"
+  },
+  {
+    "objectID": "slides/c7-migration.html#the-mobility-transition-1",
+    "href": "slides/c7-migration.html#the-mobility-transition-1",
+    "title": "Migration and Development",
+    "section": "The Mobility Transition",
+    "text": "The Mobility Transition\nClemens (2014) reviews 45 years of evidence:\n\n\nEmigration rises with income among low and lower-middle-income countries\nThe relationship only reverses around PPP $7,000-8,000 (upper-middle income)\nEven the richest countries do not have lower emigration than the poorest\nDevelopment does not reduce migration — at least not for decades\n\n\n\nWhy? Migration requires resources: savings, networks, information. The poorest cannot afford to leave."
+  },
+  {
+    "objectID": "slides/c7-migration.html#forced-vs-voluntary",
+    "href": "slides/c7-migration.html#forced-vs-voluntary",
+    "title": "Migration and Development",
+    "section": "Forced vs Voluntary",
+    "text": "Forced vs Voluntary\n\n\nForced: conflict, persecution, disaster (refugees, asylum seekers, IDPs)\nVoluntary: economic opportunity, family reunification, education\nOf ~281 million international migrants, ~36 million are refugees or asylum seekers (~13%, UNHCR 2023)\nIs the difference btw forced and voluntary clear cut?"
+  },
+  {
+    "objectID": "slides/c7-migration.html#myth-3-migration-drains-origin-countries",
+    "href": "slides/c7-migration.html#myth-3-migration-drains-origin-countries",
+    "title": "Migration and Development",
+    "section": "Myth 3: Migration drains origin countries",
+    "text": "Myth 3: Migration drains origin countries"
+  },
+  {
+    "objectID": "slides/c7-migration.html#myth-3-migration-drains-origin-countries-1",
+    "href": "slides/c7-migration.html#myth-3-migration-drains-origin-countries-1",
+    "title": "Migration and Development",
+    "section": "Myth 3: Migration drains origin countries",
+    "text": "Myth 3: Migration drains origin countries\n\n\nRemittances to low and middle-income countries exceeded $600 billion in 2022 (World Bank)\nFor many countries, remittances are the largest source of foreign income\nEmigration of skilled workers is a concern: ~77% of tertiary-educated adults from Haiti live abroad (Docquier and Rapoport 2012)\nBut diaspora networks, return migration, and remittance-funded education can offset losses"
+  },
+  {
+    "objectID": "slides/c7-migration.html#the-opportunity-cost-of-staying",
+    "href": "slides/c7-migration.html#the-opportunity-cost-of-staying",
+    "title": "Migration and Development",
+    "section": "The Opportunity Cost of Staying",
+    "text": "The Opportunity Cost of Staying\n\n\nSame logic as the conflict literature: people weigh costs and benefits\nThe opportunity cost of staying is the wage you could earn elsewhere\nIf wages at home are low, the returns to migration are enormous\nMigration is an investment: pay upfront costs now, earn returns later\n\n\n\nSo does that mean the poorest people migrate?"
+  },
+  {
+    "objectID": "slides/c7-migration.html#what-do-you-think",
+    "href": "slides/c7-migration.html#what-do-you-think",
+    "title": "Migration and Development",
+    "section": "What do you think?",
+    "text": "What do you think?\nIf migration is driven by opportunity cost, should the poorest people be the most likely to migrate?\n\nThe conventional wisdom in policy circles says yes — and that development will reduce migration\n\nBill Clinton on NAFTA: “as the benefits of economic growth are spread in Mexico … there will be less illegal immigration” (White House 1993)\nEU Commission (2008): migration policy should “focus much more on … improving the socio-economic situation in low-income and middle-income countries”"
+  },
+  {
+    "objectID": "slides/c7-migration.html#two-competing-models",
+    "href": "slides/c7-migration.html#two-competing-models",
+    "title": "Migration and Development",
+    "section": "Two Competing Models",
+    "text": "Two Competing Models\nNeoclassical model (Ravenstein 1885, Lewis 1954, Harris and Todaro 1970):\n\n\nMigration is an investment: move from worse circumstances to better ones\nHigher income at home raises the reservation wage \\(\\rightarrow\\) less incentive to move\nPrediction: rising incomes strictly reduce emigration\nSame logic as opportunity cost in the conflict literature\n\n\n\nBut what if rising incomes also change other things?"
+  },
+  {
+    "objectID": "slides/c7-migration.html#macro-evidence-the-migration-hump",
+    "href": "slides/c7-migration.html#macro-evidence-the-migration-hump",
+    "title": "Migration and Development",
+    "section": "Macro Evidence: The Migration Hump",
+    "text": "Macro Evidence: The Migration Hump"
+  },
+  {
+    "objectID": "slides/c7-migration.html#what-the-data-show",
+    "href": "slides/c7-migration.html#what-the-data-show",
+    "title": "Migration and Development",
+    "section": "What the Data Show",
+    "text": "What the Data Show\nClemens (2014) reviews 45 years of evidence:\n\n\nEmigration rises with income among low and lower-middle-income countries\nThe relationship only reverses around PPP $7,000-8,000 (upper-middle income)\nEven the richest countries do not have lower emigration than the poorest\nDevelopment does not reduce migration — at least not for decades\n\n\n\nThe poorest cannot afford to leave. Migration requires resources: savings, networks, information."
+  },
+  {
+    "objectID": "slides/c7-migration.html#does-that-mean-migrants-move-to-the-richest-countries",
+    "href": "slides/c7-migration.html#does-that-mean-migrants-move-to-the-richest-countries",
+    "title": "Migration and Development",
+    "section": "Does that mean migrants move to the richest countries?",
+    "text": "Does that mean migrants move to the richest countries?\nWhat would you predict?\n\nNot necessarily."
+  },
+  {
+    "objectID": "slides/c7-migration.html#south-south-migration",
+    "href": "slides/c7-migration.html#south-south-migration",
+    "title": "Migration and Development",
+    "section": "South-South Migration",
+    "text": "South-South Migration"
+  },
+  {
+    "objectID": "slides/c7-migration.html#south-south-migration-1",
+    "href": "slides/c7-migration.html#south-south-migration-1",
+    "title": "Migration and Development",
+    "section": "South-South Migration",
+    "text": "South-South Migration\n\n\nSouth-South migration (105M) is larger than South-North (82M) (UN DESA 2020)\nMost migration happens between neighboring countries, not across continents\nAfghan refugees go to Iran and Pakistan, not Germany\nProximity, language, networks, and lower barriers matter more than wage gaps"
+  },
+  {
+    "objectID": "slides/c7-migration.html#the-scale-of-remittances",
+    "href": "slides/c7-migration.html#the-scale-of-remittances",
+    "title": "Migration and Development",
+    "section": "The Scale of Remittances",
+    "text": "The Scale of Remittances\n\n\nRemittances to low and middle-income countries exceeded $600 billion in 2022 (World Bank)\nFor many countries, remittances are the largest source of foreign income\nEmigration of skilled workers is a concern: ~77% of tertiary-educated adults from Haiti live abroad (Docquier and Rapoport 2012)\nBut diaspora networks, return migration, and remittance-funded education can offset losses\n\n\n\nSo what do families actually do with remittance money? This is what Yang (2008) studies."
+  },
+  {
+    "objectID": "slides/c7-migration.html#migrants-are-not-random",
+    "href": "slides/c7-migration.html#migrants-are-not-random",
+    "title": "Migration and Development",
+    "section": "Migrants Are Not Random",
+    "text": "Migrants Are Not Random\n\n\nMigrants are not a random sample of the origin population\nThey tend to be younger, healthier, more educated, more risk-tolerant\nThis creates a measurement problem: if we compare migrants to non-migrants, we’re comparing different kinds of people\nSound familiar? (Connect to selection bias in Blattman and Annan)"
+  },
+  {
+    "objectID": "slides/c7-migration.html#migration-as-investment",
+    "href": "slides/c7-migration.html#migration-as-investment",
+    "title": "Migration and Development",
+    "section": "Migration as Investment",
+    "text": "Migration as Investment\nIf migration is an investment, not everyone can afford it:\n\n\nMoving costs money: transport, visas, fees, settling in a new place\nYou need information: where to go, how to get there, who can help\nYou need networks: a cousin, a friend, a community at the destination\nThe poorest people have the most to gain but cannot pay the upfront cost"
+  },
+  {
+    "objectID": "slides/c7-migration.html#two-forces",
+    "href": "slides/c7-migration.html#two-forces",
+    "title": "Migration and Development",
+    "section": "Two Forces",
+    "text": "Two Forces\nSo what happens as countries develop?\n\n\nMore financial reason to stay: wages at home rise, the gap with abroad shrinks\nBut easier to leave: people can afford the trip, transport is cheaper, diaspora networks grow, information flows improve\n\n\n\nWhich effect dominates?"
+  },
+  {
+    "objectID": "slides/c7-migration.html#remittances-are-huge-but-are-they-productive",
+    "href": "slides/c7-migration.html#remittances-are-huge-but-are-they-productive",
+    "title": "Migration and Development",
+    "section": "Remittances Are Huge — But Are They Productive?",
+    "text": "Remittances Are Huge — But Are They Productive?\n\n\nRemittances exceeded $600 billion in 2022 — larger than all foreign aid (World Bank)\nBut money alone doesn’t guarantee development\nDo families spend it on consumption (food, goods) or investment (education, business)?\n\n\n\nThis is what Yang (2008) studies."
+  },
+  {
+    "objectID": "slides/c7-migration.html#selection-problem",
+    "href": "slides/c7-migration.html#selection-problem",
+    "title": "Migration and Development",
+    "section": "Selection Problem",
+    "text": "Selection Problem\n\n\nMigrants are not a random sample of the origin population\nThey tend to be younger, healthier, more educated, more risk-tolerant\nThis creates a measurement problem: if we compare migrants to non-migrants, we’re comparing different kinds of people\nSound familiar? (Connect to selection bias in Blattman and Annan)"
+  },
+  {
+    "objectID": "slides/c7-migration.html#the-instrument-in-detail",
+    "href": "slides/c7-migration.html#the-instrument-in-detail",
+    "title": "Migration and Development",
+    "section": "The Instrument in Detail",
+    "text": "The Instrument in Detail\nYang uses the 1997 Asian financial crisis:\n\n\nSome currencies appreciated against the peso (USD, Saudi riyal) \\(\\rightarrow\\) remittances worth more\nOthers depreciated (Malaysian ringgit, HK dollar) \\(\\rightarrow\\) remittances worth less\nEach household gets a different shock depending on where their migrant works\nWhich country the migrant went to was decided before the crisis — not a response to it"
+  },
+  {
+    "objectID": "slides/c7-migration.html#identifying-assumptions",
+    "href": "slides/c7-migration.html#identifying-assumptions",
+    "title": "Migration and Development",
+    "section": "Identifying Assumptions",
+    "text": "Identifying Assumptions\nInstrument valid if exchange rate shocks are unrelated to household type\n\n\nThreat: richer households send migrants to dollar-pegged countries \\(\\rightarrow\\) controls for pre-crisis household characteristics\nThreat: crisis changes labor demand, migrants come home \\(\\rightarrow\\) shows return rates don’t differ across destinations\nKey: variation comes from which currency your migrant earns in, decided before the crisis"
   }
 ]
