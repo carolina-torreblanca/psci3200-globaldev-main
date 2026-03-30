@@ -1,22 +1,70 @@
 ---
-title: "Final Project Essentials"
-date: 2024-03-12
+title: "Data Wrangling Workshop"
+date: 2026-03-30
 ---
-
 
 ## Required Readings
 
 - None
 
+## Overview
 
-## Slides
+Today we will practice intermediate data wrangling by working with two real datasets: Olympic Games medal counts and World Bank development indicators. We'll clean each dataset, merge them, and analyze whether national wealth predicts Olympic success.
 
-- [Slides](/slides/14-fp-essentials.html)
+## Step 1: Set Up Your Project
 
-## Assignments
+Create a folder called `wrangling_workshop` on your computer. Inside it, create **three subfolders**:
 
-- [Final Project Research Question and Idea](/assignments/03_fprqd.html)
+```
+wrangling_workshop/
+├── input/       ← raw data goes here (never modify these files)
+├── output/      ← cleaned data, figures, tables go here
+├── code/        ← your scripts go here
+```
 
-## Workshop
+You can create these in Finder/File Explorer, or in the Terminal:
 
-- [Workshop Code and Data](https://github.com/jrspringman/psci3200-globaldev/blob/main/workshops/fp_essentials.qmd)
+```bash
+mkdir wrangling_workshop
+cd wrangling_workshop
+mkdir input output code
+```
+
+## Step 2: Create an RProject
+
+1. Open RStudio
+2. Go to **File → New Project → Existing Directory**
+3. Browse to your `wrangling_workshop` folder and click **Create Project**
+
+This creates a `.Rproj` file. **From now on, always open your project by double-clicking the `.Rproj` file.** This tells R where your files are so you can use relative paths like `read_csv("input/olympics_raw.csv")` instead of long absolute paths that break on other computers.
+
+## Step 3: Download the Data
+
+Right-click each link below and choose **"Save Link As..."** (or **"Download Linked File"**). Save both files into your `input/` folder.
+
+- [olympics_raw.csv](https://github.com/carolina-torreblanca/psci3200-globaldev-main/raw/main/workshops/data_wrangling/olympics_raw.csv) — Olympic athletes and medals, Athens 1896 to Rio 2016
+- [wb_indicators_panel.csv](https://github.com/carolina-torreblanca/psci3200-globaldev-main/raw/main/workshops/data_wrangling/wb_indicators_panel.csv) — GDP per capita, population, and female labor force participation from the World Bank (2000-2016, Olympic years only)
+
+## Step 4: Download the Workshop Script
+
+Save this R script into your `code/` folder:
+
+- [wrangling_workshop.R](https://github.com/carolina-torreblanca/psci3200-globaldev-main/raw/main/workshops/data_wrangling/wrangling_workshop.R)
+
+## Check Your Setup
+
+Before we start, your folder should look like this:
+
+```
+wrangling_workshop/
+├── wrangling_workshop.Rproj
+├── input/
+│   ├── olympics_raw.csv
+│   └── wb_indicators_panel.csv
+├── output/
+│   └── (empty for now)
+├── code/
+│   └── wrangling_workshop.R
+```
+
+Open `wrangling_workshop.Rproj`, then open `code/wrangling_workshop.R` in RStudio. We'll work through it together in class.

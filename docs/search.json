@@ -5735,14 +5735,14 @@
   {
     "objectID": "materials/14_fp_essentials.html",
     "href": "materials/14_fp_essentials.html",
-    "title": "Final Project Essentials",
+    "title": "Data Wrangling Workshop",
     "section": "",
     "text": "None"
   },
   {
     "objectID": "materials/14_fp_essentials.html#required-readings",
     "href": "materials/14_fp_essentials.html#required-readings",
-    "title": "Final Project Essentials",
+    "title": "Data Wrangling Workshop",
     "section": "",
     "text": "None"
   },
@@ -13774,5 +13774,54 @@
     "title": "Migration and Development",
     "section": "Identifying Assumptions",
     "text": "Identifying Assumptions\nInstrument valid if exchange rate shocks are unrelated to household type\n\n\nThreat: richer households send migrants to dollar-pegged countries \\(\\rightarrow\\) controls for pre-crisis household characteristics\nThreat: crisis changes labor demand, migrants come home \\(\\rightarrow\\) shows return rates don’t differ across destinations\nKey: variation comes from which currency your migrant earns in, decided before the crisis"
+  },
+  {
+    "objectID": "materials/14_fp_essentials.html#overview",
+    "href": "materials/14_fp_essentials.html#overview",
+    "title": "Data Wrangling Workshop",
+    "section": "Overview",
+    "text": "Overview\nToday we will practice intermediate data wrangling by working with two real datasets: Olympic Games medal counts and World Bank development indicators. We’ll clean each dataset, merge them, and analyze whether national wealth predicts Olympic success."
+  },
+  {
+    "objectID": "materials/14_fp_essentials.html#step-1-set-up-your-project",
+    "href": "materials/14_fp_essentials.html#step-1-set-up-your-project",
+    "title": "Data Wrangling Workshop",
+    "section": "Step 1: Set Up Your Project",
+    "text": "Step 1: Set Up Your Project\nCreate a folder called wrangling_workshop on your computer. Inside it, create three subfolders:\nwrangling_workshop/\n├── input/       ← raw data goes here (never modify these files)\n├── output/      ← cleaned data, figures, tables go here\n├── code/        ← your scripts go here\nYou can create these in Finder/File Explorer, or in the Terminal:\nmkdir wrangling_workshop\ncd wrangling_workshop\nmkdir input output code"
+  },
+  {
+    "objectID": "materials/14_fp_essentials.html#step-2-create-an-rproject",
+    "href": "materials/14_fp_essentials.html#step-2-create-an-rproject",
+    "title": "Data Wrangling Workshop",
+    "section": "Step 2: Create an RProject",
+    "text": "Step 2: Create an RProject\n\nOpen RStudio\nGo to File → New Project → Existing Directory\nBrowse to your wrangling_workshop folder and click Create Project\n\nThis creates a .Rproj file. From now on, always open your project by double-clicking the .Rproj file. This tells R where your files are so you can use relative paths like read_csv(\"input/olympics_raw.csv\") instead of long absolute paths that break on other computers."
+  },
+  {
+    "objectID": "materials/14_fp_essentials.html#step-3-download-the-data",
+    "href": "materials/14_fp_essentials.html#step-3-download-the-data",
+    "title": "Data Wrangling Workshop",
+    "section": "Step 3: Download the Data",
+    "text": "Step 3: Download the Data\nRight-click each link below and choose “Save Link As…” (or “Download Linked File”). Save both files into your input/ folder.\n\nolympics_raw.csv — Olympic athletes and medals, Athens 1896 to Rio 2016\nwb_indicators_panel.csv — GDP per capita, population, and female labor force participation from the World Bank (2000-2016, Olympic years only)"
+  },
+  {
+    "objectID": "materials/14_fp_essentials.html#step-4-download-the-workshop-script",
+    "href": "materials/14_fp_essentials.html#step-4-download-the-workshop-script",
+    "title": "Data Wrangling Workshop",
+    "section": "Step 4: Download the Workshop Script",
+    "text": "Step 4: Download the Workshop Script\nSave this R script into your code/ folder:\n\nwrangling_workshop.R"
+  },
+  {
+    "objectID": "materials/14_fp_essentials.html#check-your-setup",
+    "href": "materials/14_fp_essentials.html#check-your-setup",
+    "title": "Data Wrangling Workshop",
+    "section": "Check Your Setup",
+    "text": "Check Your Setup\nBefore we start, your folder should look like this:\nwrangling_workshop/\n├── wrangling_workshop.Rproj\n├── input/\n│   ├── olympics_raw.csv\n│   └── wb_indicators_panel.csv\n├── output/\n│   └── (empty for now)\n├── code/\n│   └── wrangling_workshop.R\nOpen wrangling_workshop.Rproj, then open code/wrangling_workshop.R in RStudio. We’ll work through it together in class."
+  },
+  {
+    "objectID": "materials/14_fp_essentials.html#full-workshop-reference",
+    "href": "materials/14_fp_essentials.html#full-workshop-reference",
+    "title": "Data Wrangling Workshop",
+    "section": "Full Workshop Reference",
+    "text": "Full Workshop Reference\n\nWorkshop walkthrough (with explanations)"
   }
 ]

@@ -1,0 +1,526 @@
+---
+title: "Data Wrangling Workshop: Olympics & Development"
+author: "Carolina Torreblanca"
+
+institute: "University of Pennsylvania"
+date: last-modified
+toc: true
+
+format:
+  html:
+    self-contained: true
+
+editor: source
+---
+
+# Part 0: Project Setup
+
+Before we write any code, we need to set up a proper project structure. This is how you should organize **every** data analysis project, including your final project.
+
+## 0.1 Create a project folder
+
+On your computer, create a folder called `wrangling_workshop`. Inside it, create **three subfolders**:
+
+```
+wrangling_workshop/
+├── input/
+├── output/
+├── code/
+```
+
+- `input/` — raw data goes here. You **never modify** files in this folder.
+- `output/` — cleaned data, figures, and tables go here.
+- `code/` — your `.qmd` or `.R` scripts go here.
+
+**Do this now.** You can use Finder/File Explorer or the terminal:
+
+```bash
+mkdir wrangling_workshop
+cd wrangling_workshop
+mkdir input output code
+```
+
+## 0.2 Create an RProject
+
+1. Open RStudio
+2. Go to **File → New Project → Existing Directory**
+3. Browse to your `wrangling_workshop` folder
+4. Click **Create Project**
+
+This creates a `.Rproj` file in your folder. From now on, **always open your project by double-clicking the `.Rproj` file**. This ensures that R knows where your files are.
+
+**Why does this matter?** When you use an RProject, R sets the **working directory** to your project folder. So instead of writing:
+
+```r
+# Bad: absolute path that only works on YOUR computer
+read_csv("/Users/carolina/Desktop/classes/psci3200/data/olympics_raw.csv")
+```
+
+You can write:
+
+```r
+# Good: relative path that works on anyone's computer
+read_csv("input/olympics_raw.csv")
+```
+
+## 0.3 Download the data
+
+Download these two CSV files and save them in your `input/` folder:
+
+1. **Olympics data:** [olympics_raw.csv](https://github.com/carolina-torreblanca/psci3200-globaldev-main/raw/main/workshops/data_wrangling/olympics_raw.csv)
+2. **World Bank indicators:** [wb_indicators_2016.csv](https://github.com/carolina-torreblanca/psci3200-globaldev-main/raw/main/workshops/data_wrangling/wb_indicators_2016.csv)
+
+Your folder should now look like this:
+
+```
+wrangling_workshop/
+├── wrangling_workshop.Rproj
+├── input/
+│   ├── olympics_raw.csv
+│   └── wb_indicators_2016.csv
+├── output/
+├── code/
+```
+
+## 0.4 Create your script
+
+1. In RStudio, go to **File → New File → Quarto Document**
+2. Save it as `code/workshop.qmd`
+
+Now paste this setup chunk at the top of your `.qmd` file and run it:
+
+```{r}
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(modelsummary)
+```
+
+
+# Part 1: Load and Explore the Olympics Data
+
+This dataset contains every Olympic athlete and event from Athens 1896 to Rio 2016. Each row is one athlete in one event.
+
+## 1.1 Read in the data
+
+```{r}
+#| warning: false
+#| message: false
+
+# Read the Olympics data from the input folder
+olympics_raw <- read_csv("input/olympics_raw.csv")
+```
+
+Notice we used a **relative path** (`input/olympics_raw.csv`) not an absolute path. This works because our RProject set the working directory to the project folder.
+
+## 1.2 Get to know your data
+
+Before cleaning, always explore what you're working with.
+
+```{r}
+# How many rows and columns?
+dim(olympics_raw)
+
+# What are the variable names and types?
+glimpse(olympics_raw)
+
+# Look at the first few rows
+head(olympics_raw)
+```
+
+**What do we notice?**
+
+- Each row is an athlete-event (not a country or a medal)
+- `medal` is `NA` when the athlete didn't win
+- `noc` is the 3-letter country code (National Olympic Committee)
+- Data covers both Summer and Winter Olympics
+
+## 1.3 Clean and summarize
+
+Our goal: **total medal counts by country for the 2016 Summer Olympics**.
+
+This requires several steps chained with the pipe (`%>%`):
+
+```{r}
+#| warning: false
+
+# Filter to Summer 2016 and only medal winners, then count by country
+medals_by_country <- olympics_raw %>%
+  filter(season == "Summer", year == 2016) %>%
+  filter(!is.na(medal)) %>%
+  group_by(noc) %>%
+  summarize(
+    total_medals = n(),
+    gold = sum(medal == "Gold"),
+    silver = sum(medal == "Silver"),
+    bronze = sum(medal == "Bronze")
+  ) %>%
+  arrange(desc(total_medals))
+
+# What did we get?
+head(medals_by_country, 10)
+```
+
+Let's break down what each line did:
+
+| Step | What it does |
+|------|-------------|
+| `filter(season == "Summer", year == 2016)` | Keep only Summer 2016 rows |
+| `filter(!is.na(medal))` | Keep only medal winners |
+| `group_by(noc)` | Group rows by country code |
+| `summarize(...)` | Collapse each group into one row with counts |
+| `arrange(desc(total_medals))` | Sort from most to fewest medals |
+
+### Quick visualization
+
+```{r}
+#| warning: false
+
+medals_by_country %>%
+  slice_max(total_medals, n = 20) %>%
+  ggplot(aes(x = reorder(noc, total_medals), y = total_medals)) +
+  geom_col(fill = "steelblue") +
+  coord_flip() +
+  labs(x = NULL, y = "Total Medals",
+       title = "Top 20 Countries by Medal Count",
+       subtitle = "2016 Summer Olympics") +
+  theme_minimal()
+```
+
+### Exercise 1
+
+> Create a version of `medals_by_country` that includes **all Summer Olympics from 2000 onward** (2000, 2004, 2008, 2012, 2016). Count the total medals per country across all five games. *Hint:* change the `filter()` condition.
+
+```{r}
+# Your code here
+
+
+```
+
+
+# Part 2: Load and Clean the World Bank Data
+
+## 2.1 Read the data
+
+```{r}
+#| warning: false
+#| message: false
+
+# Read the World Bank data from the input folder
+wb_raw <- read_csv("input/wb_indicators_2016.csv")
+
+glimpse(wb_raw)
+```
+
+**What's in here?**
+
+- `country`: Country name
+- `iso2c` / `iso3c`: 2-letter and 3-letter country codes
+- `gdp_pc`: GDP per capita in constant 2015 US dollars
+- `population`: Total population
+
+## 2.2 A problem: aggregates
+
+The World Bank data includes **aggregate regions** (e.g., "Sub-Saharan Africa", "World") mixed in with actual countries. We need to remove these.
+
+```{r}
+#| warning: false
+
+# How many rows before cleaning?
+nrow(wb_raw)
+
+# Look at some suspicious entries
+wb_raw %>%
+  filter(str_detect(country, "World|Africa|income|Euro"))  %>%
+  select(country, iso2c, iso3c)
+```
+
+```{r}
+#| warning: false
+
+# Clean: remove aggregates and rows with missing GDP
+wb_clean <- wb_raw %>%
+  filter(!is.na(iso2c)) %>%
+  filter(nchar(iso2c) == 2) %>%
+  select(country, iso2c, iso3c, gdp_pc, population) %>%
+  filter(!is.na(gdp_pc))
+
+# How many actual countries remain?
+nrow(wb_clean)
+```
+
+### Exercise 2
+
+> What are the 10 richest countries by GDP per capita? The 10 poorest? Use `slice_max()` and `slice_min()`.
+
+```{r}
+# Your code here
+
+
+```
+
+
+# Part 3: Merging the Datasets
+
+This is the key skill: **joining two datasets that don't share the same identifiers**.
+
+## 3.1 The problem
+
+The Olympics data uses `noc` (National Olympic Committee codes) and the World Bank uses `iso3c` (ISO 3-letter codes). They're *usually* the same... but not always.
+
+Let's see which countries **don't match**:
+
+```{r}
+#| warning: false
+
+# Which medal-winning countries have no match in the World Bank data?
+unmatched <- medals_by_country %>%
+  anti_join(wb_clean, by = c("noc" = "iso3c"))
+
+unmatched
+```
+
+`anti_join()` shows rows in the first dataset with **no match** in the second. These are countries where the Olympic code differs from the ISO code (e.g., `GER` vs `DEU` for Germany).
+
+## 3.2 Build a crosswalk
+
+When codes don't match, we create a **crosswalk** — a small lookup table that maps one set of codes to another. This is a very common data wrangling task.
+
+```{r}
+#| warning: false
+
+# Crosswalk: Olympic NOC code → ISO 3-letter code
+noc_to_iso <- tribble(
+  ~noc,  ~iso3c,
+  "GER", "DEU",
+  "DEN", "DNK",
+  "SUI", "CHE",
+  "NED", "NLD",
+  "GRE", "GRC",
+  "POR", "PRT",
+  "CRO", "HRV",
+  "RSA", "ZAF",
+  "BUL", "BGR",
+  "MAS", "MYS",
+  "CHI", "CHL",
+  "IRI", "IRN",
+  "LAT", "LVA",
+  "SIN", "SGP",
+  "PHI", "PHL",
+  "MGL", "MNG",
+  "TPE", "TWN",
+  "KOS", "XKX",
+  "INA", "IDN",
+  "VIE", "VNM",
+  "BRN", "BHR",
+  "PUR", "PRI",
+  "FIJ", "FJI",
+  "BAH", "BHS",
+  "UAE", "ARE",
+  "TGA", "TON",
+  "KSA", "SAU",
+  "NGR", "NGA"
+)
+
+# Apply the crosswalk: use ISO code if available, otherwise keep the NOC code
+medals_by_country <- medals_by_country %>%
+  left_join(noc_to_iso, by = "noc") %>%
+  mutate(iso3c = ifelse(is.na(iso3c), noc, iso3c))
+```
+
+## 3.3 Merge
+
+Now that we have a common key (`iso3c`), we can merge.
+
+```{r}
+#| warning: false
+
+# Left join: keep all medal-winning countries, add World Bank data where available
+merged <- medals_by_country %>%
+  left_join(wb_clean, by = "iso3c")
+
+# Did it work? Check how many matched
+sum(!is.na(merged$gdp_pc))
+
+# Which countries still didn't match?
+merged %>% filter(is.na(gdp_pc)) %>% select(noc, iso3c)
+```
+
+### Types of joins
+
+| Join | What it keeps |
+|------|-------------|
+| `left_join(a, b)` | All rows from `a`, matching rows from `b` |
+| `right_join(a, b)` | All rows from `b`, matching rows from `a` |
+| `inner_join(a, b)` | Only rows that match in **both** |
+| `full_join(a, b)` | All rows from **both** |
+| `anti_join(a, b)` | Rows in `a` with **no match** in `b` |
+
+### Exercise 3
+
+> Use `inner_join()` instead of `left_join()` to merge the data. How many rows do you get? Why is it different?
+
+```{r}
+# Your code here
+
+
+```
+
+## 3.4 Save your cleaned, merged data
+
+Always save your cleaned data to the `output/` folder — never overwrite your raw data in `input/`.
+
+```{r}
+# Save the merged dataset
+write_csv(merged, "output/olympics_wb_merged.csv")
+```
+
+
+# Part 4: Analysis
+
+Now we can ask: **Does national wealth predict Olympic success?**
+
+## 4.1 Create new variables
+
+```{r}
+#| warning: false
+
+merged <- merged %>%
+  filter(!is.na(gdp_pc), !is.na(population)) %>%
+  mutate(
+    medals_per_million = total_medals / (population / 1e6),
+    log_gdp_pc = log(gdp_pc),
+    log_pop = log(population)
+  )
+```
+
+## 4.2 Visualize
+
+```{r}
+#| warning: false
+
+ggplot(merged, aes(x = log_gdp_pc, y = total_medals)) +
+  geom_point(aes(size = population / 1e6), alpha = 0.6, color = "steelblue") +
+  geom_text(
+    data = merged %>% slice_max(total_medals, n = 8),
+    aes(label = noc), nudge_y = 5, size = 3
+  ) +
+  geom_smooth(method = "lm", se = TRUE, color = "firebrick", linewidth = 0.8) +
+  scale_size_continuous(name = "Population (millions)", range = c(1, 12)) +
+  labs(
+    x = "Log GDP per Capita (constant 2015 US$)",
+    y = "Total Medals",
+    title = "Does National Wealth Predict Olympic Success?",
+    subtitle = "2016 Summer Olympics"
+  ) +
+  theme_minimal()
+```
+
+```{r}
+#| warning: false
+
+ggplot(merged, aes(x = log_gdp_pc, y = medals_per_million)) +
+  geom_point(alpha = 0.6, color = "steelblue") +
+  geom_text(
+    data = merged %>% slice_max(medals_per_million, n = 8),
+    aes(label = noc), nudge_y = 0.5, size = 3
+  ) +
+  geom_smooth(method = "lm", se = TRUE, color = "firebrick", linewidth = 0.8) +
+  labs(
+    x = "Log GDP per Capita (constant 2015 US$)",
+    y = "Medals per Million People",
+    title = "Olympic Success per Capita vs. National Wealth",
+    subtitle = "2016 Summer Olympics"
+  ) +
+  theme_minimal()
+```
+
+## 4.3 Regression
+
+```{r}
+#| warning: false
+
+models <- list()
+models[["Bivariate"]] <- lm(total_medals ~ log_gdp_pc, data = merged)
+models[["+ Population"]] <- lm(total_medals ~ log_gdp_pc + log_pop, data = merged)
+models[["Per Capita"]] <- lm(medals_per_million ~ log_gdp_pc, data = merged)
+models[["Per Capita + Pop"]] <- lm(medals_per_million ~ log_gdp_pc + log_pop, data = merged)
+
+modelsummary(
+  models,
+  estimate  = "{estimate}{stars} ({std.error})",
+  statistic = NULL,
+  gof_omit = "IC|RMSE|Log|F|R2$|Std."
+)
+```
+
+### Exercise 4
+
+> Interpret the coefficient on `log_gdp_pc` in the "+ Population" model. What does it tell us about the relationship between wealth and Olympic medals, controlling for population size?
+
+### Exercise 5
+
+> Why does the story change when we look at medals *per capita* vs. total medals? Which do you think is a better measure of Olympic "success"?
+
+
+# Part 5: Extensions (if time permits)
+
+## 5.1 Multiple years
+
+> **Challenge:** Create medal counts for multiple Olympic years (2000-2016). You'll need to download World Bank data for matching years too using the `WDI` package:
+
+```{r}
+#| eval: false
+
+# install.packages("WDI")  # run this once if you don't have it
+library(WDI)
+
+wb_panel <- WDI(
+  indicator = c(gdp_pc = "NY.GDP.PCAP.KD", population = "SP.POP.TOTL"),
+  country = "all",
+  start = 2000,
+  end = 2016
+)
+```
+
+```{r}
+# Your code here
+
+
+```
+
+## 5.2 Add another indicator
+
+> **Challenge:** Add an additional World Bank indicator and see if it improves your model. Some useful codes:
+
+| Code | Indicator |
+|------|-----------|
+| `SE.XPD.TOTL.GD.ZS` | Government expenditure on education (% of GDP) |
+| `SI.POV.GINI` | Gini index (inequality) |
+| `SH.XPD.CHEX.GD.ZS` | Health expenditure (% of GDP) |
+| `SL.UEM.TOTL.ZS` | Unemployment rate |
+
+```{r}
+# Your code here
+
+
+```
+
+
+# Summary of Key Functions
+
+| Function | What it does |
+|----------|-------------|
+| `read_csv()` | Import CSV from a file or URL |
+| `glimpse()` | Quick look at data structure |
+| `filter()` | Keep rows that meet a condition |
+| `select()` | Keep or rename columns |
+| `mutate()` | Create or modify columns |
+| `group_by() + summarize()` | Aggregate data by groups |
+| `left_join()` | Merge two datasets by a shared key |
+| `anti_join()` | Find rows with no match |
+| `tribble()` | Create small lookup tables by hand |
+| `write_csv()` | Save data to a CSV file |
+| `slice_max() / slice_min()` | Keep top/bottom rows |
+| `arrange()` | Sort rows |
