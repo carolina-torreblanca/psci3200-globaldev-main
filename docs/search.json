@@ -13879,5 +13879,12 @@
     "title": "Text as Data",
     "section": "Enter quanteda",
     "text": "Enter quanteda\n\nquanteda is an R package that handles the entire pipeline\n\n\n\nCorpus management: store documents with metadata, filter, subset\nTokenization and preprocessing in one step\nFast, sparse document-term matrix construction\nBuilt-in methods: KWIC, wordclouds, dictionary scoring, scaling models, topic models\n\n\n\nIt is not the only option, but it is well-documented, actively maintained, and designed for social scientists\n\n\nLet’s go to R.\n\n\n\n\n\nhttps://carolina-torreblanca.github.io/psci3200-globaldev-main/"
+  },
+  {
+    "objectID": "materials/c6_tad.html#slides",
+    "href": "materials/c6_tad.html#slides",
+    "title": "Text as Data Basics",
+    "section": "Slides",
+    "text": "Slides\n\nSlides"
   }
 ]
