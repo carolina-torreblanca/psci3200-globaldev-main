@@ -13843,7 +13843,7 @@
     "href": "slides/tad_motivation.html#text-as-a-trace",
     "title": "Text as Data",
     "section": "Text as a trace",
-    "text": "Text as a trace\n\nActors have beliefs, interests, and intentions they rarely state directly. Text is the residue.\n\n\n\nIdeology: party manifestos recover legislator positions without asking where they stand\nHostility: dehumanizing language in Rwandan radio preceded the genocide — the signal was there\nSincerity: what governments say to donors and what they budget domestically are not the same document\n\n\n\nThe text is observable. The latent state is not. We infer the latter from the former."
+    "text": "Text as a trace\n\nActors have beliefs, interests, and intentions that shape what they write but we cannot observe directly\n\n\n\nIdeology: party manifestos\nHostility: dehumanizing language"
   },
   {
     "objectID": "slides/tad_motivation.html#the-data-generating-process",
@@ -13857,7 +13857,7 @@
     "href": "slides/tad_motivation.html#what-we-want-to-measure",
     "title": "Text as Data",
     "section": "What we want to measure",
-    "text": "What we want to measure\n\n\nSentiment / Tone: how positive, negative, or hostile is this document?\nTopic: what is this document about?\nPosition: where does this actor sit in some ideological space?\nSimilarity: are these two documents saying the same thing?\n\n\n\nEach requires different assumptions about how the latent variable shapes word choice"
+    "text": "What we want to measure\n\n\nSentiment / Tone: how positive, negative, or hostile is this document?\nTopic: what is this document about?\nPosition: where does this actor sit in some ideological space?\nSimilarity: are these two documents saying the same thing? written by the same person?"
   },
   {
     "objectID": "slides/tad_motivation.html#from-words-to-numbers",

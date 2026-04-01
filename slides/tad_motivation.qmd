@@ -53,19 +53,13 @@ The proxy is observable. The latent variable is not. We use the former to reason
 ## Text as a trace
 
 ::: {.fragment style="font-size: 0.9em;"}
-Actors have beliefs, interests, and intentions they rarely state directly. Text is the residue.
+Actors have beliefs, interests, and intentions that shape what they write but we cannot observe directly
 :::
 
 ::: {.incremental style="font-size: 0.88em; margin-top: 0.6em;"}
-- **Ideology**: party manifestos recover legislator positions without asking where they stand
-- **Hostility**: dehumanizing language in Rwandan radio preceded the genocide — the signal was there
-- **Sincerity**: what governments say to donors and what they budget domestically are not the same document
+- **Ideology**: party manifestos
+- **Hostility**: dehumanizing language
 :::
-
-::: {.fragment style="margin-top: 0.6em; font-size: 0.9em;"}
-The text is observable. The latent state is not. We infer the latter from the former.
-:::
-
 
 ## The data generating process
 
@@ -103,13 +97,8 @@ The text is observable. The latent state is not. We infer the latter from the fo
 - **Sentiment / Tone**: how positive, negative, or hostile is this document?
 - **Topic**: what is this document about?
 - **Position**: where does this actor sit in some ideological space?
-- **Similarity**: are these two documents saying the same thing?
+- **Similarity**: are these two documents saying the same thing? written by the same person?
 :::
-
-::: {.fragment}
-Each requires different assumptions about how the latent variable shapes word choice
-:::
-
 
 ## From words to numbers
 
