@@ -6,6 +6,10 @@ title: "Text as Data Basics"
 
 - None
 
+## Slides
+
+- [Slides](/slides/tad_motivation.html)
+
 ## Notes
 
 - [Notes](/workshops/TaD_workshop.html)

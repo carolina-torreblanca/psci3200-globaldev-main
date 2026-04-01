@@ -13823,5 +13823,61 @@
     "title": "Data Wrangling Workshop",
     "section": "Full Workshop Reference",
     "text": "Full Workshop Reference\n\nWorkshop walkthrough (with explanations)"
+  },
+  {
+    "objectID": "slides/tad_motivation.html#what-is-a-latent-variable",
+    "href": "slides/tad_motivation.html#what-is-a-latent-variable",
+    "title": "Text as Data",
+    "section": "What is a latent variable?",
+    "text": "What is a latent variable?\n\nA quantity we care about that we cannot directly observe. We infer it from things we can measure.\n\n\n\n\nState capacity inferred from tax-to-GDP ratio, public goods provision, bureaucratic retention\n\n\nElectoral fraud inferred from digit patterns in vote tallies, turnout discontinuities, vote-share heaping\n\n\nEthnic polarization inferred from residential segregation, cross-ethnic voting, intermarriage patterns\n\n\n\n\nThe proxy is observable. The latent variable is not. We use the former to reason about the latter."
+  },
+  {
+    "objectID": "slides/tad_motivation.html#text-as-a-window-into-latent-states",
+    "href": "slides/tad_motivation.html#text-as-a-window-into-latent-states",
+    "title": "Text as Data",
+    "section": "Text as a window into latent states",
+    "text": "Text as a window into latent states\n\nText is produced by people and institutions. What they write is shaped by what they believe, want, and feel.\n\n\nWe posit that the text we observe is a product of latent states we care about:\n\n\n\n\nLegislative capture do legislators’ floor speeches echo their donors’ interests? word choice says yes\n\n\nPre-violence hostility dehumanizing language in Rwandan radio preceded the 1994 genocide by months\n\n\nPolicy sincerity gap between donor-facing reports and domestic budget speeches reveals actual priorities\n\n\n\n\nSame logic as any other measurement problem. Different observable."
+  },
+  {
+    "objectID": "slides/tad_motivation.html#text-as-a-trace",
+    "href": "slides/tad_motivation.html#text-as-a-trace",
+    "title": "Text as Data",
+    "section": "Text as a trace",
+    "text": "Text as a trace\n\nActors have beliefs, interests, and intentions they rarely state directly. Text is the residue.\n\n\n\nIdeology: party manifestos recover legislator positions without asking where they stand\nHostility: dehumanizing language in Rwandan radio preceded the genocide — the signal was there\nSincerity: what governments say to donors and what they budget domestically are not the same document\n\n\n\nThe text is observable. The latent state is not. We infer the latter from the former."
+  },
+  {
+    "objectID": "slides/tad_motivation.html#the-data-generating-process",
+    "href": "slides/tad_motivation.html#the-data-generating-process",
+    "title": "Text as Data",
+    "section": "The data generating process",
+    "text": "The data generating process\n\n\nLatent variable ideology, sentiment, priorities, hostility\n\n\n↓\n\n\nLanguage generation word choice, framing, emphasis, omission\n\n\n↓\n\n\nObserved text speeches, reports, manifestos, tweets\n\n\n↑\n\n\nWe only observe this. We want to infer upward."
+  },
+  {
+    "objectID": "slides/tad_motivation.html#what-we-want-to-measure",
+    "href": "slides/tad_motivation.html#what-we-want-to-measure",
+    "title": "Text as Data",
+    "section": "What we want to measure",
+    "text": "What we want to measure\n\n\nSentiment / Tone: how positive, negative, or hostile is this document?\nTopic: what is this document about?\nPosition: where does this actor sit in some ideological space?\nSimilarity: are these two documents saying the same thing?\n\n\n\nEach requires different assumptions about how the latent variable shapes word choice"
+  },
+  {
+    "objectID": "slides/tad_motivation.html#from-words-to-numbers",
+    "href": "slides/tad_motivation.html#from-words-to-numbers",
+    "title": "Text as Data",
+    "section": "From words to numbers",
+    "text": "From words to numbers\n\n\nCorpus: collection of documents and metadata\nTokenize: split into units (words, n-grams)\nPreprocess: remove stopwords, punctuation, normalize case\nDocument-Term Matrix: rows = documents, columns = terms, cells = counts\nModel: apply a method to recover the latent quantity"
+  },
+  {
+    "objectID": "slides/tad_motivation.html#four-families-of-methods",
+    "href": "slides/tad_motivation.html#four-families-of-methods",
+    "title": "Text as Data",
+    "section": "Four families of methods",
+    "text": "Four families of methods\n\n\nDictionary methods: researcher defines a word list; score documents by counts. Fast, transparent, brittle.\nSupervised models: hand-code a sample; train a classifier to generalize. Flexible, requires labeled data.\nUnsupervised models: let the model find structure without labels. Scalable, hard to validate.\nLarge language models: pretrained on massive corpora; prompted or fine-tuned. Powerful, opaque, expensive, hard to validate systematically."
+  },
+  {
+    "objectID": "slides/tad_motivation.html#enter-quanteda",
+    "href": "slides/tad_motivation.html#enter-quanteda",
+    "title": "Text as Data",
+    "section": "Enter quanteda",
+    "text": "Enter quanteda\n\nquanteda is an R package that handles the entire pipeline\n\n\n\nCorpus management: store documents with metadata, filter, subset\nTokenization and preprocessing in one step\nFast, sparse document-term matrix construction\nBuilt-in methods: KWIC, wordclouds, dictionary scoring, scaling models, topic models\n\n\n\nIt is not the only option, but it is well-documented, actively maintained, and designed for social scientists\n\n\nLet’s go to R.\n\n\n\n\n\nhttps://carolina-torreblanca.github.io/psci3200-globaldev-main/"
   }
 ]
