@@ -1404,14 +1404,14 @@
     "href": "slides/c5-gender.html#gender-and-representation",
     "title": "Gender and Development",
     "section": "Gender and Representation",
-    "text": "Gender and Representation\n\nGender gap in political representation\n\nWomen hold only 27.0% of legislative seats (Inter-Parliamentary Union, 2023)\n23% of cabinet positions (UNWOMEN)\n\nGender gap in political participation:\n\nDisputed gender gap in turnout, large variance"
+    "text": "Gender and Representation"
   },
   {
     "objectID": "slides/c5-gender.html#gender-and-development",
     "href": "slides/c5-gender.html#gender-and-development",
     "title": "Gender and Development",
     "section": "Gender and Development",
-    "text": "Gender and Development\n\nGender and poverty (feminization of poverty to a degree)\nGender and economic participation\n\nLabor force participation gap: 27% globally (ILO, 2023)\nGender wage gap (Pew)\n\nGender and violence\n\n1/3 women have experienced GBV\n\nGender and education\n\nLiteracy rates: 90% male vs. 83% female globally (World Bank Data, 2022)\nSchool attendance gap (UNESCO, 2023)"
+    "text": "Gender and Development"
   },
   {
     "objectID": "slides/c5-gender.html#gender-development-and-representation",
@@ -1488,7 +1488,7 @@
     "href": "slides/c5-gender.html#a-bit-more-detail",
     "title": "Gender and Development",
     "section": "A bit more detail",
-    "text": "A bit more detail\n  \\(Y_{ij} = \\beta_1 + \\beta_2 * R_j + \\beta_3 D_i * R_j + \\sum_{l=1}^{N} \\beta_l d_{li} + \\epsilon_{ij}\\)\nWhere:\n\n\n\\(Y_{ij}\\) is an outcome of interest\n\\(R_j\\) takes the value of 1 if GM is reserved\n\\(D_i\\) is differences in request about that good (women - men)\n\\(d_{li}\\) are good Fixed Effects!"
+    "text": "A bit more detail\n\n\\(Y_{ij} = \\beta_1 + \\beta_2 * R_j + \\beta_3 D_i * R_j + \\sum_{l=1}^{N} \\beta_l d_{li} + \\epsilon_{ij}\\)\nWhere:\n\n\n\\(Y_{ij}\\) is an outcome of interest\n\\(R_j\\) takes the value of 1 if GP is reserved\n\\(D_i\\) is gender difference in requests for that good (women - men)\n\\(d_{li}\\) are good Fixed Effects!"
   },
   {
     "objectID": "slides/c5-gender.html#main-findings",
@@ -1572,7 +1572,7 @@
     "href": "slides/c5-gender.html#practical-example-1",
     "title": "Gender and Development",
     "section": "Practical Example",
-    "text": "Practical Example\n\nYou can fit the model with lm like usual\n\n\n\n\nCall:\nlm(formula = policy_outcome ~ women_representation * quota_system, \n    data = interaction_data)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-1.00935 -0.35365 -0.00404  0.34793  1.08715 \n\nCoefficients:\n                                  Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)                         0.9766     0.1348   7.245 1.09e-10 ***\nwomen_representation               -0.4865     0.2289  -2.125   0.0361 *  \nquota_system                        1.5993     0.2084   7.673 1.39e-11 ***\nwomen_representation:quota_system   2.8913     0.3921   7.374 5.85e-11 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.5064 on 96 degrees of freedom\nMultiple R-squared:  0.8993,    Adjusted R-squared:  0.8962 \nF-statistic: 285.8 on 3 and 96 DF,  p-value: &lt; 2.2e-16"
+    "text": "Practical Example\n\nYou can fit the model with lm like usual\n\n\n\nShow code\ninteraction_model &lt;- lm(policy_outcome ~ women_representation * quota_system,\n                        data = interaction_data)\n\nsummary(interaction_model)\n\n\n\nCall:\nlm(formula = policy_outcome ~ women_representation * quota_system, \n    data = interaction_data)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-1.00935 -0.35365 -0.00404  0.34793  1.08715 \n\nCoefficients:\n                                  Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)                         0.9766     0.1348   7.245 1.09e-10 ***\nwomen_representation               -0.4865     0.2289  -2.125   0.0361 *  \nquota_system                        1.5993     0.2084   7.673 1.39e-11 ***\nwomen_representation:quota_system   2.8913     0.3921   7.374 5.85e-11 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.5064 on 96 degrees of freedom\nMultiple R-squared:  0.8993,    Adjusted R-squared:  0.8962 \nF-statistic: 285.8 on 3 and 96 DF,  p-value: &lt; 2.2e-16"
   },
   {
     "objectID": "slides/16-democracy3.html#assignments",
@@ -13886,5 +13886,124 @@
     "title": "Text as Data Basics",
     "section": "Slides",
     "text": "Slides\n\nSlides"
+  },
+  {
+    "objectID": "slides/c5-gender.html#upcoming-deadlines",
+    "href": "slides/c5-gender.html#upcoming-deadlines",
+    "title": "Gender and Development",
+    "section": "Upcoming Deadlines",
+    "text": "Upcoming Deadlines\n\nExpanded Research Design – April 15, 2026\n\nRefined research plan: RQ, hypothesis, design, limitations\nSubmit via Slack by 11:59pm EST\n\nFinal Project – April 29, 2026\n\nFull analysis + professional webpage\nSubmit via Slack by 11:59pm EST"
+  },
+  {
+    "objectID": "slides/c5-gender.html#the-research-question",
+    "href": "slides/c5-gender.html#the-research-question",
+    "title": "Gender and Development",
+    "section": "The Research Question",
+    "text": "The Research Question\nDoes mandated representation of women change policy outcomes?\n\n\nReserved positions assigned by random lottery\nDo villages with female heads invest differently than those with male heads?"
+  },
+  {
+    "objectID": "slides/c5-gender.html#theory",
+    "href": "slides/c5-gender.html#theory",
+    "title": "Gender and Development",
+    "section": "Theory",
+    "text": "Theory\nHypothesis: Reserved villages invest more in goods women prioritize\n\n\nMechanism: Heterogeneous priorities\n\nWomen and men have different policy preferences\nFemale leaders translate those preferences into policy\n\nIf true: representation has substantive, not just symbolic, value"
+  },
+  {
+    "objectID": "slides/c5-gender.html#research-design",
+    "href": "slides/c5-gender.html#research-design",
+    "title": "Gender and Development",
+    "section": "Research Design",
+    "text": "Research Design\nTreatment: Village council randomly assigned a female head (reserved seat lottery)\n\n\nIdentification: Randomization via lottery\n\nReserved vs. non-reserved villages are comparable on all other dimensions\n\nOutcome: Public investment decisions (type and quantity)\nData: Village councils in West Bengal and Rajasthan, India"
+  },
+  {
+    "objectID": "slides/c5-gender.html#from-math-to-software",
+    "href": "slides/c5-gender.html#from-math-to-software",
+    "title": "Gender and Development",
+    "section": "From Math to Software",
+    "text": "From Math to Software\nRecall the partial derivative:\n\\[\\frac{\\partial Y}{\\partial X} = \\beta_1 + \\beta_3 \\cdot Z\\]\n\nWhen quota_system = 0: effect of women_representation = \\(\\beta_1\\)\nWhen quota_system = 1: effect of women_representation = \\(\\beta_1 + \\beta_3\\)\n\n\nThe marginaleffects package computes this for you – at every observation, then summarizes"
+  },
+  {
+    "objectID": "slides/c5-gender.html#marginal-effects-with-marginaleffects",
+    "href": "slides/c5-gender.html#marginal-effects-with-marginaleffects",
+    "title": "Gender and Development",
+    "section": "Marginal Effects with marginaleffects",
+    "text": "Marginal Effects with marginaleffects\n\nlibrary(marginaleffects)\n\n# Marginal effect of women_representation, by quota_system\nslopes(interaction_model,\n       variables = \"women_representation\",\n       by = \"quota_system\")\n\n\n                 Term quota_system Estimate Std. Error     z Pr(&gt;|z|)    S\n women_representation            0   -0.487      0.229 -2.13   0.0336  4.9\n women_representation            1    2.405      0.318  7.55   &lt;0.001 44.4\n  2.5 %  97.5 %\n -0.935 -0.0379\n  1.781  3.0286\n\nType:  response \nColumns: term, quota_system, estimate, std.error, statistic, p.value, s.value, conf.low, conf.high"
+  },
+  {
+    "objectID": "slides/c5-gender.html#plot-marginal-effects",
+    "href": "slides/c5-gender.html#plot-marginal-effects",
+    "title": "Gender and Development",
+    "section": "Plot Marginal Effects",
+    "text": "Plot Marginal Effects"
+  },
+  {
+    "objectID": "slides/c5-gender.html#what-did-we-just-do",
+    "href": "slides/c5-gender.html#what-did-we-just-do",
+    "title": "Gender and Development",
+    "section": "What Did We Just Do?",
+    "text": "What Did We Just Do?\n\nslopes() evaluated \\(\\beta_1 + \\beta_3 \\cdot Z\\) at each level of quota_system\nWithout quota: effect of representation is negative (\\(\\beta_1 = -0.5\\))\nWith quota: effect flips positive (\\(\\beta_1 + \\beta_3 = -0.5 + 3 = 2.5\\))\n\n\nThis is exactly what we derived on paper – marginaleffects just does the arithmetic and gives you uncertainty estimates too"
+  },
+  {
+    "objectID": "slides/c5-gender.html#gender-and-representation-1",
+    "href": "slides/c5-gender.html#gender-and-representation-1",
+    "title": "Gender and Development",
+    "section": "Gender and Representation",
+    "text": "Gender and Representation\n\nWomen hold only 27.0% of legislative seats (IPU, 2023)\n23% of cabinet positions (UNWOMEN)\nDisputed gender gap in turnout, large variance"
+  },
+  {
+    "objectID": "slides/c5-gender.html#gender-and-development-1",
+    "href": "slides/c5-gender.html#gender-and-development-1",
+    "title": "Gender and Development",
+    "section": "Gender and Development",
+    "text": "Gender and Development\n\nFemale labor force participation rate: ~47% vs. ~73% male (ILO, 2023)\nGender wage gap (Pew)\n1/3 of women have experienced GBV\nLiteracy gap: 90% male vs. 83% female (World Bank, 2022)"
+  },
+  {
+    "objectID": "slides/c5-gender.html#measuring-d_i-gender-differences-in-requests",
+    "href": "slides/c5-gender.html#measuring-d_i-gender-differences-in-requests",
+    "title": "Gender and Development",
+    "section": "Measuring \\(D_i\\): Gender Differences in Requests",
+    "text": "Measuring \\(D_i\\): Gender Differences in Requests\n\nAuthors surveyed villagers: “Have you made a request to the GP in the past 6 months?”\nRequests = complaints or petitions for specific public goods (water, roads, irrigation…)\nFor each good \\(i\\), \\(D_i\\) = share of women requesting it minus share of men requesting it\nPositive \\(D_i\\): women want it more. Negative: men want it more."
+  },
+  {
+    "objectID": "slides/c5-gender.html#marginal-effects-the-idea",
+    "href": "slides/c5-gender.html#marginal-effects-the-idea",
+    "title": "Gender and Development",
+    "section": "Marginal Effects: The Idea",
+    "text": "Marginal Effects: The Idea\nRecall:\n\\[\\frac{\\partial Y}{\\partial X} = \\beta_1 + \\beta_3 \\cdot Z\\]\n\nThe effect of \\(X\\) on \\(Y\\) is not a single number – it depends on \\(Z\\)\nmarginaleffects evaluates this at specified values of \\(Z\\) and computes uncertainty\n\n\nTwo cases: \\(Z\\) is binary vs. \\(Z\\) is continuous"
+  },
+  {
+    "objectID": "slides/c5-gender.html#binary-moderator-two-estimates",
+    "href": "slides/c5-gender.html#binary-moderator-two-estimates",
+    "title": "Gender and Development",
+    "section": "Binary Moderator: Two Estimates",
+    "text": "Binary Moderator: Two Estimates\n\n# Effect of women's representation on policy outcome, by quota status\nslopes(model_binary,\n       variables = \"women_rep\",\n       by = \"quota\")\n\n\n      Term quota Estimate Std. Error    z Pr(&gt;|z|)     S  2.5 % 97.5 %\n women_rep     0   -0.547      0.177 -3.1  0.00194   9.0 -0.893 -0.201\n women_rep     1    2.351      0.185 12.7  &lt; 0.001 120.6  1.989  2.714\n\nType:  response \nColumns: term, quota, estimate, std.error, statistic, p.value, s.value, conf.low, conf.high"
+  },
+  {
+    "objectID": "slides/c5-gender.html#binary-moderator-plot",
+    "href": "slides/c5-gender.html#binary-moderator-plot",
+    "title": "Gender and Development",
+    "section": "Binary Moderator: Plot",
+    "text": "Binary Moderator: Plot"
+  },
+  {
+    "objectID": "slides/c5-gender.html#continuous-moderator-a-line-not-two-points",
+    "href": "slides/c5-gender.html#continuous-moderator-a-line-not-two-points",
+    "title": "Gender and Development",
+    "section": "Continuous Moderator: A Line, Not Two Points",
+    "text": "Continuous Moderator: A Line, Not Two Points\nWhen \\(Z\\) is continuous, the marginal effect varies across the full range of \\(Z\\)\n\nBack to C&D logic: as \\(D_i\\) increases (women want a good more relative to men), does the effect of reservation on investment grow?"
+  },
+  {
+    "objectID": "slides/c5-gender.html#what-to-look-for",
+    "href": "slides/c5-gender.html#what-to-look-for",
+    "title": "Gender and Development",
+    "section": "What to Look For",
+    "text": "What to Look For\nBinary moderator - Two point estimates with CIs – does the effect change sign or magnitude?\nContinuous moderator - A line with CI band – where does the effect become significant? Where does it flip?\n\nBoth are \\(\\beta_1 + \\beta_3 \\cdot Z\\) evaluated at different values of \\(Z\\) – marginaleffects handles the standard errors"
+  },
+  {
+    "objectID": "slides/c5-gender.html#continuous-moderator-plot",
+    "href": "slides/c5-gender.html#continuous-moderator-plot",
+    "title": "Gender and Development",
+    "section": "Continuous Moderator: Plot",
+    "text": "Continuous Moderator: Plot\n\n\nShow code\nplot_slopes(model_cont,\n            variables = \"reservation\",\n            condition = \"pref_gap\") +\n  geom_hline(yintercept = 0, linetype = \"dashed\", color = \"grey40\") +\n  labs(x = expression(D[i] ~ \"(gender gap in requests: women - men)\"),\n       y = \"Effect of GP reservation\\non public investment\",\n       caption = \"Simulated data\") +\n  theme_minimal(base_size = 16)"
   }
 ]

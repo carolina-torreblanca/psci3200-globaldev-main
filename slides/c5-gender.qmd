@@ -29,35 +29,36 @@ format:
 
 -   Interaction Models
 
+## Upcoming Deadlines
+
+-   **Expanded Research Design** -- April 15, 2026
+    -   Refined research plan: RQ, hypothesis, design, limitations
+    -   Submit via Slack by 11:59pm EST
+
+-   **Final Project** -- April 29, 2026
+    -   Full analysis + professional webpage
+    -   Submit via Slack by 11:59pm EST
+
 ## Gender and Representation
 
--   Gender gap in political representation
+![](https://ourworldindata.org/grapher/share-of-women-in-parliament.png){fig-align="center" height="5in"}
 
-    -   Women hold only 27.0% of legislative seats (Inter-Parliamentary Union, 2023)
-    -   23% of cabinet positions (UNWOMEN)
+## Gender and Representation
 
--   Gender gap in political participation:
-
-    -   Disputed gender gap in turnout, large variance
+-   Women hold only 27.0% of legislative seats (IPU, 2023)
+-   23% of cabinet positions (UNWOMEN)
+-   Disputed gender gap in turnout, large variance
 
 ## Gender and Development
 
--   Gender and poverty (feminization of poverty to a degree)
+![](https://ourworldindata.org/grapher/female-labor-force-participation-rates.png){fig-align="center" height="5in"}
 
--   Gender and economic participation
+## Gender and Development
 
-    -   Labor force participation gap: 27% globally (ILO, 2023)
-    -   Gender wage gap [(Pew)](https://www.pewresearch.org/social-trends/2023/03/01/the-enduring-grip-of-the-gender-pay-gap/)
-
--   Gender and violence
-
-    -   1/3 women have experienced GBV
-
--   Gender and education
-
-    -   Literacy rates: 90% male vs. 83% female globally (World Bank Data, 2022)
-
-    -   School attendance gap (UNESCO, 2023)
+-   Female labor force participation rate: ~47% vs. ~73% male (ILO, 2023)
+-   Gender wage gap [(Pew)](https://www.pewresearch.org/social-trends/2023/03/01/the-enduring-grip-of-the-gender-pay-gap/)
+-   1/3 of women have experienced GBV
+-   Literacy gap: 90% male vs. 83% female (World Bank, 2022)
 
 ## Gender, Development, and Representation
 
@@ -206,23 +207,47 @@ legend(1, 1,
 -   Solves confounding problem $\rightarrow$ can identify causal effects!
 :::
 
-## In a nutshell
+## The Research Question
 
--   RQ: [What are the policy consequences of "mandated representation of women"?]{.fragment}
+Does mandated representation of women change policy outcomes?
 
--   Hypothesis: [In reserved villages, there is more investment in goods women prioritize]{.fragment}
+::: incremental
+-   Reserved positions assigned by random lottery
+-   Do villages with female heads invest differently than those with male heads?
+:::
 
--   Mechanism: [Heterogeneous priorities]{.fragment}
+## Theory
 
--   Treatment: [Village council being randomly assigned to have female head]{.fragment}
+**Hypothesis:** Reserved villages invest more in goods women prioritize
 
--   Outcome: [Investment Decisions]{.fragment}
+::: incremental
+-   **Mechanism:** Heterogeneous priorities
+    -   Women and men have different policy preferences
+    -   Female leaders translate those preferences into policy
+-   If true: representation has substantive, not just symbolic, value
+:::
 
--   Data: [Sample of Villages]{.fragment}
+## Research Design
+
+**Treatment:** Village council randomly assigned a female head (reserved seat lottery)
+
+::: incremental
+-   **Identification:** Randomization via lottery
+    -   Reserved vs. non-reserved villages are comparable on all other dimensions
+-   **Outcome:** Public investment decisions (type and quantity)
+-   **Data:** Village councils in West Bengal and Rajasthan, India
+:::
+
+## Measuring $D_i$: Gender Differences in Requests
+
+-   Authors surveyed villagers: *"Have you made a request to the GP in the past 6 months?"*
+-   Requests = complaints or petitions for specific public goods (water, roads, irrigation...)
+-   For each good $i$, $D_i$ = share of women requesting it minus share of men requesting it
+-   Positive $D_i$: women want it more. Negative: men want it more.
 
 ## A bit more detail
 
-\ 
+\
 $Y_{ij} = \beta_1 + \beta_2 * R_j + \beta_3 D_i * R_j + \sum_{l=1}^{N} \beta_l d_{li} + \epsilon_{ij}$
 
 Where:
@@ -230,9 +255,9 @@ Where:
 
 -   $Y_{ij}$ is an outcome of interest
 
--   $R_j$ takes the value of 1 if GM is reserved
+-   $R_j$ takes the value of 1 if GP is reserved
 
--   $D_i$ is differences in request about that good (women - men)
+-   $D_i$ is gender difference in requests for that good (women - men)
 
 -   $d_{li}$ are good Fixed Effects!
 
@@ -334,72 +359,110 @@ $Y_{i} = \alpha + \beta_1 * X_i + \beta_2 * Z_i + \beta_3 * Z_i * X_i \epsilon_{
 
 3.  Interpret $\beta_1$ and $\beta_2$ correctly
 
-## Practical Example
-
-- Lets simulate some data to see how we can fit an interactive model in R
-- We are going to look at a binary covariate
-
-```{r}
-#| echo: true
-#| warning: false
-#| centering: true
-
-alpha <- 1
-beta_1 <- -.5    # Coefficient for women's representation
-beta_2 <- 1.5  # Coefficient for quota system
-beta_3 <- 3    # Coefficient for interaction term
-
+```{r setup-data, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(marginaleffects)
 set.seed(12)
+
+# Binary moderator: effect of women's representation depends on quota
 interaction_data <- tibble(
-  women_representation = runif(100, 0, 1), # any number btw 0 and 1
-  quota_system = sample(0:1, 100, replace = T)) %>% # either 1 or 0
-  mutate(policy_outcome = alpha + 
-               beta_1 * women_representation + 
-               beta_2 * quota_system + 
-               beta_3 * (women_representation * quota_system) + 
-                rnorm(n(), 0, 0.5))
+  women_rep = runif(200, 0, 1),
+  quota     = sample(0:1, 200, replace = TRUE)
+) %>%
+  mutate(policy_outcome = 1 + (-.5)*women_rep + 1.5*quota + 3*(women_rep*quota) + rnorm(n(), 0, 0.5))
 
+model_binary <- lm(policy_outcome ~ women_rep * quota, data = interaction_data)
 
+# Continuous moderator: effect of reservation depends on preference gap (D_i)
+cont_data <- tibble(
+  reservation = sample(0:1, 200, replace = TRUE),
+  pref_gap    = runif(200, -1, 1)   # D_i: women minus men requests
+) %>%
+  mutate(investment = 0.5 + 0.2*reservation + 0.1*pref_gap +
+           2*(reservation*pref_gap) + rnorm(n(), 0, 0.3))
+
+model_cont <- lm(investment ~ reservation * pref_gap, data = cont_data)
 ```
 
+## Marginal Effects: The Idea
 
-## Visualize Conditional Relationship
+Recall:
 
+$$\frac{\partial Y}{\partial X} = \beta_1 + \beta_3 \cdot Z$$
 
-```{r, results=T, echo=F}
+- The effect of $X$ on $Y$ is **not a single number** -- it depends on $Z$
+- `marginaleffects` evaluates this at specified values of $Z$ and computes uncertainty
 
-ggplot(interaction_data, 
-       aes(x = women_representation, 
-           y = policy_outcome, 
-           color = factor(quota_system))) +
-  geom_point() +
-  geom_smooth(method = "lm") +
-  labs(x = "% of Female Representatives",
-       y = "Policy Outcome",
-       color = "Quota?") + 
-  theme_minimal(base_size = 14) +
-  scale_color_brewer(palette = 3, type = "qual")
+. . .
 
-```
+Two cases: $Z$ is **binary** vs. $Z$ is **continuous**
 
-## Practical Example 
-
-- You can fit the model with lm like usual 
+## Binary Moderator: Two Estimates
 
 ```{r}
-
 #| echo: true
 #| warning: false
-#| code-fold: true
-#| centering: true
-#| code-summary: "Show code"
- 
-# Fit interaction model
-interaction_model <- lm(policy_outcome ~  women_representation * quota_system, 
-                        data = interaction_data)
 
-summary(interaction_model)
+# Effect of women's representation on policy outcome, by quota status
+slopes(model_binary,
+       variables = "women_rep",
+       by = "quota")
 ```
 
+## Binary Moderator: Plot
 
+```{r}
+#| echo: false
+#| warning: false
+#| fig-align: center
+#| fig-height: 4.5
+
+plot_slopes(model_binary,
+            variables = "women_rep",
+            condition = "quota") +
+  scale_x_discrete(labels = c("0" = "No quota", "1" = "Quota")) +
+  labs(x = NULL,
+       y = "Effect of women's representation\non policy outcome") +
+  theme_minimal(base_size = 16)
+```
+
+## Continuous Moderator: A Line, Not Two Points
+
+When $Z$ is continuous, the marginal effect varies **across the full range of $Z$**
+
+. . .
+
+Back to C&D logic: as $D_i$ increases (women want a good more relative to men), does the effect of reservation on investment grow?
+
+## Continuous Moderator: Plot
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show code"
+#| warning: false
+#| fig-align: center
+#| fig-height: 4.5
+
+plot_slopes(model_cont,
+            variables = "reservation",
+            condition = "pref_gap") +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "grey40") +
+  labs(x = expression(D[i] ~ "(gender gap in requests: women - men)"),
+       y = "Effect of GP reservation\non public investment",
+       caption = "Simulated data") +
+  theme_minimal(base_size = 16)
+```
+
+## What to Look For
+
+**Binary moderator**
+- Two point estimates with CIs -- does the effect change sign or magnitude?
+
+**Continuous moderator**
+- A line with CI band -- where does the effect become significant? Where does it flip?
+
+. . .
+
+Both are $\beta_1 + \beta_3 \cdot Z$ evaluated at different values of $Z$ -- `marginaleffects` handles the standard errors
 
