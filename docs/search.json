@@ -11890,7 +11890,7 @@
     "href": "slides/c4-health.html#agenda",
     "title": "Health and Development",
     "section": "Agenda",
-    "text": "Agenda\n\nHealth and Development\nChen et al. (2013)\nRegression Discontinuity Design\n\n\nYour Research Design is due TONIGHT"
+    "text": "Agenda\n\nHealth and Development\nChen et al. (2013)\nRegression Discontinuity Design"
   },
   {
     "objectID": "slides/c4-health.html#the-state-provides-public-goods",
@@ -12009,7 +12009,7 @@
     "href": "slides/c4-health.html#complements-or-substitutes",
     "title": "Health and Development",
     "section": "Complements or Substitutes?",
-    "text": "Complements or Substitutes?\n\n\nThe policy was meant to improve welfare: free heating in cold winters\nBut it dramatically shortened lives — a negative externality, an unintended consequence\nNobody designed this policy to kill people. But it did.\nPolicy design is hard. Development and health can be complements, but only if you get the details right\n“These results may help explain why China’s explosive economic growth has led to relatively anemic growth in life expectancy”"
+    "text": "Complements or Substitutes?\n\n\nThe policy was meant to improve welfare: free heating in cold winters\nBut it dramatically shortened lives – a negative externality, an unintended consequence\nNobody designed this policy to kill people. But it did.\n“These results may help explain why China’s explosive economic growth has led to relatively anemic growth in life expectancy”"
   },
   {
     "objectID": "slides/c4-health.html#using-rdrobust",
@@ -12114,7 +12114,7 @@
     "href": "slides/c4-health.html#the-dark-side",
     "title": "Health and Development",
     "section": "The Dark Side",
-    "text": "The Dark Side\nDevelopment has undoubtedly prolonged life: vaccines, sanitation, medicine, nutrition, heating.\n\nBut development also brings negative externalities:\n\n\nAir and water pollution\nIndustrial hazards\nEnvironmental degradation\nInequality in who bears the costs\n\n\n\n\nToday’s paper: a case where a development policy had unintended health consequences"
+    "text": "The Dark Side\nBut development also brings negative externalities:\n\n\nAir and water pollution\nIndustrial hazards\nEnvironmental degradation\nInequality in who bears the costs\n\n\n\nToday’s paper: a case where a development policy had unintended health consequences"
   },
   {
     "objectID": "materials/c4_health.html",
@@ -14005,5 +14005,40 @@
     "title": "Gender and Development",
     "section": "Continuous Moderator: Plot",
     "text": "Continuous Moderator: Plot\n\n\nShow code\nplot_slopes(model_cont,\n            variables = \"reservation\",\n            condition = \"pref_gap\") +\n  geom_hline(yintercept = 0, linetype = \"dashed\", color = \"grey40\") +\n  labs(x = expression(D[i] ~ \"(gender gap in requests: women - men)\"),\n       y = \"Effect of GP reservation\\non public investment\",\n       caption = \"Simulated data\") +\n  theme_minimal(base_size = 16)"
+  },
+  {
+    "objectID": "slides/c4-health.html#child-mortality-has-collapsed",
+    "href": "slides/c4-health.html#child-mortality-has-collapsed",
+    "title": "Health and Development",
+    "section": "Child Mortality Has Collapsed",
+    "text": "Child Mortality Has Collapsed"
+  },
+  {
+    "objectID": "slides/c4-health.html#air-pollution-is-a-leading-killer",
+    "href": "slides/c4-health.html#air-pollution-is-a-leading-killer",
+    "title": "Health and Development",
+    "section": "Air Pollution Is a Leading Killer",
+    "text": "Air Pollution Is a Leading Killer"
+  },
+  {
+    "objectID": "slides/c4-health.html#the-perils-of-rdd",
+    "href": "slides/c4-health.html#the-perils-of-rdd",
+    "title": "Health and Development",
+    "section": "The Perils of RDD",
+    "text": "The Perils of RDD\n\n\nYou estimate a local effect – units right at the cutoff, not the full population\nThe cutoff is often arbitrary: cities near the Huai River may not represent all of China\nIf the cutoff region is unrepresentative, external validity is limited\nRDD answers: “what happens just at the threshold?” – which may be of little theoretical interest"
+  },
+  {
+    "objectID": "slides/c4-health.html#does-development-make-us-healthier",
+    "href": "slides/c4-health.html#does-development-make-us-healthier",
+    "title": "Health and Development",
+    "section": "Does Development Make Us Healthier?",
+    "text": "Does Development Make Us Healthier?\nWhy we might think yes:\n\n\nVaccines and antibiotics eliminated mass killers\nSanitation and clean water cut infectious disease\nBetter nutrition reduced stunting and mortality\nHeating reduced cold-related deaths\nRicher states can fund hospitals, doctors, public health"
+  },
+  {
+    "objectID": "slides/c4-health.html#discussion",
+    "href": "slides/c4-health.html#discussion",
+    "title": "Health and Development",
+    "section": "Discussion",
+    "text": "Discussion\nWhat is the counterfactual?\n\n\nThe heating policy killed people through pollution\nBut without free coal, people in northern China faced brutal winters\nDid the policy kill more people than it saved from freezing?\nHow do you even evaluate a policy like this?\n\n\n\nThis is the fundamental challenge of policy evaluation: the counterfactual is never observed"
   }
 ]

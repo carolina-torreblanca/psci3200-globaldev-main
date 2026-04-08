@@ -33,25 +33,7 @@ format:
 2. Chen et al. (2013)
 3. Regression Discontinuity Design
 
-. . .
-
-Your **Research Design** is due TONIGHT
-
 # Health and Development
-
-## The State Provides Public Goods
-
-Last week: the state and **security**
-
-- Crime can mobilize citizens (Bateson)
-- But policing can alienate them (Weaver and Lerman)
-
-. . .
-
-Today: the state and **health**
-
-- Governments build hospitals, subsidize medicine, regulate pollution
-- But development policies can also *harm* health
 
 ## We Live Much, Much Longer
 
@@ -91,11 +73,23 @@ ggplot(wdi, aes(x = gdp_pc, y = life_exp)) +
   theme_minimal(base_size = 16)
 ```
 
+## Child Mortality Has Collapsed
+
+![](https://ourworldindata.org/grapher/child-mortality.png){fig-align="center" height="5in"}
+
+## Does Development Make Us Healthier?
+
+**Why we might think yes:**
+
+::: incremental
+- Vaccines and antibiotics eliminated mass killers
+- Sanitation and clean water cut infectious disease
+- Better nutrition reduced stunting and mortality
+- Heating reduced cold-related deaths
+- Richer states can fund hospitals, doctors, public health
+:::
+
 ## The Dark Side
-
-Development has undoubtedly prolonged life: vaccines, sanitation, medicine, nutrition, heating.
-
-. . .
 
 But development also brings **negative externalities**:
 
@@ -277,12 +271,25 @@ Life expectancy drops by **5.5 years** north of the Huai River.
 
 ::: incremental
 - The policy was meant to **improve welfare**: free heating in cold winters
-- But it **dramatically shortened lives** — a **negative externality**, an unintended consequence
+- But it **dramatically shortened lives** -- a negative externality, an unintended consequence
 - Nobody designed this policy to kill people. But it did.
-- **Policy design is hard.** Development and health can be complements, but only if you get the details right
 - *"These results may help explain why China's explosive economic growth has led to relatively anemic growth in life expectancy"*
 :::
 
+## Discussion
+
+**What is the counterfactual?**
+
+::: incremental
+- The heating policy killed people through pollution
+- But without free coal, people in northern China faced brutal winters
+- Did the policy kill more people than it saved from freezing?
+- How do you even evaluate a policy like this?
+:::
+
+. . .
+
+This is the fundamental challenge of policy evaluation: **the counterfactual is never observed**
 
 # RDD in R
 
@@ -390,5 +397,14 @@ rdplot(y = sim_data$life_exp,
        x.label = "Degrees of latitude from Huai River",
        y.label = "Life expectancy (years)")
 ```
+
+## The Perils of RDD
+
+::: incremental
+- You estimate a **local** effect -- units right at the cutoff, not the full population
+- The cutoff is often arbitrary: cities near the Huai River may not represent all of China
+- If the cutoff region is unrepresentative, external validity is limited
+- RDD answers: *"what happens just at the threshold?"* -- which may be of little theoretical interest
+:::
 
 
