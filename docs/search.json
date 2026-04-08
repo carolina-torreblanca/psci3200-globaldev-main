@@ -4902,23 +4902,23 @@
   {
     "objectID": "materials/22_climate1.html",
     "href": "materials/22_climate1.html",
-    "title": "Climate and Development 1",
+    "title": "Climate and Development",
     "section": "",
-    "text": "O’Brien-Udry (working paper)\nSeiler et al. (2023)\nSeiler et al. (2023)\n\n\n\n\n\nSlides"
+    "text": "Dell, Jones & Olken (2012). “Temperature Shocks and Economic Growth: Evidence from the Last Half Century.” American Economic Journal: Macroeconomics"
   },
   {
     "objectID": "materials/22_climate1.html#required-readings",
     "href": "materials/22_climate1.html#required-readings",
-    "title": "Climate and Development 1",
+    "title": "Climate and Development",
     "section": "",
-    "text": "O’Brien-Udry (working paper)\nSeiler et al. (2023)\nSeiler et al. (2023)"
+    "text": "Dell, Jones & Olken (2012). “Temperature Shocks and Economic Growth: Evidence from the Last Half Century.” American Economic Journal: Macroeconomics"
   },
   {
     "objectID": "materials/22_climate1.html#slides",
     "href": "materials/22_climate1.html#slides",
-    "title": "Climate and Development 1",
-    "section": "",
-    "text": "Slides"
+    "title": "Climate and Development",
+    "section": "Slides",
+    "text": "Slides\n\nSlides"
   },
   {
     "objectID": "materials/20_aid1.html",
@@ -14040,5 +14040,348 @@
     "title": "Health and Development",
     "section": "Discussion",
     "text": "Discussion\nWhat is the counterfactual?\n\n\nThe heating policy killed people through pollution\nBut without free coal, people in northern China faced brutal winters\nDid the policy kill more people than it saved from freezing?\nHow do you even evaluate a policy like this?\n\n\n\nThis is the fundamental challenge of policy evaluation: the counterfactual is never observed"
+  },
+  {
+    "objectID": "slides/c8-climate.html#agenda",
+    "href": "slides/c8-climate.html#agenda",
+    "title": "Climate and Development",
+    "section": "Agenda",
+    "text": "Agenda\n\nClimate and Development\nDell, Jones & Olken (2012)\nInterpreting Logged Variables"
+  },
+  {
+    "objectID": "slides/c8-climate.html#the-planet-is-warming",
+    "href": "slides/c8-climate.html#the-planet-is-warming",
+    "title": "Climate and Development",
+    "section": "The Planet Is Warming",
+    "text": "The Planet Is Warming"
+  },
+  {
+    "objectID": "slides/c8-climate.html#the-poorest-bear-the-most",
+    "href": "slides/c8-climate.html#the-poorest-bear-the-most",
+    "title": "Climate and Development",
+    "section": "The Poorest Bear the Most",
+    "text": "The Poorest Bear the Most"
+  },
+  {
+    "objectID": "slides/c8-climate.html#why-should-we-expect-climate-to-affect-development",
+    "href": "slides/c8-climate.html#why-should-we-expect-climate-to-affect-development",
+    "title": "Climate and Development",
+    "section": "Why Should We Expect Climate to Affect Development?",
+    "text": "Why Should We Expect Climate to Affect Development?\n\n\nAgriculture: crop yields fall as temperatures rise above optimal thresholds\nLabor productivity: heat stress reduces output, especially outdoor work\nHealth: heat-related illness, disease vector expansion (malaria, dengue)\nConflict: resource scarcity and stress increase violence\nInfrastructure: extreme weather destroys capital"
+  },
+  {
+    "objectID": "slides/c8-climate.html#but-rich-countries-seem-fine",
+    "href": "slides/c8-climate.html#but-rich-countries-seem-fine",
+    "title": "Climate and Development",
+    "section": "But Rich Countries Seem Fine",
+    "text": "But Rich Countries Seem Fine\n\n\nMost rich countries are in temperate climates\nIs that a coincidence?\nOr have they adapted – air conditioning, irrigated agriculture, insurance markets?\nKey question: is the effect of temperature the same everywhere, or does it depend on income?"
+  },
+  {
+    "objectID": "slides/c8-climate.html#the-research-question",
+    "href": "slides/c8-climate.html#the-research-question",
+    "title": "Climate and Development",
+    "section": "The Research Question",
+    "text": "The Research Question\nDoes temperature affect economic growth? Does the effect differ by income?\n\n\nCross-country pattern: hot countries are poor\nBut that correlation cannot support causal inference\nHot countries differ in colonization history, institutions, geography, disease burden…\nNeed a cleaner source of variation"
+  },
+  {
+    "objectID": "slides/c8-climate.html#theory",
+    "href": "slides/c8-climate.html#theory",
+    "title": "Climate and Development",
+    "section": "Theory",
+    "text": "Theory\nHypothesis: Higher temperatures reduce growth in poor countries but not rich ones\n\n\nProposed channels: agriculture, labor productivity, health, conflict\nWhy poor countries? Less capacity to adapt: rain-fed agriculture, weak health systems, fragile institutions"
+  },
+  {
+    "objectID": "slides/c8-climate.html#research-design",
+    "href": "slides/c8-climate.html#research-design",
+    "title": "Climate and Development",
+    "section": "Research Design",
+    "text": "Research Design\nKey insight: year-to-year temperature fluctuations are plausibly exogenous\n\n\nA country’s average temperature is confounded with history, geography, institutions\nBut whether this year was hotter than usual is essentially random – weather\nIdentification assumption: temperature deviations from a country’s long-run norm affect growth only through economic channels"
+  },
+  {
+    "objectID": "slides/c8-climate.html#data",
+    "href": "slides/c8-climate.html#data",
+    "title": "Climate and Development",
+    "section": "Data",
+    "text": "Data\n\nTemperature and precipitation: gridded weather station data, 125 countries, 1950–2003\nEconomic growth: GDP per capita growth (Penn World Tables)\nUnit of analysis: country-year\nSeparate estimates for rich and poor countries (above/below median income in 1970)"
+  },
+  {
+    "objectID": "slides/c8-climate.html#the-model",
+    "href": "slides/c8-climate.html#the-model",
+    "title": "Climate and Development",
+    "section": "The Model",
+    "text": "The Model\n\\[\\Delta \\ln y_{it} = \\beta_1 T_{it} + \\beta_2 P_{it} + \\alpha_i + \\gamma_t + \\epsilon_{it}\\]\nWhere:\n\n\\(\\Delta \\ln y_{it}\\) is GDP per capita growth in country \\(i\\), year \\(t\\)\n\\(T_{it}\\) is mean annual temperature (deviation from country mean)\n\\(P_{it}\\) is annual precipitation\n\\(\\alpha_i\\) are country fixed effects – absorb all time-invariant country factors\n\\(\\gamma_t\\) are year fixed effects – absorb global shocks"
+  },
+  {
+    "objectID": "slides/c8-climate.html#main-findings",
+    "href": "slides/c8-climate.html#main-findings",
+    "title": "Climate and Development",
+    "section": "Main Findings",
+    "text": "Main Findings\n\n\nIn poor countries: a 1C increase above a country’s own average in a given year reduces growth by 1.3 percentage points\nIn rich countries: no significant effect\nEffects appear across agriculture, industry, and investment\nPrecipitation: no robust effect"
+  },
+  {
+    "objectID": "slides/c8-climate.html#mechanisms",
+    "href": "slides/c8-climate.html#mechanisms",
+    "title": "Climate and Development",
+    "section": "Mechanisms",
+    "text": "Mechanisms\n\n\nAgricultural output falls sharply – poor countries depend heavily on rain-fed crops\nIndustrial output also declines – labor productivity channel\nInvestment falls – firms anticipate lower returns\nPolitical instability rises – more leadership transitions in hot years\n\n\n\nNo single channel dominates. Temperature hits the whole economy simultaneously."
+  },
+  {
+    "objectID": "slides/c8-climate.html#what-this-means-for-climate-change",
+    "href": "slides/c8-climate.html#what-this-means-for-climate-change",
+    "title": "Climate and Development",
+    "section": "What This Means for Climate Change",
+    "text": "What This Means for Climate Change\n\n\nThese are transitory shocks – climate change means permanently higher temperatures\nIf poor countries cannot grow their way out of heat, the development gap widens\nAdaptation matters: the rich-poor gap in sensitivity suggests it is possible – but costly\nMitigation vs. adaptation: a tradeoff developing countries did not create"
+  },
+  {
+    "objectID": "slides/c8-climate.html#what-is-panel-data",
+    "href": "slides/c8-climate.html#what-is-panel-data",
+    "title": "Climate and Development",
+    "section": "What Is Panel Data?",
+    "text": "What Is Panel Data?\n\nObservations on the same units (countries, firms, individuals) over time\nGives us two dimensions of variation: across units and within units over time\n\n\nWhy does this matter?\nUnits differ in many ways we cannot measure – history, culture, geography. Panel data lets us hold those constant."
+  },
+  {
+    "objectID": "slides/c8-climate.html#the-fixed-effects-idea",
+    "href": "slides/c8-climate.html#the-fixed-effects-idea",
+    "title": "Climate and Development",
+    "section": "The Fixed Effects Idea",
+    "text": "The Fixed Effects Idea\n\n\nEach country has a fixed effect \\(\\alpha_i\\) – its own intercept\nThis absorbs everything about a country that does not change over time\nWe identify the effect of temperature from deviations within each country relative to its own average\nA hot year in Sweden vs. a normal year in Sweden – not Sweden vs. Nigeria"
+  },
+  {
+    "objectID": "slides/c8-climate.html#the-model-again",
+    "href": "slides/c8-climate.html#the-model-again",
+    "title": "Climate and Development",
+    "section": "The Model Again",
+    "text": "The Model Again\n\\[\\Delta \\ln y_{it} = \\beta_1 T_{it} + \\beta_2 P_{it} + \\alpha_i + \\gamma_t + \\epsilon_{it}\\]\n\n\\(\\alpha_i\\): country FE – controls for all time-invariant confounders (geography, colonial history…)\n\\(\\gamma_t\\): year FE – controls for global shocks (oil price, global recession…)\n\\(\\hat{\\beta}_1\\): identified from within-country variation in temperature over time"
+  },
+  {
+    "objectID": "slides/c8-climate.html#in-r-fixest",
+    "href": "slides/c8-climate.html#in-r-fixest",
+    "title": "Climate and Development",
+    "section": "In R: fixest",
+    "text": "In R: fixest\n\n# install.packages(\"fixest\")\nlibrary(fixest)\n\n# Two-way fixed effects: country + year\nmodel &lt;- feols(gdp_growth ~ temperature + precipitation | country + year,\n               data = panel_data,\n               cluster = ~country)\n\nsummary(model)\n\n\n\n| country + year: the fixed effects\ncluster = ~country: standard errors clustered at the country level (why?)"
+  },
+  {
+    "objectID": "slides/c8-climate.html#simulating-panel-fe",
+    "href": "slides/c8-climate.html#simulating-panel-fe",
+    "title": "Climate and Development",
+    "section": "Simulating Panel FE",
+    "text": "Simulating Panel FE\n\n\nShow code\nlibrary(tidyverse)\nlibrary(fixest)\nset.seed(42)\n\nn_countries &lt;- 30\nn_years     &lt;- 20\n\npanel &lt;- expand_grid(country = 1:n_countries, year = 1:n_years) %&gt;%\n  mutate(\n    country_fe  = rep(rnorm(n_countries, 0, 2), each = n_years),\n    temperature = rnorm(n(), 0, 1),\n    gdp_growth  = 2 + (-1.3) * temperature + country_fe + rnorm(n(), 0, 1)\n  )\n\n# Naive OLS -- biased if country_fe correlates with temperature\nols  &lt;- lm(gdp_growth ~ temperature, data = panel)\n\n# Two-way FE -- consistent\ntwfe &lt;- feols(gdp_growth ~ temperature | country + year, data = panel)\n\ncat(\"OLS estimate:\", round(coef(ols)[\"temperature\"], 3),\n    \"\\nFE estimate:\",  round(coef(twfe)[\"temperature\"], 3),\n    \"\\nTrue effect:  -1.3\")\n\n\nOLS estimate: -1.46 \nFE estimate: -1.298 \nTrue effect:  -1.3"
+  },
+  {
+    "objectID": "slides/c8-climate.html#why-fe-vs.-ols",
+    "href": "slides/c8-climate.html#why-fe-vs.-ols",
+    "title": "Climate and Development",
+    "section": "Why FE vs. OLS?",
+    "text": "Why FE vs. OLS?\n\n\nOLS estimate is biased: conflates within-country temperature variation with between-country differences\nCountry FE removes the between-country variation – identifies from within only\nThe difference between the two estimates is the confounding from time-invariant country characteristics\nThis is why Dell et al. cannot simply compare hot countries to cold countries"
+  },
+  {
+    "objectID": "slides/c8-climate.html#the-limits-of-panel-fe",
+    "href": "slides/c8-climate.html#the-limits-of-panel-fe",
+    "title": "Climate and Development",
+    "section": "The Limits of Panel FE",
+    "text": "The Limits of Panel FE\n\n\nRemoves all time-invariant confounders – but not time-varying ones\nKey assumption: no omitted variable that varies within a country over time and correlates with temperature\nCannot tell us about long-run effects of permanently higher temperature (only year-to-year shocks)\nGeneralization from short-run shocks to long-run climate change requires additional assumptions"
+  },
+  {
+    "objectID": "slides/c8-climate.html#who-caused-it",
+    "href": "slides/c8-climate.html#who-caused-it",
+    "title": "Climate and Development",
+    "section": "Who Caused It",
+    "text": "Who Caused It"
+  },
+  {
+    "objectID": "slides/c8-climate.html#who-suffers",
+    "href": "slides/c8-climate.html#who-suffers",
+    "title": "Climate and Development",
+    "section": "Who Suffers",
+    "text": "Who Suffers"
+  },
+  {
+    "objectID": "slides/c8-climate.html#why-should-climate-affect-development",
+    "href": "slides/c8-climate.html#why-should-climate-affect-development",
+    "title": "Climate and Development",
+    "section": "Why Should Climate Affect Development?",
+    "text": "Why Should Climate Affect Development?\n\n\nAgriculture: crop yields fall above optimal temperature thresholds\nLabor productivity: heat stress reduces output, especially outdoor and manual work\nHealth: heat illness, expanded disease vectors (malaria, dengue)\nConflict: resource scarcity increases stress and violence\nInfrastructure: extreme weather destroys capital"
+  },
+  {
+    "objectID": "slides/c8-climate.html#but-rich-countries-seem-unaffected",
+    "href": "slides/c8-climate.html#but-rich-countries-seem-unaffected",
+    "title": "Climate and Development",
+    "section": "But Rich Countries Seem Unaffected",
+    "text": "But Rich Countries Seem Unaffected\n\n\nMost wealthy countries are in temperate climates\nMany have adapted: air conditioning, irrigated agriculture, crop switching, insurance markets\nKey question: is the effect of temperature the same everywhere, or does it depend on income?"
+  },
+  {
+    "objectID": "slides/c8-climate.html#the-identification-problem",
+    "href": "slides/c8-climate.html#the-identification-problem",
+    "title": "Climate and Development",
+    "section": "The Identification Problem",
+    "text": "The Identification Problem"
+  },
+  {
+    "objectID": "slides/c8-climate.html#data-and-model",
+    "href": "slides/c8-climate.html#data-and-model",
+    "title": "Climate and Development",
+    "section": "Data and Model",
+    "text": "Data and Model\n125 countries, 1950–2003. Temperature from gridded weather data. GDP growth from Penn World Tables.\n\\[\\Delta \\ln y_{it} = \\beta_1 T_{it} + \\beta_2 P_{it} + \\alpha_i + \\gamma_t + \\epsilon_{it}\\]\n\n\\(T_{it}\\): mean temperature in country \\(i\\), year \\(t\\), relative to that country’s mean over the full sample (1950–2003)\n\\(\\alpha_i\\): country fixed effects\n\\(\\gamma_t\\): year fixed effects"
+  },
+  {
+    "objectID": "slides/c8-climate.html#heterogeneous-effects-are-an-interaction",
+    "href": "slides/c8-climate.html#heterogeneous-effects-are-an-interaction",
+    "title": "Climate and Development",
+    "section": "Heterogeneous Effects Are an Interaction",
+    "text": "Heterogeneous Effects Are an Interaction\nThe rich vs. poor split is a modeling decision, not just a narrative\n\\[\\Delta \\ln y_{it} = \\beta_1 T_{it} + \\beta_2 \\text{Poor}_i + \\beta_3 (T_{it} \\times \\text{Poor}_i) + \\alpha_i + \\gamma_t + \\epsilon_{it}\\]\n\n\n\\(\\beta_1\\): effect of temperature in rich countries\n\\(\\beta_1 + \\beta_3\\): effect of temperature in poor countries\n\\(\\beta_3\\): does temperature hit poor countries harder?\nThe marginal effect of \\(T\\) depends on income – exactly the interaction structure you know"
+  },
+  {
+    "objectID": "slides/c8-climate.html#the-extrapolation-problem",
+    "href": "slides/c8-climate.html#the-extrapolation-problem",
+    "title": "Climate and Development",
+    "section": "The Extrapolation Problem",
+    "text": "The Extrapolation Problem\nDell et al. identify effects from year-to-year shocks. Climate change is permanent. These are different.\n\n\nShort-run: no time to adapt – crops, firms, and governments are stuck\nLong-run: adaptation is possible\n\nShort-run estimates may overstate damage if adaptation works\nMay understate it if capital degrades irreversibly\n\nDell et al. test with 10-year windows: effect is smaller but persists\nShort-run estimates are credible; translating to permanent warming requires further assumptions"
+  },
+  {
+    "objectID": "slides/c8-climate.html#can-we-fix-the-extrapolation-problem",
+    "href": "slides/c8-climate.html#can-we-fix-the-extrapolation-problem",
+    "title": "Climate and Development",
+    "section": "Can We Fix the Extrapolation Problem?",
+    "text": "Can We Fix the Extrapolation Problem?\n\n\nOne approach: long differences – look at 10-year average temperature vs. 10-year growth\n\nAllows some adaptation, still uses variation within countries\nDell et al. find the effect is smaller but still present\n\nAnother approach: compare countries that differ in climate trends over decades\n\nHarder – confounded with other changes\n\nBottom line: short-run panel estimates are credible for identification, but the translation to long-run climate change requires additional assumptions"
+  },
+  {
+    "objectID": "slides/c8-climate.html#what-this-means-for-policy",
+    "href": "slides/c8-climate.html#what-this-means-for-policy",
+    "title": "Climate and Development",
+    "section": "What This Means for Policy",
+    "text": "What This Means for Policy\n\n\nIf effects are real and large: a 2–4°C world hits poor countries hardest\nThe countries that emitted least are most exposed\nAdaptation can reduce the damage but requires investment poor countries cannot afford\nMitigation (cutting emissions) addresses the source – but is a global public good problem\nThis is not just a science problem – it is a development problem"
+  },
+  {
+    "objectID": "slides/c8-climate.html#critical-thinking-the-political-instability-story",
+    "href": "slides/c8-climate.html#critical-thinking-the-political-instability-story",
+    "title": "Climate and Development",
+    "section": "Critical Thinking: The Political Instability Story",
+    "text": "Critical Thinking: The Political Instability Story\n\n\nDell et al. find more irregular leadership transitions in hotter years in poor countries\nDoes heat cause conflict, or do both reflect deeper fragility?\nThe instability result is smaller and less robust than the GDP result\nInstability may be a mechanism or a consequence of worse economic outcomes – not a clean separate channel\nTakeaway: mechanism identification is much harder than reduced-form identification"
+  },
+  {
+    "objectID": "slides/c8-climate.html#what-the-paper-actually-argues",
+    "href": "slides/c8-climate.html#what-the-paper-actually-argues",
+    "title": "Climate and Development",
+    "section": "What the Paper Actually Argues",
+    "text": "What the Paper Actually Argues\n\n\nThe rich-poor asymmetry suggests the damage from climate change will widen global inequality\nHistorical emissions came overwhelmingly from rich countries; damages fall on poor ones\nThe paper is careful: these are income effects on growth rates, not levels – compounding matters enormously\nA 1.3pp drag on growth, sustained over decades, means massive foregone development\nThe authors do not say adaptation is impossible – but it requires investment poor countries cannot self-finance"
+  },
+  {
+    "objectID": "slides/c8-climate.html#interpreting-log-transformations",
+    "href": "slides/c8-climate.html#interpreting-log-transformations",
+    "title": "Climate and Development",
+    "section": "Interpreting Log Transformations",
+    "text": "Interpreting Log Transformations\nThe DV is \\(\\Delta \\ln y_{it}\\) – the log difference in GDP per capita, which approximates the growth rate.\n\nWhy does \\(\\ln Y\\) work that way? Take the derivative:\n\\[\\frac{d \\ln Y}{d X} = \\frac{1}{Y} \\frac{dY}{dX} \\approx \\% \\Delta Y\\]\n\n\nSo when the DV is logged and \\(X\\) is in levels: \\(\\hat{\\beta}\\) is the percentage point change in \\(Y\\) per unit increase in \\(X\\)."
+  },
+  {
+    "objectID": "slides/c8-climate.html#main-results",
+    "href": "slides/c8-climate.html#main-results",
+    "title": "Climate and Development",
+    "section": "Main Results",
+    "text": "Main Results"
+  },
+  {
+    "objectID": "slides/c8-climate.html#reading-the-table",
+    "href": "slides/c8-climate.html#reading-the-table",
+    "title": "Climate and Development",
+    "section": "Reading the Table",
+    "text": "Reading the Table\n\n\n\n  \n\n  \n  \n  \n\n  \n  \n  \n\n  \n  \n  \n\n\n\n  \n    Col (1): no effect on average across all countries.\n  \n  \n    Col (2): temperature interacted with a poor country dummy. Large and significant (-1.655***).\n  \n  \n    Marginal effect in poor countries: β_temp + β_interaction = -1.4pp. Same logic as slopes()."
+  },
+  {
+    "objectID": "slides/c8-climate.html#log-log-and-level-log",
+    "href": "slides/c8-climate.html#log-log-and-level-log",
+    "title": "Climate and Development",
+    "section": "Log-Log and Level-Log",
+    "text": "Log-Log and Level-Log\nWhen both are logged – the elasticity case:\n\\[\\ln Y = \\alpha + \\beta \\ln X \\implies \\frac{d \\ln Y}{d \\ln X} = \\beta \\implies \\hat{\\beta} = \\frac{\\% \\Delta Y}{\\% \\Delta X}\\]\nA 1% increase in \\(X\\) leads to a \\(\\hat{\\beta}\\)% change in \\(Y\\).\n\nWhen only \\(X\\) is logged:\n\\[Y = \\alpha + \\beta \\ln X \\implies \\frac{dY}{d \\ln X} = \\beta \\implies \\hat{\\beta} \\approx \\frac{\\Delta Y}{1\\% \\Delta X / 100}\\]\nA 1% increase in \\(X\\) leads to a \\(\\hat{\\beta}/100\\) unit change in \\(Y\\)."
+  },
+  {
+    "objectID": "slides/c8-climate.html#what-the-paper-argues",
+    "href": "slides/c8-climate.html#what-the-paper-argues",
+    "title": "Climate and Development",
+    "section": "What the Paper Argues",
+    "text": "What the Paper Argues\n\n\nThe rich-poor asymmetry suggests climate change will widen global inequality\nHistorical emissions came overwhelmingly from rich countries; damages fall on poor ones\nThese are effects on growth rates, not levels – compounding matters enormously\nA 1.3pp drag sustained over decades means massive foregone development\nAdaptation is possible but requires investment poor countries cannot self-finance"
+  },
+  {
+    "objectID": "slides/c8-climate.html#log-level-dv-is-logged",
+    "href": "slides/c8-climate.html#log-level-dv-is-logged",
+    "title": "Climate and Development",
+    "section": "Log-Level: DV is Logged",
+    "text": "Log-Level: DV is Logged\nThe DV is \\(\\Delta \\ln y_{it}\\) – the log difference in GDP, which approximates the growth rate.\n\nWhy? Take the derivative of \\(\\ln Y = \\alpha + \\beta X\\):\n\\[\\frac{d \\ln Y}{d X} = \\frac{1}{Y} \\frac{dY}{dX} \\approx \\% \\Delta Y\\]\n\n\nSo \\(\\hat{\\beta}\\) is the percentage point change in \\(Y\\) per one unit increase in \\(X\\).\nIn Dell et al.: \\(\\hat{\\beta} = -0.013\\) means 1°C above normal reduces GDP growth by 1.3 percentage points."
+  },
+  {
+    "objectID": "slides/c8-climate.html#level-log-x-is-logged",
+    "href": "slides/c8-climate.html#level-log-x-is-logged",
+    "title": "Climate and Development",
+    "section": "Level-Log: X is Logged",
+    "text": "Level-Log: X is Logged\nWhen only \\(X\\) is logged:\n\\[Y = \\alpha + \\beta \\ln X\\]\n\\[\\frac{dY}{d \\ln X} = \\beta \\implies \\hat{\\beta} \\approx \\frac{\\Delta Y}{1\\% \\Delta X / 100}\\]\nA 1% increase in \\(X\\) leads to a \\(\\hat{\\beta}/100\\) unit change in \\(Y\\).\n\nCommon in wage regressions: \\(\\text{wage} = \\alpha + \\beta \\ln(\\text{experience})\\)"
+  },
+  {
+    "objectID": "slides/c8-climate.html#log-log-both-logged-elasticity",
+    "href": "slides/c8-climate.html#log-log-both-logged-elasticity",
+    "title": "Climate and Development",
+    "section": "Log-Log: Both Logged (Elasticity)",
+    "text": "Log-Log: Both Logged (Elasticity)\n\\[\\ln Y = \\alpha + \\beta \\ln X \\implies \\frac{d \\ln Y}{d \\ln X} = \\beta\\]\n\\(\\hat{\\beta}\\) is the elasticity: a 1% increase in \\(X\\) leads to a \\(\\hat{\\beta}\\)% change in \\(Y\\).\n\nCommon in trade and demand models. Useful when the relationship is proportional."
+  },
+  {
+    "objectID": "slides/c8-climate.html#a-quick-calculus-reminder",
+    "href": "slides/c8-climate.html#a-quick-calculus-reminder",
+    "title": "Climate and Development",
+    "section": "A Quick Calculus Reminder",
+    "text": "A Quick Calculus Reminder\nFor the natural log and exponential:\n\\[\\frac{d}{dX} \\ln X = \\frac{1}{X} \\qquad \\frac{d}{dX} e^X = e^X\\]\n\nThe key insight: differences in logs are approximately percent changes\n\n\n\n\n\n\nFrom\nTo\nActual % change\nln(To) - ln(From)\n\n\n\n\nSmall change\n100\n101\n1%\n0.010\n\n\nMedium change\n100\n110\n10%\n0.095\n\n\nLarge change\n100\n200\n100%\n0.693\n\n\n\n\n\nFor small changes, \\(\\ln(Y_2) - \\ln(Y_1) \\approx \\% \\Delta Y\\). Exact for big changes, approximate for small ones."
+  },
+  {
+    "objectID": "slides/c8-climate.html#summary",
+    "href": "slides/c8-climate.html#summary",
+    "title": "Climate and Development",
+    "section": "Summary",
+    "text": "Summary\n\n\n\n\n\n\n\n\n\n\\(Y\\) in levels\n\\(Y\\) logged\n\n\n\n\n\\(X\\) in levels\n\\(\\hat\\beta\\): unit change in \\(Y\\)\n\\(\\hat\\beta \\times 100\\): % change in \\(Y\\)\n\n\n\\(X\\) logged\n\\(\\hat\\beta/100\\): unit change per 1% \\(\\uparrow X\\)\n\\(\\hat\\beta\\): % change per 1% \\(\\uparrow X\\)"
+  },
+  {
+    "objectID": "slides/c8-climate.html#why-this-matters-for-regression",
+    "href": "slides/c8-climate.html#why-this-matters-for-regression",
+    "title": "Climate and Development",
+    "section": "Why This Matters for Regression",
+    "text": "Why This Matters for Regression\nIf your DV is logged: \\(\\ln Y = \\alpha + \\beta X\\)\n\nA one-unit increase in \\(X\\) changes \\(\\ln Y\\) by \\(\\hat\\beta\\) – which is approximately a \\(\\hat\\beta \\times 100\\)% change in \\(Y\\).\n\n\nIn Dell et al.: \\(\\hat\\beta = -0.013\\) – a 1°C shock reduces GDP by approximately 1.3% – which here is 1.3 percentage points of growth."
+  },
+  {
+    "objectID": "slides/c8-climate.html#if-x-is-logged",
+    "href": "slides/c8-climate.html#if-x-is-logged",
+    "title": "Climate and Development",
+    "section": "If X is Logged",
+    "text": "If X is Logged\n\\(Y = \\alpha + \\beta \\ln X\\) – a 1% increase in \\(X\\) changes \\(\\ln X\\) by about 0.01, so \\(Y\\) changes by \\(\\hat\\beta \\times 0.01 = \\hat\\beta/100\\) units.\n\nCommon example: wages and years of experience. Each additional 1% of experience adds \\(\\hat\\beta/100\\) dollars."
+  },
+  {
+    "objectID": "slides/c8-climate.html#if-both-are-logged",
+    "href": "slides/c8-climate.html#if-both-are-logged",
+    "title": "Climate and Development",
+    "section": "If Both are Logged",
+    "text": "If Both are Logged\n\\(\\ln Y = \\alpha + \\beta \\ln X\\) – a 1% increase in \\(X\\) leads to a \\(\\hat\\beta\\)% change in \\(Y\\).\nThis is called an elasticity – common in trade and demand models."
+  },
+  {
+    "objectID": "slides/c8-climate.html#the-cheat-sheet",
+    "href": "slides/c8-climate.html#the-cheat-sheet",
+    "title": "Climate and Development",
+    "section": "The Cheat Sheet",
+    "text": "The Cheat Sheet\n\n\n\n\n\n\n\n\n\n\\(Y\\) in levels\n\\(Y\\) logged\n\n\n\n\n\\(X\\) in levels\n\\(\\hat\\beta\\) units\n\\(\\hat\\beta \\times 100\\)% change in \\(Y\\)\n\n\n\\(X\\) logged\n\\(\\hat\\beta / 100\\) units per 1% change in \\(X\\)\n\\(\\hat\\beta\\)% change in \\(Y\\) per 1% change in \\(X\\)"
+  },
+  {
+    "objectID": "slides/c8-climate.html#why-log-differences-in-logs-are-percent-changes",
+    "href": "slides/c8-climate.html#why-log-differences-in-logs-are-percent-changes",
+    "title": "Climate and Development",
+    "section": "Why Log? Differences in Logs Are Percent Changes",
+    "text": "Why Log? Differences in Logs Are Percent Changes\n\n\n\n\n\nChange\nFrom\nTo\nln(To) - ln(From)\nx 100\nGood approx?\n\n\n\n\n1%\n100\n101\n0.0100\n0.995%\nYes\n\n\n10%\n100\n110\n0.0953\n9.53%\nRoughly\n\n\n100%\n100\n200\n0.6931\n69.3%\nNo\n\n\n\n\n\nMultiply the log difference by 100 to get the approximate percent change. Works well for small changes – GDP growth rates are typically 1-5%, so the approximation holds."
+  },
+  {
+    "objectID": "slides/c8-climate.html#why-log-reason-1-skewed-distributions",
+    "href": "slides/c8-climate.html#why-log-reason-1-skewed-distributions",
+    "title": "Climate and Development",
+    "section": "Why Log? Reason 1: Skewed Distributions",
+    "text": "Why Log? Reason 1: Skewed Distributions"
+  },
+  {
+    "objectID": "slides/c8-climate.html#why-log-reason-2-interpretation-changes",
+    "href": "slides/c8-climate.html#why-log-reason-2-interpretation-changes",
+    "title": "Climate and Development",
+    "section": "Why Log? Reason 2: Interpretation Changes",
+    "text": "Why Log? Reason 2: Interpretation Changes\nTwo common cases:\nDV is \\(\\ln Y\\) (log levels): \\(\\hat\\beta \\times 100\\) = approximate % change in \\(Y\\)\n\nDV is \\(\\Delta \\ln Y\\) (log difference = growth rate): \\(\\hat\\beta\\) is directly a percentage point change in the growth rate – no multiplication needed, since the DV is already a percent change\n\n\nDell et al. use \\(\\Delta \\ln y_{it}\\) as DV – so \\(\\hat\\beta = -0.013\\) means 1°C above normal reduces the growth rate by 1.3 percentage points directly."
   }
 ]
