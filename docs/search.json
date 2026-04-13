@@ -14088,7 +14088,7 @@
     "href": "slides/c8-climate.html#theory",
     "title": "Climate and Development",
     "section": "Theory",
-    "text": "Theory\nHypothesis: Higher temperatures reduce growth in poor countries but not rich ones\n\n\nProposed channels: agriculture, labor productivity, health, conflict\nWhy poor countries? Less capacity to adapt: rain-fed agriculture, weak health systems, fragile institutions"
+    "text": "Theory\nIf temperature does affect growth, where would we expect to see it most?\n\n\nPlaces with less capacity to adapt: rain-fed agriculture, weak health systems, fragile institutions\nSo … poor countries"
   },
   {
     "objectID": "slides/c8-climate.html#research-design",
@@ -14298,7 +14298,7 @@
     "href": "slides/c8-climate.html#what-the-paper-argues",
     "title": "Climate and Development",
     "section": "What the Paper Argues",
-    "text": "What the Paper Argues\n\n\nThe rich-poor asymmetry suggests climate change will widen global inequality\nHistorical emissions came overwhelmingly from rich countries; damages fall on poor ones\nThese are effects on growth rates, not levels – compounding matters enormously\nA 1.3pp drag sustained over decades means massive foregone development\nAdaptation is possible but requires investment poor countries cannot self-finance"
+    "text": "What the Paper Argues\n\n\nThe rich-poor asymmetry suggests climate change will widen global inequality\nHistorical emissions came overwhelmingly from rich countries; damages fall on poor ones\nThese are effects on growth rates, not levels; compounding matters enormously\nA 1.3pp drag sustained over decades means massive foregone development\nAdaptation is possible but requires investment poor countries cannot self-finance"
   },
   {
     "objectID": "slides/c8-climate.html#log-level-dv-is-logged",
@@ -14361,7 +14361,7 @@
     "href": "slides/c8-climate.html#the-cheat-sheet",
     "title": "Climate and Development",
     "section": "The Cheat Sheet",
-    "text": "The Cheat Sheet\n\n\n\n\n\n\n\n\n\n\\(Y\\) in levels\n\\(Y\\) logged\n\n\n\n\n\\(X\\) in levels\n\\(\\hat\\beta\\) units\n\\(\\hat\\beta \\times 100\\)% change in \\(Y\\)\n\n\n\\(X\\) logged\n\\(\\hat\\beta / 100\\) units per 1% change in \\(X\\)\n\\(\\hat\\beta\\)% change in \\(Y\\) per 1% change in \\(X\\)"
+    "text": "The Cheat Sheet\n\n\n\n\n\n\n\n\n\n\\(Y\\) in levels\n\\(Y\\) logged\n\n\n\n\n\\(X\\) in levels\n\\(\\hat{\\beta}\\) units\n\\(\\hat{\\beta} \\times 100\\)% change in \\(Y\\)\n\n\n\\(X\\) logged\n\\(\\hat{\\beta} / 100\\) units per 1% change in \\(X\\)\n\\(\\hat{\\beta}\\)% change in \\(Y\\) per 1% change in \\(X\\)"
   },
   {
     "objectID": "slides/c8-climate.html#why-log-differences-in-logs-are-percent-changes",
@@ -14382,6 +14382,97 @@
     "href": "slides/c8-climate.html#why-log-reason-2-interpretation-changes",
     "title": "Climate and Development",
     "section": "Why Log? Reason 2: Interpretation Changes",
-    "text": "Why Log? Reason 2: Interpretation Changes\nTwo common cases:\nDV is \\(\\ln Y\\) (log levels): \\(\\hat\\beta \\times 100\\) = approximate % change in \\(Y\\)\n\nDV is \\(\\Delta \\ln Y\\) (log difference = growth rate): \\(\\hat\\beta\\) is directly a percentage point change in the growth rate – no multiplication needed, since the DV is already a percent change\n\n\nDell et al. use \\(\\Delta \\ln y_{it}\\) as DV – so \\(\\hat\\beta = -0.013\\) means 1°C above normal reduces the growth rate by 1.3 percentage points directly."
+    "text": "Why Log? Reason 2: Interpretation Changes\nTwo common cases:\nDV is \\(\\ln Y\\) (log levels): \\(\\hat{\\beta} \\times 100\\) = approximate % change in \\(Y\\)\n\nDV is \\(\\Delta \\ln Y\\) (log difference = growth rate): \\(\\hat{\\beta}\\) is directly a percentage point change in the growth rate. No multiplication needed, since the DV is already a percent change.\n\n\nDell et al. use \\(\\Delta \\ln y_{it}\\) as DV, so \\(\\hat{\\beta} = -0.013\\) means 1°C above normal reduces the growth rate by 1.3 percentage points directly."
+  },
+  {
+    "objectID": "slides/c8-climate.html#a-one-unit-increase-is-not-the-same",
+    "href": "slides/c8-climate.html#a-one-unit-increase-is-not-the-same",
+    "title": "Climate and Development",
+    "section": "A One-Unit Increase Is Not the Same",
+    "text": "A One-Unit Increase Is Not the Same\n\n\nFrom $403 to $1,097\n\nLog distance: 1 unit\nDollar jump: $694\n\n\nFrom $22,026 to $59,874\n\nLog distance: 1 unit\nDollar jump: $37,848\n\n\n\nSame proportion (each multiplies by ~2.7x). Like a 10% raise: $3k if you earn $30k, $30k if you earn $300k. When we log GDP, one unit always means the same relative gain."
+  },
+  {
+    "objectID": "slides/c8-climate.html#finding-heat-and-political-instability",
+    "href": "slides/c8-climate.html#finding-heat-and-political-instability",
+    "title": "Climate and Development",
+    "section": "Finding: Heat and Political Instability",
+    "text": "Finding: Heat and Political Instability\nDell et al. also find: hotter years in poor countries see more irregular leadership transitions\n\nWhat does this tell us about mechanism?\n\nIf heat causes conflict → conflict tanks the economy → instability is a channel\nIf heat tanks the economy → weak states collapse → instability is a symptom\nIf poor, fragile states are hit hardest by everything → instability and GDP loss are both consequences\n\n\n\nThe instability result is smaller and less robust than the GDP result. Does that change your interpretation?"
+  },
+  {
+    "objectID": "slides/c8-climate.html#deadlines",
+    "href": "slides/c8-climate.html#deadlines",
+    "title": "Climate and Development",
+    "section": "Deadlines",
+    "text": "Deadlines\n\nExpanded Research Design due Wednesday, April 15 by 11:59pm via Slack\n\nMake sure your html renders properly and you can see the plots if you open it on a web browser!"
+  },
+  {
+    "objectID": "slides/c8-climate.html#should-climate-change-affect-development",
+    "href": "slides/c8-climate.html#should-climate-change-affect-development",
+    "title": "Climate and Development",
+    "section": "Should Climate Change Affect Development?",
+    "text": "Should Climate Change Affect Development?\n\n\nAgriculture: crop yields fall above optimal temperature thresholds\nLabor productivity: heat stress reduces output, especially outdoor and manual work\nHealth: heat illness, expanded disease vectors (malaria, dengue)\nConflict: resource scarcity increases stress and violence\nInfrastructure: extreme weather destroys capital"
+  },
+  {
+    "objectID": "slides/c8-climate.html#hot-countries-are-poor",
+    "href": "slides/c8-climate.html#hot-countries-are-poor",
+    "title": "Climate and Development",
+    "section": "Hot Countries Are Poor",
+    "text": "Hot Countries Are Poor"
+  },
+  {
+    "objectID": "slides/c8-climate.html#what-do-you-notice",
+    "href": "slides/c8-climate.html#what-do-you-notice",
+    "title": "Climate and Development",
+    "section": "What Do You Notice?",
+    "text": "What Do You Notice?\n\n\nHotter places tend to be poorer. Does that mean heat causes poverty?\nWhat else differs between Nigeria and Norway besides temperature?\nColonization history, institutions, geography, disease burden, trade access…\nThe cross-country pattern cannot isolate the effect of temperature"
+  },
+  {
+    "objectID": "slides/c8-climate.html#the-clever-fix",
+    "href": "slides/c8-climate.html#the-clever-fix",
+    "title": "Climate and Development",
+    "section": "The Clever Fix",
+    "text": "The Clever Fix\n\n\nCompare each country to itself over time, not to other countries\nCountry fixed effects absorb everything time-invariant (geography, history, institutions)\nYear fixed effects absorb global shocks\nWhy deviations from the long-run mean? Raw temperature + country FE would work algebraically, but we need a benchmark for “normal.” The sample average (1950-2003) is pre-climate-change: it tells us what was typical for each country before the trend began\nSo the question becomes: was this year unusually hot for this country? That’s weather, essentially random\nIdentification assumption: year-to-year temperature shocks affect growth only through economic channels"
+  },
+  {
+    "objectID": "slides/c8-climate.html#why-deviations-from-the-mean",
+    "href": "slides/c8-climate.html#why-deviations-from-the-mean",
+    "title": "Climate and Development",
+    "section": "Why Deviations from the Mean?",
+    "text": "Why Deviations from the Mean?\n\n\nCountry FE already absorb time-invariant differences, so we are comparing each country to itself\nBut what counts as “normal” for that country? We need a pre-climate-change benchmark\nThe sample average (1950-2003) serves as that baseline: it reflects each country’s historical climate before the trend shifted\nSo \\(T_{it}\\) asks: was this year unusually hot for this country? That is weather, essentially random\nIdentification assumption: year-to-year temperature shocks affect growth only through economic channels"
+  },
+  {
+    "objectID": "slides/c8-climate.html#what-the-assumption-allows-and-forbids",
+    "href": "slides/c8-climate.html#what-the-assumption-allows-and-forbids",
+    "title": "Climate and Development",
+    "section": "What the Assumption Allows and Forbids",
+    "text": "What the Assumption Allows and Forbids"
+  },
+  {
+    "objectID": "slides/c8-climate.html#the-identification-strategy",
+    "href": "slides/c8-climate.html#the-identification-strategy",
+    "title": "Climate and Development",
+    "section": "The Identification Strategy",
+    "text": "The Identification Strategy\n\n\nCountry and Year FE absorb everything time-invariant for the country and year including “climate”\n\\(T_{it}\\) measures was this year unusually hot for this country? Weather\nIdentification assumption: conditional on country and year FE, year-to-year temperature fluctuations are uncorrelated with other determinants of GDP growth (i.e., \\(T_{it}\\) is exogenous)"
+  },
+  {
+    "objectID": "slides/c8-climate.html#why-log-reason-2-a-one-unit-increase-is-not-the-same",
+    "href": "slides/c8-climate.html#why-log-reason-2-a-one-unit-increase-is-not-the-same",
+    "title": "Climate and Development",
+    "section": "Why Log? Reason 2: A One-Unit Increase Is Not the Same",
+    "text": "Why Log? Reason 2: A One-Unit Increase Is Not the Same\n\n\nFrom $403 to $1,097\n\nLog distance: 1 unit\nDollar jump: $694\n\n\nFrom $22,026 to $59,874\n\nLog distance: 1 unit\nDollar jump: $37,848\n\n\n\n\n A $700 raise is a lot if you earn $400. Not so much if you earn $40,000. Log GDP measures gains proportionally."
+  },
+  {
+    "objectID": "slides/c8-climate.html#caution-coefficients-mean-something-different",
+    "href": "slides/c8-climate.html#caution-coefficients-mean-something-different",
+    "title": "Climate and Development",
+    "section": "Caution: Coefficients Mean Something Different",
+    "text": "Caution: Coefficients Mean Something Different\nThe familiar reading: \\(\\hat{\\beta}\\) = “a one-unit increase in \\(X\\) raises \\(Y\\) by \\(\\hat{\\beta}\\) units”\n\nWhen \\(Y\\) is \\(\\ln Y\\): \\(\\hat{\\beta} \\times 100 \\approx\\) % change in \\(Y\\)\nWhen \\(Y\\) is \\(\\Delta \\ln Y\\) (already a growth rate): \\(\\hat{\\beta}\\) is directly a percentage point change\n\n\nInterpretation also changes if \\(X\\) is logged"
+  },
+  {
+    "objectID": "slides/c8-climate.html#log-scale-vs.-dollar-scale",
+    "href": "slides/c8-climate.html#log-scale-vs.-dollar-scale",
+    "title": "Climate and Development",
+    "section": "Log Scale vs. Dollar Scale",
+    "text": "Log Scale vs. Dollar Scale\n\n\n\nLog: proportional changes matter (income, GDP, population)\nLevels: absolute changes matter (temperature, vote share)\nModeling choice: Dell logs GDP, not temperature"
   }
 ]
