@@ -1,15 +1,13 @@
 ---
 title: "Foreign Aid 1"
+date: 2026-04-15
 ---
 
 
 ## Required Readings
 
-- [Briggs (2016)](/files/does-foreign-aid-target-the-poorest.pdf)
-- [Briggs (2021)](https://voxdev.org/topic/institutions-political-economy/why-does-aid-not-target-poorest)
+- [Clemens, Radelet, Bhavnani & Bazzi (2012)](/files/CRBB-Counting-chickens.pdf). "Counting Chickens When They Hatch: Timing and the Effects of Aid on Growth." *The Economic Journal*
 
 ## Slides
 
-- [Slides](/slides/20-aid1.html)
-
-
+- [Slides](/slides/c9-aid.html)

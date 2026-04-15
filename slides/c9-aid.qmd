@@ -1,0 +1,345 @@
+---
+title: "Foreign Aid and Development"
+subtitle: ""
+author: "Carolina Torreblanca"
+institute: "University of Pennsylvania"
+
+editor: source
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.05
+    logo: DevLab_Logo_29Mar2023.png
+    embed-resources: true
+    template-partials:
+      - title-slide.html
+    gfm:
+    mermaid-format: png
+    highlight-style: atom-one-dark
+    code-overflow: wrap
+---
+
+```{=html}
+<style>
+.reveal h2 { font-size: 1.3em !important; }
+</style>
+```
+
+## Agenda
+
+1. Foreign Aid and Development
+2. Clemens, Radelet, Bhavnani & Bazzi (2012)
+
+## Deadlines
+
+- **Final Project Test** due today (April 15) by 11:59pm
+
+# Foreign Aid and Development
+
+## How Much Aid Flows?
+
+![](img/foreign-aid-given-net.png){fig-align="center" height="5in"}
+
+## Who Gives?
+
+![](img/foreign-aid-given-as-a-share-of-national-income.png){fig-align="center" height="5in"}
+
+## Who Receives?
+
+![](img/foreign-aid-received-per-capita.png){fig-align="center" height="5in"}
+
+## Aid Dependence
+
+![](img/foreign-aid-received-as-a-share-of-national-income-net.png){fig-align="center" height="5in"}
+
+## What Goes Where?
+
+![](img/foreign-aid-given-by-sector.png){fig-align="center" height="5in"}
+
+## Aid as a Windfall
+
+Your government receives $500 million from abroad: no goods produced, arrives every year.
+
+. . .
+
+Think of it like oil revenue or winning the lottery at the country level.
+
+. . .
+
+::: incremental
+- Does it foster development?
+- Does it crowd out domestic effort?
+- Does it change who the government is accountable to?
+:::
+
+## If Used Well
+
+::: incremental
+- **Savings gap**: external capital breaks the low-income → low-savings → low-investment cycle
+- **Public goods**: courts, roads, power grids; markets won't build them
+- **Big push**: some investments only pay off if many happen at once; aid can coordinate
+:::
+
+## Even If Used Well
+
+::: incremental
+- **Dutch disease**: large inflows appreciate the currency, making exports expensive and contracting manufacturing
+- **Accountability shift**: a government funded by donors answers to donors, not citizens
+:::
+
+## If Used Poorly
+
+::: incremental
+- **Fungibility**: aid frees up domestic funds already earmarked for the same thing. Reinikka & Svensson (2004): 13 cents per dollar reached Ugandan schools
+- **Corruption**: aid passes through many hands; weak institutions mean diversion at every step
+- **Misallocation**: Briggs (2016): multilateral aid within countries flows to middle-income regions, not the poorest
+:::
+
+## Empirical Evidence
+
+::: incremental
+- **Burnside & Dollar (2000)**: positive, but only with good policy
+- **Rajan & Subramanian (2008)**: no robust effect, even with good policy
+- **Hansen & Tarp (2001)**: positive but diminishing returns
+- Micro-level RCTs: often positive for specific, well-targeted programs
+:::
+
+. . .
+
+The macro evidence is mixed. Is this real heterogeneity, or a measurement problem?
+
+# Clemens, Radelet, Bhavnani & Bazzi (2012)
+
+## Four Decades, Three Answers
+
+::: incremental
+- **Boone (1996)**: no effect on investment or growth across 96 countries
+- **Burnside & Dollar (2000)**: aid raises growth, but only with good policy
+- **Rajan & Subramanian (2008)**: no robust effect, even with good policy
+- Similar data. Similar periods. Three different conclusions
+:::
+
+## Two Fixable Problems
+
+::: incremental
+- CRBB argue the divergence comes from two resolvable research design choices
+- **Measurement**: what counts as aid, and over what time horizon?
+- **Identification**: how do you separate the effect of aid from the effect of everything that moves with aid?
+:::
+
+## Time Horizon
+
+::: incremental
+- A road raises productivity for decades. Food relief addresses a crisis this week
+- Testing whether **all aid** raises GDP **this year** is asking whether food relief builds roads
+- The time horizon should depend on what type of aid you are measuring
+:::
+
+## Aid Types
+
+::: incremental
+- **Early-impact**: budget support, roads, energy, agriculture. Plausible growth effect within a few years
+- **Long-horizon**: education, health, technical cooperation. Growth effects arrive over a generation
+- **No growth mechanism**: humanitarian aid, food relief, emergency assistance
+:::
+
+. . .
+
+Early-impact aid is roughly 45 to 53% of total flows.
+
+## Decision 1: Lag
+
+Data is in 4-year periods; aid arrives in period $t$.
+
+::: incremental
+- **(a) Same period**: current growth affects how much aid countries receive. Reverse causation
+- **(b) Next period**: allows time for aid to work. Severs the contemporaneous feedback loop
+- **(c) 10 years later**: plausible for infrastructure, but most of the sample disappears
+:::
+
+. . .
+
+CRBB choose **(b)**: does Aid($t-1$) predict Growth($t$)?
+
+## Decision 2: Aid
+
+Your data includes roads, food relief, vaccination campaigns, budget support, technical cooperation.
+
+::: incremental
+- **(a) All disbursements**: most flows have no short-run growth mechanism. Testing noise
+- **(b) Project aid only**: misses budget support, which can fund productive investment
+- **(c) Early-impact only**: aid that could plausibly raise productive capacity in a few years
+:::
+
+. . .
+
+CRBB choose **(c)**. About 45 to 53% of total flows.
+
+## The Causal Problem
+
+Even with the right measure and the right lag, a problem remains.
+
+::: incremental
+- Countries that receive more aid tend to be poorer and slower-growing
+- Aid and low growth travel together in the data
+- Is aid **causing** slow growth, or is slow growth **causing** more aid?
+:::
+
+## The Causal Challenge
+
+```{r dag-aid, echo=FALSE, warning=FALSE, message=FALSE, fig.height=3.8, fig.align='center'}
+library(ggplot2)
+
+ggplot() +
+  annotate("segment", x = 0.8, y = 2.2, xend = 3.2, yend = 2.2,
+           linewidth = 1.1, arrow = arrow(length = unit(0.22, "cm"), type = "closed")) +
+  annotate("text", x = 2, y = 2.42, size = 3,
+           label = "via investment, imports, public goods") +
+  annotate("segment", x = 2, y = 3.6, xend = 0.4, yend = 2.55,
+           linewidth = 0.9, linetype = "dashed",
+           arrow = arrow(length = unit(0.2, "cm"), type = "open")) +
+  annotate("segment", x = 2, y = 3.6, xend = 3.6, yend = 2.55,
+           linewidth = 0.9, linetype = "dashed",
+           arrow = arrow(length = unit(0.2, "cm"), type = "open")) +
+  annotate("segment", x = 3.3, y = 1.9, xend = 0.7, yend = 1.9,
+           linewidth = 0.9, linetype = "dashed",
+           arrow = arrow(length = unit(0.2, "cm"), type = "open")) +
+  annotate("text", x = 2, y = 1.63, size = 2.7, color = "gray40",
+           label = "reverse causation: poorer or slower-growing countries attract more aid") +
+  annotate("label", x = 0, y = 2.2, label = "Aid\n(t-1)",
+           size = 3.4, fontface = "bold", label.padding = unit(0.45, "lines"),
+           label.r = unit(0.15, "lines")) +
+  annotate("label", x = 4, y = 2.2, label = "GDP\ngrowth (t)",
+           size = 3.4, fontface = "bold", label.padding = unit(0.45, "lines"),
+           label.r = unit(0.15, "lines")) +
+  annotate("label", x = 2, y = 3.82, label = "Unobserved confounders (U_i)",
+           size = 3.2, fontface = "italic", label.padding = unit(0.35, "lines"),
+           label.r = unit(0.15, "lines"), fill = "gray95", color = "gray30") +
+  annotate("text", x = 2, y = 0.88, size = 2.9, color = "gray40",
+           label = "Lagging aid to t-1 breaks contemporaneous reverse causation  |  First-differencing removes U_i") +
+  xlim(-0.8, 4.8) + ylim(0.5, 4.3) +
+  theme_void()
+```
+
+## Decision 3: Confounders
+
+Poor, conflict-prone countries attract more aid and grow more slowly.
+
+::: incremental
+- **(a) Add country controls**: you cannot observe everything
+- **(b) First-difference**: subtract each country's own past values. Geography, institutions, colonial history cancel out
+- **(c) Find an instrument**: prior studies used population size, but population affects growth directly through trade and market size. The instrument fails
+:::
+
+. . .
+
+CRBB choose **(b)**.
+
+## FE vs. First-Differencing
+
+::: incremental
+- **Country FE**: deviation from country long-run mean. Was Nigeria above its own average when aid was higher?
+$$y_{it} - \bar{y}_i = \beta(\text{Aid}_{i,t-1} - \overline{\text{Aid}}_i)$$
+- **First-difference**: change from previous period. Did Nigeria grow faster when aid increased?
+$$\Delta y_{it} = \beta \,\Delta\text{Aid}_{i,t-1}$$
+- FD is stricter: it removes slow-moving country trends, not just the fixed mean
+:::
+
+## What They Find
+
+::: incremental
+- Results consistent across all three reanalyzed datasets
+- **+1 pp in Aid/GDP** is followed on average by:
+  - **+0.1 to 0.2 pp** in annual real GDP per capita growth
+  - **+0.3 to 0.5 pp** in Investment/GDP
+- Positive but modest. Strong diminishing returns: effect turns negative at high aid levels
+:::
+
+## Is This Actually Causal?
+
+Lagging breaks the contemporaneous feedback, but two threats remain:
+
+::: incremental
+- **Donor foresight**: donors anticipate growth and front-load aid; but CRBB show they systematically mis-forecast recipient growth
+- **Mean reversion**: bad growth attracts aid AND predicts recovery. See next slide
+:::
+
+## Mean Reversion
+
+```{r mean-reversion, echo=FALSE, warning=FALSE, message=FALSE, fig.height=4.2, fig.align='center'}
+library(ggplot2)
+
+set.seed(42)
+n <- 200
+parent_h <- rnorm(n, 175, 9)
+child_h  <- 0.5 * parent_h + 87.5 + rnorm(n, 0, 6)
+
+ggplot(data.frame(p = parent_h, c = child_h), aes(p, c)) +
+  geom_point(alpha = 0.35, color = "#011F5B", size = 1.8) +
+  geom_smooth(method = "lm", color = "#990000", se = FALSE, linewidth = 1.1) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "gray55", linewidth = 0.8) +
+  annotate("text", x = 158, y = 194, label = "slope = 1\n(no reversion)", size = 3, color = "gray45") +
+  annotate("text", x = 192, y = 174, label = "actual slope\n(regression to mean)", size = 3, color = "#990000") +
+  labs(x = "Parent height (cm)", y = "Child height (cm)",
+       title = "Galton (1886): very tall parents have tall children, but not as tall as themselves") +
+  theme_minimal(base_size = 13)
+```
+
+## Aid and Mean Reversion
+
+The same logic applies to country growth rates.
+
+::: incremental
+- A country has a terrible growth year. Donors respond with more aid
+- The next period, growth recovers, partly because bad years do not persist
+- A researcher observes: aid was followed by growth
+- But the recovery may have happened regardless
+:::
+
+## Design Choices
+
+Three studies, similar data, three different answers: the divergence came from measurement and identification choices.
+
+::: incremental
+- **What you measure**: aggregate aid vs. early-impact aid
+- **When you measure**: contemporaneous vs. lagged
+- **How you identify**: name the source of clean variation and defend why it is not driven by outcomes
+:::
+
+. . .
+
+Every design choice either makes a null result informative or stacks the deck against finding one.
+
+## What the Paper Argues
+
+::: incremental
+- Fix the design choices and three datasets give the same answer
+- Aid causes some growth on average: modest, with wide variation across recipients
+- High aid dependence shows diminishing returns. It cannot substitute for domestic investment
+- "Aid does not work" was a methodological artifact replicated across three influential papers
+:::
+
+# Why This Matters Now
+
+## US Aid Has Collapsed
+
+```{=html}
+<!-- Replace with chart: US ODA 2000-2025, e.g. OECD DAC or devex.com screenshot -->
+```
+
+::: incremental
+- The US is historically the world's largest bilateral donor
+- In early 2025, the Trump administration dismantled USAID and froze most foreign assistance
+- Dozens of countries lost their primary external funding source within weeks
+:::
+
+## Who Gets Hurt?
+
+::: incremental
+- Countries where aid is 10 to 20% of GDP face acute fiscal shortfalls with no capacity to absorb them
+- Sub-Saharan Africa: highest aid dependence, weakest domestic revenue base
+- Health programs (HIV treatment, malaria, TB) face immediate disruption
+- Aid cuts reduce investment and remove shock buffers in the countries least able to absorb them
+:::

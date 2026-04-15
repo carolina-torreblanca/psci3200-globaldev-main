@@ -4925,14 +4925,14 @@
     "href": "materials/20_aid1.html",
     "title": "Foreign Aid 1",
     "section": "",
-    "text": "Briggs (2016)\nBriggs (2021)"
+    "text": "Clemens, Radelet, Bhavnani & Bazzi (2012). “Counting Chickens When They Hatch: Timing and the Effects of Aid on Growth.” The Economic Journal"
   },
   {
     "objectID": "materials/20_aid1.html#required-readings",
     "href": "materials/20_aid1.html#required-readings",
     "title": "Foreign Aid 1",
     "section": "",
-    "text": "Briggs (2016)\nBriggs (2021)"
+    "text": "Clemens, Radelet, Bhavnani & Bazzi (2012). “Counting Chickens When They Hatch: Timing and the Effects of Aid on Growth.” The Economic Journal"
   },
   {
     "objectID": "materials/20_aid1.html#slides",
@@ -14474,5 +14474,565 @@
     "title": "Climate and Development",
     "section": "Log Scale vs. Dollar Scale",
     "text": "Log Scale vs. Dollar Scale\n\n\n\nLog: proportional changes matter (income, GDP, population)\nLevels: absolute changes matter (temperature, vote share)\nModeling choice: Dell logs GDP, not temperature"
+  },
+  {
+    "objectID": "slides/c9-aid.html#agenda",
+    "href": "slides/c9-aid.html#agenda",
+    "title": "Foreign Aid and Development",
+    "section": "Agenda",
+    "text": "Agenda\n\nForeign Aid and Development\nClemens, Radelet, Bhavnani & Bazzi (2012)"
+  },
+  {
+    "objectID": "slides/c9-aid.html#deadlines",
+    "href": "slides/c9-aid.html#deadlines",
+    "title": "Foreign Aid and Development",
+    "section": "Deadlines",
+    "text": "Deadlines\n\nFinal Project Test due today (April 15) by 11:59pm"
+  },
+  {
+    "objectID": "slides/c9-aid.html#how-much-aid-flows",
+    "href": "slides/c9-aid.html#how-much-aid-flows",
+    "title": "Foreign Aid and Development",
+    "section": "How Much Aid Flows?",
+    "text": "How Much Aid Flows?"
+  },
+  {
+    "objectID": "slides/c9-aid.html#who-gives",
+    "href": "slides/c9-aid.html#who-gives",
+    "title": "Foreign Aid and Development",
+    "section": "Who Gives?",
+    "text": "Who Gives?"
+  },
+  {
+    "objectID": "slides/c9-aid.html#who-receives",
+    "href": "slides/c9-aid.html#who-receives",
+    "title": "Foreign Aid and Development",
+    "section": "Who Receives?",
+    "text": "Who Receives?"
+  },
+  {
+    "objectID": "slides/c9-aid.html#aid-dependence",
+    "href": "slides/c9-aid.html#aid-dependence",
+    "title": "Foreign Aid and Development",
+    "section": "Aid Dependence",
+    "text": "Aid Dependence"
+  },
+  {
+    "objectID": "slides/c9-aid.html#what-goes-where",
+    "href": "slides/c9-aid.html#what-goes-where",
+    "title": "Foreign Aid and Development",
+    "section": "What Goes Where?",
+    "text": "What Goes Where?"
+  },
+  {
+    "objectID": "slides/c9-aid.html#what-is-aid-supposed-to-do",
+    "href": "slides/c9-aid.html#what-is-aid-supposed-to-do",
+    "title": "Foreign Aid and Development",
+    "section": "What Is Aid Supposed to Do?",
+    "text": "What Is Aid Supposed to Do?\n\n\nFill a savings gap: poor countries cannot accumulate enough capital on their own\nFinance public goods: roads, health systems, courts that no private actor will build\nBuffer shocks: drought, conflict, pandemic relief\nBuild institutions: training, technical assistance, governance support"
+  },
+  {
+    "objectID": "slides/c9-aid.html#why-might-aid-not-work",
+    "href": "slides/c9-aid.html#why-might-aid-not-work",
+    "title": "Foreign Aid and Development",
+    "section": "Why Might Aid Not Work?",
+    "text": "Why Might Aid Not Work?\n\n\nFungibility: recipients shift their own budgets away from aided sectors, leaving total spending unchanged\nWeak absorption: money arrives but cannot be spent productively given limited capacity\nDonor incentives: aid flows for strategic and political reasons, not only development ones\nDutch disease: large inflows appreciate the exchange rate, hurting exports"
+  },
+  {
+    "objectID": "slides/c9-aid.html#the-big-question",
+    "href": "slides/c9-aid.html#the-big-question",
+    "title": "Foreign Aid and Development",
+    "section": "The Big Question",
+    "text": "The Big Question\n\n\nFour decades of research. Similar data. Wildly different answers.\nSome studies find aid robustly raises growth. Others find zero. Others find effects only under the right conditions.\nIs the disagreement real, or is something going wrong with the measurement and methods?"
+  },
+  {
+    "objectID": "slides/c9-aid.html#four-decades-three-answers",
+    "href": "slides/c9-aid.html#four-decades-three-answers",
+    "title": "Foreign Aid and Development",
+    "section": "Four Decades, Three Answers",
+    "text": "Four Decades, Three Answers\n\n\nBoone (1996): no effect on investment or growth across 96 countries\nBurnside & Dollar (2000): aid raises growth, but only with good policy\nRajan & Subramanian (2008): no robust effect, even with good policy\nSimilar data. Similar periods. Three different conclusions."
+  },
+  {
+    "objectID": "slides/c9-aid.html#what-do-you-notice",
+    "href": "slides/c9-aid.html#what-do-you-notice",
+    "title": "Foreign Aid and Development",
+    "section": "What Do You Notice?",
+    "text": "What Do You Notice?\n\n\nAll three measure aggregate foreign aid as the treatment variable\nAll three use instrumental variables to address reverse causation\nAll three reach different conclusions\nIf the same data yield such different answers, something is wrong with how the question is being framed"
+  },
+  {
+    "objectID": "slides/c9-aid.html#two-problems",
+    "href": "slides/c9-aid.html#two-problems",
+    "title": "Foreign Aid and Development",
+    "section": "Two Problems",
+    "text": "Two Problems\n\nProblem 1: Timing. Not all aid is the same. Road construction may raise output for decades. A vaccination campaign yields health benefits over a generation. Humanitarian food relief may never affect GDP. Lumping all aid together and testing for immediate growth effects is a category error.\nProblem 2: Instruments. All three studies instrument for aid using country size and political ties to donors. Across all three, population size is responsible for nearly all the identification strength. Population affects growth through many channels unrelated to aid."
+  },
+  {
+    "objectID": "slides/c9-aid.html#problem-1-not-all-aid-is-growth-aid",
+    "href": "slides/c9-aid.html#problem-1-not-all-aid-is-growth-aid",
+    "title": "Foreign Aid and Development",
+    "section": "Problem 1: Not All Aid Is Growth Aid",
+    "text": "Problem 1: Not All Aid Is Growth Aid\n\n\nEarly-impact aid\n\nBudget and program support\nInfrastructure: roads, energy, communications, banking\nProductive sectors: agriculture, industry\n\nPlausible growth effect within a few years\n\nExcluded from early-impact\n\nTechnical cooperation\nEducation and health\nHumanitarian and food aid\nDemocracy and governance programs\nAdministrative overhead\n\nGrowth effects, if any, arrive much later or never\n\n\nEarly-impact aid accounts for roughly 45 to 53% of total flows."
+  },
+  {
+    "objectID": "slides/c9-aid.html#problem-2-instruments-collapse-to-population-size",
+    "href": "slides/c9-aid.html#problem-2-instruments-collapse-to-population-size",
+    "title": "Foreign Aid and Development",
+    "section": "Problem 2: Instruments Collapse to Population Size",
+    "text": "Problem 2: Instruments Collapse to Population Size\n\n\n\n\n\nStudy\nWith population IV\nPopulation removed\n\n\n\n\nBoone (1996)\n15.70\n1.77\n\n\nBurnside & Dollar (2000)\n19.74\n1.69\n\n\nRajan & Subramanian (2008)\n31.63\n0.13\n\n\n\n\nCragg-Donald F-statistics. Threshold for strong instrumentation: 10. Source: CRBB Table 1.\n\n\nWhen population is removed from the instrument set, identification strength vanishes. The null results in these studies may be an artifact of weak instrumentation."
+  },
+  {
+    "objectID": "slides/c9-aid.html#why-is-population-a-bad-instrument",
+    "href": "slides/c9-aid.html#why-is-population-a-bad-instrument",
+    "title": "Foreign Aid and Development",
+    "section": "Why Is Population a Bad Instrument?",
+    "text": "Why Is Population a Bad Instrument?\n\n\nLarger countries receive less aid as a share of GDP, so population correlates with aid\nPopulation also affects growth through trade, market size, economies of scale, and political stability\nFor population to be a valid instrument, it must affect growth only through the aid channel\nThat exclusion restriction is not credible\nAny one of those alternative channels invalidates the whole IV strategy"
+  },
+  {
+    "objectID": "slides/c9-aid.html#the-causal-challenge",
+    "href": "slides/c9-aid.html#the-causal-challenge",
+    "title": "Foreign Aid and Development",
+    "section": "The Causal Challenge",
+    "text": "The Causal Challenge"
+  },
+  {
+    "objectID": "slides/c9-aid.html#the-fix-three-steps",
+    "href": "slides/c9-aid.html#the-fix-three-steps",
+    "title": "Foreign Aid and Development",
+    "section": "The Fix: Three Steps",
+    "text": "The Fix: Three Steps\n\n\nLag aid: test whether Aid(t-1) predicts Growth(t). A country’s growth this period cannot have caused its aid receipts last period. This severs the contemporaneous reverse causation channel.\nFirst-difference: subtract each country’s previous-period values from the current period. Time-invariant traits like geography or colonial history drop out. Omitted variable bias from fixed country characteristics is eliminated.\nRestrict to early-impact aid: drop flows with no plausible near-term growth mechanism. What remains is the subset that has a theoretical reason to affect GDP within the study window.\n\n\n\nNo IV needed. Lagging and differencing do the identification work."
+  },
+  {
+    "objectID": "slides/c9-aid.html#what-they-find",
+    "href": "slides/c9-aid.html#what-they-find",
+    "title": "Foreign Aid and Development",
+    "section": "What They Find",
+    "text": "What They Find\n\n\nResults consistent across all three reanalyzed datasets\n+1 pp in Aid/GDP is followed on average by:\n\n+0.1 to 0.2 pp in annual real GDP per capita growth\n+0.3 to 0.5 pp in Investment/GDP\n\nPositive but modest. Strong diminishing returns: effect turns negative at high aid levels."
+  },
+  {
+    "objectID": "slides/c9-aid.html#diminishing-returns",
+    "href": "slides/c9-aid.html#diminishing-returns",
+    "title": "Foreign Aid and Development",
+    "section": "Diminishing Returns",
+    "text": "Diminishing Returns\n\n\nAid-growth relationship is non-linear: adding a quadratic term for aid substantially improves fit\nThe marginal return to aid declines with aid intensity\nThe turning point varies by specification: roughly 5 to 22% of GDP\nBeyond that point, additional aid is associated with lower growth\nInterpretation: institutions and absorptive capacity constrain how productively a country can use external resources"
+  },
+  {
+    "objectID": "slides/c9-aid.html#what-about-boones-null-result",
+    "href": "slides/c9-aid.html#what-about-boones-null-result",
+    "title": "Foreign Aid and Development",
+    "section": "What About Boone’s Null Result?",
+    "text": "What About Boone’s Null Result?\n\n\nBoone dropped all countries receiving more than 15% of GNI in aid from his baseline sample\nHe argued these countries are outliers where aid is non-fungible\nCRBB show this restriction is not justified statistically and biases the result\nWith the full sample, even Boone’s own contemporaneous OLS specification shows a positive and significant effect of aid on investment\nThe null result was a sample restriction artifact, not a finding about aid"
+  },
+  {
+    "objectID": "slides/c9-aid.html#what-about-causation",
+    "href": "slides/c9-aid.html#what-about-causation",
+    "title": "Foreign Aid and Development",
+    "section": "What About Causation?",
+    "text": "What About Causation?\n\n\nCRBB find Granger causation: lagged aid predicts future growth after controlling for past growth\nThis is not the same as strict causal identification from a randomized experiment\nReverse causation cannot be fully ruled out even with lagging\nThe authors test two specific alternative mechanisms (donor foresight about future growth, mean reversion) and find limited support for either\nTheir argument: a positive signal appears consistently across three independent datasets and many specification checks. Coincidence is less plausible than a real effect."
+  },
+  {
+    "objectID": "slides/c9-aid.html#what-the-paper-argues",
+    "href": "slides/c9-aid.html#what-the-paper-argues",
+    "title": "Foreign Aid and Development",
+    "section": "What the Paper Argues",
+    "text": "What the Paper Argues\n\n\nFix the design choices and three datasets give the same answer\nAid causes some growth on average: modest, with wide variation across recipients\nHigh aid dependence shows diminishing returns. It cannot substitute for domestic investment.\n“Aid does not work” was a methodological artifact replicated across three influential papers."
+  },
+  {
+    "objectID": "slides/c9-aid.html#what-is-aid-for",
+    "href": "slides/c9-aid.html#what-is-aid-for",
+    "title": "Foreign Aid and Development",
+    "section": "What Is Aid For?",
+    "text": "What Is Aid For?\n\n\nFill a savings gap: poor countries cannot accumulate enough capital on their own\nFinance public goods: roads, health systems, courts that no private actor will build\nBuffer shocks: drought, conflict, pandemic relief\nBuild institutions: training, technical assistance, governance support"
+  },
+  {
+    "objectID": "slides/c9-aid.html#does-foreign-aid-cause-growth",
+    "href": "slides/c9-aid.html#does-foreign-aid-cause-growth",
+    "title": "Foreign Aid and Development",
+    "section": "Does Foreign Aid Cause Growth?",
+    "text": "Does Foreign Aid Cause Growth?\n\n\nOver 60 years, rich countries have transferred trillions of dollars to poor ones\nGovernments, NGOs, and international organizations make allocation decisions based on the answer\nSo: what does the evidence say?"
+  },
+  {
+    "objectID": "slides/c9-aid.html#why-do-they-disagree",
+    "href": "slides/c9-aid.html#why-do-they-disagree",
+    "title": "Foreign Aid and Development",
+    "section": "Why Do They Disagree?",
+    "text": "Why Do They Disagree?\n\n\nThese studies overlap substantially in countries, years, and data sources\nCRBB argue the divergence comes from two resolvable research design choices\nThe first is about measurement: what counts as aid, and over what time horizon?\nThe second is about identification: how do you separate the effect of aid from the effect of everything that moves with aid?"
+  },
+  {
+    "objectID": "slides/c9-aid.html#question-1-when-should-we-see-growth",
+    "href": "slides/c9-aid.html#question-1-when-should-we-see-growth",
+    "title": "Foreign Aid and Development",
+    "section": "Question 1: When Should We See Growth?",
+    "text": "Question 1: When Should We See Growth?\n\n\nA road raises productivity for decades. Food relief addresses a crisis this week.\nTesting whether all aid raises GDP this year is asking whether food relief builds roads.\nThe time horizon should depend on what type of aid you are measuring."
+  },
+  {
+    "objectID": "slides/c9-aid.html#question-2-is-all-aid-the-same",
+    "href": "slides/c9-aid.html#question-2-is-all-aid-the-same",
+    "title": "Foreign Aid and Development",
+    "section": "Question 2: Is All Aid the Same?",
+    "text": "Question 2: Is All Aid the Same?\n\n\nEarly-impact: budget support, roads, energy, agriculture. Plausible growth effect within a few years.\nLong-horizon: education, health, technical cooperation. Growth effects arrive over a generation.\nNo growth mechanism: humanitarian aid, food relief, emergency assistance.\n\n\n\nEarly-impact aid is roughly 45 to 53% of total flows."
+  },
+  {
+    "objectID": "slides/c9-aid.html#prior-studies-instrumental-variables",
+    "href": "slides/c9-aid.html#prior-studies-instrumental-variables",
+    "title": "Foreign Aid and Development",
+    "section": "Prior Studies: Instrumental Variables",
+    "text": "Prior Studies: Instrumental Variables\n\n\nAll three studies instrument for aid to address reverse causation\nA valid instrument predicts Aid/GDP but affects growth only through aid\nAll three rely primarily on recipient country population size\nPopulation correlates with Aid/GDP (larger countries get less per capita), but also affects growth through market size, trade, economies of scale\nWhen CRBB remove population from the instrument set, F-statistics collapse below 2 in all three studies. Threshold for strong instrumentation: 10."
+  },
+  {
+    "objectID": "slides/c9-aid.html#the-problem-with-population-as-instrument",
+    "href": "slides/c9-aid.html#the-problem-with-population-as-instrument",
+    "title": "Foreign Aid and Development",
+    "section": "The Problem with Population as Instrument",
+    "text": "The Problem with Population as Instrument\n\n\n\n\n\nStudy\nCragg-Donald F (full)\nPopulation removed\n\n\n\n\nBoone (1996)\n15.70\n1.77\n\n\nBurnside & Dollar (2000)\n19.74\n1.69\n\n\nRajan & Subramanian (2008)\n31.63\n0.13\n\n\n\n\nWeak instrumentation threshold: F &lt; 10. Source: CRBB Table 1.\n\n\nWhen population is removed, instrument strength collapses. Nearly all identification came from one variable that plausibly affects growth on its own: market size, economies of scale, trade patterns."
+  },
+  {
+    "objectID": "slides/c9-aid.html#designing-a-better-study",
+    "href": "slides/c9-aid.html#designing-a-better-study",
+    "title": "Foreign Aid and Development",
+    "section": "Designing a Better Study",
+    "text": "Designing a Better Study\nIf you were studying whether aid causes growth, what would you do?\n\n\nWhen to measure growth: allow time for aid to translate into investment and output. Test whether Aid(t-1) predicts Growth(t).\nWhat aid to include: restrict to flows with a plausible short-run growth mechanism. Drop humanitarian, health, education flows.\nHow to handle country fixed characteristics: subtract out each country’s own past values. Geography, institutions, colonial history all cancel.\nInstruments: none needed. Lagging and differencing do the identification work.\n\n\n\nThis is exactly what CRBB do."
+  },
+  {
+    "objectID": "slides/c9-aid.html#is-this-actually-causal",
+    "href": "slides/c9-aid.html#is-this-actually-causal",
+    "title": "Foreign Aid and Development",
+    "section": "Is This Actually Causal?",
+    "text": "Is This Actually Causal?\nLagging breaks the contemporaneous feedback, but two threats remain:\n\n\nDonor foresight: donors anticipate growth and front-load aid. Aid(\\(t-1\\)) predicts Growth(\\(t\\)) without causing it. CRBB: donors systematically mis-forecast recipient growth.\nMean reversion: bad growth attracts aid AND predicts recovery. See next slide."
+  },
+  {
+    "objectID": "slides/c9-aid.html#what-boone-got-wrong",
+    "href": "slides/c9-aid.html#what-boone-got-wrong",
+    "title": "Foreign Aid and Development",
+    "section": "What Boone Got Wrong",
+    "text": "What Boone Got Wrong\n\n\nBoone dropped all countries receiving more than 15% of GNI in aid, arguing they are outliers\nThese are precisely the most aid-dependent countries, where the effect should be most visible\nCRBB show these observations are not statistical outliers and should not have been dropped\nWith the full sample, even Boone’s contemporaneous OLS shows a positive and significant aid-investment relationship\nHis null result came from the sample restriction, not from the data"
+  },
+  {
+    "objectID": "slides/c9-aid.html#aid-is-under-pressure",
+    "href": "slides/c9-aid.html#aid-is-under-pressure",
+    "title": "Foreign Aid and Development",
+    "section": "Aid Is Under Pressure",
+    "text": "Aid Is Under Pressure"
+  },
+  {
+    "objectID": "slides/c9-aid.html#who-gets-hurt",
+    "href": "slides/c9-aid.html#who-gets-hurt",
+    "title": "Foreign Aid and Development",
+    "section": "Who Gets Hurt?",
+    "text": "Who Gets Hurt?\n\n\nCountries where aid is 10 to 20% of GDP face acute fiscal shortfalls with no capacity to absorb them\nSub-Saharan Africa: highest aid dependence, weakest domestic revenue base\nHealth programs (HIV treatment, malaria, TB) face immediate disruption\nAid cuts reduce investment and remove shock buffers in the countries least able to absorb them"
+  },
+  {
+    "objectID": "slides/c9-aid.html#what-does-the-evidence-say-we-should-expect",
+    "href": "slides/c9-aid.html#what-does-the-evidence-say-we-should-expect",
+    "title": "Foreign Aid and Development",
+    "section": "What Does the Evidence Say We Should Expect?",
+    "text": "What Does the Evidence Say We Should Expect?\n\n\nIf CRBB are right, sustained aid cuts slow growth in the most dependent countries\nThe effect is not catastrophic in any single year but compounds: a 1pp growth drag sustained over a decade is enormous foregone development\nThe countries least able to replace aid with domestic revenue or private capital are the ones most exposed\nThis is also an opportunity to test the theory: if aid was causing growth, we should see slowdowns where cuts were sharpest"
+  },
+  {
+    "objectID": "slides/c9-aid.html#now-suppose-we-measure-aid-correctly",
+    "href": "slides/c9-aid.html#now-suppose-we-measure-aid-correctly",
+    "title": "Foreign Aid and Development",
+    "section": "Now Suppose We Measure Aid Correctly",
+    "text": "Now Suppose We Measure Aid Correctly\nEven with the right measure and the right lag, we still have a problem.\n\nCountries that receive more aid tend to be poorer, slower-growing, or in crisis. Aid and low growth travel together in the data.\n\n\nHow do we know whether aid is causing slow growth, or whether slow growth is causing more aid?"
+  },
+  {
+    "objectID": "slides/c9-aid.html#what-happens-when-you-remove-population",
+    "href": "slides/c9-aid.html#what-happens-when-you-remove-population",
+    "title": "Foreign Aid and Development",
+    "section": "What Happens When You Remove Population",
+    "text": "What Happens When You Remove Population\n\n\n\n\n\nStudy\nFull instrument set\nPopulation removed\n\n\n\n\nBoone (1996)\n15.70\n1.77\n\n\nBurnside & Dollar (2000)\n19.74\n1.69\n\n\nRajan & Subramanian (2008)\n31.63\n0.13\n\n\n\n\nCragg-Donald F-statistics. Weak instrument threshold: F &lt; 10. Source: CRBB Table 1.\n\n\nIdentification strength came almost entirely from one variable. The null results may be a weak-instrument artifact."
+  },
+  {
+    "objectID": "slides/c9-aid.html#decision-1-when-do-you-measure-growth",
+    "href": "slides/c9-aid.html#decision-1-when-do-you-measure-growth",
+    "title": "Foreign Aid and Development",
+    "section": "Decision 1: When Do You Measure Growth?",
+    "text": "Decision 1: When Do You Measure Growth?\nData is averaged into 4-year periods to smooth annual noise. Aid arrives in period \\(t\\).\n\n\n(a) Same period: current growth affects how much aid countries receive. Reverse causation.\n(b) Next period: allows time for aid to work. Severs the contemporaneous feedback loop.\n(c) 10 years later: plausible for infrastructure, but most of the sample disappears.\n\n\n\nCRBB choose (b): does Aid(\\(t-1\\)) predict Growth(\\(t\\))?"
+  },
+  {
+    "objectID": "slides/c9-aid.html#decision-2-which-aid-flows-do-you-include",
+    "href": "slides/c9-aid.html#decision-2-which-aid-flows-do-you-include",
+    "title": "Foreign Aid and Development",
+    "section": "Decision 2: Which Aid Flows Do You Include?",
+    "text": "Decision 2: Which Aid Flows Do You Include?\nYour data includes roads, food relief, vaccination programs, budget support, technical cooperation.\n\n\n(a) All disbursements: maximum sample, but most flows have no short-run growth mechanism.\n(b) Project aid only: misses budget support, which can fund productive investment.\n(c) Only aid that could plausibly raise productive capacity within a few years: roads, energy, agriculture, budget support.\n\n\n\nCRBB choose (c). Early-impact aid. About 45 to 53% of total flows."
+  },
+  {
+    "objectID": "slides/c9-aid.html#decision-3-how-do-you-handle-confounders",
+    "href": "slides/c9-aid.html#decision-3-how-do-you-handle-confounders",
+    "title": "Foreign Aid and Development",
+    "section": "Decision 3: How Do You Handle Confounders?",
+    "text": "Decision 3: How Do You Handle Confounders?\nPoor, conflict-prone countries attract more aid and grow more slowly.\n\n\n(a) Add country controls: you cannot observe everything.\n(b) First-difference: subtract each country’s own past values. Geography, institutions, colonial history cancel out.\n(c) Find an instrument: prior studies used recipient country population size. Population affects growth through market size, trade, and economies of scale — not only through aid. The instrument fails.\n\n\n\nCRBB choose (b)."
+  },
+  {
+    "objectID": "slides/c9-aid.html#what-is-mean-reversion",
+    "href": "slides/c9-aid.html#what-is-mean-reversion",
+    "title": "Foreign Aid and Development",
+    "section": "What Is Mean Reversion?",
+    "text": "What Is Mean Reversion?\nA country has an unusually bad year. Growth collapses. Donors send emergency aid. The next year, things normalize and growth recovers.\n\nThe researcher observes: aid was followed by growth. But the recovery would have happened anyway.\n\n\n\n\nExtreme observations tend to move back toward the long-run average over time\nIf bad growth attracts aid, and bad growth predicts recovery, you get a spurious positive correlation\nCRBB test: controlling for lagged growth does not change the results"
+  },
+  {
+    "objectID": "slides/c9-aid.html#us-aid-has-collapsed",
+    "href": "slides/c9-aid.html#us-aid-has-collapsed",
+    "title": "Foreign Aid and Development",
+    "section": "US Aid Has Collapsed",
+    "text": "US Aid Has Collapsed\n\n\n\nThe US is historically the world’s largest bilateral donor\nIn early 2025, the Trump administration dismantled USAID and froze most foreign assistance\nDozens of countries lost their primary external funding source within weeks"
+  },
+  {
+    "objectID": "slides/c9-aid.html#why-should-aid-raise-growth",
+    "href": "slides/c9-aid.html#why-should-aid-raise-growth",
+    "title": "Foreign Aid and Development",
+    "section": "Why Should Aid Raise Growth?",
+    "text": "Why Should Aid Raise Growth?\n\n\nSavings gap: poor countries have low income, low savings, low investment. Aid injects foreign capital to break the cycle.\nBig push: some investments only pay off if many happen simultaneously. A road without trucks, fuel, and mechanics is useless. Aid can coordinate.\nPublic goods: markets will not build courts, property registries, or basic health infrastructure. Aid can finance what no private actor will.\nShock buffer: a drought or conflict can destroy years of accumulated capital. Aid prevents temporary setbacks from becoming permanent traps."
+  },
+  {
+    "objectID": "slides/c9-aid.html#fungibility",
+    "href": "slides/c9-aid.html#fungibility",
+    "title": "Foreign Aid and Development",
+    "section": "Fungibility",
+    "text": "Fungibility\nThe government receives $100 million earmarked for schools. Does education spending rise by $100 million?\n\n\nNot necessarily. The government can reduce its own education budget by $80 million, spending the freed-up money elsewhere.\nFeyzioglu et al. (1998): on average, $1 of sectoral aid raises sector spending by roughly $0.25.\nReinikka & Svensson (2004) tracked education grants to Ugandan schools in the 1990s: 13 cents of every dollar reached the school. The rest was captured at district and local levels.\n\n\n\nFungibility does not mean aid is worthless, but it means the effective dose is much smaller than the nominal transfer."
+  },
+  {
+    "objectID": "slides/c9-aid.html#dutch-disease",
+    "href": "slides/c9-aid.html#dutch-disease",
+    "title": "Foreign Aid and Development",
+    "section": "Dutch Disease",
+    "text": "Dutch Disease\nLarge aid inflows inject foreign exchange and raise domestic demand. What happens next?\n\n\nPrices rise for non-tradable goods: construction, real estate, local services\nThe real exchange rate appreciates: local goods become expensive relative to foreign ones\nExports become less competitive internationally\nManufacturing and agriculture shrink as labor and capital shift toward the non-tradable sector\n\n\n\nThe name comes from the Netherlands in the 1960s. After the discovery of North Sea gas, manufacturing contracted as the guilder appreciated. The mechanism applies whenever a country receives a large inflow it did not earn through exports."
+  },
+  {
+    "objectID": "slides/c9-aid.html#corruption-and-leakage",
+    "href": "slides/c9-aid.html#corruption-and-leakage",
+    "title": "Foreign Aid and Development",
+    "section": "Corruption and Leakage",
+    "text": "Corruption and Leakage\n\n\nAid passes through many hands before reaching its destination: central government, line ministries, local officials, contractors\nAt each step, there are opportunities for diversion\nWeak procurement systems, poor auditing, and political pressure all amplify leakage\nThis does not mean aid always fails, but it reduces the expected return sharply when institutions are weak\nThe countries most in need of aid are often those with the weakest institutions"
+  },
+  {
+    "objectID": "slides/c9-aid.html#the-accountability-problem",
+    "href": "slides/c9-aid.html#the-accountability-problem",
+    "title": "Foreign Aid and Development",
+    "section": "The Accountability Problem",
+    "text": "The Accountability Problem\n\n\nA government funded by taxes is accountable to taxpayers: fail to deliver and you lose revenue and legitimacy\nA government funded primarily by donors is accountable to donors, not citizens\nCitizens have less leverage when the state does not depend on their compliance\nDonors care about disbursement targets and project metrics, not long-run development outcomes\n\n\n\nBriggs (2021) surveyed World Bank task team leaders. Career advancement depended on getting projects approved and implemented, not on whether they reached the poorest. Incentives shape where aid actually goes."
+  },
+  {
+    "objectID": "slides/c9-aid.html#where-does-aid-actually-go",
+    "href": "slides/c9-aid.html#where-does-aid-actually-go",
+    "title": "Foreign Aid and Development",
+    "section": "Where Does Aid Actually Go?",
+    "text": "Where Does Aid Actually Go?\n\n\nDonors say aid targets the poorest. But within recipient countries, does it?\nBriggs (2016): multilateral aid projects are systematically directed toward middle-income regions, not the poorest subnational areas\nRecipient governments push aid toward politically connected areas; donors need implementable projects, which are harder in remote, poor regions\nThe stated goal (poverty reduction) and the actual allocation diverge because of political economy on both sides"
+  },
+  {
+    "objectID": "slides/c9-aid.html#so-does-aid-cause-growth",
+    "href": "slides/c9-aid.html#so-does-aid-cause-growth",
+    "title": "Foreign Aid and Development",
+    "section": "So Does Aid Cause Growth?",
+    "text": "So Does Aid Cause Growth?\n\n\nBurnside & Dollar (2000): yes, but only with good fiscal and trade policy\nRajan & Subramanian (2008): no robust effect, even conditional on good policy\nHansen & Tarp (2001): positive but with strong diminishing returns\nMicro-level evaluations: often positive for specific, targeted programs"
+  },
+  {
+    "objectID": "slides/c9-aid.html#crbb-two-fixable-problems",
+    "href": "slides/c9-aid.html#crbb-two-fixable-problems",
+    "title": "Foreign Aid and Development",
+    "section": "CRBB: Two Fixable Problems",
+    "text": "CRBB: Two Fixable Problems\n\n\nThese studies overlap substantially in countries, years, and data sources\nCRBB argue the divergence comes from two resolvable research design choices\nThe first is about measurement: what counts as aid, and over what time horizon?\nThe second is about identification: how do you separate the effect of aid from the effect of everything that moves with aid?"
+  },
+  {
+    "objectID": "slides/c9-aid.html#aid-as-a-windfall",
+    "href": "slides/c9-aid.html#aid-as-a-windfall",
+    "title": "Foreign Aid and Development",
+    "section": "Aid as a Windfall",
+    "text": "Aid as a Windfall\nYour government receives $500 million from abroad: no goods produced, arrives every year.\n\nThink of it like oil revenue or winning the lottery at the country level.\n\n\n\n\nDoes it foster development?\nDoes it crowd out domestic effort?\nDoes it change who the government is accountable to?"
+  },
+  {
+    "objectID": "slides/c9-aid.html#why-a-windfall-should-help",
+    "href": "slides/c9-aid.html#why-a-windfall-should-help",
+    "title": "Foreign Aid and Development",
+    "section": "Why a Windfall Should Help",
+    "text": "Why a Windfall Should Help\nPoor countries are caught in a trap: low income means low savings, low savings means low investment, low investment means slow growth.\n\n\nSavings gap: external capital breaks the trap by funding investment that domestic savings cannot\nPublic goods: markets won’t build courts, property registries, or power grids. Aid can.\nBig push: some investments only work if many happen at once. A road needs trucks, fuel, mechanics. Aid can coordinate."
+  },
+  {
+    "objectID": "slides/c9-aid.html#does-the-windfall-actually-arrive",
+    "href": "slides/c9-aid.html#does-the-windfall-actually-arrive",
+    "title": "Foreign Aid and Development",
+    "section": "Does the Windfall Actually Arrive?",
+    "text": "Does the Windfall Actually Arrive?\nYou earmark $100 million for schools. Does education spending rise by $100 million?\n\n\nNot necessarily. The government cuts its own education budget by $80 million.\nThe windfall frees up domestic resources that go elsewhere.\nReinikka & Svensson (2004): in Uganda, 13 cents per dollar of education grants reached the school.\n\n\n\nThis is fungibility. The effective dose is much smaller than the nominal transfer."
+  },
+  {
+    "objectID": "slides/c9-aid.html#does-the-windfall-hurt-exporters",
+    "href": "slides/c9-aid.html#does-the-windfall-hurt-exporters",
+    "title": "Foreign Aid and Development",
+    "section": "Does the Windfall Hurt Exporters?",
+    "text": "Does the Windfall Hurt Exporters?\n\n\nLarge inflows raise demand for local goods: construction, real estate, services\nLocal prices rise; the real exchange rate appreciates\nExports become expensive internationally; manufacturing and agriculture contract\n\n\n\nDutch disease. Named for the Netherlands after North Sea gas was discovered in the 1960s: manufacturing contracted as the guilder appreciated. Same mechanism, any unearned windfall."
+  },
+  {
+    "objectID": "slides/c9-aid.html#does-the-windfall-reach-the-right-people",
+    "href": "slides/c9-aid.html#does-the-windfall-reach-the-right-people",
+    "title": "Foreign Aid and Development",
+    "section": "Does the Windfall Reach the Right People?",
+    "text": "Does the Windfall Reach the Right People?\n\n\nAid passes through many hands: central government, ministries, local officials, contractors\nLeakage at every step. The countries most in need often have the weakest institutions.\nBriggs (2016): within recipient countries, multilateral aid goes to middle-income regions, not the poorest. Donor career incentives and recipient politics both push in that direction."
+  },
+  {
+    "objectID": "slides/c9-aid.html#does-the-windfall-change-who-governs-for-whom",
+    "href": "slides/c9-aid.html#does-the-windfall-change-who-governs-for-whom",
+    "title": "Foreign Aid and Development",
+    "section": "Does the Windfall Change Who Governs For Whom?",
+    "text": "Does the Windfall Change Who Governs For Whom?\nA government that depends on taxes is accountable to taxpayers. What about a government that depends on donors?\n\n\nCitizens have less leverage when the state does not need their compliance or their money\nDonors care about disbursement targets and project metrics, not long-run development\nBriggs (2021): World Bank task team leaders face career pressure to get projects approved and implemented, not to reach the poorest\nAid can weaken the fiscal contract between state and society"
+  },
+  {
+    "objectID": "slides/c9-aid.html#two-fixable-problems",
+    "href": "slides/c9-aid.html#two-fixable-problems",
+    "title": "Foreign Aid and Development",
+    "section": "Two Fixable Problems",
+    "text": "Two Fixable Problems\n\n\nCRBB argue the divergence comes from two resolvable research design choices\nMeasurement: what counts as aid, and over what time horizon?\nIdentification: how do you separate the effect of aid from the effect of everything that moves with aid?"
+  },
+  {
+    "objectID": "slides/c9-aid.html#decision-2-which-aid-flows",
+    "href": "slides/c9-aid.html#decision-2-which-aid-flows",
+    "title": "Foreign Aid and Development",
+    "section": "Decision 2: Which Aid Flows?",
+    "text": "Decision 2: Which Aid Flows?\nYour data includes roads, food relief, vaccination campaigns, budget support, technical cooperation.\n\n\n(a) All disbursements: most flows have no short-run growth mechanism. Testing noise.\n(b) Project aid only: misses budget support, which can fund productive investment.\n(c) Early-impact only: aid that could plausibly raise productive capacity in a few years.\n\n\n\nCRBB choose (c). About 45 to 53% of total flows."
+  },
+  {
+    "objectID": "slides/c9-aid.html#aid-and-accountability",
+    "href": "slides/c9-aid.html#aid-and-accountability",
+    "title": "Foreign Aid and Development",
+    "section": "Aid and Accountability",
+    "text": "Aid and Accountability\nA government that depends on taxes is accountable to taxpayers. What about a government that depends on donors?\n\n\nCitizens have less leverage when the state does not need their compliance or money\nDonors care about disbursement targets and project metrics, not long-run development\nBriggs (2021): World Bank task team leaders face career pressure to get projects approved, not to reach the poorest\n\n\n\nAid can weaken the fiscal contract between state and society."
+  },
+  {
+    "objectID": "slides/c9-aid.html#the-evidence-is-mixed",
+    "href": "slides/c9-aid.html#the-evidence-is-mixed",
+    "title": "Foreign Aid and Development",
+    "section": "The Evidence Is Mixed",
+    "text": "The Evidence Is Mixed\nThe macro cross-country results span from “strongly positive” to “no effect,” using similar data and periods.\n\nIs the disagreement real heterogeneity — aid works in some places but not others? Or a measurement problem?\n\n\nThat is what CRBB ask."
+  },
+  {
+    "objectID": "slides/c9-aid.html#what-is-first-differencing",
+    "href": "slides/c9-aid.html#what-is-first-differencing",
+    "title": "Foreign Aid and Development",
+    "section": "What Is First-Differencing?",
+    "text": "What Is First-Differencing?\nCountry fixed effects absorb the country mean: \\[y_{it} = \\alpha_i + \\beta \\,\\text{Aid}_{i,t-1} + \\epsilon_{it}\\]\n\nFirst-differencing subtracts last period’s values — \\(\\alpha_i\\) appears in both and cancels: \\[\\Delta y_{it} = \\beta \\,\\Delta\\text{Aid}_{i,t-1} + \\Delta\\epsilon_{it}\\]\n\n\nFE: was Nigeria richer than its own average in years when it got more aid?\nFD: did Nigeria grow faster than last period when it got more aid than last period?\nCRBB use FD. It controls for country fixed effects algebraically — no need to add country dummies separately."
+  },
+  {
+    "objectID": "slides/c9-aid.html#mean-reversion",
+    "href": "slides/c9-aid.html#mean-reversion",
+    "title": "Foreign Aid and Development",
+    "section": "Mean Reversion",
+    "text": "Mean Reversion"
+  },
+  {
+    "objectID": "slides/c9-aid.html#if-used-well",
+    "href": "slides/c9-aid.html#if-used-well",
+    "title": "Foreign Aid and Development",
+    "section": "If Used Well",
+    "text": "If Used Well\n\n\nSavings gap: external capital breaks the low-income → low-savings → low-investment cycle\nPublic goods: courts, property registries, power grids. Markets won’t build them; aid can.\nBig push: some investments only work if many happen at once. A road needs trucks, fuel, mechanics. Aid can coordinate."
+  },
+  {
+    "objectID": "slides/c9-aid.html#even-if-used-well",
+    "href": "slides/c9-aid.html#even-if-used-well",
+    "title": "Foreign Aid and Development",
+    "section": "Even If Used Well",
+    "text": "Even If Used Well\n\n\nDutch disease: any large foreign inflow causes the currency to appreciate. Exports become expensive internationally; manufacturing and agriculture contract even when the aid itself is well-spent.\nAccountability shift: a government funded by donors answers to donors, not citizens. Citizens lose fiscal leverage over the state regardless of how the money is spent."
+  },
+  {
+    "objectID": "slides/c9-aid.html#if-used-poorly",
+    "href": "slides/c9-aid.html#if-used-poorly",
+    "title": "Foreign Aid and Development",
+    "section": "If Used Poorly",
+    "text": "If Used Poorly\n\n\nFungibility: if the government was already spending on schools, aid just frees up domestic funds for something else. Reinikka & Svensson (2004): 13 cents per dollar of education aid reached Ugandan schools.\nCorruption: aid passes through many hands. Weak institutions mean diversion at every step.\nMisallocation: Briggs (2016): within countries, multilateral aid goes to middle-income regions. Task team leaders face disbursement pressure; remote, poor areas are harder to reach and harder to show results in."
+  },
+  {
+    "objectID": "slides/c9-aid.html#empirically-what-happens",
+    "href": "slides/c9-aid.html#empirically-what-happens",
+    "title": "Foreign Aid and Development",
+    "section": "Empirically: What Happens?",
+    "text": "Empirically: What Happens?\n\n\nBurnside & Dollar (2000): positive, but only with good policy — consistent with “used well” mattering\nRajan & Subramanian (2008): no robust effect — consistent with average inefficiency dominating\nHansen & Tarp (2001): positive but diminishing — consistent with absorption limits\nMicro-level RCTs: often positive for specific, well-targeted programs\n\n\n\nThe macro evidence is mixed. Is this real heterogeneity, or a measurement problem? That is what CRBB ask."
+  },
+  {
+    "objectID": "slides/c9-aid.html#research-design-is-not-a-formality",
+    "href": "slides/c9-aid.html#research-design-is-not-a-formality",
+    "title": "Foreign Aid and Development",
+    "section": "Research Design Is Not a Formality",
+    "text": "Research Design Is Not a Formality\nThree studies. Similar data. Three different answers. The differences came from measurement and identification choices.\n\n\nWhat you measure: aggregate aid vs. early-impact aid\nWhen you measure: contemporaneous vs. lagged\nHow you identify: invalid instruments vs. first-differencing\n\n\n\nEvery design choice either makes a null result informative or stacks the deck against finding an effect. Think through and justify each one: what unit, what measure, what time window, what comparison group."
+  },
+  {
+    "objectID": "slides/c9-aid.html#mean-reversion-in-aid-research",
+    "href": "slides/c9-aid.html#mean-reversion-in-aid-research",
+    "title": "Foreign Aid and Development",
+    "section": "Mean Reversion in Aid Research",
+    "text": "Mean Reversion in Aid Research\nVery tall parents tend to have tall children, but pulled toward the average. The same logic applies to country growth.\n\n\nA country has a terrible growth year. Donors respond with more aid.\nThe next period, growth recovers — partly because bad years do not persist.\nA researcher observes: aid was followed by growth.\nBut the recovery may have happened regardless.\n\n\n\nA researcher observing this pattern cannot tell whether aid caused the recovery or whether the recovery was coming anyway."
+  },
+  {
+    "objectID": "slides/c9-aid.html#fixed-effects-vs.-first-differencing",
+    "href": "slides/c9-aid.html#fixed-effects-vs.-first-differencing",
+    "title": "Foreign Aid and Development",
+    "section": "Fixed Effects vs. First-Differencing",
+    "text": "Fixed Effects vs. First-Differencing\nBoth remove time-invariant country traits (\\(\\alpha_i\\) cancels in both). The difference is what question they answer.\n\nCountry FE — deviation from the country’s long-run mean: \\[y_{it} - \\bar{y}_i = \\beta(\\text{Aid}_{i,t-1} - \\overline{\\text{Aid}}_i) + \\ldots\\] Was Nigeria above its own average when it got more aid than usual?\n\n\nFirst-difference — change from the previous period: \\[\\Delta y_{it} = \\beta \\,\\Delta\\text{Aid}_{i,t-1} + \\ldots\\] Did Nigeria grow faster this period than last when aid increased?\n\n\nFD is stricter: it also removes slow-moving country trends, not just the long-run mean."
+  },
+  {
+    "objectID": "slides/c9-aid.html#fe-vs.-first-differencing",
+    "href": "slides/c9-aid.html#fe-vs.-first-differencing",
+    "title": "Foreign Aid and Development",
+    "section": "FE vs. First-Differencing",
+    "text": "FE vs. First-Differencing\nBoth remove fixed country traits; the question they answer differs.\n\n\nCountry FE: deviation from country long-run mean. Was Nigeria above its own average when aid was higher? \\[y_{it} - \\bar{y}_i = \\beta(\\text{Aid}_{i,t-1} - \\overline{\\text{Aid}}_i)\\]\nFirst-difference: change from previous period. Did Nigeria grow faster when aid increased? \\[\\Delta y_{it} = \\beta \\,\\Delta\\text{Aid}_{i,t-1}\\]\nFD is stricter: it removes slow-moving country trends, not just the fixed mean."
+  },
+  {
+    "objectID": "slides/c9-aid.html#empirical-evidence",
+    "href": "slides/c9-aid.html#empirical-evidence",
+    "title": "Foreign Aid and Development",
+    "section": "Empirical Evidence",
+    "text": "Empirical Evidence\n\n\nBurnside & Dollar (2000): positive, but only with good policy\nRajan & Subramanian (2008): no robust effect, even with good policy\nHansen & Tarp (2001): positive but diminishing returns\nMicro-level RCTs: often positive for specific, well-targeted programs\n\n\n\nThe macro evidence is mixed. Is this real heterogeneity, or a measurement problem?"
+  },
+  {
+    "objectID": "slides/c9-aid.html#time-horizon",
+    "href": "slides/c9-aid.html#time-horizon",
+    "title": "Foreign Aid and Development",
+    "section": "Time Horizon",
+    "text": "Time Horizon\n\n\nA road raises productivity for decades. Food relief addresses a crisis this week.\nTesting whether all aid raises GDP this year is asking whether food relief builds roads.\nThe time horizon should depend on what type of aid you are measuring."
+  },
+  {
+    "objectID": "slides/c9-aid.html#aid-types",
+    "href": "slides/c9-aid.html#aid-types",
+    "title": "Foreign Aid and Development",
+    "section": "Aid Types",
+    "text": "Aid Types\n\n\nEarly-impact: budget support, roads, energy, agriculture. Plausible growth effect within a few years.\nLong-horizon: education, health, technical cooperation. Growth effects arrive over a generation.\nNo growth mechanism: humanitarian aid, food relief, emergency assistance.\n\n\n\nEarly-impact aid is roughly 45 to 53% of total flows."
+  },
+  {
+    "objectID": "slides/c9-aid.html#decision-1-lag",
+    "href": "slides/c9-aid.html#decision-1-lag",
+    "title": "Foreign Aid and Development",
+    "section": "Decision 1: Lag",
+    "text": "Decision 1: Lag\nData is in 4-year periods; aid arrives in period \\(t\\).\n\n\n(a) Same period: current growth affects how much aid countries receive. Reverse causation.\n(b) Next period: allows time for aid to work. Severs the contemporaneous feedback loop.\n(c) 10 years later: plausible for infrastructure, but most of the sample disappears.\n\n\n\nCRBB choose (b): does Aid(\\(t-1\\)) predict Growth(\\(t\\))?"
+  },
+  {
+    "objectID": "slides/c9-aid.html#decision-2-aid",
+    "href": "slides/c9-aid.html#decision-2-aid",
+    "title": "Foreign Aid and Development",
+    "section": "Decision 2: Aid",
+    "text": "Decision 2: Aid\nYour data includes roads, food relief, vaccination campaigns, budget support, technical cooperation.\n\n\n(a) All disbursements: most flows have no short-run growth mechanism. Testing noise.\n(b) Project aid only: misses budget support, which can fund productive investment.\n(c) Early-impact only: aid that could plausibly raise productive capacity in a few years.\n\n\n\nCRBB choose (c). About 45 to 53% of total flows."
+  },
+  {
+    "objectID": "slides/c9-aid.html#the-causal-problem",
+    "href": "slides/c9-aid.html#the-causal-problem",
+    "title": "Foreign Aid and Development",
+    "section": "The Causal Problem",
+    "text": "The Causal Problem\nEven with the right measure and the right lag, a problem remains.\n\n\nCountries that receive more aid tend to be poorer and slower-growing.\nAid and low growth travel together in the data.\nIs aid causing slow growth, or is slow growth causing more aid?"
+  },
+  {
+    "objectID": "slides/c9-aid.html#decision-3-confounders",
+    "href": "slides/c9-aid.html#decision-3-confounders",
+    "title": "Foreign Aid and Development",
+    "section": "Decision 3: Confounders",
+    "text": "Decision 3: Confounders\nPoor, conflict-prone countries attract more aid and grow more slowly.\n\n\n(a) Add country controls: you cannot observe everything.\n(b) First-difference: subtract each country’s own past values. Geography, institutions, colonial history cancel out.\n(c) Find an instrument: prior studies used population size. Population affects growth through market size, trade, and economies of scale, not only through aid. The instrument fails.\n\n\n\nCRBB choose (b)."
+  },
+  {
+    "objectID": "slides/c9-aid.html#aid-and-mean-reversion",
+    "href": "slides/c9-aid.html#aid-and-mean-reversion",
+    "title": "Foreign Aid and Development",
+    "section": "Aid and Mean Reversion",
+    "text": "Aid and Mean Reversion\nThe same logic applies to country growth rates.\n\n\nA country has a terrible growth year. Donors respond with more aid.\nThe next period, growth recovers, partly because bad years do not persist.\nA researcher observes: aid was followed by growth.\nBut the recovery may have happened regardless."
+  },
+  {
+    "objectID": "slides/c9-aid.html#design-choices",
+    "href": "slides/c9-aid.html#design-choices",
+    "title": "Foreign Aid and Development",
+    "section": "Design Choices",
+    "text": "Design Choices\nThree studies, similar data, three different answers: the divergence came from measurement and identification choices.\n\n\nWhat you measure: aggregate aid vs. early-impact aid\nWhen you measure: contemporaneous vs. lagged\nHow you identify: name the source of clean variation and defend why it is not driven by outcomes\n\n\n\nEvery design choice either makes a null result informative or stacks the deck against finding one."
   }
 ]
