@@ -1,0 +1,12 @@
+---
+title: "Education and Development"
+date: 2026-04-20
+---
+
+## Required Readings
+
+- [Duflo (2001)](/files/duflo-2001-schooling-and-labor-market-consequences.pdf). "Schooling and Labor Market Consequences of School Construction in Indonesia: Evidence from an Unusual Policy Experiment." *American Economic Review*
+
+## Slides
+
+- [Slides](/slides/c10-education.html)
