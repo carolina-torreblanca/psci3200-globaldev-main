@@ -14634,7 +14634,7 @@
     "href": "slides/c9-aid.html#what-the-paper-argues",
     "title": "Foreign Aid and Development",
     "section": "What the Paper Argues",
-    "text": "What the Paper Argues\n\n\nFix the design choices and three datasets give the same answer\nAid causes some growth on average: modest, with wide variation across recipients\nHigh aid dependence shows diminishing returns; it cannot substitute for domestic investment"
+    "text": "What the Paper Argues\n\n\nAid causes some growth on average: modest, with wide variation across recipients\nHigh aid dependence shows diminishing returns; it cannot substitute for domestic investment"
   },
   {
     "objectID": "slides/c9-aid.html#what-is-aid-for",
@@ -15075,14 +15075,14 @@
     "href": "slides/c9-aid.html#does-aid-foster-development",
     "title": "Foreign Aid and Development",
     "section": "Does aid foster development?",
-    "text": "Does aid foster development?\nYour government receives $500 million from abroad\n\nDoes it spur development, and if so, why?\n\n\nWhat would an economist predict?"
+    "text": "Does aid foster development?\nYour government receives $500 million from abroad\n\nDoes it spur development, and if so, why?"
   },
   {
     "objectID": "slides/c9-aid.html#econ-101-the-case-for-yes",
     "href": "slides/c9-aid.html#econ-101-the-case-for-yes",
     "title": "Foreign Aid and Development",
     "section": "Econ 101: The case for “Yes”",
-    "text": "Econ 101: The case for “Yes”\n\n\nPoor countries are caught in a trap: low income → low savings → low investment → low income\nAid injects foreign capital and breaks the cycle\nIn capital-scarce economies, returns to investment are high\nPoor governments often cannot fund public goods: courts, schools, clinics"
+    "text": "Econ 101: The case for “Yes”\n\n\nPoor countries are caught in a trap: low income → low savings → low investment → low income\nAid injects foreign capital and breaks the cycle\nIn capital-scarce economies, returns to investment are high"
   },
   {
     "objectID": "slides/c9-aid.html#econ-101-the-case-for-maybe",
@@ -15110,7 +15110,7 @@
     "href": "slides/c9-aid.html#measurement-is-crucial",
     "title": "Foreign Aid and Development",
     "section": "Measurement is Crucial!",
-    "text": "Measurement is Crucial!\n\n\nTreatment: lumping food relief with infrastructure means testing noise; aid type determines the expected time horizon for any effect\nOutcome: GDP per capita is the standard, but aid also targets health, institutions, and resilience that GDP misses in the short run\nIdentification: an invalid instrument injects bias rather than isolating clean variation\n\n\n\nFix these three things and the divergent findings converge"
+    "text": "Measurement is Crucial!"
   },
   {
     "objectID": "materials/c7_education.html",

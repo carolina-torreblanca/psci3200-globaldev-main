@@ -76,15 +76,12 @@ Does it spur development, and if so, why?
 
 . . .
 
-What would an economist predict?
-
 ## Econ 101: The case for "Yes"
 
 ::: incremental
 - Poor countries are caught in a trap: low income → low savings → low investment → low income
 - Aid injects foreign capital and breaks the cycle
 - In capital-scarce economies, returns to investment are high
-- Poor governments often cannot fund public goods: courts, schools, clinics
 :::
 
 ## Econ 101: The case for "Maybe"
@@ -269,21 +266,9 @@ ggplot(data.frame(p = parent_h, c = child_h), aes(p, c)) +
 
 ## Measurement is Crucial! 
 
-::: incremental
-- **Treatment**: lumping food relief with infrastructure means testing noise; aid type determines the expected time horizon for any effect
-- **Outcome**: GDP per capita is the standard, but aid also targets health, institutions, and resilience that GDP misses in the short run
-- **Identification**: an invalid instrument injects bias rather than isolating clean variation
-:::
-
-. . .
-
-Fix these three things and the divergent findings converge
-
-
 ## What the Paper Argues
 
 ::: incremental
-- Fix the design choices and three datasets give the same answer
 - Aid causes some growth on average: modest, with wide variation across recipients
 - High aid dependence shows diminishing returns; it cannot substitute for domestic investment
 :::
