@@ -58,46 +58,67 @@ format:
 
 ![](img/foreign-aid-given-by-sector.png){fig-align="center" height="5in"}
 
-## Aid as a Windfall
+## What Is the Goal?
 
-Your government receives $500 million from abroad: no goods produced, arrives every year.
+::: incremental
+- **Development**: Reduce global poverty
+- **Humanitarian**: Relief during crisis and disasters
+- **Strategic**: geopolitical influence, commercial access?
+:::
+
+## Does aid foster development?
+
+Your government receives $500 million from abroad
 
 . . .
 
-Think of it like oil revenue or winning the lottery at the country level.
+Does it spur development, and if so, why?
 
 . . .
 
-::: incremental
-- Does it foster development?
-- Does it crowd out domestic effort?
-- Does it change who the government is accountable to?
-:::
+What would an economist predict?
 
-## If Used Well
+## Econ 101: The case for "Yes"
 
 ::: incremental
-- **Savings gap**: external capital breaks the low-income → low-savings → low-investment cycle
-- **Public goods**: courts, roads, power grids; markets won't build them
-- **Big push**: some investments only pay off if many happen at once; aid can coordinate
+- Poor countries are caught in a trap: low income → low savings → low investment → low income
+- Aid injects foreign capital and breaks the cycle
+- In capital-scarce economies, returns to investment are high
+- Poor governments often cannot fund public goods: courts, schools, clinics
 :::
 
-## Even If Used Well
+## Econ 101: The case for "Maybe"
 
 ::: incremental
-- **Dutch disease**: large inflows appreciate the currency, making exports expensive and contracting manufacturing
-- **Accountability shift**: a government funded by donors answers to donors, not citizens
+- Any large foreign inflow appreciates the local currency
+- Imports become cheap; exports become expensive on world markets
+- Manufacturing and agriculture contract
 :::
 
-## If Used Poorly
+## Poli Sci 101: The case for "Yes"
 
 ::: incremental
-- **Fungibility**: aid frees up domestic funds already earmarked for the same thing. Reinikka & Svensson (2004): 13 cents per dollar reached Ugandan schools
-- **Corruption**: aid passes through many hands; weak institutions mean diversion at every step
-- **Misallocation**: Briggs (2016): multilateral aid within countries flows to middle-income regions, not the poorest
+- Poor governments often cannot fund public goods: courts, schools, clinics
+- Politicians have short-term incentives, investment in public goods requires longer time horizons
+- Aid can fund investments with long time horizons that short electoral cycles make unattractive
 :::
 
-## Empirical Evidence
+## Poli Sci 101: Against
+
+::: incremental
+- A government funded by donors answers to donors, not citizens
+- If aid makes governments less reliant on taxation → less representation; citizens lose leverage over the state
+- Aid creates rents worth capturing: incentives to divert and steal
+:::
+
+## The Counterfactual
+
+::: incremental
+- Question: does aid produce development in recipient countries, relative to development had they not received aid?
+- Empirically tough to answer! Aid goes to poorer, slower-growing countries and those in crisis
+:::
+
+## Macro Empirical Evidence is Mixed
 
 ::: incremental
 - **Burnside & Dollar (2000)**: positive, but only with good policy
@@ -105,10 +126,6 @@ Think of it like oil revenue or winning the lottery at the country level.
 - **Hansen & Tarp (2001)**: positive but diminishing returns
 - Micro-level RCTs: often positive for specific, well-targeted programs
 :::
-
-. . .
-
-The macro evidence is mixed. Is this real heterogeneity, or a measurement problem?
 
 # Clemens, Radelet, Bhavnani & Bazzi (2012)
 
@@ -118,21 +135,21 @@ The macro evidence is mixed. Is this real heterogeneity, or a measurement proble
 - **Boone (1996)**: no effect on investment or growth across 96 countries
 - **Burnside & Dollar (2000)**: aid raises growth, but only with good policy
 - **Rajan & Subramanian (2008)**: no robust effect, even with good policy
-- Similar data. Similar periods. Three different conclusions
+- Similar data, similar periods, three different conclusions
 :::
 
 ## Two Fixable Problems
 
 ::: incremental
 - CRBB argue the divergence comes from two resolvable research design choices
-- **Measurement**: what counts as aid, and over what time horizon?
+- **Measurement**: what counts as development aid, and over what time horizon?
 - **Identification**: how do you separate the effect of aid from the effect of everything that moves with aid?
 :::
 
 ## Time Horizon
 
 ::: incremental
-- A road raises productivity for decades. Food relief addresses a crisis this week
+- A road raises productivity for decades; food relief addresses a crisis this week
 - Testing whether **all aid** raises GDP **this year** is asking whether food relief builds roads
 - The time horizon should depend on what type of aid you are measuring
 :::
@@ -140,23 +157,19 @@ The macro evidence is mixed. Is this real heterogeneity, or a measurement proble
 ## Aid Types
 
 ::: incremental
-- **Early-impact**: budget support, roads, energy, agriculture. Plausible growth effect within a few years
-- **Long-horizon**: education, health, technical cooperation. Growth effects arrive over a generation
-- **No growth mechanism**: humanitarian aid, food relief, emergency assistance
+- **Early-impact**: budget support, roads, energy, agriculture; plausible growth effect within a few years
+- **Long-horizon**: education, health, technical cooperation; growth effects arrive over a generation
+- **No clear growth mechanism**: humanitarian aid, food relief, emergency assistance
 :::
-
-. . .
-
-Early-impact aid is roughly 45 to 53% of total flows.
 
 ## Decision 1: Lag
 
-Data is in 4-year periods; aid arrives in period $t$.
+We receive aid in *t* - when should we measure development?
 
 ::: incremental
-- **(a) Same period**: current growth affects how much aid countries receive. Reverse causation
-- **(b) Next period**: allows time for aid to work. Severs the contemporaneous feedback loop
-- **(c) 10 years later**: plausible for infrastructure, but most of the sample disappears
+- **(a) Same period**: potential reverse causation
+- **(b) Next period**: allows time for aid to work
+- **(c) Much longer**: plausible for infrastructure, but a lot of things change
 :::
 
 . . .
@@ -165,17 +178,17 @@ CRBB choose **(b)**: does Aid($t-1$) predict Growth($t$)?
 
 ## Decision 2: Aid
 
-Your data includes roads, food relief, vaccination campaigns, budget support, technical cooperation.
+What type aid should spur development?
 
 ::: incremental
-- **(a) All disbursements**: most flows have no short-run growth mechanism. Testing noise
-- **(b) Project aid only**: misses budget support, which can fund productive investment
-- **(c) Early-impact only**: aid that could plausibly raise productive capacity in a few years
+- **(a) All disbursements**: food relief, technical assistance, emergency aid, budget support, infrastructure; everything in the data
+- **(b) Project aid**: tied to specific outputs; excludes budget support, which can also fund productive investment
+- **(c) Early-impact only**: budget support, roads, energy, agriculture; roughly 45-53% of total flows
 :::
 
 . . .
 
-CRBB choose **(c)**. About 45 to 53% of total flows.
+CRBB choose **(c)**
 
 ## The Causal Problem
 
@@ -187,64 +200,24 @@ Even with the right measure and the right lag, a problem remains.
 - Is aid **causing** slow growth, or is slow growth **causing** more aid?
 :::
 
-## The Causal Challenge
-
-```{r dag-aid, echo=FALSE, warning=FALSE, message=FALSE, fig.height=3.8, fig.align='center'}
-library(ggplot2)
-
-ggplot() +
-  annotate("segment", x = 0.8, y = 2.2, xend = 3.2, yend = 2.2,
-           linewidth = 1.1, arrow = arrow(length = unit(0.22, "cm"), type = "closed")) +
-  annotate("text", x = 2, y = 2.42, size = 3,
-           label = "via investment, imports, public goods") +
-  annotate("segment", x = 2, y = 3.6, xend = 0.4, yend = 2.55,
-           linewidth = 0.9, linetype = "dashed",
-           arrow = arrow(length = unit(0.2, "cm"), type = "open")) +
-  annotate("segment", x = 2, y = 3.6, xend = 3.6, yend = 2.55,
-           linewidth = 0.9, linetype = "dashed",
-           arrow = arrow(length = unit(0.2, "cm"), type = "open")) +
-  annotate("segment", x = 3.3, y = 1.9, xend = 0.7, yend = 1.9,
-           linewidth = 0.9, linetype = "dashed",
-           arrow = arrow(length = unit(0.2, "cm"), type = "open")) +
-  annotate("text", x = 2, y = 1.63, size = 2.7, color = "gray40",
-           label = "reverse causation: poorer or slower-growing countries attract more aid") +
-  annotate("label", x = 0, y = 2.2, label = "Aid\n(t-1)",
-           size = 3.4, fontface = "bold", label.padding = unit(0.45, "lines"),
-           label.r = unit(0.15, "lines")) +
-  annotate("label", x = 4, y = 2.2, label = "GDP\ngrowth (t)",
-           size = 3.4, fontface = "bold", label.padding = unit(0.45, "lines"),
-           label.r = unit(0.15, "lines")) +
-  annotate("label", x = 2, y = 3.82, label = "Unobserved confounders (U_i)",
-           size = 3.2, fontface = "italic", label.padding = unit(0.35, "lines"),
-           label.r = unit(0.15, "lines"), fill = "gray95", color = "gray30") +
-  annotate("text", x = 2, y = 0.88, size = 2.9, color = "gray40",
-           label = "Lagging aid to t-1 breaks contemporaneous reverse causation  |  First-differencing removes U_i") +
-  xlim(-0.8, 4.8) + ylim(0.5, 4.3) +
-  theme_void()
-```
 
 ## Decision 3: Confounders
 
 Poor, conflict-prone countries attract more aid and grow more slowly.
 
-::: incremental
-- **(a) Add country controls**: you cannot observe everything
-- **(b) First-difference**: subtract each country's own past values. Geography, institutions, colonial history cancel out
-- **(c) Find an instrument**: prior studies used population size, but population affects growth directly through trade and market size. The instrument fails
-:::
-
 . . .
 
-CRBB choose **(b)**.
+**The problem**: geography, colonial history, institutions, conflict all affect both aid receipt and growth; none of these are caused by aid
+
 
 ## FE vs. First-Differencing
 
 ::: incremental
-- **Country FE**: deviation from country long-run mean. Was Nigeria above its own average when aid was higher?
+- **Country FE**: deviation from country long-run mean; was Nigeria above its own average when aid was higher?
 $$y_{it} - \bar{y}_i = \beta(\text{Aid}_{i,t-1} - \overline{\text{Aid}}_i)$$
-- **First-difference**: change from previous period. Did Nigeria grow faster when aid increased?
+- **First-difference**: change from previous period; did Nigeria grow faster when aid increased?
 $$\Delta y_{it} = \beta \,\Delta\text{Aid}_{i,t-1}$$
-- FD is stricter: it removes slow-moving country trends, not just the fixed mean
+- FD looks at period-to-period changes
 :::
 
 ## What They Find
@@ -254,16 +227,14 @@ $$\Delta y_{it} = \beta \,\Delta\text{Aid}_{i,t-1}$$
 - **+1 pp in Aid/GDP** is followed on average by:
   - **+0.1 to 0.2 pp** in annual real GDP per capita growth
   - **+0.3 to 0.5 pp** in Investment/GDP
-- Positive but modest. Strong diminishing returns: effect turns negative at high aid levels
+- Positive but modest; diminishing returns set in and the effect turns negative at high aid levels
 :::
 
 ## Is This Actually Causal?
 
-Lagging breaks the contemporaneous feedback, but two threats remain:
-
 ::: incremental
-- **Donor foresight**: donors anticipate growth and front-load aid; but CRBB show they systematically mis-forecast recipient growth
-- **Mean reversion**: bad growth attracts aid AND predicts recovery. See next slide
+- **Time-varying confounders**: a crisis can simultaneously trigger more aid and hurt growth; lagging and differencing do not fully remove this
+- **Mean reversion**: bad growth attracts aid AND predicts recovery; aid may look effective simply because bad years do not persist
 :::
 
 ## Mean Reversion
@@ -289,36 +260,32 @@ ggplot(data.frame(p = parent_h, c = child_h), aes(p, c)) +
 
 ## Aid and Mean Reversion
 
-The same logic applies to country growth rates.
-
 ::: incremental
-- A country has a terrible growth year. Donors respond with more aid
+- A country has a terrible growth year; donors respond with more aid
 - The next period, growth recovers, partly because bad years do not persist
 - A researcher observes: aid was followed by growth
 - But the recovery may have happened regardless
 :::
 
-## Design Choices
-
-Three studies, similar data, three different answers: the divergence came from measurement and identification choices.
+## Measurement is Crucial! 
 
 ::: incremental
-- **What you measure**: aggregate aid vs. early-impact aid
-- **When you measure**: contemporaneous vs. lagged
-- **How you identify**: name the source of clean variation and defend why it is not driven by outcomes
+- **Treatment**: lumping food relief with infrastructure means testing noise; aid type determines the expected time horizon for any effect
+- **Outcome**: GDP per capita is the standard, but aid also targets health, institutions, and resilience that GDP misses in the short run
+- **Identification**: an invalid instrument injects bias rather than isolating clean variation
 :::
 
 . . .
 
-Every design choice either makes a null result informative or stacks the deck against finding one.
+Fix these three things and the divergent findings converge
+
 
 ## What the Paper Argues
 
 ::: incremental
 - Fix the design choices and three datasets give the same answer
 - Aid causes some growth on average: modest, with wide variation across recipients
-- High aid dependence shows diminishing returns. It cannot substitute for domestic investment
-- "Aid does not work" was a methodological artifact replicated across three influential papers
+- High aid dependence shows diminishing returns; it cannot substitute for domestic investment
 :::
 
 # Why This Matters Now
