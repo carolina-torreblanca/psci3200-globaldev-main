@@ -29,133 +29,152 @@ format:
 
 ## Agenda
 
-1. Why invest in education?
-2. Two theories of the wage return
-3. The causal problem
-4. Difference-in-differences
-5. Duflo (2001)
+1. The education miracle
+2. Private vs social returns
+3. Duflo (2001)
+4. From private to social
+5. Education challenges today
 
 ## Deadlines
 
 - **Final Project** due Sunday May 10 by 11:59pm ET
-- Wednesday April 22: in-class work session on the final project
+- Wednesday April 22: in-class work session
 
-# Why Education?
+# The Education Miracle
 
-## The Big Claim
+## The Central Question
 
 ::: incremental
-- Education is often called the highest-return investment in development
-- Girls' schooling has been linked to lower fertility, lower child mortality, higher incomes
-- Cross-country: years of schooling correlates strongly with GDP per capita
-- Is this causal, or is it the selection story all over again?
+- Education can make a **person** rich
+- Does it make a **country** rich?
+- These are not the same question
 :::
 
 ## Schooling Has Exploded
 
+![](img/mean-years-of-schooling-long-run.png){fig-align="center" height="5in"}
+
+## Most of the World Now Literate
+
+![](img/literate-illiterate-world.png){fig-align="center" height="5in"}
+
+## Schooling and Income
+
+![](img/gdp-vs-schooling.png){fig-align="center" height="5in"}
+
+## Schooling and Fertility
+
+![](img/fertility-vs-schooling.png){fig-align="center" height="5in"}
+
+## Governments Invest
+
+![](img/gov-expenditure-education.png){fig-align="center" height="5in"}
+
+## Our Questions
+
 ::: incremental
-- 1950: average adult in low-income countries had ~2 years of schooling
-- 2020: average adult has ~7 years
-- Primary enrollment in sub-Saharan Africa: 52% in 1970, 98% by 2015
-- Gains are largest among girls and in the poorest countries
+- Does education **cause** development, or just correlate with it?
+- If it causes it, **why**? Through what channels?
+- Does more schooling make a **person** richer?
+- Does more schooling make a **country** richer?
+- Does more schooling produce **other** good outcomes: politics, health, safety?
 :::
 
-## But Learning Has Not
+# Private vs Social Returns
+
+## Three Kinds of Return
 
 ::: incremental
-- More years in school do not automatically mean more learning
-- In rural India, ~50% of grade 5 students cannot read a grade 2 text
-- In many low-income countries, grade 3 students cannot do single-digit subtraction
-- The "learning crisis": enrollment up, skills flat
+- **Private return**: how *my* schooling raises *my* wages
+- **External return**: how *my* schooling helps *others*
+- **Social return** = Private + External
+- Policy should care about the social return; I only care about the private one
 :::
 
-## Why Might Education Pay?
+## Private Return: Becker
 
 ::: incremental
-- **Human capital (Becker)**: school builds productive skills; higher skill → higher wages
-- **Signaling (Spence, 1973)**: school reveals underlying ability to employers
-- Both predict: more school → higher wages
-- They disagree on *why*, and on what policy should do
+- School builds productive skills
+- Skills raise productivity, productivity raises wages
+- This is the human capital story
+- Measured by the Mincer wage equation
 :::
 
-## Becker: Skills
+## The Mincer Equation
+
+$$\ln(w_i) = \alpha + \beta \, S_i + \gamma_1 X_i + \gamma_2 X_i^2 + \varepsilon_i$$
 
 ::: incremental
-- Workers choose schooling like an investment
-- Costs: tuition, forgone earnings
-- Returns: higher productivity, higher wages over lifetime
-- Implication: expanding schools should raise wages, because new skills are being built
+- $w_i$: wage of worker $i$; $S_i$: years of schooling; $X_i$: years of work experience
+- $\beta$: the *return to schooling*; percent wage gain per extra year of school
+- Log wage makes the coefficient a percent: $\beta = 0.08$ means 8% more per year
+- Typical OLS estimate across countries: $\beta \approx 0.07$ to $0.10$
 :::
 
-## Spence: Signals
+## Private Return: Spence
 
 ::: incremental
-- Ability is unobservable to employers at hiring
-- High-ability workers find school cheap; low-ability workers find it costly
-- A diploma separates types even if the content is useless
-- Implication: expanding schools may not raise wages if it only shifts the signal
+- Employers cannot see your ability; they can see your degree
+- School is *information* to the people who pay you
+- High-ability types find school cheap; low-ability types find it costly; the diploma separates them
+- Content may not even matter: the credential does the work
+- Very different policy: cheap signals (tests, licenses) could do the same job
 :::
 
-## Why the Distinction Matters
+## External: Spillovers at Work
+
+The idea: *your* wage depends on *other people's* schooling, not just your own
 
 ::: incremental
-- Human capital: policy should build more schools, train more teachers
-- Signaling: policy should fund only the credential, or find cheaper signals
-- Most evidence suggests both are at play; pure signaling is rare
-- Testing them requires variation that breaks the ability-schooling link
+- You are more productive when your coworkers are skilled: teamwork, learning on the job
+- Firms buy better machinery when workers can run it; that raises everyone's wages
+- More educated cities attract better employers
+- This is a true **externality**: you benefit from their schooling without paying for it
+:::
+
+## External: Non-Economic
+
+::: incremental
+- Educated citizens vote more, follow politics, demand accountability
+- Educated citizens pay taxes, expand the fiscal base
+- Educated mothers raise healthier children
+- Educated populations have lower crime and disease spread
+:::
+
+## The Market Fails
+
+::: incremental
+- I decide how much school to get based on *my* wage gain
+- I do not factor in: your wages, your votes, your kids' health, your firm's productivity
+- So I under-buy schooling; every student does
+- The country ends up with less education than is socially optimal
+- Classic externality: markets alone do not deliver the social optimum
+- This is why every rich country subsidizes or mandates schooling
 :::
 
 # The Causal Problem
 
-## OLS Returns to Schooling
-
-$$\ln(\text{wage}_i) = \alpha + \beta \cdot \text{school}_i + \varepsilon_i$$
+## Is the Mincer $\beta$ Causal?
 
 ::: incremental
-- Typical OLS estimate: $\hat\beta \approx 0.08$ to $0.10$
-- Interpretation: one more year of school is associated with 8-10% higher wages
-- "Associated with", not "causes"
+- Mincer regressions say: one extra year of school, ~8-10% higher wages
+- But schooling is *chosen*, not assigned
+- The kids who get more school are also higher ability, from richer families, in better places
+- OLS bundles the effect of school with everything else that travels with it
 :::
 
-## Ability Bias
+## What We Need
 
 ::: incremental
-- High-ability people get more schooling AND earn more
-- OLS attributes the full wage gap to schooling
-- True causal effect is smaller than the correlation
-- Classic upward bias
+- Variation in schooling that is *not* driven by individual choice
+- Ideally: a shock that gave some people more school, for reasons unrelated to ability
+- Supply-side expansions are a natural candidate
+- Duflo (2001) uses exactly this
 :::
 
-## Reverse Causation and Selection
+# A Quick DiD Refresher
 
-::: incremental
-- Richer families can afford more schooling; their kids also inherit networks, health, nutrition
-- Poor regions have worse schools AND worse labor markets
-- Any observed correlation mixes all of these
-- We need exogenous variation in schooling
-:::
-
-## Classic Fixes
-
-::: incremental
-- **Twins studies**: compare siblings to hold genes constant
-- **Compulsory schooling laws**: use legal cutoffs as a shock
-- Both mostly come from rich countries
-- Do they apply in low-income settings where access, not motivation, is the bind?
-:::
-
-# Difference-in-Differences
-
-## The Setup
-
-::: incremental
-- Some units get treated; others do not
-- We observe outcomes before and after
-- Simple comparison of treated post-treatment is confounded by unit differences
-- Simple before-after on treated is confounded by time trends
-:::
-
-## The 2×2 Table
+## The 2×2
 
 |            | Before | After |
 |------------|--------|-------|
@@ -164,34 +183,26 @@ $$\ln(\text{wage}_i) = \alpha + \beta \cdot \text{school}_i + \varepsilon_i$$
 
 . . .
 
-$$\hat\delta_{DiD} = (Y_{T,1} - Y_{T,0}) - (Y_{C,1} - Y_{C,0})$$
+$$\hat\delta = (Y_{T,1} - Y_{T,0}) - (Y_{C,1} - Y_{C,0})$$
 
-## What DiD Assumes
-
-::: incremental
-- **Parallel trends**: without treatment, treated and control would have evolved the same way
-- Unit fixed effects absorb any time-invariant differences
-- Time fixed effects absorb any common shocks
-- The treatment effect lives in the interaction
-:::
-
-## DiD as a Regression
+## DiD Is an Interaction
 
 $$Y_{it} = \alpha_i + \lambda_t + \delta (\text{Treated}_i \times \text{Post}_t) + \varepsilon_{it}$$
 
 ::: incremental
-- $\alpha_i$: unit fixed effects (absorbs level differences)
-- $\lambda_t$: time fixed effects (absorbs common trends)
-- $\delta$: coefficient on the interaction = DiD estimate
-- DiD is an interaction term, nothing more
+- $\alpha_i$: unit fixed effects (level differences)
+- $\lambda_t$: time fixed effects (common shocks)
+- $\delta$: coefficient on the interaction = the DiD estimate
+- Parallel trends: without treatment, both would have moved the same way
 :::
 
-## Why This Matters Today
+## Continuous DiD
 
 ::: incremental
-- Duflo (2001) uses a continuous DiD: intensity of treatment × exposure cohort
-- The interaction of *how much* treatment and *who was exposed* is the instrument
-- Same logic, more variation
+- Treatment does not have to be 0/1
+- It can be a *dose*: more or less of the treatment across units
+- Interaction: (dose in your unit) × (are you in the post period?)
+- This is Duflo's setup
 :::
 
 # Duflo (2001)
@@ -199,135 +210,199 @@ $$Y_{it} = \alpha_i + \lambda_t + \delta (\text{Treated}_i \times \text{Post}_t)
 ## The Setting
 
 ::: incremental
-- Indonesia, early 1970s: primary enrollment ~60%, large regional gaps
-- 1973 oil windfall funds a massive public investment
-- 1973-1978: INPRES program builds 61,807 primary schools
-- Roughly doubles the existing stock in five years
+- Indonesia, early 1970s
+- Primary enrollment ~60%, large regional gaps
+- 1973: oil prices quadruple; government has cash
+- Decision: spend it on primary schools
 :::
 
-## The Allocation Rule
+## INPRES
 
 ::: incremental
-- Schools allocated across 283 regions
-- Rule: more schools to regions with *fewer* existing schools per child
-- Program intensity = schools built per 1,000 children in region
-- Not random, but driven by a formula, not local demand
-:::
-
-## Two Dimensions of Variation
-
-::: incremental
-- **Region**: some regions got more schools (high intensity)
-- **Cohort**: some children were young enough to benefit, others had already finished primary school
-- Children aged 2-6 in 1974: fully exposed
-- Children aged 12+ in 1974: already past primary
+- 1973-1978: **61,807** new primary schools
+- Roughly doubles the stock of schools
+- Allocation across 283 regions
+- Rule: more schools to regions with fewer existing schools per child
 :::
 
 ## The Design
 
 ::: incremental
-- High-intensity region + young cohort = most treatment
-- Low-intensity region + old cohort = no treatment
-- Compare the difference across cohorts in high vs low-intensity regions
-- Continuous DiD: intensity × exposure
+- Two dimensions of variation:
+  - **Region**: some got many new schools, others got few
+  - **Cohort**: kids aged 2-6 in 1974 were fully exposed; kids aged 12+ were too old
+- Compare: did young cohorts in high-intensity regions get more schooling than young cohorts in low-intensity regions?
+- This is a DiD with a continuous treatment (intensity × exposure)
 :::
 
-## The Identifying Assumption
+## Placebo: Older Cohorts
 
 ::: incremental
-- Without INPRES, young cohorts in high-intensity regions would have evolved like young cohorts in low-intensity regions
-- Threat: maybe high-intensity regions were catching up for other reasons
-- Test: look at cohorts *too old* to be treated
-- If their education rises with intensity, parallel trends fails
-:::
-
-## Placebo Cohorts
-
-::: incremental
-- Compare ages 12-17 vs ages 18-24 in 1974
-- Neither group was exposed to INPRES schools
-- If intensity predicts differences between these cohorts, we have a problem
+- Check cohorts too old to be treated (age 12-17 vs 18-24 in 1974)
+- Neither group was exposed to the new schools
+- If intensity still predicts differences, parallel trends fails
 - It does not; the effect turns on precisely at age 12
 :::
 
-## First Stage: Education
+## The Main Result
 
 ::: incremental
-- One more school per 1,000 children → 0.12 to 0.19 more years of schooling
-- Effect concentrated at primary completion, not secondary
-- Larger in sparser, poorer regions (where the constraint was bindings)
-- Consistent with supply-side access story
+- Building schools caused kids to get more education AND earn more as adults
+- Each year of extra schooling (caused by INPRES) → **~7-11% higher wages**
+- Similar to the OLS Mincer estimate in the same data (~7.5%)
+- In this setting, ability bias was not huge
+- Key point: this is a *causal* estimate, not a correlation
 :::
 
-## Reduced Form: Wages
+## What It Means
 
 ::: incremental
-- One more school per 1,000 children → 1.5% to 2.7% higher adult wages
-- Same cohort × intensity interaction, now on earnings
-- Estimated in 1995, ~20 years after exposure
+- Supply-side access was binding in 1970s Indonesia: more schools → more education
+- Returns to that extra schooling are economically large
+- Building schools was a good investment for individuals
+- But this is the **private return**; what about everyone else?
 :::
 
-## From DiD to IV
+# From Private to Social
+
+## The Pivot
 
 ::: incremental
-- First stage: intensity × exposure → more schooling
-- Reduced form: intensity × exposure → higher wages
-- Ratio: wage effect per year of schooling
-- This is 2SLS: the interaction is an instrument for education
+- Duflo gave us the **private** return: ~8% per year of schooling
+- But why do *countries* invest 4-6% of GDP in education?
+- Because schooling changes more than just the student's own life
+- It changes the lives of the people around them
 :::
 
-## 2SLS Returns
+## Quick Check
+
+Your neighbor just finished medical school
+
+. . .
+
+Who else is better off because of this?
+
+. . .
 
 ::: incremental
-- Returns to education: **6.8% to 10.6%** per year
-- OLS returns in the same data: ~7.5%
-- In this setting, OLS is not wildly biased
-- But the IV estimate is a LATE, not an average
+- Her future patients get better care
+- Her coworkers learn from her
+- The local tax base grows
+- Her kids are more likely to finish school too
+- *You*, if you ever need a doctor
 :::
 
-## LATE Interpretation
+## What Is a Spillover?
+
+A spillover: *your* action changes *someone else's* outcome
+
+. . .
+
+**Private return** (Mincer / Duflo):
+
+$$\text{My wage} = \alpha + \beta \cdot (\text{My schooling}) + \varepsilon$$
+
+. . .
+
+**With spillovers**:
+
+$$\text{My wage} = \alpha + \beta \cdot (\text{My schooling}) + \gamma \cdot (\text{Others' schooling}) + \varepsilon$$
+
+. . .
 
 ::: incremental
-- 2SLS identifies the return for **compliers**: students induced to attend by the new schools
-- These are children who would not have gone without INPRES
-- Likely poorer, more rural, more credit-constrained
-- Their return need not equal the return for infra-marginal students
+- $\gamma > 0$: education has positive externalities
+- $\gamma = 0$: no spillover; education is purely private
 :::
 
-## Cost-Benefit
+## Why Spillovers Are Hard
 
 ::: incremental
-- Cost per school: ~$24,300 in 1990 USD
-- Implied internal rate of return: 8.8% to 12%
-- Competitive with returns to physical capital
-- Supply-side education investment paid for itself
+- Educated people cluster: same firms, same cities, same countries
+- Your coworkers are educated AND your city pays better AND your firm is more productive
+- All correlated; none necessarily causal
+- Clean spillover estimates require exogenous variation in *others'* schooling
+- This is why the spillover literature is much messier than the Mincer literature
 :::
 
-## What to Take Away
+## Channels of Spillover
+
+How many ways can *your* education benefit *others*?
+
+. . .
 
 ::: incremental
-- Access, not just demand, was a real constraint in 1970s Indonesia
-- A continuous DiD with an interaction instrument isolates causal returns
-- Returns to schooling are positive and economically meaningful
-- Human capital story wins here; pure signaling cannot explain wage gains from *building more schools*
+- **Workplace**: educated coworkers → you learn faster; firms invest in better capital
+- **Politics**: educated citizens vote more, demand accountability, pay more taxes
+- **Health**: educated mothers have healthier children
+- **Safety**: more education, less crime
+- **Innovation**: educated workers spread ideas; ideas are non-rival
 :::
 
-## Limitations
+## The Democracy Channel
 
 ::: incremental
-- LATE: results apply to compliers, not everyone
-- Indonesia in 1995: formal-sector wages, not informal or agricultural
-- Primary schooling, not secondary or tertiary
-- Learning crisis literature suggests building schools today may not pay the same return
+- Lipset (1959): education → civic capacity → democracy
+- Acemoglu et al. (2008): add country fixed effects and the cross-country link disappears
+- Grossman et al. (2021): within-country effects are context-dependent; information reaches citizens, but whether they act on it depends on the political system
+- Effects on *regime type* are weaker than effects on *individual political behavior*
 :::
 
-# Wrapping Up
-
-## What Education Economics Teaches
+## The Virtuous Circle
 
 ::: incremental
-- Education correlates with development, but correlation is not causation
-- Credible designs turn on variation that breaks the ability-schooling link
-- Duflo (2001): supply-side shocks + DiD + IV = a clean answer
-- The learning crisis is the open frontier: years of school are rising; skills are not
+- **Economic**: educated workers → higher wages → higher productivity → more tax revenue
+- **Political**: educated citizens → better accountability → better public goods → better schools
+- **Intergenerational**: educated mothers → healthier, better-educated children
+- **Innovation**: educated workers → new ideas → spillovers to everyone else
+- Each channel feeds the others: positive externalities compound
+:::
+
+# Education Challenges Today
+
+## The Learning Crisis
+
+::: incremental
+- Years of schooling have risen; learning has not kept pace
+- Rural India: half of grade 5 students cannot read a grade 2 text
+- In many low-income countries, grade 3 students cannot subtract single digits
+- Access is now less binding than *quality*
+:::
+
+## Why Quality Is Hard
+
+::: incremental
+- Teachers absent, undertrained, or poorly paid
+- Curricula designed for the top students, not the median
+- Parents demand credentials, not skills
+- Political pressure to expand access, not measure outcomes
+:::
+
+## The Funding Shock
+
+::: incremental
+- USAID historically funded ~20% of global basic education aid
+- 2025: US foreign assistance frozen; USAID dismantled
+- Countries heavily dependent on donor-funded education programs face immediate cuts
+- Teacher salaries, textbooks, school feeding at risk
+:::
+
+## Education in the Age of AI
+
+::: incremental
+- If AI can substitute for cognitive labor, what is the return to schooling?
+- Optimistic view: AI is a tool; educated users get more out of it; returns rise
+- Pessimistic view: AI compresses the premium on education; ladder collapses
+- Open question for developing countries: leapfrog or left behind?
+- The externalities (politics, health, civic life) do not disappear with AI
+:::
+
+## Takeaways
+
+::: incremental
+- Education has **many positive externalities**
+- Private return is well identified (Duflo): ~8% per year
+- Spillovers run through work, politics, health, safety, innovation
+- Private returns alone do not justify why states fund education; externalities do
+- The frontier today is learning, not just access
 :::

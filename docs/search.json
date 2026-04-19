@@ -15138,28 +15138,28 @@
     "href": "slides/c10-education.html#agenda",
     "title": "Education and Development",
     "section": "Agenda",
-    "text": "Agenda\n\nWhy invest in education?\nTwo theories of the wage return\nThe causal problem\nDifference-in-differences\nDuflo (2001)"
+    "text": "Agenda\n\nThe education miracle\nPrivate vs social returns\nDuflo (2001)\nFrom private to social\nEducation challenges today"
   },
   {
     "objectID": "slides/c10-education.html#deadlines",
     "href": "slides/c10-education.html#deadlines",
     "title": "Education and Development",
     "section": "Deadlines",
-    "text": "Deadlines\n\nFinal Project due Sunday May 10 by 11:59pm ET\nWednesday April 22: in-class work session on the final project"
+    "text": "Deadlines\n\nFinal Project due Sunday May 10 by 11:59pm ET\nWednesday April 22: in-class work session"
   },
   {
     "objectID": "slides/c10-education.html#the-big-claim",
     "href": "slides/c10-education.html#the-big-claim",
     "title": "Education and Development",
     "section": "The Big Claim",
-    "text": "The Big Claim\n\n\nEducation is often called the highest-return investment in development\nGirls’ schooling has been linked to lower fertility, lower child mortality, higher incomes\nCross-country: years of schooling correlates strongly with GDP per capita\nIs this causal, or is it the selection story all over again?"
+    "text": "The Big Claim\n\n\nEducation correlates with almost every good outcome\nIt is often called the highest-return investment in development\nBut correlation is not causation\nOur job today: figure out what we can actually believe"
   },
   {
     "objectID": "slides/c10-education.html#schooling-has-exploded",
     "href": "slides/c10-education.html#schooling-has-exploded",
     "title": "Education and Development",
     "section": "Schooling Has Exploded",
-    "text": "Schooling Has Exploded\n\n\n1950: average adult in low-income countries had ~2 years of schooling\n2020: average adult has ~7 years\nPrimary enrollment in sub-Saharan Africa: 52% in 1970, 98% by 2015\nGains are largest among girls and in the poorest countries"
+    "text": "Schooling Has Exploded"
   },
   {
     "objectID": "slides/c10-education.html#but-learning-has-not",
@@ -15264,7 +15264,7 @@
     "href": "slides/c10-education.html#the-setting",
     "title": "Education and Development",
     "section": "The Setting",
-    "text": "The Setting\n\n\nIndonesia, early 1970s: primary enrollment ~60%, large regional gaps\n1973 oil windfall funds a massive public investment\n1973-1978: INPRES program builds 61,807 primary schools\nRoughly doubles the existing stock in five years"
+    "text": "The Setting\n\n\nIndonesia, early 1970s\nPrimary enrollment ~60%, large regional gaps\n1973: oil prices quadruple; government has cash\nDecision: spend it on primary schools"
   },
   {
     "objectID": "slides/c10-education.html#the-allocation-rule",
@@ -15278,21 +15278,21 @@
     "href": "slides/c10-education.html#two-dimensions-of-variation",
     "title": "Education and Development",
     "section": "Two Dimensions of Variation",
-    "text": "Two Dimensions of Variation\n\n\nRegion: some regions got more schools (high intensity)\nCohort: some children were young enough to benefit, others had already finished primary school\nChildren aged 2-6 in 1974: fully exposed\nChildren aged 12+ in 1974: already past primary"
+    "text": "Two Dimensions of Variation\n\n\nRegion: high-intensity vs low-intensity\nCohort: young enough to attend the new schools, or already past primary\nAge 2-6 in 1974: fully exposed\nAge 12+ in 1974: unexposed"
   },
   {
     "objectID": "slides/c10-education.html#the-design",
     "href": "slides/c10-education.html#the-design",
     "title": "Education and Development",
     "section": "The Design",
-    "text": "The Design\n\n\nHigh-intensity region + young cohort = most treatment\nLow-intensity region + old cohort = no treatment\nCompare the difference across cohorts in high vs low-intensity regions\nContinuous DiD: intensity × exposure"
+    "text": "The Design\n\n\nTwo dimensions of variation:\n\nRegion: some got many new schools, others got few\nCohort: kids aged 2-6 in 1974 were fully exposed; kids aged 12+ were too old\n\nCompare: did young cohorts in high-intensity regions get more schooling than young cohorts in low-intensity regions?\nThis is a DiD with a continuous treatment (intensity × exposure)"
   },
   {
     "objectID": "slides/c10-education.html#the-identifying-assumption",
     "href": "slides/c10-education.html#the-identifying-assumption",
     "title": "Education and Development",
     "section": "The Identifying Assumption",
-    "text": "The Identifying Assumption\n\n\nWithout INPRES, young cohorts in high-intensity regions would have evolved like young cohorts in low-intensity regions\nThreat: maybe high-intensity regions were catching up for other reasons\nTest: look at cohorts too old to be treated\nIf their education rises with intensity, parallel trends fails"
+    "text": "The Identifying Assumption\n\n\nWithout INPRES, young cohorts in high-intensity regions would have evolved like young cohorts in low-intensity regions\nThreat: maybe high-intensity regions were catching up anyway\nTest: check cohorts too old to be treated\nIf their education also rises with intensity, parallel trends fails"
   },
   {
     "objectID": "slides/c10-education.html#placebo-cohorts",
@@ -15306,42 +15306,42 @@
     "href": "slides/c10-education.html#first-stage-education",
     "title": "Education and Development",
     "section": "First Stage: Education",
-    "text": "First Stage: Education\n\n\nOne more school per 1,000 children → 0.12 to 0.19 more years of schooling\nEffect concentrated at primary completion, not secondary\nLarger in sparser, poorer regions (where the constraint was bindings)\nConsistent with supply-side access story"
+    "text": "First Stage: Education\n\n\nOne extra school per 1,000 children → +0.12 to 0.19 years of schooling\nConcentrated at primary completion, not secondary\nLarger in poorer, sparser regions (where access was the bind)\nConsistent with a supply-side access story"
   },
   {
     "objectID": "slides/c10-education.html#reduced-form-wages",
     "href": "slides/c10-education.html#reduced-form-wages",
     "title": "Education and Development",
     "section": "Reduced Form: Wages",
-    "text": "Reduced Form: Wages\n\n\nOne more school per 1,000 children → 1.5% to 2.7% higher adult wages\nSame cohort × intensity interaction, now on earnings\nEstimated in 1995, ~20 years after exposure"
+    "text": "Reduced Form: Wages\n\n\nSame interaction, now on adult wages (measured in 1995)\nOne extra school per 1,000 children → +1.5% to 2.7% wages\nThis is the intent-to-treat on wages\nNot yet a return to schooling"
   },
   {
     "objectID": "slides/c10-education.html#from-did-to-iv",
     "href": "slides/c10-education.html#from-did-to-iv",
     "title": "Education and Development",
     "section": "From DiD to IV",
-    "text": "From DiD to IV\n\n\nFirst stage: intensity × exposure → more schooling\nReduced form: intensity × exposure → higher wages\nRatio: wage effect per year of schooling\nThis is 2SLS: the interaction is an instrument for education"
+    "text": "From DiD to IV\n\n\nFirst stage: (intensity × cohort) → years of schooling\nReduced form: (intensity × cohort) → wages\nRatio: wage change per year of schooling induced\nThe DiD interaction becomes an instrument"
   },
   {
     "objectID": "slides/c10-education.html#sls-returns",
     "href": "slides/c10-education.html#sls-returns",
     "title": "Education and Development",
     "section": "2SLS Returns",
-    "text": "2SLS Returns\n\n\nReturns to education: 6.8% to 10.6% per year\nOLS returns in the same data: ~7.5%\nIn this setting, OLS is not wildly biased\nBut the IV estimate is a LATE, not an average"
+    "text": "2SLS Returns\n\n\nReturn to education: 6.8% to 10.6% per year\nOLS in the same data: ~7.5%\nIn this setting, OLS is not wildly off\nBut the 2SLS has a specific interpretation: LATE"
   },
   {
     "objectID": "slides/c10-education.html#late-interpretation",
     "href": "slides/c10-education.html#late-interpretation",
     "title": "Education and Development",
     "section": "LATE Interpretation",
-    "text": "LATE Interpretation\n\n\n2SLS identifies the return for compliers: students induced to attend by the new schools\nThese are children who would not have gone without INPRES\nLikely poorer, more rural, more credit-constrained\nTheir return need not equal the return for infra-marginal students"
+    "text": "LATE Interpretation\n\n\n2SLS identifies the return for compliers\nCompliers: kids induced to attend by the new schools\nLikely poorer, more rural, credit-constrained\nTheir return is not necessarily everyone’s return"
   },
   {
     "objectID": "slides/c10-education.html#cost-benefit",
     "href": "slides/c10-education.html#cost-benefit",
     "title": "Education and Development",
     "section": "Cost-Benefit",
-    "text": "Cost-Benefit\n\n\nCost per school: ~$24,300 in 1990 USD\nImplied internal rate of return: 8.8% to 12%\nCompetitive with returns to physical capital\nSupply-side education investment paid for itself"
+    "text": "Cost-Benefit\n\n\nCost per school: ~$24,300 (1990 USD)\nImplied internal rate of return: 8.8% to 12%\nCompetitive with returns to physical capital\nSupply-side education investment paid for itself"
   },
   {
     "objectID": "slides/c10-education.html#what-to-take-away",
@@ -15363,5 +15363,383 @@
     "title": "Education and Development",
     "section": "What Education Economics Teaches",
     "text": "What Education Economics Teaches\n\n\nEducation correlates with development, but correlation is not causation\nCredible designs turn on variation that breaks the ability-schooling link\nDuflo (2001): supply-side shocks + DiD + IV = a clean answer\nThe learning crisis is the open frontier: years of school are rising; skills are not"
+  },
+  {
+    "objectID": "slides/c10-education.html#three-scales",
+    "href": "slides/c10-education.html#three-scales",
+    "title": "Education and Development",
+    "section": "Three Scales",
+    "text": "Three Scales\n\n\nDoes school make a person richer?\nDoes schooling make a country wealthier?\nDoes education build democracy and good government?\nDifferent questions, different evidence, different policy"
+  },
+  {
+    "objectID": "slides/c10-education.html#most-of-the-world-now-literate",
+    "href": "slides/c10-education.html#most-of-the-world-now-literate",
+    "title": "Education and Development",
+    "section": "Most of the World Now Literate",
+    "text": "Most of the World Now Literate"
+  },
+  {
+    "objectID": "slides/c10-education.html#schooling-and-income",
+    "href": "slides/c10-education.html#schooling-and-income",
+    "title": "Education and Development",
+    "section": "Schooling and Income",
+    "text": "Schooling and Income"
+  },
+  {
+    "objectID": "slides/c10-education.html#schooling-and-fertility",
+    "href": "slides/c10-education.html#schooling-and-fertility",
+    "title": "Education and Development",
+    "section": "Schooling and Fertility",
+    "text": "Schooling and Fertility"
+  },
+  {
+    "objectID": "slides/c10-education.html#governments-invest",
+    "href": "slides/c10-education.html#governments-invest",
+    "title": "Education and Development",
+    "section": "Governments Invest",
+    "text": "Governments Invest"
+  },
+  {
+    "objectID": "slides/c10-education.html#for-a-person-becker",
+    "href": "slides/c10-education.html#for-a-person-becker",
+    "title": "Education and Development",
+    "section": "For a Person: Becker",
+    "text": "For a Person: Becker\n\n\nSchool builds productive skills\nSkills raise productivity\nProductivity raises wages\nPolicy lever: build more schools, train more teachers"
+  },
+  {
+    "objectID": "slides/c10-education.html#for-a-person-spence",
+    "href": "slides/c10-education.html#for-a-person-spence",
+    "title": "Education and Development",
+    "section": "For a Person: Spence",
+    "text": "For a Person: Spence\n\n\nMaybe school just reveals ability to employers\nHigh-ability types find school cheap; low-ability types find it costly\nA diploma separates the two; content may not matter\nPolicy lever: cheaper credentials would do the same work"
+  },
+  {
+    "objectID": "slides/c10-education.html#for-a-country-machinery",
+    "href": "slides/c10-education.html#for-a-country-machinery",
+    "title": "Education and Development",
+    "section": "For a Country: Machinery",
+    "text": "For a Country: Machinery\n\n\nTo run a factory, someone has to run the machinery\nTo run a hospital, someone has to read prescriptions\nTo run a tax agency, someone has to file records\nWithout an educated workforce, the economy cannot absorb capital"
+  },
+  {
+    "objectID": "slides/c10-education.html#for-a-country-growth-models",
+    "href": "slides/c10-education.html#for-a-country-growth-models",
+    "title": "Education and Development",
+    "section": "For a Country: Growth Models",
+    "text": "For a Country: Growth Models\n\n\nLucas (1988), Romer (1990): human capital is an input to productivity\nMore schooling → more skilled workers → more GDP per worker\nPrediction: countries that invest in schooling should grow faster\nTestable at the country level"
+  },
+  {
+    "objectID": "slides/c10-education.html#for-politics-lipset",
+    "href": "slides/c10-education.html#for-politics-lipset",
+    "title": "Education and Development",
+    "section": "For Politics: Lipset",
+    "text": "For Politics: Lipset\n\n\nModernization theory: education makes citizens “civic”\nEducated voters are informed, participate, demand accountability\nEducated countries are more likely to democratize\nThis is a claim about political development, not wages"
+  },
+  {
+    "objectID": "slides/c10-education.html#for-politics-acemoglu-pushback",
+    "href": "slides/c10-education.html#for-politics-acemoglu-pushback",
+    "title": "Education and Development",
+    "section": "For Politics: Acemoglu Pushback",
+    "text": "For Politics: Acemoglu Pushback\n\n\nRecall Acemoglu et al. (2008): income does not robustly cause democracy\nAdd country fixed effects and the cross-country link disappears\nEducation might be the same story: correlated with democracy, not necessarily causing it\nAn open question, not a settled one"
+  },
+  {
+    "objectID": "slides/c10-education.html#correlation-is-not-causation",
+    "href": "slides/c10-education.html#correlation-is-not-causation",
+    "title": "Education and Development",
+    "section": "Correlation Is Not Causation",
+    "text": "Correlation Is Not Causation\n\n\nHigh-ability students get more school AND earn more\nRich families fund more school AND have well-connected networks\nGood places have good schools AND good labor markets\nEvery OLS estimate bundles all of this together"
+  },
+  {
+    "objectID": "slides/c10-education.html#ols-returns",
+    "href": "slides/c10-education.html#ols-returns",
+    "title": "Education and Development",
+    "section": "OLS Returns",
+    "text": "OLS Returns\n\\[\\ln(\\text{wage}_i) = \\alpha + \\beta \\cdot \\text{school}_i + \\varepsilon_i\\]\n\n\nTypical OLS estimate: \\(\\hat\\beta \\approx 0.08\\) to \\(0.10\\)\nReads as: one more year of school, 8-10% higher wages\nUpward biased by ability, family, geography\nThe true causal effect is smaller"
+  },
+  {
+    "objectID": "slides/c10-education.html#what-we-need",
+    "href": "slides/c10-education.html#what-we-need",
+    "title": "Education and Development",
+    "section": "What We Need",
+    "text": "What We Need\n\n\nVariation in schooling that is not driven by individual choice\nIdeally: a shock that gave some people more school, for reasons unrelated to ability\nSupply-side expansions are a natural candidate\nDuflo (2001) uses exactly this"
+  },
+  {
+    "objectID": "slides/c10-education.html#the-22",
+    "href": "slides/c10-education.html#the-22",
+    "title": "Education and Development",
+    "section": "The 2×2",
+    "text": "The 2×2\n\n\n\n\nBefore\nAfter\n\n\n\n\nTreated\n\\(Y_{T,0}\\)\n\\(Y_{T,1}\\)\n\n\nControl\n\\(Y_{C,0}\\)\n\\(Y_{C,1}\\)\n\n\n\n\n\\[\\hat\\delta = (Y_{T,1} - Y_{T,0}) - (Y_{C,1} - Y_{C,0})\\]"
+  },
+  {
+    "objectID": "slides/c10-education.html#did-is-an-interaction",
+    "href": "slides/c10-education.html#did-is-an-interaction",
+    "title": "Education and Development",
+    "section": "DiD Is an Interaction",
+    "text": "DiD Is an Interaction\n\\[Y_{it} = \\alpha_i + \\lambda_t + \\delta (\\text{Treated}_i \\times \\text{Post}_t) + \\varepsilon_{it}\\]\n\n\n\\(\\alpha_i\\): unit fixed effects (level differences)\n\\(\\lambda_t\\): time fixed effects (common shocks)\n\\(\\delta\\): coefficient on the interaction = the DiD estimate\nParallel trends: without treatment, both would have moved the same way"
+  },
+  {
+    "objectID": "slides/c10-education.html#continuous-did",
+    "href": "slides/c10-education.html#continuous-did",
+    "title": "Education and Development",
+    "section": "Continuous DiD",
+    "text": "Continuous DiD\n\n\nTreatment does not have to be 0/1\nIt can be a dose: more or less of the treatment across units\nInteraction: (dose in your unit) × (are you in the post period?)\nThis is Duflo’s setup"
+  },
+  {
+    "objectID": "slides/c10-education.html#inpres",
+    "href": "slides/c10-education.html#inpres",
+    "title": "Education and Development",
+    "section": "INPRES",
+    "text": "INPRES\n\n\n1973-1978: 61,807 new primary schools\nRoughly doubles the stock of schools\nAllocation across 283 regions\nRule: more schools to regions with fewer existing schools per child"
+  },
+  {
+    "objectID": "slides/c10-education.html#placebo-older-cohorts",
+    "href": "slides/c10-education.html#placebo-older-cohorts",
+    "title": "Education and Development",
+    "section": "Placebo: Older Cohorts",
+    "text": "Placebo: Older Cohorts\n\n\nCheck cohorts too old to be treated (age 12-17 vs 18-24 in 1974)\nNeither group was exposed to the new schools\nIf intensity still predicts differences, parallel trends fails\nIt does not; the effect turns on precisely at age 12"
+  },
+  {
+    "objectID": "slides/c10-education.html#micro-works-what-about-macro",
+    "href": "slides/c10-education.html#micro-works-what-about-macro",
+    "title": "Education and Development",
+    "section": "Micro Works; What About Macro?",
+    "text": "Micro Works; What About Macro?\n\n\nDuflo: building schools makes individuals richer\nCross-country: more schooling correlates with more GDP\nQuestion: does more schooling cause more growth at the country level?\nThis is a harder question to answer cleanly"
+  },
+  {
+    "objectID": "slides/c10-education.html#pritchett-where-has-it-gone",
+    "href": "slides/c10-education.html#pritchett-where-has-it-gone",
+    "title": "Education and Development",
+    "section": "Pritchett: Where Has It Gone?",
+    "text": "Pritchett: Where Has It Gone?\n\n\nPritchett (2001): cross-country growth regressions on schooling are weak\nCountries that expanded schooling did not obviously grow faster\nWhy? Three candidate stories:\n\nSchooling is not real human capital (learning crisis)\nSkilled workers go into rent-seeking, not production\nMeasurement: years of school ≠ skills"
+  },
+  {
+    "objectID": "slides/c10-education.html#the-micro-macro-wedge",
+    "href": "slides/c10-education.html#the-micro-macro-wedge",
+    "title": "Education and Development",
+    "section": "The Micro-Macro Wedge",
+    "text": "The Micro-Macro Wedge\n\n\nA year of school pays off for me\nBut a country full of more years-of-school does not obviously grow faster\nPossible reason: my wage gain is partly zero-sum (displacing others)\nPossible reason: the complementary inputs (jobs, capital, institutions) are missing"
+  },
+  {
+    "objectID": "slides/c10-education.html#back-to-politics",
+    "href": "slides/c10-education.html#back-to-politics",
+    "title": "Education and Development",
+    "section": "Back to Politics",
+    "text": "Back to Politics\n\n\nLipset: education → civic participation → democracy\nAcemoglu et al. (2008): income-democracy link collapses under FE\nEducation-democracy is similarly fragile cross-country\nWithin-country evidence on voting and participation is more mixed"
+  },
+  {
+    "objectID": "slides/c10-education.html#the-learning-crisis",
+    "href": "slides/c10-education.html#the-learning-crisis",
+    "title": "Education and Development",
+    "section": "The Learning Crisis",
+    "text": "The Learning Crisis\n\n\nYears of schooling have risen; learning has not kept pace\nRural India: half of grade 5 students cannot read a grade 2 text\nIn many low-income countries, grade 3 students cannot subtract single digits\nAccess is now less binding than quality"
+  },
+  {
+    "objectID": "slides/c10-education.html#why-quality-is-hard",
+    "href": "slides/c10-education.html#why-quality-is-hard",
+    "title": "Education and Development",
+    "section": "Why Quality Is Hard",
+    "text": "Why Quality Is Hard\n\n\nTeachers absent, undertrained, or poorly paid\nCurricula designed for the top students, not the median\nParents demand credentials, not skills\nPolitical pressure to expand access, not measure outcomes"
+  },
+  {
+    "objectID": "slides/c10-education.html#the-funding-shock",
+    "href": "slides/c10-education.html#the-funding-shock",
+    "title": "Education and Development",
+    "section": "The Funding Shock",
+    "text": "The Funding Shock\n\n\nUSAID historically funded ~20% of global basic education aid\n2025: US foreign assistance frozen; USAID dismantled\nCountries heavily dependent on donor-funded education programs face immediate cuts\nTeacher salaries, textbooks, school feeding at risk"
+  },
+  {
+    "objectID": "slides/c10-education.html#what-we-can-say",
+    "href": "slides/c10-education.html#what-we-can-say",
+    "title": "Education and Development",
+    "section": "What We Can Say",
+    "text": "What We Can Say\n\n\nBuilding schools raised individual wages in 1970s Indonesia\nIt is not a universal law; context matters\nThe 21st-century frontier is learning, not just access\nRigorous design is the only way to tell what works"
+  },
+  {
+    "objectID": "slides/c10-education.html#the-central-question",
+    "href": "slides/c10-education.html#the-central-question",
+    "title": "Education and Development",
+    "section": "The Central Question",
+    "text": "The Central Question\n\n\nEducation can make a person rich\nDoes it make a country rich?\nThese are not the same question"
+  },
+  {
+    "objectID": "slides/c10-education.html#three-kinds-of-return",
+    "href": "slides/c10-education.html#three-kinds-of-return",
+    "title": "Education and Development",
+    "section": "Three Kinds of Return",
+    "text": "Three Kinds of Return\n\n\nPrivate return: how my schooling raises my wages\nExternal return: how my schooling helps others\nSocial return = Private + External\nPolicy should care about the social return; I only care about the private one"
+  },
+  {
+    "objectID": "slides/c10-education.html#private-return-becker",
+    "href": "slides/c10-education.html#private-return-becker",
+    "title": "Education and Development",
+    "section": "Private Return: Becker",
+    "text": "Private Return: Becker\n\n\nSchool builds productive skills\nSkills raise productivity, productivity raises wages\nThis is the human capital story\nMeasured by the Mincer wage equation"
+  },
+  {
+    "objectID": "slides/c10-education.html#private-return-spence",
+    "href": "slides/c10-education.html#private-return-spence",
+    "title": "Education and Development",
+    "section": "Private Return: Spence",
+    "text": "Private Return: Spence\n\n\nEmployers cannot see your ability; they can see your degree\nSchool is information to the people who pay you\nHigh-ability types find school cheap; low-ability types find it costly; the diploma separates them\nContent may not even matter: the credential does the work\nVery different policy: cheap signals (tests, licenses) could do the same job"
+  },
+  {
+    "objectID": "slides/c10-education.html#external-workplace",
+    "href": "slides/c10-education.html#external-workplace",
+    "title": "Education and Development",
+    "section": "External: Workplace",
+    "text": "External: Workplace\n\n\nTo run a factory, someone has to run the machinery\nMore educated coworkers make you more productive\nFirms invest more in capital when workers are skilled\nYour wage depends on your colleagues’ education, not just your own"
+  },
+  {
+    "objectID": "slides/c10-education.html#external-non-economic",
+    "href": "slides/c10-education.html#external-non-economic",
+    "title": "Education and Development",
+    "section": "External: Non-Economic",
+    "text": "External: Non-Economic\n\n\nEducated citizens vote more, follow politics, demand accountability\nEducated citizens pay taxes, expand the fiscal base\nEducated mothers raise healthier children\nEducated populations have lower crime and disease spread"
+  },
+  {
+    "objectID": "slides/c10-education.html#why-governments-subsidize",
+    "href": "slides/c10-education.html#why-governments-subsidize",
+    "title": "Education and Development",
+    "section": "Why Governments Subsidize",
+    "text": "Why Governments Subsidize\n\n\nIf education has external returns, private choice underinvests\nIndividuals only weigh their own wage gain\nSociety gains more: spillovers on coworkers, politics, health\nThis is why education is tax-funded almost everywhere"
+  },
+  {
+    "objectID": "slides/c10-education.html#duflo-measured-the-private-return",
+    "href": "slides/c10-education.html#duflo-measured-the-private-return",
+    "title": "Education and Development",
+    "section": "Duflo Measured the Private Return",
+    "text": "Duflo Measured the Private Return\n\n\n2SLS: 6.8-10.6% per year of schooling\nThis is what I gain from my schooling\nIt says nothing about how others gain from my schooling\nSpillovers are the external return"
+  },
+  {
+    "objectID": "slides/c10-education.html#the-mincer-macro-wedge",
+    "href": "slides/c10-education.html#the-mincer-macro-wedge",
+    "title": "Education and Development",
+    "section": "The Mincer-Macro Wedge",
+    "text": "The Mincer-Macro Wedge\n\n\nIndividual returns: 7-10%, consistent across settings\nCross-country growth regressions on schooling: weak and unstable\nIf private returns are real, why is the macro evidence so fragile?\nKrueger & Lindahl (2001): mostly measurement error"
+  },
+  {
+    "objectID": "slides/c10-education.html#measuring-spillovers",
+    "href": "slides/c10-education.html#measuring-spillovers",
+    "title": "Education and Development",
+    "section": "Measuring Spillovers",
+    "text": "Measuring Spillovers\n\n\nRegress your wage on coworkers’ average schooling\nControl for your own schooling (so it is a spillover, not a private return)\nVariation across firms, industries, regions, or cities\nHard to identify: educated workers sort into good places"
+  },
+  {
+    "objectID": "slides/c10-education.html#what-the-literature-finds",
+    "href": "slides/c10-education.html#what-the-literature-finds",
+    "title": "Education and Development",
+    "section": "What the Literature Finds",
+    "text": "What the Literature Finds\n\n\nCui & Martins (2021): meta-analysis of 1,021 estimates, 32 studies\nAverage spillover effect: positive but small\nLarger in lower-income countries: bigger gap to close\nIV and FE estimates are smaller than OLS: ability/sorting bias is real"
+  },
+  {
+    "objectID": "slides/c10-education.html#the-mincer-equation",
+    "href": "slides/c10-education.html#the-mincer-equation",
+    "title": "Education and Development",
+    "section": "The Mincer Equation",
+    "text": "The Mincer Equation\n\\[\\ln(w_i) = \\alpha + \\beta \\, S_i + \\gamma_1 X_i + \\gamma_2 X_i^2 + \\varepsilon_i\\]\n\n\n\\(w_i\\): wage of worker \\(i\\); \\(S_i\\): years of schooling; \\(X_i\\): years of work experience\n\\(\\beta\\): the return to schooling; percent wage gain per extra year of school\nLog wage makes the coefficient a percent: \\(\\beta = 0.08\\) means 8% more per year\nTypical OLS estimate across countries: \\(\\beta \\approx 0.07\\) to \\(0.10\\)"
+  },
+  {
+    "objectID": "slides/c10-education.html#external-spillovers-at-work",
+    "href": "slides/c10-education.html#external-spillovers-at-work",
+    "title": "Education and Development",
+    "section": "External: Spillovers at Work",
+    "text": "External: Spillovers at Work\nThe idea: your wage depends on other people’s schooling, not just your own\n\n\nYou are more productive when your coworkers are skilled: teamwork, learning on the job\nFirms buy better machinery when workers can run it; that raises everyone’s wages\nMore educated cities attract better employers\nThis is a true externality: you benefit from their schooling without paying for it"
+  },
+  {
+    "objectID": "slides/c10-education.html#is-the-mincer-beta-causal",
+    "href": "slides/c10-education.html#is-the-mincer-beta-causal",
+    "title": "Education and Development",
+    "section": "Is the Mincer \\(\\beta\\) Causal?",
+    "text": "Is the Mincer \\(\\beta\\) Causal?\n\n\nMincer regressions say: one extra year of school, ~8-10% higher wages\nBut schooling is chosen, not assigned\nThe kids who get more school are also higher ability, from richer families, in better places\nOLS bundles the effect of school with everything else that travels with it"
+  },
+  {
+    "objectID": "slides/c10-education.html#takeaways",
+    "href": "slides/c10-education.html#takeaways",
+    "title": "Education and Development",
+    "section": "Takeaways",
+    "text": "Takeaways\n\n\nEducation has many positive externalities\nPrivate return is well identified (Duflo): ~8% per year\nSpillovers run through work, politics, health, safety, innovation\nPrivate returns alone do not justify why states fund education; externalities do\nThe frontier today is learning, not just access"
+  },
+  {
+    "objectID": "slides/c10-education.html#the-main-result",
+    "href": "slides/c10-education.html#the-main-result",
+    "title": "Education and Development",
+    "section": "The Main Result",
+    "text": "The Main Result\n\n\nBuilding schools caused kids to get more education AND earn more as adults\nEach year of extra schooling (caused by INPRES) → ~7-11% higher wages\nSimilar to the OLS Mincer estimate in the same data (~7.5%)\nIn this setting, ability bias was not huge\nKey point: this is a causal estimate, not a correlation"
+  },
+  {
+    "objectID": "slides/c10-education.html#what-it-means",
+    "href": "slides/c10-education.html#what-it-means",
+    "title": "Education and Development",
+    "section": "What It Means",
+    "text": "What It Means\n\n\nSupply-side access was binding in 1970s Indonesia: more schools → more education\nReturns to that extra schooling are economically large\nBuilding schools was a good investment for individuals\nBut this is the private return; what about everyone else?"
+  },
+  {
+    "objectID": "slides/c10-education.html#the-pivot",
+    "href": "slides/c10-education.html#the-pivot",
+    "title": "Education and Development",
+    "section": "The Pivot",
+    "text": "The Pivot\n\n\nDuflo gave us the private return: ~8% per year of schooling\nBut why do countries invest 4-6% of GDP in education?\nBecause schooling changes more than just the student’s own life\nIt changes the lives of the people around them"
+  },
+  {
+    "objectID": "slides/c10-education.html#what-is-a-spillover",
+    "href": "slides/c10-education.html#what-is-a-spillover",
+    "title": "Education and Development",
+    "section": "What Is a Spillover?",
+    "text": "What Is a Spillover?\nA spillover: your action changes someone else’s outcome\n\nPrivate return (Mincer / Duflo):\n\\[\\text{My wage} = \\alpha + \\beta \\cdot (\\text{My schooling}) + \\varepsilon\\]\n\n\nWith spillovers:\n\\[\\text{My wage} = \\alpha + \\beta \\cdot (\\text{My schooling}) + \\gamma \\cdot (\\text{Others' schooling}) + \\varepsilon\\]\n\n\n\n\n\\(\\gamma &gt; 0\\): education has positive externalities\n\\(\\gamma = 0\\): no spillover; education is purely private"
+  },
+  {
+    "objectID": "slides/c10-education.html#why-spillovers-are-hard",
+    "href": "slides/c10-education.html#why-spillovers-are-hard",
+    "title": "Education and Development",
+    "section": "Why Spillovers Are Hard",
+    "text": "Why Spillovers Are Hard\n\n\nEducated people cluster: same firms, same cities, same countries\nYour coworkers are educated AND your city pays better AND your firm is more productive\nAll correlated; none necessarily causal\nClean spillover estimates require exogenous variation in others’ schooling\nThis is why the spillover literature is much messier than the Mincer literature"
+  },
+  {
+    "objectID": "slides/c10-education.html#channels-of-spillover",
+    "href": "slides/c10-education.html#channels-of-spillover",
+    "title": "Education and Development",
+    "section": "Channels of Spillover",
+    "text": "Channels of Spillover\nHow many ways can your education benefit others?\n\n\n\nWorkplace: educated coworkers → you learn faster; firms invest in better capital\nPolitics: educated citizens vote more, demand accountability, pay more taxes\nHealth: educated mothers have healthier children\nSafety: more education, less crime\nInnovation: educated workers spread ideas; ideas are non-rival"
+  },
+  {
+    "objectID": "slides/c10-education.html#the-democracy-channel",
+    "href": "slides/c10-education.html#the-democracy-channel",
+    "title": "Education and Development",
+    "section": "The Democracy Channel",
+    "text": "The Democracy Channel\n\n\nLipset (1959): education → civic capacity → democracy\nAcemoglu et al. (2008): add country fixed effects and the cross-country link disappears\nGrossman et al. (2021): within-country effects are context-dependent; information reaches citizens, but whether they act on it depends on the political system\nEffects on regime type are weaker than effects on individual political behavior"
+  },
+  {
+    "objectID": "slides/c10-education.html#our-questions",
+    "href": "slides/c10-education.html#our-questions",
+    "title": "Education and Development",
+    "section": "Our Questions",
+    "text": "Our Questions\n\n\nDoes education cause development, or just correlate with it?\nIf it causes it, why? Through what channels?\nDoes more schooling make a person richer?\nDoes more schooling make a country richer?\nDoes more schooling produce other good outcomes: politics, health, safety?"
+  },
+  {
+    "objectID": "slides/c10-education.html#the-market-fails",
+    "href": "slides/c10-education.html#the-market-fails",
+    "title": "Education and Development",
+    "section": "The Market Fails",
+    "text": "The Market Fails\n\n\nI decide how much school to get based on my wage gain\nI do not factor in: your wages, your votes, your kids’ health, your firm’s productivity\nSo I under-buy schooling; every student does\nThe country ends up with less education than is socially optimal\nClassic externality: markets alone do not deliver the social optimum\nThis is why every rich country subsidizes or mandates schooling"
+  },
+  {
+    "objectID": "slides/c10-education.html#the-virtuous-circle",
+    "href": "slides/c10-education.html#the-virtuous-circle",
+    "title": "Education and Development",
+    "section": "The Virtuous Circle",
+    "text": "The Virtuous Circle\n\n\nEconomic: educated workers → higher wages → higher productivity → more tax revenue\nPolitical: educated citizens → better accountability → better public goods → better schools\nIntergenerational: educated mothers → healthier, better-educated children\nInnovation: educated workers → new ideas → spillovers to everyone else\nEach channel feeds the others: positive externalities compound"
+  },
+  {
+    "objectID": "slides/c10-education.html#quick-check",
+    "href": "slides/c10-education.html#quick-check",
+    "title": "Education and Development",
+    "section": "Quick Check",
+    "text": "Quick Check\nYour neighbor just finished medical school\n\nWho else is better off because of this?\n\n\n\n\nHer future patients get better care\nHer coworkers learn from her\nThe local tax base grows\nHer kids are more likely to finish school too\nYou, if you ever need a doctor"
+  },
+  {
+    "objectID": "slides/c10-education.html#education-in-the-age-of-ai",
+    "href": "slides/c10-education.html#education-in-the-age-of-ai",
+    "title": "Education and Development",
+    "section": "Education in the Age of AI",
+    "text": "Education in the Age of AI\n\n\nIf AI can substitute for cognitive labor, what is the return to schooling?\nOptimistic view: AI is a tool; educated users get more out of it; returns rise\nPessimistic view: AI compresses the premium on education; ladder collapses\nOpen question for developing countries: leapfrog or left behind?\nThe externalities (politics, health, civic life) do not disappear with AI"
   }
 ]
