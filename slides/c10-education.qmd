@@ -1,0 +1,332 @@
+---
+title: "Education and Development"
+subtitle: ""
+author: "Carolina Torreblanca"
+institute: "University of Pennsylvania"
+
+editor: source
+format:
+  revealjs:
+    toc: false
+    theme: [custom_iea.scss]
+    width: 1050
+    margin: 0.05
+    logo: DevLab_Logo_29Mar2023.png
+    embed-resources: true
+    template-partials:
+      - title-slide.html
+    gfm:
+    mermaid-format: png
+    highlight-style: atom-one-dark
+    code-overflow: wrap
+---
+
+```{=html}
+<style>
+.reveal h2 { font-size: 1.3em !important; }
+</style>
+```
+
+## Agenda
+
+1. Why invest in education?
+2. Two theories of the wage return
+3. The causal problem
+4. Difference-in-differences
+5. Duflo (2001)
+
+## Deadlines
+
+- **Final Project Draft** due Friday April 24 by 11:59pm
+
+# Why Education?
+
+## The Big Claim
+
+::: incremental
+- Education is often called the highest-return investment in development
+- Girls' schooling has been linked to lower fertility, lower child mortality, higher incomes
+- Cross-country: years of schooling correlates strongly with GDP per capita
+- Is this causal, or is it the selection story all over again?
+:::
+
+## Schooling Has Exploded
+
+::: incremental
+- 1950: average adult in low-income countries had ~2 years of schooling
+- 2020: average adult has ~7 years
+- Primary enrollment in sub-Saharan Africa: 52% in 1970, 98% by 2015
+- Gains are largest among girls and in the poorest countries
+:::
+
+## But Learning Has Not
+
+::: incremental
+- More years in school do not automatically mean more learning
+- In rural India, ~50% of grade 5 students cannot read a grade 2 text
+- In many low-income countries, grade 3 students cannot do single-digit subtraction
+- The "learning crisis": enrollment up, skills flat
+:::
+
+## Why Might Education Pay?
+
+::: incremental
+- **Human capital (Becker)**: school builds productive skills; higher skill → higher wages
+- **Signaling (Spence, 1973)**: school reveals underlying ability to employers
+- Both predict: more school → higher wages
+- They disagree on *why*, and on what policy should do
+:::
+
+## Becker: Skills
+
+::: incremental
+- Workers choose schooling like an investment
+- Costs: tuition, forgone earnings
+- Returns: higher productivity, higher wages over lifetime
+- Implication: expanding schools should raise wages, because new skills are being built
+:::
+
+## Spence: Signals
+
+::: incremental
+- Ability is unobservable to employers at hiring
+- High-ability workers find school cheap; low-ability workers find it costly
+- A diploma separates types even if the content is useless
+- Implication: expanding schools may not raise wages if it only shifts the signal
+:::
+
+## Why the Distinction Matters
+
+::: incremental
+- Human capital: policy should build more schools, train more teachers
+- Signaling: policy should fund only the credential, or find cheaper signals
+- Most evidence suggests both are at play; pure signaling is rare
+- Testing them requires variation that breaks the ability-schooling link
+:::
+
+# The Causal Problem
+
+## OLS Returns to Schooling
+
+$$\ln(\text{wage}_i) = \alpha + \beta \cdot \text{school}_i + \varepsilon_i$$
+
+::: incremental
+- Typical OLS estimate: $\hat\beta \approx 0.08$ to $0.10$
+- Interpretation: one more year of school is associated with 8-10% higher wages
+- "Associated with", not "causes"
+:::
+
+## Ability Bias
+
+::: incremental
+- High-ability people get more schooling AND earn more
+- OLS attributes the full wage gap to schooling
+- True causal effect is smaller than the correlation
+- Classic upward bias
+:::
+
+## Reverse Causation and Selection
+
+::: incremental
+- Richer families can afford more schooling; their kids also inherit networks, health, nutrition
+- Poor regions have worse schools AND worse labor markets
+- Any observed correlation mixes all of these
+- We need exogenous variation in schooling
+:::
+
+## Classic Fixes
+
+::: incremental
+- **Twins studies**: compare siblings to hold genes constant
+- **Compulsory schooling laws**: use legal cutoffs as a shock
+- Both mostly come from rich countries
+- Do they apply in low-income settings where access, not motivation, is the bind?
+:::
+
+# Difference-in-Differences
+
+## The Setup
+
+::: incremental
+- Some units get treated; others do not
+- We observe outcomes before and after
+- Simple comparison of treated post-treatment is confounded by unit differences
+- Simple before-after on treated is confounded by time trends
+:::
+
+## The 2×2 Table
+
+|            | Before | After |
+|------------|--------|-------|
+| Treated    | $Y_{T,0}$ | $Y_{T,1}$ |
+| Control    | $Y_{C,0}$ | $Y_{C,1}$ |
+
+. . .
+
+$$\hat\delta_{DiD} = (Y_{T,1} - Y_{T,0}) - (Y_{C,1} - Y_{C,0})$$
+
+## What DiD Assumes
+
+::: incremental
+- **Parallel trends**: without treatment, treated and control would have evolved the same way
+- Unit fixed effects absorb any time-invariant differences
+- Time fixed effects absorb any common shocks
+- The treatment effect lives in the interaction
+:::
+
+## DiD as a Regression
+
+$$Y_{it} = \alpha_i + \lambda_t + \delta (\text{Treated}_i \times \text{Post}_t) + \varepsilon_{it}$$
+
+::: incremental
+- $\alpha_i$: unit fixed effects (absorbs level differences)
+- $\lambda_t$: time fixed effects (absorbs common trends)
+- $\delta$: coefficient on the interaction = DiD estimate
+- DiD is an interaction term, nothing more
+:::
+
+## Why This Matters Today
+
+::: incremental
+- Duflo (2001) uses a continuous DiD: intensity of treatment × exposure cohort
+- The interaction of *how much* treatment and *who was exposed* is the instrument
+- Same logic, more variation
+:::
+
+# Duflo (2001)
+
+## The Setting
+
+::: incremental
+- Indonesia, early 1970s: primary enrollment ~60%, large regional gaps
+- 1973 oil windfall funds a massive public investment
+- 1973-1978: INPRES program builds 61,807 primary schools
+- Roughly doubles the existing stock in five years
+:::
+
+## The Allocation Rule
+
+::: incremental
+- Schools allocated across 283 regions
+- Rule: more schools to regions with *fewer* existing schools per child
+- Program intensity = schools built per 1,000 children in region
+- Not random, but driven by a formula, not local demand
+:::
+
+## Two Dimensions of Variation
+
+::: incremental
+- **Region**: some regions got more schools (high intensity)
+- **Cohort**: some children were young enough to benefit, others had already finished primary school
+- Children aged 2-6 in 1974: fully exposed
+- Children aged 12+ in 1974: already past primary
+:::
+
+## The Design
+
+::: incremental
+- High-intensity region + young cohort = most treatment
+- Low-intensity region + old cohort = no treatment
+- Compare the difference across cohorts in high vs low-intensity regions
+- Continuous DiD: intensity × exposure
+:::
+
+## The Identifying Assumption
+
+::: incremental
+- Without INPRES, young cohorts in high-intensity regions would have evolved like young cohorts in low-intensity regions
+- Threat: maybe high-intensity regions were catching up for other reasons
+- Test: look at cohorts *too old* to be treated
+- If their education rises with intensity, parallel trends fails
+:::
+
+## Placebo Cohorts
+
+::: incremental
+- Compare ages 12-17 vs ages 18-24 in 1974
+- Neither group was exposed to INPRES schools
+- If intensity predicts differences between these cohorts, we have a problem
+- It does not; the effect turns on precisely at age 12
+:::
+
+## First Stage: Education
+
+::: incremental
+- One more school per 1,000 children → 0.12 to 0.19 more years of schooling
+- Effect concentrated at primary completion, not secondary
+- Larger in sparser, poorer regions (where the constraint was bindings)
+- Consistent with supply-side access story
+:::
+
+## Reduced Form: Wages
+
+::: incremental
+- One more school per 1,000 children → 1.5% to 2.7% higher adult wages
+- Same cohort × intensity interaction, now on earnings
+- Estimated in 1995, ~20 years after exposure
+:::
+
+## From DiD to IV
+
+::: incremental
+- First stage: intensity × exposure → more schooling
+- Reduced form: intensity × exposure → higher wages
+- Ratio: wage effect per year of schooling
+- This is 2SLS: the interaction is an instrument for education
+:::
+
+## 2SLS Returns
+
+::: incremental
+- Returns to education: **6.8% to 10.6%** per year
+- OLS returns in the same data: ~7.5%
+- In this setting, OLS is not wildly biased
+- But the IV estimate is a LATE, not an average
+:::
+
+## LATE Interpretation
+
+::: incremental
+- 2SLS identifies the return for **compliers**: students induced to attend by the new schools
+- These are children who would not have gone without INPRES
+- Likely poorer, more rural, more credit-constrained
+- Their return need not equal the return for infra-marginal students
+:::
+
+## Cost-Benefit
+
+::: incremental
+- Cost per school: ~$24,300 in 1990 USD
+- Implied internal rate of return: 8.8% to 12%
+- Competitive with returns to physical capital
+- Supply-side education investment paid for itself
+:::
+
+## What to Take Away
+
+::: incremental
+- Access, not just demand, was a real constraint in 1970s Indonesia
+- A continuous DiD with an interaction instrument isolates causal returns
+- Returns to schooling are positive and economically meaningful
+- Human capital story wins here; pure signaling cannot explain wage gains from *building more schools*
+:::
+
+## Limitations
+
+::: incremental
+- LATE: results apply to compliers, not everyone
+- Indonesia in 1995: formal-sector wages, not informal or agricultural
+- Primary schooling, not secondary or tertiary
+- Learning crisis literature suggests building schools today may not pay the same return
+:::
+
+# Wrapping Up
+
+## What Education Economics Teaches
+
+::: incremental
+- Education correlates with development, but correlation is not causation
+- Credible designs turn on variation that breaks the ability-schooling link
+- Duflo (2001): supply-side shocks + DiD + IV = a clean answer
+- The learning crisis is the open frontier: years of school are rising; skills are not
+:::

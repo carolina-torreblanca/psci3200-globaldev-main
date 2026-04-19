@@ -15132,5 +15132,236 @@
     "title": "Education and Development",
     "section": "Slides",
     "text": "Slides\n\nSlides"
+  },
+  {
+    "objectID": "slides/c10-education.html#agenda",
+    "href": "slides/c10-education.html#agenda",
+    "title": "Education and Development",
+    "section": "Agenda",
+    "text": "Agenda\n\nWhy invest in education?\nTwo theories of the wage return\nThe causal problem\nDifference-in-differences\nDuflo (2001)"
+  },
+  {
+    "objectID": "slides/c10-education.html#deadlines",
+    "href": "slides/c10-education.html#deadlines",
+    "title": "Education and Development",
+    "section": "Deadlines",
+    "text": "Deadlines\n\nFinal Project Draft due Friday April 24 by 11:59pm"
+  },
+  {
+    "objectID": "slides/c10-education.html#the-big-claim",
+    "href": "slides/c10-education.html#the-big-claim",
+    "title": "Education and Development",
+    "section": "The Big Claim",
+    "text": "The Big Claim\n\n\nEducation is often called the highest-return investment in development\nGirls’ schooling has been linked to lower fertility, lower child mortality, higher incomes\nCross-country: years of schooling correlates strongly with GDP per capita\nIs this causal, or is it the selection story all over again?"
+  },
+  {
+    "objectID": "slides/c10-education.html#schooling-has-exploded",
+    "href": "slides/c10-education.html#schooling-has-exploded",
+    "title": "Education and Development",
+    "section": "Schooling Has Exploded",
+    "text": "Schooling Has Exploded\n\n\n1950: average adult in low-income countries had ~2 years of schooling\n2020: average adult has ~7 years\nPrimary enrollment in sub-Saharan Africa: 52% in 1970, 98% by 2015\nGains are largest among girls and in the poorest countries"
+  },
+  {
+    "objectID": "slides/c10-education.html#but-learning-has-not",
+    "href": "slides/c10-education.html#but-learning-has-not",
+    "title": "Education and Development",
+    "section": "But Learning Has Not",
+    "text": "But Learning Has Not\n\n\nMore years in school do not automatically mean more learning\nIn rural India, ~50% of grade 5 students cannot read a grade 2 text\nIn many low-income countries, grade 3 students cannot do single-digit subtraction\nThe “learning crisis”: enrollment up, skills flat"
+  },
+  {
+    "objectID": "slides/c10-education.html#why-might-education-pay",
+    "href": "slides/c10-education.html#why-might-education-pay",
+    "title": "Education and Development",
+    "section": "Why Might Education Pay?",
+    "text": "Why Might Education Pay?\n\n\nHuman capital (Becker): school builds productive skills; higher skill → higher wages\nSignaling (Spence, 1973): school reveals underlying ability to employers\nBoth predict: more school → higher wages\nThey disagree on why, and on what policy should do"
+  },
+  {
+    "objectID": "slides/c10-education.html#becker-skills",
+    "href": "slides/c10-education.html#becker-skills",
+    "title": "Education and Development",
+    "section": "Becker: Skills",
+    "text": "Becker: Skills\n\n\nWorkers choose schooling like an investment\nCosts: tuition, forgone earnings\nReturns: higher productivity, higher wages over lifetime\nImplication: expanding schools should raise wages, because new skills are being built"
+  },
+  {
+    "objectID": "slides/c10-education.html#spence-signals",
+    "href": "slides/c10-education.html#spence-signals",
+    "title": "Education and Development",
+    "section": "Spence: Signals",
+    "text": "Spence: Signals\n\n\nAbility is unobservable to employers at hiring\nHigh-ability workers find school cheap; low-ability workers find it costly\nA diploma separates types even if the content is useless\nImplication: expanding schools may not raise wages if it only shifts the signal"
+  },
+  {
+    "objectID": "slides/c10-education.html#why-the-distinction-matters",
+    "href": "slides/c10-education.html#why-the-distinction-matters",
+    "title": "Education and Development",
+    "section": "Why the Distinction Matters",
+    "text": "Why the Distinction Matters\n\n\nHuman capital: policy should build more schools, train more teachers\nSignaling: policy should fund only the credential, or find cheaper signals\nMost evidence suggests both are at play; pure signaling is rare\nTesting them requires variation that breaks the ability-schooling link"
+  },
+  {
+    "objectID": "slides/c10-education.html#ols-returns-to-schooling",
+    "href": "slides/c10-education.html#ols-returns-to-schooling",
+    "title": "Education and Development",
+    "section": "OLS Returns to Schooling",
+    "text": "OLS Returns to Schooling\n\\[\\ln(\\text{wage}_i) = \\alpha + \\beta \\cdot \\text{school}_i + \\varepsilon_i\\]\n\n\nTypical OLS estimate: \\(\\hat\\beta \\approx 0.08\\) to \\(0.10\\)\nInterpretation: one more year of school is associated with 8-10% higher wages\n“Associated with”, not “causes”"
+  },
+  {
+    "objectID": "slides/c10-education.html#ability-bias",
+    "href": "slides/c10-education.html#ability-bias",
+    "title": "Education and Development",
+    "section": "Ability Bias",
+    "text": "Ability Bias\n\n\nHigh-ability people get more schooling AND earn more\nOLS attributes the full wage gap to schooling\nTrue causal effect is smaller than the correlation\nClassic upward bias"
+  },
+  {
+    "objectID": "slides/c10-education.html#reverse-causation-and-selection",
+    "href": "slides/c10-education.html#reverse-causation-and-selection",
+    "title": "Education and Development",
+    "section": "Reverse Causation and Selection",
+    "text": "Reverse Causation and Selection\n\n\nRicher families can afford more schooling; their kids also inherit networks, health, nutrition\nPoor regions have worse schools AND worse labor markets\nAny observed correlation mixes all of these\nWe need exogenous variation in schooling"
+  },
+  {
+    "objectID": "slides/c10-education.html#classic-fixes",
+    "href": "slides/c10-education.html#classic-fixes",
+    "title": "Education and Development",
+    "section": "Classic Fixes",
+    "text": "Classic Fixes\n\n\nTwins studies: compare siblings to hold genes constant\nCompulsory schooling laws: use legal cutoffs as a shock\nBoth mostly come from rich countries\nDo they apply in low-income settings where access, not motivation, is the bind?"
+  },
+  {
+    "objectID": "slides/c10-education.html#the-setup",
+    "href": "slides/c10-education.html#the-setup",
+    "title": "Education and Development",
+    "section": "The Setup",
+    "text": "The Setup\n\n\nSome units get treated; others do not\nWe observe outcomes before and after\nSimple comparison of treated post-treatment is confounded by unit differences\nSimple before-after on treated is confounded by time trends"
+  },
+  {
+    "objectID": "slides/c10-education.html#the-22-table",
+    "href": "slides/c10-education.html#the-22-table",
+    "title": "Education and Development",
+    "section": "The 2×2 Table",
+    "text": "The 2×2 Table\n\n\n\n\nBefore\nAfter\n\n\n\n\nTreated\n\\(Y_{T,0}\\)\n\\(Y_{T,1}\\)\n\n\nControl\n\\(Y_{C,0}\\)\n\\(Y_{C,1}\\)\n\n\n\n\n\\[\\hat\\delta_{DiD} = (Y_{T,1} - Y_{T,0}) - (Y_{C,1} - Y_{C,0})\\]"
+  },
+  {
+    "objectID": "slides/c10-education.html#what-did-assumes",
+    "href": "slides/c10-education.html#what-did-assumes",
+    "title": "Education and Development",
+    "section": "What DiD Assumes",
+    "text": "What DiD Assumes\n\n\nParallel trends: without treatment, treated and control would have evolved the same way\nUnit fixed effects absorb any time-invariant differences\nTime fixed effects absorb any common shocks\nThe treatment effect lives in the interaction"
+  },
+  {
+    "objectID": "slides/c10-education.html#did-as-a-regression",
+    "href": "slides/c10-education.html#did-as-a-regression",
+    "title": "Education and Development",
+    "section": "DiD as a Regression",
+    "text": "DiD as a Regression\n\\[Y_{it} = \\alpha_i + \\lambda_t + \\delta (\\text{Treated}_i \\times \\text{Post}_t) + \\varepsilon_{it}\\]\n\n\n\\(\\alpha_i\\): unit fixed effects (absorbs level differences)\n\\(\\lambda_t\\): time fixed effects (absorbs common trends)\n\\(\\delta\\): coefficient on the interaction = DiD estimate\nDiD is an interaction term, nothing more"
+  },
+  {
+    "objectID": "slides/c10-education.html#why-this-matters-today",
+    "href": "slides/c10-education.html#why-this-matters-today",
+    "title": "Education and Development",
+    "section": "Why This Matters Today",
+    "text": "Why This Matters Today\n\n\nDuflo (2001) uses a continuous DiD: intensity of treatment × exposure cohort\nThe interaction of how much treatment and who was exposed is the instrument\nSame logic, more variation"
+  },
+  {
+    "objectID": "slides/c10-education.html#the-setting",
+    "href": "slides/c10-education.html#the-setting",
+    "title": "Education and Development",
+    "section": "The Setting",
+    "text": "The Setting\n\n\nIndonesia, early 1970s: primary enrollment ~60%, large regional gaps\n1973 oil windfall funds a massive public investment\n1973-1978: INPRES program builds 61,807 primary schools\nRoughly doubles the existing stock in five years"
+  },
+  {
+    "objectID": "slides/c10-education.html#the-allocation-rule",
+    "href": "slides/c10-education.html#the-allocation-rule",
+    "title": "Education and Development",
+    "section": "The Allocation Rule",
+    "text": "The Allocation Rule\n\n\nSchools allocated across 283 regions\nRule: more schools to regions with fewer existing schools per child\nProgram intensity = schools built per 1,000 children in region\nNot random, but driven by a formula, not local demand"
+  },
+  {
+    "objectID": "slides/c10-education.html#two-dimensions-of-variation",
+    "href": "slides/c10-education.html#two-dimensions-of-variation",
+    "title": "Education and Development",
+    "section": "Two Dimensions of Variation",
+    "text": "Two Dimensions of Variation\n\n\nRegion: some regions got more schools (high intensity)\nCohort: some children were young enough to benefit, others had already finished primary school\nChildren aged 2-6 in 1974: fully exposed\nChildren aged 12+ in 1974: already past primary"
+  },
+  {
+    "objectID": "slides/c10-education.html#the-design",
+    "href": "slides/c10-education.html#the-design",
+    "title": "Education and Development",
+    "section": "The Design",
+    "text": "The Design\n\n\nHigh-intensity region + young cohort = most treatment\nLow-intensity region + old cohort = no treatment\nCompare the difference across cohorts in high vs low-intensity regions\nContinuous DiD: intensity × exposure"
+  },
+  {
+    "objectID": "slides/c10-education.html#the-identifying-assumption",
+    "href": "slides/c10-education.html#the-identifying-assumption",
+    "title": "Education and Development",
+    "section": "The Identifying Assumption",
+    "text": "The Identifying Assumption\n\n\nWithout INPRES, young cohorts in high-intensity regions would have evolved like young cohorts in low-intensity regions\nThreat: maybe high-intensity regions were catching up for other reasons\nTest: look at cohorts too old to be treated\nIf their education rises with intensity, parallel trends fails"
+  },
+  {
+    "objectID": "slides/c10-education.html#placebo-cohorts",
+    "href": "slides/c10-education.html#placebo-cohorts",
+    "title": "Education and Development",
+    "section": "Placebo Cohorts",
+    "text": "Placebo Cohorts\n\n\nCompare ages 12-17 vs ages 18-24 in 1974\nNeither group was exposed to INPRES schools\nIf intensity predicts differences between these cohorts, we have a problem\nIt does not; the effect turns on precisely at age 12"
+  },
+  {
+    "objectID": "slides/c10-education.html#first-stage-education",
+    "href": "slides/c10-education.html#first-stage-education",
+    "title": "Education and Development",
+    "section": "First Stage: Education",
+    "text": "First Stage: Education\n\n\nOne more school per 1,000 children → 0.12 to 0.19 more years of schooling\nEffect concentrated at primary completion, not secondary\nLarger in sparser, poorer regions (where the constraint was bindings)\nConsistent with supply-side access story"
+  },
+  {
+    "objectID": "slides/c10-education.html#reduced-form-wages",
+    "href": "slides/c10-education.html#reduced-form-wages",
+    "title": "Education and Development",
+    "section": "Reduced Form: Wages",
+    "text": "Reduced Form: Wages\n\n\nOne more school per 1,000 children → 1.5% to 2.7% higher adult wages\nSame cohort × intensity interaction, now on earnings\nEstimated in 1995, ~20 years after exposure"
+  },
+  {
+    "objectID": "slides/c10-education.html#from-did-to-iv",
+    "href": "slides/c10-education.html#from-did-to-iv",
+    "title": "Education and Development",
+    "section": "From DiD to IV",
+    "text": "From DiD to IV\n\n\nFirst stage: intensity × exposure → more schooling\nReduced form: intensity × exposure → higher wages\nRatio: wage effect per year of schooling\nThis is 2SLS: the interaction is an instrument for education"
+  },
+  {
+    "objectID": "slides/c10-education.html#sls-returns",
+    "href": "slides/c10-education.html#sls-returns",
+    "title": "Education and Development",
+    "section": "2SLS Returns",
+    "text": "2SLS Returns\n\n\nReturns to education: 6.8% to 10.6% per year\nOLS returns in the same data: ~7.5%\nIn this setting, OLS is not wildly biased\nBut the IV estimate is a LATE, not an average"
+  },
+  {
+    "objectID": "slides/c10-education.html#late-interpretation",
+    "href": "slides/c10-education.html#late-interpretation",
+    "title": "Education and Development",
+    "section": "LATE Interpretation",
+    "text": "LATE Interpretation\n\n\n2SLS identifies the return for compliers: students induced to attend by the new schools\nThese are children who would not have gone without INPRES\nLikely poorer, more rural, more credit-constrained\nTheir return need not equal the return for infra-marginal students"
+  },
+  {
+    "objectID": "slides/c10-education.html#cost-benefit",
+    "href": "slides/c10-education.html#cost-benefit",
+    "title": "Education and Development",
+    "section": "Cost-Benefit",
+    "text": "Cost-Benefit\n\n\nCost per school: ~$24,300 in 1990 USD\nImplied internal rate of return: 8.8% to 12%\nCompetitive with returns to physical capital\nSupply-side education investment paid for itself"
+  },
+  {
+    "objectID": "slides/c10-education.html#what-to-take-away",
+    "href": "slides/c10-education.html#what-to-take-away",
+    "title": "Education and Development",
+    "section": "What to Take Away",
+    "text": "What to Take Away\n\n\nAccess, not just demand, was a real constraint in 1970s Indonesia\nA continuous DiD with an interaction instrument isolates causal returns\nReturns to schooling are positive and economically meaningful\nHuman capital story wins here; pure signaling cannot explain wage gains from building more schools"
+  },
+  {
+    "objectID": "slides/c10-education.html#limitations",
+    "href": "slides/c10-education.html#limitations",
+    "title": "Education and Development",
+    "section": "Limitations",
+    "text": "Limitations\n\n\nLATE: results apply to compliers, not everyone\nIndonesia in 1995: formal-sector wages, not informal or agricultural\nPrimary schooling, not secondary or tertiary\nLearning crisis literature suggests building schools today may not pay the same return"
+  },
+  {
+    "objectID": "slides/c10-education.html#what-education-economics-teaches",
+    "href": "slides/c10-education.html#what-education-economics-teaches",
+    "title": "Education and Development",
+    "section": "What Education Economics Teaches",
+    "text": "What Education Economics Teaches\n\n\nEducation correlates with development, but correlation is not causation\nCredible designs turn on variation that breaks the ability-schooling link\nDuflo (2001): supply-side shocks + DiD + IV = a clean answer\nThe learning crisis is the open frontier: years of school are rising; skills are not"
   }
 ]
