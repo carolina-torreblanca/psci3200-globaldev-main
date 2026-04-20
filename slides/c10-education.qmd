@@ -242,6 +242,11 @@ $$Y_{it} = \alpha_i + \lambda_t + \delta (\text{Treated}_i \times \text{Post}_t)
 - It does not; the effect turns on precisely at age 12
 :::
 
+## Duflo Figure 1: Education
+
+![](img/duflo-fig1.png){fig-align="center" height="4.8in"}
+
+
 ## The Main Result
 
 ::: incremental
@@ -249,6 +254,10 @@ $$Y_{it} = \alpha_i + \lambda_t + \delta (\text{Treated}_i \times \text{Post}_t)
 - Each year of extra schooling (caused by INPRES) → **~7-11% higher wages**
 - Similar to the OLS Mincer estimate in the same data (~7.5%)
 :::
+
+## Duflo Figure 3: Education and Wages
+
+![](img/duflo-fig3.png){fig-align="center" height="4.8in"}
 
 ## What It Means
 
