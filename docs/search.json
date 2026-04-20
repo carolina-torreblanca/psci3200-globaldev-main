@@ -15495,7 +15495,7 @@
     "href": "slides/c10-education.html#placebo-older-cohorts",
     "title": "Education and Development",
     "section": "Placebo: Older Cohorts",
-    "text": "Placebo: Older Cohorts\n\n\nCheck cohorts too old to be treated (age 12-17 vs 18-24 in 1974)\nNeither group was exposed to the new schools\nIf intensity still predicts differences, parallel trends fails\nIt does not; the effect turns on precisely at age 12"
+    "text": "Placebo: Older Cohorts\n\n\nCheck cohorts too old to be treated (age 12-17 vs 18-24 in 1974)\nNeither group was exposed to the new schools\nIf intensity still predicts differences, parallel trends unlikely\nIt does not; the effect turns on precisely at age 12"
   },
   {
     "objectID": "slides/c10-education.html#micro-works-what-about-macro",
@@ -15558,7 +15558,7 @@
     "href": "slides/c10-education.html#the-central-question",
     "title": "Education and Development",
     "section": "The Central Question",
-    "text": "The Central Question\n\n\nEducation can make a person rich\nDoes it make a country rich?\nThese are not the same question"
+    "text": "The Central Question\n\n\nCan education make a person rich?\nDoes it make a country rich?"
   },
   {
     "objectID": "slides/c10-education.html#three-kinds-of-return",
@@ -15579,7 +15579,7 @@
     "href": "slides/c10-education.html#private-return-spence",
     "title": "Education and Development",
     "section": "Private Return: Spence",
-    "text": "Private Return: Spence\n\n\nEmployers cannot see your ability; they can see your degree\nSchool is information to the people who pay you\nHigh-ability types find school cheap; low-ability types find it costly; the diploma separates them\nContent may not even matter: the credential does the work\nVery different policy: cheap signals (tests, licenses) could do the same job"
+    "text": "Private Return: Spence\n\n\nEmployers cannot see your ability; they can see your degree\nSchool is information to the people who pay you\nHigh-ability types find school cheap; low-ability types find it costly; the diploma separates them\nContent may not even matter: the credential does the work"
   },
   {
     "objectID": "slides/c10-education.html#external-workplace",
@@ -15663,7 +15663,7 @@
     "href": "slides/c10-education.html#the-main-result",
     "title": "Education and Development",
     "section": "The Main Result",
-    "text": "The Main Result\n\n\nBuilding schools caused kids to get more education AND earn more as adults\nEach year of extra schooling (caused by INPRES) → ~7-11% higher wages\nSimilar to the OLS Mincer estimate in the same data (~7.5%)\nIn this setting, ability bias was not huge\nKey point: this is a causal estimate, not a correlation"
+    "text": "The Main Result\n\n\nBuilding schools caused kids to get more education AND earn more as adults\nEach year of extra schooling (caused by INPRES) → ~7-11% higher wages\nSimilar to the OLS Mincer estimate in the same data (~7.5%)"
   },
   {
     "objectID": "slides/c10-education.html#what-it-means",
@@ -15684,7 +15684,7 @@
     "href": "slides/c10-education.html#what-is-a-spillover",
     "title": "Education and Development",
     "section": "What Is a Spillover?",
-    "text": "What Is a Spillover?\nA spillover: your action changes someone else’s outcome\n\nPrivate return (Mincer / Duflo):\n\\[\\text{My wage} = \\alpha + \\beta \\cdot (\\text{My schooling}) + \\varepsilon\\]\n\n\nWith spillovers:\n\\[\\text{My wage} = \\alpha + \\beta \\cdot (\\text{My schooling}) + \\gamma \\cdot (\\text{Others' schooling}) + \\varepsilon\\]\n\n\n\n\n\\(\\gamma &gt; 0\\): education has positive externalities\n\\(\\gamma = 0\\): no spillover; education is purely private"
+    "text": "What Is a Spillover?\nA spillover: someone else’s treatment changes your outcome\n\nPrivate return (Mincer / Duflo):\n\\[\\text{My wage} = \\alpha + \\beta \\cdot (\\text{My schooling}) + \\varepsilon\\]\n\n\nWith spillovers:\n\\[\\text{My wage} = \\alpha + \\beta \\cdot (\\text{My schooling}) + \\gamma \\cdot (\\text{Others' schooling}) + \\varepsilon\\]\n\n\n\n\n\\(\\gamma &gt; 0\\): education has positive externalities\n\\(\\gamma = 0\\): no spillover; education is purely private"
   },
   {
     "objectID": "slides/c10-education.html#why-spillovers-are-hard",
@@ -15741,5 +15741,12 @@
     "title": "Education and Development",
     "section": "Education in the Age of AI",
     "text": "Education in the Age of AI\n\n\nIf AI can substitute for cognitive labor, what is the return to schooling?\nOptimistic view: AI is a tool; educated users get more out of it; returns rise\nPessimistic view: AI compresses the premium on education; ladder collapses\nOpen question for developing countries: leapfrog or left behind?\nThe externalities (politics, health, civic life) do not disappear with AI"
+  },
+  {
+    "objectID": "slides/c10-education.html#schooling",
+    "href": "slides/c10-education.html#schooling",
+    "title": "Education and Development",
+    "section": "Schooling",
+    "text": "Schooling"
   }
 ]

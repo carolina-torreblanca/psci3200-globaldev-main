@@ -45,12 +45,11 @@ format:
 ## The Central Question
 
 ::: incremental
-- Education can make a **person** rich
+- Can education make a **person** rich?
 - Does it make a **country** rich?
-- These are not the same question
 :::
 
-## Schooling Has Exploded
+## Schooling
 
 ![](img/mean-years-of-schooling-long-run.png){fig-align="center" height="5in"}
 
@@ -118,7 +117,6 @@ $$\ln(w_i) = \alpha + \beta \, S_i + \gamma_1 X_i + \gamma_2 X_i^2 + \varepsilon
 - School is *information* to the people who pay you
 - High-ability types find school cheap; low-ability types find it costly; the diploma separates them
 - Content may not even matter: the credential does the work
-- Very different policy: cheap signals (tests, licenses) could do the same job
 :::
 
 ## External: Spillovers at Work
@@ -240,7 +238,7 @@ $$Y_{it} = \alpha_i + \lambda_t + \delta (\text{Treated}_i \times \text{Post}_t)
 ::: incremental
 - Check cohorts too old to be treated (age 12-17 vs 18-24 in 1974)
 - Neither group was exposed to the new schools
-- If intensity still predicts differences, parallel trends fails
+- If intensity still predicts differences, parallel trends unlikely
 - It does not; the effect turns on precisely at age 12
 :::
 
@@ -250,8 +248,6 @@ $$Y_{it} = \alpha_i + \lambda_t + \delta (\text{Treated}_i \times \text{Post}_t)
 - Building schools caused kids to get more education AND earn more as adults
 - Each year of extra schooling (caused by INPRES) → **~7-11% higher wages**
 - Similar to the OLS Mincer estimate in the same data (~7.5%)
-- In this setting, ability bias was not huge
-- Key point: this is a *causal* estimate, not a correlation
 :::
 
 ## What It Means
@@ -294,7 +290,7 @@ Who else is better off because of this?
 
 ## What Is a Spillover?
 
-A spillover: *your* action changes *someone else's* outcome
+A spillover: *someone else's* treatment changes *your* outcome
 
 . . .
 
@@ -337,15 +333,6 @@ How many ways can *your* education benefit *others*?
 - **Health**: educated mothers have healthier children
 - **Safety**: more education, less crime
 - **Innovation**: educated workers spread ideas; ideas are non-rival
-:::
-
-## The Democracy Channel
-
-::: incremental
-- Lipset (1959): education → civic capacity → democracy
-- Acemoglu et al. (2008): add country fixed effects and the cross-country link disappears
-- Grossman et al. (2021): within-country effects are context-dependent; information reaches citizens, but whether they act on it depends on the political system
-- Effects on *regime type* are weaker than effects on *individual political behavior*
 :::
 
 ## The Virtuous Circle
