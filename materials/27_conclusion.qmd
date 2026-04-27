@@ -20,7 +20,7 @@ title: "Conclusion: What is Development?"
 
 ## Slides
 
-- [Slides](/slides/27-conclusion1.html)
+- [Slides](/slides/27-conclusion-recap.html)
 
 
 
