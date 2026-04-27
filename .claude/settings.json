@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sL -o /tmp/test1.png \"https://ourworldindata.org/grapher/gdp-per-capita-over-the-last-two-millennia.png?tab=chart&yScale=log\")"
+    ]
+  }
+}
